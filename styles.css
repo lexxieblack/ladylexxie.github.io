@@ -1,31 +1,32 @@
 /*
  * CSS Variables setup for theme management
- * Default theme (Light Mode)
+ * Refined color palette: Slate & Crimson
  */
 :root {
-    --bg-color: #f4f4f9;
-    --text-color: #333;
-    --secondary-text-color: #555;
-    --card-bg-color: #ffffff;
-    --border-color: #ddd;
-    --accent-color: #ff0000;
-    --button-bg: #ffffff;
-    --button-hover-bg: #f0f0f0;
-    --table-header-bg: #ff0000;
-    --link-color: #2196F3;
+    --bg-color: #f1f5f9; /* Soft Slate-Grey Background */
+    --text-color: #1e293b;
+    --secondary-text-color: #475569;
+    --card-bg-color: #f8fafc; /* Off-white for cards to reduce glare */
+    --border-color: #cbd5e1;
+    --accent-color: #be123c; /* Muted Crimson */
+    --button-bg: #e2e8f0;
+    --button-hover-bg: #cbd5e1;
+    --table-header-bg: #334155; /* Slate Blue-Grey */
+    --link-color: #0369a1; /* Deep Cerulean */
 }
 
 /* Dark Mode Overrides */
 .dark-mode {
-    --bg-color: #1a222c;
-    --text-color: #ffffff;
-    --secondary-text-color: #b0b0b0;
-    --card-bg-color: #242e3d;
-    --border-color: #3d4b5f;
-    --button-bg: #2c3a4d;
-    --button-hover-bg: #3d4b5f;
-    --table-header-bg: #d32f2f;
-    --link-color: #64b5f6;
+    --bg-color: #0f172a;
+    --text-color: #f1f5f9;
+    --secondary-text-color: #94a3b8;
+    --card-bg-color: #1e293b;
+    --border-color: #334155;
+    --accent-color: #fb7185; /* Soft Rose */
+    --button-bg: #334155;
+    --button-hover-bg: #475569;
+    --table-header-bg: #111827;
+    --link-color: #38bdf8; /* Soft Sky Blue */
 }
 
 /* General Reset and Body Styling */
@@ -48,54 +49,56 @@ body {
 .landing-header {
     position: relative;
     text-align: center;
-    padding: 60px 20px 40px;
+    padding: 80px 20px 50px;
     background-color: var(--card-bg-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid var(--border-color);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .site-title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 2.75rem);
     color: var(--accent-color);
-    margin-bottom: 0.2em;
+    margin-bottom: 0.3em;
     font-weight: 700;
+    letter-spacing: -0.025em;
 }
 
 .site-description {
     font-size: 1.1rem;
     color: var(--secondary-text-color);
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
 /* Theme Toggle Styling */
 .icon-button {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 24px;
+    right: 24px;
     background-color: var(--button-bg);
     border: 1px solid var(--border-color);
     color: var(--text-color);
     padding: 12px;
-    border-radius: 50%;
+    border-radius: 10px; /* Slightly squircle for modern look */
     cursor: pointer;
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .icon-button:hover {
     background-color: var(--button-hover-bg);
-    transform: scale(1.05);
+    border-color: var(--secondary-text-color);
+    transform: translateY(-1px);
 }
 
 .icon-button i {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* Main Content Layout */
@@ -103,42 +106,42 @@ body {
     width: 100%;
     max-width: 1100px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 .content-section {
     background-color: var(--card-bg-color);
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
     transition: background-color 0.3s ease;
 }
 
 .content-section h2 {
-    color: var(--accent-color);
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 10px;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    font-weight: 600;
 }
 
 .content-intro {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
     color: var(--secondary-text-color);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 /* Table Styling */
 .version-table-wrapper {
     overflow-x: auto;
-    border-radius: 8px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
+    background-color: var(--card-bg-color);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--card-bg-color);
 }
 
 thead tr {
@@ -149,60 +152,73 @@ thead tr {
 th,
 td {
     text-align: left;
-    padding: 15px;
+    padding: 16px 20px;
     border-bottom: 1px solid var(--border-color);
 }
 
 th {
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
+    color: #cbd5e1; /* Light slate text for header */
 }
 
 /* Zebra striping */
 tbody tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 .dark-mode tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
 /* Hover effect */
 tbody tr:hover {
-    background-color: rgba(255, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.04);
 }
 
 /* Link Styling */
 a {
     color: var(--link-color);
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s;
+    font-weight: 500;
+    transition: all 0.2s;
+    padding: 2px 4px;
+    margin: -2px -4px;
+    border-radius: 4px;
 }
 
 a:hover {
+    background-color: rgba(var(--link-color), 0.1);
     color: var(--accent-color);
-    text-decoration: underline;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .landing-header {
-        padding: 80px 15px 30px;
+        padding: 90px 20px 40px;
     }
 
     .icon-button {
-        top: 15px;
-        right: 15px;
+        top: 20px;
+        right: 20px;
     }
 
     .content-section {
-        padding: 20px;
+        padding: 24px 16px;
     }
 
     .container {
-        margin: 20px auto;
+        margin: 24px auto;
+    }
+
+    th, td {
+        padding: 12px 14px;
+        font-size: 0.9rem;
     }
 }
