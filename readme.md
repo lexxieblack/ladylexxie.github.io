@@ -1,13 +1,39 @@
-### Choose your loader's version:
+## Lexxie's Minecraft Javadocs
 
-| Minecraft | NeoForge                                        | Fabric API                                                            | Forge                                       |
-| :-------: | :---------------------------------------------: | :-------------------------------------------------------------------: | :-----------------------------------------: |
-| 26.1      | [26.1.0.1](https://lexxie.dev/neoforge/26.1/)   | [0.144.3](https://maven.fabricmc.net/docs/fabric-api-0.144.3+26.1/)   | -                                           |
-| 1.21.1    | [21.1.168](https://lexxie.dev/neoforge/1.21.1/) | [0.115.6](https://maven.fabricmc.net/docs/fabric-api-0.115.6+1.21.1/) | -                                           |
-| 1.20.4    | [20.4.159](https://lexxie.dev/neoforge/1.20.4/) | [0.96.1](https://maven.fabricmc.net/docs/fabric-api-0.96.1+1.20.4/)   | [49.0.9](https://lexxie.dev/forge/1.20.4/)  |
-| 1.20.1    |                                                 | [0.91.1](https://maven.fabricmc.net/docs/fabric-api-0.91.1+1.20.1/)   | [47.2.17](https://lexxie.dev/forge/1.20.1/) |
-| 1.19.2    |                                                 | [0.77.0](https://maven.fabricmc.net/docs/fabric-api-0.77.0+1.19.2/)   | [43.3.0](https://lexxie.dev/forge/1.19.2/)  |
-| 1.18.2    |                                                 | [0.77.0](https://maven.fabricmc.net/docs/fabric-api-0.77.0+1.18.2/)   | [40.2.10](https://lexxie.dev/forge/1.18.2/) |
-| 1.16.5    |                                                 | [0.42.0](https://maven.fabricmc.net/docs/fabric-api-0.42.0+1.16/)     | [36.2.39](https://lexxie.dev/forge/1.16.5/) |
+A central hub for accessing Javadocs across various Minecraft versions and mod loaders (NeoForge, Fabric, and Forge). This project provides a clean, responsive interface with a dynamic data-loading system and theme support.
 
-### Updated 25/03/26
+### Features
+
+- **Dynamic Data Loading:** Versions are fetched from a central versions.json file, making it easy to update without touching HTML.
+- **Refined UI/UX:** Professional "Slate & Crimson" color palette designed for high legibility and reduced eye strain.
+- **Adaptive Theme:** Supports Light and Dark modes with persistent storage (saves your preference via localStorage).
+- **Responsive Design:** Fully functional on mobile, tablet, and desktop devices.
+- **GitHub Pages Ready:** Optimized for hosting as a static site.
+
+### Project Structure
+
+```
+├── index.html      # Main page structure
+├── styles.css      # Custom "Slate & Crimson" theme styles
+├── script.js       # Dynamic table loader and theme logic
+└── versions.json   # Central registry for all Minecraft versions
+```
+
+### How to Add New Versions
+
+To update the table simply add a new entry to the versions.json file following this format:
+
+```json
+{
+  "minecraft": "1.21.1",
+  "neoforge": { "version": "21.1.168", "url": "https://url-to-docs" },
+  "fabric": { "version": "0.115.6", "url": "https://url-to-docs" },
+  "forge": null
+}
+```
+
+If a loader is not available for a specific version, set its value to null.
+The version field is the text displayed in the table.
+The url field is where the user is directed when they click the version.
+
+*Maintained with ❤️ for the Minecraft Modding Community.*
