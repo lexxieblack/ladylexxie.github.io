@@ -1,0 +1,208 @@
+/*
+ * CSS Variables setup for theme management
+ * Default theme (Light Mode)
+ */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --secondary-text-color: #555;
+    --card-bg-color: #ffffff;
+    --border-color: #ddd;
+    --accent-color: #ff0000;
+    --button-bg: #ffffff;
+    --button-hover-bg: #f0f0f0;
+    --table-header-bg: #ff0000;
+    --link-color: #2196F3;
+}
+
+/* Dark Mode Overrides */
+.dark-mode {
+    --bg-color: #1a222c;
+    --text-color: #ffffff;
+    --secondary-text-color: #b0b0b0;
+    --card-bg-color: #242e3d;
+    --border-color: #3d4b5f;
+    --button-bg: #2c3a4d;
+    --button-hover-bg: #3d4b5f;
+    --table-header-bg: #d32f2f;
+    --link-color: #64b5f6;
+}
+
+/* General Reset and Body Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+.landing-header {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px 40px;
+    background-color: var(--card-bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.site-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--accent-color);
+    margin-bottom: 0.2em;
+    font-weight: 700;
+}
+
+.site-description {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Theme Toggle Styling */
+.icon-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--button-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+}
+
+.icon-button i {
+    font-size: 1.2rem;
+}
+
+/* Main Content Layout */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content-section {
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease;
+}
+
+.content-section h2 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.content-intro {
+    margin-bottom: 30px;
+    color: var(--secondary-text-color);
+    font-size: 1.1rem;
+}
+
+/* Table Styling */
+.version-table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg-color);
+}
+
+thead tr {
+    background-color: var(--table-header-bg);
+    color: #ffffff;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+/* Zebra striping */
+tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark-mode tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Hover effect */
+tbody tr:hover {
+    background-color: rgba(255, 0, 0, 0.05);
+}
+
+/* Link Styling */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .landing-header {
+        padding: 80px 15px 30px;
+    }
+
+    .icon-button {
+        top: 15px;
+        right: 15px;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .container {
+        margin: 20px auto;
+    }
+}
