@@ -81,8 +81,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#geometry()" tabindex="0">geometry()</a></li>
 <li><a href="#guiLight()" tabindex="0">guiLight()</a></li>
 <li><a href="#bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName)" tabindex="0">bake(TextureSlots, ModelBaker, ModelState, ModelDebugName)</a></li>
+<li><a href="#bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName,net.minecraft.util.context.ContextMap)" tabindex="0">bake(TextureSlots, ModelBaker, ModelState, ModelDebugName, ContextMap)</a></li>
 <li><a href="#bakeExtrudedSprite(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo)" tabindex="0">bakeExtrudedSprite(QuadCollection.Builder, ModelBaker.Interner, ModelState, BakedQuad.MaterialInfo)</a></li>
+<li><a href="#bakeExtrudedSprite(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)" tabindex="0">bakeExtrudedSprite(QuadCollection.Builder, ModelBaker.Interner, ModelState, BakedQuad.MaterialInfo, ExtraFaceData)</a></li>
 <li><a href="#bakeSideFaces(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo)" tabindex="0">bakeSideFaces(QuadCollection.Builder, ModelBaker.Interner, ModelState, BakedQuad.MaterialInfo)</a></li>
+<li><a href="#bakeSideFaces(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)" tabindex="0">bakeSideFaces(QuadCollection.Builder, ModelBaker.Interner, ModelState, BakedQuad.MaterialInfo, ExtraFaceData)</a></li>
 <li><a href="#getSideFaces(net.minecraft.client.renderer.texture.SpriteContents)" tabindex="0">getSideFaces(SpriteContents)</a></li>
 <li><a href="#checkTransition(net.minecraft.client.resources.model.cuboid.ItemModelGenerator.SideDirection,java.util.Set,net.minecraft.client.renderer.texture.SpriteContents,int,int,int,int,int)" tabindex="0">checkTransition(ItemModelGenerator.SideDirection, Set, SpriteContents, int, int, int, int, int)</a></li>
 <li><a href="#isTransparent(net.minecraft.client.renderer.texture.SpriteContents,int,int,int,int,int)" tabindex="0">isTransparent(SpriteContents, int, int, int, int, int)</a></li>
@@ -196,32 +199,65 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../geometry/QuadCollection.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName)" class="member-name-link">bake</a><wbr>(<a href="../sprite/TextureSlots.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots</a>&nbsp;textureSlots,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>private static <a href="../geometry/QuadCollection.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName)" class="member-name-link">bake</a><wbr>(<a href="../sprite/TextureSlots.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots</a>&nbsp;textureSlots,
  <a href="../ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;modelBaker,
  <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
  <a href="../ModelDebugName.html" title="interface in net.minecraft.client.resources.model">ModelDebugName</a>&nbsp;name)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bakeExtrudedSprite(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo)" class="member-name-link">bakeExtrudedSprite</a><wbr>(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
- <a href="../ModelBaker.Interner.html" title="interface in net.minecraft.client.resources.model">ModelBaker.Interner</a>&nbsp;interner,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Neo: use <a href="#bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName,net.minecraft.util.context.ContextMap)"><code>bake(TextureSlots, ModelBaker, ModelState, ModelDebugName, net.minecraft.util.context.ContextMap)</code></a> instead</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../geometry/QuadCollection.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName,net.minecraft.util.context.ContextMap)" class="member-name-link">bake</a><wbr>(<a href="../sprite/TextureSlots.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots</a>&nbsp;textureSlots,
+ <a href="../ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;modelBaker,
  <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
- <a href="../geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;materialInfo)</code></div>
+ <a href="../ModelDebugName.html" title="interface in net.minecraft.client.resources.model">ModelDebugName</a>&nbsp;name,
+ <a href="../../../../util/context/ContextMap.html" title="class in net.minecraft.util.context">ContextMap</a>&nbsp;additionalProperties)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bakeSideFaces(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo)" class="member-name-link">bakeSideFaces</a><wbr>(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>private static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#bakeExtrudedSprite(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo)" class="member-name-link">bakeExtrudedSprite</a><wbr>(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
  <a href="../ModelBaker.Interner.html" title="interface in net.minecraft.client.resources.model">ModelBaker.Interner</a>&nbsp;interner,
  <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
  <a href="../geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;materialInfo)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Neo: use <a href="#bakeExtrudedSprite(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)"><code>bakeExtrudedSprite(QuadCollection.Builder, ModelBaker.Interner, ModelState, BakedQuad.MaterialInfo, net.neoforged.neoforge.client.model.ExtraFaceData)</code></a> instead</div>
+</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkTransition(net.minecraft.client.resources.model.cuboid.ItemModelGenerator.SideDirection,java.util.Set,net.minecraft.client.renderer.texture.SpriteContents,int,int,int,int,int)" class="member-name-link">checkTransition</a><wbr>(<a href="ItemModelGenerator.SideDirection.html" title="enum class in net.minecraft.client.resources.model.cuboid">ItemModelGenerator.SideDirection</a>&nbsp;facing,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bakeExtrudedSprite(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)" class="member-name-link">bakeExtrudedSprite</a><wbr>(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
+ <a href="../ModelBaker.Interner.html" title="interface in net.minecraft.client.resources.model">ModelBaker.Interner</a>&nbsp;interner,
+ <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ <a href="../geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;materialInfo,
+ <a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#bakeSideFaces(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo)" class="member-name-link">bakeSideFaces</a><wbr>(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
+ <a href="../ModelBaker.Interner.html" title="interface in net.minecraft.client.resources.model">ModelBaker.Interner</a>&nbsp;interner,
+ <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ <a href="../geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;materialInfo)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Neo: use <a href="#bakeSideFaces(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)"><code>bakeSideFaces(QuadCollection.Builder, ModelBaker.Interner, ModelState, BakedQuad.MaterialInfo, net.neoforged.neoforge.client.model.ExtraFaceData)</code></a> instead</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bakeSideFaces(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)" class="member-name-link">bakeSideFaces</a><wbr>(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
+ <a href="../ModelBaker.Interner.html" title="interface in net.minecraft.client.resources.model">ModelBaker.Interner</a>&nbsp;interner,
+ <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ <a href="../geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;materialInfo,
+ <a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkTransition(net.minecraft.client.resources.model.cuboid.ItemModelGenerator.SideDirection,java.util.Set,net.minecraft.client.renderer.texture.SpriteContents,int,int,int,int,int)" class="member-name-link">checkTransition</a><wbr>(<a href="ItemModelGenerator.SideDirection.html" title="enum class in net.minecraft.client.resources.model.cuboid">ItemModelGenerator.SideDirection</a>&nbsp;facing,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="ItemModelGenerator.SideFace.html" title="class in net.minecraft.client.resources.model.cuboid">ItemModelGenerator.SideFace</a>&gt;&nbsp;sideFaces,
  <a href="../../../renderer/texture/SpriteContents.html" title="class in net.minecraft.client.renderer.texture">SpriteContents</a>&nbsp;sprite,
  int&nbsp;frame,
@@ -229,27 +265,27 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
  int&nbsp;y,
  int&nbsp;width,
  int&nbsp;height)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../geometry/UnbakedGeometry.html" title="interface in net.minecraft.client.resources.model.geometry">UnbakedGeometry</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#geometry()" class="member-name-link">geometry</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="ItemModelGenerator.SideFace.html" title="class in net.minecraft.client.resources.model.cuboid">ItemModelGenerator.SideFace</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSideFaces(net.minecraft.client.renderer.texture.SpriteContents)" class="member-name-link">getSideFaces</a><wbr>(<a href="../../../renderer/texture/SpriteContents.html" title="class in net.minecraft.client.renderer.texture">SpriteContents</a>&nbsp;sprite)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../UnbakedModel.GuiLight.html" title="enum class in net.minecraft.client.resources.model">UnbakedModel.GuiLight</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#guiLight()" class="member-name-link">guiLight</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isTransparent(net.minecraft.client.renderer.texture.SpriteContents,int,int,int,int,int)" class="member-name-link">isTransparent</a><wbr>(<a href="../../../renderer/texture/SpriteContents.html" title="class in net.minecraft.client.renderer.texture">SpriteContents</a>&nbsp;sprite,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../geometry/UnbakedGeometry.html" title="interface in net.minecraft.client.resources.model.geometry">UnbakedGeometry</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#geometry()" class="member-name-link">geometry</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="ItemModelGenerator.SideFace.html" title="class in net.minecraft.client.resources.model.cuboid">ItemModelGenerator.SideFace</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSideFaces(net.minecraft.client.renderer.texture.SpriteContents)" class="member-name-link">getSideFaces</a><wbr>(<a href="../../../renderer/texture/SpriteContents.html" title="class in net.minecraft.client.renderer.texture">SpriteContents</a>&nbsp;sprite)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../UnbakedModel.GuiLight.html" title="enum class in net.minecraft.client.resources.model">UnbakedModel.GuiLight</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#guiLight()" class="member-name-link">guiLight</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isTransparent(net.minecraft.client.renderer.texture.SpriteContents,int,int,int,int,int)" class="member-name-link">isTransparent</a><wbr>(<a href="../../../renderer/texture/SpriteContents.html" title="class in net.minecraft.client.renderer.texture">SpriteContents</a>&nbsp;sprite,
  int&nbsp;frame,
  int&nbsp;x,
  int&nbsp;y,
  int&nbsp;width,
  int&nbsp;height)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#textureSlots()" class="member-name-link">textureSlots</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#textureSlots()" class="member-name-link">textureSlots</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -425,10 +461,26 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
 <section class="detail" id="bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName)">
 <h3>bake</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../geometry/QuadCollection.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection</a></span>&nbsp;<span class="element-name">bake</span><wbr><span class="parameters">(<a href="../sprite/TextureSlots.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots</a>&nbsp;textureSlots,
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../geometry/QuadCollection.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection</a></span>&nbsp;<span class="element-name">bake</span><wbr><span class="parameters">(<a href="../sprite/TextureSlots.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots</a>&nbsp;textureSlots,
  <a href="../ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;modelBaker,
  <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
  <a href="../ModelDebugName.html" title="interface in net.minecraft.client.resources.model">ModelDebugName</a>&nbsp;name)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Neo: use <a href="#bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName,net.minecraft.util.context.ContextMap)"><code>bake(TextureSlots, ModelBaker, ModelState, ModelDebugName, net.minecraft.util.context.ContextMap)</code></a> instead</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName,net.minecraft.util.context.ContextMap)">
+<h3>bake</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../geometry/QuadCollection.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection</a></span>&nbsp;<span class="element-name">bake</span><wbr><span class="parameters">(<a href="../sprite/TextureSlots.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots</a>&nbsp;textureSlots,
+ <a href="../ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;modelBaker,
+ <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ <a href="../ModelDebugName.html" title="interface in net.minecraft.client.resources.model">ModelDebugName</a>&nbsp;name,
+ <a href="../../../../util/context/ContextMap.html" title="class in net.minecraft.util.context">ContextMap</a>&nbsp;additionalProperties)</span></div>
 </div>
 </section>
 </li>
@@ -436,10 +488,26 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
 <section class="detail" id="bakeExtrudedSprite(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo)">
 <h3>bakeExtrudedSprite</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bakeExtrudedSprite</span><wbr><span class="parameters">(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bakeExtrudedSprite</span><wbr><span class="parameters">(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
  <a href="../ModelBaker.Interner.html" title="interface in net.minecraft.client.resources.model">ModelBaker.Interner</a>&nbsp;interner,
  <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
  <a href="../geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;materialInfo)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Neo: use <a href="#bakeExtrudedSprite(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)"><code>bakeExtrudedSprite(QuadCollection.Builder, ModelBaker.Interner, ModelState, BakedQuad.MaterialInfo, net.neoforged.neoforge.client.model.ExtraFaceData)</code></a> instead</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bakeExtrudedSprite(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)">
+<h3>bakeExtrudedSprite</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bakeExtrudedSprite</span><wbr><span class="parameters">(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
+ <a href="../ModelBaker.Interner.html" title="interface in net.minecraft.client.resources.model">ModelBaker.Interner</a>&nbsp;interner,
+ <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ <a href="../geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;materialInfo,
+ <a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</span></div>
 </div>
 </section>
 </li>
@@ -447,10 +515,26 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
 <section class="detail" id="bakeSideFaces(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo)">
 <h3>bakeSideFaces</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bakeSideFaces</span><wbr><span class="parameters">(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bakeSideFaces</span><wbr><span class="parameters">(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
  <a href="../ModelBaker.Interner.html" title="interface in net.minecraft.client.resources.model">ModelBaker.Interner</a>&nbsp;interner,
  <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
  <a href="../geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;materialInfo)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Neo: use <a href="#bakeSideFaces(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)"><code>bakeSideFaces(QuadCollection.Builder, ModelBaker.Interner, ModelState, BakedQuad.MaterialInfo, net.neoforged.neoforge.client.model.ExtraFaceData)</code></a> instead</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bakeSideFaces(net.minecraft.client.resources.model.geometry.QuadCollection.Builder,net.minecraft.client.resources.model.ModelBaker.Interner,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.neoforged.neoforge.client.model.ExtraFaceData)">
+<h3>bakeSideFaces</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bakeSideFaces</span><wbr><span class="parameters">(<a href="../geometry/QuadCollection.Builder.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection.Builder</a>&nbsp;builder,
+ <a href="../ModelBaker.Interner.html" title="interface in net.minecraft.client.resources.model">ModelBaker.Interner</a>&nbsp;interner,
+ <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ <a href="../geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;materialInfo,
+ <a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</span></div>
 </div>
 </section>
 </li>

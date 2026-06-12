@@ -66,6 +66,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#registerEntityModifier(com.google.common.reflect.TypeToken,java.util.function.BiConsumer)" tabindex="0">registerEntityModifier(TypeToken, BiConsumer)</a></li>
 <li><a href="#registerEntityModifier(java.lang.Class,java.util.function.BiConsumer)" tabindex="0">registerEntityModifier(Class, BiConsumer)</a></li>
+<li><a href="#registerAvatarEntityModifier(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)" tabindex="0">registerAvatarEntityModifier(AvatarRenderStateModifier)</a></li>
+<li><a href="#coerce(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)" tabindex="0">coerce(AvatarRenderStateModifier)</a></li>
 <li><a href="#registerMapModifier(java.util.function.BiConsumer)" tabindex="0">registerMapModifier(BiConsumer)</a></li>
 <li><a href="#registerMapDecorationModifier(net.minecraft.resources.ResourceKey,net.neoforged.neoforge.client.renderstate.MapDecorationRenderStateModifier)" tabindex="0">registerMapDecorationModifier(ResourceKey, MapDecorationRenderStateModifier)</a></li>
 <li><a href="#ensureParametersMatchBounds(com.google.common.reflect.TypeToken)" tabindex="0">ensureParametersMatchBounds(TypeToken)</a></li>
@@ -140,9 +142,17 @@ custom rendering with objects that are not your own.
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ensureParametersMatchBounds(com.google.common.reflect.TypeToken)" class="member-name-link">ensureParametersMatchBounds</a><wbr>(com.google.common.reflect.TypeToken&lt;? extends <a href="../../../../minecraft/client/renderer/entity/EntityRenderer.html" title="class in net.minecraft.client.renderer.entity">EntityRenderer</a>&lt;? extends <a href="../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>, ? extends <a href="../../../../minecraft/client/renderer/entity/state/EntityRenderState.html" title="class in net.minecraft.client.renderer.entity.state">EntityRenderState</a>&gt;&gt;&nbsp;baseRenderer)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;T extends <a href="../../../../minecraft/world/entity/Avatar.html" title="class in net.minecraft.world.entity">Avatar</a> &amp; <a href="../../../../minecraft/client/entity/ClientAvatarEntity.html" title="interface in net.minecraft.client.entity">ClientAvatarEntity</a>&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a><wbr>&lt;?,<wbr>?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#coerce(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)" class="member-name-link">coerce</a><wbr>(<a href="AvatarRenderStateModifier.html" title="class in net.neoforged.neoforge.client.renderstate">AvatarRenderStateModifier</a>&nbsp;modifier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ensureParametersMatchBounds(com.google.common.reflect.TypeToken)" class="member-name-link">ensureParametersMatchBounds</a><wbr>(com.google.common.reflect.TypeToken&lt;? extends <a href="../../../../minecraft/client/renderer/entity/EntityRenderer.html" title="class in net.minecraft.client.renderer.entity">EntityRenderer</a>&lt;? extends <a href="../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>, ? extends <a href="../../../../minecraft/client/renderer/entity/state/EntityRenderState.html" title="class in net.minecraft.client.renderer.entity.state">EntityRenderState</a>&gt;&gt;&nbsp;baseRenderer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAvatarEntityModifier(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)" class="member-name-link">registerAvatarEntityModifier</a><wbr>(<a href="AvatarRenderStateModifier.html" title="class in net.neoforged.neoforge.client.renderstate">AvatarRenderStateModifier</a>&nbsp;modifier)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Convenience method for <a href="../../../../minecraft/client/renderer/entity/player/AvatarRenderer.html" title="class in net.minecraft.client.renderer.entity.player"><code>AvatarRenderer</code></a>s to work around issues with generics inference and type safety with intersection types.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;E extends <a href="../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>, S extends <a href="../../../../minecraft/client/renderer/entity/state/EntityRenderState.html" title="class in net.minecraft.client.renderer.entity.state">EntityRenderState</a>&gt;<br>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerEntityModifier(com.google.common.reflect.TypeToken,java.util.function.BiConsumer)" class="member-name-link">registerEntityModifier</a><wbr>(com.google.common.reflect.TypeToken&lt;? extends <a href="../../../../minecraft/client/renderer/entity/EntityRenderer.html" title="class in net.minecraft.client.renderer.entity">EntityRenderer</a>&lt;? extends E, ? extends S&gt;&gt;&nbsp;baseRenderer,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;E,<wbr>S&gt;&nbsp;modifier)</code></div>
@@ -259,6 +269,35 @@ will also have this modifier applied.
 <dd><code>baseRenderer</code> - Entity renderer class. Any subclasses will also apply this modifier.</dd>
 <dd><code>modifier</code> - The function for modifying the <a href="../../../../minecraft/client/renderer/entity/state/EntityRenderState.html" title="class in net.minecraft.client.renderer.entity.state"><code>EntityRenderState</code></a> and adding custom render data.</dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="registerAvatarEntityModifier(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)">
+<h3>registerAvatarEntityModifier</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerAvatarEntityModifier</span><wbr><span class="parameters">(<a href="AvatarRenderStateModifier.html" title="class in net.neoforged.neoforge.client.renderstate">AvatarRenderStateModifier</a>&nbsp;modifier)</span></div>
+<div class="block"><p>Convenience method for <a href="../../../../minecraft/client/renderer/entity/player/AvatarRenderer.html" title="class in net.minecraft.client.renderer.entity.player"><code>AvatarRenderer</code></a>s to work around issues with generics inference and type safety with intersection types.
+Registers a render state modifier for <a href="../../../../minecraft/client/renderer/entity/state/EntityRenderState.html" title="class in net.minecraft.client.renderer.entity.state"><code>EntityRenderState</code></a>s which are run after all vanilla data is
+extracted. Can add custom data to the map using <a href="BaseRenderState.html#setRenderData(net.minecraft.util.context.ContextKey,T)"><code>BaseRenderState.setRenderData(ContextKey, Object)</code></a>.
+Any subclasses of the passed renderer class will also have this modifier applied.</p>
+<pre><code>event.registerAvatarEntityModifier(new AvatarRenderStateModifier() {
+    @Override
+    public &lt;T extends Avatar &amp; ClientAvatarEntity&gt; void accept(T avatar, AvatarRenderState renderState) {
+        . . .
+    }
+});
+</code></pre>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="coerce(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)">
+<h3>coerce</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="../../../../minecraft/world/entity/Avatar.html" title="class in net.minecraft.world.entity">Avatar</a> &amp; <a href="../../../../minecraft/client/entity/ClientAvatarEntity.html" title="interface in net.minecraft.client.entity">ClientAvatarEntity</a>&gt;</span>
+<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;?,<wbr>?&gt;</span>&nbsp;<span class="element-name">coerce</span><wbr><span class="parameters">(<a href="AvatarRenderStateModifier.html" title="class in net.neoforged.neoforge.client.renderstate">AvatarRenderStateModifier</a>&nbsp;modifier)</span></div>
 </div>
 </section>
 </li>

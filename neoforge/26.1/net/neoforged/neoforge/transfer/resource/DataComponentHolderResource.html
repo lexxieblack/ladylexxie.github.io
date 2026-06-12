@@ -80,7 +80,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="../../../../minecraft/core/component/DataComponentGetter.html" title="interface in net.minecraft.core.component">DataComponentGetter</a>, <a href="../../../../minecraft/core/component/DataComponentHolder.html" title="interface in net.minecraft.core.component">DataComponentHolder</a>, <a href="../../common/extensions/IDataComponentHolderExtension.html" title="interface in net.neoforged.neoforge.common.extensions">IDataComponentHolderExtension</a>, <a href="RegisteredResource.html" title="interface in net.neoforged.neoforge.transfer.resource">RegisteredResource</a>&lt;T&gt;, <a href="Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>, <a href="../../../../minecraft/core/TypedInstance.html" title="interface in net.minecraft.core">TypedInstance</a>&lt;T&gt;</code></dd>
+<dd><code><a href="../../../../minecraft/core/component/DataComponentGetter.html" title="interface in net.minecraft.core.component">DataComponentGetter</a>, <a href="../../../../minecraft/core/component/DataComponentHolder.html" title="interface in net.minecraft.core.component">DataComponentHolder</a>, <a href="../../common/extensions/IDataComponentHolderExtension.html" title="interface in net.neoforged.neoforge.common.extensions">IDataComponentHolderExtension</a>, <a href="../../registries/datamaps/IWithData.html" title="interface in net.neoforged.neoforge.registries.datamaps">IWithData</a>&lt;T&gt;, <a href="RegisteredResource.html" title="interface in net.neoforged.neoforge.transfer.resource">RegisteredResource</a>&lt;T&gt;, <a href="Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>, <a href="../../../../minecraft/core/TypedInstance.html" title="interface in net.minecraft.core">TypedInstance</a>&lt;T&gt;, <a href="../../common/extensions/TypedInstanceExtension.html" title="interface in net.neoforged.neoforge.common.extensions">TypedInstanceExtension</a>&lt;T&gt;</code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
@@ -121,13 +121,13 @@ and methods that modify data components will simply return the empty resource in
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;D&gt;&nbsp;<a href="DataComponentHolderResource.html" title="interface in net.neoforged.neoforge.transfer.resource">DataComponentHolderResource</a><wbr>&lt;<a href="#type-param-T" title="type parameter in DataComponentHolderResource">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#with(java.util.function.Supplier,D)" class="member-name-link">with</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="../../../../minecraft/core/component/DataComponentType.html" title="interface in net.minecraft.core.component">DataComponentType</a>&lt;D&gt;&gt;&nbsp;type,
- D&nbsp;data)</code></div>
+ @Nullable D&nbsp;data)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a resource with the data component set to the given value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;D&gt;&nbsp;<a href="DataComponentHolderResource.html" title="interface in net.neoforged.neoforge.transfer.resource">DataComponentHolderResource</a><wbr>&lt;<a href="#type-param-T" title="type parameter in DataComponentHolderResource">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#with(net.minecraft.core.component.DataComponentType,D)" class="member-name-link">with</a><wbr>(<a href="../../../../minecraft/core/component/DataComponentType.html" title="interface in net.minecraft.core.component">DataComponentType</a>&lt;D&gt;&nbsp;type,
- D&nbsp;data)</code></div>
+ @Nullable D&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a resource with the data component set to the given value.</div>
 </div>
@@ -167,6 +167,9 @@ and methods that modify data components will simply return the empty resource in
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.core.TypedInstance">Methods inherited from interface&nbsp;<a href="../../../../minecraft/core/TypedInstance.html#method-summary" title="interface in net.minecraft.core">TypedInstance</a></h3>
 <code><a href="../../../../minecraft/core/TypedInstance.html#is(net.minecraft.core.Holder)" title="is(Holder)">is</a>, <a href="../../../../minecraft/core/TypedInstance.html#is(net.minecraft.core.HolderSet)" title="is(HolderSet)">is</a>, <a href="../../../../minecraft/core/TypedInstance.html#is(net.minecraft.resources.ResourceKey)" title="is(ResourceKey)">is</a>, <a href="../../../../minecraft/core/TypedInstance.html#is(net.minecraft.tags.TagKey)" title="is(TagKey)">is</a>, <a href="../../../../minecraft/core/TypedInstance.html#is(T)" title="is(T)">is</a>, <a href="../../../../minecraft/core/TypedInstance.html#tags()" title="tags()">tags</a>, <a href="../../../../minecraft/core/TypedInstance.html#typeHolder()" title="typeHolder()">typeHolder</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.neoforged.neoforge.common.extensions.TypedInstanceExtension">Methods inherited from interface&nbsp;<a href="../../common/extensions/TypedInstanceExtension.html#method-summary" title="interface in net.neoforged.neoforge.common.extensions">TypedInstanceExtension</a></h3>
+<code><a href="../../common/extensions/TypedInstanceExtension.html#getData(net.neoforged.neoforge.registries.datamaps.DataMapType)" title="getData(DataMapType)">getData</a></code></div>
 </section>
 </li>
 </ul>
@@ -208,7 +211,7 @@ Equivalent to checking if the <a href="#getComponentsPatch()"><code>patch</code>
 <h3 id="with(net.minecraft.core.component.DataComponentType,java.lang.Object)">with</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="type-parameters">&lt;D&gt;</span>&nbsp;<span class="return-type"><a href="DataComponentHolderResource.html" title="interface in net.neoforged.neoforge.transfer.resource">DataComponentHolderResource</a>&lt;<a href="#type-param-T" title="type parameter in DataComponentHolderResource">T</a>&gt;</span>&nbsp;<span class="element-name">with</span><wbr><span class="parameters">(<a href="../../../../minecraft/core/component/DataComponentType.html" title="interface in net.minecraft.core.component">DataComponentType</a>&lt;D&gt;&nbsp;type,
- D&nbsp;data)</span></div>
+ @Nullable D&nbsp;data)</span></div>
 <div class="block">Returns a resource with the data component set to the given value.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
@@ -251,7 +254,7 @@ Equivalent to checking if the <a href="#getComponentsPatch()"><code>patch</code>
 <h3 id="with(java.util.function.Supplier,java.lang.Object)">with</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;D&gt;</span>&nbsp;<span class="return-type"><a href="DataComponentHolderResource.html" title="interface in net.neoforged.neoforge.transfer.resource">DataComponentHolderResource</a>&lt;<a href="#type-param-T" title="type parameter in DataComponentHolderResource">T</a>&gt;</span>&nbsp;<span class="element-name">with</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="../../../../minecraft/core/component/DataComponentType.html" title="interface in net.minecraft.core.component">DataComponentType</a>&lt;D&gt;&gt;&nbsp;type,
- D&nbsp;data)</span></div>
+ @Nullable D&nbsp;data)</span></div>
 <div class="block">Returns a resource with the data component set to the given value.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>

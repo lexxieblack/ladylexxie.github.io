@@ -60,13 +60,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#GSON" tabindex="0">GSON</a></li>
 <li><a href="#output" tabindex="0">output</a></li>
 <li><a href="#registriesLookup" tabindex="0">registriesLookup</a></li>
 <li><a href="#registries" tabindex="0">registries</a></li>
 <li><a href="#modid" tabindex="0">modid</a></li>
 <li><a href="#toSerialize" tabindex="0">toSerialize</a></li>
-<li><a href="#replace" tabindex="0">replace</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -76,7 +74,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#replacing()" tabindex="0">replacing()</a></li>
 <li><a href="#start()" tabindex="0">start()</a></li>
 <li><a href="#run(net.minecraft.data.CachedOutput)" tabindex="0">run(CachedOutput)</a></li>
 <li><a href="#run(net.minecraft.data.CachedOutput,net.minecraft.core.HolderLookup.Provider)" tabindex="0">run(CachedOutput, HolderLookup.Provider)</a></li>
@@ -105,7 +102,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">GlobalLootModifierProvider</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../../../minecraft/data/DataProvider.html" title="interface in net.minecraft.data">DataProvider</a></span></div>
-<div class="block">Provider for forge's GlobalLootModifier system. See <a href="../loot/LootModifier.html" title="class in net.neoforged.neoforge.common.loot"><code>LootModifier</code></a>
+<div class="block">Data Provider for the GlobalLootModifier system. See <a href="../loot/LootModifier.html" title="class in net.neoforged.neoforge.common.loot"><code>LootModifier</code></a>
 
 This provider only requires implementing <a href="#start()"><code>start()</code></a> and calling <a href="#add(java.lang.String,T,java.util.List)"><code>add(String, T, List)</code></a> from it.</div>
 </div>
@@ -130,23 +127,17 @@ This provider only requires implementing <a href="#start()"><code>start()</code>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final com.google.gson.Gson</code></div>
-<div class="col-second even-row-color"><code><a href="#GSON" class="member-name-link">GSON</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#modid" class="member-name-link">modid</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#modid" class="member-name-link">modid</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="../../../../minecraft/data/PackOutput.html" title="class in net.minecraft.data">PackOutput</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#output" class="member-name-link">output</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../minecraft/data/PackOutput.html" title="class in net.minecraft.data">PackOutput</a></code></div>
-<div class="col-second even-row-color"><code><a href="#output" class="member-name-link">output</a></code></div>
+<div class="col-first even-row-color"><code>protected <a href="../../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></code></div>
+<div class="col-second even-row-color"><code><a href="#registries" class="member-name-link">registries</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected <a href="../../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#registries" class="member-name-link">registries</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="../../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#registriesLookup" class="member-name-link">registriesLookup</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#replace" class="member-name-link">replace</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="../../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#registriesLookup" class="member-name-link">registriesLookup</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="../conditions/WithConditions.html" title="class in net.neoforged.neoforge.common.conditions">WithConditions</a>&lt;<a href="../loot/IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#toSerialize" class="member-name-link">toSerialize</a></code></div>
@@ -200,21 +191,16 @@ This provider only requires implementing <a href="#start()"><code>start()</code>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replacing()" class="member-name-link">replacing</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the "replace" key in global_loot_modifiers to true.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(net.minecraft.data.CachedOutput)" class="member-name-link">run</a><wbr>(<a href="../../../../minecraft/data/CachedOutput.html" title="interface in net.minecraft.data">CachedOutput</a>&nbsp;cache)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(net.minecraft.data.CachedOutput,net.minecraft.core.HolderLookup.Provider)" class="member-name-link">run</a><wbr>(<a href="../../../../minecraft/data/CachedOutput.html" title="interface in net.minecraft.data">CachedOutput</a>&nbsp;cache,
- <a href="../../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;registries)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(net.minecraft.data.CachedOutput)" class="member-name-link">run</a><wbr>(<a href="../../../../minecraft/data/CachedOutput.html" title="interface in net.minecraft.data">CachedOutput</a>&nbsp;cache)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#start()" class="member-name-link">start</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(net.minecraft.data.CachedOutput,net.minecraft.core.HolderLookup.Provider)" class="member-name-link">run</a><wbr>(<a href="../../../../minecraft/data/CachedOutput.html" title="interface in net.minecraft.data">CachedOutput</a>&nbsp;cache,
+ <a href="../../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;registries)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#start()" class="member-name-link">start</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Call <a href="#add(java.lang.String,T,java.util.List)"><code>add(String, T, List)</code></a> here, which will pass in the necessary information to write the jsons.</div>
 </div>
 </div>
@@ -234,14 +220,6 @@ This provider only requires implementing <a href="#start()"><code>start()</code>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="GSON">
-<h3>GSON</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">com.google.gson.Gson</span>&nbsp;<span class="element-name">GSON</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="output">
 <h3>output</h3>
@@ -282,14 +260,6 @@ This provider only requires implementing <a href="#start()"><code>start()</code>
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="replace">
-<h3>replace</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">replace</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -316,15 +286,6 @@ This provider only requires implementing <a href="#start()"><code>start()</code>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="replacing()">
-<h3>replacing</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">replacing</span>()</div>
-<div class="block">Sets the "replace" key in global_loot_modifiers to true.</div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="start()">
 <h3>start</h3>

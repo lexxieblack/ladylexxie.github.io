@@ -79,6 +79,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#scanDirectory(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" tabindex="0">scanDirectory(ResourceManager, ResourceKey, DynamicOps, Codec, Map)</a></li>
 <li><a href="#scanDirectoryWithOptionalValues(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" tabindex="0">scanDirectoryWithOptionalValues(ResourceManager, ResourceKey, DynamicOps, Codec, Map)</a></li>
 <li><a href="#scanDirectory(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" tabindex="0">scanDirectory(ResourceManager, FileToIdConverter, DynamicOps, Codec, Map)</a></li>
+<li><a href="#scanDirectoryWithModifier(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map,java.util.function.Consumer)" tabindex="0">scanDirectoryWithModifier(ResourceManager, FileToIdConverter, DynamicOps, Codec, Map, Consumer)</a></li>
 <li><a href="#getPreparedPath(net.minecraft.resources.Identifier)" tabindex="0">getPreparedPath(Identifier)</a></li>
 </ol>
 </li>
@@ -205,12 +206,23 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, T&gt;&nbsp;result)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scanDirectoryWithOptionalValues(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" class="member-name-link">scanDirectoryWithOptionalValues</a><wbr>(<a href="ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scanDirectoryWithModifier(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map,java.util.function.Consumer)" class="member-name-link">scanDirectoryWithModifier</a><wbr>(<a href="ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
+ <a href="../../../resources/FileToIdConverter.html" title="class in net.minecraft.resources">FileToIdConverter</a>&nbsp;lister,
+ <a href="../../../../../com/mojang/serialization/DynamicOps.html" title="interface in com.mojang.serialization">DynamicOps</a>&lt;com.google.gson.JsonElement&gt;&nbsp;ops,
+ <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;T&gt;&nbsp;codec,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, T&gt;&nbsp;result,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;&gt;&nbsp;jsonConsumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Neo: Overload of <a href="#scanDirectory(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)"><code>scanDirectory(ResourceManager, FileToIdConverter, DynamicOps, Codec, Map)</code></a> with support
+for modifying the raw JSON in bulk before it is deserialized.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scanDirectoryWithOptionalValues(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" class="member-name-link">scanDirectoryWithOptionalValues</a><wbr>(<a href="ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
  <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;T&gt;&gt;&nbsp;registryKey,
  <a href="../../../../../com/mojang/serialization/DynamicOps.html" title="interface in com.mojang.serialization">DynamicOps</a>&lt;com.google.gson.JsonElement&gt;&nbsp;ops,
  <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;&gt;&nbsp;codec,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;&gt;&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -360,6 +372,24 @@ loadScripts(document, 'script');</script>
  <a href="../../../../../com/mojang/serialization/DynamicOps.html" title="interface in com.mojang.serialization">DynamicOps</a>&lt;com.google.gson.JsonElement&gt;&nbsp;ops,
  <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;T&gt;&nbsp;codec,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, T&gt;&nbsp;result)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="scanDirectoryWithModifier(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map,java.util.function.Consumer)">
+<h3>scanDirectoryWithModifier</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scanDirectoryWithModifier</span><wbr><span class="parameters">(<a href="ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
+ <a href="../../../resources/FileToIdConverter.html" title="class in net.minecraft.resources">FileToIdConverter</a>&nbsp;lister,
+ <a href="../../../../../com/mojang/serialization/DynamicOps.html" title="interface in com.mojang.serialization">DynamicOps</a>&lt;com.google.gson.JsonElement&gt;&nbsp;ops,
+ <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;T&gt;&nbsp;codec,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, T&gt;&nbsp;result,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;&gt;&nbsp;jsonConsumer)</span></div>
+<div class="block"><p>Neo: Overload of <a href="#scanDirectory(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)"><code>scanDirectory(ResourceManager, FileToIdConverter, DynamicOps, Codec, Map)</code></a> with support
+for modifying the raw JSON in bulk before it is deserialized.</p>
+<p>Implemented as a copy to ensure resources not using the modification support still use the shorter path
+without the intermediate storage.</p>
+</div>
 </div>
 </section>
 </li>

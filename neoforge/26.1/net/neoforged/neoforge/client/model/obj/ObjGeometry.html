@@ -63,6 +63,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#COLOR_WHITE" tabindex="0">COLOR_WHITE</a></li>
 <li><a href="#DEFAULT_COORDS" tabindex="0">DEFAULT_COORDS</a></li>
 <li><a href="#parts" tabindex="0">parts</a></li>
+<li><a href="#allComponentNames" tabindex="0">allComponentNames</a></li>
 <li><a href="#positions" tabindex="0">positions</a></li>
 <li><a href="#texCoords" tabindex="0">texCoords</a></li>
 <li><a href="#normals" tabindex="0">normals</a></li>
@@ -88,6 +89,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#parseVector3(java.lang.String%5B%5D)" tabindex="0">parseVector3(String[])</a></li>
 <li><a href="#parseVector4(java.lang.String%5B%5D)" tabindex="0">parseVector4(String[])</a></li>
 <li><a href="#bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName,net.minecraft.util.context.ContextMap)" tabindex="0">bake(TextureSlots, ModelBaker, ModelState, ModelDebugName, ContextMap)</a></li>
+<li><a href="#getRootComponentNames()" tabindex="0">getRootComponentNames()</a></li>
+<li><a href="#getConfigurableComponentNames()" tabindex="0">getConfigurableComponentNames()</a></li>
+<li><a href="#getRootParts()" tabindex="0">getRootParts()</a></li>
 <li><a href="#makeQuad(net.minecraft.client.resources.model.ModelBaker,int%5B%5D%5B%5D,int,org.joml.Vector4f,org.joml.Vector4f,net.minecraft.client.resources.model.sprite.Material.Baked,com.mojang.blaze3d.platform.Transparency,com.mojang.math.Transformation)" tabindex="0">makeQuad(ModelBaker, int[][], int, Vector4f, Vector4f, Material.Baked, Transparency, Transformation)</a></li>
 </ol>
 </li>
@@ -148,45 +152,48 @@ implements <a href="../ExtendedUnbakedGeometry.html" title="interface in net.neo
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#automaticCulling" class="member-name-link">automaticCulling</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.joml.Vector4f</code></div>
-<div class="col-second odd-row-color"><code><a href="#COLOR_WHITE" class="member-name-link">COLOR_WHITE</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;org.joml.Vector4f&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#colors" class="member-name-link">colors</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../../../minecraft/world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#DEFAULT_COORDS" class="member-name-link">DEFAULT_COORDS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#emissiveAmbient" class="member-name-link">emissiveAmbient</a></code></div>
+<div class="col-first even-row-color"><code>private @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#allComponentNames" class="member-name-link">allComponentNames</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#flipV" class="member-name-link">flipV</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#automaticCulling" class="member-name-link">automaticCulling</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second even-row-color"><code><a href="#modelLocation" class="member-name-link">modelLocation</a></code></div>
+<div class="col-first even-row-color"><code>private static final org.joml.Vector4f</code></div>
+<div class="col-second even-row-color"><code><a href="#COLOR_WHITE" class="member-name-link">COLOR_WHITE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#mtlOverride" class="member-name-link">mtlOverride</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;org.joml.Vector4f&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#colors" class="member-name-link">colors</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;org.joml.Vector3f&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#normals" class="member-name-link">normals</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final com.google.common.collect.Multimap<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="ObjGeometry.ModelGroup.html" title="class in net.neoforged.neoforge.client.model.obj">ObjGeometry.ModelGroup</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#parts" class="member-name-link">parts</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;org.joml.Vector3f&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#positions" class="member-name-link">positions</a></code></div>
+<div class="col-first even-row-color"><code>private static final <a href="../../../../../minecraft/world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a>[]</code></div>
+<div class="col-second even-row-color"><code><a href="#DEFAULT_COORDS" class="member-name-link">DEFAULT_COORDS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#shadeQuads" class="member-name-link">shadeQuads</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#emissiveAmbient" class="member-name-link">emissiveAmbient</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../../../minecraft/world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#texCoords" class="member-name-link">texCoords</a></code></div>
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#flipV" class="member-name-link">flipV</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#modelLocation" class="member-name-link">modelLocation</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#mtlOverride" class="member-name-link">mtlOverride</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;org.joml.Vector3f&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#normals" class="member-name-link">normals</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final com.google.common.collect.Multimap<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="ObjGeometry.ModelGroup.html" title="class in net.neoforged.neoforge.client.model.obj">ObjGeometry.ModelGroup</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#parts" class="member-name-link">parts</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;org.joml.Vector3f&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#positions" class="member-name-link">positions</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#shadeQuads" class="member-name-link">shadeQuads</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../../../minecraft/world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#texCoords" class="member-name-link">texCoords</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.resources.model.geometry.UnbakedGeometry">Fields inherited from interface&nbsp;<a href="../../../../../minecraft/client/resources/model/geometry/UnbakedGeometry.html#field-summary" title="interface in net.minecraft.client.resources.model.geometry">UnbakedGeometry</a></h3>
@@ -229,8 +236,21 @@ implements <a href="../ExtendedUnbakedGeometry.html" title="interface in net.neo
 <div class="block">Version of <a href="../../../../../minecraft/client/resources/model/geometry/UnbakedGeometry.html#bake(net.minecraft.client.resources.model.sprite.TextureSlots,net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.renderer.block.dispatch.ModelState,net.minecraft.client.resources.model.ModelDebugName)"><code>UnbakedGeometry.bake(TextureSlots, ModelBaker, ModelState, ModelDebugName)</code></a>
 that also receives additional properties sourced from <a href="../../extensions/UnbakedModelExtension.html#fillAdditionalProperties(net.minecraft.util.context.ContextMap.Builder)"><code>UnbakedModelExtension.fillAdditionalProperties(ContextMap.Builder)</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private org.apache.commons.lang3.tuple.Pair<wbr>&lt;<a href="../../../../../minecraft/client/resources/model/geometry/BakedQuad.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad</a>, <a href="../../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeQuad(net.minecraft.client.resources.model.ModelBaker,int%5B%5D%5B%5D,int,org.joml.Vector4f,org.joml.Vector4f,net.minecraft.client.resources.model.sprite.Material.Baked,com.mojang.blaze3d.platform.Transparency,com.mojang.math.Transformation)" class="member-name-link">makeQuad</a><wbr>(<a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConfigurableComponentNames()" class="member-name-link">getConfigurableComponentNames</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieve an unmodifiable set of all component names, for use with <a href="../NeoForgeModelProperties.html#PART_VISIBILITY"><code>NeoForgeModelProperties.PART_VISIBILITY</code></a></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRootComponentNames()" class="member-name-link">getRootComponentNames</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieve an unmodifiable set of the root part names, for use with <a href="../NeoForgeModelProperties.html#PART_VISIBILITY"><code>NeoForgeModelProperties.PART_VISIBILITY</code></a></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="ObjGeometry.ModelObject.html" title="class in net.neoforged.neoforge.client.model.obj">ObjGeometry.ModelObject</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRootParts()" class="member-name-link">getRootParts</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private org.apache.commons.lang3.tuple.Pair<wbr>&lt;<a href="../../../../../minecraft/client/resources/model/geometry/BakedQuad.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad</a>, @Nullable <a href="../../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeQuad(net.minecraft.client.resources.model.ModelBaker,int%5B%5D%5B%5D,int,org.joml.Vector4f,org.joml.Vector4f,net.minecraft.client.resources.model.sprite.Material.Baked,com.mojang.blaze3d.platform.Transparency,com.mojang.math.Transformation)" class="member-name-link">makeQuad</a><wbr>(<a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker,
  int[][]&nbsp;indices,
  int&nbsp;tintIndex,
  org.joml.Vector4f&nbsp;colorTint,
@@ -238,23 +258,23 @@ that also receives additional properties sourced from <a href="../../extensions/
  <a href="../../../../../minecraft/client/resources/model/sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a>&nbsp;material,
  <a href="../../../../../../com/mojang/blaze3d/platform/Transparency.html" title="class in com.mojang.blaze3d.platform">Transparency</a>&nbsp;transparency,
  <a href="../../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&nbsp;transform)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ObjGeometry.html" title="class in net.neoforged.neoforge.client.model.obj">ObjGeometry</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(net.neoforged.neoforge.client.model.obj.ObjTokenizer,net.neoforged.neoforge.client.model.obj.ObjGeometry.Settings)" class="member-name-link">parse</a><wbr>(<a href="ObjTokenizer.html" title="class in net.neoforged.neoforge.client.model.obj">ObjTokenizer</a>&nbsp;tokenizer,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ObjGeometry.html" title="class in net.neoforged.neoforge.client.model.obj">ObjGeometry</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(net.neoforged.neoforge.client.model.obj.ObjTokenizer,net.neoforged.neoforge.client.model.obj.ObjGeometry.Settings)" class="member-name-link">parse</a><wbr>(<a href="ObjTokenizer.html" title="class in net.neoforged.neoforge.client.model.obj">ObjTokenizer</a>&nbsp;tokenizer,
  <a href="ObjGeometry.Settings.html" title="class in net.neoforged.neoforge.client.model.obj">ObjGeometry.Settings</a>&nbsp;settings)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../../../minecraft/world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseVector2(java.lang.String%5B%5D)" class="member-name-link">parseVector2</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;line)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static org.joml.Vector3f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseVector3(java.lang.String%5B%5D)" class="member-name-link">parseVector3</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;line)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../../../minecraft/world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseVector2(java.lang.String%5B%5D)" class="member-name-link">parseVector2</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;line)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static org.joml.Vector4f</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseVector4(java.lang.String%5B%5D)" class="member-name-link">parseVector4</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;line)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static org.joml.Vector3f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseVector3(java.lang.String%5B%5D)" class="member-name-link">parseVector3</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;line)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static org.joml.Vector3f</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseVector4To3(java.lang.String%5B%5D)" class="member-name-link">parseVector4To3</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;line)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static org.joml.Vector4f</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseVector4(java.lang.String%5B%5D)" class="member-name-link">parseVector4</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;line)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static org.joml.Vector3f</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseVector4To3(java.lang.String%5B%5D)" class="member-name-link">parseVector4To3</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;line)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -296,6 +316,14 @@ that also receives additional properties sourced from <a href="../../extensions/
 <h3>parts</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">com.google.common.collect.Multimap&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="ObjGeometry.ModelGroup.html" title="class in net.neoforged.neoforge.client.model.obj">ObjGeometry.ModelGroup</a>&gt;</span>&nbsp;<span class="element-name">parts</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="allComponentNames">
+<h3>allComponentNames</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">allComponentNames</span></div>
 </div>
 </section>
 </li>
@@ -471,10 +499,36 @@ that also receives additional properties sourced from <a href="../../extensions/
 </section>
 </li>
 <li>
+<section class="detail" id="getRootComponentNames()">
+<h3>getRootComponentNames</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getRootComponentNames</span>()</div>
+<div class="block">Retrieve an unmodifiable set of the root part names, for use with <a href="../NeoForgeModelProperties.html#PART_VISIBILITY"><code>NeoForgeModelProperties.PART_VISIBILITY</code></a></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getConfigurableComponentNames()">
+<h3>getConfigurableComponentNames</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getConfigurableComponentNames</span>()</div>
+<div class="block">Retrieve an unmodifiable set of all component names, for use with <a href="../NeoForgeModelProperties.html#PART_VISIBILITY"><code>NeoForgeModelProperties.PART_VISIBILITY</code></a></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getRootParts()">
+<h3>getRootParts</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="ObjGeometry.ModelObject.html" title="class in net.neoforged.neoforge.client.model.obj">ObjGeometry.ModelObject</a>&gt;</span>&nbsp;<span class="element-name">getRootParts</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="makeQuad(net.minecraft.client.resources.model.ModelBaker,int[][],int,org.joml.Vector4f,org.joml.Vector4f,net.minecraft.client.resources.model.sprite.Material.Baked,com.mojang.blaze3d.platform.Transparency,com.mojang.math.Transformation)">
 <h3>makeQuad</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">org.apache.commons.lang3.tuple.Pair&lt;<a href="../../../../../minecraft/client/resources/model/geometry/BakedQuad.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad</a>, <a href="../../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&gt;</span>&nbsp;<span class="element-name">makeQuad</span><wbr><span class="parameters">(<a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker,
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">org.apache.commons.lang3.tuple.Pair&lt;<a href="../../../../../minecraft/client/resources/model/geometry/BakedQuad.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad</a>, @Nullable <a href="../../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&gt;</span>&nbsp;<span class="element-name">makeQuad</span><wbr><span class="parameters">(<a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker,
  int[][]&nbsp;indices,
  int&nbsp;tintIndex,
  org.joml.Vector4f&nbsp;colorTint,

@@ -85,6 +85,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#insertBefore(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,net.minecraft.world.item.CreativeModeTab.TabVisibility)" tabindex="0">insertBefore(ItemStack, ItemStack, CreativeModeTab.TabVisibility)</a></li>
 <li><a href="#insertFirst(net.minecraft.world.item.ItemStack,net.minecraft.world.item.CreativeModeTab.TabVisibility)" tabindex="0">insertFirst(ItemStack, CreativeModeTab.TabVisibility)</a></li>
 <li><a href="#remove(net.minecraft.world.item.ItemStack,net.minecraft.world.item.CreativeModeTab.TabVisibility)" tabindex="0">remove(ItemStack, CreativeModeTab.TabVisibility)</a></li>
+<li><a href="#removeIf(java.util.function.Predicate,net.minecraft.world.item.CreativeModeTab.TabVisibility)" tabindex="0">removeIf(Predicate, CreativeModeTab.TabVisibility)</a></li>
 <li><a href="#isParentTab(net.minecraft.world.item.CreativeModeTab.TabVisibility)" tabindex="0">isParentTab(CreativeModeTab.TabVisibility)</a></li>
 <li><a href="#isSearchTab(net.minecraft.world.item.CreativeModeTab.TabVisibility)" tabindex="0">isSearchTab(CreativeModeTab.TabVisibility)</a></li>
 <li><a href="#assertTargetExists(net.neoforged.neoforge.common.util.InsertableLinkedOpenCustomHashSet,net.minecraft.world.item.ItemStack)" tabindex="0">assertTargetExists(InsertableLinkedOpenCustomHashSet, ItemStack)</a></li>
@@ -114,11 +115,10 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">BuildCreativeModeTabContentsEvent</span>
 <span class="extends-implements">extends net.neoforged.bus.api.Event
 implements net.neoforged.fml.event.IModBusEvent, <a href="../../../minecraft/world/item/CreativeModeTab.Output.html" title="interface in net.minecraft.world.item">CreativeModeTab.Output</a></span></div>
-<div class="block">Fired when the contents of a specific creative mode tab are being populated in <a href="../../../minecraft/world/item/CreativeModeTab.html#buildContents(net.minecraft.world.item.CreativeModeTab.ItemDisplayParameters)"><code>CreativeModeTab.buildContents(CreativeModeTab.ItemDisplayParameters)</code></a>.
-<p>
-This event may be fired multiple times if the operator status of the local player or enabled feature flags changes.
-<p>
-In vanilla, this is only fired on the logical client, but mods may request creative mode tab contents on the server.</div>
+<div class="block"><p>Fired when the contents of a specific creative mode tab are being populated in <a href="../../../minecraft/world/item/CreativeModeTab.html#buildContents(net.minecraft.world.item.CreativeModeTab.ItemDisplayParameters)"><code>CreativeModeTab.buildContents(CreativeModeTab.ItemDisplayParameters)</code></a>.</p>
+<p>This event may be fired multiple times if the operator status of the local player or enabled feature flags changes.</p>
+<p>In vanilla, this is only fired on the logical client, but mods may request creative mode tab contents on the server.</p>
+</div>
 </div>
 </section>
 <section class="summary">
@@ -182,7 +182,7 @@ In vanilla, this is only fired on the logical client, but mods may request creat
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#accept(net.minecraft.world.item.ItemStack,net.minecraft.world.item.CreativeModeTab.TabVisibility)" class="member-name-link">accept</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;newEntry,
  <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Inserts the new stack at the end of the given tab at this point in time.</div>
+<div class="block">Inserts a new stack at the end of the given tab at this point in time.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#assertNewEntryDoesNotAlreadyExists(net.neoforged.neoforge.common.util.InsertableLinkedOpenCustomHashSet,net.minecraft.world.item.ItemStack)" class="member-name-link">assertNewEntryDoesNotAlreadyExists</a><wbr>(<a href="../common/util/InsertableLinkedOpenCustomHashSet.html" title="class in net.neoforged.neoforge.common.util">InsertableLinkedOpenCustomHashSet</a>&lt;<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;&nbsp;setToCheck,
@@ -197,19 +197,23 @@ In vanilla, this is only fired on the logical client, but mods may request creat
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../minecraft/world/flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFlags()" class="member-name-link">getFlags</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the enabled feature flags.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../minecraft/world/item/CreativeModeTab.ItemDisplayParameters.html" title="class in net.minecraft.world.item">CreativeModeTab.ItemDisplayParameters</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getParameters()" class="member-name-link">getParameters</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the item display parameters.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>it.unimi.dsi.fastutil.objects.ObjectSortedSet<wbr>&lt;<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getParentEntries()" class="member-name-link">getParentEntries</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">The current immutable ordered set of the parent tab entries in the order to be added to the Creative Menu.</div>
+<div class="block">Returns an unmodifiable view of the ordered set of the parent tab entries, in the order to be added to the creative menu..</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>it.unimi.dsi.fastutil.objects.ObjectSortedSet<wbr>&lt;<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSearchEntries()" class="member-name-link">getSearchEntries</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">The current immutable ordered set of the search tab entries in the order to be added to the Creative Menu.</div>
+<div class="block">Returns an unmodifiable view of the ordered set of the search tab entries, in the order to be added to the creative menu..</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../minecraft/world/item/CreativeModeTab.html" title="class in net.minecraft.world.item">CreativeModeTab</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTab()" class="member-name-link">getTab</a>()</code></div>
@@ -223,13 +227,15 @@ In vanilla, this is only fired on the logical client, but mods may request creat
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasPermissions()" class="member-name-link">hasPermissions</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the operator-only items should be shown.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insertAfter(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,net.minecraft.world.item.CreativeModeTab.TabVisibility)" class="member-name-link">insertAfter</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;existingEntry,
  <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;newEntry,
  <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Inserts the new entry after the specified existing entry.</div>
+<div class="block">Inserts a new stack after the specified existing entry.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insertBefore(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,net.minecraft.world.item.CreativeModeTab.TabVisibility)" class="member-name-link">insertBefore</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;existingEntry,
@@ -242,7 +248,7 @@ In vanilla, this is only fired on the logical client, but mods may request creat
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insertFirst(net.minecraft.world.item.ItemStack,net.minecraft.world.item.CreativeModeTab.TabVisibility)" class="member-name-link">insertFirst</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;newEntry,
  <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Inserts the new entry in the front of the tab's content.</div>
+<div class="block">Inserts a new stack at the front of the tab's content.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isParentTab(net.minecraft.world.item.CreativeModeTab.TabVisibility)" class="member-name-link">isParentTab</a><wbr>(<a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</code></div>
@@ -255,6 +261,12 @@ In vanilla, this is only fired on the logical client, but mods may request creat
  <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes an entry from the tab's content.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeIf(java.util.function.Predicate,net.minecraft.world.item.CreativeModeTab.TabVisibility)" class="member-name-link">removeIf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;&nbsp;predicate,
+ <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove all entries that match the given predicate from the tab's content.</div>
 </div>
 </div>
 </div>
@@ -376,6 +388,11 @@ In vanilla, this is only fired on the logical client, but mods may request creat
 <h3>getFlags</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../minecraft/world/flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a></span>&nbsp;<span class="element-name">getFlags</span>()</div>
+<div class="block">Returns the enabled feature flags.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the enabled feature flags</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -384,6 +401,11 @@ In vanilla, this is only fired on the logical client, but mods may request creat
 <h3>getParameters</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../minecraft/world/item/CreativeModeTab.ItemDisplayParameters.html" title="class in net.minecraft.world.item">CreativeModeTab.ItemDisplayParameters</a></span>&nbsp;<span class="element-name">getParameters</span>()</div>
+<div class="block">Returns the item display parameters.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the item display parameters</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -392,6 +414,17 @@ In vanilla, this is only fired on the logical client, but mods may request creat
 <h3>hasPermissions</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasPermissions</span>()</div>
+<div class="block">Returns whether the operator-only items should be shown.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>whether the operator-only items should be shown</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../minecraft/world/item/CreativeModeTabs.html#OP_BLOCKS"><code>CreativeModeTabs.OP_BLOCKS</code></a></li>
+</ul>
+</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -400,8 +433,11 @@ In vanilla, this is only fired on the logical client, but mods may request creat
 <h3>getParentEntries</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.ObjectSortedSet&lt;<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;</span>&nbsp;<span class="element-name">getParentEntries</span>()</div>
-<div class="block">The current immutable ordered set of the parent tab entries in the order to be added to the Creative Menu.
-Purely for querying to see what in it. Please use the other event methods for modifications.</div>
+<div class="block">Returns an unmodifiable view of the ordered set of the parent tab entries, in the order to be added to the creative menu..</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>an unmodifiable view of the ordered set of the parent tab entries, in the order to be added to the creative menu.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -410,8 +446,11 @@ Purely for querying to see what in it. Please use the other event methods for mo
 <h3>getSearchEntries</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.ObjectSortedSet&lt;<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;</span>&nbsp;<span class="element-name">getSearchEntries</span>()</div>
-<div class="block">The current immutable ordered set of the search tab entries in the order to be added to the Creative Menu.
-Purely for querying to see what in it. Please use the other event methods for modifications.</div>
+<div class="block">Returns an unmodifiable view of the ordered set of the search tab entries, in the order to be added to the creative menu..</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>an unmodifiable view of the ordered set of the search tab entries, in the order to be added to the creative menu.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -421,12 +460,15 @@ Purely for querying to see what in it. Please use the other event methods for mo
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">accept</span><wbr><span class="parameters">(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;newEntry,
  <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</span></div>
-<div class="block">Inserts the new stack at the end of the given tab at this point in time.</div>
+<div class="block">Inserts a new stack at the end of the given tab at this point in time.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../../minecraft/world/item/CreativeModeTab.Output.html#accept(net.minecraft.world.item.ItemStack,net.minecraft.world.item.CreativeModeTab.TabVisibility)">accept</a></code>&nbsp;in interface&nbsp;<code><a href="../../../minecraft/world/item/CreativeModeTab.Output.html" title="interface in net.minecraft.world.item">CreativeModeTab.Output</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>newEntry</code> - the entry to be added</dd>
+<dd><code>visibility</code> - the target tab visibility</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the new itemstack's count is not 1 or entry already was added to the tab previously.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the new stack's count is not 1, or the new stack already exists in the tab</dd>
 </dl>
 </div>
 </section>
@@ -438,11 +480,14 @@ Purely for querying to see what in it. Please use the other event methods for mo
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">insertAfter</span><wbr><span class="parameters">(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;existingEntry,
  <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;newEntry,
  <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</span></div>
-<div class="block">Inserts the new entry after the specified existing entry.</div>
+<div class="block">Inserts a new stack after the specified existing entry.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>existingEntry</code> - the existing entry</dd>
+<dd><code>newEntry</code> - the stack to be added (after the existing entry)</dd>
+<dd><code>visibility</code> - the target tab visibility</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the new itemstack's count is not 1 or target does not exist in set
-                                 OR if the existing entry is not found in the tab's lists.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the new stack's count is not 1, or if the new stack already exists in the tab, or if the existing entry is not found in the tab</dd>
 </dl>
 </div>
 </section>
@@ -456,9 +501,12 @@ Purely for querying to see what in it. Please use the other event methods for mo
  <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</span></div>
 <div class="block">Inserts the new entry before the specified existing entry.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>existingEntry</code> - the existing entry</dd>
+<dd><code>newEntry</code> - the stack to be added (before the existing entry)</dd>
+<dd><code>visibility</code> - the target tab visibility</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the new itemstack's count is not 1 or target does not exist in set
-                                 OR if the existing entry is not found in the tab's lists.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the new stack's count is not 1, or if the new stack already exists in the tab, or if the existing entry is not found in the tab</dd>
 </dl>
 </div>
 </section>
@@ -469,10 +517,13 @@ Purely for querying to see what in it. Please use the other event methods for mo
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">insertFirst</span><wbr><span class="parameters">(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;newEntry,
  <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</span></div>
-<div class="block">Inserts the new entry in the front of the tab's content.</div>
+<div class="block">Inserts a new stack at the front of the tab's content.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>newEntry</code> - the stack to be added</dd>
+<dd><code>visibility</code> - the target tab visibility</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the new itemstack's count is not 1 or entry already was added to the tab previously.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the new stack's count is not 1, or if the new stack already exists in the tab</dd>
 </dl>
 </div>
 </section>
@@ -484,6 +535,26 @@ Purely for querying to see what in it. Please use the other event methods for mo
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;existingEntry,
  <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</span></div>
 <div class="block">Removes an entry from the tab's content.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>existingEntry</code> - the stack to be removed</dd>
+<dd><code>visibility</code> - the target tab visibility</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeIf(java.util.function.Predicate,net.minecraft.world.item.CreativeModeTab.TabVisibility)">
+<h3>removeIf</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeIf</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;&nbsp;predicate,
+ <a href="../../../minecraft/world/item/CreativeModeTab.TabVisibility.html" title="enum class in net.minecraft.world.item">CreativeModeTab.TabVisibility</a>&nbsp;visibility)</span></div>
+<div class="block">Remove all entries that match the given predicate from the tab's content.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>predicate</code> - the item stack predicate</dd>
+<dd><code>visibility</code> - the target tab visibility</dd>
+</dl>
 </div>
 </section>
 </li>

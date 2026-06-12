@@ -80,8 +80,10 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><a href="#net.minecraft.world.timeline">net.minecraft.world.timeline</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#net.neoforged.neoforge.common.util">net.neoforged.neoforge.common.util</a></div>
+<div class="col-first odd-row-color"><a href="#net.neoforged.neoforge.common">net.neoforged.neoforge.common</a></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><a href="#net.neoforged.neoforge.common.util">net.neoforged.neoforge.common.util</a></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
@@ -324,15 +326,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">WorldClock.</span><code><a href="../WorldClock.html#DIRECT_CODEC" class="member-name-link">DIRECT_CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a><wbr>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">WorldClocks.</span><code><a href="../WorldClocks.html#OVERWORLD" class="member-name-link">OVERWORLD</a></code></div>
+<div class="col-first odd-row-color"><code>private final @Nullable <a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a><wbr>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ServerClockManager.ClockInstance.</span><code><a href="../ServerClockManager.ClockInstance.html#holder" class="member-name-link">holder</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="../../../network/RegistryFriendlyByteBuf.html" title="class in net.minecraft.network">RegistryFriendlyByteBuf</a>, <a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">WorldClock.</span><code><a href="../WorldClock.html#STREAM_CODEC" class="member-name-link">STREAM_CODEC</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a><wbr>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">WorldClocks.</span><code><a href="../WorldClocks.html#OVERWORLD" class="member-name-link">OVERWORLD</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a><wbr>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">WorldClocks.</span><code><a href="../WorldClocks.html#THE_END" class="member-name-link">THE_END</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="../../../network/RegistryFriendlyByteBuf.html" title="class in net.minecraft.network">RegistryFriendlyByteBuf</a>, <a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">WorldClock.</span><code><a href="../WorldClock.html#STREAM_CODEC" class="member-name-link">STREAM_CODEC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a><wbr>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">WorldClocks.</span><code><a href="../WorldClocks.html#THE_END" class="member-name-link">THE_END</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../package-summary.html">net.minecraft.world.clock</a> that return types with arguments of type <a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a></span></div>
 <div class="summary-table three-column-summary">
@@ -388,36 +393,39 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>long</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#getTotalTicks(net.minecraft.core.Holder)" class="member-name-link">getTotalTicks</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;definition)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#isAtTimeMarker(net.minecraft.core.Holder,net.minecraft.resources.ResourceKey)" class="member-name-link">isAtTimeMarker</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
- <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../ClockTimeMarker.html" title="class in net.minecraft.world.clock">ClockTimeMarker</a>&gt;&nbsp;timeMarkerId)</code></div>
+<div class="col-first odd-row-color"><code>private boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ServerClockManager.ClockInstance.</span><code><a href="../ServerClockManager.ClockInstance.html#hasTag(net.minecraft.tags.TagKey)" class="member-name-link">hasTag</a><wbr>(<a href="../../../tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;tag)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#modifyClock(net.minecraft.core.Holder,java.util.function.Consumer)" class="member-name-link">modifyClock</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#isAtTimeMarker(net.minecraft.core.Holder,net.minecraft.resources.ResourceKey)" class="member-name-link">isAtTimeMarker</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
+ <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../ClockTimeMarker.html" title="class in net.minecraft.world.clock">ClockTimeMarker</a>&gt;&nbsp;timeMarkerId)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#modifyClock(net.minecraft.core.Holder,java.util.function.Consumer)" class="member-name-link">modifyClock</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../ServerClockManager.ClockInstance.html" title="class in net.minecraft.world.clock">ServerClockManager.ClockInstance</a>&gt;&nbsp;action)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#moveToTimeMarker(net.minecraft.core.Holder,net.minecraft.resources.ResourceKey)" class="member-name-link">moveToTimeMarker</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#moveToTimeMarker(net.minecraft.core.Holder,net.minecraft.resources.ResourceKey)" class="member-name-link">moveToTimeMarker</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
  <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../ClockTimeMarker.html" title="class in net.minecraft.world.clock">ClockTimeMarker</a>&gt;&nbsp;timeMarkerId)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#setPaused(net.minecraft.core.Holder,boolean)" class="member-name-link">setPaused</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
- boolean&nbsp;paused)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>default void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ClockManager.</span><code><a href="../ClockManager.html#setRate(net.minecraft.core.Holder,float)" class="member-name-link">setRate</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;definition,
- float&nbsp;rate)</code></div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#setPaused(net.minecraft.core.Holder,boolean)" class="member-name-link">setPaused</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
+ boolean&nbsp;paused)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#setRate(net.minecraft.core.Holder,float)" class="member-name-link">setRate</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
+<div class="col-first even-row-color"><code>default void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ClockManager.</span><code><a href="../ClockManager.html#setRate(net.minecraft.core.Holder,float)" class="member-name-link">setRate</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;definition,
  float&nbsp;rate)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#setRate(net.minecraft.core.Holder,float)" class="member-name-link">setRate</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
+ float&nbsp;rate)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">This allows mods to set the rate at which a specific clock advances relative to game time.</div>
 </div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#setTotalTicks(net.minecraft.core.Holder,long)" class="member-name-link">setTotalTicks</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ServerClockManager.</span><code><a href="../ServerClockManager.html#setTotalTicks(net.minecraft.core.Holder,long)" class="member-name-link">setTotalTicks</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
  long&nbsp;totalTicks)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructor parameters in <a href="../package-summary.html">net.minecraft.world.clock</a> with type arguments of type <a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a></span></div>
 <div class="summary-table three-column-summary">
@@ -425,16 +433,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../ClockTimeMarker.html#%3Cinit%3E(net.minecraft.core.Holder,int,java.util.Optional,boolean)" class="member-name-link">ClockTimeMarker</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
+<div class="col-second even-row-color"><code><a href="../ServerClockManager.ClockInstance.html#%3Cinit%3E(net.minecraft.core.Holder)" class="member-name-link">ClockInstance</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;holder)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../ClockTimeMarker.html#%3Cinit%3E(net.minecraft.core.Holder,int,java.util.Optional,boolean)" class="member-name-link">ClockTimeMarker</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock,
  int&nbsp;ticks,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;periodTicks,
  boolean&nbsp;showInCommands)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Creates an instance of a <code>ClockTimeMarker</code> record class.</div>
 </div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../PackedClockStates.html#%3Cinit%3E(java.util.Map)" class="member-name-link">PackedClockStates</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;, <a href="../ClockState.html" title="class in net.minecraft.world.clock">ClockState</a>&gt;&nbsp;clocks)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../PackedClockStates.html#%3Cinit%3E(java.util.Map)" class="member-name-link">PackedClockStates</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;, <a href="../ClockState.html" title="class in net.minecraft.world.clock">ClockState</a>&gt;&nbsp;clocks)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Creates an instance of a <code>PackedClockStates</code> record class.</div>
 </div>
 </div>
@@ -627,6 +638,45 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;periodTicks,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../attribute/EnvironmentAttribute.html" title="class in net.minecraft.world.attribute">EnvironmentAttribute</a>&lt;?&gt;, <a href="../../timeline/AttributeTrack.html" title="class in net.minecraft.world.timeline">AttributeTrack</a>&lt;?,<wbr>?&gt;&gt;&nbsp;tracks,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../ClockTimeMarker.html" title="class in net.minecraft.world.clock">ClockTimeMarker</a>&gt;, <a href="../../timeline/Timeline.TimeMarkerInfo.html" title="class in net.minecraft.world.timeline">Timeline.TimeMarkerInfo</a>&gt;&nbsp;timeMarkers)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="net.neoforged.neoforge.common">
+<h2>Uses of <a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a> in <a href="../../../../neoforged/neoforge/common/package-summary.html">net.neoforged.neoforge.common</a></h2>
+<div class="caption"><span>Fields in <a href="../../../../neoforged/neoforge/common/package-summary.html">net.neoforged.neoforge.common</a> with type parameters of type <a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static final <a href="../../../tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a><wbr>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Tags.WorldClocks.</span><code><a href="../../../../neoforged/neoforge/common/Tags.WorldClocks.html#IGNORES_ADVANCE_TIME_RULE" class="member-name-link">IGNORES_ADVANCE_TIME_RULE</a></code></div>
+<div class="col-last even-row-color">
+<div class="block"><a href="../WorldClock.html" title="class in net.minecraft.world.clock">World Clocks</a> with this tag are exempt from pausing when <a href="../../level/gamerules/GameRules.html#ADVANCE_TIME"><code>GameRules.ADVANCE_TIME</code></a> is disabled.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../../tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a><wbr>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Tags.WorldClocks.</span><code><a href="../../../../neoforged/neoforge/common/Tags.WorldClocks.html#IGNORES_PAUSE_COMMAND" class="member-name-link">IGNORES_PAUSE_COMMAND</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block"><a href="../WorldClock.html" title="class in net.minecraft.world.clock">World Clocks</a> are disallowed from being paused via the <a href="../../../server/commands/TimeCommand.html" title="class in net.minecraft.server.commands"><code>TimeCommand</code></a>.</div>
+</div>
+</div>
+<div class="caption"><span>Methods in <a href="../../../../neoforged/neoforge/common/package-summary.html">net.neoforged.neoforge.common</a> that return types with arguments of type <a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>private static <a href="../../../tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a><wbr>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Tags.WorldClocks.</span><code><a href="../../../../neoforged/neoforge/common/Tags.WorldClocks.html#neoforgeTag(java.lang.String)" class="member-name-link">neoforgeTag</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+<div class="caption"><span>Method parameters in <a href="../../../../neoforged/neoforge/common/package-summary.html">net.neoforged.neoforge.common</a> with type arguments of type <a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CommonHooks.</span><code><a href="../../../../neoforged/neoforge/common/CommonHooks.html#throwIfIgnoresPausing(net.minecraft.core.Holder)" class="member-name-link">throwIfIgnoresPausing</a><wbr>(<a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>

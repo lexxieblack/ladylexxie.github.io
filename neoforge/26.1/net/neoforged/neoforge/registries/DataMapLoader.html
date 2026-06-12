@@ -63,24 +63,22 @@ loadScripts(document, 'script');</script>
 <li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
 <li><a href="#PATH" tabindex="0">PATH</a></li>
 <li><a href="#results" tabindex="0">results</a></li>
-<li><a href="#conditionContext" tabindex="0">conditionContext</a></li>
-<li><a href="#registryAccess" tabindex="0">registryAccess</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.RegistryAccess)" tabindex="0">DataMapLoader(ICondition.IContext, RegistryAccess)</a></li>
+<li><a href="#%3Cinit%3E()" tabindex="0">DataMapLoader()</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#reload(net.minecraft.server.packs.resources.PreparableReloadListener.SharedState,java.util.concurrent.Executor,net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier,java.util.concurrent.Executor)" tabindex="0">reload(PreparableReloadListener.SharedState, Executor, PreparableReloadListener.PreparationBarrier, Executor)</a></li>
-<li><a href="#apply()" tabindex="0">apply()</a></li>
-<li><a href="#apply(net.neoforged.neoforge.registries.BaseMappedRegistry,net.neoforged.neoforge.registries.DataMapLoader.LoadResult)" tabindex="0">apply(BaseMappedRegistry, DataMapLoader.LoadResult)</a></li>
+<li><a href="#apply(net.minecraft.core.RegistryAccess)" tabindex="0">apply(RegistryAccess)</a></li>
+<li><a href="#apply(net.minecraft.core.RegistryAccess,net.neoforged.neoforge.registries.BaseMappedRegistry,net.neoforged.neoforge.registries.DataMapLoader.LoadResult)" tabindex="0">apply(RegistryAccess, BaseMappedRegistry, DataMapLoader.LoadResult)</a></li>
 <li><a href="#buildDataMap(net.minecraft.core.Registry,net.neoforged.neoforge.registries.datamaps.DataMapType,java.util.List)" tabindex="0">buildDataMap(Registry, DataMapType, List)</a></li>
 <li><a href="#resolve(net.minecraft.core.Registry,com.mojang.datafixers.util.Either,boolean,java.util.function.Consumer)" tabindex="0">resolve(Registry, Either, boolean, Consumer)</a></li>
 <li><a href="#load(net.minecraft.server.packs.resources.ResourceManager,java.util.concurrent.Executor,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">load(ResourceManager, Executor, ProfilerFiller)</a></li>
-<li><a href="#load(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller,net.minecraft.core.RegistryAccess,net.neoforged.neoforge.common.conditions.ICondition.IContext)" tabindex="0">load(ResourceManager, ProfilerFiller, RegistryAccess, ICondition.IContext)</a></li>
+<li><a href="#load(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">load(ResourceManager, ProfilerFiller)</a></li>
 <li><a href="#getFolderLocation(net.minecraft.resources.Identifier)" tabindex="0">getFolderLocation(Identifier)</a></li>
 <li><a href="#readData(net.minecraft.resources.RegistryOps,net.neoforged.neoforge.registries.datamaps.DataMapType,net.minecraft.resources.ResourceKey,java.util.List)" tabindex="0">readData(RegistryOps, DataMapType, ResourceKey, List)</a></li>
 </ol>
@@ -93,7 +91,9 @@ loadScripts(document, 'script');</script>
 <h1 title="Class DataMapLoader" class="title">Class DataMapLoader</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance"><a href="../resource/ContextAwareReloadListener.html" title="class in net.neoforged.neoforge.resource">net.neoforged.neoforge.resource.ContextAwareReloadListener</a>
 <div class="inheritance">net.neoforged.neoforge.registries.DataMapLoader</div>
+</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
@@ -103,8 +103,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">DataMapLoader</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a></span></div>
+<span class="extends-implements">extends <a href="../resource/ContextAwareReloadListener.html" title="class in net.neoforged.neoforge.resource">ContextAwareReloadListener</a></span></div>
 </div>
 </section>
 <section class="summary">
@@ -136,17 +135,11 @@ implements <a href="../../../minecraft/server/packs/resources/PreparableReloadLi
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../common/conditions/ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a></code></div>
-<div class="col-second even-row-color"><code><a href="#conditionContext" class="member-name-link">conditionContext</a></code></div>
+<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
+<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#PATH" class="member-name-link">PATH</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#registryAccess" class="member-name-link">registryAccess</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#PATH" class="member-name-link">PATH</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="DataMapLoader.LoadResult.html" title="class in net.neoforged.neoforge.registries">DataMapLoader.LoadResult</a>&lt;?&gt;&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#results" class="member-name-link">results</a></code></div>
@@ -162,8 +155,7 @@ implements <a href="../../../minecraft/server/packs/resources/PreparableReloadLi
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.RegistryAccess)" class="member-name-link">DataMapLoader</a><wbr>(<a href="../common/conditions/ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a>&nbsp;conditionContext,
- <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">DataMapLoader</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -180,10 +172,11 @@ implements <a href="../../../minecraft/server/packs/resources/PreparableReloadLi
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apply()" class="member-name-link">apply</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apply(net.minecraft.core.RegistryAccess)" class="member-name-link">apply</a><wbr>(<a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private &lt;T&gt;&nbsp;void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apply(net.neoforged.neoforge.registries.BaseMappedRegistry,net.neoforged.neoforge.registries.DataMapLoader.LoadResult)" class="member-name-link">apply</a><wbr>(<a href="BaseMappedRegistry.html" title="class in net.neoforged.neoforge.registries">BaseMappedRegistry</a>&lt;T&gt;&nbsp;registry,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apply(net.minecraft.core.RegistryAccess,net.neoforged.neoforge.registries.BaseMappedRegistry,net.neoforged.neoforge.registries.DataMapLoader.LoadResult)" class="member-name-link">apply</a><wbr>(<a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
+ <a href="BaseMappedRegistry.html" title="class in net.neoforged.neoforge.registries">BaseMappedRegistry</a>&lt;T&gt;&nbsp;registry,
  <a href="DataMapLoader.LoadResult.html" title="class in net.neoforged.neoforge.registries">DataMapLoader.LoadResult</a>&lt;T&gt;&nbsp;result)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private &lt;T,<wbr>R&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;R&gt;, T&gt;</code></div>
@@ -199,12 +192,10 @@ implements <a href="../../../minecraft/server/packs/resources/PreparableReloadLi
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;executor,
  <a href="../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="DataMapLoader.LoadResult.html" title="class in net.neoforged.neoforge.registries">DataMapLoader.LoadResult</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller,net.minecraft.core.RegistryAccess,net.neoforged.neoforge.common.conditions.ICondition.IContext)" class="member-name-link">load</a><wbr>(<a href="../../../minecraft/server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler,
- <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;access,
- <a href="../common/conditions/ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a>&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="DataMapLoader.LoadResult.html" title="class in net.neoforged.neoforge.registries">DataMapLoader.LoadResult</a>&lt;?&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">load</a><wbr>(<a href="../../../minecraft/server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
+ <a href="../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;A,<wbr>T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="datamaps/DataMapFile.html" title="class in net.neoforged.neoforge.registries.datamaps">DataMapFile</a>&lt;A,<wbr>T&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readData(net.minecraft.resources.RegistryOps,net.neoforged.neoforge.registries.datamaps.DataMapType,net.minecraft.resources.ResourceKey,java.util.List)" class="member-name-link">readData</a><wbr>(<a href="../../../minecraft/resources/RegistryOps.html" title="class in net.minecraft.resources">RegistryOps</a>&lt;com.google.gson.JsonElement&gt;&nbsp;ops,
  <a href="datamaps/DataMapType.html" title="class in net.neoforged.neoforge.registries.datamaps">DataMapType</a>&lt;T,<wbr>A&gt;&nbsp;attachmentType,
@@ -226,6 +217,9 @@ implements <a href="../../../minecraft/server/packs/resources/PreparableReloadLi
 </div>
 </div>
 </div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.neoforged.neoforge.resource.ContextAwareReloadListener">Methods inherited from class&nbsp;<a href="../resource/ContextAwareReloadListener.html#method-summary" title="class in net.neoforged.neoforge.resource">ContextAwareReloadListener</a></h3>
+<code><a href="../resource/ContextAwareReloadListener.html#getContext()" title="getContext()">getContext</a>, <a href="../resource/ContextAwareReloadListener.html#getRegistryLookup()" title="getRegistryLookup()">getRegistryLookup</a>, <a href="../resource/ContextAwareReloadListener.html#injectContext(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.HolderLookup.Provider)" title="injectContext(ICondition.IContext, HolderLookup.Provider)">injectContext</a>, <a href="../resource/ContextAwareReloadListener.html#makeConditionalOps()" title="makeConditionalOps()">makeConditionalOps</a>, <a href="../resource/ContextAwareReloadListener.html#makeConditionalOps(com.mojang.serialization.DynamicOps)" title="makeConditionalOps(DynamicOps)">makeConditionalOps</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -275,22 +269,6 @@ implements <a href="../../../minecraft/server/packs/resources/PreparableReloadLi
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="conditionContext">
-<h3>conditionContext</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../common/conditions/ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a></span>&nbsp;<span class="element-name">conditionContext</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="registryAccess">
-<h3>registryAccess</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></span>&nbsp;<span class="element-name">registryAccess</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -300,11 +278,10 @@ implements <a href="../../../minecraft/server/packs/resources/PreparableReloadLi
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.RegistryAccess)">
+<section class="detail" id="&lt;init&gt;()">
 <h3>DataMapLoader</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">DataMapLoader</span><wbr><span class="parameters">(<a href="../common/conditions/ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a>&nbsp;conditionContext,
- <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">DataMapLoader</span>()</div>
 </div>
 </section>
 </li>
@@ -324,26 +301,23 @@ implements <a href="../../../minecraft/server/packs/resources/PreparableReloadLi
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;backgroundExecutor,
  <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.PreparationBarrier.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener.PreparationBarrier</a>&nbsp;preparationBarrier,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;gameExecutor)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html#reload(net.minecraft.server.packs.resources.PreparableReloadListener.SharedState,java.util.concurrent.Executor,net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier,java.util.concurrent.Executor)">reload</a></code>&nbsp;in interface&nbsp;<code><a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a></code></dd>
-</dl>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="apply()">
+<section class="detail" id="apply(net.minecraft.core.RegistryAccess)">
 <h3>apply</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">apply</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">apply</span><wbr><span class="parameters">(<a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</span></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="apply(net.neoforged.neoforge.registries.BaseMappedRegistry,net.neoforged.neoforge.registries.DataMapLoader.LoadResult)">
+<section class="detail" id="apply(net.minecraft.core.RegistryAccess,net.neoforged.neoforge.registries.BaseMappedRegistry,net.neoforged.neoforge.registries.DataMapLoader.LoadResult)">
 <h3>apply</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">apply</span><wbr><span class="parameters">(<a href="BaseMappedRegistry.html" title="class in net.neoforged.neoforge.registries">BaseMappedRegistry</a>&lt;T&gt;&nbsp;registry,
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">apply</span><wbr><span class="parameters">(<a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
+ <a href="BaseMappedRegistry.html" title="class in net.neoforged.neoforge.registries">BaseMappedRegistry</a>&lt;T&gt;&nbsp;registry,
  <a href="DataMapLoader.LoadResult.html" title="class in net.neoforged.neoforge.registries">DataMapLoader.LoadResult</a>&lt;T&gt;&nbsp;result)</span></div>
 </div>
 </section>
@@ -380,13 +354,11 @@ implements <a href="../../../minecraft/server/packs/resources/PreparableReloadLi
 </section>
 </li>
 <li>
-<section class="detail" id="load(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller,net.minecraft.core.RegistryAccess,net.neoforged.neoforge.common.conditions.ICondition.IContext)">
+<section class="detail" id="load(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">
 <h3>load</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="DataMapLoader.LoadResult.html" title="class in net.neoforged.neoforge.registries">DataMapLoader.LoadResult</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../../../minecraft/server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler,
- <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;access,
- <a href="../common/conditions/ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a>&nbsp;context)</span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="DataMapLoader.LoadResult.html" title="class in net.neoforged.neoforge.registries">DataMapLoader.LoadResult</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../../../minecraft/server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
+ <a href="../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</span></div>
 </div>
 </section>
 </li>

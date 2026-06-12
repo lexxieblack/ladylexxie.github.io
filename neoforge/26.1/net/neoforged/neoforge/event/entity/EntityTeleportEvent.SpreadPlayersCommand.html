@@ -61,7 +61,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(net.minecraft.world.entity.Entity,double,double,double)" tabindex="0">SpreadPlayersCommand(Entity, double, double, double)</a></li>
+<li><a href="#%3Cinit%3E(net.minecraft.world.entity.Entity,net.minecraft.server.level.ServerLevel,double,double,double)" tabindex="0">SpreadPlayersCommand(Entity, ServerLevel, double, double, double)</a></li>
 </ol>
 </li>
 </ol>
@@ -127,7 +127,7 @@ If this event is canceled, the entity will not be teleported.</div>
 <h2>Field Summary</h2>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.neoforged.neoforge.event.entity.EntityTeleportEvent">Fields inherited from class&nbsp;<a href="EntityTeleportEvent.html#field-summary" title="class in net.neoforged.neoforge.event.entity">EntityTeleportEvent</a></h3>
-<code><a href="EntityTeleportEvent.html#targetX">targetX</a>, <a href="EntityTeleportEvent.html#targetY">targetY</a>, <a href="EntityTeleportEvent.html#targetZ">targetZ</a></code></div>
+<code><a href="EntityTeleportEvent.html#targetLevel">targetLevel</a>, <a href="EntityTeleportEvent.html#targetX">targetX</a>, <a href="EntityTeleportEvent.html#targetY">targetY</a>, <a href="EntityTeleportEvent.html#targetZ">targetZ</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -138,7 +138,8 @@ If this event is canceled, the entity will not be teleported.</div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.world.entity.Entity,double,double,double)" class="member-name-link">SpreadPlayersCommand</a><wbr>(<a href="../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.world.entity.Entity,net.minecraft.server.level.ServerLevel,double,double,double)" class="member-name-link">SpreadPlayersCommand</a><wbr>(<a href="../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="../../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;targetLevel,
  double&nbsp;targetX,
  double&nbsp;targetY,
  double&nbsp;targetZ)</code></div>
@@ -152,7 +153,7 @@ If this event is canceled, the entity will not be teleported.</div>
 <h2>Method Summary</h2>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.event.entity.EntityTeleportEvent">Methods inherited from class&nbsp;<a href="EntityTeleportEvent.html#method-summary" title="class in net.neoforged.neoforge.event.entity">EntityTeleportEvent</a></h3>
-<code><a href="EntityTeleportEvent.html#getPrev()" title="getPrev()">getPrev</a>, <a href="EntityTeleportEvent.html#getPrevX()" title="getPrevX()">getPrevX</a>, <a href="EntityTeleportEvent.html#getPrevY()" title="getPrevY()">getPrevY</a>, <a href="EntityTeleportEvent.html#getPrevZ()" title="getPrevZ()">getPrevZ</a>, <a href="EntityTeleportEvent.html#getTarget()" title="getTarget()">getTarget</a>, <a href="EntityTeleportEvent.html#getTargetX()" title="getTargetX()">getTargetX</a>, <a href="EntityTeleportEvent.html#getTargetY()" title="getTargetY()">getTargetY</a>, <a href="EntityTeleportEvent.html#getTargetZ()" title="getTargetZ()">getTargetZ</a>, <a href="EntityTeleportEvent.html#setTargetX(double)" title="setTargetX(double)">setTargetX</a>, <a href="EntityTeleportEvent.html#setTargetY(double)" title="setTargetY(double)">setTargetY</a>, <a href="EntityTeleportEvent.html#setTargetZ(double)" title="setTargetZ(double)">setTargetZ</a></code></div>
+<code><a href="EntityTeleportEvent.html#getPrev()" title="getPrev()">getPrev</a>, <a href="EntityTeleportEvent.html#getPrevX()" title="getPrevX()">getPrevX</a>, <a href="EntityTeleportEvent.html#getPrevY()" title="getPrevY()">getPrevY</a>, <a href="EntityTeleportEvent.html#getPrevZ()" title="getPrevZ()">getPrevZ</a>, <a href="EntityTeleportEvent.html#getTarget()" title="getTarget()">getTarget</a>, <a href="EntityTeleportEvent.html#getTargetLevel()" title="getTargetLevel()">getTargetLevel</a>, <a href="EntityTeleportEvent.html#getTargetX()" title="getTargetX()">getTargetX</a>, <a href="EntityTeleportEvent.html#getTargetY()" title="getTargetY()">getTargetY</a>, <a href="EntityTeleportEvent.html#getTargetZ()" title="getTargetZ()">getTargetZ</a>, <a href="EntityTeleportEvent.html#setTargetX(double)" title="setTargetX(double)">setTargetX</a>, <a href="EntityTeleportEvent.html#setTargetY(double)" title="setTargetY(double)">setTargetY</a>, <a href="EntityTeleportEvent.html#setTargetZ(double)" title="setTargetZ(double)">setTargetZ</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.event.entity.EntityEvent">Methods inherited from class&nbsp;<a href="EntityEvent.html#method-summary" title="class in net.neoforged.neoforge.event.entity">EntityEvent</a></h3>
 <code><a href="EntityEvent.html#getEntity()" title="getEntity()">getEntity</a></code></div>
@@ -174,10 +175,11 @@ If this event is canceled, the entity will not be teleported.</div>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.world.entity.Entity,double,double,double)">
+<section class="detail" id="&lt;init&gt;(net.minecraft.world.entity.Entity,net.minecraft.server.level.ServerLevel,double,double,double)">
 <h3>SpreadPlayersCommand</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SpreadPlayersCommand</span><wbr><span class="parameters">(<a href="../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="../../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;targetLevel,
  double&nbsp;targetX,
  double&nbsp;targetY,
  double&nbsp;targetZ)</span></div>

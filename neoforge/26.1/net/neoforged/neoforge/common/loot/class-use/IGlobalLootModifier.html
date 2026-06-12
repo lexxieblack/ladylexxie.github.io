@@ -141,6 +141,15 @@ loadScripts(document, 'script');</script>
 <div class="block">A base implementation of a Global Loot Modifier for modders to extend.</div>
 </div>
 </div>
+<div class="caption"><span>Subclasses with type arguments of type <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a> in <a href="../package-summary.html">net.neoforged.neoforge.common.loot</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../LootModifierManager.html" class="type-name-link" title="class in net.neoforged.neoforge.common.loot">LootModifierManager</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
 <div class="caption"><span>Fields in <a href="../package-summary.html">net.neoforged.neoforge.common.loot</a> with type parameters of type <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a></span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -152,8 +161,20 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static final <a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">IGlobalLootModifier.</span><code><a href="../IGlobalLootModifier.html#DIRECT_CODEC" class="member-name-link">DIRECT_CODEC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>private com.google.common.collect.BiMap<wbr>&lt;<a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../LootModifierManager.html#registeredLootModifiers" class="member-name-link">registeredLootModifiers</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../LootModifierManager.html#sortedModifiers" class="member-name-link">sortedModifiers</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+<div class="caption"><span>Methods in <a href="../package-summary.html">net.neoforged.neoforge.common.loot</a> that return <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>@Nullable <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../LootModifierManager.html#getModifier(net.minecraft.resources.Identifier)" class="member-name-link">getModifier</a><wbr>(<a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../package-summary.html">net.neoforged.neoforge.common.loot</a> that return types with arguments of type <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a></span></div>
@@ -169,11 +190,33 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Returns the registered codec for this modifier</div>
 </div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../LootModifierManager.html#getAllLootMods()" class="member-name-link">getAllLootMods</a>()</code></div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a><wbr>&lt;<a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../LootModifierManager.html#getSortedModifiers()" class="member-name-link">getSortedModifiers</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">An immutable collection of the registered loot modifiers in layered order.</div>
+<div class="block">Returns an iterable view of all loot modifiers, sorted in the order they should be applied.</div>
 </div>
+</div>
+<div class="caption"><span>Methods in <a href="../package-summary.html">net.neoforged.neoforge.common.loot</a> with parameters of type <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>@Nullable <a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../LootModifierManager.html#getId(net.neoforged.neoforge.common.loot.IGlobalLootModifier)" class="member-name-link">getId</a><wbr>(<a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&nbsp;modifier)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Returns the ID of the given loot modifier, or null if it is not registered.</div>
+</div>
+</div>
+<div class="caption"><span>Method parameters in <a href="../package-summary.html">net.neoforged.neoforge.common.loot</a> with type arguments of type <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../LootModifierManager.html#apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">apply</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;&nbsp;resourceList,
+ <a href="../../../../../minecraft/server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManagerIn,
+ <a href="../../../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profilerIn)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

@@ -76,6 +76,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#MODDED_RECIPE_BOOK_TYPES" tabindex="0">MODDED_RECIPE_BOOK_TYPES</a></li>
 <li><a href="#MODDED_RECIPE_BOOK_TYPES_SETTINGS_STREAM_CODEC" tabindex="0">MODDED_RECIPE_BOOK_TYPES_SETTINGS_STREAM_CODEC</a></li>
 <li><a href="#EDA_CHECKED_CLASSES" tabindex="0">EDA_CHECKED_CLASSES</a></li>
+<li><a href="#ERROR_IGNORES_PAUSING_KEY" tabindex="0">ERROR_IGNORES_PAUSING_KEY</a></li>
+<li><a href="#ERROR_IGNORES_PAUSING" tabindex="0">ERROR_IGNORES_PAUSING</a></li>
+<li><a href="#STRUCTURE_ROTATION_KEY" tabindex="0">STRUCTURE_ROTATION_KEY</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -110,7 +113,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#newChatWithLinks(java.lang.String)" tabindex="0">newChatWithLinks(String)</a></li>
 <li><a href="#newChatWithLinks(java.lang.String,boolean)" tabindex="0">newChatWithLinks(String, boolean)</a></li>
 <li><a href="#handleBlockDrops(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.entity.BlockEntity,java.util.List,net.minecraft.world.entity.Entity,net.minecraft.world.item.ItemStack)" tabindex="0">handleBlockDrops(ServerLevel, BlockPos, BlockState, BlockEntity, List, Entity, ItemStack)</a></li>
-<li><a href="#fireBlockBreak(net.minecraft.world.level.Level,net.minecraft.world.level.GameType,net.minecraft.server.level.ServerPlayer,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" tabindex="0">fireBlockBreak(Level, GameType, ServerPlayer, BlockPos, BlockState)</a></li>
+<li><a href="#fireBlockBreak(net.minecraft.world.level.Level,net.minecraft.world.level.GameType,net.minecraft.world.entity.player.Player,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" tabindex="0">fireBlockBreak(Level, GameType, Player, BlockPos, BlockState)</a></li>
 <li><a href="#onPlaceItemIntoWorld(net.minecraft.world.item.context.UseOnContext)" tabindex="0">onPlaceItemIntoWorld(UseOnContext)</a></li>
 <li><a href="#onPlayerEnchantItem(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack,java.util.List)" tabindex="0">onPlayerEnchantItem(Player, ItemStack, List)</a></li>
 <li><a href="#onAnvilUpdate(net.minecraft.world.inventory.AnvilMenu,net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,net.minecraft.world.Container,java.lang.String,net.minecraft.world.entity.player.Player)" tabindex="0">onAnvilUpdate(AnvilMenu, ItemStack, ItemStack, Container, String, Player)</a></li>
@@ -179,6 +182,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#makeModdedRecipeBookTypesSettingsCodec()" tabindex="0">makeModdedRecipeBookTypesSettingsCodec()</a></li>
 <li><a href="#sendRecipes(net.minecraft.server.level.ServerPlayer,java.util.Set,net.minecraft.world.item.crafting.RecipeMap)" tabindex="0">sendRecipes(ServerPlayer, Set, RecipeMap)</a></li>
 <li><a href="#verifyEntityDataAccessorRegistration(java.lang.Class,java.lang.Class)" tabindex="0">verifyEntityDataAccessorRegistration(Class, Class)</a></li>
+<li><a href="#throwIfIgnoresPausing(net.minecraft.core.Holder)" tabindex="0">throwIfIgnoresPausing(Holder)</a></li>
+<li><a href="#captureStructureRotation(net.minecraft.nbt.CompoundTag,net.minecraft.world.level.block.Rotation)" tabindex="0">captureStructureRotation(CompoundTag, Rotation)</a></li>
+<li><a href="#applyStructureRotation(net.minecraft.world.level.block.entity.BlockEntity,net.minecraft.nbt.CompoundTag,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings)" tabindex="0">applyStructureRotation(BlockEntity, CompoundTag, StructurePlaceSettings)</a></li>
+<li><a href="#onCustomClickAction(net.minecraft.server.level.ServerPlayer,com.mojang.authlib.GameProfile,net.minecraft.resources.Identifier,java.util.Optional)" tabindex="0">onCustomClickAction(ServerPlayer, GameProfile, Identifier, Optional)</a></li>
 </ol>
 </li>
 </ol>
@@ -231,7 +238,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#CMP_BY_NAMESPACE_VANILLA_FIRST" class="member-name-link">CMP_BY_NAMESPACE_VANILLA_FIRST</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html" title="class or interface in java.lang" class="external-link">ThreadLocal</a><wbr>&lt;<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html" title="class or interface in java.lang" class="external-link">ThreadLocal</a><wbr>&lt;@Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#craftingPlayer" class="member-name-link">craftingPlayer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -239,6 +246,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#EDA_CHECKED_CLASSES" class="member-name-link">EDA_CHECKED_CLASSES</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private static final <a href="../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ERROR_IGNORES_PAUSING" class="member-name-link">ERROR_IGNORES_PAUSING</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ERROR_IGNORES_PAUSING_KEY" class="member-name-link">ERROR_IGNORES_PAUSING_KEY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/world/entity/EntityType.html" title="class in net.minecraft.world.entity">EntityType</a>&lt;? extends <a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;, <a href="../../../minecraft/world/entity/ai/attributes/AttributeSupplier.html" title="class in net.minecraft.world.entity.ai.attributes">AttributeSupplier</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#FORGE_ATTRIBUTES" class="member-name-link">FORGE_ATTRIBUTES</a></code></div>
@@ -263,18 +276,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#SEED_KEY" class="member-name-link">SEED_KEY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>(package private) static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/regex/Pattern.html" title="class or interface in java.util.regex" class="external-link">Pattern</a></code></div>
-<div class="col-second even-row-color"><code><a href="#URL_PATTERN" class="member-name-link">URL_PATTERN</a></code></div>
+<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#STRUCTURE_ROTATION_KEY" class="member-name-link">STRUCTURE_ROTATION_KEY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#VANILLA_DIMS" class="member-name-link">VANILLA_DIMS</a></code></div>
+<div class="col-first odd-row-color"><code>(package private) static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/regex/Pattern.html" title="class or interface in java.util.regex" class="external-link">Pattern</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#URL_PATTERN" class="member-name-link">URL_PATTERN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#VANILLA_SERIALIZER_LIMIT" class="member-name-link">VANILLA_SERIALIZER_LIMIT</a></code></div>
+<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#VANILLA_DIMS" class="member-name-link">VANILLA_DIMS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.apache.logging.log4j.Marker</code></div>
-<div class="col-second odd-row-color"><code><a href="#WORLDPERSISTENCE" class="member-name-link">WORLDPERSISTENCE</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#VANILLA_SERIALIZER_LIMIT" class="member-name-link">VANILLA_SERIALIZER_LIMIT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private static final org.apache.logging.log4j.Marker</code></div>
+<div class="col-second even-row-color"><code><a href="#WORLDPERSISTENCE" class="member-name-link">WORLDPERSISTENCE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -302,32 +318,41 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canContinueUsing(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack)" class="member-name-link">canContinueUsing</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;from,
- <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;to)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#applyStructureRotation(net.minecraft.world.level.block.entity.BlockEntity,net.minecraft.nbt.CompoundTag,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings)" class="member-name-link">applyStructureRotation</a><wbr>(<a href="../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>&nbsp;blockEntity,
+ <a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;blockEntityNbt,
+ <a href="../../../minecraft/world/level/levelgen/structure/templatesystem/StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canCropGrow(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,boolean)" class="member-name-link">canCropGrow</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canContinueUsing(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack)" class="member-name-link">canContinueUsing</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;from,
+ <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;to)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canCropGrow(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,boolean)" class="member-name-link">canCropGrow</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  boolean&nbsp;def)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Checks if a crop can grow by firing <a href="../event/level/block/CropGrowEvent.Pre.html" title="class in net.neoforged.neoforge.event.level.block"><code>CropGrowEvent.Pre</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canEntityDestroy(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos,net.minecraft.world.entity.LivingEntity)" class="member-name-link">canEntityDestroy</a><wbr>(<a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canEntityDestroy(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos,net.minecraft.world.entity.LivingEntity)" class="member-name-link">canEntityDestroy</a><wbr>(<a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canMobEffectBeApplied(net.minecraft.world.entity.LivingEntity,net.minecraft.world.effect.MobEffectInstance,net.minecraft.world.entity.Entity)" class="member-name-link">canMobEffectBeApplied</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canMobEffectBeApplied(net.minecraft.world.entity.LivingEntity,net.minecraft.world.effect.MobEffectInstance,net.minecraft.world.entity.Entity)" class="member-name-link">canMobEffectBeApplied</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
  <a href="../../../minecraft/world/effect/MobEffectInstance.html" title="class in net.minecraft.world.effect">MobEffectInstance</a>&nbsp;effect,
  @Nullable <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Checks if a mob effect can be applied to an entity by firing <a href="../event/entity/living/MobEffectEvent.Applicable.html" title="class in net.neoforged.neoforge.event.entity.living"><code>MobEffectEvent.Applicable</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canUseEntitySelectors(net.minecraft.commands.SharedSuggestionProvider)" class="member-name-link">canUseEntitySelectors</a><wbr>(<a href="../../../minecraft/commands/SharedSuggestionProvider.html" title="interface in net.minecraft.commands">SharedSuggestionProvider</a>&nbsp;provider)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#canUseEntitySelectors(net.minecraft.commands.SharedSuggestionProvider)" class="member-name-link">canUseEntitySelectors</a><wbr>(<a href="../../../minecraft/commands/SharedSuggestionProvider.html" title="interface in net.minecraft.commands">SharedSuggestionProvider</a>&nbsp;provider)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#captureStructureRotation(net.minecraft.nbt.CompoundTag,net.minecraft.world.level.block.Rotation)" class="member-name-link">captureStructureRotation</a><wbr>(@Nullable <a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;blockEntityNbt,
+ <a href="../../../minecraft/world/level/block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/world/item/component/ItemAttributeModifiers.html" title="class in net.minecraft.world.item.component">ItemAttributeModifiers</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#computeModifiedAttributes(net.minecraft.world.item.ItemStack,net.minecraft.world.item.component.ItemAttributeModifiers)" class="member-name-link">computeModifiedAttributes</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack,
@@ -367,14 +392,19 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires the <a href="../event/entity/player/AnvilCraftEvent.Pre.html" title="class in net.neoforged.neoforge.event.entity.player"><code>AnvilCraftEvent.Pre</code></a> when the anvil is used to craft an item.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/level/BlockEvent.BreakEvent.html" title="class in net.neoforged.neoforge.event.level">BlockEvent.BreakEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireBlockBreak(net.minecraft.world.level.Level,net.minecraft.world.level.GameType,net.minecraft.server.level.ServerPlayer,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">fireBlockBreak</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/level/block/BreakBlockEvent.html" title="class in net.neoforged.neoforge.event.level.block">BreakBlockEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireBlockBreak(net.minecraft.world.level.Level,net.minecraft.world.level.GameType,net.minecraft.world.entity.player.Player,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">fireBlockBreak</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../minecraft/world/level/GameType.html" title="enum class in net.minecraft.world.level">GameType</a>&nbsp;gameType,
- <a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Fires <a href="../event/level/BlockEvent.BreakEvent.html" title="class in net.neoforged.neoforge.event.level"><code>BlockEvent.BreakEvent</code></a>, pre-emptively canceling the event based on the conditions that will cause the block to not be broken anyway.</div>
+<div class="block">Fires 
+<details class="invalid-tag">
+<summary>invalid reference</summary>
+<pre><code>BlockEvent.BreakEvent</code></pre>
+</details>
+, pre-emptively canceling the event based on the conditions that will cause the block to not be broken anyway.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/player/CriticalHitEvent.html" title="class in net.neoforged.neoforge.event.entity.player">CriticalHitEvent</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireCriticalHit(net.minecraft.world.entity.player.Player,net.minecraft.world.entity.Entity,boolean,float)" class="member-name-link">fireCriticalHit</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
@@ -401,7 +431,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getCraftingPlayer()" class="member-name-link">getCraftingPlayer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -557,232 +587,241 @@ actually removing POIs long after they become irrelevant.</div>
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;face)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingShieldBlockEvent.html" title="class in net.neoforged.neoforge.event.entity.living">LivingShieldBlockEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onDamageBlock(net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.common.damagesource.DamageContainer,float,boolean)" class="member-name-link">onDamageBlock</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;blocker,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onCustomClickAction(net.minecraft.server.level.ServerPlayer,com.mojang.authlib.GameProfile,net.minecraft.resources.Identifier,java.util.Optional)" class="member-name-link">onCustomClickAction</a><wbr>(@Nullable <a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a>&nbsp;profile,
+ <a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../minecraft/nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;&nbsp;payload)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingShieldBlockEvent.html" title="class in net.neoforged.neoforge.event.entity.living">LivingShieldBlockEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onDamageBlock(net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.common.damagesource.DamageContainer,float,boolean)" class="member-name-link">onDamageBlock</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;blocker,
  <a href="damagesource/DamageContainer.html" title="class in net.neoforged.neoforge.common.damagesource">DamageContainer</a>&nbsp;container,
  float&nbsp;blockedDamage,
  boolean&nbsp;originalBlocked)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates, posts, and returns a <a href="../event/entity/living/LivingShieldBlockEvent.html" title="class in net.neoforged.neoforge.event.entity.living"><code>LivingShieldBlockEvent</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onDifficultyChange(net.minecraft.world.Difficulty,net.minecraft.world.Difficulty)" class="member-name-link">onDifficultyChange</a><wbr>(<a href="../../../minecraft/world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a>&nbsp;difficulty,
- <a href="../../../minecraft/world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a>&nbsp;oldDifficulty)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEmptyClick(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand)" class="member-name-link">onEmptyClick</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onDifficultyChange(net.minecraft.world.Difficulty,net.minecraft.world.Difficulty)" class="member-name-link">onDifficultyChange</a><wbr>(<a href="../../../minecraft/world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a>&nbsp;difficulty,
+ <a href="../../../minecraft/world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a>&nbsp;oldDifficulty)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEmptyLeftClick(net.minecraft.world.entity.player.Player)" class="member-name-link">onEmptyLeftClick</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEmptyClick(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand)" class="member-name-link">onEmptyClick</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+ <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEntityEnterSection(net.minecraft.world.entity.Entity,long,long)" class="member-name-link">onEntityEnterSection</a><wbr>(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEmptyLeftClick(net.minecraft.world.entity.player.Player)" class="member-name-link">onEmptyLeftClick</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEntityEnterSection(net.minecraft.world.entity.Entity,long,long)" class="member-name-link">onEntityEnterSection</a><wbr>(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
  long&nbsp;packedOldPos,
  long&nbsp;packedNewPos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEntityIncomingDamage(net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.common.damagesource.DamageContainer)" class="member-name-link">onEntityIncomingDamage</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEntityIncomingDamage(net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.common.damagesource.DamageContainer)" class="member-name-link">onEntityIncomingDamage</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
  <a href="damagesource/DamageContainer.html" title="class in net.neoforged.neoforge.common.damagesource">DamageContainer</a>&nbsp;container)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Called after invulnerability checks in <a href="../../../minecraft/world/entity/Entity.html#hurt(net.minecraft.world.damagesource.DamageSource,float)"><code>Entity.hurt(DamageSource, float)</code></a>,
 this method creates and posts the first event in the LivingEntity damage sequence,
 <a href="../event/entity/living/LivingIncomingDamageEvent.html" title="class in net.neoforged.neoforge.event.entity.living"><code>LivingIncomingDamageEvent</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onFarmlandTrample(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,double,net.minecraft.world.entity.Entity)" class="member-name-link">onFarmlandTrample</a><wbr>(<a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onFarmlandTrample(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,double,net.minecraft.world.entity.Entity)" class="member-name-link">onFarmlandTrample</a><wbr>(<a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  double&nbsp;fallDistance,
  <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onGrindstoneChange(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,net.minecraft.world.Container,int)" class="member-name-link">onGrindstoneChange</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;top,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onGrindstoneChange(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,net.minecraft.world.Container,int)" class="member-name-link">onGrindstoneChange</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;top,
  <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;bottom,
  <a href="../../../minecraft/world/Container.html" title="interface in net.minecraft.world">Container</a>&nbsp;outputSlot,
  int&nbsp;xp)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onGrindstoneTake(net.minecraft.world.Container,net.minecraft.world.inventory.ContainerLevelAccess,net.minecraft.world.entity.player.Player,java.util.function.Function)" class="member-name-link">onGrindstoneTake</a><wbr>(<a href="../../../minecraft/world/Container.html" title="interface in net.minecraft.world">Container</a>&nbsp;inputSlots,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onGrindstoneTake(net.minecraft.world.Container,net.minecraft.world.inventory.ContainerLevelAccess,net.minecraft.world.entity.player.Player,java.util.function.Function)" class="member-name-link">onGrindstoneTake</a><wbr>(<a href="../../../minecraft/world/Container.html" title="interface in net.minecraft.world">Container</a>&nbsp;inputSlots,
  <a href="../../../minecraft/world/inventory/ContainerLevelAccess.html" title="interface in net.minecraft.world.inventory">ContainerLevelAccess</a>&nbsp;access,
  <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;xpFunction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onInteractEntity(net.minecraft.world.entity.player.Player,net.minecraft.world.entity.Entity,net.minecraft.world.InteractionHand)" class="member-name-link">onInteractEntity</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
- <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onInteractEntityAt(net.minecraft.world.entity.player.Player,net.minecraft.world.entity.Entity,net.minecraft.world.phys.HitResult,net.minecraft.world.InteractionHand)" class="member-name-link">onInteractEntityAt</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onInteractEntity(net.minecraft.world.entity.player.Player,net.minecraft.world.entity.Entity,net.minecraft.world.InteractionHand)" class="member-name-link">onInteractEntity</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+ <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onInteractEntityAt(net.minecraft.world.entity.player.Player,net.minecraft.world.entity.Entity,net.minecraft.world.phys.HitResult,net.minecraft.world.InteractionHand)" class="member-name-link">onInteractEntityAt</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
  <a href="../../../minecraft/world/phys/HitResult.html" title="class in net.minecraft.world.phys">HitResult</a>&nbsp;ray,
  <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onInteractEntityAt(net.minecraft.world.entity.player.Player,net.minecraft.world.entity.Entity,net.minecraft.world.phys.Vec3,net.minecraft.world.InteractionHand)" class="member-name-link">onInteractEntityAt</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onInteractEntityAt(net.minecraft.world.entity.player.Player,net.minecraft.world.entity.Entity,net.minecraft.world.phys.Vec3,net.minecraft.world.InteractionHand)" class="member-name-link">onInteractEntityAt</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
  <a href="../../../minecraft/world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;vec3d,
  <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onItemRightClick(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand)" class="member-name-link">onItemRightClick</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onItemStackedOn(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,net.minecraft.world.inventory.Slot,net.minecraft.world.inventory.ClickAction,net.minecraft.world.entity.player.Player,net.minecraft.world.entity.SlotAccess)" class="member-name-link">onItemStackedOn</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;carriedItem,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onItemRightClick(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand)" class="member-name-link">onItemRightClick</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+ <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onItemStackedOn(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,net.minecraft.world.inventory.Slot,net.minecraft.world.inventory.ClickAction,net.minecraft.world.entity.player.Player,net.minecraft.world.entity.SlotAccess)" class="member-name-link">onItemStackedOn</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;carriedItem,
  <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stackedOnItem,
  <a href="../../../minecraft/world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a>&nbsp;slot,
  <a href="../../../minecraft/world/inventory/ClickAction.html" title="enum class in net.minecraft.world.inventory">ClickAction</a>&nbsp;action,
  <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/world/entity/SlotAccess.html" title="interface in net.minecraft.world.entity">SlotAccess</a>&nbsp;carriedSlotAccess)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires the <a href="../event/ItemStackedOnOtherEvent.html" title="class in net.neoforged.neoforge.event"><code>ItemStackedOnOtherEvent</code></a>, allowing items to handle custom behavior relating to being stacked together (i.e.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/player/PlayerInteractEvent.LeftClickBlock.html" title="class in net.neoforged.neoforge.event.entity.player">PlayerInteractEvent.LeftClickBlock</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLeftClickBlock(net.minecraft.world.entity.player.Player,net.minecraft.core.BlockPos,net.minecraft.core.Direction,net.minecraft.network.protocol.game.ServerboundPlayerActionPacket.Action)" class="member-name-link">onLeftClickBlock</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/player/PlayerInteractEvent.LeftClickBlock.html" title="class in net.neoforged.neoforge.event.entity.player">PlayerInteractEvent.LeftClickBlock</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLeftClickBlock(net.minecraft.world.entity.player.Player,net.minecraft.core.BlockPos,net.minecraft.core.Direction,net.minecraft.network.protocol.game.ServerboundPlayerActionPacket.Action)" class="member-name-link">onLeftClickBlock</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;face,
  <a href="../../../minecraft/network/protocol/game/ServerboundPlayerActionPacket.Action.html" title="enum class in net.minecraft.network.protocol.game">ServerboundPlayerActionPacket.Action</a>&nbsp;action)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingChangeTargetEvent.html" title="class in net.neoforged.neoforge.event.entity.living">LivingChangeTargetEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingChangeTarget(net.minecraft.world.entity.LivingEntity,net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent.ILivingTargetType)" class="member-name-link">onLivingChangeTarget</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingChangeTargetEvent.html" title="class in net.neoforged.neoforge.event.entity.living">LivingChangeTargetEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingChangeTarget(net.minecraft.world.entity.LivingEntity,net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent.ILivingTargetType)" class="member-name-link">onLivingChangeTarget</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
  @Nullable <a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;originalTarget,
  <a href="../event/entity/living/LivingChangeTargetEvent.ILivingTargetType.html" title="interface in net.neoforged.neoforge.event.entity.living">LivingChangeTargetEvent.ILivingTargetType</a>&nbsp;targetType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingDamagePost(net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.common.damagesource.DamageContainer)" class="member-name-link">onLivingDamagePost</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
- <a href="damagesource/DamageContainer.html" title="class in net.neoforged.neoforge.common.damagesource">DamageContainer</a>&nbsp;container)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates and posts a <a href="../event/entity/living/LivingDamageEvent.Post.html" title="class in net.neoforged.neoforge.event.entity.living"><code>LivingDamageEvent.Post</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingDamagePre(net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.common.damagesource.DamageContainer)" class="member-name-link">onLivingDamagePre</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingDamagePost(net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.common.damagesource.DamageContainer)" class="member-name-link">onLivingDamagePost</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
  <a href="damagesource/DamageContainer.html" title="class in net.neoforged.neoforge.common.damagesource">DamageContainer</a>&nbsp;container)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates and posts a <a href="../event/entity/living/LivingDamageEvent.Post.html" title="class in net.neoforged.neoforge.event.entity.living"><code>LivingDamageEvent.Post</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingDamagePre(net.minecraft.world.entity.LivingEntity,net.neoforged.neoforge.common.damagesource.DamageContainer)" class="member-name-link">onLivingDamagePre</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
+ <a href="damagesource/DamageContainer.html" title="class in net.neoforged.neoforge.common.damagesource">DamageContainer</a>&nbsp;container)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates and posts an <a href="../event/entity/living/LivingDamageEvent.Pre.html" title="class in net.neoforged.neoforge.event.entity.living"><code>LivingDamageEvent.Pre</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingDeath(net.minecraft.world.entity.LivingEntity,net.minecraft.world.damagesource.DamageSource)" class="member-name-link">onLivingDeath</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
- <a href="../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a>&nbsp;src)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingDrops(net.minecraft.world.entity.LivingEntity,net.minecraft.world.damagesource.DamageSource,java.util.Collection,boolean)" class="member-name-link">onLivingDrops</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingDeath(net.minecraft.world.entity.LivingEntity,net.minecraft.world.damagesource.DamageSource)" class="member-name-link">onLivingDeath</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
+ <a href="../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a>&nbsp;src)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingDrops(net.minecraft.world.entity.LivingEntity,net.minecraft.world.damagesource.DamageSource,java.util.Collection,boolean)" class="member-name-link">onLivingDrops</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
  <a href="../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a>&nbsp;source,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="../../../minecraft/world/entity/item/ItemEntity.html" title="class in net.minecraft.world.entity.item">ItemEntity</a>&gt;&nbsp;drops,
  boolean&nbsp;recentlyHit)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingFallEvent.html" title="class in net.neoforged.neoforge.event.entity.living">LivingFallEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingFall(net.minecraft.world.entity.LivingEntity,double,float)" class="member-name-link">onLivingFall</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingFallEvent.html" title="class in net.neoforged.neoforge.event.entity.living">LivingFallEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingFall(net.minecraft.world.entity.LivingEntity,double,float)" class="member-name-link">onLivingFall</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
  double&nbsp;distance,
  float&nbsp;damageMultiplier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingJump(net.minecraft.world.entity.LivingEntity)" class="member-name-link">onLivingJump</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingKnockBackEvent.html" title="class in net.neoforged.neoforge.event.entity.living">LivingKnockBackEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingKnockBack(net.minecraft.world.entity.LivingEntity,float,double,double)" class="member-name-link">onLivingKnockBack</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;target,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingJump(net.minecraft.world.entity.LivingEntity)" class="member-name-link">onLivingJump</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingKnockBackEvent.html" title="class in net.neoforged.neoforge.event.entity.living">LivingKnockBackEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingKnockBack(net.minecraft.world.entity.LivingEntity,float,double,double)" class="member-name-link">onLivingKnockBack</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;target,
  float&nbsp;strength,
  double&nbsp;ratioX,
  double&nbsp;ratioZ)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingSwapItemsEvent.Hands.html" title="class in net.neoforged.neoforge.event.entity.living">LivingSwapItemsEvent.Hands</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingSwapHandItems(net.minecraft.world.entity.LivingEntity)" class="member-name-link">onLivingSwapHandItems</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;livingEntity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingUseTotem(net.minecraft.world.entity.LivingEntity,net.minecraft.world.damagesource.DamageSource,net.minecraft.world.item.ItemStack,net.minecraft.world.InteractionHand)" class="member-name-link">onLivingUseTotem</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/living/LivingSwapItemsEvent.Hands.html" title="class in net.neoforged.neoforge.event.entity.living">LivingSwapItemsEvent.Hands</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingSwapHandItems(net.minecraft.world.entity.LivingEntity)" class="member-name-link">onLivingSwapHandItems</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;livingEntity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onLivingUseTotem(net.minecraft.world.entity.LivingEntity,net.minecraft.world.damagesource.DamageSource,net.minecraft.world.item.ItemStack,net.minecraft.world.InteractionHand)" class="member-name-link">onLivingUseTotem</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
  <a href="../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a>&nbsp;damageSource,
  <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;totem,
  <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onNoteChange(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,int,int)" class="member-name-link">onNoteChange</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onNoteChange(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,int,int)" class="member-name-link">onNoteChange</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  int&nbsp;old,
  int&nbsp;_new)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onPlaceItemIntoWorld(net.minecraft.world.item.context.UseOnContext)" class="member-name-link">onPlaceItemIntoWorld</a><wbr>(<a href="../../../minecraft/world/item/context/UseOnContext.html" title="class in net.minecraft.world.item.context">UseOnContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onPlayerAttackTarget(net.minecraft.world.entity.player.Player,net.minecraft.world.entity.Entity)" class="member-name-link">onPlayerAttackTarget</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onPlaceItemIntoWorld(net.minecraft.world.item.context.UseOnContext)" class="member-name-link">onPlaceItemIntoWorld</a><wbr>(<a href="../../../minecraft/world/item/context/UseOnContext.html" title="class in net.minecraft.world.item.context">UseOnContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onPlayerEnchantItem(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack,java.util.List)" class="member-name-link">onPlayerEnchantItem</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onPlayerAttackTarget(net.minecraft.world.entity.player.Player,net.minecraft.world.entity.Entity)" class="member-name-link">onPlayerAttackTarget</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+ <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onPlayerEnchantItem(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack,java.util.List)" class="member-name-link">onPlayerEnchantItem</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../minecraft/world/item/enchantment/EnchantmentInstance.html" title="class in net.minecraft.world.item.enchantment">EnchantmentInstance</a>&gt;&nbsp;instances)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires <a href="../event/entity/player/PlayerEnchantItemEvent.html" title="class in net.neoforged.neoforge.event.entity.player"><code>PlayerEnchantItemEvent</code></a> in <a href="../../../minecraft/world/inventory/EnchantmentMenu.html#clickMenuButton(net.minecraft.world.entity.player.Player,int)"><code>EnchantmentMenu.clickMenuButton(Player, int)</code></a> after the enchants are
 applied to the item.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/entity/item/ItemEntity.html" title="class in net.minecraft.world.entity.item">ItemEntity</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onPlayerTossEvent(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack,boolean,boolean)" class="member-name-link">onPlayerTossEvent</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/world/entity/item/ItemEntity.html" title="class in net.minecraft.world.entity.item">ItemEntity</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onPlayerTossEvent(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack,boolean,boolean)" class="member-name-link">onPlayerTossEvent</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;item,
  boolean&nbsp;dropAround,
  boolean&nbsp;includeName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/player/PlayerInteractEvent.RightClickBlock.html" title="class in net.neoforged.neoforge.event.entity.player">PlayerInteractEvent.RightClickBlock</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRightClickBlock(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.core.BlockPos,net.minecraft.world.phys.BlockHitResult)" class="member-name-link">onRightClickBlock</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../event/entity/player/PlayerInteractEvent.RightClickBlock.html" title="class in net.neoforged.neoforge.event.entity.player">PlayerInteractEvent.RightClickBlock</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRightClickBlock(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.core.BlockPos,net.minecraft.world.phys.BlockHitResult)" class="member-name-link">onRightClickBlock</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../minecraft/world/phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a>&nbsp;hitVec)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onServerChatSubmittedEvent(net.minecraft.server.level.ServerPlayer,java.lang.String,net.minecraft.network.chat.Component)" class="member-name-link">onServerChatSubmittedEvent</a><wbr>(<a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onServerChatSubmittedEvent(net.minecraft.server.level.ServerPlayer,java.lang.String,net.minecraft.network.chat.Component)" class="member-name-link">onServerChatSubmittedEvent</a><wbr>(<a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;plain,
  <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;decorated)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onTravelToDimension(net.minecraft.world.entity.Entity,net.minecraft.resources.ResourceKey)" class="member-name-link">onTravelToDimension</a><wbr>(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
- <a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&nbsp;dimension)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onVanillaGameEvent(net.minecraft.world.level.Level,net.minecraft.core.Holder,net.minecraft.world.phys.Vec3,net.minecraft.world.level.gameevent.GameEvent.Context)" class="member-name-link">onVanillaGameEvent</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onTravelToDimension(net.minecraft.world.entity.Entity,net.minecraft.resources.ResourceKey)" class="member-name-link">onTravelToDimension</a><wbr>(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&nbsp;dimension)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onVanillaGameEvent(net.minecraft.world.level.Level,net.minecraft.core.Holder,net.minecraft.world.phys.Vec3,net.minecraft.world.level.gameevent.GameEvent.Context)" class="member-name-link">onVanillaGameEvent</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../minecraft/world/level/gameevent/GameEvent.html" title="class in net.minecraft.world.level.gameevent">GameEvent</a>&gt;&nbsp;vanillaEvent,
  <a href="../../../minecraft/world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos,
  <a href="../../../minecraft/world/level/gameevent/GameEvent.Context.html" title="class in net.minecraft.world.level.gameevent">GameEvent.Context</a>&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#overridesEqualsAndHashCode(java.lang.Class)" class="member-name-link">overridesEqualsAndHashCode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseLifecycle(java.lang.String)" class="member-name-link">parseLifecycle</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lifecycle)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#overridesEqualsAndHashCode(java.lang.Class)" class="member-name-link">overridesEqualsAndHashCode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#prefixNamespace(net.minecraft.resources.Identifier)" class="member-name-link">prefixNamespace</a><wbr>(<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;registryKey)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseLifecycle(java.lang.String)" class="member-name-link">parseLifecycle</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;lifecycle)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#prefixNamespace(net.minecraft.resources.Identifier)" class="member-name-link">prefixNamespace</a><wbr>(<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;registryKey)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">
 This method is used to prefix the path, where elements of the associated registry are stored, with their namespace, if it is not minecraft</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readAdditionalLevelSaveData(net.minecraft.nbt.CompoundTag,net.minecraft.world.level.storage.LevelStorageSource.LevelDirectory)" class="member-name-link">readAdditionalLevelSaveData</a><wbr>(<a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;rootTag,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readAdditionalLevelSaveData(net.minecraft.nbt.CompoundTag,net.minecraft.world.level.storage.LevelStorageSource.LevelDirectory)" class="member-name-link">readAdditionalLevelSaveData</a><wbr>(<a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;rootTag,
  <a href="../../../minecraft/world/level/storage/LevelStorageSource.LevelDirectory.html" title="class in net.minecraft.world.level.storage">LevelStorageSource.LevelDirectory</a>&nbsp;levelDirectory)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;@Nullable <a href="../../../minecraft/core/HolderLookup.RegistryLookup.html" title="interface in net.minecraft.core">HolderLookup.RegistryLookup</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resolveLookup(net.minecraft.resources.ResourceKey)" class="member-name-link">resolveLookup</a><wbr>(<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;T&gt;&gt;&nbsp;key)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;@Nullable <a href="../../../minecraft/core/HolderLookup.RegistryLookup.html" title="interface in net.minecraft.core">HolderLookup.RegistryLookup</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resolveLookup(net.minecraft.resources.ResourceKey)" class="member-name-link">resolveLookup</a><wbr>(<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;T&gt;&gt;&nbsp;key)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Attempts to resolve a <a href="../../../minecraft/core/HolderLookup.RegistryLookup.html" title="interface in net.minecraft.core"><code>HolderLookup.RegistryLookup</code></a> using the current global state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#saveMobEffect(net.minecraft.nbt.CompoundTag,java.lang.String,net.minecraft.world.effect.MobEffect)" class="member-name-link">saveMobEffect</a><wbr>(<a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;nbt,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#saveMobEffect(net.minecraft.nbt.CompoundTag,java.lang.String,net.minecraft.world.effect.MobEffect)" class="member-name-link">saveMobEffect</a><wbr>(<a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;nbt,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  <a href="../../../minecraft/world/effect/MobEffect.html" title="class in net.minecraft.world.effect">MobEffect</a>&nbsp;effect)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendRecipes(net.minecraft.server.level.ServerPlayer,java.util.Set,net.minecraft.world.item.crafting.RecipeMap)" class="member-name-link">sendRecipes</a><wbr>(<a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sendRecipes(net.minecraft.server.level.ServerPlayer,java.util.Set,net.minecraft.world.item.crafting.RecipeMap)" class="member-name-link">sendRecipes</a><wbr>(<a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../minecraft/world/item/crafting/RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;?&gt;&gt;&nbsp;recipeTypesToSend,
  <a href="../../../minecraft/world/item/crafting/RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a>&nbsp;recipeMap)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Determines whether the given players should be sent full recipe content or not and handles the sending.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setCraftingPlayer(net.minecraft.world.entity.player.Player)" class="member-name-link">setCraftingPlayer</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#shouldSuppressEnderManAnger(net.minecraft.world.entity.monster.EnderMan,net.minecraft.world.entity.player.Player)" class="member-name-link">shouldSuppressEnderManAnger</a><wbr>(<a href="../../../minecraft/world/entity/monster/EnderMan.html" title="class in net.minecraft.world.entity.monster">EnderMan</a>&nbsp;enderMan,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setCraftingPlayer(net.minecraft.world.entity.player.Player)" class="member-name-link">setCraftingPlayer</a><wbr>(@Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#shouldSuppressEnderManAnger(net.minecraft.world.entity.monster.EnderMan,net.minecraft.world.entity.player.Player)" class="member-name-link">shouldSuppressEnderManAnger</a><wbr>(<a href="../../../minecraft/world/entity/monster/EnderMan.html" title="class in net.minecraft.world.entity.monster">EnderMan</a>&nbsp;enderMan,
  <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#throwIfIgnoresPausing(net.minecraft.core.Holder)" class="member-name-link">throwIfIgnoresPausing</a><wbr>(<a href="../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../minecraft/world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tryDispenseShearsHarvestBlock(net.minecraft.core.dispenser.BlockSource,net.minecraft.world.item.ItemStack,net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos)" class="member-name-link">tryDispenseShearsHarvestBlock</a><wbr>(<a href="../../../minecraft/core/dispenser/BlockSource.html" title="class in net.minecraft.core.dispenser">BlockSource</a>&nbsp;source,
@@ -862,7 +901,7 @@ consistent with vanilla beehive harvest behavior (also controlled by <a href="It
 <section class="detail" id="craftingPlayer">
 <h3>craftingPlayer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html" title="class or interface in java.lang" class="external-link">ThreadLocal</a>&lt;<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&gt;</span>&nbsp;<span class="element-name">craftingPlayer</span></div>
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html" title="class or interface in java.lang" class="external-link">ThreadLocal</a>&lt;@Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&gt;</span>&nbsp;<span class="element-name">craftingPlayer</span></div>
 </div>
 </section>
 </li>
@@ -978,6 +1017,46 @@ consistent with vanilla beehive harvest behavior (also controlled by <a href="It
 <h3>EDA_CHECKED_CLASSES</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">EDA_CHECKED_CLASSES</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ERROR_IGNORES_PAUSING_KEY">
+<h3>ERROR_IGNORES_PAUSING_KEY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">ERROR_IGNORES_PAUSING_KEY</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#net.neoforged.neoforge.common.CommonHooks.ERROR_IGNORES_PAUSING_KEY">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ERROR_IGNORES_PAUSING">
+<h3>ERROR_IGNORES_PAUSING</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></span>&nbsp;<span class="element-name">ERROR_IGNORES_PAUSING</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="STRUCTURE_ROTATION_KEY">
+<h3>STRUCTURE_ROTATION_KEY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">STRUCTURE_ROTATION_KEY</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#net.neoforged.neoforge.common.CommonHooks.STRUCTURE_ROTATION_KEY">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -1097,7 +1176,7 @@ this method creates and posts the first event in the LivingEntity damage sequenc
 <dd><code>container</code> - the newly instantiated container for damage to be dealt. Most properties of
                  the container will be empty at this stage.</dd>
 <dt>Returns:</dt>
-<dd>if the event is cancelled and no damage will be applied to the entity</dd>
+<dd>if the event is cancelled or the entity was killed during the event. If true, further processing stops and no damage will be applied to the entity</dd>
 </dl>
 </div>
 </section>
@@ -1353,15 +1432,20 @@ If the event is not cancelled, all drops will be added to the world, and then <a
 </section>
 </li>
 <li>
-<section class="detail" id="fireBlockBreak(net.minecraft.world.level.Level,net.minecraft.world.level.GameType,net.minecraft.server.level.ServerPlayer,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)">
+<section class="detail" id="fireBlockBreak(net.minecraft.world.level.Level,net.minecraft.world.level.GameType,net.minecraft.world.entity.player.Player,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)">
 <h3>fireBlockBreak</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../event/level/BlockEvent.BreakEvent.html" title="class in net.neoforged.neoforge.event.level">BlockEvent.BreakEvent</a></span>&nbsp;<span class="element-name">fireBlockBreak</span><wbr><span class="parameters">(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../event/level/block/BreakBlockEvent.html" title="class in net.neoforged.neoforge.event.level.block">BreakBlockEvent</a></span>&nbsp;<span class="element-name">fireBlockBreak</span><wbr><span class="parameters">(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../minecraft/world/level/GameType.html" title="enum class in net.minecraft.world.level">GameType</a>&nbsp;gameType,
- <a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</span></div>
-<div class="block">Fires <a href="../event/level/BlockEvent.BreakEvent.html" title="class in net.neoforged.neoforge.event.level"><code>BlockEvent.BreakEvent</code></a>, pre-emptively canceling the event based on the conditions that will cause the block to not be broken anyway.
+<div class="block">Fires 
+<details class="invalid-tag">
+<summary>invalid reference</summary>
+<pre><code>BlockEvent.BreakEvent</code></pre>
+</details>
+, pre-emptively canceling the event based on the conditions that will cause the block to not be broken anyway.
 <p>
 Note that undoing the pre-cancel will not permit breaking the block, since the vanilla conditions will always be checked.</div>
 <dl class="notes">
@@ -1504,7 +1588,7 @@ This is fired from the tail of <a href="../../../minecraft/world/inventory/Anvil
 <section class="detail" id="setCraftingPlayer(net.minecraft.world.entity.player.Player)">
 <h3>setCraftingPlayer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCraftingPlayer</span><wbr><span class="parameters">(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCraftingPlayer</span><wbr><span class="parameters">(@Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</span></div>
 </div>
 </section>
 </li>
@@ -1512,7 +1596,7 @@ This is fired from the tail of <a href="../../../minecraft/world/inventory/Anvil
 <section class="detail" id="getCraftingPlayer()">
 <h3>getCraftingPlayer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a></span>&nbsp;<span class="element-name">getCraftingPlayer</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">@Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a></span>&nbsp;<span class="element-name">getCraftingPlayer</span>()</div>
 </div>
 </section>
 </li>
@@ -2235,6 +2319,51 @@ to override vanilla beehive harvest behavior by setting a non-null <a href="../.
 <div class="member-signature"><span class="annotations">@Internal
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">verifyEntityDataAccessorRegistration</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;callerClass,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="../../../minecraft/network/syncher/SyncedDataHolder.html" title="interface in net.minecraft.network.syncher">SyncedDataHolder</a>&gt;&nbsp;holderClass)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="throwIfIgnoresPausing(net.minecraft.core.Holder)">
+<h3>throwIfIgnoresPausing</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations">@Internal
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">throwIfIgnoresPausing</span><wbr><span class="parameters">(<a href="../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../minecraft/world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;clock)</span>
+                                  throws <span class="exceptions"><a href="../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="captureStructureRotation(net.minecraft.nbt.CompoundTag,net.minecraft.world.level.block.Rotation)">
+<h3>captureStructureRotation</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">@Nullable <a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a></span>&nbsp;<span class="element-name">captureStructureRotation</span><wbr><span class="parameters">(@Nullable <a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;blockEntityNbt,
+ <a href="../../../minecraft/world/level/block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="applyStructureRotation(net.minecraft.world.level.block.entity.BlockEntity,net.minecraft.nbt.CompoundTag,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings)">
+<h3>applyStructureRotation</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyStructureRotation</span><wbr><span class="parameters">(<a href="../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>&nbsp;blockEntity,
+ <a href="../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;blockEntityNbt,
+ <a href="../../../minecraft/world/level/levelgen/structure/templatesystem/StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="onCustomClickAction(net.minecraft.server.level.ServerPlayer,com.mojang.authlib.GameProfile,net.minecraft.resources.Identifier,java.util.Optional)">
+<h3>onCustomClickAction</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations">@Internal
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">onCustomClickAction</span><wbr><span class="parameters">(@Nullable <a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a>&nbsp;profile,
+ <a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../minecraft/nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;&nbsp;payload)</span></div>
 </div>
 </section>
 </li>

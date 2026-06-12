@@ -62,15 +62,17 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#serverResources" tabindex="0">serverResources</a></li>
 <li><a href="#registryAccess" tabindex="0">registryAccess</a></li>
+<li><a href="#retainedListeners" tabindex="0">retainedListeners</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess)" tabindex="0">AddServerReloadListenersEvent(ReloadableServerResources, RegistryAccess)</a></li>
+<li><a href="#%3Cinit%3E(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess,java.util.Map)" tabindex="0">AddServerReloadListenersEvent(ReloadableServerResources, RegistryAccess, Map)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
+<li><a href="#addRetainedListener(net.neoforged.neoforge.resource.ListenerKey,T)" tabindex="0">addRetainedListener(ListenerKey, T)</a></li>
 <li><a href="#getServerResources()" tabindex="0">getServerResources()</a></li>
 <li><a href="#getConditionContext()" tabindex="0">getConditionContext()</a></li>
 <li><a href="#getRegistryAccess()" tabindex="0">getRegistryAccess()</a></li>
@@ -125,9 +127,12 @@ The event is fired on the <a href="../common/NeoForge.html#EVENT_BUS"><code>NeoF
 <div class="col-first even-row-color"><code>private final <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
 <div class="col-second even-row-color"><code><a href="#registryAccess" class="member-name-link">registryAccess</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#serverResources" class="member-name-link">serverResources</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#retainedListeners" class="member-name-link">retainedListeners</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final <a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></code></div>
+<div class="col-second even-row-color"><code><a href="#serverResources" class="member-name-link">serverResources</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -139,8 +144,9 @@ The event is fired on the <a href="../common/NeoForge.html#EVENT_BUS"><code>NeoF
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess)" class="member-name-link">AddServerReloadListenersEvent</a><wbr>(<a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
- <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess,java.util.Map)" class="member-name-link">AddServerReloadListenersEvent</a><wbr>(<a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
+ <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;&nbsp;retainedListeners)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -150,28 +156,37 @@ The event is fired on the <a href="../common/NeoForge.html#EVENT_BUS"><code>NeoF
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../common/conditions/ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConditionContext()" class="member-name-link">getConditionContext</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;<br>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addRetainedListener(net.neoforged.neoforge.resource.ListenerKey,T)" class="member-name-link">addRetainedListener</a><wbr>(<a href="../resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;T&gt;&nbsp;key,
+ T&nbsp;listener)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a new <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources"><code>reload listener</code></a> to the resource manager and retains it in the <a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server"><code>ReloadableServerResources</code></a>
+for later access through [ReloadableServerResources#getListener(ListenerKey)()].</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../common/conditions/ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConditionContext()" class="member-name-link">getConditionContext</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This context object holds data relevant to the current reload, such as staged tags.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRegistryAccess()" class="member-name-link">getRegistryAccess</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Provides access to the loaded registries associated with these server resources.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getRegistryAccess()" class="member-name-link">getRegistryAccess</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <a href="../resource/ContextAwareReloadListener.html#getRegistryLookup()"><code>ContextAwareReloadListener.getRegistryLookup()</code></a> instead</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServerResources()" class="member-name-link">getServerResources</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lookupName(net.minecraft.server.packs.resources.PreparableReloadListener)" class="member-name-link">lookupName</a><wbr>(<a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&nbsp;listener)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServerResources()" class="member-name-link">getServerResources</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lookupName(net.minecraft.server.packs.resources.PreparableReloadListener)" class="member-name-link">lookupName</a><wbr>(<a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&nbsp;listener)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -208,6 +223,14 @@ The event is fired on the <a href="../common/NeoForge.html#EVENT_BUS"><code>NeoF
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="retainedListeners">
+<h3>retainedListeners</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</span>&nbsp;<span class="element-name">retainedListeners</span></div>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -217,12 +240,13 @@ The event is fired on the <a href="../common/NeoForge.html#EVENT_BUS"><code>NeoF
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess)">
+<section class="detail" id="&lt;init&gt;(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess,java.util.Map)">
 <h3>AddServerReloadListenersEvent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@Internal
 </span><span class="modifiers">public</span>&nbsp;<span class="element-name">AddServerReloadListenersEvent</span><wbr><span class="parameters">(<a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
- <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</span></div>
+ <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;&nbsp;retainedListeners)</span></div>
 </div>
 </section>
 </li>
@@ -234,6 +258,26 @@ The event is fired on the <a href="../common/NeoForge.html#EVENT_BUS"><code>NeoF
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="addRetainedListener(net.neoforged.neoforge.resource.ListenerKey,T)">
+<h3 id="addRetainedListener(net.neoforged.neoforge.resource.ListenerKey,net.minecraft.server.packs.resources.PreparableReloadListener)">addRetainedListener</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addRetainedListener</span><wbr><span class="parameters">(<a href="../resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;T&gt;&nbsp;key,
+ T&nbsp;listener)</span></div>
+<div class="block"><p>Adds a new <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources"><code>reload listener</code></a> to the resource manager and retains it in the <a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server"><code>ReloadableServerResources</code></a>
+for later access through [ReloadableServerResources#getListener(ListenerKey)()].</p>
+<p>Unless explicitly specified, this listener will run after all vanilla listeners, in the order it was registered.</p>
+</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>key</code> - The resource location that identifies the reload listener for dependency sorting and lookup.</dd>
+<dd><code>listener</code> - The listener to add.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if another listener with that key was already registered.</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="getServerResources()">
 <h3>getServerResources</h3>
@@ -263,12 +307,17 @@ The event is fired on the <a href="../common/NeoForge.html#EVENT_BUS"><code>NeoF
 <section class="detail" id="getRegistryAccess()">
 <h3>getRegistryAccess</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></span>&nbsp;<span class="element-name">getRegistryAccess</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></span>&nbsp;<span class="element-name">getRegistryAccess</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <a href="../resource/ContextAwareReloadListener.html#getRegistryLookup()"><code>ContextAwareReloadListener.getRegistryLookup()</code></a> instead</div>
+</div>
 <div class="block">Provides access to the loaded registries associated with these server resources.
 All built-in and dynamic registries are loaded and frozen by this point.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>The RegistryAccess context for the currently active reload.</dd>
+<dd>The <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core"><code>RegistryAccess</code></a> context for the currently active reload.</dd>
 </dl>
 </div>
 </section>

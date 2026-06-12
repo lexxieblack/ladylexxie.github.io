@@ -68,8 +68,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#functionLibrary" tabindex="0">functionLibrary</a></li>
 <li><a href="#postponedTags" tabindex="0">postponedTags</a></li>
 <li><a href="#newComponents" tabindex="0">newComponents</a></li>
-<li><a href="#registryLookup" tabindex="0">registryLookup</a></li>
+<li><a href="#registryAccess" tabindex="0">registryAccess</a></li>
+<li><a href="#loadingContext" tabindex="0">loadingContext</a></li>
 <li><a href="#context" tabindex="0">context</a></li>
+<li><a href="#retainedListeners" tabindex="0">retainedListeners</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -85,6 +87,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getCommands()" tabindex="0">getCommands()</a></li>
 <li><a href="#getAdvancements()" tabindex="0">getAdvancements()</a></li>
 <li><a href="#listeners()" tabindex="0">listeners()</a></li>
+<li><a href="#getListener(net.neoforged.neoforge.resource.ListenerKey)" tabindex="0">getListener(ListenerKey)</a></li>
 <li><a href="#getConditionContext()" tabindex="0">getConditionContext()</a></li>
 <li><a href="#getRegistryLookup()" tabindex="0">getRegistryLookup()</a></li>
 <li><a href="#loadResources(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.core.LayeredRegistryAccess,java.util.List,net.minecraft.world.flag.FeatureFlagSet,net.minecraft.commands.Commands.CommandSelection,net.minecraft.server.permissions.PermissionSet,java.util.concurrent.Executor,java.util.concurrent.Executor)" tabindex="0">loadResources(ResourceManager, LayeredRegistryAccess, List, FeatureFlagSet, Commands.CommandSelection, PermissionSet, Executor, Executor)</a></li>
@@ -137,20 +140,26 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>private final <a href="ServerFunctionLibrary.html" title="class in net.minecraft.server">ServerFunctionLibrary</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#functionLibrary" class="member-name-link">functionLibrary</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../core/component/DataComponentInitializers.PendingComponents.html" title="interface in net.minecraft.core.component">DataComponentInitializers.PendingComponents</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#newComponents" class="member-name-link">newComponents</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../core/Registry.PendingTags.html" title="interface in net.minecraft.core">Registry.PendingTags</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#postponedTags" class="member-name-link">postponedTags</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../world/item/crafting/RecipeManager.html" title="class in net.minecraft.world.item.crafting">RecipeManager</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#recipes" class="member-name-link">recipes</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>private final <a href="../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></code></div>
-<div class="col-second even-row-color"><code><a href="#registryLookup" class="member-name-link">registryLookup</a></code></div>
+<div class="col-second even-row-color"><code><a href="#loadingContext" class="member-name-link">loadingContext</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
+<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../core/component/DataComponentInitializers.PendingComponents.html" title="interface in net.minecraft.core.component">DataComponentInitializers.PendingComponents</a>&lt;?&gt;&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#newComponents" class="member-name-link">newComponents</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../core/Registry.PendingTags.html" title="interface in net.minecraft.core">Registry.PendingTags</a>&lt;?&gt;&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#postponedTags" class="member-name-link">postponedTags</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final <a href="../world/item/crafting/RecipeManager.html" title="class in net.minecraft.world.item.crafting">RecipeManager</a></code></div>
+<div class="col-second even-row-color"><code><a href="#recipes" class="member-name-link">recipes</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#registryAccess" class="member-name-link">registryAccess</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../neoforged/neoforge/resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#retainedListeners" class="member-name-link">retainedListeners</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -205,19 +214,24 @@ This is not useful outside the reloading stage.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ServerFunctionLibrary.html" title="class in net.minecraft.server">ServerFunctionLibrary</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFunctionLibrary()" class="member-name-link">getFunctionLibrary</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../world/item/crafting/RecipeManager.html" title="class in net.minecraft.world.item.crafting">RecipeManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeManager()" class="member-name-link">getRecipeManager</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRegistryLookup()" class="member-name-link">getRegistryLookup</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends <a href="packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;<br>T</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getListener(net.neoforged.neoforge.resource.ListenerKey)" class="member-name-link">getListener</a><wbr>(<a href="../../neoforged/neoforge/resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;T&gt;&nbsp;key)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the reload listener registered with the provided key.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../world/item/crafting/RecipeManager.html" title="class in net.minecraft.world.item.crafting">RecipeManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeManager()" class="member-name-link">getRecipeManager</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRegistryLookup()" class="member-name-link">getRegistryLookup</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the lookup provider access for the currently active reload.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#listeners()" class="member-name-link">listeners</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadResources(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.core.LayeredRegistryAccess,java.util.List,net.minecraft.world.flag.FeatureFlagSet,net.minecraft.commands.Commands.CommandSelection,net.minecraft.server.permissions.PermissionSet,java.util.concurrent.Executor,java.util.concurrent.Executor)" class="member-name-link">loadResources</a><wbr>(<a href="packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManager,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#listeners()" class="member-name-link">listeners</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadResources(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.core.LayeredRegistryAccess,java.util.List,net.minecraft.world.flag.FeatureFlagSet,net.minecraft.commands.Commands.CommandSelection,net.minecraft.server.permissions.PermissionSet,java.util.concurrent.Executor,java.util.concurrent.Executor)" class="member-name-link">loadResources</a><wbr>(<a href="packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManager,
  <a href="../core/LayeredRegistryAccess.html" title="class in net.minecraft.core">LayeredRegistryAccess</a>&lt;<a href="RegistryLayer.html" title="enum class in net.minecraft.server">RegistryLayer</a>&gt;&nbsp;contextLayers,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../core/Registry.PendingTags.html" title="interface in net.minecraft.core">Registry.PendingTags</a>&lt;?&gt;&gt;&nbsp;updatedContextTags,
  <a href="../world/flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFeatures,
@@ -225,10 +239,10 @@ This is not useful outside the reloading stage.</div>
  <a href="permissions/PermissionSet.html" title="interface in net.minecraft.server.permissions">PermissionSet</a>&nbsp;functionCompilationPermissions,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;backgroundExecutor,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;mainThreadExecutor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateComponentsAndStaticRegistryTags()" class="member-name-link">updateComponentsAndStaticRegistryTags</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateComponentsAndStaticRegistryTags()" class="member-name-link">updateComponentsAndStaticRegistryTags</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -319,10 +333,18 @@ This is not useful outside the reloading stage.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="registryLookup">
-<h3>registryLookup</h3>
+<section class="detail" id="registryAccess">
+<h3>registryAccess</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></span>&nbsp;<span class="element-name">registryLookup</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></span>&nbsp;<span class="element-name">registryAccess</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="loadingContext">
+<h3>loadingContext</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></span>&nbsp;<span class="element-name">loadingContext</span></div>
 </div>
 </section>
 </li>
@@ -331,6 +353,14 @@ This is not useful outside the reloading stage.</div>
 <h3>context</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../neoforged/neoforge/common/conditions/ConditionContext.html" title="class in net.neoforged.neoforge.common.conditions">ConditionContext</a></span>&nbsp;<span class="element-name">context</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="retainedListeners">
+<h3>retainedListeners</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../neoforged/neoforge/resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</span>&nbsp;<span class="element-name">retainedListeners</span></div>
 </div>
 </section>
 </li>
@@ -409,6 +439,19 @@ This is not useful outside the reloading stage.</div>
 <h3>listeners</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</span>&nbsp;<span class="element-name">listeners</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getListener(net.neoforged.neoforge.resource.ListenerKey)">
+<h3>getListener</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">getListener</span><wbr><span class="parameters">(<a href="../../neoforged/neoforge/resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;T&gt;&nbsp;key)</span></div>
+<div class="block">Returns the reload listener registered with the provided key.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the reload listener registered with the provided key</dd>
+</dl>
 </div>
 </section>
 </li>

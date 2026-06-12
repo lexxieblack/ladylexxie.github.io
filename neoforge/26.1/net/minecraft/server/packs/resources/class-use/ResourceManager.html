@@ -468,7 +468,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static int[]</code></div>
+<div class="col-first even-row-color"><code>static int[]</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">PalettedPermutations.</span><code><a href="../../../../client/renderer/texture/atlas/sources/PalettedPermutations.html#loadPaletteEntryFromImage(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.Identifier)" class="member-name-link">loadPaletteEntryFromImage</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManager,
  <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;location)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -894,20 +894,31 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, T&gt;&nbsp;result)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static &lt;T&gt;&nbsp;void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SimpleJsonResourceReloadListener.</span><code><a href="../SimpleJsonResourceReloadListener.html#scanDirectoryWithOptionalValues(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" class="member-name-link">scanDirectoryWithOptionalValues</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
+<div class="col-second odd-row-color"><span class="type-name-label">SimpleJsonResourceReloadListener.</span><code><a href="../SimpleJsonResourceReloadListener.html#scanDirectoryWithModifier(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map,java.util.function.Consumer)" class="member-name-link">scanDirectoryWithModifier</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
+ <a href="../../../../resources/FileToIdConverter.html" title="class in net.minecraft.resources">FileToIdConverter</a>&nbsp;lister,
+ <a href="../../../../../../com/mojang/serialization/DynamicOps.html" title="interface in com.mojang.serialization">DynamicOps</a>&lt;com.google.gson.JsonElement&gt;&nbsp;ops,
+ <a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;T&gt;&nbsp;codec,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, T&gt;&nbsp;result,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;&gt;&nbsp;jsonConsumer)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Neo: Overload of <a href="../SimpleJsonResourceReloadListener.html#scanDirectory(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)"><code>SimpleJsonResourceReloadListener.scanDirectory(ResourceManager, FileToIdConverter, DynamicOps, Codec, Map)</code></a> with support
+for modifying the raw JSON in bulk before it is deserialized.</div>
+</div>
+<div class="col-first even-row-color"><code>static &lt;T&gt;&nbsp;void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SimpleJsonResourceReloadListener.</span><code><a href="../SimpleJsonResourceReloadListener.html#scanDirectoryWithOptionalValues(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" class="member-name-link">scanDirectoryWithOptionalValues</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
  <a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;T&gt;&gt;&nbsp;registryKey,
  <a href="../../../../../../com/mojang/serialization/DynamicOps.html" title="interface in com.mojang.serialization">DynamicOps</a>&lt;com.google.gson.JsonElement&gt;&nbsp;ops,
  <a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;&gt;&nbsp;codec,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;&gt;&nbsp;result)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SimpleReloadInstance.</span><code><a href="../SimpleReloadInstance.html#startTasks(java.util.concurrent.Executor,java.util.concurrent.Executor,net.minecraft.server.packs.resources.ResourceManager,java.util.List,net.minecraft.server.packs.resources.SimpleReloadInstance.StateFactory,java.util.concurrent.CompletableFuture)" class="member-name-link">startTasks</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;taskExecutor,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">SimpleReloadInstance.</span><code><a href="../SimpleReloadInstance.html#startTasks(java.util.concurrent.Executor,java.util.concurrent.Executor,net.minecraft.server.packs.resources.ResourceManager,java.util.List,net.minecraft.server.packs.resources.SimpleReloadInstance.StateFactory,java.util.concurrent.CompletableFuture)" class="member-name-link">startTasks</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;taskExecutor,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;mainThreadExecutor,
  <a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManager,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;&nbsp;listeners,
  <a href="../SimpleReloadInstance.StateFactory.html" title="interface in net.minecraft.server.packs.resources">SimpleReloadInstance.StateFactory</a>&lt;<a href="../SimpleReloadInstance.html#type-param-S" title="type parameter in SimpleReloadInstance">S</a>&gt;&nbsp;stateFactory,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;?&gt;&nbsp;initialTask)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../package-summary.html">net.minecraft.server.packs.resources</a> with parameters of type <a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a></span></div>
 <div class="summary-table three-column-summary">
@@ -1156,9 +1167,13 @@ textures for the atlas being loaded.</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">NamespacedDirectoryLister.</span><code><a href="../../../../../neoforged/neoforge/client/textures/NamespacedDirectoryLister.html#run(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.client.renderer.texture.atlas.SpriteSource.Output)" class="member-name-link">run</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManager,
+<div class="col-second even-row-color"><span class="type-name-label">DirectoryPalettedPermutations.</span><code><a href="../../../../../neoforged/neoforge/client/textures/DirectoryPalettedPermutations.html#run(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.client.renderer.texture.atlas.SpriteSource.Output)" class="member-name-link">run</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
  <a href="../../../../client/renderer/texture/atlas/SpriteSource.Output.html" title="interface in net.minecraft.client.renderer.texture.atlas">SpriteSource.Output</a>&nbsp;output)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">NamespacedDirectoryLister.</span><code><a href="../../../../../neoforged/neoforge/client/textures/NamespacedDirectoryLister.html#run(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.client.renderer.texture.atlas.SpriteSource.Output)" class="member-name-link">run</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManager,
+ <a href="../../../../client/renderer/texture/atlas/SpriteSource.Output.html" title="interface in net.minecraft.client.renderer.texture.atlas">SpriteSource.Output</a>&nbsp;output)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -1191,14 +1206,10 @@ textures for the atlas being loaded.</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../../../../../neoforged/neoforge/common/loot/LootModifierManager.html#apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">apply</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;&nbsp;resourceList,
+<div class="col-second even-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../../../../../neoforged/neoforge/common/loot/LootModifierManager.html#apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">apply</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../../../../../neoforged/neoforge/common/loot/IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;&nbsp;resourceList,
  <a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManagerIn,
  <a href="../../../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profilerIn)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LootModifierManager.</span><code><a href="../../../../../neoforged/neoforge/common/loot/LootModifierManager.html#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">prepare</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManager,
- <a href="../../../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profilerFiller)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -1261,11 +1272,9 @@ textures for the atlas being loaded.</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;executor,
  <a href="../../../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="../../../../../neoforged/neoforge/registries/DataMapLoader.LoadResult.html" title="class in net.neoforged.neoforge.registries">DataMapLoader.LoadResult</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DataMapLoader.</span><code><a href="../../../../../neoforged/neoforge/registries/DataMapLoader.html#load(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller,net.minecraft.core.RegistryAccess,net.neoforged.neoforge.common.conditions.ICondition.IContext)" class="member-name-link">load</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler,
- <a href="../../../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;access,
- <a href="../../../../../neoforged/neoforge/common/conditions/ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a>&nbsp;context)</code></div>
+<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="../../../../../neoforged/neoforge/registries/DataMapLoader.LoadResult.html" title="class in net.neoforged.neoforge.registries">DataMapLoader.LoadResult</a>&lt;?&gt;&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DataMapLoader.</span><code><a href="../../../../../neoforged/neoforge/registries/DataMapLoader.html#load(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">load</a><wbr>(<a href="../ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
+ <a href="../../../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>

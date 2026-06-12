@@ -68,6 +68,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#blockedDamage" tabindex="0">blockedDamage</a></li>
 <li><a href="#shieldDamage" tabindex="0">shieldDamage</a></li>
 <li><a href="#invulnerabilityTicksAfterAttack" tabindex="0">invulnerabilityTicksAfterAttack</a></li>
+<li><a href="#inflictedDamage" tabindex="0">inflictedDamage</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -89,6 +90,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction)" tabindex="0">getReduction(DamageContainer.Reduction)</a></li>
 <li><a href="#setBlockedDamage(net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent)" tabindex="0">setBlockedDamage(LivingShieldBlockEvent)</a></li>
 <li><a href="#setReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction,float)" tabindex="0">setReduction(DamageContainer.Reduction, float)</a></li>
+<li><a href="#captureInflictedDamage()" tabindex="0">captureInflictedDamage()</a></li>
+<li><a href="#getInflictedDamage()" tabindex="0">getInflictedDamage()</a></li>
 <li><a href="#modifyReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction,float)" tabindex="0">modifyReduction(DamageContainer.Reduction, float)</a></li>
 </ol>
 </li>
@@ -161,27 +164,30 @@ the attack.</li>
 <div class="col-first even-row-color"><code>private float</code></div>
 <div class="col-second even-row-color"><code><a href="#blockedDamage" class="member-name-link">blockedDamage</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#invulnerabilityTicksAfterAttack" class="member-name-link">invulnerabilityTicksAfterAttack</a></code></div>
+<div class="col-first odd-row-color"><code>private float</code></div>
+<div class="col-second odd-row-color"><code><a href="#inflictedDamage" class="member-name-link">inflictedDamage</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private float</code></div>
-<div class="col-second even-row-color"><code><a href="#newDamage" class="member-name-link">newDamage</a></code></div>
+<div class="col-first even-row-color"><code>private int</code></div>
+<div class="col-second even-row-color"><code><a href="#invulnerabilityTicksAfterAttack" class="member-name-link">invulnerabilityTicksAfterAttack</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#originalDamage" class="member-name-link">originalDamage</a></code></div>
+<div class="col-first odd-row-color"><code>private float</code></div>
+<div class="col-second odd-row-color"><code><a href="#newDamage" class="member-name-link">newDamage</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a><wbr>&lt;<a href="DamageContainer.Reduction.html" title="enum class in net.neoforged.neoforge.common.damagesource">DamageContainer.Reduction</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="IReductionFunction.html" title="interface in net.neoforged.neoforge.common.damagesource">IReductionFunction</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#reductionFunctions" class="member-name-link">reductionFunctions</a></code></div>
+<div class="col-first even-row-color"><code>private final float</code></div>
+<div class="col-second even-row-color"><code><a href="#originalDamage" class="member-name-link">originalDamage</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a><wbr>&lt;<a href="DamageContainer.Reduction.html" title="enum class in net.neoforged.neoforge.common.damagesource">DamageContainer.Reduction</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#reductions" class="member-name-link">reductions</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a><wbr>&lt;<a href="DamageContainer.Reduction.html" title="enum class in net.neoforged.neoforge.common.damagesource">DamageContainer.Reduction</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="IReductionFunction.html" title="interface in net.neoforged.neoforge.common.damagesource">IReductionFunction</a>&gt;&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#reductionFunctions" class="member-name-link">reductionFunctions</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private float</code></div>
-<div class="col-second even-row-color"><code><a href="#shieldDamage" class="member-name-link">shieldDamage</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a><wbr>&lt;<a href="DamageContainer.Reduction.html" title="enum class in net.neoforged.neoforge.common.damagesource">DamageContainer.Reduction</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#reductions" class="member-name-link">reductions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#source" class="member-name-link">source</a></code></div>
+<div class="col-first odd-row-color"><code>private float</code></div>
+<div class="col-second odd-row-color"><code><a href="#shieldDamage" class="member-name-link">shieldDamage</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final <a href="../../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a></code></div>
+<div class="col-second even-row-color"><code><a href="#source" class="member-name-link">source</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -216,10 +222,20 @@ the attack.</li>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds a callback modifier to the vanilla damage reductions.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockedDamage()" class="member-name-link">getBlockedDamage</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#captureInflictedDamage()" class="member-name-link">captureInflictedDamage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Captures the "true" inflicted damage, which is the authoritative amount of damage dealt after <a href="../../event/entity/living/LivingDamageEvent.Pre.html" title="class in net.neoforged.neoforge.event.entity.living"><code>LivingDamageEvent.Pre</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockedDamage()" class="member-name-link">getBlockedDamage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the damage blocked during the <a href="../../event/entity/living/LivingShieldBlockEvent.html" title="class in net.neoforged.neoforge.event.entity.living"><code>LivingShieldBlockEvent</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInflictedDamage()" class="member-name-link">getInflictedDamage</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the "true" inflicted damage so we can bubble it back up to <a href="../../../../minecraft/world/entity/LivingEntity.html#lastHurt"><code>LivingEntity.lastHurt</code></a> after actuallyHurt() completes.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNewDamage()" class="member-name-link">getNewDamage</a>()</code></div>
@@ -350,6 +366,14 @@ the attack.</li>
 <h3>invulnerabilityTicksAfterAttack</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">invulnerabilityTicksAfterAttack</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="inflictedDamage">
+<h3>inflictedDamage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">inflictedDamage</span></div>
 </div>
 </section>
 </li>
@@ -540,6 +564,30 @@ modifiers prior to the event.</div>
 <div class="member-signature"><span class="annotations">@Internal
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setReduction</span><wbr><span class="parameters">(<a href="DamageContainer.Reduction.html" title="enum class in net.neoforged.neoforge.common.damagesource">DamageContainer.Reduction</a>&nbsp;reduction,
  float&nbsp;amount)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="captureInflictedDamage()">
+<h3>captureInflictedDamage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations">@Internal
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">captureInflictedDamage</span>()</div>
+<div class="block">Captures the "true" inflicted damage, which is the authoritative amount of damage dealt after <a href="../../event/entity/living/LivingDamageEvent.Pre.html" title="class in net.neoforged.neoforge.event.entity.living"><code>LivingDamageEvent.Pre</code></a>.
+<p>
+This will never be called if the entity is invulnerable to the damage, which leaves the inflicted damage (correctly) at zero.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getInflictedDamage()">
+<h3>getInflictedDamage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations">@Internal
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getInflictedDamage</span>()</div>
+<div class="block">Returns the "true" inflicted damage so we can bubble it back up to <a href="../../../../minecraft/world/entity/LivingEntity.html#lastHurt"><code>LivingEntity.lastHurt</code></a> after actuallyHurt() completes.
+<p>
+Not doing a capture of the value means we have to try and reverse engineer the value from the new damage and the amount that was soaked by absorption hearts.</div>
 </div>
 </section>
 </li>

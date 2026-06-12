@@ -159,7 +159,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#renderWaterOverlay(net.minecraft.world.entity.player.Player,com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.resources.model.sprite.SpriteGetter,net.minecraft.client.renderer.MultiBufferSource)" tabindex="0">renderWaterOverlay(Player, PoseStack, SpriteGetter, MultiBufferSource)</a></li>
 <li><a href="#renderBlockOverlay(net.minecraft.world.entity.player.Player,com.mojang.blaze3d.vertex.PoseStack,net.neoforged.neoforge.client.event.RenderBlockScreenEffectEvent.OverlayType,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.client.resources.model.sprite.SpriteGetter,net.minecraft.client.renderer.MultiBufferSource)" tabindex="0">renderBlockOverlay(Player, PoseStack, RenderBlockScreenEffectEvent.OverlayType, BlockState, BlockPos, SpriteGetter, MultiBufferSource)</a></li>
 <li><a href="#gatherAdditionalRenderers(net.minecraft.core.BlockPos,net.minecraft.world.level.Level)" tabindex="0">gatherAdditionalRenderers(BlockPos, Level)</a></li>
-<li><a href="#addAdditionalGeometry(java.util.List,java.util.function.Function,net.minecraft.client.renderer.chunk.RenderSectionRegion,net.minecraft.client.renderer.block.ModelBlockRenderer,net.minecraft.core.BlockPos)" tabindex="0">addAdditionalGeometry(List, Function, RenderSectionRegion, ModelBlockRenderer, BlockPos)</a></li>
+<li><a href="#addAdditionalGeometry(java.util.List,java.util.function.Function,net.minecraft.client.renderer.chunk.RenderSectionRegion,net.minecraft.client.renderer.block.ModelBlockRenderer)" tabindex="0">addAdditionalGeometry(List, Function, RenderSectionRegion, ModelBlockRenderer)</a></li>
 <li><a href="#initClientHooks(net.minecraft.client.Minecraft,net.minecraft.server.packs.resources.ReloadableResourceManager)" tabindex="0">initClientHooks(Minecraft, ReloadableResourceManager)</a></li>
 <li><a href="#initClientRegistries()" tabindex="0">initClientRegistries()</a></li>
 <li><a href="#fireRenderFramePre(net.minecraft.client.DeltaTracker)" tabindex="0">fireRenderFramePre(DeltaTracker)</a></li>
@@ -167,13 +167,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#fireResourceLoadFinishedEvent(boolean)" tabindex="0">fireResourceLoadFinishedEvent(boolean)</a></li>
 <li><a href="#fireClientTickPre()" tabindex="0">fireClientTickPre()</a></li>
 <li><a href="#fireClientTickPost()" tabindex="0">fireClientTickPost()</a></li>
+<li><a href="#fireWindowResize(com.mojang.blaze3d.platform.Window)" tabindex="0">fireWindowResize(Window)</a></li>
 <li><a href="#getEffectTooltip(net.minecraft.client.gui.screens.inventory.AbstractContainerScreen,net.minecraft.world.effect.MobEffectInstance,java.util.List)" tabindex="0">getEffectTooltip(AbstractContainerScreen, MobEffectInstance, List)</a></li>
 <li><a href="#reloadRenderer()" tabindex="0">reloadRenderer()</a></li>
 <li><a href="#gatherTextureAtlases(java.util.List)" tabindex="0">gatherTextureAtlases(List)</a></li>
 <li><a href="#fireFrameGraphSetup(com.mojang.blaze3d.framegraph.FrameGraphBuilder,net.minecraft.client.renderer.LevelTargetBundle,com.mojang.blaze3d.resource.RenderTargetDescriptor,net.minecraft.client.renderer.state.level.CameraRenderState,org.joml.Matrix4fc,net.minecraft.client.DeltaTracker,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">fireFrameGraphSetup(FrameGraphBuilder, LevelTargetBundle, RenderTargetDescriptor, CameraRenderState, Matrix4fc, DeltaTracker, ProfilerFiller)</a></li>
 <li><a href="#instantiateMainTarget(int,int)" tabindex="0">instantiateMainTarget(int, int)</a></li>
 <li><a href="#getStencilFormat()" tabindex="0">getStencilFormat()</a></li>
-<li><a href="#createLoadingOverlay(net.minecraft.client.Minecraft,net.minecraft.server.packs.resources.ReloadInstance,java.util.function.Consumer,boolean)" tabindex="0">createLoadingOverlay(Minecraft, ReloadInstance, Consumer, boolean)</a></li>
 <li><a href="#getSpriteDefaultMetadataSectionTypes(java.util.Set)" tabindex="0">getSpriteDefaultMetadataSectionTypes(Set)</a></li>
 <li><a href="#gatherPictureInPictureRenderers(java.util.List)" tabindex="0">gatherPictureInPictureRenderers(List)</a></li>
 <li><a href="#convertUsername()" tabindex="0">convertUsername()</a></li>
@@ -272,11 +272,10 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addAdditionalGeometry(java.util.List,java.util.function.Function,net.minecraft.client.renderer.chunk.RenderSectionRegion,net.minecraft.client.renderer.block.ModelBlockRenderer,net.minecraft.core.BlockPos)" class="member-name-link">addAdditionalGeometry</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="event/AddSectionGeometryEvent.AdditionalSectionRenderer.html" title="interface in net.neoforged.neoforge.client.event">AddSectionGeometryEvent.AdditionalSectionRenderer</a>&gt;&nbsp;additionalRenderers,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addAdditionalGeometry(java.util.List,java.util.function.Function,net.minecraft.client.renderer.chunk.RenderSectionRegion,net.minecraft.client.renderer.block.ModelBlockRenderer)" class="member-name-link">addAdditionalGeometry</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="event/AddSectionGeometryEvent.AdditionalSectionRenderer.html" title="interface in net.neoforged.neoforge.client.event">AddSectionGeometryEvent.AdditionalSectionRenderer</a>&gt;&nbsp;additionalRenderers,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../minecraft/client/renderer/chunk/ChunkSectionLayer.html" title="enum class in net.minecraft.client.renderer.chunk">ChunkSectionLayer</a>, <a href="../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&gt;&nbsp;getOrCreateBuilder,
  <a href="../../../minecraft/client/renderer/chunk/RenderSectionRegion.html" title="class in net.minecraft.client.renderer.chunk">RenderSectionRegion</a>&nbsp;region,
- <a href="../../../minecraft/client/renderer/block/ModelBlockRenderer.html" title="class in net.minecraft.client.renderer.block">ModelBlockRenderer</a>&nbsp;blockRenderer,
- <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;sectionOrigin)</code></div>
+ <a href="../../../minecraft/client/renderer/block/ModelBlockRenderer.html" title="class in net.minecraft.client.renderer.block">ModelBlockRenderer</a>&nbsp;blockRenderer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clearGuiLayers(net.minecraft.client.Minecraft)" class="member-name-link">clearGuiLayers</a><wbr>(<a href="../../../minecraft/client/Minecraft.html" title="class in net.minecraft.client">Minecraft</a>&nbsp;minecraft)</code></div>
@@ -294,82 +293,79 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Copies humanoid model properties from the original model to another, used for armor models</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/client/gui/screens/Overlay.html" title="class in net.minecraft.client.gui.screens">Overlay</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createLoadingOverlay(net.minecraft.client.Minecraft,net.minecraft.server.packs.resources.ReloadInstance,java.util.function.Consumer,boolean)" class="member-name-link">createLoadingOverlay</a><wbr>(<a href="../../../minecraft/client/Minecraft.html" title="class in net.minecraft.client">Minecraft</a>&nbsp;minecraft,
- <a href="../../../minecraft/server/packs/resources/ReloadInstance.html" title="interface in net.minecraft.server.packs.resources">ReloadInstance</a>&nbsp;reloadInstance,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;&gt;&nbsp;errorHandler,
- boolean&nbsp;fadeIn)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#drawScreen(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">drawScreen</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
+ <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
+ int&nbsp;mouseX,
+ int&nbsp;mouseY,
+ float&nbsp;partialTick)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#drawScreen(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">drawScreen</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#drawScreenInternal(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">drawScreenInternal</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
  <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
  int&nbsp;mouseX,
  int&nbsp;mouseY,
  float&nbsp;partialTick)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#drawScreenInternal(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">drawScreenInternal</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
- <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
- int&nbsp;mouseX,
- int&nbsp;mouseY,
- float&nbsp;partialTick)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireClientTickPost()" class="member-name-link">fireClientTickPost</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireClientTickPost()" class="member-name-link">fireClientTickPost</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires <a href="event/ClientTickEvent.Post.html" title="class in net.neoforged.neoforge.client.event"><code>ClientTickEvent.Post</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireClientTickPre()" class="member-name-link">fireClientTickPre</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireClientTickPre()" class="member-name-link">fireClientTickPre</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires <a href="event/ClientTickEvent.Pre.html" title="class in net.neoforged.neoforge.client.event"><code>ClientTickEvent.Pre</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/FrameGraphSetupEvent.html" title="class in net.neoforged.neoforge.client.event">FrameGraphSetupEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireFrameGraphSetup(com.mojang.blaze3d.framegraph.FrameGraphBuilder,net.minecraft.client.renderer.LevelTargetBundle,com.mojang.blaze3d.resource.RenderTargetDescriptor,net.minecraft.client.renderer.state.level.CameraRenderState,org.joml.Matrix4fc,net.minecraft.client.DeltaTracker,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">fireFrameGraphSetup</a><wbr>(<a href="../../../../com/mojang/blaze3d/framegraph/FrameGraphBuilder.html" title="class in com.mojang.blaze3d.framegraph">FrameGraphBuilder</a>&nbsp;builder,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/FrameGraphSetupEvent.html" title="class in net.neoforged.neoforge.client.event">FrameGraphSetupEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireFrameGraphSetup(com.mojang.blaze3d.framegraph.FrameGraphBuilder,net.minecraft.client.renderer.LevelTargetBundle,com.mojang.blaze3d.resource.RenderTargetDescriptor,net.minecraft.client.renderer.state.level.CameraRenderState,org.joml.Matrix4fc,net.minecraft.client.DeltaTracker,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">fireFrameGraphSetup</a><wbr>(<a href="../../../../com/mojang/blaze3d/framegraph/FrameGraphBuilder.html" title="class in com.mojang.blaze3d.framegraph">FrameGraphBuilder</a>&nbsp;builder,
  <a href="../../../minecraft/client/renderer/LevelTargetBundle.html" title="class in net.minecraft.client.renderer">LevelTargetBundle</a>&nbsp;targets,
  <a href="../../../../com/mojang/blaze3d/resource/RenderTargetDescriptor.html" title="class in com.mojang.blaze3d.resource">RenderTargetDescriptor</a>&nbsp;renderTargetDescriptor,
  <a href="../../../minecraft/client/renderer/state/level/CameraRenderState.html" title="class in net.minecraft.client.renderer.state.level">CameraRenderState</a>&nbsp;cameraState,
  org.joml.Matrix4fc&nbsp;modelViewMatrix,
  <a href="../../../minecraft/client/DeltaTracker.html" title="interface in net.minecraft.client">DeltaTracker</a>&nbsp;deltaTracker,
  <a href="../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/client/gui/Gui.HeartType.html" title="enum class in net.minecraft.client.gui">Gui.HeartType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#firePlayerHeartTypeEvent(net.minecraft.world.entity.player.Player,net.minecraft.client.gui.Gui.HeartType)" class="member-name-link">firePlayerHeartTypeEvent</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/client/gui/Gui.HeartType.html" title="enum class in net.minecraft.client.gui">Gui.HeartType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#firePlayerHeartTypeEvent(net.minecraft.world.entity.player.Player,net.minecraft.client.gui.Gui.HeartType)" class="member-name-link">firePlayerHeartTypeEvent</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/client/gui/Gui.HeartType.html" title="enum class in net.minecraft.client.gui">Gui.HeartType</a>&nbsp;heartType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Called by <a href="../../../minecraft/client/gui/Gui.HeartType.html#forPlayer(net.minecraft.world.entity.player.Player)"><code>Gui.HeartType.forPlayer(Player)</code></a> to allow for modification of the displayed heart type in the
 health bar.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#firePlayerLogin(net.minecraft.client.multiplayer.MultiPlayerGameMode,net.minecraft.client.player.LocalPlayer,net.minecraft.network.Connection)" class="member-name-link">firePlayerLogin</a><wbr>(<a href="../../../minecraft/client/multiplayer/MultiPlayerGameMode.html" title="class in net.minecraft.client.multiplayer">MultiPlayerGameMode</a>&nbsp;pc,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#firePlayerLogin(net.minecraft.client.multiplayer.MultiPlayerGameMode,net.minecraft.client.player.LocalPlayer,net.minecraft.network.Connection)" class="member-name-link">firePlayerLogin</a><wbr>(<a href="../../../minecraft/client/multiplayer/MultiPlayerGameMode.html" title="class in net.minecraft.client.multiplayer">MultiPlayerGameMode</a>&nbsp;pc,
  <a href="../../../minecraft/client/player/LocalPlayer.html" title="class in net.minecraft.client.player">LocalPlayer</a>&nbsp;player,
  <a href="../../../minecraft/network/Connection.html" title="class in net.minecraft.network">Connection</a>&nbsp;networkManager)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#firePlayerLogout(net.minecraft.client.multiplayer.MultiPlayerGameMode,net.minecraft.client.player.LocalPlayer)" class="member-name-link">firePlayerLogout</a><wbr>(@Nullable <a href="../../../minecraft/client/multiplayer/MultiPlayerGameMode.html" title="class in net.minecraft.client.multiplayer">MultiPlayerGameMode</a>&nbsp;pc,
- @Nullable <a href="../../../minecraft/client/player/LocalPlayer.html" title="class in net.minecraft.client.player">LocalPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#firePlayerRespawn(net.minecraft.client.multiplayer.MultiPlayerGameMode,net.minecraft.client.player.LocalPlayer,net.minecraft.client.player.LocalPlayer,net.minecraft.network.Connection)" class="member-name-link">firePlayerRespawn</a><wbr>(<a href="../../../minecraft/client/multiplayer/MultiPlayerGameMode.html" title="class in net.minecraft.client.multiplayer">MultiPlayerGameMode</a>&nbsp;pc,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#firePlayerLogout(net.minecraft.client.multiplayer.MultiPlayerGameMode,net.minecraft.client.player.LocalPlayer)" class="member-name-link">firePlayerLogout</a><wbr>(@Nullable <a href="../../../minecraft/client/multiplayer/MultiPlayerGameMode.html" title="class in net.minecraft.client.multiplayer">MultiPlayerGameMode</a>&nbsp;pc,
+ @Nullable <a href="../../../minecraft/client/player/LocalPlayer.html" title="class in net.minecraft.client.player">LocalPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#firePlayerRespawn(net.minecraft.client.multiplayer.MultiPlayerGameMode,net.minecraft.client.player.LocalPlayer,net.minecraft.client.player.LocalPlayer,net.minecraft.network.Connection)" class="member-name-link">firePlayerRespawn</a><wbr>(<a href="../../../minecraft/client/multiplayer/MultiPlayerGameMode.html" title="class in net.minecraft.client.multiplayer">MultiPlayerGameMode</a>&nbsp;pc,
  <a href="../../../minecraft/client/player/LocalPlayer.html" title="class in net.minecraft.client.player">LocalPlayer</a>&nbsp;oldPlayer,
  <a href="../../../minecraft/client/player/LocalPlayer.html" title="class in net.minecraft.client.player">LocalPlayer</a>&nbsp;newPlayer,
  <a href="../../../minecraft/network/Connection.html" title="class in net.minecraft.network">Connection</a>&nbsp;networkManager)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireRenderFramePost(net.minecraft.client.DeltaTracker)" class="member-name-link">fireRenderFramePost</a><wbr>(<a href="../../../minecraft/client/DeltaTracker.html" title="interface in net.minecraft.client">DeltaTracker</a>&nbsp;partialTick)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireRenderFramePost(net.minecraft.client.DeltaTracker)" class="member-name-link">fireRenderFramePost</a><wbr>(<a href="../../../minecraft/client/DeltaTracker.html" title="interface in net.minecraft.client">DeltaTracker</a>&nbsp;partialTick)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires <a href="event/RenderFrameEvent.Post.html" title="class in net.neoforged.neoforge.client.event"><code>RenderFrameEvent.Post</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireRenderFramePre(net.minecraft.client.DeltaTracker)" class="member-name-link">fireRenderFramePre</a><wbr>(<a href="../../../minecraft/client/DeltaTracker.html" title="interface in net.minecraft.client">DeltaTracker</a>&nbsp;partialTick)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireRenderFramePre(net.minecraft.client.DeltaTracker)" class="member-name-link">fireRenderFramePre</a><wbr>(<a href="../../../minecraft/client/DeltaTracker.html" title="interface in net.minecraft.client">DeltaTracker</a>&nbsp;partialTick)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires <a href="event/RenderFrameEvent.Pre.html" title="class in net.neoforged.neoforge.client.event"><code>RenderFrameEvent.Pre</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireResourceLoadFinishedEvent(boolean)" class="member-name-link">fireResourceLoadFinishedEvent</a><wbr>(boolean&nbsp;initial)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireResourceLoadFinishedEvent(boolean)" class="member-name-link">fireResourceLoadFinishedEvent</a><wbr>(boolean&nbsp;initial)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires <a href="event/ClientResourceLoadFinishedEvent.html" title="class in net.neoforged.neoforge.client.event"><code>ClientResourceLoadFinishedEvent</code></a>.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fireWindowResize(com.mojang.blaze3d.platform.Window)" class="member-name-link">fireWindowResize</a><wbr>(<a href="../../../../com/mojang/blaze3d/platform/Window.html" title="class in com.mojang.blaze3d.platform">Window</a>&nbsp;window)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fixDomain(java.lang.String,java.lang.String)" class="member-name-link">fixDomain</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;complex)</code></div>
@@ -1755,14 +1751,13 @@ health bar.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="addAdditionalGeometry(java.util.List,java.util.function.Function,net.minecraft.client.renderer.chunk.RenderSectionRegion,net.minecraft.client.renderer.block.ModelBlockRenderer,net.minecraft.core.BlockPos)">
+<section class="detail" id="addAdditionalGeometry(java.util.List,java.util.function.Function,net.minecraft.client.renderer.chunk.RenderSectionRegion,net.minecraft.client.renderer.block.ModelBlockRenderer)">
 <h3>addAdditionalGeometry</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addAdditionalGeometry</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="event/AddSectionGeometryEvent.AdditionalSectionRenderer.html" title="interface in net.neoforged.neoforge.client.event">AddSectionGeometryEvent.AdditionalSectionRenderer</a>&gt;&nbsp;additionalRenderers,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../minecraft/client/renderer/chunk/ChunkSectionLayer.html" title="enum class in net.minecraft.client.renderer.chunk">ChunkSectionLayer</a>, <a href="../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&gt;&nbsp;getOrCreateBuilder,
  <a href="../../../minecraft/client/renderer/chunk/RenderSectionRegion.html" title="class in net.minecraft.client.renderer.chunk">RenderSectionRegion</a>&nbsp;region,
- <a href="../../../minecraft/client/renderer/block/ModelBlockRenderer.html" title="class in net.minecraft.client.renderer.block">ModelBlockRenderer</a>&nbsp;blockRenderer,
- <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;sectionOrigin)</span></div>
+ <a href="../../../minecraft/client/renderer/block/ModelBlockRenderer.html" title="class in net.minecraft.client.renderer.block">ModelBlockRenderer</a>&nbsp;blockRenderer)</span></div>
 </div>
 </section>
 </li>
@@ -1842,6 +1837,14 @@ Fired after the profiler section for "gameRenderer" is ended.</div>
 </section>
 </li>
 <li>
+<section class="detail" id="fireWindowResize(com.mojang.blaze3d.platform.Window)">
+<h3>fireWindowResize</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fireWindowResize</span><wbr><span class="parameters">(<a href="../../../../com/mojang/blaze3d/platform/Window.html" title="class in com.mojang.blaze3d.platform">Window</a>&nbsp;window)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getEffectTooltip(net.minecraft.client.gui.screens.inventory.AbstractContainerScreen,net.minecraft.world.effect.MobEffectInstance,java.util.List)">
 <h3>getEffectTooltip</h3>
 <div class="horizontal-scroll">
@@ -1909,18 +1912,6 @@ Called from <a href="../../../minecraft/client/gui/screens/inventory/EffectsInIn
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@Internal
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/blaze3d/textures/TextureFormat.html" title="enum class in com.mojang.blaze3d.textures">TextureFormat</a></span>&nbsp;<span class="element-name">getStencilFormat</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createLoadingOverlay(net.minecraft.client.Minecraft,net.minecraft.server.packs.resources.ReloadInstance,java.util.function.Consumer,boolean)">
-<h3>createLoadingOverlay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations">@Internal
-</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/client/gui/screens/Overlay.html" title="class in net.minecraft.client.gui.screens">Overlay</a></span>&nbsp;<span class="element-name">createLoadingOverlay</span><wbr><span class="parameters">(<a href="../../../minecraft/client/Minecraft.html" title="class in net.minecraft.client">Minecraft</a>&nbsp;minecraft,
- <a href="../../../minecraft/server/packs/resources/ReloadInstance.html" title="interface in net.minecraft.server.packs.resources">ReloadInstance</a>&nbsp;reloadInstance,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;&gt;&nbsp;errorHandler,
- boolean&nbsp;fadeIn)</span></div>
 </div>
 </section>
 </li>

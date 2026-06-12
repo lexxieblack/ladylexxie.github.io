@@ -75,6 +75,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#newDispatcher(java.lang.String)" tabindex="0">newDispatcher(String)</a></li>
+<li><a href="#registerCustomInteractions()" tabindex="0">registerCustomInteractions()</a></li>
 <li><a href="#bootStrap()" tabindex="0">bootStrap()</a></li>
 <li><a href="#addDefaultInteractions(net.minecraft.core.cauldron.CauldronInteraction.Dispatcher)" tabindex="0">addDefaultInteractions(CauldronInteraction.Dispatcher)</a></li>
 <li><a href="#fillBucket(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,java.util.function.Predicate,net.minecraft.sounds.SoundEvent)" tabindex="0">fillBucket(BlockState, Level, BlockPos, Player, InteractionHand, ItemStack, ItemStack, Predicate, SoundEvent)</a></li>
@@ -155,7 +156,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -164,7 +165,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addDefaultInteractions(net.minecraft.core.cauldron.CauldronInteraction.Dispatcher)" class="member-name-link">addDefaultInteractions</a><wbr>(<a href="CauldronInteraction.Dispatcher.html" title="class in net.minecraft.core.cauldron">CauldronInteraction.Dispatcher</a>&nbsp;interactionMap)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bannerInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)" class="member-name-link">bannerInteraction</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
@@ -175,7 +176,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bootStrap()" class="member-name-link">bootStrap</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dyedItemIteration(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)" class="member-name-link">dyedItemIteration</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
@@ -183,7 +184,7 @@ loadScripts(document, 'script');</script>
  <a href="../../world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
  <a href="../../world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemInHand)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#emptyBucket(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack,net.minecraft.world.level.block.state.BlockState,net.minecraft.sounds.SoundEvent)" class="member-name-link">emptyBucket</a><wbr>(<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
@@ -192,7 +193,7 @@ loadScripts(document, 'script');</script>
  <a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;newState,
  <a href="../../sounds/SoundEvent.html" title="class in net.minecraft.sounds">SoundEvent</a>&nbsp;soundEvent)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillBucket(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,java.util.function.Predicate,net.minecraft.sounds.SoundEvent)" class="member-name-link">fillBucket</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
@@ -203,7 +204,7 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;&nbsp;canFill,
  <a href="../../sounds/SoundEvent.html" title="class in net.minecraft.sounds">SoundEvent</a>&nbsp;soundEvent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillLavaInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)" class="member-name-link">fillLavaInteraction</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
@@ -211,7 +212,7 @@ loadScripts(document, 'script');</script>
  <a href="../../world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
  <a href="../../world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemInHand)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillPowderSnowInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)" class="member-name-link">fillPowderSnowInteraction</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
@@ -219,7 +220,7 @@ loadScripts(document, 'script');</script>
  <a href="../../world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
  <a href="../../world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemInHand)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillWaterInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)" class="member-name-link">fillWaterInteraction</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
@@ -231,17 +232,24 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isUnderWater(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" class="member-name-link">isUnderWater</a><wbr>(<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="CauldronInteraction.Dispatcher.html" title="class in net.minecraft.core.cauldron">CauldronInteraction.Dispatcher</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newDispatcher(java.lang.String)" class="member-name-link">newDispatcher</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#shulkerBoxInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)" class="member-name-link">shulkerBoxInteraction</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>private static <a href="CauldronInteraction.Dispatcher.html" title="class in net.minecraft.core.cauldron">CauldronInteraction.Dispatcher</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#newDispatcher(java.lang.String)" class="member-name-link">newDispatcher</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Neo: Use <a href="../../../neoforged/neoforge/event/RegisterCauldronInteractionEvent.Dispatcher.html" title="class in net.neoforged.neoforge.event"><code>RegisterCauldronInteractionEvent.Dispatcher</code></a> instead</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#registerCustomInteractions()" class="member-name-link">registerCustomInteractions</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#shulkerBoxInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)" class="member-name-link">shulkerBoxInteraction</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
  <a href="../../world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemInHand)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -335,7 +343,20 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="newDispatcher(java.lang.String)">
 <h3>newDispatcher</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="CauldronInteraction.Dispatcher.html" title="class in net.minecraft.core.cauldron">CauldronInteraction.Dispatcher</a></span>&nbsp;<span class="element-name">newDispatcher</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="CauldronInteraction.Dispatcher.html" title="class in net.minecraft.core.cauldron">CauldronInteraction.Dispatcher</a></span>&nbsp;<span class="element-name">newDispatcher</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Neo: Use <a href="../../../neoforged/neoforge/event/RegisterCauldronInteractionEvent.Dispatcher.html" title="class in net.neoforged.neoforge.event"><code>RegisterCauldronInteractionEvent.Dispatcher</code></a> instead</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="registerCustomInteractions()">
+<h3>registerCustomInteractions</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations">@Internal
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerCustomInteractions</span>()</div>
 </div>
 </section>
 </li>
@@ -359,7 +380,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="fillBucket(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,java.util.function.Predicate,net.minecraft.sounds.SoundEvent)">
 <h3>fillBucket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">fillBucket</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">fillBucket</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
@@ -375,7 +396,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="emptyBucket(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack,net.minecraft.world.level.block.state.BlockState,net.minecraft.sounds.SoundEvent)">
 <h3>emptyBucket</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">emptyBucket</span><wbr><span class="parameters">(<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">emptyBucket</span><wbr><span class="parameters">(<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
@@ -389,7 +410,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="fillWaterInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)">
 <h3>fillWaterInteraction</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">fillWaterInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">fillWaterInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
@@ -402,7 +423,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="fillLavaInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)">
 <h3>fillLavaInteraction</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">fillLavaInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">fillLavaInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
@@ -415,7 +436,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="fillPowderSnowInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)">
 <h3>fillPowderSnowInteraction</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">fillPowderSnowInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">fillPowderSnowInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
@@ -428,7 +449,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="shulkerBoxInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)">
 <h3>shulkerBoxInteraction</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">shulkerBoxInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">shulkerBoxInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
@@ -441,7 +462,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="bannerInteraction(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)">
 <h3>bannerInteraction</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">bannerInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">bannerInteraction</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
@@ -454,7 +475,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="dyedItemIteration(net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)">
 <h3>dyedItemIteration</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">dyedItemIteration</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">dyedItemIteration</span><wbr><span class="parameters">(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,

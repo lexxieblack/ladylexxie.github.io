@@ -140,14 +140,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#onPistonMovePre(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction,boolean)" tabindex="0">onPistonMovePre(Level, BlockPos, Direction, boolean)</a></li>
 <li><a href="#onPistonMovePost(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction,boolean)" tabindex="0">onPistonMovePost(Level, BlockPos, Direction, boolean)</a></li>
 <li><a href="#onSleepFinished(net.minecraft.server.level.ServerLevel,net.neoforged.neoforge.common.util.ClockAdjustment)" tabindex="0">onSleepFinished(ServerLevel, ClockAdjustment)</a></li>
-<li><a href="#onResourceReload(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess)" tabindex="0">onResourceReload(ReloadableServerResources, RegistryAccess)</a></li>
+<li><a href="#onResourceReload(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess,java.util.Map)" tabindex="0">onResourceReload(ReloadableServerResources, RegistryAccess, Map)</a></li>
 <li><a href="#onCommandRegister(com.mojang.brigadier.CommandDispatcher,net.minecraft.commands.Commands.CommandSelection,net.minecraft.commands.CommandBuildContext)" tabindex="0">onCommandRegister(CommandDispatcher, Commands.CommandSelection, CommandBuildContext)</a></li>
 <li><a href="#getEntitySizeForge(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Pose,net.minecraft.world.entity.EntityDimensions)" tabindex="0">getEntitySizeForge(Entity, Pose, EntityDimensions)</a></li>
 <li><a href="#getEntitySizeForge(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Pose,net.minecraft.world.entity.EntityDimensions,net.minecraft.world.entity.EntityDimensions)" tabindex="0">getEntitySizeForge(Entity, Pose, EntityDimensions, EntityDimensions)</a></li>
 <li><a href="#canLivingConvert(net.minecraft.world.entity.LivingEntity,net.minecraft.world.entity.EntityType,java.util.function.Consumer)" tabindex="0">canLivingConvert(LivingEntity, EntityType, Consumer)</a></li>
 <li><a href="#onLivingConvert(net.minecraft.world.entity.LivingEntity,net.minecraft.world.entity.LivingEntity)" tabindex="0">onLivingConvert(LivingEntity, LivingEntity)</a></li>
-<li><a href="#onEntityTeleportCommand(net.minecraft.world.entity.Entity,double,double,double)" tabindex="0">onEntityTeleportCommand(Entity, double, double, double)</a></li>
-<li><a href="#onEntityTeleportSpreadPlayersCommand(net.minecraft.world.entity.Entity,double,double,double)" tabindex="0">onEntityTeleportSpreadPlayersCommand(Entity, double, double, double)</a></li>
+<li><a href="#onEntityTeleportCommand(net.minecraft.world.entity.Entity,net.minecraft.server.level.ServerLevel,double,double,double)" tabindex="0">onEntityTeleportCommand(Entity, ServerLevel, double, double, double)</a></li>
+<li><a href="#onEntityTeleportSpreadPlayersCommand(net.minecraft.world.entity.Entity,net.minecraft.server.level.ServerLevel,double,double,double)" tabindex="0">onEntityTeleportSpreadPlayersCommand(Entity, ServerLevel, double, double, double)</a></li>
 <li><a href="#onEnderTeleport(net.minecraft.world.entity.LivingEntity,double,double,double)" tabindex="0">onEnderTeleport(LivingEntity, double, double, double)</a></li>
 <li><a href="#onEnderPearlLand(net.minecraft.server.level.ServerPlayer,double,double,double,net.minecraft.world.entity.projectile.throwableitemprojectile.ThrownEnderpearl,float,net.minecraft.world.phys.HitResult)" tabindex="0">onEnderPearlLand(ServerPlayer, double, double, double, ThrownEnderpearl, float, HitResult)</a></li>
 <li><a href="#onItemConsumptionTeleport(net.minecraft.world.entity.LivingEntity,net.minecraft.world.item.ItemStack,double,double,double)" tabindex="0">onItemConsumptionTeleport(LivingEntity, ItemStack, double, double, double)</a></li>
@@ -179,6 +179,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#onMobSplit(net.minecraft.world.entity.Mob,java.util.List)" tabindex="0">onMobSplit(Mob, List)</a></li>
 <li><a href="#getCustomSpawners(net.minecraft.server.level.ServerLevel,java.util.List)" tabindex="0">getCustomSpawners(ServerLevel, List)</a></li>
 <li><a href="#onGameRuleChanged(net.minecraft.server.MinecraftServer,net.minecraft.world.level.gamerules.GameRule,T)" tabindex="0">onGameRuleChanged(MinecraftServer, GameRule, T)</a></li>
+<li><a href="#getBlockLootEnchantmentLevel(net.minecraft.world.item.ItemInstance,net.minecraft.core.Holder,int,net.minecraft.world.level.storage.loot.LootContext)" tabindex="0">getBlockLootEnchantmentLevel(ItemInstance, Holder, int, LootContext)</a></li>
+<li><a href="#getEntityLootEnchantmentLevel(net.minecraft.core.Holder,int,net.minecraft.world.level.storage.loot.LootContext)" tabindex="0">getEntityLootEnchantmentLevel(Holder, int, LootContext)</a></li>
 </ol>
 </li>
 </ol>
@@ -509,24 +511,40 @@ to fire the <a href="entity/player/PlayerRespawnPositionEvent.html" title="class
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires <a href="enchanting/GetEnchantmentLevelEvent.html" title="class in net.neoforged.neoforge.event.enchanting"><code>GetEnchantmentLevelEvent</code></a> and for all enchantments, returning the (possibly event-modified) enchantment map.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBreakSpeed(net.minecraft.world.entity.player.Player,net.minecraft.world.level.block.state.BlockState,float,net.minecraft.core.BlockPos)" class="member-name-link">getBreakSpeed</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBlockLootEnchantmentLevel(net.minecraft.world.item.ItemInstance,net.minecraft.core.Holder,int,net.minecraft.world.level.storage.loot.LootContext)" class="member-name-link">getBlockLootEnchantmentLevel</a><wbr>(<a href="../../../minecraft/world/item/ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;tool,
+ <a href="../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../minecraft/world/item/enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;ench,
+ int&nbsp;enchLevel,
+ <a href="../../../minecraft/world/level/storage/loot/LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&nbsp;ctx)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Called from <a href="../../../minecraft/world/level/storage/loot/functions/ApplyBonusCount.html" title="class in net.minecraft.world.level.storage.loot.functions"><code>ApplyBonusCount</code></a> and <a href="../../../minecraft/world/level/storage/loot/predicates/BonusLevelTableCondition.html" title="class in net.minecraft.world.level.storage.loot.predicates"><code>BonusLevelTableCondition</code></a> when blocks rely on enchantments for evaluating loot bonuses.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBreakSpeed(net.minecraft.world.entity.player.Player,net.minecraft.world.level.block.state.BlockState,float,net.minecraft.core.BlockPos)" class="member-name-link">getBreakSpeed</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  float&nbsp;original,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../minecraft/world/level/CustomSpawner.html" title="interface in net.minecraft.world.level">CustomSpawner</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getCustomSpawners(net.minecraft.server.level.ServerLevel,java.util.List)" class="member-name-link">getCustomSpawners</a><wbr>(<a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;serverLevel,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../minecraft/world/level/CustomSpawner.html" title="interface in net.minecraft.world.level">CustomSpawner</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getCustomSpawners(net.minecraft.server.level.ServerLevel,java.util.List)" class="member-name-link">getCustomSpawners</a><wbr>(<a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;serverLevel,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../minecraft/world/level/CustomSpawner.html" title="interface in net.minecraft.world.level">CustomSpawner</a>&gt;&nbsp;customSpawners)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires the <a href="level/ModifyCustomSpawnersEvent.html" title="class in net.neoforged.neoforge.event.level"><code>ModifyCustomSpawnersEvent</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getEnchantmentLevelSpecific(int,net.minecraft.world.item.ItemInstance,net.minecraft.core.Holder)" class="member-name-link">getEnchantmentLevelSpecific</a><wbr>(int&nbsp;level,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getEnchantmentLevelSpecific(int,net.minecraft.world.item.ItemInstance,net.minecraft.core.Holder)" class="member-name-link">getEnchantmentLevelSpecific</a><wbr>(int&nbsp;level,
  <a href="../../../minecraft/world/item/ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;stack,
  <a href="../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../minecraft/world/item/enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;ench)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires <a href="enchanting/GetEnchantmentLevelEvent.html" title="class in net.neoforged.neoforge.event.enchanting"><code>GetEnchantmentLevelEvent</code></a> and for a single enchantment, returning the (possibly event-modified) level.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getEntityLootEnchantmentLevel(net.minecraft.core.Holder,int,net.minecraft.world.level.storage.loot.LootContext)" class="member-name-link">getEntityLootEnchantmentLevel</a><wbr>(<a href="../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../minecraft/world/item/enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;ench,
+ int&nbsp;enchLevel,
+ <a href="../../../minecraft/world/level/storage/loot/LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&nbsp;ctx)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Called from <a href="../../../minecraft/world/level/storage/loot/functions/EnchantedCountIncreaseFunction.html" title="class in net.minecraft.world.level.storage.loot.functions"><code>EnchantedCountIncreaseFunction</code></a>, <a href="../../../minecraft/world/level/storage/loot/predicates/LootItemRandomChanceWithEnchantedBonusCondition.html" title="class in net.minecraft.world.level.storage.loot.predicates"><code>LootItemRandomChanceWithEnchantedBonusCondition</code></a>,
+and <a href="../../../minecraft/world/item/enchantment/EnchantmentEffectComponents.html#EQUIPMENT_DROPS"><code>EnchantmentEffectComponents.EQUIPMENT_DROPS</code></a> when entity loot processing relies on enchantments for evaluating loot bonuses.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="entity/EntityEvent.Size.html" title="class in net.neoforged.neoforge.event.entity">EntityEvent.Size</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getEntitySizeForge(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Pose,net.minecraft.world.entity.EntityDimensions)" class="member-name-link">getEntitySizeForge</a><wbr>(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
@@ -678,13 +696,15 @@ canceled and the table was not set to <a href="../../../minecraft/world/level/st
  <a href="../../../minecraft/world/entity/LightningBolt.html" title="class in net.minecraft.world.entity">LightningBolt</a>&nbsp;bolt)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="entity/EntityTeleportEvent.TeleportCommand.html" title="class in net.neoforged.neoforge.event.entity">EntityTeleportEvent.TeleportCommand</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEntityTeleportCommand(net.minecraft.world.entity.Entity,double,double,double)" class="member-name-link">onEntityTeleportCommand</a><wbr>(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEntityTeleportCommand(net.minecraft.world.entity.Entity,net.minecraft.server.level.ServerLevel,double,double,double)" class="member-name-link">onEntityTeleportCommand</a><wbr>(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;targetLevel,
  double&nbsp;targetX,
  double&nbsp;targetY,
  double&nbsp;targetZ)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="entity/EntityTeleportEvent.SpreadPlayersCommand.html" title="class in net.neoforged.neoforge.event.entity">EntityTeleportEvent.SpreadPlayersCommand</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEntityTeleportSpreadPlayersCommand(net.minecraft.world.entity.Entity,double,double,double)" class="member-name-link">onEntityTeleportSpreadPlayersCommand</a><wbr>(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onEntityTeleportSpreadPlayersCommand(net.minecraft.world.entity.Entity,net.minecraft.server.level.ServerLevel,double,double,double)" class="member-name-link">onEntityTeleportSpreadPlayersCommand</a><wbr>(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;targetLevel,
  double&nbsp;targetX,
  double&nbsp;targetY,
  double&nbsp;targetZ)</code></div>
@@ -844,8 +864,9 @@ canceled and the table was not set to <a href="../../../minecraft/world/level/st
  <a href="../../../minecraft/world/phys/HitResult.html" title="class in net.minecraft.world.phys">HitResult</a>&nbsp;ray)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onResourceReload(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess)" class="member-name-link">onResourceReload</a><wbr>(<a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
- <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onResourceReload(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess,java.util.Map)" class="member-name-link">onResourceReload</a><wbr>(<a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
+ <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;&nbsp;retainedListeners)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fires the <a href="AddServerReloadListenersEvent.html" title="class in net.neoforged.neoforge.event"><code>AddServerReloadListenersEvent</code></a> and returns the sorted list of reload listeners.</div>
 </div>
@@ -1874,11 +1895,12 @@ If an entity is not provided, this method returns the value of <a href="../../..
 </section>
 </li>
 <li>
-<section class="detail" id="onResourceReload(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess)">
+<section class="detail" id="onResourceReload(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess,java.util.Map)">
 <h3>onResourceReload</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</span>&nbsp;<span class="element-name">onResourceReload</span><wbr><span class="parameters">(<a href="../../../minecraft/server/ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
- <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</span></div>
+ <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="../../../minecraft/server/packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;&nbsp;retainedListeners)</span></div>
 <div class="block">Fires the <a href="AddServerReloadListenersEvent.html" title="class in net.neoforged.neoforge.event"><code>AddServerReloadListenersEvent</code></a> and returns the sorted list of reload listeners.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -1943,10 +1965,11 @@ If an entity is not provided, this method returns the value of <a href="../../..
 </section>
 </li>
 <li>
-<section class="detail" id="onEntityTeleportCommand(net.minecraft.world.entity.Entity,double,double,double)">
+<section class="detail" id="onEntityTeleportCommand(net.minecraft.world.entity.Entity,net.minecraft.server.level.ServerLevel,double,double,double)">
 <h3>onEntityTeleportCommand</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="entity/EntityTeleportEvent.TeleportCommand.html" title="class in net.neoforged.neoforge.event.entity">EntityTeleportEvent.TeleportCommand</a></span>&nbsp;<span class="element-name">onEntityTeleportCommand</span><wbr><span class="parameters">(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;targetLevel,
  double&nbsp;targetX,
  double&nbsp;targetY,
  double&nbsp;targetZ)</span></div>
@@ -1954,10 +1977,11 @@ If an entity is not provided, this method returns the value of <a href="../../..
 </section>
 </li>
 <li>
-<section class="detail" id="onEntityTeleportSpreadPlayersCommand(net.minecraft.world.entity.Entity,double,double,double)">
+<section class="detail" id="onEntityTeleportSpreadPlayersCommand(net.minecraft.world.entity.Entity,net.minecraft.server.level.ServerLevel,double,double,double)">
 <h3>onEntityTeleportSpreadPlayersCommand</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="entity/EntityTeleportEvent.SpreadPlayersCommand.html" title="class in net.neoforged.neoforge.event.entity">EntityTeleportEvent.SpreadPlayersCommand</a></span>&nbsp;<span class="element-name">onEntityTeleportSpreadPlayersCommand</span><wbr><span class="parameters">(<a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="../../../minecraft/server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;targetLevel,
  double&nbsp;targetX,
  double&nbsp;targetY,
  double&nbsp;targetZ)</span></div>
@@ -2389,6 +2413,47 @@ to fire the <a href="entity/player/PlayerRespawnPositionEvent.html" title="class
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onGameRuleChanged</span><wbr><span class="parameters">(<a href="../../../minecraft/server/MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a>&nbsp;server,
  <a href="../../../minecraft/world/level/gamerules/GameRule.html" title="class in net.minecraft.world.level.gamerules">GameRule</a>&lt;T&gt;&nbsp;gameRule,
  T&nbsp;newValue)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getBlockLootEnchantmentLevel(net.minecraft.world.item.ItemInstance,net.minecraft.core.Holder,int,net.minecraft.world.level.storage.loot.LootContext)">
+<h3>getBlockLootEnchantmentLevel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getBlockLootEnchantmentLevel</span><wbr><span class="parameters">(<a href="../../../minecraft/world/item/ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;tool,
+ <a href="../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../minecraft/world/item/enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;ench,
+ int&nbsp;enchLevel,
+ <a href="../../../minecraft/world/level/storage/loot/LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&nbsp;ctx)</span></div>
+<div class="block">Called from <a href="../../../minecraft/world/level/storage/loot/functions/ApplyBonusCount.html" title="class in net.minecraft.world.level.storage.loot.functions"><code>ApplyBonusCount</code></a> and <a href="../../../minecraft/world/level/storage/loot/predicates/BonusLevelTableCondition.html" title="class in net.minecraft.world.level.storage.loot.predicates"><code>BonusLevelTableCondition</code></a> when blocks rely on enchantments for evaluating loot bonuses.
+<p>
+If the necessary context is present, this method will fire the <a href="enchanting/EnchantedBlockLootEvent.html" title="class in net.neoforged.neoforge.event.enchanting"><code>EnchantedBlockLootEvent</code></a> and return the event-modified level. Otherwise it returns the original level.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>tool</code> - The tool, from <a href="../../../minecraft/world/level/storage/loot/parameters/LootContextParams.html#TOOL"><code>LootContextParams.TOOL</code></a>.</dd>
+<dd><code>ench</code> - The enchantment being queried.</dd>
+<dd><code>enchLevel</code> - The original enchantment level, determined from the item (or possibly <a href="enchanting/GetEnchantmentLevelEvent.html" title="class in net.neoforged.neoforge.event.enchanting"><code>GetEnchantmentLevelEvent</code></a>).</dd>
+<dd><code>ctx</code> - The loot context for the current block loot evaluation.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getEntityLootEnchantmentLevel(net.minecraft.core.Holder,int,net.minecraft.world.level.storage.loot.LootContext)">
+<h3>getEntityLootEnchantmentLevel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getEntityLootEnchantmentLevel</span><wbr><span class="parameters">(<a href="../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../minecraft/world/item/enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;ench,
+ int&nbsp;enchLevel,
+ <a href="../../../minecraft/world/level/storage/loot/LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&nbsp;ctx)</span></div>
+<div class="block">Called from <a href="../../../minecraft/world/level/storage/loot/functions/EnchantedCountIncreaseFunction.html" title="class in net.minecraft.world.level.storage.loot.functions"><code>EnchantedCountIncreaseFunction</code></a>, <a href="../../../minecraft/world/level/storage/loot/predicates/LootItemRandomChanceWithEnchantedBonusCondition.html" title="class in net.minecraft.world.level.storage.loot.predicates"><code>LootItemRandomChanceWithEnchantedBonusCondition</code></a>,
+and <a href="../../../minecraft/world/item/enchantment/EnchantmentEffectComponents.html#EQUIPMENT_DROPS"><code>EnchantmentEffectComponents.EQUIPMENT_DROPS</code></a> when entity loot processing relies on enchantments for evaluating loot bonuses.
+<p>
+If the necessary context is present, this method will fire the <a href="enchanting/EnchantedEntityLootEvent.html" title="class in net.neoforged.neoforge.event.enchanting"><code>EnchantedEntityLootEvent</code></a> and return the event-modified level. Otherwise it returns the original level.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ench</code> - The enchantment being queried.</dd>
+<dd><code>enchLevel</code> - The original enchantment level. How it gets determined depends on the particular call site. Generally it's the attacker's effective enchantment level.</dd>
+<dd><code>ctx</code> - The loot context for the current entity loot evaluation.</dd>
+</dl>
 </div>
 </section>
 </li>

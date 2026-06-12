@@ -65,6 +65,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#CHECKBOX_HIGHLIGHTED_SPRITE" tabindex="0">CHECKBOX_HIGHLIGHTED_SPRITE</a></li>
 <li><a href="#CHECKBOX_SPRITE" tabindex="0">CHECKBOX_SPRITE</a></li>
 <li><a href="#SPACING" tabindex="0">SPACING</a></li>
+<li><a href="#ROWS" tabindex="0">ROWS</a></li>
 <li><a href="#BOX_PADDING" tabindex="0">BOX_PADDING</a></li>
 <li><a href="#selected" tabindex="0">selected</a></li>
 <li><a href="#onValueChange" tabindex="0">onValueChange</a></li>
@@ -82,6 +83,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getAdjustedWidth(int,net.minecraft.network.chat.Component,net.minecraft.client.gui.Font)" tabindex="0">getAdjustedWidth(int, Component, Font)</a></li>
 <li><a href="#getAdjustedHeight(net.minecraft.client.gui.Font)" tabindex="0">getAdjustedHeight(Font)</a></li>
 <li><a href="#getDefaultWidth(net.minecraft.network.chat.Component,net.minecraft.client.gui.Font)" tabindex="0">getDefaultWidth(Component, Font)</a></li>
+<li><a href="#overflowsRowLimit(net.minecraft.client.gui.Font)" tabindex="0">overflowsRowLimit(Font)</a></li>
 <li><a href="#builder(net.minecraft.network.chat.Component,net.minecraft.client.gui.Font)" tabindex="0">builder(Component, Font)</a></li>
 <li><a href="#getBoxSize(net.minecraft.client.gui.Font)" tabindex="0">getBoxSize(Font)</a></li>
 <li><a href="#onPress(net.minecraft.client.input.InputWithModifiers)" tabindex="0">onPress(InputWithModifiers)</a></li>
@@ -170,15 +172,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>private final <a href="Checkbox.OnValueChange.html" title="interface in net.minecraft.client.gui.components">Checkbox.OnValueChange</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#onValueChange" class="member-name-link">onValueChange</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#selected" class="member-name-link">selected</a></code></div>
+<div class="col-first even-row-color"><code>private static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#ROWS" class="member-name-link">ROWS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SPACING" class="member-name-link">SPACING</a></code></div>
+<div class="col-first odd-row-color"><code>private boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#selected" class="member-name-link">selected</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="MultiLineTextWidget.html" title="class in net.minecraft.client.gui.components">MultiLineTextWidget</a></code></div>
-<div class="col-second even-row-color"><code><a href="#textWidget" class="member-name-link">textWidget</a></code></div>
+<div class="col-first even-row-color"><code>private static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SPACING" class="member-name-link">SPACING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="MultiLineTextWidget.html" title="class in net.minecraft.client.gui.components">MultiLineTextWidget</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#textWidget" class="member-name-link">textWidget</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.gui.components.AbstractButton">Fields inherited from class&nbsp;<a href="AbstractButton.html#field-summary" title="class in net.minecraft.client.gui.components">AbstractButton</a></h3>
@@ -252,12 +257,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onPress(net.minecraft.client.input.InputWithModifiers)" class="member-name-link">onPress</a><wbr>(<a href="../../input/InputWithModifiers.html" title="interface in net.minecraft.client.input">InputWithModifiers</a>&nbsp;input)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selected()" class="member-name-link">selected</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overflowsRowLimit(net.minecraft.client.gui.Font)" class="member-name-link">overflowsRowLimit</a><wbr>(<a href="../Font.html" title="class in net.minecraft.client.gui">Font</a>&nbsp;font)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateWidgetNarration(net.minecraft.client.gui.narration.NarrationElementOutput)" class="member-name-link">updateWidgetNarration</a><wbr>(<a href="../narration/NarrationElementOutput.html" title="interface in net.minecraft.client.gui.narration">NarrationElementOutput</a>&nbsp;output)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selected()" class="member-name-link">selected</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateWidgetNarration(net.minecraft.client.gui.narration.NarrationElementOutput)" class="member-name-link">updateWidgetNarration</a><wbr>(<a href="../narration/NarrationElementOutput.html" title="interface in net.minecraft.client.gui.narration">NarrationElementOutput</a>&nbsp;output)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -335,6 +343,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../constant-values.html#net.minecraft.client.gui.components.Checkbox.SPACING">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ROWS">
+<h3>ROWS</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">ROWS</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#net.minecraft.client.gui.components.Checkbox.ROWS">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -444,6 +468,14 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getDefaultWidth</span><wbr><span class="parameters">(<a href="../../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message,
  <a href="../Font.html" title="class in net.minecraft.client.gui">Font</a>&nbsp;font)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="overflowsRowLimit(net.minecraft.client.gui.Font)">
+<h3>overflowsRowLimit</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">overflowsRowLimit</span><wbr><span class="parameters">(<a href="../Font.html" title="class in net.minecraft.client.gui">Font</a>&nbsp;font)</span></div>
 </div>
 </section>
 </li>

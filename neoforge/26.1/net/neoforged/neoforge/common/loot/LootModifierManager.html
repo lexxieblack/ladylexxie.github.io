@@ -60,10 +60,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#GSON" tabindex="0">GSON</a></li>
 <li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
+<li><a href="#FOLDER" tabindex="0">FOLDER</a></li>
 <li><a href="#registeredLootModifiers" tabindex="0">registeredLootModifiers</a></li>
-<li><a href="#folder" tabindex="0">folder</a></li>
+<li><a href="#sortedModifiers" tabindex="0">sortedModifiers</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -73,9 +73,10 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">prepare(ResourceManager, ProfilerFiller)</a></li>
 <li><a href="#apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">apply(Map, ResourceManager, ProfilerFiller)</a></li>
-<li><a href="#getAllLootMods()" tabindex="0">getAllLootMods()</a></li>
+<li><a href="#getSortedModifiers()" tabindex="0">getSortedModifiers()</a></li>
+<li><a href="#getId(net.neoforged.neoforge.common.loot.IGlobalLootModifier)" tabindex="0">getId(IGlobalLootModifier)</a></li>
+<li><a href="#getModifier(net.minecraft.resources.Identifier)" tabindex="0">getModifier(Identifier)</a></li>
 </ol>
 </li>
 </ol>
@@ -87,8 +88,8 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance"><a href="../../resource/ContextAwareReloadListener.html" title="class in net.neoforged.neoforge.resource">net.neoforged.neoforge.resource.ContextAwareReloadListener</a>
-<div class="inheritance"><a href="../../../../minecraft/server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">net.minecraft.server.packs.resources.SimplePreparableReloadListener</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;&gt;
-<div class="inheritance"><a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html" title="class in net.minecraft.server.packs.resources">net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener</a>&lt;com.google.gson.JsonElement&gt;
+<div class="inheritance"><a href="../../../../minecraft/server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">net.minecraft.server.packs.resources.SimplePreparableReloadListener</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;&gt;
+<div class="inheritance"><a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html" title="class in net.minecraft.server.packs.resources">net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener</a>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;
 <div class="inheritance">net.neoforged.neoforge.common.loot.LootModifierManager</div>
 </div>
 </div>
@@ -102,7 +103,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LootModifierManager</span>
-<span class="extends-implements">extends <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html" title="class in net.minecraft.server.packs.resources">SimpleJsonResourceReloadListener</a>&lt;com.google.gson.JsonElement&gt;</span></div>
+<span class="extends-implements">extends <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html" title="class in net.minecraft.server.packs.resources">SimpleJsonResourceReloadListener</a>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</span></div>
 </div>
 </section>
 <section class="summary">
@@ -126,16 +127,16 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#folder" class="member-name-link">folder</a></code></div>
+<div class="col-second even-row-color"><code><a href="#FOLDER" class="member-name-link">FOLDER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final com.google.gson.Gson</code></div>
-<div class="col-second odd-row-color"><code><a href="#GSON" class="member-name-link">GSON</a></code></div>
+<div class="col-first odd-row-color"><code>static final org.apache.logging.log4j.Logger</code></div>
+<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final org.apache.logging.log4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
+<div class="col-first even-row-color"><code>private com.google.common.collect.BiMap<wbr>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#registeredLootModifiers" class="member-name-link">registeredLootModifiers</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#registeredLootModifiers" class="member-name-link">registeredLootModifiers</a></code></div>
+<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#sortedModifiers" class="member-name-link">sortedModifiers</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -165,25 +166,29 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">apply</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;&nbsp;resourceList,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">apply</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;&nbsp;resourceList,
  <a href="../../../../minecraft/server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManagerIn,
  <a href="../../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profilerIn)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllLootMods()" class="member-name-link">getAllLootMods</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getId(net.neoforged.neoforge.common.loot.IGlobalLootModifier)" class="member-name-link">getId</a><wbr>(<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&nbsp;modifier)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">An immutable collection of the registered loot modifiers in layered order.</div>
+<div class="block">Returns the ID of the given loot modifier, or null if it is not registered.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">prepare</a><wbr>(<a href="../../../../minecraft/server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManager,
- <a href="../../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profilerFiller)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModifier(net.minecraft.resources.Identifier)" class="member-name-link">getModifier</a><wbr>(<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a><wbr>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSortedModifiers()" class="member-name-link">getSortedModifiers</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns an iterable view of all loot modifiers, sorted in the order they should be applied.</div>
+</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener">Methods inherited from class&nbsp;<a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#method-summary" title="class in net.minecraft.server.packs.resources">SimpleJsonResourceReloadListener</a></h3>
-<code><a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#getPreparedPath(net.minecraft.resources.Identifier)" title="getPreparedPath(Identifier)">getPreparedPath</a>, <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#scanDirectory(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" title="scanDirectory(ResourceManager, FileToIdConverter, DynamicOps, Codec, Map)">scanDirectory</a>, <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#scanDirectory(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" title="scanDirectory(ResourceManager, ResourceKey, DynamicOps, Codec, Map)">scanDirectory</a>, <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#scanDirectoryWithOptionalValues(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" title="scanDirectoryWithOptionalValues(ResourceManager, ResourceKey, DynamicOps, Codec, Map)">scanDirectoryWithOptionalValues</a></code></div>
+<code><a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#getPreparedPath(net.minecraft.resources.Identifier)" title="getPreparedPath(Identifier)">getPreparedPath</a>, <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" title="prepare(ResourceManager, ProfilerFiller)">prepare</a>, <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#scanDirectory(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" title="scanDirectory(ResourceManager, FileToIdConverter, DynamicOps, Codec, Map)">scanDirectory</a>, <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#scanDirectory(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" title="scanDirectory(ResourceManager, ResourceKey, DynamicOps, Codec, Map)">scanDirectory</a>, <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#scanDirectoryWithModifier(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.FileToIdConverter,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map,java.util.function.Consumer)" title="scanDirectoryWithModifier(ResourceManager, FileToIdConverter, DynamicOps, Codec, Map, Consumer)">scanDirectoryWithModifier</a>, <a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#scanDirectoryWithOptionalValues(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.resources.ResourceKey,com.mojang.serialization.DynamicOps,com.mojang.serialization.Codec,java.util.Map)" title="scanDirectoryWithOptionalValues(ResourceManager, ResourceKey, DynamicOps, Codec, Map)">scanDirectoryWithOptionalValues</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.packs.resources.SimplePreparableReloadListener">Methods inherited from class&nbsp;<a href="../../../../minecraft/server/packs/resources/SimplePreparableReloadListener.html#method-summary" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a></h3>
 <code><a href="../../../../minecraft/server/packs/resources/SimplePreparableReloadListener.html#reload(net.minecraft.server.packs.resources.PreparableReloadListener.SharedState,java.util.concurrent.Executor,net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier,java.util.concurrent.Executor)" title="reload(PreparableReloadListener.SharedState, Executor, PreparableReloadListener.PreparationBarrier, Executor)">reload</a></code></div>
@@ -208,14 +213,6 @@ loadScripts(document, 'script');</script>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="GSON">
-<h3>GSON</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">com.google.gson.Gson</span>&nbsp;<span class="element-name">GSON</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="LOGGER">
 <h3>LOGGER</h3>
 <div class="horizontal-scroll">
@@ -224,26 +221,34 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="registeredLootModifiers">
-<h3>registeredLootModifiers</h3>
+<section class="detail" id="FOLDER">
+<h3>FOLDER</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</span>&nbsp;<span class="element-name">registeredLootModifiers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="folder">
-<h3>folder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">folder</span></div>
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">FOLDER</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.neoforged.neoforge.common.loot.LootModifierManager.folder">Constant Field Values</a></li>
+<li><a href="../../../../../constant-values.html#net.neoforged.neoforge.common.loot.LootModifierManager.FOLDER">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="registeredLootModifiers">
+<h3>registeredLootModifiers</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">com.google.common.collect.BiMap&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</span>&nbsp;<span class="element-name">registeredLootModifiers</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="sortedModifiers">
+<h3>sortedModifiers</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</span>&nbsp;<span class="element-name">sortedModifiers</span></div>
 </div>
 </section>
 </li>
@@ -272,38 +277,42 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">
-<h3>prepare</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;</span>&nbsp;<span class="element-name">prepare</span><wbr><span class="parameters">(<a href="../../../../minecraft/server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManager,
- <a href="../../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profilerFiller)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">prepare</a></code>&nbsp;in class&nbsp;<code><a href="../../../../minecraft/server/packs/resources/SimpleJsonResourceReloadListener.html" title="class in net.minecraft.server.packs.resources">SimpleJsonResourceReloadListener</a>&lt;com.google.gson.JsonElement&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">
 <h3>apply</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">apply</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;&nbsp;resourceList,
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">apply</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;&nbsp;resourceList,
  <a href="../../../../minecraft/server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;resourceManagerIn,
  <a href="../../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profilerIn)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../../../../minecraft/server/packs/resources/SimplePreparableReloadListener.html#apply(T,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">apply</a></code>&nbsp;in class&nbsp;<code><a href="../../../../minecraft/server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, com.google.gson.JsonElement&gt;&gt;</code></dd>
+<dd><code><a href="../../../../minecraft/server/packs/resources/SimplePreparableReloadListener.html#apply(T,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">apply</a></code>&nbsp;in class&nbsp;<code><a href="../../../../minecraft/server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;&gt;</code></dd>
 </dl>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="getAllLootMods()">
-<h3>getAllLootMods</h3>
+<section class="detail" id="getSortedModifiers()">
+<h3>getSortedModifiers</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</span>&nbsp;<span class="element-name">getAllLootMods</span>()</div>
-<div class="block">An immutable collection of the registered loot modifiers in layered order.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</span>&nbsp;<span class="element-name">getSortedModifiers</span>()</div>
+<div class="block">Returns an iterable view of all loot modifiers, sorted in the order they should be applied.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getId(net.neoforged.neoforge.common.loot.IGlobalLootModifier)">
+<h3>getId</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></span>&nbsp;<span class="element-name">getId</span><wbr><span class="parameters">(<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&nbsp;modifier)</span></div>
+<div class="block">Returns the ID of the given loot modifier, or null if it is not registered.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getModifier(net.minecraft.resources.Identifier)">
+<h3>getModifier</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a></span>&nbsp;<span class="element-name">getModifier</span><wbr><span class="parameters">(<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id)</span></div>
 </div>
 </section>
 </li>

@@ -71,8 +71,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#areRegistriesLoaded()" tabindex="0">areRegistriesLoaded()</a></li>
 <li><a href="#begin(java.lang.Runnable,boolean)" tabindex="0">begin(Runnable, boolean)</a></li>
-<li><a href="#load(java.util.concurrent.Executor,java.util.concurrent.Executor)" tabindex="0">load(Executor, Executor)</a></li>
-<li><a href="#finish(java.util.concurrent.Executor,java.util.concurrent.Executor)" tabindex="0">finish(Executor, Executor)</a></li>
+<li><a href="#load(java.lang.Runnable)" tabindex="0">load(Runnable)</a></li>
 </ol>
 </li>
 </ol>
@@ -98,8 +97,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Internal class for handling the steps of mod loading that are common for client, data and server runs.
 
 <p><ul>
-<li>Client runs <a href="#begin(java.lang.Runnable,boolean)"><code>begin(Runnable, boolean)</code></a>, <a href="#load(java.util.concurrent.Executor,java.util.concurrent.Executor)"><code>load(Executor, Executor)</code></a> and <a href="#finish(java.util.concurrent.Executor,java.util.concurrent.Executor)"><code>finish(Executor, Executor)</code></a> at different timings, see <code>ClientModLoader</code>.</li>
-<li>Server runs all 3 consecutively.</li>
+<li>Client runs <a href="#begin(java.lang.Runnable,boolean)"><code>begin(Runnable, boolean)</code></a> and <a href="#load(java.lang.Runnable)"><code>load(Runnable)</code></a> at different timings, see <code>ClientModLoader</code>.</li>
+<li>Server runs both consecutively.</li>
 <li>Datagen only runs <a href="#begin(java.lang.Runnable,boolean)"><code>begin(Runnable, boolean)</code></a>.</li>
 </ul></div>
 </div>
@@ -153,13 +152,8 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;datagen)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#finish(java.util.concurrent.Executor,java.util.concurrent.Executor)" class="member-name-link">finish</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;syncExecutor,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;parallelExecutor)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.lang.Runnable)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;periodicTask)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.util.concurrent.Executor,java.util.concurrent.Executor)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;syncExecutor,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;parallelExecutor)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -227,20 +221,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="load(java.util.concurrent.Executor,java.util.concurrent.Executor)">
+<section class="detail" id="load(java.lang.Runnable)">
 <h3>load</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;syncExecutor,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;parallelExecutor)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="finish(java.util.concurrent.Executor,java.util.concurrent.Executor)">
-<h3>finish</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">finish</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;syncExecutor,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;parallelExecutor)</span></div>
+<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;periodicTask)</span></div>
 </div>
 </section>
 </li>

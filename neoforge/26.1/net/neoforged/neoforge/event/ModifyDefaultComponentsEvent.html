@@ -54,6 +54,7 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
+<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
@@ -70,8 +71,10 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
+<li><a href="#modify(net.minecraft.world.level.ItemLike,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)" tabindex="0">modify(ItemLike, ModifyDefaultComponentsEvent.Initializer)</a></li>
 <li><a href="#modify(net.minecraft.world.level.ItemLike,java.util.function.Consumer)" tabindex="0">modify(ItemLike, Consumer)</a></li>
-<li><a href="#modifyMatching(java.util.function.Predicate,java.util.function.Consumer)" tabindex="0">modifyMatching(Predicate, Consumer)</a></li>
+<li><a href="#modifyMatching(net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.ItemWithComponentsPredicate,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)" tabindex="0">modifyMatching(ModifyDefaultComponentsEvent.ItemWithComponentsPredicate, ModifyDefaultComponentsEvent.Initializer)</a></li>
+<li><a href="#modifyMatching(net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.ItemWithComponentsPredicate,java.util.function.Consumer)" tabindex="0">modifyMatching(ModifyDefaultComponentsEvent.ItemWithComponentsPredicate, Consumer)</a></li>
 </ol>
 </li>
 </ol>
@@ -96,34 +99,51 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">ModifyDefaultComponentsEvent</span>
 <span class="extends-implements">extends net.neoforged.bus.api.Event
 implements net.neoforged.fml.event.IModBusEvent</span></div>
-<div class="block">The event used to modify the default <a href="../../../minecraft/world/item/Item.html#components()">components</a> of an item. <br>
-This event is fired on the <code>mod event bus</code>.
-<p>
-Example usage:
-<div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
-<pre class="snippet" id="snippet-net.neoforged.neoforge.event.ModifyDefaultComponentsEvent1"><code class="language-java">import net.minecraft.core.component.DataComponents;
-import net.minecraft.world.item.Items;
-
-public void modifyComponents(ModifyDefaultComponentsEvent event) {
-    event.modify(Items.MELON_SEEDS, builder -&gt; builder
-            .set(DataComponents.MAX_STACK_SIZE, 16)); // Stack melon seeds to at most 16 items
-
-    event.modify(Items.APPLE, builder -&gt; builder
-            .remove(DataComponents.FOOD)); // Remove the ability of eating apples
-}
-
-// Lowest priority listener
-public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
-    event.modifyMatching(item -&gt; item.components().has(DataComponents.FIRE_RESISTANT), builder -&gt; builder
-            .set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)); // Make all fire resistant items have a glint
-}
+<div class="block"><p>The event used to modify the default <a href="../../../minecraft/world/item/Item.html#components()">components</a> of an item.</p>
+<p>This event is fired on the <code>mod event bus</code>.</p>
+<p>Example usage:</p>
+<pre><code class="language-java"> import net.minecraft.core.component.DataComponents;
+ import net.minecraft.world.item.Items;
+ public void modifyComponents(ModifyDefaultComponentsEvent event) {
+     event.modify(Items.MELON_SEEDS, builder -&gt; builder
+             .set(DataComponents.MAX_STACK_SIZE, 16)); // Stack melon seeds to at most 16 items
+     event.modify(Items.APPLE, builder -&gt; builder
+             .remove(DataComponents.FOOD)); // Remove the ability of eating apples
+ }
+ // Lowest priority listener
+ public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
+     event.modifyMatching((item, componentTypes) -&gt; componentTypes.contains(DataComponents.FIRE_RESISTANT), builder -&gt; builder
+             .set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)); // Make all fire-resistant items have a glint
+ }
 </code></pre>
-</div>
 </div>
 </div>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="ModifyDefaultComponentsEvent.Initializer.html" class="type-name-link" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">A alternate version of <a href="../../../minecraft/core/component/DataComponentInitializers.Initializer.html" title="interface in net.minecraft.core.component"><code>DataComponentInitializers.Initializer</code></a> which receives the item whose components being initialized.</div>
+</div>
+<div class="col-first odd-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="ModifyDefaultComponentsEvent.ItemWithComponentsPredicate.html" class="type-name-link" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.ItemWithComponentsPredicate</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Evaluates a condition on an <code>Item</code>
+and its associated <code>DataComponentGetter</code> prior to binding components.</div>
+</div>
+</div>
+</section>
+</li>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
@@ -133,10 +153,10 @@ public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&gt;</code></div>
+<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>, <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#modifiersByItem" class="member-name-link">modifiersByItem</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&gt;&gt;</code></div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="ModifyDefaultComponentsEvent.ItemWithComponentsPredicate.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.ItemWithComponentsPredicate</a>, <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&gt;&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#modifiersByPredicate" class="member-name-link">modifiersByPredicate</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
@@ -150,8 +170,8 @@ public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.Map,java.util.List)" class="member-name-link">ModifyDefaultComponentsEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&gt;&nbsp;modifiersByItem,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&gt;&gt;&nbsp;modifiersByPredicate)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.Map,java.util.List)" class="member-name-link">ModifyDefaultComponentsEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>, <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&gt;&nbsp;modifiersByItem,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="ModifyDefaultComponentsEvent.ItemWithComponentsPredicate.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.ItemWithComponentsPredicate</a>, <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&gt;&gt;&nbsp;modifiersByPredicate)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -161,23 +181,40 @@ public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modify(net.minecraft.world.level.ItemLike,java.util.function.Consumer)" class="member-name-link">modify</a><wbr>(<a href="../../../minecraft/world/level/ItemLike.html" title="interface in net.minecraft.world.level">ItemLike</a>&nbsp;item,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#modify(net.minecraft.world.level.ItemLike,java.util.function.Consumer)" class="member-name-link">modify</a><wbr>(<a href="../../../minecraft/world/level/ItemLike.html" title="interface in net.minecraft.world.level">ItemLike</a>&nbsp;item,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&nbsp;patch)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Patches the default components of the given <code>item</code>.</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <a href="#modify(net.minecraft.world.level.ItemLike,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)"><code>modify(ItemLike, Initializer)</code></a> instead, which provides more contextual information.</div>
+</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modifyMatching(java.util.function.Predicate,java.util.function.Consumer)" class="member-name-link">modifyMatching</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>&gt;&nbsp;predicate,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&nbsp;patch)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modify(net.minecraft.world.level.ItemLike,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)" class="member-name-link">modify</a><wbr>(<a href="../../../minecraft/world/level/ItemLike.html" title="interface in net.minecraft.world.level">ItemLike</a>&nbsp;item,
+ <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&nbsp;patch)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Patches the default components of all items matching the given <code>predicate</code>.</div>
+<div class="block">Patches the default components of the given item.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#modifyMatching(net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.ItemWithComponentsPredicate,java.util.function.Consumer)" class="member-name-link">modifyMatching</a><wbr>(<a href="ModifyDefaultComponentsEvent.ItemWithComponentsPredicate.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.ItemWithComponentsPredicate</a>&nbsp;predicate,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&nbsp;patch)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <a href="#modifyMatching(net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.ItemWithComponentsPredicate,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)"><code>modifyMatching(ItemWithComponentsPredicate, Initializer)</code></a> instead, which provides more contextual information.</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modifyMatching(net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.ItemWithComponentsPredicate,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)" class="member-name-link">modifyMatching</a><wbr>(<a href="ModifyDefaultComponentsEvent.ItemWithComponentsPredicate.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.ItemWithComponentsPredicate</a>&nbsp;predicate,
+ <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&nbsp;patch)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Patches the default components of all items matching the given predicate
+based on item and/or its currently applied default components.</div>
 </div>
 </div>
 </div>
@@ -200,7 +237,7 @@ public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
 <section class="detail" id="modifiersByItem">
 <h3>modifiersByItem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&gt;</span>&nbsp;<span class="element-name">modifiersByItem</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>, <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&gt;</span>&nbsp;<span class="element-name">modifiersByItem</span></div>
 </div>
 </section>
 </li>
@@ -208,7 +245,7 @@ public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
 <section class="detail" id="modifiersByPredicate">
 <h3>modifiersByPredicate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&gt;&gt;</span>&nbsp;<span class="element-name">modifiersByPredicate</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="ModifyDefaultComponentsEvent.ItemWithComponentsPredicate.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.ItemWithComponentsPredicate</a>, <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&gt;&gt;</span>&nbsp;<span class="element-name">modifiersByPredicate</span></div>
 </div>
 </section>
 </li>
@@ -225,8 +262,8 @@ public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
 <h3>ModifyDefaultComponentsEvent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@Internal
-</span><span class="modifiers">public</span>&nbsp;<span class="element-name">ModifyDefaultComponentsEvent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&gt;&nbsp;modifiersByItem,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&gt;&gt;&nbsp;modifiersByPredicate)</span></div>
+</span><span class="modifiers">public</span>&nbsp;<span class="element-name">ModifyDefaultComponentsEvent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>, <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&gt;&nbsp;modifiersByItem,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="ModifyDefaultComponentsEvent.ItemWithComponentsPredicate.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.ItemWithComponentsPredicate</a>, <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&gt;&gt;&nbsp;modifiersByPredicate)</span></div>
 </div>
 </section>
 </li>
@@ -239,12 +276,12 @@ public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="modify(net.minecraft.world.level.ItemLike,java.util.function.Consumer)">
+<section class="detail" id="modify(net.minecraft.world.level.ItemLike,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)">
 <h3>modify</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modify</span><wbr><span class="parameters">(<a href="../../../minecraft/world/level/ItemLike.html" title="interface in net.minecraft.world.level">ItemLike</a>&nbsp;item,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&nbsp;patch)</span></div>
-<div class="block">Patches the default components of the given <code>item</code>.</div>
+ <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&nbsp;patch)</span></div>
+<div class="block">Patches the default components of the given item.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>item</code> - the item to modify the default components for</dd>
@@ -254,19 +291,65 @@ public void modifyComponentsLow(ModifyDefaultComponentsEvent event) {
 </section>
 </li>
 <li>
-<section class="detail" id="modifyMatching(java.util.function.Predicate,java.util.function.Consumer)">
-<h3>modifyMatching</h3>
+<section class="detail" id="modify(net.minecraft.world.level.ItemLike,java.util.function.Consumer)">
+<h3>modify</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modifyMatching</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="../../../minecraft/world/item/Item.html" title="class in net.minecraft.world.item">Item</a>&gt;&nbsp;predicate,
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modify</span><wbr><span class="parameters">(<a href="../../../minecraft/world/level/ItemLike.html" title="interface in net.minecraft.world.level">ItemLike</a>&nbsp;item,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&nbsp;patch)</span></div>
-<div class="block">Patches the default components of all items matching the given <code>predicate</code>.
-<p>
-If this method is used to modify components based on the item's current default components, the
-event listener should use the <code>lowest priority</code> so that <a href="#modify(net.minecraft.world.level.ItemLike,java.util.function.Consumer)">other mods' modifications</a> are
-already applied.</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <a href="#modify(net.minecraft.world.level.ItemLike,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)"><code>modify(ItemLike, Initializer)</code></a> instead, which provides more contextual information.</div>
+</div>
+<div class="block">Patches the default components of the given item.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>predicate</code> - the item filter</dd>
+<dd><code>item</code> - the item to modify the default components for</dd>
+<dd><code>patch</code> - the patch to apply</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="modifyMatching(net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.ItemWithComponentsPredicate,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)">
+<h3>modifyMatching</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modifyMatching</span><wbr><span class="parameters">(<a href="ModifyDefaultComponentsEvent.ItemWithComponentsPredicate.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.ItemWithComponentsPredicate</a>&nbsp;predicate,
+ <a href="ModifyDefaultComponentsEvent.Initializer.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.Initializer</a>&nbsp;patch)</span></div>
+<div class="block"><p>Patches the default components of all items matching the given predicate
+based on item and/or its currently applied default components.</p>
+<p>If this method is used to modify components based on the item's current default components, the
+event listener should use the lowest priority so that <a href="#modify(net.minecraft.world.level.ItemLike,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)">other mods' modifications</a> are
+already applied.</p>
+</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>predicate</code> - the item and its current default components filter</dd>
+<dd><code>patch</code> - the patch to apply</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="modifyMatching(net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.ItemWithComponentsPredicate,java.util.function.Consumer)">
+<h3>modifyMatching</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modifyMatching</span><wbr><span class="parameters">(<a href="ModifyDefaultComponentsEvent.ItemWithComponentsPredicate.html" title="interface in net.neoforged.neoforge.event">ModifyDefaultComponentsEvent.ItemWithComponentsPredicate</a>&nbsp;predicate,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/core/component/DataComponentMap.Builder.html" title="class in net.minecraft.core.component">DataComponentMap.Builder</a>&gt;&nbsp;patch)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <a href="#modifyMatching(net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.ItemWithComponentsPredicate,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)"><code>modifyMatching(ItemWithComponentsPredicate, Initializer)</code></a> instead, which provides more contextual information.</div>
+</div>
+<div class="block"><p>Patches the default components of all items matching the given predicate
+based on item and/or its currently applied default components.</p>
+<p>If this method is used to modify components based on the item's current default components, the
+event listener should use the lowest priority so that <a href="#modify(net.minecraft.world.level.ItemLike,net.neoforged.neoforge.event.ModifyDefaultComponentsEvent.Initializer)">other mods' modifications</a> are
+already applied.</p>
+</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>predicate</code> - the item and its current default components filter</dd>
 <dd><code>patch</code> - the patch to apply</dd>
 </dl>
 </div>

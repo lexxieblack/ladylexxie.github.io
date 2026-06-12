@@ -655,15 +655,21 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">PlayerAdvancements.</span><code><a href="../../PlayerAdvancements.html#flushDirty(net.minecraft.server.level.ServerPlayer,boolean)" class="member-name-link">flushDirty</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  boolean&nbsp;showAdvancements)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MinecraftServer.</span><code><a href="../../MinecraftServer.html#sendDifficultyUpdate(net.minecraft.server.level.ServerPlayer)" class="member-name-link">sendDifficultyUpdate</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player)</code></div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MinecraftServer.</span><code><a href="../../MinecraftServer.html#handleCustomClickAction(net.minecraft.resources.Identifier,java.util.Optional,net.minecraft.server.level.ServerPlayer,com.mojang.authlib.GameProfile)" class="member-name-link">handleCustomClickAction</a><wbr>(<a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;&nbsp;payload,
+ @Nullable <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a>&nbsp;profile)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">PlayerAdvancements.</span><code><a href="../../PlayerAdvancements.html#setPlayer(net.minecraft.server.level.ServerPlayer)" class="member-name-link">setPlayer</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player)</code></div>
+<div class="col-first even-row-color"><code>private void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MinecraftServer.</span><code><a href="../../MinecraftServer.html#sendDifficultyUpdate(net.minecraft.server.level.ServerPlayer)" class="member-name-link">sendDifficultyUpdate</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ServerTickRateManager.</span><code><a href="../../ServerTickRateManager.html#updateJoiningPlayer(net.minecraft.server.level.ServerPlayer)" class="member-name-link">updateJoiningPlayer</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">PlayerAdvancements.</span><code><a href="../../PlayerAdvancements.html#setPlayer(net.minecraft.server.level.ServerPlayer)" class="member-name-link">setPlayer</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ServerTickRateManager.</span><code><a href="../../ServerTickRateManager.html#updateJoiningPlayer(net.minecraft.server.level.ServerPlayer)" class="member-name-link">updateJoiningPlayer</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../../package-summary.html">net.minecraft.server</a> with parameters of type <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a></span></div>
 <div class="summary-table three-column-summary">
@@ -2388,19 +2394,16 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static <a href="../../../../neoforged/neoforge/event/level/BlockEvent.BreakEvent.html" title="class in net.neoforged.neoforge.event.level">BlockEvent.BreakEvent</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">CommonHooks.</span><code><a href="../../../../neoforged/neoforge/common/CommonHooks.html#fireBlockBreak(net.minecraft.world.level.Level,net.minecraft.world.level.GameType,net.minecraft.server.level.ServerPlayer,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">fireBlockBreak</a><wbr>(<a href="../../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../world/level/GameType.html" title="enum class in net.minecraft.world.level">GameType</a>&nbsp;gameType,
- <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
- <a href="../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Fires <a href="../../../../neoforged/neoforge/event/level/BlockEvent.BreakEvent.html" title="class in net.neoforged.neoforge.event.level"><code>BlockEvent.BreakEvent</code></a>, pre-emptively canceling the event based on the conditions that will cause the block to not be broken anyway.</div>
-</div>
-<div class="col-first odd-row-color"><code>private &lt;T&gt;&nbsp;void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">NeoForgeEventHandler.</span><code><a href="../../../../neoforged/neoforge/common/NeoForgeEventHandler.html#handleSync(net.minecraft.server.level.ServerPlayer,net.minecraft.core.Registry,java.util.Collection)" class="member-name-link">handleSync</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+<div class="col-first even-row-color"><code>private &lt;T&gt;&nbsp;void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">NeoForgeEventHandler.</span><code><a href="../../../../neoforged/neoforge/common/NeoForgeEventHandler.html#handleSync(net.minecraft.server.level.ServerPlayer,net.minecraft.core.Registry,java.util.Collection)" class="member-name-link">handleSync</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  <a href="../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;T&gt;&nbsp;registry,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;&nbsp;attachments)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CommonHooks.</span><code><a href="../../../../neoforged/neoforge/common/CommonHooks.html#onCustomClickAction(net.minecraft.server.level.ServerPlayer,com.mojang.authlib.GameProfile,net.minecraft.resources.Identifier,java.util.Optional)" class="member-name-link">onCustomClickAction</a><wbr>(@Nullable <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a>&nbsp;profile,
+ <a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;&nbsp;payload)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static @Nullable <a href="../../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">CommonHooks.</span><code><a href="../../../../neoforged/neoforge/common/CommonHooks.html#onServerChatSubmittedEvent(net.minecraft.server.level.ServerPlayer,java.lang.String,net.minecraft.network.chat.Component)" class="member-name-link">onServerChatSubmittedEvent</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
@@ -2629,6 +2632,15 @@ to fire the <a href="../../../../neoforged/neoforge/event/entity/player/PlayerRe
 <li>
 <section class="detail" id="net.neoforged.neoforge.event.entity.player">
 <h2>Uses of <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a> in <a href="../../../../neoforged/neoforge/event/entity/player/package-summary.html">net.neoforged.neoforge.event.entity.player</a></h2>
+<div class="caption"><span>Fields in <a href="../../../../neoforged/neoforge/event/entity/player/package-summary.html">net.neoforged.neoforge.event.entity.player</a> declared as <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>private final @Nullable <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CustomClickActionEvent.</span><code><a href="../../../../neoforged/neoforge/event/entity/player/CustomClickActionEvent.html#player" class="member-name-link">player</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
 <div class="caption"><span>Methods in <a href="../../../../neoforged/neoforge/event/entity/player/package-summary.html">net.neoforged.neoforge.event.entity.player</a> that return <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a></span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -2640,6 +2652,11 @@ to fire the <a href="../../../../neoforged/neoforge/event/entity/player/PlayerRe
 <div class="col-first odd-row-color"><code><a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">ClientInformationUpdatedEvent.</span><code><a href="../../../../neoforged/neoforge/event/entity/player/ClientInformationUpdatedEvent.html#getEntity()" class="member-name-link">getEntity</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>@Nullable <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CustomClickActionEvent.</span><code><a href="../../../../neoforged/neoforge/event/entity/player/CustomClickActionEvent.html#getPlayer()" class="member-name-link">getPlayer</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Returns the player who clicked this custom click event, or <code>null</code> if it was received during configuration.</div>
+</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../../../../neoforged/neoforge/event/entity/player/package-summary.html">net.neoforged.neoforge.event.entity.player</a> with parameters of type <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a></span></div>
 <div class="summary-table three-column-summary">
@@ -2657,15 +2674,21 @@ to fire the <a href="../../../../neoforged/neoforge/event/entity/player/PlayerRe
  <a href="../ClientInformation.html" title="class in net.minecraft.server.level">ClientInformation</a>&nbsp;newInfo)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../../../neoforged/neoforge/event/entity/player/PermissionsChangedEvent.html#%3Cinit%3E(net.minecraft.server.level.ServerPlayer,net.minecraft.server.permissions.LevelBasedPermissionSet,net.minecraft.server.permissions.LevelBasedPermissionSet)" class="member-name-link">PermissionsChangedEvent</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
- <a href="../../permissions/LevelBasedPermissionSet.html" title="interface in net.minecraft.server.permissions">LevelBasedPermissionSet</a>&nbsp;newLevel,
- <a href="../../permissions/LevelBasedPermissionSet.html" title="interface in net.minecraft.server.permissions">LevelBasedPermissionSet</a>&nbsp;oldLevel)</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../neoforged/neoforge/event/entity/player/CustomClickActionEvent.html#%3Cinit%3E(net.minecraft.server.level.ServerPlayer,com.mojang.authlib.GameProfile,net.minecraft.resources.Identifier,net.minecraft.nbt.Tag)" class="member-name-link">CustomClickActionEvent</a><wbr>(@Nullable <a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a>&nbsp;profile,
+ <a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;identifier,
+ @Nullable <a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&nbsp;payload)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../../../neoforged/neoforge/event/entity/player/PlayerRespawnPositionEvent.html#%3Cinit%3E(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.portal.TeleportTransition,boolean)" class="member-name-link">PlayerRespawnPositionEvent</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+<div class="col-second odd-row-color"><code><a href="../../../../neoforged/neoforge/event/entity/player/PermissionsChangedEvent.html#%3Cinit%3E(net.minecraft.server.level.ServerPlayer,net.minecraft.server.permissions.LevelBasedPermissionSet,net.minecraft.server.permissions.LevelBasedPermissionSet)" class="member-name-link">PermissionsChangedEvent</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../permissions/LevelBasedPermissionSet.html" title="interface in net.minecraft.server.permissions">LevelBasedPermissionSet</a>&nbsp;newLevel,
+ <a href="../../permissions/LevelBasedPermissionSet.html" title="interface in net.minecraft.server.permissions">LevelBasedPermissionSet</a>&nbsp;oldLevel)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../neoforged/neoforge/event/entity/player/PlayerRespawnPositionEvent.html#%3Cinit%3E(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.portal.TeleportTransition,boolean)" class="member-name-link">PlayerRespawnPositionEvent</a><wbr>(<a href="../ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  <a href="../../../world/level/portal/TeleportTransition.html" title="class in net.minecraft.world.level.portal">TeleportTransition</a>&nbsp;teleportTransition,
  boolean&nbsp;fromEndFight)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
