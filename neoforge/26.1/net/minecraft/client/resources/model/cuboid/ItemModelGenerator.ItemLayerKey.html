@@ -63,11 +63,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#material" tabindex="0">material</a></li>
 <li><a href="#modelState" tabindex="0">modelState</a></li>
 <li><a href="#layerIndex" tabindex="0">layerIndex</a></li>
+<li><a href="#faceData" tabindex="0">faceData</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.renderer.block.dispatch.ModelState,int)" tabindex="0">ItemLayerKey(Material.Baked, ModelState, int)</a></li>
+<li><a href="#%3Cinit%3E(net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.renderer.block.dispatch.ModelState,int,net.neoforged.neoforge.client.model.ExtraFaceData)" tabindex="0">ItemLayerKey(Material.Baked, ModelState, int, ExtraFaceData)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -79,6 +81,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#material()" tabindex="0">material()</a></li>
 <li><a href="#modelState()" tabindex="0">modelState()</a></li>
 <li><a href="#layerIndex()" tabindex="0">layerIndex()</a></li>
+<li><a href="#faceData()" tabindex="0">faceData()</a></li>
 </ol>
 </li>
 </ol>
@@ -104,7 +107,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="horizontal-scroll">
-<div class="type-signature"><span class="modifiers">public static record </span><span class="element-name type-name-label">ItemModelGenerator.ItemLayerKey</span>(<a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a>&nbsp;material, <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState, int&nbsp;layerIndex)
+<div class="type-signature"><span class="modifiers">public static record </span><span class="element-name type-name-label">ItemModelGenerator.ItemLayerKey</span>(<a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a>&nbsp;material, <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState, int&nbsp;layerIndex, <a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a>
 implements <a href="../ModelBaker.SharedOperationKey.html" title="interface in net.minecraft.client.resources.model">ModelBaker.SharedOperationKey</a>&lt;<a href="../geometry/QuadCollection.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection</a>&gt;</span></div>
 </div>
@@ -120,19 +123,24 @@ implements <a href="../ModelBaker.SharedOperationKey.html" title="interface in n
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final int</code></div>
-<div class="col-second even-row-color"><code><a href="#layerIndex" class="member-name-link">layerIndex</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a></code></div>
+<div class="col-second even-row-color"><code><a href="#faceData" class="member-name-link">faceData</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">The field for the <code>faceData</code> record component.</div>
+</div>
+<div class="col-first odd-row-color"><code>private final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#layerIndex" class="member-name-link">layerIndex</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The field for the <code>layerIndex</code> record component.</div>
 </div>
-<div class="col-first odd-row-color"><code>private final <a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#material" class="member-name-link">material</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>private final <a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a></code></div>
+<div class="col-second even-row-color"><code><a href="#material" class="member-name-link">material</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">The field for the <code>material</code> record component.</div>
 </div>
-<div class="col-first even-row-color"><code>private final <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a></code></div>
-<div class="col-second even-row-color"><code><a href="#modelState" class="member-name-link">modelState</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>private final <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#modelState" class="member-name-link">modelState</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The field for the <code>modelState</code> record component.</div>
 </div>
 </div>
@@ -149,7 +157,12 @@ implements <a href="../ModelBaker.SharedOperationKey.html" title="interface in n
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.renderer.block.dispatch.ModelState,int)" class="member-name-link">ItemLayerKey</a><wbr>(<a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a>&nbsp;material,
  <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
  int&nbsp;layerIndex)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.renderer.block.dispatch.ModelState,int,net.neoforged.neoforge.client.model.ExtraFaceData)" class="member-name-link">ItemLayerKey</a><wbr>(<a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a>&nbsp;material,
+ <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ int&nbsp;layerIndex,
+ <a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Creates an instance of a <code>ItemLayerKey</code> record class.</div>
 </div>
 </div>
@@ -174,29 +187,34 @@ implements <a href="../ModelBaker.SharedOperationKey.html" title="interface in n
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#faceData()" class="member-name-link">faceData</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <code>faceData</code> record component.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#layerIndex()" class="member-name-link">layerIndex</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#layerIndex()" class="member-name-link">layerIndex</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>layerIndex</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#material()" class="member-name-link">material</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#material()" class="member-name-link">material</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>material</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modelState()" class="member-name-link">modelState</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modelState()" class="member-name-link">modelState</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>modelState</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this record class.</div>
 </div>
 </div>
@@ -243,6 +261,15 @@ implements <a href="../ModelBaker.SharedOperationKey.html" title="interface in n
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="faceData">
+<h3>faceData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a></span>&nbsp;<span class="element-name">faceData</span></div>
+<div class="block">The field for the <code>faceData</code> record component.</div>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -258,12 +285,24 @@ implements <a href="../ModelBaker.SharedOperationKey.html" title="interface in n
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ItemLayerKey</span><wbr><span class="parameters">(<a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a>&nbsp;material,
  <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
  int&nbsp;layerIndex)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.renderer.block.dispatch.ModelState,int,net.neoforged.neoforge.client.model.ExtraFaceData)">
+<h3>ItemLayerKey</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ItemLayerKey</span><wbr><span class="parameters">(<a href="../sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a>&nbsp;material,
+ <a href="../../../renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ int&nbsp;layerIndex,
+ <a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</span></div>
 <div class="block">Creates an instance of a <code>ItemLayerKey</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>material</code> - the value for the <code>material</code> record component</dd>
 <dd><code>modelState</code> - the value for the <code>modelState</code> record component</dd>
 <dd><code>layerIndex</code> - the value for the <code>layerIndex</code> record component</dd>
+<dd><code>faceData</code> - the value for the <code>faceData</code> record component</dd>
 </dl>
 </div>
 </section>
@@ -370,6 +409,19 @@ implements <a href="../ModelBaker.SharedOperationKey.html" title="interface in n
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the value of the <code>layerIndex</code> record component</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="faceData()">
+<h3>faceData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a></span>&nbsp;<span class="element-name">faceData</span>()</div>
+<div class="block">Returns the value of the <code>faceData</code> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>faceData</code> record component</dd>
 </dl>
 </div>
 </section>

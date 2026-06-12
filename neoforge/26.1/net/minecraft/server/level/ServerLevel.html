@@ -97,6 +97,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#structureCheck" tabindex="0">structureCheck</a></li>
 <li><a href="#tickTime" tabindex="0">tickTime</a></li>
 <li><a href="#debugSynchronizers" tabindex="0">debugSynchronizers</a></li>
+<li><a href="#seedOverride" tabindex="0">seedOverride</a></li>
 <li><a href="#capListenerHolder" tabindex="0">capListenerHolder</a></li>
 </ol>
 </li>
@@ -107,6 +108,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
+<li><a href="#getSeedOverride()" tabindex="0">getSeedOverride()</a></li>
 <li><a href="#setDragonFight(net.minecraft.world.level.dimension.end.EnderDragonFight)" tabindex="0">setDragonFight(EnderDragonFight)</a></li>
 <li><a href="#getUncachedNoiseBiome(int,int,int)" tabindex="0">getUncachedNoiseBiome(int, int, int)</a></li>
 <li><a href="#structureManager()" tabindex="0">structureManager()</a></li>
@@ -418,33 +420,36 @@ implements <a href="../../world/level/WorldGenLevel.html" title="interface in ne
 <div class="col-first even-row-color"><code>static final <a href="../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></code></div>
 <div class="col-second even-row-color"><code><a href="#RAIN_DURATION" class="member-name-link">RAIN_DURATION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#server" class="member-name-link">server</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/OptionalLong.html" title="class or interface in java.util" class="external-link">OptionalLong</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#seedOverride" class="member-name-link">seedOverride</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../world/level/storage/ServerLevelData.html" title="interface in net.minecraft.world.level.storage">ServerLevelData</a></code></div>
-<div class="col-second even-row-color"><code><a href="#serverLevelData" class="member-name-link">serverLevelData</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="../MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#server" class="member-name-link">server</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../players/SleepStatus.html" title="class in net.minecraft.server.players">SleepStatus</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#sleepStatus" class="member-name-link">sleepStatus</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="../../world/level/storage/ServerLevelData.html" title="interface in net.minecraft.world.level.storage">ServerLevelData</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#serverLevelData" class="member-name-link">serverLevelData</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../world/level/levelgen/structure/StructureCheck.html" title="class in net.minecraft.world.level.levelgen.structure">StructureCheck</a></code></div>
-<div class="col-second even-row-color"><code><a href="#structureCheck" class="member-name-link">structureCheck</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="../players/SleepStatus.html" title="class in net.minecraft.server.players">SleepStatus</a></code></div>
+<div class="col-second even-row-color"><code><a href="#sleepStatus" class="member-name-link">sleepStatus</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../world/level/StructureManager.html" title="class in net.minecraft.world.level">StructureManager</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#structureManager" class="member-name-link">structureManager</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="../../world/level/levelgen/structure/StructureCheck.html" title="class in net.minecraft.world.level.levelgen.structure">StructureCheck</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#structureCheck" class="member-name-link">structureCheck</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></code></div>
-<div class="col-second even-row-color"><code><a href="#THUNDER_DELAY" class="member-name-link">THUNDER_DELAY</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="../../world/level/StructureManager.html" title="class in net.minecraft.world.level">StructureManager</a></code></div>
+<div class="col-second even-row-color"><code><a href="#structureManager" class="member-name-link">structureManager</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#THUNDER_DURATION" class="member-name-link">THUNDER_DURATION</a></code></div>
+<div class="col-first odd-row-color"><code>private static final <a href="../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#THUNDER_DELAY" class="member-name-link">THUNDER_DELAY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#tickTime" class="member-name-link">tickTime</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></code></div>
+<div class="col-second even-row-color"><code><a href="#THUNDER_DURATION" class="member-name-link">THUNDER_DURATION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../waypoints/ServerWaypointManager.html" title="class in net.minecraft.server.waypoints">ServerWaypointManager</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#waypointManager" class="member-name-link">waypointManager</a></code></div>
+<div class="col-first odd-row-color"><code>private final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#tickTime" class="member-name-link">tickTime</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final <a href="../waypoints/ServerWaypointManager.html" title="class in net.minecraft.server.waypoints">ServerWaypointManager</a></code></div>
+<div class="col-second even-row-color"><code><a href="#waypointManager" class="member-name-link">waypointManager</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.level.Level">Fields inherited from class&nbsp;<a href="../../world/level/Level.html#field-summary" title="class in net.minecraft.world.level">Level</a></h3>
@@ -767,129 +772,134 @@ implements <a href="../../world/level/WorldGenLevel.html" title="interface in ne
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSeed()" class="member-name-link">getSeed</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServer()" class="member-name-link">getServer</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/level/levelgen/structure/templatesystem/StructureTemplateManager.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplateManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStructureManager()" class="member-name-link">getStructureManager</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/OptionalLong.html" title="class or interface in java.util" class="external-link">OptionalLong</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSeedOverride()" class="member-name-link">getSeedOverride</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the override for the seed, specified in the <a href="../../world/level/dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension"><code>LevelStem</code></a> this level was constructed from.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServer()" class="member-name-link">getServer</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getTypeCount(java.lang.Iterable,java.util.function.Function)" class="member-name-link">getTypeCount</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;T&gt;&nbsp;values,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/level/levelgen/structure/templatesystem/StructureTemplateManager.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplateManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStructureManager()" class="member-name-link">getStructureManager</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getTypeCount(java.lang.Iterable,java.util.function.Function)" class="member-name-link">getTypeCount</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;T&gt;&nbsp;values,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;typeGetter)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../core/Holder.html" title="interface in net.minecraft.core">Holder</a><wbr>&lt;<a href="../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUncachedNoiseBiome(int,int,int)" class="member-name-link">getUncachedNoiseBiome</a><wbr>(int&nbsp;quartX,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../core/Holder.html" title="interface in net.minecraft.core">Holder</a><wbr>&lt;<a href="../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUncachedNoiseBiome(int,int,int)" class="member-name-link">getUncachedNoiseBiome</a><wbr>(int&nbsp;quartX,
  int&nbsp;quartY,
  int&nbsp;quartZ)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWatchdogStats()" class="member-name-link">getWatchdogStats</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../waypoints/ServerWaypointManager.html" title="class in net.minecraft.server.waypoints">ServerWaypointManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaypointManager()" class="member-name-link">getWaypointManager</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWatchdogStats()" class="member-name-link">getWatchdogStats</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/level/saveddata/WeatherData.html" title="class in net.minecraft.world.level.saveddata">WeatherData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeatherData()" class="member-name-link">getWeatherData</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../waypoints/ServerWaypointManager.html" title="class in net.minecraft.server.waypoints">ServerWaypointManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaypointManager()" class="member-name-link">getWaypointManager</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/level/border/WorldBorder.html" title="class in net.minecraft.world.level.border">WorldBorder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorldBorder()" class="member-name-link">getWorldBorder</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/level/saveddata/WeatherData.html" title="class in net.minecraft.world.level.saveddata">WeatherData</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeatherData()" class="member-name-link">getWeatherData</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#globalLevelEvent(int,net.minecraft.core.BlockPos,int)" class="member-name-link">globalLevelEvent</a><wbr>(int&nbsp;type,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- int&nbsp;data)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/level/border/WorldBorder.html" title="class in net.minecraft.world.level.border">WorldBorder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorldBorder()" class="member-name-link">getWorldBorder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invalidateCapabilities(net.minecraft.core.BlockPos)" class="member-name-link">invalidateCapabilities</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#globalLevelEvent(int,net.minecraft.core.BlockPos,int)" class="member-name-link">globalLevelEvent</a><wbr>(int&nbsp;type,
+ <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ int&nbsp;data)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invalidateCapabilities(net.minecraft.core.BlockPos)" class="member-name-link">invalidateCapabilities</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Notify all listeners that the capabilities at a specific position might have changed.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invalidateCapabilities(net.minecraft.world.level.ChunkPos)" class="member-name-link">invalidateCapabilities</a><wbr>(<a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invalidateCapabilities(net.minecraft.world.level.ChunkPos)" class="member-name-link">invalidateCapabilities</a><wbr>(<a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Notify all listeners that the capabilities at all the positions in a chunk might have changed.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAllowedToEnterPortal(net.minecraft.world.level.Level)" class="member-name-link">isAllowedToEnterPortal</a><wbr>(<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;toLevel)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCloseToVillage(net.minecraft.core.BlockPos,int)" class="member-name-link">isCloseToVillage</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAllowedToEnterPortal(net.minecraft.world.level.Level)" class="member-name-link">isAllowedToEnterPortal</a><wbr>(<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;toLevel)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCloseToVillage(net.minecraft.core.BlockPos,int)" class="member-name-link">isCloseToVillage</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  int&nbsp;sectionDistance)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCommandBlockEnabled()" class="member-name-link">isCommandBlockEnabled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFlat()" class="member-name-link">isFlat</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCommandBlockEnabled()" class="member-name-link">isCommandBlockEnabled</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHandlingTick()" class="member-name-link">isHandlingTick</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFlat()" class="member-name-link">isFlat</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPositionEntityTicking(net.minecraft.core.BlockPos)" class="member-name-link">isPositionEntityTicking</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHandlingTick()" class="member-name-link">isHandlingTick</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPositionTickingWithEntitiesLoaded(long)" class="member-name-link">isPositionTickingWithEntitiesLoaded</a><wbr>(long&nbsp;key)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPositionEntityTicking(net.minecraft.core.BlockPos)" class="member-name-link">isPositionEntityTicking</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPvpAllowed()" class="member-name-link">isPvpAllowed</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPositionTickingWithEntitiesLoaded(long)" class="member-name-link">isPositionTickingWithEntitiesLoaded</a><wbr>(long&nbsp;key)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRaided(net.minecraft.core.BlockPos)" class="member-name-link">isRaided</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPvpAllowed()" class="member-name-link">isPvpAllowed</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSpawnerBlockEnabled()" class="member-name-link">isSpawnerBlockEnabled</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRaided(net.minecraft.core.BlockPos)" class="member-name-link">isRaided</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSpawningMonsters()" class="member-name-link">isSpawningMonsters</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSpawnerBlockEnabled()" class="member-name-link">isSpawnerBlockEnabled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVillage(net.minecraft.core.BlockPos)" class="member-name-link">isVillage</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSpawningMonsters()" class="member-name-link">isSpawningMonsters</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVillage(net.minecraft.core.SectionPos)" class="member-name-link">isVillage</a><wbr>(<a href="../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;sectionPos)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVillage(net.minecraft.core.BlockPos)" class="member-name-link">isVillage</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#levelEvent(net.minecraft.world.entity.Entity,int,net.minecraft.core.BlockPos,int)" class="member-name-link">levelEvent</a><wbr>(@Nullable <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVillage(net.minecraft.core.SectionPos)" class="member-name-link">isVillage</a><wbr>(<a href="../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;sectionPos)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#levelEvent(net.minecraft.world.entity.Entity,int,net.minecraft.core.BlockPos,int)" class="member-name-link">levelEvent</a><wbr>(@Nullable <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
  int&nbsp;type,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  int&nbsp;data)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mayInteract(net.minecraft.world.entity.Entity,net.minecraft.core.BlockPos)" class="member-name-link">mayInteract</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#neighborChanged(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block,net.minecraft.world.level.redstone.Orientation)" class="member-name-link">neighborChanged</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;changedBlock,
- @Nullable <a href="../../world/level/redstone/Orientation.html" title="class in net.minecraft.world.level.redstone">Orientation</a>&nbsp;orientation)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mayInteract(net.minecraft.world.entity.Entity,net.minecraft.core.BlockPos)" class="member-name-link">mayInteract</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#neighborChanged(net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block,net.minecraft.world.level.redstone.Orientation,boolean)" class="member-name-link">neighborChanged</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#neighborChanged(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block,net.minecraft.world.level.redstone.Orientation)" class="member-name-link">neighborChanged</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ <a href="../../world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;changedBlock,
+ @Nullable <a href="../../world/level/redstone/Orientation.html" title="class in net.minecraft.world.level.redstone">Orientation</a>&nbsp;orientation)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#neighborChanged(net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block,net.minecraft.world.level.redstone.Orientation,boolean)" class="member-name-link">neighborChanged</a><wbr>(<a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;changedBlock,
  @Nullable <a href="../../world/level/redstone/Orientation.html" title="class in net.minecraft.world.level.redstone">Orientation</a>&nbsp;orientation,
  boolean&nbsp;movedByPiston)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noSave()" class="member-name-link">noSave</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onBlockEntityAdded(net.minecraft.world.level.block.entity.BlockEntity)" class="member-name-link">onBlockEntityAdded</a><wbr>(<a href="../../world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>&nbsp;blockEntity)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noSave()" class="member-name-link">noSave</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onReputationEvent(net.minecraft.world.entity.ai.village.ReputationEventType,net.minecraft.world.entity.Entity,net.minecraft.world.entity.ReputationEventHandler)" class="member-name-link">onReputationEvent</a><wbr>(<a href="../../world/entity/ai/village/ReputationEventType.html" title="interface in net.minecraft.world.entity.ai.village">ReputationEventType</a>&nbsp;type,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onBlockEntityAdded(net.minecraft.world.level.block.entity.BlockEntity)" class="member-name-link">onBlockEntityAdded</a><wbr>(<a href="../../world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>&nbsp;blockEntity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onReputationEvent(net.minecraft.world.entity.ai.village.ReputationEventType,net.minecraft.world.entity.Entity,net.minecraft.world.entity.ReputationEventHandler)" class="member-name-link">onReputationEvent</a><wbr>(<a href="../../world/entity/ai/village/ReputationEventType.html" title="interface in net.minecraft.world.entity.ai.village">ReputationEventType</a>&nbsp;type,
  <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
  <a href="../../world/entity/ReputationEventHandler.html" title="interface in net.minecraft.world.entity">ReputationEventHandler</a>&nbsp;target)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onStructureStartsAvailable(net.minecraft.world.level.chunk.ChunkAccess)" class="member-name-link">onStructureStartsAvailable</a><wbr>(<a href="../../world/level/chunk/ChunkAccess.html" title="class in net.minecraft.world.level.chunk">ChunkAccess</a>&nbsp;chunk)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#players()" class="member-name-link">players</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onStructureStartsAvailable(net.minecraft.world.level.chunk.ChunkAccess)" class="member-name-link">onStructureStartsAvailable</a><wbr>(<a href="../../world/level/chunk/ChunkAccess.html" title="class in net.minecraft.world.level.chunk">ChunkAccess</a>&nbsp;chunk)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playSeededSound(net.minecraft.world.entity.Entity,double,double,double,net.minecraft.core.Holder,net.minecraft.sounds.SoundSource,float,float,long)" class="member-name-link">playSeededSound</a><wbr>(@Nullable <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;except,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#players()" class="member-name-link">players</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playSeededSound(net.minecraft.world.entity.Entity,double,double,double,net.minecraft.core.Holder,net.minecraft.sounds.SoundSource,float,float,long)" class="member-name-link">playSeededSound</a><wbr>(@Nullable <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;except,
  double&nbsp;x,
  double&nbsp;y,
  double&nbsp;z,
@@ -898,88 +908,75 @@ implements <a href="../../world/level/WorldGenLevel.html" title="interface in ne
  float&nbsp;volume,
  float&nbsp;pitch,
  long&nbsp;seed)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playSeededSound(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Entity,net.minecraft.core.Holder,net.minecraft.sounds.SoundSource,float,float,long)" class="member-name-link">playSeededSound</a><wbr>(@Nullable <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;except,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playSeededSound(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Entity,net.minecraft.core.Holder,net.minecraft.sounds.SoundSource,float,float,long)" class="member-name-link">playSeededSound</a><wbr>(@Nullable <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;except,
  <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;sourceEntity,
  <a href="../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../sounds/SoundEvent.html" title="class in net.minecraft.sounds">SoundEvent</a>&gt;&nbsp;sound,
  <a href="../../sounds/SoundSource.html" title="enum class in net.minecraft.sounds">SoundSource</a>&nbsp;source,
  float&nbsp;volume,
  float&nbsp;pitch,
  long&nbsp;seed)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/item/alchemy/PotionBrewing.html" title="class in net.minecraft.world.item.alchemy">PotionBrewing</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#potionBrewing()" class="member-name-link">potionBrewing</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareWeather(net.minecraft.world.level.saveddata.WeatherData)" class="member-name-link">prepareWeather</a><wbr>(<a href="../../world/level/saveddata/WeatherData.html" title="class in net.minecraft.world.level.saveddata">WeatherData</a>&nbsp;weatherData)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/item/crafting/RecipeManager.html" title="class in net.minecraft.world.item.crafting">RecipeManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recipeAccess()" class="member-name-link">recipeAccess</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerCapabilityListener(net.minecraft.core.BlockPos,net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener)" class="member-name-link">registerCapabilityListener</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../../neoforged/neoforge/capabilities/ICapabilityInvalidationListener.html" title="interface in net.neoforged.neoforge.capabilities">ICapabilityInvalidationListener</a>&nbsp;listener)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Register a listener for capability invalidation.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removePlayerImmediately(net.minecraft.server.level.ServerPlayer,net.minecraft.world.entity.Entity.RemovalReason)" class="member-name-link">removePlayerImmediately</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
- <a href="../../world/entity/Entity.RemovalReason.html" title="enum class in net.minecraft.world.entity">Entity.RemovalReason</a>&nbsp;reason)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetEmptyTime()" class="member-name-link">resetEmptyTime</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetWeatherCycle()" class="member-name-link">resetWeatherCycle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runBlockEvents()" class="member-name-link">runBlockEvents</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save(net.minecraft.util.ProgressListener,boolean,boolean)" class="member-name-link">save</a><wbr>(@Nullable <a href="../../util/ProgressListener.html" title="interface in net.minecraft.util">ProgressListener</a>&nbsp;progressListener,
- boolean&nbsp;flush,
- boolean&nbsp;noSave)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveDebugReport(java.nio.file.Path)" class="member-name-link">saveDebugReport</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;rootDir)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/item/alchemy/PotionBrewing.html" title="class in net.minecraft.world.item.alchemy">PotionBrewing</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#potionBrewing()" class="member-name-link">potionBrewing</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveLevelData(boolean)" class="member-name-link">saveLevelData</a><wbr>(boolean&nbsp;sync)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareWeather(net.minecraft.world.level.saveddata.WeatherData)" class="member-name-link">prepareWeather</a><wbr>(<a href="../../world/level/saveddata/WeatherData.html" title="class in net.minecraft.world.level.saveddata">WeatherData</a>&nbsp;weatherData)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sectionsToVillage(net.minecraft.core.SectionPos)" class="member-name-link">sectionsToVillage</a><wbr>(<a href="../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;pos)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/item/crafting/RecipeManager.html" title="class in net.minecraft.world.item.crafting">RecipeManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recipeAccess()" class="member-name-link">recipeAccess</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendBlockUpdated(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.state.BlockState,int)" class="member-name-link">sendBlockUpdated</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerCapabilityListener(net.minecraft.core.BlockPos,net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener)" class="member-name-link">registerCapabilityListener</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ <a href="../../../neoforged/neoforge/capabilities/ICapabilityInvalidationListener.html" title="interface in net.neoforged.neoforge.capabilities">ICapabilityInvalidationListener</a>&nbsp;listener)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Register a listener for capability invalidation.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removePlayerImmediately(net.minecraft.server.level.ServerPlayer,net.minecraft.world.entity.Entity.RemovalReason)" class="member-name-link">removePlayerImmediately</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../world/entity/Entity.RemovalReason.html" title="enum class in net.minecraft.world.entity">Entity.RemovalReason</a>&nbsp;reason)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetEmptyTime()" class="member-name-link">resetEmptyTime</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetWeatherCycle()" class="member-name-link">resetWeatherCycle</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runBlockEvents()" class="member-name-link">runBlockEvents</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save(net.minecraft.util.ProgressListener,boolean,boolean)" class="member-name-link">save</a><wbr>(@Nullable <a href="../../util/ProgressListener.html" title="interface in net.minecraft.util">ProgressListener</a>&nbsp;progressListener,
+ boolean&nbsp;flush,
+ boolean&nbsp;noSave)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveDebugReport(java.nio.file.Path)" class="member-name-link">saveDebugReport</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;rootDir)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveLevelData(boolean)" class="member-name-link">saveLevelData</a><wbr>(boolean&nbsp;sync)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sectionsToVillage(net.minecraft.core.SectionPos)" class="member-name-link">sectionsToVillage</a><wbr>(<a href="../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendBlockUpdated(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.state.BlockState,int)" class="member-name-link">sendBlockUpdated</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;old,
  <a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;current,
  int&nbsp;updateFlags)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendParticles(net.minecraft.server.level.ServerPlayer,boolean,double,double,double,net.minecraft.network.protocol.Packet)" class="member-name-link">sendParticles</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendParticles(net.minecraft.server.level.ServerPlayer,boolean,double,double,double,net.minecraft.network.protocol.Packet)" class="member-name-link">sendParticles</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  boolean&nbsp;overrideLimiter,
  double&nbsp;x,
  double&nbsp;y,
  double&nbsp;z,
  <a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&nbsp;packet)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends <a href="../../core/particles/ParticleOptions.html" title="interface in net.minecraft.core.particles">ParticleOptions</a>&gt;<br>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendParticles(net.minecraft.server.level.ServerPlayer,T,boolean,boolean,double,double,double,int,double,double,double,double)" class="member-name-link">sendParticles</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
- T&nbsp;particle,
- boolean&nbsp;overrideLimiter,
- boolean&nbsp;alwaysShow,
- double&nbsp;x,
- double&nbsp;y,
- double&nbsp;z,
- int&nbsp;count,
- double&nbsp;xDist,
- double&nbsp;yDist,
- double&nbsp;zDist,
- double&nbsp;speed)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends <a href="../../core/particles/ParticleOptions.html" title="interface in net.minecraft.core.particles">ParticleOptions</a>&gt;<br>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendParticles(T,boolean,boolean,double,double,double,int,double,double,double,double)" class="member-name-link">sendParticles</a><wbr>(T&nbsp;particle,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends <a href="../../core/particles/ParticleOptions.html" title="interface in net.minecraft.core.particles">ParticleOptions</a>&gt;<br>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendParticles(net.minecraft.server.level.ServerPlayer,T,boolean,boolean,double,double,double,int,double,double,double,double)" class="member-name-link">sendParticles</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ T&nbsp;particle,
  boolean&nbsp;overrideLimiter,
  boolean&nbsp;alwaysShow,
  double&nbsp;x,
@@ -992,7 +989,9 @@ implements <a href="../../world/level/WorldGenLevel.html" title="interface in ne
  double&nbsp;speed)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends <a href="../../core/particles/ParticleOptions.html" title="interface in net.minecraft.core.particles">ParticleOptions</a>&gt;<br>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendParticles(T,double,double,double,int,double,double,double,double)" class="member-name-link">sendParticles</a><wbr>(T&nbsp;particle,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendParticles(T,boolean,boolean,double,double,double,int,double,double,double,double)" class="member-name-link">sendParticles</a><wbr>(T&nbsp;particle,
+ boolean&nbsp;overrideLimiter,
+ boolean&nbsp;alwaysShow,
  double&nbsp;x,
  double&nbsp;y,
  double&nbsp;z,
@@ -1002,122 +1001,133 @@ implements <a href="../../world/level/WorldGenLevel.html" title="interface in ne
  double&nbsp;zDist,
  double&nbsp;speed)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setChunkForced(int,int,boolean)" class="member-name-link">setChunkForced</a><wbr>(int&nbsp;chunkX,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T extends <a href="../../core/particles/ParticleOptions.html" title="interface in net.minecraft.core.particles">ParticleOptions</a>&gt;<br>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendParticles(T,double,double,double,int,double,double,double,double)" class="member-name-link">sendParticles</a><wbr>(T&nbsp;particle,
+ double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;z,
+ int&nbsp;count,
+ double&nbsp;xDist,
+ double&nbsp;yDist,
+ double&nbsp;zDist,
+ double&nbsp;speed)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setChunkForced(int,int,boolean)" class="member-name-link">setChunkForced</a><wbr>(int&nbsp;chunkX,
  int&nbsp;chunkZ,
  boolean&nbsp;forced)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setDragonFight(net.minecraft.world.level.dimension.end.EnderDragonFight)" class="member-name-link">setDragonFight</a><wbr>(@Nullable <a href="../../world/level/dimension/end/EnderDragonFight.html" title="class in net.minecraft.world.level.dimension.end">EnderDragonFight</a>&nbsp;fight)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated.</span></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="../../world/attribute/EnvironmentAttributeSystem.html" title="class in net.minecraft.world.attribute">EnvironmentAttributeSystem</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setEnvironmentAttributes(net.minecraft.world.attribute.EnvironmentAttributeSystem)" class="member-name-link">setEnvironmentAttributes</a><wbr>(<a href="../../world/attribute/EnvironmentAttributeSystem.html" title="class in net.minecraft.world.attribute">EnvironmentAttributeSystem</a>&nbsp;environmentAttributes)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setDragonFight(net.minecraft.world.level.dimension.end.EnderDragonFight)" class="member-name-link">setDragonFight</a><wbr>(@Nullable <a href="../../world/level/dimension/end/EnderDragonFight.html" title="class in net.minecraft.world.level.dimension.end">EnderDragonFight</a>&nbsp;fight)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMapData(net.minecraft.world.level.saveddata.maps.MapId,net.minecraft.world.level.saveddata.maps.MapItemSavedData)" class="member-name-link">setMapData</a><wbr>(<a href="../../world/level/saveddata/maps/MapId.html" title="class in net.minecraft.world.level.saveddata.maps">MapId</a>&nbsp;id,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="../../world/attribute/EnvironmentAttributeSystem.html" title="class in net.minecraft.world.attribute">EnvironmentAttributeSystem</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setEnvironmentAttributes(net.minecraft.world.attribute.EnvironmentAttributeSystem)" class="member-name-link">setEnvironmentAttributes</a><wbr>(<a href="../../world/attribute/EnvironmentAttributeSystem.html" title="class in net.minecraft.world.attribute">EnvironmentAttributeSystem</a>&nbsp;environmentAttributes)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMapData(net.minecraft.world.level.saveddata.maps.MapId,net.minecraft.world.level.saveddata.maps.MapItemSavedData)" class="member-name-link">setMapData</a><wbr>(<a href="../../world/level/saveddata/maps/MapId.html" title="class in net.minecraft.world.level.saveddata.maps">MapId</a>&nbsp;id,
  <a href="../../world/level/saveddata/maps/MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a>&nbsp;data)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRespawnData(net.minecraft.world.level.storage.LevelData.RespawnData)" class="member-name-link">setRespawnData</a><wbr>(<a href="../../world/level/storage/LevelData.RespawnData.html" title="class in net.minecraft.world.level.storage">LevelData.RespawnData</a>&nbsp;respawnData)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldTickBlocksAt(long)" class="member-name-link">shouldTickBlocksAt</a><wbr>(long&nbsp;chunkPos)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRespawnData(net.minecraft.world.level.storage.LevelData.RespawnData)" class="member-name-link">setRespawnData</a><wbr>(<a href="../../world/level/storage/LevelData.RespawnData.html" title="class in net.minecraft.world.level.storage">LevelData.RespawnData</a>&nbsp;respawnData)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTickingChunk(net.minecraft.world.level.chunk.LevelChunk)" class="member-name-link">startTickingChunk</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;levelChunk)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldTickBlocksAt(long)" class="member-name-link">shouldTickBlocksAt</a><wbr>(long&nbsp;chunkPos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/level/StructureManager.html" title="class in net.minecraft.world.level">StructureManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#structureManager()" class="member-name-link">structureManager</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTickingChunk(net.minecraft.world.level.chunk.LevelChunk)" class="member-name-link">startTickingChunk</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;levelChunk)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#syncData(net.neoforged.neoforge.attachment.AttachmentType)" class="member-name-link">syncData</a><wbr>(<a href="../../../neoforged/neoforge/attachment/AttachmentType.html" title="class in net.neoforged.neoforge.attachment">AttachmentType</a>&lt;?&gt;&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/level/StructureManager.html" title="class in net.minecraft.world.level">StructureManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#structureManager()" class="member-name-link">structureManager</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#syncData(net.neoforged.neoforge.attachment.AttachmentType)" class="member-name-link">syncData</a><wbr>(<a href="../../../neoforged/neoforge/attachment/AttachmentType.html" title="class in net.neoforged.neoforge.attachment">AttachmentType</a>&lt;?&gt;&nbsp;type)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Syncs a data attachment of the given type with all relevant clients.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick(java.util.function.BooleanSupplier)" class="member-name-link">tick</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BooleanSupplier.html" title="class or interface in java.util.function" class="external-link">BooleanSupplier</a>&nbsp;haveTime)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickBlock(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block)" class="member-name-link">tickBlock</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ <a href="../../world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;type)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickChunk(net.minecraft.world.level.chunk.LevelChunk,int)" class="member-name-link">tickChunk</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;chunk,
+ int&nbsp;tickSpeed)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick(java.util.function.BooleanSupplier)" class="member-name-link">tick</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BooleanSupplier.html" title="class or interface in java.util.function" class="external-link">BooleanSupplier</a>&nbsp;haveTime)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickCustomSpawners(boolean)" class="member-name-link">tickCustomSpawners</a><wbr>(boolean&nbsp;spawnEnemies)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickBlock(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block)" class="member-name-link">tickBlock</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickChunk(net.minecraft.world.level.chunk.LevelChunk,int)" class="member-name-link">tickChunk</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;chunk,
- int&nbsp;tickSpeed)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickCustomSpawners(boolean)" class="member-name-link">tickCustomSpawners</a><wbr>(boolean&nbsp;spawnEnemies)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickFluid(net.minecraft.core.BlockPos,net.minecraft.world.level.material.Fluid)" class="member-name-link">tickFluid</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickFluid(net.minecraft.core.BlockPos,net.minecraft.world.level.material.Fluid)" class="member-name-link">tickFluid</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&nbsp;type)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickNonPassenger(net.minecraft.world.entity.Entity)" class="member-name-link">tickNonPassenger</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickPassenger(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Entity)" class="member-name-link">tickPassenger</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;vehicle,
- <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickPrecipitation(net.minecraft.core.BlockPos)" class="member-name-link">tickPrecipitation</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/TickRateManager.html" title="class in net.minecraft.world">TickRateManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRateManager()" class="member-name-link">tickRateManager</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickThunder(net.minecraft.world.level.chunk.LevelChunk)" class="member-name-link">tickThunder</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;chunk)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickTime()" class="member-name-link">tickTime</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryAddFreshEntityWithPassengers(net.minecraft.world.entity.Entity)" class="member-name-link">tryAddFreshEntityWithPassengers</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unload(net.minecraft.world.level.chunk.LevelChunk)" class="member-name-link">unload</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;levelChunk)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateNeighborsAt(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block)" class="member-name-link">updateNeighborsAt</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;sourceBlock)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickNonPassenger(net.minecraft.world.entity.Entity)" class="member-name-link">tickNonPassenger</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickPassenger(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Entity)" class="member-name-link">tickPassenger</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;vehicle,
+ <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickPrecipitation(net.minecraft.core.BlockPos)" class="member-name-link">tickPrecipitation</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/TickRateManager.html" title="class in net.minecraft.world">TickRateManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRateManager()" class="member-name-link">tickRateManager</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickThunder(net.minecraft.world.level.chunk.LevelChunk)" class="member-name-link">tickThunder</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;chunk)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickTime()" class="member-name-link">tickTime</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryAddFreshEntityWithPassengers(net.minecraft.world.entity.Entity)" class="member-name-link">tryAddFreshEntityWithPassengers</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unload(net.minecraft.world.level.chunk.LevelChunk)" class="member-name-link">unload</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;levelChunk)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateNeighborsAt(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block,net.minecraft.world.level.redstone.Orientation)" class="member-name-link">updateNeighborsAt</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateNeighborsAt(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block)" class="member-name-link">updateNeighborsAt</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ <a href="../../world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;sourceBlock)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateNeighborsAt(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block,net.minecraft.world.level.redstone.Orientation)" class="member-name-link">updateNeighborsAt</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;sourceBlock,
  @Nullable <a href="../../world/level/redstone/Orientation.html" title="class in net.minecraft.world.level.redstone">Orientation</a>&nbsp;orientation)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateNeighborsAtExceptFromFacing(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block,net.minecraft.core.Direction,net.minecraft.world.level.redstone.Orientation)" class="member-name-link">updateNeighborsAtExceptFromFacing</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateNeighborsAtExceptFromFacing(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Block,net.minecraft.core.Direction,net.minecraft.world.level.redstone.Orientation)" class="member-name-link">updateNeighborsAtExceptFromFacing</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;blockObject,
  <a href="../../core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;skipDirection,
  @Nullable <a href="../../world/level/redstone/Orientation.html" title="class in net.minecraft.world.level.redstone">Orientation</a>&nbsp;orientation)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateNeighboursOnBlockSet(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">updateNeighboursOnBlockSet</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;oldState)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePOIOnBlockStateChange(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">updatePOIOnBlockStateChange</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateNeighboursOnBlockSet(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">updateNeighboursOnBlockSet</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ <a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;oldState)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePOIOnBlockStateChange(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">updatePOIOnBlockStateChange</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;oldState,
  <a href="../../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;newState)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSleepingPlayerList()" class="member-name-link">updateSleepingPlayerList</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#waitForEntities(net.minecraft.world.level.ChunkPos,int)" class="member-name-link">waitForEntities</a><wbr>(<a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;centerChunk,
- int&nbsp;radius)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSleepingPlayerList()" class="member-name-link">updateSleepingPlayerList</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wakeUpAllPlayers()" class="member-name-link">wakeUpAllPlayers</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#waitForEntities(net.minecraft.world.level.ChunkPos,int)" class="member-name-link">waitForEntities</a><wbr>(<a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;centerChunk,
+ int&nbsp;radius)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wakeUpAllPlayers()" class="member-name-link">wakeUpAllPlayers</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -1511,6 +1521,14 @@ implements <a href="../../world/level/WorldGenLevel.html" title="interface in ne
 </section>
 </li>
 <li>
+<section class="detail" id="seedOverride">
+<h3>seedOverride</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/OptionalLong.html" title="class or interface in java.util" class="external-link">OptionalLong</a></span>&nbsp;<span class="element-name">seedOverride</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="capListenerHolder">
 <h3>capListenerHolder</h3>
 <div class="horizontal-scroll">
@@ -1551,6 +1569,19 @@ implements <a href="../../world/level/WorldGenLevel.html" title="interface in ne
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="getSeedOverride()">
+<h3>getSeedOverride</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/OptionalLong.html" title="class or interface in java.util" class="external-link">OptionalLong</a></span>&nbsp;<span class="element-name">getSeedOverride</span>()</div>
+<div class="block">Returns the override for the seed, specified in the <a href="../../world/level/dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension"><code>LevelStem</code></a> this level was constructed from., if any</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the override for the seed, specified in the <a href="../../world/level/dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension"><code>LevelStem</code></a> this level was constructed from</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="setDragonFight(net.minecraft.world.level.dimension.end.EnderDragonFight)">
 <h3>setDragonFight</h3>

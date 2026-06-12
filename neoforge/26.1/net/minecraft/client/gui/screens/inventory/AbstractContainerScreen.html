@@ -96,7 +96,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#quickCraftingRemainder" tabindex="0">quickCraftingRemainder</a></li>
 <li><a href="#doubleclick" tabindex="0">doubleclick</a></li>
 <li><a href="#lastQuickMoved" tabindex="0">lastQuickMoved</a></li>
-<li><a href="#slotColor" tabindex="0">slotColor</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -148,12 +147,16 @@ loadScripts(document, 'script');</script>
 <li><a href="#shouldAddSlotToQuickCraft(net.minecraft.world.inventory.Slot,net.minecraft.world.item.ItemStack)" tabindex="0">shouldAddSlotToQuickCraft(Slot, ItemStack)</a></li>
 <li><a href="#quickCraftToSlots()" tabindex="0">quickCraftToSlots()</a></li>
 <li><a href="#getMenu()" tabindex="0">getMenu()</a></li>
+<li><a href="#getHoveredSlot()" tabindex="0">getHoveredSlot()</a></li>
+<li><a href="#getLeftPos()" tabindex="0">getLeftPos()</a></li>
+<li><a href="#getTopPos()" tabindex="0">getTopPos()</a></li>
+<li><a href="#getImageWidth()" tabindex="0">getImageWidth()</a></li>
+<li><a href="#getImageHeight()" tabindex="0">getImageHeight()</a></li>
 <li><a href="#getSlotUnderMouse()" tabindex="0">getSlotUnderMouse()</a></li>
 <li><a href="#getGuiLeft()" tabindex="0">getGuiLeft()</a></li>
 <li><a href="#getGuiTop()" tabindex="0">getGuiTop()</a></li>
 <li><a href="#getXSize()" tabindex="0">getXSize()</a></li>
 <li><a href="#getYSize()" tabindex="0">getYSize()</a></li>
-<li><a href="#getSlotColor(int)" tabindex="0">getSlotColor(int)</a></li>
 <li><a href="#onClose()" tabindex="0">onClose()</a></li>
 </ol>
 </li>
@@ -309,24 +312,21 @@ implements <a href="MenuAccess.html" title="interface in net.minecraft.client.gu
 <div class="col-first even-row-color"><code>private static final <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SLOT_HIGHLIGHT_FRONT_SPRITE" class="member-name-link">SLOT_HIGHLIGHT_FRONT_SPRITE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected int</code></div>
-<div class="col-second odd-row-color"><code><a href="#slotColor" class="member-name-link">slotColor</a></code></div>
+<div class="col-first odd-row-color"><code>private static final float</code></div>
+<div class="col-second odd-row-color"><code><a href="#SNAPBACK_SPEED" class="member-name-link">SNAPBACK_SPEED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#SNAPBACK_SPEED" class="member-name-link">SNAPBACK_SPEED</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="AbstractContainerScreen.SnapbackData.html" title="class in net.minecraft.client.gui.screens.inventory">AbstractContainerScreen.SnapbackData</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#snapbackData" class="member-name-link">snapbackData</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected int</code></div>
-<div class="col-second even-row-color"><code><a href="#titleLabelX" class="member-name-link">titleLabelX</a></code></div>
+<div class="col-first even-row-color"><code>private @Nullable <a href="AbstractContainerScreen.SnapbackData.html" title="class in net.minecraft.client.gui.screens.inventory">AbstractContainerScreen.SnapbackData</a></code></div>
+<div class="col-second even-row-color"><code><a href="#snapbackData" class="member-name-link">snapbackData</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected int</code></div>
-<div class="col-second odd-row-color"><code><a href="#titleLabelY" class="member-name-link">titleLabelY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#titleLabelX" class="member-name-link">titleLabelX</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected int</code></div>
-<div class="col-second even-row-color"><code><a href="#topPos" class="member-name-link">topPos</a></code></div>
+<div class="col-second even-row-color"><code><a href="#titleLabelY" class="member-name-link">titleLabelY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected int</code></div>
+<div class="col-second odd-row-color"><code><a href="#topPos" class="member-name-link">topPos</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.gui.screens.Screen">Fields inherited from class&nbsp;<a href="../Screen.html#field-summary" title="class in net.minecraft.client.gui.screens">Screen</a></h3>
@@ -359,7 +359,7 @@ implements <a href="MenuAccess.html" title="interface in net.minecraft.client.gu
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -434,34 +434,66 @@ implements <a href="MenuAccess.html" title="interface in net.minecraft.client.gu
  int&nbsp;mouseX,
  int&nbsp;mouseY)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getGuiLeft()" class="member-name-link">getGuiLeft</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getLeftPos()"><code>getLeftPos()</code></a> instead.</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getGuiTop()" class="member-name-link">getGuiTop</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getTopPos()"><code>getTopPos()</code></a> instead.</div>
+</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHoveredSlot()" class="member-name-link">getHoveredSlot</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private @Nullable <a href="../../../../world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHoveredSlot(double,double)" class="member-name-link">getHoveredSlot</a><wbr>(double&nbsp;x,
+ double&nbsp;y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGuiLeft()" class="member-name-link">getGuiLeft</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageHeight()" class="member-name-link">getImageHeight</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGuiTop()" class="member-name-link">getGuiTop</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageWidth()" class="member-name-link">getImageWidth</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private @Nullable <a href="../../../../world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHoveredSlot(double,double)" class="member-name-link">getHoveredSlot</a><wbr>(double&nbsp;x,
- double&nbsp;y)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLeftPos()" class="member-name-link">getLeftPos</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-T" title="type parameter in AbstractContainerScreen">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMenu()" class="member-name-link">getMenu</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSlotColor(int)" class="member-name-link">getSlotColor</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSlotUnderMouse()" class="member-name-link">getSlotUnderMouse</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTooltipFromContainerItem(net.minecraft.world.item.ItemStack)" class="member-name-link">getTooltipFromContainerItem</a><wbr>(<a href="../../../../world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getXSize()" class="member-name-link">getXSize</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>@Nullable <a href="../../../../world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getSlotUnderMouse()" class="member-name-link">getSlotUnderMouse</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getHoveredSlot()"><code>getHoveredSlot()</code></a> instead.</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTooltipFromContainerItem(net.minecraft.world.item.ItemStack)" class="member-name-link">getTooltipFromContainerItem</a><wbr>(<a href="../../../../world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getYSize()" class="member-name-link">getYSize</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTopPos()" class="member-name-link">getTopPos</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getXSize()" class="member-name-link">getXSize</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getImageHeight()"><code>getImageHeight()</code></a> instead.</div>
+</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getYSize()" class="member-name-link">getYSize</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getImageHeight()"><code>getImageHeight()</code></a> instead.</div>
+</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleSlotStateChanged(int,int,boolean)" class="member-name-link">handleSlotStateChanged</a><wbr>(int&nbsp;slotId,
  int&nbsp;containerId,
@@ -922,14 +954,6 @@ implements <a href="MenuAccess.html" title="interface in net.minecraft.client.gu
 <h3>lastQuickMoved</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">lastQuickMoved</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="slotColor">
-<h3>slotColor</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">slotColor</span></div>
 </div>
 </section>
 </li>
@@ -1410,10 +1434,55 @@ implements <a href="MenuAccess.html" title="interface in net.minecraft.client.gu
 </section>
 </li>
 <li>
+<section class="detail" id="getHoveredSlot()">
+<h3>getHoveredSlot</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a></span>&nbsp;<span class="element-name">getHoveredSlot</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLeftPos()">
+<h3>getLeftPos</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getLeftPos</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTopPos()">
+<h3>getTopPos</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getTopPos</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getImageWidth()">
+<h3>getImageWidth</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getImageWidth</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getImageHeight()">
+<h3>getImageHeight</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getImageHeight</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getSlotUnderMouse()">
 <h3>getSlotUnderMouse</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a></span>&nbsp;<span class="element-name">getSlotUnderMouse</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a></span>&nbsp;<span class="element-name">getSlotUnderMouse</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getHoveredSlot()"><code>getHoveredSlot()</code></a> instead.</div>
+</div>
 </div>
 </section>
 </li>
@@ -1421,7 +1490,12 @@ implements <a href="MenuAccess.html" title="interface in net.minecraft.client.gu
 <section class="detail" id="getGuiLeft()">
 <h3>getGuiLeft</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getGuiLeft</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getGuiLeft</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getLeftPos()"><code>getLeftPos()</code></a> instead.</div>
+</div>
 </div>
 </section>
 </li>
@@ -1429,7 +1503,12 @@ implements <a href="MenuAccess.html" title="interface in net.minecraft.client.gu
 <section class="detail" id="getGuiTop()">
 <h3>getGuiTop</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getGuiTop</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getGuiTop</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getTopPos()"><code>getTopPos()</code></a> instead.</div>
+</div>
 </div>
 </section>
 </li>
@@ -1437,7 +1516,12 @@ implements <a href="MenuAccess.html" title="interface in net.minecraft.client.gu
 <section class="detail" id="getXSize()">
 <h3>getXSize</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getXSize</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getXSize</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getImageHeight()"><code>getImageHeight()</code></a> instead.</div>
+</div>
 </div>
 </section>
 </li>
@@ -1445,15 +1529,12 @@ implements <a href="MenuAccess.html" title="interface in net.minecraft.client.gu
 <section class="detail" id="getYSize()">
 <h3>getYSize</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getYSize</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getYSize</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Neo: Use <a href="#getImageHeight()"><code>getImageHeight()</code></a> instead.</div>
 </div>
-</section>
-</li>
-<li>
-<section class="detail" id="getSlotColor(int)">
-<h3>getSlotColor</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getSlotColor</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
 </div>
 </section>
 </li>

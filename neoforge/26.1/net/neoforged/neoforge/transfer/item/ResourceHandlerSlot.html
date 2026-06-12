@@ -61,7 +61,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#handler" tabindex="0">handler</a></li>
 <li><a href="#slotModifier" tabindex="0">slotModifier</a></li>
-<li><a href="#index" tabindex="0">index</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -120,16 +119,13 @@ such as <a href="../StacksResourceHandler.html#set(int,T,int)"><code>StacksResou
 <div class="col-first even-row-color"><code>private final <a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a><wbr>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#handler" class="member-name-link">handler</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#index" class="member-name-link">index</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="../IndexModifier.html" title="interface in net.neoforged.neoforge.transfer">IndexModifier</a><wbr>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#slotModifier" class="member-name-link">slotModifier</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../IndexModifier.html" title="interface in net.neoforged.neoforge.transfer">IndexModifier</a><wbr>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#slotModifier" class="member-name-link">slotModifier</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.inventory.Slot">Fields inherited from class&nbsp;<a href="../../../../minecraft/world/inventory/Slot.html#field-summary" title="class in net.minecraft.world.inventory">Slot</a></h3>
-<code><a href="../../../../minecraft/world/inventory/Slot.html#container">container</a>, <a href="../../../../minecraft/world/inventory/Slot.html#x">x</a>, <a href="../../../../minecraft/world/inventory/Slot.html#y">y</a></code></div>
+<code><a href="../../../../minecraft/world/inventory/Slot.html#container">container</a>, <a href="../../../../minecraft/world/inventory/Slot.html#index">index</a>, <a href="../../../../minecraft/world/inventory/Slot.html#x">x</a>, <a href="../../../../minecraft/world/inventory/Slot.html#y">y</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -142,7 +138,7 @@ such as <a href="../StacksResourceHandler.html#set(int,T,int)"><code>StacksResou
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.IndexModifier,int,int,int)" class="member-name-link">ResourceHandlerSlot</a><wbr>(<a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;&nbsp;handler,
  <a href="../IndexModifier.html" title="interface in net.neoforged.neoforge.transfer">IndexModifier</a>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;&nbsp;slotModifier,
- int&nbsp;index,
+ int&nbsp;handlerSlot,
  int&nbsp;xPosition,
  int&nbsp;yPosition)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -199,7 +195,7 @@ such as <a href="../StacksResourceHandler.html#set(int,T,int)"><code>StacksResou
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.world.inventory.StackCopySlot">Methods inherited from class&nbsp;<a href="../../world/inventory/StackCopySlot.html#method-summary" title="class in net.neoforged.neoforge.world.inventory">StackCopySlot</a></h3>
-<code><a href="../../world/inventory/StackCopySlot.html#getItem()" title="getItem()">getItem</a>, <a href="../../world/inventory/StackCopySlot.html#remove(int)" title="remove(int)">remove</a>, <a href="../../world/inventory/StackCopySlot.html#set(net.minecraft.world.item.ItemStack)" title="set(ItemStack)">set</a>, <a href="../../world/inventory/StackCopySlot.html#setChanged()" title="setChanged()">setChanged</a></code></div>
+<code><a href="../../world/inventory/StackCopySlot.html#clearCachedReturnStack()" title="clearCachedReturnStack()">clearCachedReturnStack</a>, <a href="../../world/inventory/StackCopySlot.html#getItem()" title="getItem()">getItem</a>, <a href="../../world/inventory/StackCopySlot.html#remove(int)" title="remove(int)">remove</a>, <a href="../../world/inventory/StackCopySlot.html#set(net.minecraft.world.item.ItemStack)" title="set(ItemStack)">set</a>, <a href="../../world/inventory/StackCopySlot.html#setChanged()" title="setChanged()">setChanged</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.inventory.Slot">Methods inherited from class&nbsp;<a href="../../../../minecraft/world/inventory/Slot.html#method-summary" title="class in net.minecraft.world.inventory">Slot</a></h3>
 <code><a href="../../../../minecraft/world/inventory/Slot.html#allowModification(net.minecraft.world.entity.player.Player)" title="allowModification(Player)">allowModification</a>, <a href="../../../../minecraft/world/inventory/Slot.html#checkTakeAchievements(net.minecraft.world.item.ItemStack)" title="checkTakeAchievements(ItemStack)">checkTakeAchievements</a>, <a href="../../../../minecraft/world/inventory/Slot.html#getContainerSlot()" title="getContainerSlot()">getContainerSlot</a>, <a href="../../../../minecraft/world/inventory/Slot.html#getNoItemIcon()" title="getNoItemIcon()">getNoItemIcon</a>, <a href="../../../../minecraft/world/inventory/Slot.html#getSlotIndex()" title="getSlotIndex()">getSlotIndex</a>, <a href="../../../../minecraft/world/inventory/Slot.html#hasItem()" title="hasItem()">hasItem</a>, <a href="../../../../minecraft/world/inventory/Slot.html#isActive()" title="isActive()">isActive</a>, <a href="../../../../minecraft/world/inventory/Slot.html#isFake()" title="isFake()">isFake</a>, <a href="../../../../minecraft/world/inventory/Slot.html#isHighlightable()" title="isHighlightable()">isHighlightable</a>, <a href="../../../../minecraft/world/inventory/Slot.html#onQuickCraft(net.minecraft.world.item.ItemStack,int)" title="onQuickCraft(ItemStack, int)">onQuickCraft</a>, <a href="../../../../minecraft/world/inventory/Slot.html#onSwapCraft(int)" title="onSwapCraft(int)">onSwapCraft</a>, <a href="../../../../minecraft/world/inventory/Slot.html#onTake(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack)" title="onTake(Player, ItemStack)">onTake</a>, <a href="../../../../minecraft/world/inventory/Slot.html#safeInsert(net.minecraft.world.item.ItemStack)" title="safeInsert(ItemStack)">safeInsert</a>, <a href="../../../../minecraft/world/inventory/Slot.html#safeInsert(net.minecraft.world.item.ItemStack,int)" title="safeInsert(ItemStack, int)">safeInsert</a>, <a href="../../../../minecraft/world/inventory/Slot.html#safeTake(int,int,net.minecraft.world.entity.player.Player)" title="safeTake(int, int, Player)">safeTake</a>, <a href="../../../../minecraft/world/inventory/Slot.html#setBackground(net.minecraft.resources.Identifier)" title="setBackground(Identifier)">setBackground</a>, <a href="../../../../minecraft/world/inventory/Slot.html#setByPlayer(net.minecraft.world.item.ItemStack)" title="setByPlayer(ItemStack)">setByPlayer</a>, <a href="../../../../minecraft/world/inventory/Slot.html#setByPlayer(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack)" title="setByPlayer(ItemStack, ItemStack)">setByPlayer</a>, <a href="../../../../minecraft/world/inventory/Slot.html#tryRemove(int,int,net.minecraft.world.entity.player.Player)" title="tryRemove(int, int, Player)">tryRemove</a></code></div>
@@ -233,14 +229,6 @@ such as <a href="../StacksResourceHandler.html#set(int,T,int)"><code>StacksResou
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="index">
-<h3>index</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">index</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -255,7 +243,7 @@ such as <a href="../StacksResourceHandler.html#set(int,T,int)"><code>StacksResou
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ResourceHandlerSlot</span><wbr><span class="parameters">(<a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;&nbsp;handler,
  <a href="../IndexModifier.html" title="interface in net.neoforged.neoforge.transfer">IndexModifier</a>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;&nbsp;slotModifier,
- int&nbsp;index,
+ int&nbsp;handlerSlot,
  int&nbsp;xPosition,
  int&nbsp;yPosition)</span></div>
 </div>

@@ -59,9 +59,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#removeEntries" tabindex="0">removeEntries</a></li>
-<li><a href="#replace" tabindex="0">replace</a></li>
 <li><a href="#entries" tabindex="0">entries</a></li>
+<li><a href="#replace" tabindex="0">replace</a></li>
+<li><a href="#removeEntries" tabindex="0">removeEntries</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -71,8 +71,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#getRemoveEntries()" tabindex="0">getRemoveEntries()</a></li>
-<li><a href="#remove(net.minecraft.tags.TagEntry)" tabindex="0">remove(TagEntry)</a></li>
 <li><a href="#create()" tabindex="0">create()</a></li>
 <li><a href="#build()" tabindex="0">build()</a></li>
 <li><a href="#shouldReplace()" tabindex="0">shouldReplace()</a></li>
@@ -82,9 +80,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#addOptionalElement(net.minecraft.resources.Identifier)" tabindex="0">addOptionalElement(Identifier)</a></li>
 <li><a href="#addTag(net.minecraft.resources.Identifier)" tabindex="0">addTag(Identifier)</a></li>
 <li><a href="#addOptionalTag(net.minecraft.resources.Identifier)" tabindex="0">addOptionalTag(Identifier)</a></li>
-<li><a href="#replace(boolean)" tabindex="0">replace(boolean)</a></li>
+<li><a href="#remove(net.minecraft.tags.TagEntry)" tabindex="0">remove(TagEntry)</a></li>
 <li><a href="#replace()" tabindex="0">replace()</a></li>
-<li><a href="#isReplace()" tabindex="0">isReplace()</a></li>
+<li><a href="#getRemoveEntries()" tabindex="0">getRemoveEntries()</a></li>
 </ol>
 </li>
 </ol>
@@ -125,7 +123,9 @@ implements <a href="../../neoforged/neoforge/common/extensions/ITagBuilderExtens
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#removeEntries" class="member-name-link">removeEntries</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Neo: Entries to be removed from this tag</div>
+</div>
 <div class="col-first even-row-color"><code>private boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#replace" class="member-name-link">replace</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -179,19 +179,19 @@ implements <a href="../../neoforged/neoforge/common/extensions/ITagBuilderExtens
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRemoveEntries()" class="member-name-link">getRemoveEntries</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isReplace()" class="member-name-link">isReplace</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(net.minecraft.tags.TagEntry)" class="member-name-link">remove</a><wbr>(<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&nbsp;entry)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Neo: Returns the entries to be removed from this tag.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replace()" class="member-name-link">replace</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(net.minecraft.tags.TagEntry)" class="member-name-link">remove</a><wbr>(<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&nbsp;entry)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Neo: Add an entry to be removed from this tag in datagen.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replace(boolean)" class="member-name-link">replace</a><wbr>(boolean&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replace()" class="member-name-link">replace</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Neo: Shorthand for <code>setReplace(true)</code>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setReplace(boolean)" class="member-name-link">setReplace</a><wbr>(boolean&nbsp;replace)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -219,10 +219,10 @@ implements <a href="../../neoforged/neoforge/common/extensions/ITagBuilderExtens
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="removeEntries">
-<h3>removeEntries</h3>
+<section class="detail" id="entries">
+<h3>entries</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&gt;</span>&nbsp;<span class="element-name">removeEntries</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&gt;</span>&nbsp;<span class="element-name">entries</span></div>
 </div>
 </section>
 </li>
@@ -235,10 +235,11 @@ implements <a href="../../neoforged/neoforge/common/extensions/ITagBuilderExtens
 </section>
 </li>
 <li>
-<section class="detail" id="entries">
-<h3>entries</h3>
+<section class="detail" id="removeEntries">
+<h3>removeEntries</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&gt;</span>&nbsp;<span class="element-name">entries</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&gt;</span>&nbsp;<span class="element-name">removeEntries</span></div>
+<div class="block">Neo: Entries to be removed from this tag</div>
 </div>
 </section>
 </li>
@@ -266,22 +267,6 @@ implements <a href="../../neoforged/neoforge/common/extensions/ITagBuilderExtens
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="getRemoveEntries()">
-<h3>getRemoveEntries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&gt;</span>&nbsp;<span class="element-name">getRemoveEntries</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="remove(net.minecraft.tags.TagEntry)">
-<h3>remove</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&nbsp;entry)</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="create()">
 <h3>create</h3>
@@ -355,10 +340,15 @@ implements <a href="../../neoforged/neoforge/common/extensions/ITagBuilderExtens
 </section>
 </li>
 <li>
-<section class="detail" id="replace(boolean)">
-<h3>replace</h3>
+<section class="detail" id="remove(net.minecraft.tags.TagEntry)">
+<h3>remove</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></span>&nbsp;<span class="element-name">replace</span><wbr><span class="parameters">(boolean&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&nbsp;entry)</span></div>
+<div class="block">Neo: Add an entry to be removed from this tag in datagen.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>entry</code> - The entry to be removed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -367,14 +357,16 @@ implements <a href="../../neoforged/neoforge/common/extensions/ITagBuilderExtens
 <h3>replace</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></span>&nbsp;<span class="element-name">replace</span>()</div>
+<div class="block">Neo: Shorthand for <code>setReplace(true)</code>.</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="isReplace()">
-<h3>isReplace</h3>
+<section class="detail" id="getRemoveEntries()">
+<h3>getRemoveEntries</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isReplace</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="TagEntry.html" title="class in net.minecraft.tags">TagEntry</a>&gt;</span>&nbsp;<span class="element-name">getRemoveEntries</span>()</div>
+<div class="block">Neo: Returns the entries to be removed from this tag.</div>
 </div>
 </section>
 </li>

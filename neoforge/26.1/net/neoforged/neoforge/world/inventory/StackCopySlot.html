@@ -65,7 +65,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(int,int)" tabindex="0">StackCopySlot(int, int)</a></li>
+<li><a href="#%3Cinit%3E(int,int,int)" tabindex="0">StackCopySlot(int, int, int)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -76,6 +76,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#set(net.minecraft.world.item.ItemStack)" tabindex="0">set(ItemStack)</a></li>
 <li><a href="#setChanged()" tabindex="0">setChanged()</a></li>
 <li><a href="#remove(int)" tabindex="0">remove(int)</a></li>
+<li><a href="#clearCachedReturnStack()" tabindex="0">clearCachedReturnStack()</a></li>
 </ol>
 </li>
 </ol>
@@ -139,7 +140,8 @@ and set it when <a href="#setChanged()"><code>setChanged()</code></a> is called.
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int)" class="member-name-link">StackCopySlot</a><wbr>(int&nbsp;x,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int,int)" class="member-name-link">StackCopySlot</a><wbr>(int&nbsp;slot,
+ int&nbsp;x,
  int&nbsp;y)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -156,26 +158,31 @@ and set it when <a href="#setChanged()"><code>setChanged()</code></a> is called.
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItem()" class="member-name-link">getItem</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStackCopy()" class="member-name-link">getStackCopy</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearCachedReturnStack()" class="member-name-link">clearCachedReturnStack</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Clears the current cached return stack to prevent a <a href="#setChanged()"><code>setChanged()</code></a> call from potentially overriding the contents of this slot.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItem()" class="member-name-link">getItem</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStackCopy()" class="member-name-link">getStackCopy</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the itemstack from the storage.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(int)" class="member-name-link">remove</a><wbr>(int&nbsp;amount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(net.minecraft.world.item.ItemStack)" class="member-name-link">set</a><wbr>(<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(int)" class="member-name-link">remove</a><wbr>(int&nbsp;amount)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setChanged()" class="member-name-link">setChanged</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(net.minecraft.world.item.ItemStack)" class="member-name-link">set</a><wbr>(<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setStackCopy(net.minecraft.world.item.ItemStack)" class="member-name-link">setStackCopy</a><wbr>(<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setChanged()" class="member-name-link">setChanged</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setStackCopy(net.minecraft.world.item.ItemStack)" class="member-name-link">setStackCopy</a><wbr>(<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the itemstack from the storage.</div>
 </div>
 </div>
@@ -223,11 +230,16 @@ and set it when <a href="#setChanged()"><code>setChanged()</code></a> is called.
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(int,int)">
+<section class="detail" id="&lt;init&gt;(int,int,int)">
 <h3>StackCopySlot</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">StackCopySlot</span><wbr><span class="parameters">(int&nbsp;x,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">StackCopySlot</span><wbr><span class="parameters">(int&nbsp;slot,
+ int&nbsp;x,
  int&nbsp;y)</span></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>slot</code> - The slot in the underlying container, whatever it may be; zero if not applicable.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -305,11 +317,21 @@ and set it when <a href="#setChanged()"><code>setChanged()</code></a> is called.
 <section class="detail" id="remove(int)">
 <h3>remove</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(int&nbsp;amount)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(int&nbsp;amount)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="../../../../minecraft/world/inventory/Slot.html#remove(int)">remove</a></code>&nbsp;in class&nbsp;<code><a href="../../../../minecraft/world/inventory/Slot.html" title="class in net.minecraft.world.inventory">Slot</a></code></dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clearCachedReturnStack()">
+<h3>clearCachedReturnStack</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearCachedReturnStack</span>()</div>
+<div class="block">Clears the current cached return stack to prevent a <a href="#setChanged()"><code>setChanged()</code></a> call from potentially overriding the contents of this slot.
+This is useful when the slot's backing inventory may have been modified directly.</div>
 </div>
 </section>
 </li>

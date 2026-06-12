@@ -67,13 +67,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#fboCache" tabindex="0">fboCache</a></li>
 <li><a href="#closed" tabindex="0">closed</a></li>
 <li><a href="#views" tabindex="0">views</a></li>
-<li><a href="#external" tabindex="0">external</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(int,java.lang.String,com.mojang.blaze3d.textures.TextureFormat,int,int,int,int,int)" tabindex="0">GlTexture(int, String, TextureFormat, int, int, int, int, int)</a></li>
-<li><a href="#%3Cinit%3E(int,java.lang.String,com.mojang.blaze3d.textures.TextureFormat,int,int,int,int,int,boolean)" tabindex="0">GlTexture(int, String, TextureFormat, int, int, int, int, int, boolean)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -138,24 +136,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>private static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#EMPTY" class="member-name-link">EMPTY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#external" class="member-name-link">external</a></code></div>
+<div class="col-first even-row-color"><code>private @Nullable it.unimi.dsi.fastutil.ints.Int2IntMap</code></div>
+<div class="col-second even-row-color"><code><a href="#fboCache" class="member-name-link">fboCache</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable it.unimi.dsi.fastutil.ints.Int2IntMap</code></div>
-<div class="col-second odd-row-color"><code><a href="#fboCache" class="member-name-link">fboCache</a></code></div>
+<div class="col-first odd-row-color"><code>private int</code></div>
+<div class="col-second odd-row-color"><code><a href="#firstFboDepthId" class="member-name-link">firstFboDepthId</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#firstFboDepthId" class="member-name-link">firstFboDepthId</a></code></div>
+<div class="col-second even-row-color"><code><a href="#firstFboId" class="member-name-link">firstFboId</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#firstFboId" class="member-name-link">firstFboId</a></code></div>
+<div class="col-first odd-row-color"><code>protected final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#id" class="member-name-link">id</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected final int</code></div>
-<div class="col-second even-row-color"><code><a href="#id" class="member-name-link">id</a></code></div>
+<div class="col-first even-row-color"><code>private int</code></div>
+<div class="col-second even-row-color"><code><a href="#views" class="member-name-link">views</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#views" class="member-name-link">views</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-com.mojang.blaze3d.textures.GpuTexture">Fields inherited from class&nbsp;<a href="../textures/GpuTexture.html#field-summary" title="class in com.mojang.blaze3d.textures">GpuTexture</a></h3>
@@ -181,17 +176,6 @@ loadScripts(document, 'script');</script>
  int&nbsp;mipLevels,
  int&nbsp;id)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,java.lang.String,com.mojang.blaze3d.textures.TextureFormat,int,int,int,int,int,boolean)" class="member-name-link">GlTexture</a><wbr>(int&nbsp;usage,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
- <a href="../textures/TextureFormat.html" title="enum class in com.mojang.blaze3d.textures">TextureFormat</a>&nbsp;format,
- int&nbsp;width,
- int&nbsp;height,
- int&nbsp;depthOrLayers,
- int&nbsp;mipLevels,
- int&nbsp;id,
- boolean&nbsp;external)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -325,14 +309,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="external">
-<h3>external</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">external</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -353,22 +329,6 @@ loadScripts(document, 'script');</script>
  int&nbsp;depthOrLayers,
  int&nbsp;mipLevels,
  int&nbsp;id)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(int,java.lang.String,com.mojang.blaze3d.textures.TextureFormat,int,int,int,int,int,boolean)">
-<h3>GlTexture</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">GlTexture</span><wbr><span class="parameters">(int&nbsp;usage,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
- <a href="../textures/TextureFormat.html" title="enum class in com.mojang.blaze3d.textures">TextureFormat</a>&nbsp;format,
- int&nbsp;width,
- int&nbsp;height,
- int&nbsp;depthOrLayers,
- int&nbsp;mipLevels,
- int&nbsp;id,
- boolean&nbsp;external)</span></div>
 </div>
 </section>
 </li>

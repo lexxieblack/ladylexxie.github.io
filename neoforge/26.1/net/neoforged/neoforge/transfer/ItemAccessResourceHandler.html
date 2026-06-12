@@ -233,7 +233,7 @@ irrespective of the current amount or resource currently at that index, as a <co
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the <i>current</i> number of indices in this resource handler.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="item/ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract @Nullable <a href="item/ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#update(net.neoforged.neoforge.transfer.item.ItemResource,int,T,int)" class="member-name-link">update</a><wbr>(<a href="item/ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;accessResource,
  int&nbsp;index,
  <a href="#type-param-T" title="type parameter in ItemAccessResourceHandler">T</a>&nbsp;newResource,
@@ -334,7 +334,7 @@ irrespective of the current amount or resource currently at that index, as a <co
 <section class="detail" id="update(net.neoforged.neoforge.transfer.item.ItemResource,int,T,int)">
 <h3 id="update(net.neoforged.neoforge.transfer.item.ItemResource,int,net.neoforged.neoforge.transfer.resource.Resource,int)">update</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="item/ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a></span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(<a href="item/ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;accessResource,
+<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">@Nullable <a href="item/ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a></span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(<a href="item/ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;accessResource,
  int&nbsp;index,
  <a href="#type-param-T" title="type parameter in ItemAccessResourceHandler">T</a>&nbsp;newResource,
  int&nbsp;newAmount)</span></div>
@@ -347,7 +347,8 @@ irrespective of the current amount or resource currently at that index, as a <co
 <dd><code>newAmount</code> - the new amount</dd>
 <dt>Returns:</dt>
 <dd><code>accessResource</code> updated with the new resource and amount,
-        or <a href="item/ItemResource.html#EMPTY"><code>ItemResource.EMPTY</code></a> if the new resource or amount cannot be stored</dd>
+        or <a href="item/ItemResource.html#EMPTY"><code>ItemResource.EMPTY</code></a> if the new resource or amount cannot be stored,
+        or <code>null</code> if the container items should be consumed instead of replaced</dd>
 </dl>
 </div>
 </section>

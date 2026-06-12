@@ -63,7 +63,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#originalDamage" tabindex="0">originalDamage</a></li>
 <li><a href="#source" tabindex="0">source</a></li>
-<li><a href="#newDamage" tabindex="0">newDamage</a></li>
+<li><a href="#inflictedDamage" tabindex="0">inflictedDamage</a></li>
+<li><a href="#healthDamage" tabindex="0">healthDamage</a></li>
 <li><a href="#blockedDamage" tabindex="0">blockedDamage</a></li>
 <li><a href="#shieldDamage" tabindex="0">shieldDamage</a></li>
 <li><a href="#postAttackInvulnerabilityTicks" tabindex="0">postAttackInvulnerabilityTicks</a></li>
@@ -79,7 +80,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#getOriginalDamage()" tabindex="0">getOriginalDamage()</a></li>
 <li><a href="#getSource()" tabindex="0">getSource()</a></li>
-<li><a href="#getNewDamage()" tabindex="0">getNewDamage()</a></li>
+<li><a href="#getInflictedDamage()" tabindex="0">getInflictedDamage()</a></li>
+<li><a href="#getHealthDamage()" tabindex="0">getHealthDamage()</a></li>
 <li><a href="#getBlockedDamage()" tabindex="0">getBlockedDamage()</a></li>
 <li><a href="#getShieldDamage()" tabindex="0">getShieldDamage()</a></li>
 <li><a href="#getPostAttackInvulnerabilityTicks()" tabindex="0">getPostAttackInvulnerabilityTicks()</a></li>
@@ -160,23 +162,26 @@ This event is fired via <a href="../../../common/CommonHooks.html#onLivingDamage
 <div class="col-second even-row-color"><code><a href="#blockedDamage" class="member-name-link">blockedDamage</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>private final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#newDamage" class="member-name-link">newDamage</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#healthDamage" class="member-name-link">healthDamage</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>private final float</code></div>
-<div class="col-second even-row-color"><code><a href="#originalDamage" class="member-name-link">originalDamage</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#postAttackInvulnerabilityTicks" class="member-name-link">postAttackInvulnerabilityTicks</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a><wbr>&lt;<a href="../../../common/damagesource/DamageContainer.Reduction.html" title="enum class in net.neoforged.neoforge.common.damagesource">DamageContainer.Reduction</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#reductions" class="member-name-link">reductions</a></code></div>
+<div class="col-second even-row-color"><code><a href="#inflictedDamage" class="member-name-link">inflictedDamage</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>private final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#shieldDamage" class="member-name-link">shieldDamage</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#originalDamage" class="member-name-link">originalDamage</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a></code></div>
-<div class="col-second even-row-color"><code><a href="#source" class="member-name-link">source</a></code></div>
+<div class="col-first even-row-color"><code>private final int</code></div>
+<div class="col-second even-row-color"><code><a href="#postAttackInvulnerabilityTicks" class="member-name-link">postAttackInvulnerabilityTicks</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumMap.html" title="class or interface in java.util" class="external-link">EnumMap</a><wbr>&lt;<a href="../../../common/damagesource/DamageContainer.Reduction.html" title="enum class in net.neoforged.neoforge.common.damagesource">DamageContainer.Reduction</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#reductions" class="member-name-link">reductions</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final float</code></div>
+<div class="col-second even-row-color"><code><a href="#shieldDamage" class="member-name-link">shieldDamage</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="../../../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#source" class="member-name-link">source</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -211,31 +216,36 @@ This event is fired via <a href="../../../common/CommonHooks.html#onLivingDamage
 <div class="block">Returns the amount of damage reduced by a blocking action.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNewDamage()" class="member-name-link">getNewDamage</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHealthDamage()" class="member-name-link">getHealthDamage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the amount of health this entity lost during this sequence.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOriginalDamage()" class="member-name-link">getOriginalDamage</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInflictedDamage()" class="member-name-link">getInflictedDamage</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the amount of damage inflicted to the entity, after all modifications.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOriginalDamage()" class="member-name-link">getOriginalDamage</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the original damage when <a href="../../../../../minecraft/world/entity/Entity.html#hurt(net.minecraft.world.damagesource.DamageSource,float)"><code>Entity.hurt(DamageSource, float)</code></a> was invoked.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPostAttackInvulnerabilityTicks()" class="member-name-link">getPostAttackInvulnerabilityTicks</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPostAttackInvulnerabilityTicks()" class="member-name-link">getPostAttackInvulnerabilityTicks</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the number of ticks this entity will be invulnerable after this sequence.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction)" class="member-name-link">getReduction</a><wbr>(<a href="../../../common/damagesource/DamageContainer.Reduction.html" title="enum class in net.neoforged.neoforge.common.damagesource">DamageContainer.Reduction</a>&nbsp;reduction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShieldDamage()" class="member-name-link">getShieldDamage</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction)" class="member-name-link">getReduction</a><wbr>(<a href="../../../common/damagesource/DamageContainer.Reduction.html" title="enum class in net.neoforged.neoforge.common.damagesource">DamageContainer.Reduction</a>&nbsp;reduction)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShieldDamage()" class="member-name-link">getShieldDamage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the amount of shield durability this entity lost if a blocking action was captured and the entity was holding a shield.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSource()" class="member-name-link">getSource</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSource()" class="member-name-link">getSource</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the <a href="../../../../../minecraft/world/damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource"><code>DamageSource</code></a> for this damage sequence.</div>
 </div>
 </div>
@@ -275,10 +285,18 @@ This event is fired via <a href="../../../common/CommonHooks.html#onLivingDamage
 </section>
 </li>
 <li>
-<section class="detail" id="newDamage">
-<h3>newDamage</h3>
+<section class="detail" id="inflictedDamage">
+<h3>inflictedDamage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">newDamage</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">inflictedDamage</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="healthDamage">
+<h3>healthDamage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">healthDamage</span></div>
 </div>
 </section>
 </li>
@@ -366,10 +384,23 @@ This event is fired via <a href="../../../common/CommonHooks.html#onLivingDamage
 </section>
 </li>
 <li>
-<section class="detail" id="getNewDamage()">
-<h3>getNewDamage</h3>
+<section class="detail" id="getInflictedDamage()">
+<h3>getInflictedDamage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getNewDamage</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getInflictedDamage</span>()</div>
+<div class="block">Returns the amount of damage inflicted to the entity, after all modifications.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the amount of damage inflicted to the entity, after all modifications</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getHealthDamage()">
+<h3>getHealthDamage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getHealthDamage</span>()</div>
 <div class="block">Returns the amount of health this entity lost during this sequence.</div>
 <dl class="notes">
 <dt>Returns:</dt>

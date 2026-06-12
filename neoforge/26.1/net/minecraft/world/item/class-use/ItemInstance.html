@@ -563,10 +563,18 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static int</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">EventHooks.</span><code><a href="../../../../neoforged/neoforge/event/EventHooks.html#getEnchantmentLevelSpecific(int,net.minecraft.world.item.ItemInstance,net.minecraft.core.Holder)" class="member-name-link">getEnchantmentLevelSpecific</a><wbr>(int&nbsp;level,
+<div class="col-second even-row-color"><span class="type-name-label">EventHooks.</span><code><a href="../../../../neoforged/neoforge/event/EventHooks.html#getBlockLootEnchantmentLevel(net.minecraft.world.item.ItemInstance,net.minecraft.core.Holder,int,net.minecraft.world.level.storage.loot.LootContext)" class="member-name-link">getBlockLootEnchantmentLevel</a><wbr>(<a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;tool,
+ <a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;ench,
+ int&nbsp;enchLevel,
+ <a href="../../level/storage/loot/LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&nbsp;ctx)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Called from <a href="../../level/storage/loot/functions/ApplyBonusCount.html" title="class in net.minecraft.world.level.storage.loot.functions"><code>ApplyBonusCount</code></a> and <a href="../../level/storage/loot/predicates/BonusLevelTableCondition.html" title="class in net.minecraft.world.level.storage.loot.predicates"><code>BonusLevelTableCondition</code></a> when blocks rely on enchantments for evaluating loot bonuses.</div>
+</div>
+<div class="col-first odd-row-color"><code>static int</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EventHooks.</span><code><a href="../../../../neoforged/neoforge/event/EventHooks.html#getEnchantmentLevelSpecific(int,net.minecraft.world.item.ItemInstance,net.minecraft.core.Holder)" class="member-name-link">getEnchantmentLevelSpecific</a><wbr>(int&nbsp;level,
  <a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;stack,
  <a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;ench)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Fires <a href="../../../../neoforged/neoforge/event/enchanting/GetEnchantmentLevelEvent.html" title="class in net.neoforged.neoforge.event.enchanting"><code>GetEnchantmentLevelEvent</code></a> and for a single enchantment, returning the (possibly event-modified) level.</div>
 </div>
 </div>
@@ -583,6 +591,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>protected final <a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">GetEnchantmentLevelEvent.</span><code><a href="../../../../neoforged/neoforge/event/enchanting/GetEnchantmentLevelEvent.html#stack" class="member-name-link">stack</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EnchantedBlockLootEvent.</span><code><a href="../../../../neoforged/neoforge/event/enchanting/EnchantedBlockLootEvent.html#tool" class="member-name-link">tool</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../../../../neoforged/neoforge/event/enchanting/package-summary.html">net.neoforged.neoforge.event.enchanting</a> that return <a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a></span></div>
 <div class="summary-table three-column-summary">
@@ -594,6 +605,11 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Returns the item stack that is being queried against.</div>
 </div>
+<div class="col-first odd-row-color"><code><a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EnchantedBlockLootEvent.</span><code><a href="../../../../neoforged/neoforge/event/enchanting/EnchantedBlockLootEvent.html#getTool()" class="member-name-link">getTool</a>()</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Returns the tool used to break the block, from <a href="../../level/storage/loot/parameters/LootContextParams.html#TOOL"><code>LootContextParams.TOOL</code></a>.</div>
+</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../../../../neoforged/neoforge/event/enchanting/package-summary.html">net.neoforged.neoforge.event.enchanting</a> with parameters of type <a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a></span></div>
 <div class="summary-table three-column-summary">
@@ -601,11 +617,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../../../neoforged/neoforge/event/enchanting/GetEnchantmentLevelEvent.html#%3Cinit%3E(net.minecraft.world.item.ItemInstance,net.minecraft.world.item.enchantment.ItemEnchantments.Mutable,net.minecraft.core.Holder,net.minecraft.core.HolderLookup.RegistryLookup)" class="member-name-link">GetEnchantmentLevelEvent</a><wbr>(<a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;stack,
+<div class="col-second even-row-color"><code><a href="../../../../neoforged/neoforge/event/enchanting/EnchantedBlockLootEvent.html#%3Cinit%3E(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.item.ItemInstance,net.minecraft.core.Holder,int)" class="member-name-link">EnchantedBlockLootEvent</a><wbr>(<a href="../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
+ <a href="../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ <a href="../../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
+ <a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;tool,
+ <a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;enchantment,
+ int&nbsp;enchantmentLevel)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../../../neoforged/neoforge/event/enchanting/GetEnchantmentLevelEvent.html#%3Cinit%3E(net.minecraft.world.item.ItemInstance,net.minecraft.world.item.enchantment.ItemEnchantments.Mutable,net.minecraft.core.Holder,net.minecraft.core.HolderLookup.RegistryLookup)" class="member-name-link">GetEnchantmentLevelEvent</a><wbr>(<a href="../ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;stack,
  <a href="../enchantment/ItemEnchantments.Mutable.html" title="class in net.minecraft.world.item.enchantment">ItemEnchantments.Mutable</a>&nbsp;enchantments,
  @Nullable <a href="../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;targetEnchant,
  <a href="../../../core/HolderLookup.RegistryLookup.html" title="interface in net.minecraft.core">HolderLookup.RegistryLookup</a>&lt;<a href="../enchantment/Enchantment.html" title="class in net.minecraft.world.item.enchantment">Enchantment</a>&gt;&nbsp;lookup)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

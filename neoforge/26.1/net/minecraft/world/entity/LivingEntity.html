@@ -504,6 +504,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#isVisuallySwimming()" tabindex="0">isVisuallySwimming()</a></li>
 <li><a href="#getFallFlyingTicks()" tabindex="0">getFallFlyingTicks()</a></li>
 <li><a href="#randomTeleport(double,double,double,boolean)" tabindex="0">randomTeleport(double, double, double, boolean)</a></li>
+<li><a href="#randomTeleport(double,double,double,boolean,net.minecraft.world.item.ItemStack)" tabindex="0">randomTeleport(double, double, double, boolean, ItemStack)</a></li>
 <li><a href="#isAffectedByPotions()" tabindex="0">isAffectedByPotions()</a></li>
 <li><a href="#attackable()" tabindex="0">attackable()</a></li>
 <li><a href="#setRecordPlayingNearby(net.minecraft.core.BlockPos,boolean)" tabindex="0">setRecordPlayingNearby(BlockPos, boolean)</a></li>
@@ -570,7 +571,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../core/component/DataComponentGetter.html" title="interface in net.minecraft.core.component">DataComponentGetter</a>, <a href="../../core/TypedInstance.html" title="interface in net.minecraft.core">TypedInstance</a>&lt;<a href="EntityType.html" title="class in net.minecraft.world.entity">EntityType</a>&lt;?&gt;&gt;, <a href="../../network/syncher/SyncedDataHolder.html" title="interface in net.minecraft.network.syncher">SyncedDataHolder</a>, <a href="../../util/debug/DebugValueSource.html" title="interface in net.minecraft.util.debug">DebugValueSource</a>, <a href="Attackable.html" title="interface in net.minecraft.world.entity">Attackable</a>, <a href="ItemOwner.html" title="interface in net.minecraft.world.entity">ItemOwner</a>, <a href="SlotProvider.html" title="interface in net.minecraft.world.entity">SlotProvider</a>, <a href="../level/entity/EntityAccess.html" title="interface in net.minecraft.world.level.entity">EntityAccess</a>, <a href="../level/entity/UniquelyIdentifyable.html" title="interface in net.minecraft.world.level.entity">UniquelyIdentifyable</a>, <a href="../Nameable.html" title="interface in net.minecraft.world">Nameable</a>, <a href="../scores/ScoreHolder.html" title="interface in net.minecraft.world.scores">ScoreHolder</a>, <a href="../waypoints/Waypoint.html" title="interface in net.minecraft.world.waypoints">Waypoint</a>, <a href="../waypoints/WaypointTransmitter.html" title="interface in net.minecraft.world.waypoints">WaypointTransmitter</a>, <a href="../../../neoforged/neoforge/attachment/IAttachmentHolder.html" title="interface in net.neoforged.neoforge.attachment">IAttachmentHolder</a>, <a href="../../../neoforged/neoforge/common/extensions/IEntityExtension.html" title="interface in net.neoforged.neoforge.common.extensions">IEntityExtension</a>, <a href="../../../neoforged/neoforge/common/extensions/ILivingEntityExtension.html" title="interface in net.neoforged.neoforge.common.extensions">ILivingEntityExtension</a></code></dd>
+<dd><code><a href="../../core/component/DataComponentGetter.html" title="interface in net.minecraft.core.component">DataComponentGetter</a>, <a href="../../core/TypedInstance.html" title="interface in net.minecraft.core">TypedInstance</a>&lt;<a href="EntityType.html" title="class in net.minecraft.world.entity">EntityType</a>&lt;?&gt;&gt;, <a href="../../network/syncher/SyncedDataHolder.html" title="interface in net.minecraft.network.syncher">SyncedDataHolder</a>, <a href="../../util/debug/DebugValueSource.html" title="interface in net.minecraft.util.debug">DebugValueSource</a>, <a href="Attackable.html" title="interface in net.minecraft.world.entity">Attackable</a>, <a href="ItemOwner.html" title="interface in net.minecraft.world.entity">ItemOwner</a>, <a href="SlotProvider.html" title="interface in net.minecraft.world.entity">SlotProvider</a>, <a href="../level/entity/EntityAccess.html" title="interface in net.minecraft.world.level.entity">EntityAccess</a>, <a href="../level/entity/UniquelyIdentifyable.html" title="interface in net.minecraft.world.level.entity">UniquelyIdentifyable</a>, <a href="../Nameable.html" title="interface in net.minecraft.world">Nameable</a>, <a href="../scores/ScoreHolder.html" title="interface in net.minecraft.world.scores">ScoreHolder</a>, <a href="../waypoints/Waypoint.html" title="interface in net.minecraft.world.waypoints">Waypoint</a>, <a href="../waypoints/WaypointTransmitter.html" title="interface in net.minecraft.world.waypoints">WaypointTransmitter</a>, <a href="../../../neoforged/neoforge/attachment/IAttachmentHolder.html" title="interface in net.neoforged.neoforge.attachment">IAttachmentHolder</a>, <a href="../../../neoforged/neoforge/common/extensions/IEntityExtension.html" title="interface in net.neoforged.neoforge.common.extensions">IEntityExtension</a>, <a href="../../../neoforged/neoforge/common/extensions/ILivingEntityExtension.html" title="interface in net.neoforged.neoforge.common.extensions">ILivingEntityExtension</a>, <a href="../../../neoforged/neoforge/common/extensions/TypedInstanceExtension.html" title="interface in net.neoforged.neoforge.common.extensions">TypedInstanceExtension</a>&lt;<a href="EntityType.html" title="class in net.minecraft.world.entity">EntityType</a>&lt;?&gt;&gt;, <a href="../../../neoforged/neoforge/registries/datamaps/IWithData.html" title="interface in net.neoforged.neoforge.registries.datamaps">IWithData</a>&lt;<a href="EntityType.html" title="class in net.minecraft.world.entity">EntityType</a>&lt;?&gt;&gt;</code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -1925,348 +1926,355 @@ implements <a href="Attackable.html" title="interface in net.minecraft.world.ent
  double&nbsp;zz,
  boolean&nbsp;showParticles)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput)" class="member-name-link">readAdditionalSaveData</a><wbr>(<a href="../level/storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recreateFromPacket(net.minecraft.network.protocol.game.ClientboundAddEntityPacket)" class="member-name-link">recreateFromPacket</a><wbr>(<a href="../../network/protocol/game/ClientboundAddEntityPacket.html" title="class in net.minecraft.network.protocol.game">ClientboundAddEntityPacket</a>&nbsp;packet)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshDirtyAttributes()" class="member-name-link">refreshDirtyAttributes</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseUsingItem()" class="member-name-link">releaseUsingItem</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rememberStabbedEntity(net.minecraft.world.entity.Entity)" class="member-name-link">rememberStabbedEntity</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(net.minecraft.world.entity.Entity.RemovalReason)" class="member-name-link">remove</a><wbr>(<a href="Entity.RemovalReason.html" title="enum class in net.minecraft.world.entity">Entity.RemovalReason</a>&nbsp;reason)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeAllEffects()" class="member-name-link">removeAllEffects</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEffect(net.minecraft.core.Holder)" class="member-name-link">removeEffect</a><wbr>(<a href="../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../effect/MobEffect.html" title="class in net.minecraft.world.effect">MobEffect</a>&gt;&nbsp;effect)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final @Nullable <a href="../effect/MobEffectInstance.html" title="class in net.minecraft.world.effect">MobEffectInstance</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEffectNoUpdate(net.minecraft.core.Holder)" class="member-name-link">removeEffectNoUpdate</a><wbr>(<a href="../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../effect/MobEffect.html" title="class in net.minecraft.world.effect">MobEffect</a>&gt;&nbsp;effect)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#randomTeleport(double,double,double,boolean,net.minecraft.world.item.ItemStack)" class="member-name-link">randomTeleport</a><wbr>(double&nbsp;xx,
+ double&nbsp;yy,
+ double&nbsp;zz,
+ boolean&nbsp;showParticles,
+ <a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;consumedStack)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEffectParticles()" class="member-name-link">removeEffectParticles</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeFrost()" class="member-name-link">removeFrost</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetCurrentImpulseContext()" class="member-name-link">resetCurrentImpulseContext</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resetForwardDirectionOfRelativePortalPosition(net.minecraft.world.phys.Vec3)" class="member-name-link">resetForwardDirectionOfRelativePortalPosition</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;offsets)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveMobResponsibleForDamage(net.minecraft.world.damagesource.DamageSource)" class="member-name-link">resolveMobResponsibleForDamage</a><wbr>(<a href="../damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolvePlayerResponsibleForDamage(net.minecraft.world.damagesource.DamageSource)" class="member-name-link">resolvePlayerResponsibleForDamage</a><wbr>(<a href="../damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a>&nbsp;source)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rideTick()" class="member-name-link">rideTick</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sanitizeScale(float)" class="member-name-link">sanitizeScale</a><wbr>(float&nbsp;scale)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendEffectToPassengers(net.minecraft.world.effect.MobEffectInstance)" class="member-name-link">sendEffectToPassengers</a><wbr>(<a href="../effect/MobEffectInstance.html" title="class in net.minecraft.world.effect">MobEffectInstance</a>&nbsp;effect)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#serverAiStep()" class="member-name-link">serverAiStep</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAbsorptionAmount(float)" class="member-name-link">setAbsorptionAmount</a><wbr>(float&nbsp;absorptionAmount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setArrowCount(int)" class="member-name-link">setArrowCount</a><wbr>(int&nbsp;count)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDiscardFriction(boolean)" class="member-name-link">setDiscardFriction</a><wbr>(boolean&nbsp;discardFriction)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput)" class="member-name-link">readAdditionalSaveData</a><wbr>(<a href="../level/storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setHealth(float)" class="member-name-link">setHealth</a><wbr>(float&nbsp;health)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIgnoreFallDamageFromCurrentImpulse(boolean,net.minecraft.world.phys.Vec3)" class="member-name-link">setIgnoreFallDamageFromCurrentImpulse</a><wbr>(boolean&nbsp;ignoreFallDamage,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;newImpulseImpactPos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemInHand(net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)" class="member-name-link">setItemInHand</a><wbr>(<a href="../InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
- <a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemSlot(net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.item.ItemStack)" class="member-name-link">setItemSlot</a><wbr>(<a href="EquipmentSlot.html" title="enum class in net.minecraft.world.entity">EquipmentSlot</a>&nbsp;slot,
- <a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemSlot(net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.item.ItemStack,boolean)" class="member-name-link">setItemSlot</a><wbr>(<a href="EquipmentSlot.html" title="enum class in net.minecraft.world.entity">EquipmentSlot</a>&nbsp;slot,
- <a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
- boolean&nbsp;insideTransaction)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Neo: Passing <code>true</code> for <code>insideTransaction</code> sets the item without side-effects (calling <a href="#onEquipItem(net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack)"><code>onEquipItem(EquipmentSlot, ItemStack, ItemStack)</code></a>).</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setJumping(boolean)" class="member-name-link">setJumping</a><wbr>(boolean&nbsp;jump)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtByMob(net.minecraft.world.entity.LivingEntity)" class="member-name-link">setLastHurtByMob</a><wbr>(@Nullable <a href="LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;hurtBy)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtByPlayer(java.util.UUID,int)" class="member-name-link">setLastHurtByPlayer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;player,
- int&nbsp;timeToRemember)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtByPlayer(net.minecraft.world.entity.EntityReference,int)" class="member-name-link">setLastHurtByPlayer</a><wbr>(<a href="EntityReference.html" title="class in net.minecraft.world.entity">EntityReference</a>&lt;<a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&gt;&nbsp;player,
- int&nbsp;timeToRemember)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtByPlayer(net.minecraft.world.entity.player.Player,int)" class="member-name-link">setLastHurtByPlayer</a><wbr>(<a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- int&nbsp;timeToRemember)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtMob(net.minecraft.world.entity.Entity)" class="member-name-link">setLastHurtMob</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLivingEntityFlag(int,boolean)" class="member-name-link">setLivingEntityFlag</a><wbr>(int&nbsp;flag,
- boolean&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNoActionTime(int)" class="member-name-link">setNoActionTime</a><wbr>(int&nbsp;noActionTime)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recreateFromPacket(net.minecraft.network.protocol.game.ClientboundAddEntityPacket)" class="member-name-link">recreateFromPacket</a><wbr>(<a href="../../network/protocol/game/ClientboundAddEntityPacket.html" title="class in net.minecraft.network.protocol.game">ClientboundAddEntityPacket</a>&nbsp;packet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPosToBed(net.minecraft.core.BlockPos)" class="member-name-link">setPosToBed</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bedPosition)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshDirtyAttributes()" class="member-name-link">refreshDirtyAttributes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecordPlayingNearby(net.minecraft.core.BlockPos,boolean)" class="member-name-link">setRecordPlayingNearby</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;jukebox,
- boolean&nbsp;isPlaying)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseUsingItem()" class="member-name-link">releaseUsingItem</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSleepingPos(net.minecraft.core.BlockPos)" class="member-name-link">setSleepingPos</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bedPosition)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rememberStabbedEntity(net.minecraft.world.entity.Entity)" class="member-name-link">rememberStabbedEntity</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpeed(float)" class="member-name-link">setSpeed</a><wbr>(float&nbsp;speed)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(net.minecraft.world.entity.Entity.RemovalReason)" class="member-name-link">remove</a><wbr>(<a href="Entity.RemovalReason.html" title="enum class in net.minecraft.world.entity">Entity.RemovalReason</a>&nbsp;reason)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSprinting(boolean)" class="member-name-link">setSprinting</a><wbr>(boolean&nbsp;isSprinting)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeAllEffects()" class="member-name-link">removeAllEffects</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEffect(net.minecraft.core.Holder)" class="member-name-link">removeEffect</a><wbr>(<a href="../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../effect/MobEffect.html" title="class in net.minecraft.world.effect">MobEffect</a>&gt;&nbsp;effect)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final @Nullable <a href="../effect/MobEffectInstance.html" title="class in net.minecraft.world.effect">MobEffectInstance</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEffectNoUpdate(net.minecraft.core.Holder)" class="member-name-link">removeEffectNoUpdate</a><wbr>(<a href="../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../effect/MobEffect.html" title="class in net.minecraft.world.effect">MobEffect</a>&gt;&nbsp;effect)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEffectParticles()" class="member-name-link">removeEffectParticles</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeFrost()" class="member-name-link">removeFrost</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetCurrentImpulseContext()" class="member-name-link">resetCurrentImpulseContext</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resetForwardDirectionOfRelativePortalPosition(net.minecraft.world.phys.Vec3)" class="member-name-link">resetForwardDirectionOfRelativePortalPosition</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;offsets)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveMobResponsibleForDamage(net.minecraft.world.damagesource.DamageSource)" class="member-name-link">resolveMobResponsibleForDamage</a><wbr>(<a href="../damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a>&nbsp;source)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolvePlayerResponsibleForDamage(net.minecraft.world.damagesource.DamageSource)" class="member-name-link">resolvePlayerResponsibleForDamage</a><wbr>(<a href="../damagesource/DamageSource.html" title="class in net.minecraft.world.damagesource">DamageSource</a>&nbsp;source)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rideTick()" class="member-name-link">rideTick</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sanitizeScale(float)" class="member-name-link">sanitizeScale</a><wbr>(float&nbsp;scale)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendEffectToPassengers(net.minecraft.world.effect.MobEffectInstance)" class="member-name-link">sendEffectToPassengers</a><wbr>(<a href="../effect/MobEffectInstance.html" title="class in net.minecraft.world.effect">MobEffectInstance</a>&nbsp;effect)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#serverAiStep()" class="member-name-link">serverAiStep</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStingerCount(int)" class="member-name-link">setStingerCount</a><wbr>(int&nbsp;count)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAbsorptionAmount(float)" class="member-name-link">setAbsorptionAmount</a><wbr>(float&nbsp;absorptionAmount)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setYBodyRot(float)" class="member-name-link">setYBodyRot</a><wbr>(float&nbsp;yBodyRot)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setArrowCount(int)" class="member-name-link">setArrowCount</a><wbr>(int&nbsp;count)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setYHeadRot(float)" class="member-name-link">setYHeadRot</a><wbr>(float&nbsp;yHeadRot)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDiscardFriction(boolean)" class="member-name-link">setDiscardFriction</a><wbr>(boolean&nbsp;discardFriction)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setHealth(float)" class="member-name-link">setHealth</a><wbr>(float&nbsp;health)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIgnoreFallDamageFromCurrentImpulse(boolean,net.minecraft.world.phys.Vec3)" class="member-name-link">setIgnoreFallDamageFromCurrentImpulse</a><wbr>(boolean&nbsp;ignoreFallDamage,
+ <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;newImpulseImpactPos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemInHand(net.minecraft.world.InteractionHand,net.minecraft.world.item.ItemStack)" class="member-name-link">setItemInHand</a><wbr>(<a href="../InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
+ <a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemSlot(net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.item.ItemStack)" class="member-name-link">setItemSlot</a><wbr>(<a href="EquipmentSlot.html" title="enum class in net.minecraft.world.entity">EquipmentSlot</a>&nbsp;slot,
+ <a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItemSlot(net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.item.ItemStack,boolean)" class="member-name-link">setItemSlot</a><wbr>(<a href="EquipmentSlot.html" title="enum class in net.minecraft.world.entity">EquipmentSlot</a>&nbsp;slot,
+ <a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
+ boolean&nbsp;insideTransaction)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Neo: Passing <code>true</code> for <code>insideTransaction</code> sets the item without side-effects (calling <a href="#onEquipItem(net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack)"><code>onEquipItem(EquipmentSlot, ItemStack, ItemStack)</code></a>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setJumping(boolean)" class="member-name-link">setJumping</a><wbr>(boolean&nbsp;jump)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtByMob(net.minecraft.world.entity.LivingEntity)" class="member-name-link">setLastHurtByMob</a><wbr>(@Nullable <a href="LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;hurtBy)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtByPlayer(java.util.UUID,int)" class="member-name-link">setLastHurtByPlayer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;player,
+ int&nbsp;timeToRemember)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtByPlayer(net.minecraft.world.entity.EntityReference,int)" class="member-name-link">setLastHurtByPlayer</a><wbr>(<a href="EntityReference.html" title="class in net.minecraft.world.entity">EntityReference</a>&lt;<a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&gt;&nbsp;player,
+ int&nbsp;timeToRemember)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtByPlayer(net.minecraft.world.entity.player.Player,int)" class="member-name-link">setLastHurtByPlayer</a><wbr>(<a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+ int&nbsp;timeToRemember)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLastHurtMob(net.minecraft.world.entity.Entity)" class="member-name-link">setLastHurtMob</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLivingEntityFlag(int,boolean)" class="member-name-link">setLivingEntityFlag</a><wbr>(int&nbsp;flag,
+ boolean&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNoActionTime(int)" class="member-name-link">setNoActionTime</a><wbr>(int&nbsp;noActionTime)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPosToBed(net.minecraft.core.BlockPos)" class="member-name-link">setPosToBed</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bedPosition)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRecordPlayingNearby(net.minecraft.core.BlockPos,boolean)" class="member-name-link">setRecordPlayingNearby</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;jukebox,
+ boolean&nbsp;isPlaying)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSleepingPos(net.minecraft.core.BlockPos)" class="member-name-link">setSleepingPos</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bedPosition)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpeed(float)" class="member-name-link">setSpeed</a><wbr>(float&nbsp;speed)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSprinting(boolean)" class="member-name-link">setSprinting</a><wbr>(boolean&nbsp;isSprinting)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStingerCount(int)" class="member-name-link">setStingerCount</a><wbr>(int&nbsp;count)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setYBodyRot(float)" class="member-name-link">setYBodyRot</a><wbr>(float&nbsp;yBodyRot)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setYHeadRot(float)" class="member-name-link">setYHeadRot</a><wbr>(float&nbsp;yHeadRot)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldDiscardFriction()" class="member-name-link">shouldDiscardFriction</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldDiscardFriction()" class="member-name-link">shouldDiscardFriction</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldDropExperience()" class="member-name-link">shouldDropExperience</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldDropLoot(net.minecraft.server.level.ServerLevel)" class="member-name-link">shouldDropLoot</a><wbr>(<a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldShowName()" class="member-name-link">shouldShowName</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldTakeDrowningDamage()" class="member-name-link">shouldTakeDrowningDamage</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldDropExperience()" class="member-name-link">shouldDropExperience</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldTravelInFluid(net.minecraft.world.level.material.FluidState)" class="member-name-link">shouldTravelInFluid</a><wbr>(<a href="../level/material/FluidState.html" title="class in net.minecraft.world.level.material">FluidState</a>&nbsp;fluidState)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#skipDropExperience()" class="member-name-link">skipDropExperience</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnItemParticles(net.minecraft.world.item.ItemStack,int)" class="member-name-link">spawnItemParticles</a><wbr>(<a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
- int&nbsp;count)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldDropLoot(net.minecraft.server.level.ServerLevel)" class="member-name-link">shouldDropLoot</a><wbr>(<a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stabAttack(net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.entity.Entity,float,boolean,boolean,boolean)" class="member-name-link">stabAttack</a><wbr>(<a href="EquipmentSlot.html" title="enum class in net.minecraft.world.entity">EquipmentSlot</a>&nbsp;weaponSlot,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldShowName()" class="member-name-link">shouldShowName</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldTakeDrowningDamage()" class="member-name-link">shouldTakeDrowningDamage</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldTravelInFluid(net.minecraft.world.level.material.FluidState)" class="member-name-link">shouldTravelInFluid</a><wbr>(<a href="../level/material/FluidState.html" title="class in net.minecraft.world.level.material">FluidState</a>&nbsp;fluidState)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#skipDropExperience()" class="member-name-link">skipDropExperience</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnItemParticles(net.minecraft.world.item.ItemStack,int)" class="member-name-link">spawnItemParticles</a><wbr>(<a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
+ int&nbsp;count)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stabAttack(net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.entity.Entity,float,boolean,boolean,boolean)" class="member-name-link">stabAttack</a><wbr>(<a href="EquipmentSlot.html" title="enum class in net.minecraft.world.entity">EquipmentSlot</a>&nbsp;weaponSlot,
  <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target,
  float&nbsp;baseDamage,
  boolean&nbsp;dealsDamage,
  boolean&nbsp;dealsKnockback,
  boolean&nbsp;dismounts)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stabbedEntities(java.util.function.Predicate)" class="member-name-link">stabbedEntities</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;&nbsp;filter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startSleeping(net.minecraft.core.BlockPos)" class="member-name-link">startSleeping</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bedPosition)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stabbedEntities(java.util.function.Predicate)" class="member-name-link">stabbedEntities</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;&nbsp;filter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startUsingItem(net.minecraft.world.InteractionHand)" class="member-name-link">startUsingItem</a><wbr>(<a href="../InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startSleeping(net.minecraft.core.BlockPos)" class="member-name-link">startSleeping</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bedPosition)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopFallFlying()" class="member-name-link">stopFallFlying</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopLocationBasedEffects(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.entity.ai.attributes.AttributeMap)" class="member-name-link">stopLocationBasedEffects</a><wbr>(<a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;previous,
- <a href="EquipmentSlot.html" title="enum class in net.minecraft.world.entity">EquipmentSlot</a>&nbsp;inSlot,
- <a href="ai/attributes/AttributeMap.html" title="class in net.minecraft.world.entity.ai.attributes">AttributeMap</a>&nbsp;attributes)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopRiding()" class="member-name-link">stopRiding</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startUsingItem(net.minecraft.world.InteractionHand)" class="member-name-link">startUsingItem</a><wbr>(<a href="../InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopSleeping()" class="member-name-link">stopSleeping</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopUsingItem()" class="member-name-link">stopUsingItem</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swapHandItems()" class="member-name-link">swapHandItems</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swing(net.minecraft.world.InteractionHand)" class="member-name-link">swing</a><wbr>(<a href="../InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swing(net.minecraft.world.InteractionHand,boolean)" class="member-name-link">swing</a><wbr>(<a href="../InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
- boolean&nbsp;sendToSwingingEntity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#take(net.minecraft.world.entity.Entity,int)" class="member-name-link">take</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
- int&nbsp;orgCount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickDeath()" class="member-name-link">tickDeath</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickEffects()" class="member-name-link">tickEffects</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickHeadTurn(float)" class="member-name-link">tickHeadTurn</a><wbr>(float&nbsp;yBodyRotT)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRidden(net.minecraft.world.entity.player.Player,net.minecraft.world.phys.Vec3)" class="member-name-link">tickRidden</a><wbr>(<a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;controller,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;riddenInput)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#trapdoorUsableAsLadder(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">trapdoorUsableAsLadder</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travel(net.minecraft.world.phys.Vec3)" class="member-name-link">travel</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopFallFlying()" class="member-name-link">stopFallFlying</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelFallFlying(net.minecraft.world.phys.Vec3)" class="member-name-link">travelFallFlying</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopLocationBasedEffects(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.EquipmentSlot,net.minecraft.world.entity.ai.attributes.AttributeMap)" class="member-name-link">stopLocationBasedEffects</a><wbr>(<a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;previous,
+ <a href="EquipmentSlot.html" title="enum class in net.minecraft.world.entity">EquipmentSlot</a>&nbsp;inSlot,
+ <a href="ai/attributes/AttributeMap.html" title="class in net.minecraft.world.entity.ai.attributes">AttributeMap</a>&nbsp;attributes)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopRiding()" class="member-name-link">stopRiding</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopSleeping()" class="member-name-link">stopSleeping</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopUsingItem()" class="member-name-link">stopUsingItem</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swapHandItems()" class="member-name-link">swapHandItems</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swing(net.minecraft.world.InteractionHand)" class="member-name-link">swing</a><wbr>(<a href="../InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swing(net.minecraft.world.InteractionHand,boolean)" class="member-name-link">swing</a><wbr>(<a href="../InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
+ boolean&nbsp;sendToSwingingEntity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#take(net.minecraft.world.entity.Entity,int)" class="member-name-link">take</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ int&nbsp;orgCount)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelFlying(net.minecraft.world.phys.Vec3,float)" class="member-name-link">travelFlying</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
- float&nbsp;speed)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickDeath()" class="member-name-link">tickDeath</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelFlying(net.minecraft.world.phys.Vec3,float,float,float)" class="member-name-link">travelFlying</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickEffects()" class="member-name-link">tickEffects</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickHeadTurn(float)" class="member-name-link">tickHeadTurn</a><wbr>(float&nbsp;yBodyRotT)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRidden(net.minecraft.world.entity.player.Player,net.minecraft.world.phys.Vec3)" class="member-name-link">tickRidden</a><wbr>(<a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;controller,
+ <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;riddenInput)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#trapdoorUsableAsLadder(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">trapdoorUsableAsLadder</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ <a href="../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travel(net.minecraft.world.phys.Vec3)" class="member-name-link">travel</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelFallFlying(net.minecraft.world.phys.Vec3)" class="member-name-link">travelFallFlying</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelFlying(net.minecraft.world.phys.Vec3,float)" class="member-name-link">travelFlying</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
+ float&nbsp;speed)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelFlying(net.minecraft.world.phys.Vec3,float,float,float)" class="member-name-link">travelFlying</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
  float&nbsp;waterSpeed,
  float&nbsp;lavaSpeed,
  float&nbsp;airSpeed)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelInAir(net.minecraft.world.phys.Vec3)" class="member-name-link">travelInAir</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#travelInFluid(net.minecraft.world.phys.Vec3)" class="member-name-link">travelInFluid</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelInAir(net.minecraft.world.phys.Vec3)" class="member-name-link">travelInAir</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>private void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#travelInFluid(net.minecraft.world.phys.Vec3)" class="member-name-link">travelInFluid</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">Neo: use <a href="#travelInFluid(net.minecraft.world.phys.Vec3,net.minecraft.world.level.material.FluidState)"><code>travelInFluid(Vec3, FluidState)</code></a> instead</div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelInFluid(net.minecraft.world.phys.Vec3,net.minecraft.world.level.material.FluidState)" class="member-name-link">travelInFluid</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelInFluid(net.minecraft.world.phys.Vec3,net.minecraft.world.level.material.FluidState)" class="member-name-link">travelInFluid</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
  <a href="../level/material/FluidState.html" title="class in net.minecraft.world.level.material">FluidState</a>&nbsp;fluidState)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelInLava(net.minecraft.world.phys.Vec3,double,boolean,double)" class="member-name-link">travelInLava</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelInLava(net.minecraft.world.phys.Vec3,double,boolean,double)" class="member-name-link">travelInLava</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
  double&nbsp;baseGravity,
  boolean&nbsp;isFalling,
  double&nbsp;oldY)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelInWater(net.minecraft.world.phys.Vec3,double,boolean,double)" class="member-name-link">travelInWater</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
- double&nbsp;baseGravity,
- boolean&nbsp;isFalling,
- double&nbsp;oldY)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelRidden(net.minecraft.world.entity.player.Player,net.minecraft.world.phys.Vec3)" class="member-name-link">travelRidden</a><wbr>(<a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;controller,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;selfInput)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#triggerOnDeathMobEffects(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.Entity.RemovalReason)" class="member-name-link">triggerOnDeathMobEffects</a><wbr>(<a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="Entity.RemovalReason.html" title="enum class in net.minecraft.world.entity">Entity.RemovalReason</a>&nbsp;reason)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryAddFrost()" class="member-name-link">tryAddFrost</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelInWater(net.minecraft.world.phys.Vec3,double,boolean,double)" class="member-name-link">travelInWater</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;input,
+ double&nbsp;baseGravity,
+ boolean&nbsp;isFalling,
+ double&nbsp;oldY)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryResetCurrentImpulseContext()" class="member-name-link">tryResetCurrentImpulseContext</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#travelRidden(net.minecraft.world.entity.player.Player,net.minecraft.world.phys.Vec3)" class="member-name-link">travelRidden</a><wbr>(<a href="player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;controller,
+ <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;selfInput)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#triggerOnDeathMobEffects(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.Entity.RemovalReason)" class="member-name-link">triggerOnDeathMobEffects</a><wbr>(<a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
+ <a href="Entity.RemovalReason.html" title="enum class in net.minecraft.world.entity">Entity.RemovalReason</a>&nbsp;reason)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryAddFrost()" class="member-name-link">tryAddFrost</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateDataBeforeSync()" class="member-name-link">updateDataBeforeSync</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryResetCurrentImpulseContext()" class="member-name-link">tryResetCurrentImpulseContext</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateDirtyEffects()" class="member-name-link">updateDirtyEffects</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateEffectVisibility()" class="member-name-link">updateEffectVisibility</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateFallFlying()" class="member-name-link">updateFallFlying</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateFallFlyingMovement(net.minecraft.world.phys.Vec3)" class="member-name-link">updateFallFlyingMovement</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;movement)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateGlowingStatus()" class="member-name-link">updateGlowingStatus</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateInvisibilityStatus()" class="member-name-link">updateInvisibilityStatus</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSwimAmount()" class="member-name-link">updateSwimAmount</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSwingTime()" class="member-name-link">updateSwingTime</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSynchronizedMobEffectParticles()" class="member-name-link">updateSynchronizedMobEffectParticles</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateUsingItem(net.minecraft.world.item.ItemStack)" class="member-name-link">updateUsingItem</a><wbr>(<a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;useItem)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateWalkAnimation(float)" class="member-name-link">updateWalkAnimation</a><wbr>(float&nbsp;distance)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateDataBeforeSync()" class="member-name-link">updateDataBeforeSync</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatingUsingItem()" class="member-name-link">updatingUsingItem</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateDirtyEffects()" class="member-name-link">updateDirtyEffects</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasExperienceConsumed()" class="member-name-link">wasExperienceConsumed</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateEffectVisibility()" class="member-name-link">updateEffectVisibility</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateFallFlying()" class="member-name-link">updateFallFlying</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateFallFlyingMovement(net.minecraft.world.phys.Vec3)" class="member-name-link">updateFallFlyingMovement</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;movement)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateGlowingStatus()" class="member-name-link">updateGlowingStatus</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateInvisibilityStatus()" class="member-name-link">updateInvisibilityStatus</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSwimAmount()" class="member-name-link">updateSwimAmount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSwingTime()" class="member-name-link">updateSwingTime</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSynchronizedMobEffectParticles()" class="member-name-link">updateSynchronizedMobEffectParticles</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateUsingItem(net.minecraft.world.item.ItemStack)" class="member-name-link">updateUsingItem</a><wbr>(<a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;useItem)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateWalkAnimation(float)" class="member-name-link">updateWalkAnimation</a><wbr>(float&nbsp;distance)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatingUsingItem()" class="member-name-link">updatingUsingItem</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasRecentlyStabbed(net.minecraft.world.entity.Entity,int)" class="member-name-link">wasRecentlyStabbed</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasExperienceConsumed()" class="member-name-link">wasExperienceConsumed</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasRecentlyStabbed(net.minecraft.world.entity.Entity,int)" class="member-name-link">wasRecentlyStabbed</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target,
  int&nbsp;allowedTime)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../waypoints/Waypoint.Icon.html" title="class in net.minecraft.world.waypoints">Waypoint.Icon</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#waypointIcon()" class="member-name-link">waypointIcon</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wouldNotSuffocateAtTargetPose(net.minecraft.world.entity.Pose)" class="member-name-link">wouldNotSuffocateAtTargetPose</a><wbr>(<a href="Pose.html" title="enum class in net.minecraft.world.entity">Pose</a>&nbsp;pose)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../waypoints/Waypoint.Icon.html" title="class in net.minecraft.world.waypoints">Waypoint.Icon</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#waypointIcon()" class="member-name-link">waypointIcon</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wouldNotSuffocateAtTargetPose(net.minecraft.world.entity.Pose)" class="member-name-link">wouldNotSuffocateAtTargetPose</a><wbr>(<a href="Pose.html" title="enum class in net.minecraft.world.entity">Pose</a>&nbsp;pose)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -2303,6 +2311,9 @@ implements <a href="Attackable.html" title="interface in net.minecraft.world.ent
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.core.TypedInstance">Methods inherited from interface&nbsp;<a href="../../core/TypedInstance.html#method-summary" title="interface in net.minecraft.core">TypedInstance</a></h3>
 <code><a href="../../core/TypedInstance.html#is(net.minecraft.core.Holder)" title="is(Holder)">is</a>, <a href="../../core/TypedInstance.html#is(net.minecraft.core.HolderSet)" title="is(HolderSet)">is</a>, <a href="../../core/TypedInstance.html#is(net.minecraft.resources.ResourceKey)" title="is(ResourceKey)">is</a>, <a href="../../core/TypedInstance.html#is(net.minecraft.tags.TagKey)" title="is(TagKey)">is</a>, <a href="../../core/TypedInstance.html#is(T)" title="is(EntityType)">is</a>, <a href="../../core/TypedInstance.html#tags()" title="tags()">tags</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-net.neoforged.neoforge.common.extensions.TypedInstanceExtension">Methods inherited from interface&nbsp;<a href="../../../neoforged/neoforge/common/extensions/TypedInstanceExtension.html#method-summary" title="interface in net.neoforged.neoforge.common.extensions">TypedInstanceExtension</a></h3>
+<code><a href="../../../neoforged/neoforge/common/extensions/TypedInstanceExtension.html#getData(net.neoforged.neoforge.registries.datamaps.DataMapType)" title="getData(DataMapType)">getData</a></code></div>
 </section>
 </li>
 </ul>
@@ -6413,6 +6424,18 @@ the stack before the method's return.</div>
  double&nbsp;yy,
  double&nbsp;zz,
  boolean&nbsp;showParticles)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="randomTeleport(double,double,double,boolean,net.minecraft.world.item.ItemStack)">
+<h3>randomTeleport</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">randomTeleport</span><wbr><span class="parameters">(double&nbsp;xx,
+ double&nbsp;yy,
+ double&nbsp;zz,
+ boolean&nbsp;showParticles,
+ <a href="../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;consumedStack)</span></div>
 </div>
 </section>
 </li>

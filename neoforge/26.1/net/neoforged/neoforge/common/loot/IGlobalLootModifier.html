@@ -61,12 +61,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#DIRECT_CODEC" tabindex="0">DIRECT_CODEC</a></li>
 <li><a href="#CONDITIONAL_CODEC" tabindex="0">CONDITIONAL_CODEC</a></li>
 <li><a href="#LOOT_CONDITIONS_CODEC" tabindex="0">LOOT_CONDITIONS_CODEC</a></li>
+<li><a href="#DEFAULT_PRIORITY" tabindex="0">DEFAULT_PRIORITY</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#apply(it.unimi.dsi.fastutil.objects.ObjectArrayList,net.minecraft.world.level.storage.loot.LootContext)" tabindex="0">apply(ObjectArrayList, LootContext)</a></li>
 <li><a href="#codec()" tabindex="0">codec()</a></li>
+<li><a href="#priority()" tabindex="0">priority()</a></li>
 </ol>
 </li>
 </ol>
@@ -104,12 +106,17 @@ Individual instances of modifiers must be registered via json, see neoforge:loot
 <div class="col-first even-row-color"><code>static final <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../conditions/WithConditions.html" title="class in net.neoforged.neoforge.common.conditions">WithConditions</a>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;&gt;&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#CONDITIONAL_CODEC" class="member-name-link">CONDITIONAL_CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#DIRECT_CODEC" class="member-name-link">DIRECT_CODEC</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="../../../../minecraft/world/level/storage/loot/predicates/LootItemCondition.html" title="interface in net.minecraft.world.level.storage.loot.predicates">LootItemCondition</a>[]&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#LOOT_CONDITIONS_CODEC" class="member-name-link">LOOT_CONDITIONS_CODEC</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#DEFAULT_PRIORITY" class="member-name-link">DEFAULT_PRIORITY</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">The "default" priority for a loot modifier.</div>
+</div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#DIRECT_CODEC" class="member-name-link">DIRECT_CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="../../../../minecraft/world/level/storage/loot/predicates/LootItemCondition.html" title="interface in net.minecraft.world.level.storage.loot.predicates">LootItemCondition</a>[]&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#LOOT_CONDITIONS_CODEC" class="member-name-link">LOOT_CONDITIONS_CODEC</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -134,6 +141,11 @@ Individual instances of modifiers must be registered via json, see neoforge:loot
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#codec()" class="member-name-link">codec</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the registered codec for this modifier</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#priority()" class="member-name-link">priority</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the priority of this loot modifier.</div>
 </div>
 </div>
 </div>
@@ -173,6 +185,23 @@ Individual instances of modifiers must be registered via json, see neoforge:loot
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="DEFAULT_PRIORITY">
+<h3>DEFAULT_PRIORITY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_PRIORITY</span></div>
+<div class="block">The "default" priority for a loot modifier. See <a href="#priority()"><code>priority()</code></a> for more info.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#net.neoforged.neoforge.common.loot.IGlobalLootModifier.DEFAULT_PRIORITY">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -205,6 +234,18 @@ checking ILootConditions as well.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a>&lt;? extends <a href="IGlobalLootModifier.html" title="interface in net.neoforged.neoforge.common.loot">IGlobalLootModifier</a>&gt;</span>&nbsp;<span class="element-name">codec</span>()</div>
 <div class="block">Returns the registered codec for this modifier</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="priority()">
+<h3>priority</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">priority</span>()</div>
+<div class="block">Returns the priority of this loot modifier. Modifiers with a higher priority will be applied first.
+Modifiers with equal priority will be applied in an undefined order.
+<p>
+The canonical "default" priority value is 1000, per <a href="#DEFAULT_PRIORITY"><code>DEFAULT_PRIORITY</code></a>.</div>
 </div>
 </section>
 </li>

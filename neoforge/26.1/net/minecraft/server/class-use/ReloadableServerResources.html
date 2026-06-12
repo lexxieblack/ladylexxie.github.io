@@ -239,6 +239,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>private final <a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">AddServerReloadListenersEvent.</span><code><a href="../../../neoforged/neoforge/event/AddServerReloadListenersEvent.html#serverResources" class="member-name-link">serverResources</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">TagsUpdatedEvent.ServerDataLoad.</span><code><a href="../../../neoforged/neoforge/event/TagsUpdatedEvent.ServerDataLoad.html#serverResources" class="member-name-link">serverResources</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Methods in <a href="../../../neoforged/neoforge/event/package-summary.html">net.neoforged.neoforge.event</a> that return <a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></span></div>
 <div class="summary-table three-column-summary">
@@ -248,6 +251,11 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">AddServerReloadListenersEvent.</span><code><a href="../../../neoforged/neoforge/event/AddServerReloadListenersEvent.html#getServerResources()" class="member-name-link">getServerResources</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">TagsUpdatedEvent.ServerDataLoad.</span><code><a href="../../../neoforged/neoforge/event/TagsUpdatedEvent.ServerDataLoad.html#getServerResources()" class="member-name-link">getServerResources</a>()</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Returns the server resources which triggered this tag update.</div>
+</div>
 </div>
 <div class="caption"><span>Methods in <a href="../../../neoforged/neoforge/event/package-summary.html">net.neoforged.neoforge.event</a> with parameters of type <a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a></span></div>
 <div class="summary-table three-column-summary">
@@ -255,8 +263,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">EventHooks.</span><code><a href="../../../neoforged/neoforge/event/EventHooks.html#onResourceReload(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess)" class="member-name-link">onResourceReload</a><wbr>(<a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
- <a href="../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EventHooks.</span><code><a href="../../../neoforged/neoforge/event/EventHooks.html#onResourceReload(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess,java.util.Map)" class="member-name-link">onResourceReload</a><wbr>(<a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
+ <a href="../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../neoforged/neoforge/resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="../packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;&nbsp;retainedListeners)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Fires the <a href="../../../neoforged/neoforge/event/AddServerReloadListenersEvent.html" title="class in net.neoforged.neoforge.event"><code>AddServerReloadListenersEvent</code></a> and returns the sorted list of reload listeners.</div>
 </div>
@@ -267,9 +276,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../../neoforged/neoforge/event/AddServerReloadListenersEvent.html#%3Cinit%3E(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess)" class="member-name-link">AddServerReloadListenersEvent</a><wbr>(<a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
- <a href="../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess)</code></div>
+<div class="col-second even-row-color"><code><a href="../../../neoforged/neoforge/event/AddServerReloadListenersEvent.html#%3Cinit%3E(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess,java.util.Map)" class="member-name-link">AddServerReloadListenersEvent</a><wbr>(<a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
+ <a href="../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../neoforged/neoforge/resource/ListenerKey.html" title="class in net.neoforged.neoforge.resource">ListenerKey</a>&lt;?&gt;, <a href="../packs/resources/PreparableReloadListener.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a>&gt;&nbsp;retainedListeners)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../../neoforged/neoforge/event/TagsUpdatedEvent.ServerDataLoad.html#%3Cinit%3E(net.minecraft.server.ReloadableServerResources,net.minecraft.core.RegistryAccess)" class="member-name-link">ServerDataLoad</a><wbr>(<a href="../ReloadableServerResources.html" title="class in net.minecraft.server">ReloadableServerResources</a>&nbsp;serverResources,
+ <a href="../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registries)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

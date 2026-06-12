@@ -68,13 +68,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#parent" tabindex="0">parent</a></li>
 <li><a href="#rootTransform" tabindex="0">rootTransform</a></li>
 <li><a href="#partVisibility" tabindex="0">partVisibility</a></li>
+<li><a href="#itemLayerFaceData" tabindex="0">itemLayerFaceData</a></li>
 <li><a href="#GSON" tabindex="0">GSON</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.client.resources.model.geometry.UnbakedGeometry,net.minecraft.client.resources.model.UnbakedModel.GuiLight,java.lang.Boolean,net.minecraft.client.resources.model.cuboid.ItemTransforms,net.minecraft.client.resources.model.sprite.TextureSlots.Data,net.minecraft.resources.Identifier)" tabindex="0">CuboidModel(UnbakedGeometry, UnbakedModel.GuiLight, Boolean, ItemTransforms, TextureSlots.Data, Identifier)</a></li>
-<li><a href="#%3Cinit%3E(net.minecraft.client.resources.model.geometry.UnbakedGeometry,net.minecraft.client.resources.model.UnbakedModel.GuiLight,java.lang.Boolean,net.minecraft.client.resources.model.cuboid.ItemTransforms,net.minecraft.client.resources.model.sprite.TextureSlots.Data,net.minecraft.resources.Identifier,com.mojang.math.Transformation,java.util.Map)" tabindex="0">CuboidModel(UnbakedGeometry, UnbakedModel.GuiLight, Boolean, ItemTransforms, TextureSlots.Data, Identifier, Transformation, Map)</a></li>
+<li><a href="#%3Cinit%3E(net.minecraft.client.resources.model.geometry.UnbakedGeometry,net.minecraft.client.resources.model.UnbakedModel.GuiLight,java.lang.Boolean,net.minecraft.client.resources.model.cuboid.ItemTransforms,net.minecraft.client.resources.model.sprite.TextureSlots.Data,net.minecraft.resources.Identifier,com.mojang.math.Transformation,java.util.Map,it.unimi.dsi.fastutil.ints.Int2ObjectMap)" tabindex="0">CuboidModel(UnbakedGeometry, UnbakedModel.GuiLight, Boolean, ItemTransforms, TextureSlots.Data, Identifier, Transformation, Map, Int2ObjectMap)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -92,6 +93,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#parent()" tabindex="0">parent()</a></li>
 <li><a href="#rootTransform()" tabindex="0">rootTransform()</a></li>
 <li><a href="#partVisibility()" tabindex="0">partVisibility()</a></li>
+<li><a href="#itemLayerFaceData()" tabindex="0">itemLayerFaceData()</a></li>
 </ol>
 </li>
 </ol>
@@ -113,7 +115,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="horizontal-scroll">
-<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">CuboidModel</span>(@Nullable <a href="../geometry/UnbakedGeometry.html" title="interface in net.minecraft.client.resources.model.geometry">UnbakedGeometry</a>&nbsp;geometry, @Nullable <a href="../UnbakedModel.GuiLight.html" title="enum class in net.minecraft.client.resources.model">UnbakedModel.GuiLight</a>&nbsp;guiLight, @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;ambientOcclusion, @Nullable <a href="ItemTransforms.html" title="class in net.minecraft.client.resources.model.cuboid">ItemTransforms</a>&nbsp;transforms, <a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a>&nbsp;textureSlots, @Nullable <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;parent, @Nullable <a href="../../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&nbsp;rootTransform, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;partVisibility)
+<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">CuboidModel</span>(@Nullable <a href="../geometry/UnbakedGeometry.html" title="interface in net.minecraft.client.resources.model.geometry">UnbakedGeometry</a>&nbsp;geometry, @Nullable <a href="../UnbakedModel.GuiLight.html" title="enum class in net.minecraft.client.resources.model">UnbakedModel.GuiLight</a>&nbsp;guiLight, @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;ambientOcclusion, @Nullable <a href="ItemTransforms.html" title="class in net.minecraft.client.resources.model.cuboid">ItemTransforms</a>&nbsp;transforms, <a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a>&nbsp;textureSlots, @Nullable <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;parent, @Nullable <a href="../../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&nbsp;rootTransform, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;partVisibility, it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;&nbsp;itemLayerFaceData)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a>
 implements <a href="../UnbakedModel.html" title="interface in net.minecraft.client.resources.model">UnbakedModel</a></span></div>
 </div>
@@ -168,29 +170,34 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
 <div class="col-last odd-row-color">
 <div class="block">The field for the <code>guiLight</code> record component.</div>
 </div>
-<div class="col-first even-row-color"><code>private final @Nullable <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second even-row-color"><code><a href="#parent" class="member-name-link">parent</a></code></div>
+<div class="col-first even-row-color"><code>private final it.unimi.dsi.fastutil.ints.Int2ObjectMap<wbr>&lt;<a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#itemLayerFaceData" class="member-name-link">itemLayerFaceData</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">The field for the <code>itemLayerFaceData</code> record component.</div>
+</div>
+<div class="col-first odd-row-color"><code>private final @Nullable <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#parent" class="member-name-link">parent</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The field for the <code>parent</code> record component.</div>
 </div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#partVisibility" class="member-name-link">partVisibility</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#partVisibility" class="member-name-link">partVisibility</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">The field for the <code>partVisibility</code> record component.</div>
 </div>
-<div class="col-first even-row-color"><code>private final @Nullable <a href="../../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a></code></div>
-<div class="col-second even-row-color"><code><a href="#rootTransform" class="member-name-link">rootTransform</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>private final @Nullable <a href="../../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#rootTransform" class="member-name-link">rootTransform</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The field for the <code>rootTransform</code> record component.</div>
 </div>
-<div class="col-first odd-row-color"><code>private final <a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#textureSlots" class="member-name-link">textureSlots</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>private final <a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a></code></div>
+<div class="col-second even-row-color"><code><a href="#textureSlots" class="member-name-link">textureSlots</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">The field for the <code>textureSlots</code> record component.</div>
 </div>
-<div class="col-first even-row-color"><code>private final @Nullable <a href="ItemTransforms.html" title="class in net.minecraft.client.resources.model.cuboid">ItemTransforms</a></code></div>
-<div class="col-second even-row-color"><code><a href="#transforms" class="member-name-link">transforms</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>private final @Nullable <a href="ItemTransforms.html" title="class in net.minecraft.client.resources.model.cuboid">ItemTransforms</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#transforms" class="member-name-link">transforms</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The field for the <code>transforms</code> record component.</div>
 </div>
 </div>
@@ -214,14 +221,15 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
  <a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a>&nbsp;textureSlots,
  @Nullable <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;parent)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.minecraft.client.resources.model.geometry.UnbakedGeometry,net.minecraft.client.resources.model.UnbakedModel.GuiLight,java.lang.Boolean,net.minecraft.client.resources.model.cuboid.ItemTransforms,net.minecraft.client.resources.model.sprite.TextureSlots.Data,net.minecraft.resources.Identifier,com.mojang.math.Transformation,java.util.Map)" class="member-name-link">CuboidModel</a><wbr>(@Nullable <a href="../geometry/UnbakedGeometry.html" title="interface in net.minecraft.client.resources.model.geometry">UnbakedGeometry</a>&nbsp;geometry,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.minecraft.client.resources.model.geometry.UnbakedGeometry,net.minecraft.client.resources.model.UnbakedModel.GuiLight,java.lang.Boolean,net.minecraft.client.resources.model.cuboid.ItemTransforms,net.minecraft.client.resources.model.sprite.TextureSlots.Data,net.minecraft.resources.Identifier,com.mojang.math.Transformation,java.util.Map,it.unimi.dsi.fastutil.ints.Int2ObjectMap)" class="member-name-link">CuboidModel</a><wbr>(@Nullable <a href="../geometry/UnbakedGeometry.html" title="interface in net.minecraft.client.resources.model.geometry">UnbakedGeometry</a>&nbsp;geometry,
  @Nullable <a href="../UnbakedModel.GuiLight.html" title="enum class in net.minecraft.client.resources.model">UnbakedModel.GuiLight</a>&nbsp;guiLight,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;ambientOcclusion,
  @Nullable <a href="ItemTransforms.html" title="class in net.minecraft.client.resources.model.cuboid">ItemTransforms</a>&nbsp;transforms,
  <a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a>&nbsp;textureSlots,
  @Nullable <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;parent,
  @Nullable <a href="../../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&nbsp;rootTransform,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;partVisibility)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;partVisibility,
+ it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;&nbsp;itemLayerFaceData)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates an instance of a <code>CuboidModel</code> record class.</div>
 </div>
@@ -276,34 +284,39 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parent()" class="member-name-link">parent</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>it.unimi.dsi.fastutil.ints.Int2ObjectMap<wbr>&lt;<a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#itemLayerFaceData()" class="member-name-link">itemLayerFaceData</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <code>itemLayerFaceData</code> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parent()" class="member-name-link">parent</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>parent</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#partVisibility()" class="member-name-link">partVisibility</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#partVisibility()" class="member-name-link">partVisibility</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>partVisibility</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rootTransform()" class="member-name-link">rootTransform</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rootTransform()" class="member-name-link">rootTransform</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>rootTransform</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#textureSlots()" class="member-name-link">textureSlots</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#textureSlots()" class="member-name-link">textureSlots</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>textureSlots</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this record class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="ItemTransforms.html" title="class in net.minecraft.client.resources.model.cuboid">ItemTransforms</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transforms()" class="member-name-link">transforms</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="ItemTransforms.html" title="class in net.minecraft.client.resources.model.cuboid">ItemTransforms</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transforms()" class="member-name-link">transforms</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>transforms</code> record component.</div>
 </div>
 </div>
@@ -399,6 +412,15 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
 </section>
 </li>
 <li>
+<section class="detail" id="itemLayerFaceData">
+<h3>itemLayerFaceData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;</span>&nbsp;<span class="element-name">itemLayerFaceData</span></div>
+<div class="block">The field for the <code>itemLayerFaceData</code> record component.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="GSON">
 <h3>GSON</h3>
 <div class="horizontal-scroll">
@@ -428,7 +450,7 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.client.resources.model.geometry.UnbakedGeometry,net.minecraft.client.resources.model.UnbakedModel.GuiLight,java.lang.Boolean,net.minecraft.client.resources.model.cuboid.ItemTransforms,net.minecraft.client.resources.model.sprite.TextureSlots.Data,net.minecraft.resources.Identifier,com.mojang.math.Transformation,java.util.Map)">
+<section class="detail" id="&lt;init&gt;(net.minecraft.client.resources.model.geometry.UnbakedGeometry,net.minecraft.client.resources.model.UnbakedModel.GuiLight,java.lang.Boolean,net.minecraft.client.resources.model.cuboid.ItemTransforms,net.minecraft.client.resources.model.sprite.TextureSlots.Data,net.minecraft.resources.Identifier,com.mojang.math.Transformation,java.util.Map,it.unimi.dsi.fastutil.ints.Int2ObjectMap)">
 <h3>CuboidModel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CuboidModel</span><wbr><span class="parameters">(@Nullable <a href="../geometry/UnbakedGeometry.html" title="interface in net.minecraft.client.resources.model.geometry">UnbakedGeometry</a>&nbsp;geometry,
@@ -438,7 +460,8 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
  <a href="../sprite/TextureSlots.Data.html" title="class in net.minecraft.client.resources.model.sprite">TextureSlots.Data</a>&nbsp;textureSlots,
  @Nullable <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;parent,
  @Nullable <a href="../../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&nbsp;rootTransform,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;partVisibility)</span></div>
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;partVisibility,
+ it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;&nbsp;itemLayerFaceData)</span></div>
 <div class="block">Creates an instance of a <code>CuboidModel</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -450,6 +473,7 @@ implements <a href="../UnbakedModel.html" title="interface in net.minecraft.clie
 <dd><code>parent</code> - the value for the <code>parent</code> record component</dd>
 <dd><code>rootTransform</code> - the value for the <code>rootTransform</code> record component</dd>
 <dd><code>partVisibility</code> - the value for the <code>partVisibility</code> record component</dd>
+<dd><code>itemLayerFaceData</code> - the value for the <code>itemLayerFaceData</code> record component</dd>
 </dl>
 </div>
 </section>
@@ -660,6 +684,19 @@ using <a href="../../../../../neoforged/neoforge/client/extensions/ResolvedModel
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the value of the <code>partVisibility</code> record component</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="itemLayerFaceData()">
+<h3>itemLayerFaceData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="../../../../../neoforged/neoforge/client/model/ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;</span>&nbsp;<span class="element-name">itemLayerFaceData</span>()</div>
+<div class="block">Returns the value of the <code>itemLayerFaceData</code> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>itemLayerFaceData</code> record component</dd>
 </dl>
 </div>
 </section>

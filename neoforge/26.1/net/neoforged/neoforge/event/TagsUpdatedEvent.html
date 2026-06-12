@@ -60,18 +60,17 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#lookupProvider" tabindex="0">lookupProvider</a></li>
-<li><a href="#updateCause" tabindex="0">updateCause</a></li>
-<li><a href="#integratedServer" tabindex="0">integratedServer</a></li>
+<li><a href="#registries" tabindex="0">registries</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(net.minecraft.core.HolderLookup.Provider,boolean,boolean)" tabindex="0">TagsUpdatedEvent(HolderLookup.Provider, boolean, boolean)</a></li>
+<li><a href="#%3Cinit%3E(net.minecraft.core.RegistryAccess)" tabindex="0">TagsUpdatedEvent(RegistryAccess)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
+<li><a href="#getRegistries()" tabindex="0">getRegistries()</a></li>
 <li><a href="#getLookupProvider()" tabindex="0">getLookupProvider()</a></li>
 <li><a href="#getUpdateCause()" tabindex="0">getUpdateCause()</a></li>
 <li><a href="#shouldUpdateStaticData()" tabindex="0">shouldUpdateStaticData()</a></li>
@@ -90,11 +89,20 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Direct Known Subclasses:</dt>
+<dd><code><a href="TagsUpdatedEvent.ClientPacketReceived.html" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent.ClientPacketReceived</a>, <a href="TagsUpdatedEvent.ServerDataLoad.html" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent.ServerDataLoad</a></code></dd>
+</dl>
 <hr>
 <div class="horizontal-scroll">
-<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">TagsUpdatedEvent</span>
-<span class="extends-implements">extends net.neoforged.bus.api.Event</span></div>
-<div class="block">Fired when tags are updated on either server or client. This event can be used to refresh data that depends on tags.</div>
+<div class="type-signature"><span class="modifiers">public sealed class </span><span class="element-name type-name-label">TagsUpdatedEvent</span>
+<span class="extends-implements">extends net.neoforged.bus.api.Event</span>
+<span class="permits">permits <a href="TagsUpdatedEvent.ServerDataLoad.html" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent.ServerDataLoad</a>, <a href="TagsUpdatedEvent.ClientPacketReceived.html" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent.ClientPacketReceived</a></span></div>
+<div class="block"><p>Fired when tags are updated on either server or client. This event can be used to refresh data that depends on tags.</p>
+<p>Listeners intending to use this event to update static data guarded by <a href="#shouldUpdateStaticData()"><code>shouldUpdateStaticData()</code></a> should listen to
+the root event. Listeners interested in the side-specific notification or the side-specific context should listen to
+the <a href="TagsUpdatedEvent.ServerDataLoad.html" title="class in net.neoforged.neoforge.event"><code>TagsUpdatedEvent.ServerDataLoad</code></a> and <a href="TagsUpdatedEvent.ClientPacketReceived.html" title="class in net.neoforged.neoforge.event"><code>TagsUpdatedEvent.ClientPacketReceived</code></a> subclasses instead.</p>
+</div>
 </div>
 </section>
 <section class="summary">
@@ -108,10 +116,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="TagsUpdatedEvent.ClientPacketReceived.html" class="type-name-link" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent.ClientPacketReceived</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Fired when tags are updated by the client receiving tag data from the server</div>
+</div>
+<div class="col-first odd-row-color"><code>static final class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="TagsUpdatedEvent.ServerDataLoad.html" class="type-name-link" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent.ServerDataLoad</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Fired when tags are updated following a server datapack (re)load</div>
+</div>
 <div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="TagsUpdatedEvent.UpdateCause.html" class="type-name-link" title="enum class in net.neoforged.neoforge.event">TagsUpdatedEvent.UpdateCause</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Represents the cause for a tag update.</div>
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </div>
 </div>
 </section>
@@ -125,14 +143,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#integratedServer" class="member-name-link">integratedServer</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#lookupProvider" class="member-name-link">lookupProvider</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="TagsUpdatedEvent.UpdateCause.html" title="enum class in net.neoforged.neoforge.event">TagsUpdatedEvent.UpdateCause</a></code></div>
-<div class="col-second even-row-color"><code><a href="#updateCause" class="member-name-link">updateCause</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
+<div class="col-second even-row-color"><code><a href="#registries" class="member-name-link">registries</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -142,12 +154,12 @@ loadScripts(document, 'script');</script>
 <section class="constructor-summary" id="constructor-summary">
 <h2>Constructor Summary</h2>
 <div class="caption"><span>Constructors</span></div>
-<div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.core.HolderLookup.Provider,boolean,boolean)" class="member-name-link">TagsUpdatedEvent</a><wbr>(<a href="../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;lookupProvider,
- boolean&nbsp;fromClientPacket,
- boolean&nbsp;isIntegratedServerConnection)</code></div>
+<div class="col-first even-row-color"><code>protected </code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.core.RegistryAccess)" class="member-name-link">TagsUpdatedEvent</a><wbr>(<a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registries)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -157,21 +169,34 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLookupProvider()" class="member-name-link">getLookupProvider</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TagsUpdatedEvent.UpdateCause.html" title="enum class in net.neoforged.neoforge.event">TagsUpdatedEvent.UpdateCause</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUpdateCause()" class="member-name-link">getUpdateCause</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldUpdateStaticData()" class="member-name-link">shouldUpdateStaticData</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getLookupProvider()" class="member-name-link">getLookupProvider</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <a href="#getRegistries()"><code>getRegistries()</code></a> instead</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRegistries()" class="member-name-link">getRegistries</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the registries that have had their tags rebound.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="TagsUpdatedEvent.UpdateCause.html" title="enum class in net.neoforged.neoforge.event">TagsUpdatedEvent.UpdateCause</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getUpdateCause()" class="member-name-link">getUpdateCause</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Subscribe to subclasses instead</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldUpdateStaticData()" class="member-name-link">shouldUpdateStaticData</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether static data (which in single player is shared between server and client thread) should be updated as a
 result of this event.</div>
 </div>
@@ -193,26 +218,10 @@ result of this event.</div>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="lookupProvider">
-<h3>lookupProvider</h3>
+<section class="detail" id="registries">
+<h3>registries</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></span>&nbsp;<span class="element-name">lookupProvider</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updateCause">
-<h3>updateCause</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="TagsUpdatedEvent.UpdateCause.html" title="enum class in net.neoforged.neoforge.event">TagsUpdatedEvent.UpdateCause</a></span>&nbsp;<span class="element-name">updateCause</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="integratedServer">
-<h3>integratedServer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">integratedServer</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></span>&nbsp;<span class="element-name">registries</span></div>
 </div>
 </section>
 </li>
@@ -225,12 +234,10 @@ result of this event.</div>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.core.HolderLookup.Provider,boolean,boolean)">
+<section class="detail" id="&lt;init&gt;(net.minecraft.core.RegistryAccess)">
 <h3>TagsUpdatedEvent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TagsUpdatedEvent</span><wbr><span class="parameters">(<a href="../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;lookupProvider,
- boolean&nbsp;fromClientPacket,
- boolean&nbsp;isIntegratedServerConnection)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">TagsUpdatedEvent</span><wbr><span class="parameters">(<a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registries)</span></div>
 </div>
 </section>
 </li>
@@ -243,10 +250,28 @@ result of this event.</div>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="getRegistries()">
+<h3>getRegistries</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></span>&nbsp;<span class="element-name">getRegistries</span>()</div>
+<div class="block">Returns the registries that have had their tags rebound.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the registries that have had their tags rebound</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getLookupProvider()">
 <h3>getLookupProvider</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></span>&nbsp;<span class="element-name">getLookupProvider</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../minecraft/core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></span>&nbsp;<span class="element-name">getLookupProvider</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <a href="#getRegistries()"><code>getRegistries()</code></a> instead</div>
+</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The dynamic registries that have had their tags rebound.</dd>
@@ -258,7 +283,13 @@ result of this event.</div>
 <section class="detail" id="getUpdateCause()">
 <h3>getUpdateCause</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TagsUpdatedEvent.UpdateCause.html" title="enum class in net.neoforged.neoforge.event">TagsUpdatedEvent.UpdateCause</a></span>&nbsp;<span class="element-name">getUpdateCause</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="26.1.2")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TagsUpdatedEvent.UpdateCause.html" title="enum class in net.neoforged.neoforge.event">TagsUpdatedEvent.UpdateCause</a></span>&nbsp;<span class="element-name">getUpdateCause</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Subscribe to subclasses instead</div>
+</div>
+<div class="block">Returns the cause for this tag update.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the cause for this tag update</dd>

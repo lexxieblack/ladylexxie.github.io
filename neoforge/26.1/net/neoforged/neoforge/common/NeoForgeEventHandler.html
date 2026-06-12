@@ -54,15 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOOT_MODIFIER_MANAGER" tabindex="0">LOOT_MODIFIER_MANAGER</a></li>
-<li><a href="#DATA_MAP_LOADER" tabindex="0">DATA_MAP_LOADER</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">NeoForgeEventHandler()</a></li>
@@ -75,12 +68,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#postServerTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post)" tabindex="0">postServerTick(ServerTickEvent.Post)</a></li>
 <li><a href="#onChunkUnload(net.neoforged.neoforge.event.level.ChunkEvent.Unload)" tabindex="0">onChunkUnload(ChunkEvent.Unload)</a></li>
 <li><a href="#playerLogin(net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent)" tabindex="0">playerLogin(PlayerEvent.PlayerLoggedInEvent)</a></li>
-<li><a href="#tagsUpdated(net.neoforged.neoforge.event.TagsUpdatedEvent)" tabindex="0">tagsUpdated(TagsUpdatedEvent)</a></li>
+<li><a href="#tagsUpdated(net.neoforged.neoforge.event.TagsUpdatedEvent.ServerDataLoad)" tabindex="0">tagsUpdated(TagsUpdatedEvent.ServerDataLoad)</a></li>
 <li><a href="#onDpSync(net.neoforged.neoforge.event.OnDatapackSyncEvent)" tabindex="0">onDpSync(OnDatapackSyncEvent)</a></li>
 <li><a href="#handleSync(net.minecraft.server.level.ServerPlayer,net.minecraft.core.Registry,java.util.Collection)" tabindex="0">handleSync(ServerPlayer, Registry, Collection)</a></li>
 <li><a href="#onCommandsRegister(net.neoforged.neoforge.event.RegisterCommandsEvent)" tabindex="0">onCommandsRegister(RegisterCommandsEvent)</a></li>
 <li><a href="#onResourceReload(net.neoforged.neoforge.event.AddServerReloadListenersEvent)" tabindex="0">onResourceReload(AddServerReloadListenersEvent)</a></li>
-<li><a href="#getLootModifierManager()" tabindex="0">getLootModifierManager()</a></li>
 <li><a href="#builtinMobSpawnBlocker(net.neoforged.neoforge.event.entity.EntityJoinLevelEvent)" tabindex="0">builtinMobSpawnBlocker(EntityJoinLevelEvent)</a></li>
 <li><a href="#logTransformationsOnGameShutdown(net.neoforged.neoforge.event.GameShuttingDownEvent)" tabindex="0">logTransformationsOnGameShutdown(GameShuttingDownEvent)</a></li>
 </ol>
@@ -105,24 +97,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static <a href="../registries/DataMapLoader.html" title="class in net.neoforged.neoforge.registries">DataMapLoader</a></code></div>
-<div class="col-second even-row-color"><code><a href="#DATA_MAP_LOADER" class="member-name-link">DATA_MAP_LOADER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static <a href="loot/LootModifierManager.html" title="class in net.neoforged.neoforge.common.loot">LootModifierManager</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#LOOT_MODIFIER_MANAGER" class="member-name-link">LOOT_MODIFIER_MANAGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -141,7 +115,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -150,44 +124,41 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#builtinMobSpawnBlocker(net.neoforged.neoforge.event.entity.EntityJoinLevelEvent)" class="member-name-link">builtinMobSpawnBlocker</a><wbr>(<a href="../event/entity/EntityJoinLevelEvent.html" title="class in net.neoforged.neoforge.event.entity">EntityJoinLevelEvent</a>&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static <a href="loot/LootModifierManager.html" title="class in net.neoforged.neoforge.common.loot">LootModifierManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLootModifierManager()" class="member-name-link">getLootModifierManager</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private &lt;T&gt;&nbsp;void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleSync(net.minecraft.server.level.ServerPlayer,net.minecraft.core.Registry,java.util.Collection)" class="member-name-link">handleSync</a><wbr>(<a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private &lt;T&gt;&nbsp;void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleSync(net.minecraft.server.level.ServerPlayer,net.minecraft.core.Registry,java.util.Collection)" class="member-name-link">handleSync</a><wbr>(<a href="../../../minecraft/server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;T&gt;&nbsp;registry,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;&nbsp;attachments)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logTransformationsOnGameShutdown(net.neoforged.neoforge.event.GameShuttingDownEvent)" class="member-name-link">logTransformationsOnGameShutdown</a><wbr>(<a href="../event/GameShuttingDownEvent.html" title="class in net.neoforged.neoforge.event">GameShuttingDownEvent</a>&nbsp;event)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onChunkUnload(net.neoforged.neoforge.event.level.ChunkEvent.Unload)" class="member-name-link">onChunkUnload</a><wbr>(<a href="../event/level/ChunkEvent.Unload.html" title="class in net.neoforged.neoforge.event.level">ChunkEvent.Unload</a>&nbsp;event)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logTransformationsOnGameShutdown(net.neoforged.neoforge.event.GameShuttingDownEvent)" class="member-name-link">logTransformationsOnGameShutdown</a><wbr>(<a href="../event/GameShuttingDownEvent.html" title="class in net.neoforged.neoforge.event">GameShuttingDownEvent</a>&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onCommandsRegister(net.neoforged.neoforge.event.RegisterCommandsEvent)" class="member-name-link">onCommandsRegister</a><wbr>(<a href="../event/RegisterCommandsEvent.html" title="class in net.neoforged.neoforge.event">RegisterCommandsEvent</a>&nbsp;event)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onChunkUnload(net.neoforged.neoforge.event.level.ChunkEvent.Unload)" class="member-name-link">onChunkUnload</a><wbr>(<a href="../event/level/ChunkEvent.Unload.html" title="class in net.neoforged.neoforge.event.level">ChunkEvent.Unload</a>&nbsp;event)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDimensionUnload(net.neoforged.neoforge.event.level.LevelEvent.Unload)" class="member-name-link">onDimensionUnload</a><wbr>(<a href="../event/level/LevelEvent.Unload.html" title="class in net.neoforged.neoforge.event.level">LevelEvent.Unload</a>&nbsp;event)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onCommandsRegister(net.neoforged.neoforge.event.RegisterCommandsEvent)" class="member-name-link">onCommandsRegister</a><wbr>(<a href="../event/RegisterCommandsEvent.html" title="class in net.neoforged.neoforge.event">RegisterCommandsEvent</a>&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDpSync(net.neoforged.neoforge.event.OnDatapackSyncEvent)" class="member-name-link">onDpSync</a><wbr>(<a href="../event/OnDatapackSyncEvent.html" title="class in net.neoforged.neoforge.event">OnDatapackSyncEvent</a>&nbsp;event)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDimensionUnload(net.neoforged.neoforge.event.level.LevelEvent.Unload)" class="member-name-link">onDimensionUnload</a><wbr>(<a href="../event/level/LevelEvent.Unload.html" title="class in net.neoforged.neoforge.event.level">LevelEvent.Unload</a>&nbsp;event)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onEntityJoinWorld(net.neoforged.neoforge.event.entity.EntityJoinLevelEvent)" class="member-name-link">onEntityJoinWorld</a><wbr>(<a href="../event/entity/EntityJoinLevelEvent.html" title="class in net.neoforged.neoforge.event.entity">EntityJoinLevelEvent</a>&nbsp;event)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDpSync(net.neoforged.neoforge.event.OnDatapackSyncEvent)" class="member-name-link">onDpSync</a><wbr>(<a href="../event/OnDatapackSyncEvent.html" title="class in net.neoforged.neoforge.event">OnDatapackSyncEvent</a>&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onResourceReload(net.neoforged.neoforge.event.AddServerReloadListenersEvent)" class="member-name-link">onResourceReload</a><wbr>(<a href="../event/AddServerReloadListenersEvent.html" title="class in net.neoforged.neoforge.event">AddServerReloadListenersEvent</a>&nbsp;event)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onEntityJoinWorld(net.neoforged.neoforge.event.entity.EntityJoinLevelEvent)" class="member-name-link">onEntityJoinWorld</a><wbr>(<a href="../event/entity/EntityJoinLevelEvent.html" title="class in net.neoforged.neoforge.event.entity">EntityJoinLevelEvent</a>&nbsp;event)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playerLogin(net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent)" class="member-name-link">playerLogin</a><wbr>(<a href="../event/entity/player/PlayerEvent.PlayerLoggedInEvent.html" title="class in net.neoforged.neoforge.event.entity.player">PlayerEvent.PlayerLoggedInEvent</a>&nbsp;event)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onResourceReload(net.neoforged.neoforge.event.AddServerReloadListenersEvent)" class="member-name-link">onResourceReload</a><wbr>(<a href="../event/AddServerReloadListenersEvent.html" title="class in net.neoforged.neoforge.event">AddServerReloadListenersEvent</a>&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postServerTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post)" class="member-name-link">postServerTick</a><wbr>(<a href="../event/tick/ServerTickEvent.Post.html" title="class in net.neoforged.neoforge.event.tick">ServerTickEvent.Post</a>&nbsp;event)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playerLogin(net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent)" class="member-name-link">playerLogin</a><wbr>(<a href="../event/entity/player/PlayerEvent.PlayerLoggedInEvent.html" title="class in net.neoforged.neoforge.event.entity.player">PlayerEvent.PlayerLoggedInEvent</a>&nbsp;event)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tagsUpdated(net.neoforged.neoforge.event.TagsUpdatedEvent)" class="member-name-link">tagsUpdated</a><wbr>(<a href="../event/TagsUpdatedEvent.html" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent</a>&nbsp;event)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postServerTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post)" class="member-name-link">postServerTick</a><wbr>(<a href="../event/tick/ServerTickEvent.Post.html" title="class in net.neoforged.neoforge.event.tick">ServerTickEvent.Post</a>&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tagsUpdated(net.neoforged.neoforge.event.TagsUpdatedEvent.ServerDataLoad)" class="member-name-link">tagsUpdated</a><wbr>(<a href="../event/TagsUpdatedEvent.ServerDataLoad.html" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent.ServerDataLoad</a>&nbsp;event)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -200,30 +171,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOOT_MODIFIER_MANAGER">
-<h3>LOOT_MODIFIER_MANAGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="loot/LootModifierManager.html" title="class in net.neoforged.neoforge.common.loot">LootModifierManager</a></span>&nbsp;<span class="element-name">LOOT_MODIFIER_MANAGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DATA_MAP_LOADER">
-<h3>DATA_MAP_LOADER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../registries/DataMapLoader.html" title="class in net.neoforged.neoforge.registries">DataMapLoader</a></span>&nbsp;<span class="element-name">DATA_MAP_LOADER</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -286,10 +233,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="tagsUpdated(net.neoforged.neoforge.event.TagsUpdatedEvent)">
+<section class="detail" id="tagsUpdated(net.neoforged.neoforge.event.TagsUpdatedEvent.ServerDataLoad)">
 <h3>tagsUpdated</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">tagsUpdated</span><wbr><span class="parameters">(<a href="../event/TagsUpdatedEvent.html" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent</a>&nbsp;event)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">tagsUpdated</span><wbr><span class="parameters">(<a href="../event/TagsUpdatedEvent.ServerDataLoad.html" title="class in net.neoforged.neoforge.event">TagsUpdatedEvent.ServerDataLoad</a>&nbsp;event)</span></div>
 </div>
 </section>
 </li>
@@ -324,14 +271,6 @@ loadScripts(document, 'script');</script>
 <h3>onResourceReload</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onResourceReload</span><wbr><span class="parameters">(<a href="../event/AddServerReloadListenersEvent.html" title="class in net.neoforged.neoforge.event">AddServerReloadListenersEvent</a>&nbsp;event)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getLootModifierManager()">
-<h3>getLootModifierManager</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="loot/LootModifierManager.html" title="class in net.neoforged.neoforge.common.loot">LootModifierManager</a></span>&nbsp;<span class="element-name">getLootModifierManager</span>()</div>
 </div>
 </section>
 </li>

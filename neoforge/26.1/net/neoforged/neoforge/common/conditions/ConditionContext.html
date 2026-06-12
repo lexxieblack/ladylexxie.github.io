@@ -59,7 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#pendingTags" tabindex="0">pendingTags</a></li>
+<li><a href="#pendingContents" tabindex="0">pendingContents</a></li>
 <li><a href="#enabledFeatures" tabindex="0">enabledFeatures</a></li>
 <li><a href="#registryAccess" tabindex="0">registryAccess</a></li>
 </ol>
@@ -73,6 +73,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#clear()" tabindex="0">clear()</a></li>
 <li><a href="#isTagLoaded(net.minecraft.tags.TagKey)" tabindex="0">isTagLoaded(TagKey)</a></li>
+<li><a href="#getTag(net.minecraft.tags.TagKey)" tabindex="0">getTag(TagKey)</a></li>
 <li><a href="#registryAccess()" tabindex="0">registryAccess()</a></li>
 <li><a href="#enabledFeatures()" tabindex="0">enabledFeatures()</a></li>
 </ol>
@@ -113,8 +114,8 @@ implements <a href="ICondition.IContext.html" title="interface in net.neoforged.
 <div class="col-first even-row-color"><code>private final <a href="../../../../minecraft/world/flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a></code></div>
 <div class="col-second even-row-color"><code><a href="#enabledFeatures" class="member-name-link">enabledFeatures</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="../../../../minecraft/core/HolderLookup.RegistryLookup.html" title="interface in net.minecraft.core">HolderLookup.RegistryLookup</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#pendingTags" class="member-name-link">pendingTags</a></code></div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../minecraft/tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;?&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;?&gt;&gt;&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#pendingContents" class="member-name-link">pendingContents</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>private final <a href="../../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
 <div class="col-second even-row-color"><code><a href="#registryAccess" class="member-name-link">registryAccess</a></code></div>
@@ -157,14 +158,22 @@ implements <a href="ICondition.IContext.html" title="interface in net.neoforged.
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../minecraft/world/flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enabledFeatures()" class="member-name-link">enabledFeatures</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTagLoaded(net.minecraft.tags.TagKey)" class="member-name-link">isTagLoaded</a><wbr>(<a href="../../../../minecraft/tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;T&gt;&nbsp;key)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="../../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;T&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTag(net.minecraft.tags.TagKey)" class="member-name-link">getTag</a><wbr>(<a href="../../../../minecraft/tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;T&gt;&nbsp;key)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the contents of the requested tag as loaded from data packs, or an empty collection if
+the tag is not loaded.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTagLoaded(net.minecraft.tags.TagKey)" class="member-name-link">isTagLoaded</a><wbr>(<a href="../../../../minecraft/tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;T&gt;&nbsp;key)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns <code>true</code> if the requested tag is available.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registryAccess()" class="member-name-link">registryAccess</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registryAccess()" class="member-name-link">registryAccess</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Provides access to the loaded registries if this context is used for a datapack reload.</div>
+</div>
 </div>
 </div>
 </div>
@@ -183,10 +192,10 @@ implements <a href="ICondition.IContext.html" title="interface in net.neoforged.
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="pendingTags">
-<h3>pendingTags</h3>
+<section class="detail" id="pendingContents">
+<h3>pendingContents</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="../../../../minecraft/core/HolderLookup.RegistryLookup.html" title="interface in net.minecraft.core">HolderLookup.RegistryLookup</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">pendingTags</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../minecraft/tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;?&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;?&gt;&gt;&gt;</span>&nbsp;<span class="element-name">pendingContents</span></div>
 </div>
 </section>
 </li>
@@ -246,10 +255,27 @@ implements <a href="ICondition.IContext.html" title="interface in net.neoforged.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isTagLoaded</span><wbr><span class="parameters">(<a href="../../../../minecraft/tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;T&gt;&nbsp;key)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ICondition.IContext.html#isTagLoaded(net.minecraft.tags.TagKey)">ICondition.IContext</a></code></span></div>
-<div class="block">Returns <code>true</code> if the requested tag is available.</div>
+<div class="block">Returns <code>true</code> if the requested tag is available.
+This method does not require that the loaded tag have any elements, only that it be present at all.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ICondition.IContext.html#isTagLoaded(net.minecraft.tags.TagKey)">isTagLoaded</a></code>&nbsp;in interface&nbsp;<code><a href="ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTag(net.minecraft.tags.TagKey)">
+<h3>getTag</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="../../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;T&gt;&gt;</span>&nbsp;<span class="element-name">getTag</span><wbr><span class="parameters">(<a href="../../../../minecraft/tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;T&gt;&nbsp;key)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ICondition.IContext.html#getTag(net.minecraft.tags.TagKey)">ICondition.IContext</a></code></span></div>
+<div class="block">Returns the contents of the requested tag as loaded from data packs, or an empty collection if
+the tag is not loaded. The returned holders are safe to inspect even though the tag has not yet
+been bound to its registry (i.e. <a href="../../../../minecraft/core/Registry.PendingTags.html#apply()"><code>Registry.PendingTags.apply()</code></a> has not yet run).</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="ICondition.IContext.html#getTag(net.minecraft.tags.TagKey)">getTag</a></code>&nbsp;in interface&nbsp;<code><a href="ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a></code></dd>
 </dl>
 </div>
 </section>
@@ -259,9 +285,13 @@ implements <a href="ICondition.IContext.html" title="interface in net.neoforged.
 <h3>registryAccess</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></span>&nbsp;<span class="element-name">registryAccess</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ICondition.IContext.html#registryAccess()">ICondition.IContext</a></code></span></div>
+<div class="block">Provides access to the loaded registries if this context is used for a datapack reload.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ICondition.IContext.html#registryAccess()">registryAccess</a></code>&nbsp;in interface&nbsp;<code><a href="ICondition.IContext.html" title="interface in net.neoforged.neoforge.common.conditions">ICondition.IContext</a></code></dd>
+<dt>Returns:</dt>
+<dd>The <a href="../../../../minecraft/core/RegistryAccess.html" title="interface in net.minecraft.core"><code>RegistryAccess</code></a> context for the currently active reload.</dd>
 </dl>
 </div>
 </section>

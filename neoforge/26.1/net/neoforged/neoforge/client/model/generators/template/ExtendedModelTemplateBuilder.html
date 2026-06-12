@@ -66,8 +66,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#elements" tabindex="0">elements</a></li>
 <li><a href="#customLoader" tabindex="0">customLoader</a></li>
 <li><a href="#rootTransforms" tabindex="0">rootTransforms</a></li>
+<li><a href="#partVisibilities" tabindex="0">partVisibilities</a></li>
 <li><a href="#ambientOcclusion" tabindex="0">ambientOcclusion</a></li>
 <li><a href="#guiLight" tabindex="0">guiLight</a></li>
+<li><a href="#itemLayerFaceData" tabindex="0">itemLayerFaceData</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -90,6 +92,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#getElementCount()" tabindex="0">getElementCount()</a></li>
 <li><a href="#customLoader(java.util.function.Supplier,java.util.function.Consumer)" tabindex="0">customLoader(Supplier, Consumer)</a></li>
 <li><a href="#rootTransforms(java.util.function.Consumer)" tabindex="0">rootTransforms(Consumer)</a></li>
+<li><a href="#itemLayerFaceData(java.lang.String,net.neoforged.neoforge.client.model.ExtraFaceData)" tabindex="0">itemLayerFaceData(String, ExtraFaceData)</a></li>
+<li><a href="#partVisibilities(java.util.Map)" tabindex="0">partVisibilities(Map)</a></li>
+<li><a href="#partVisibility(java.lang.String,boolean)" tabindex="0">partVisibility(String, boolean)</a></li>
 <li><a href="#build()" tabindex="0">build()</a></li>
 </ol>
 </li>
@@ -133,8 +138,14 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>(package private) @Nullable <a href="../../../../../../minecraft/client/resources/model/UnbakedModel.GuiLight.html" title="enum class in net.minecraft.client.resources.model">UnbakedModel.GuiLight</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#guiLight" class="member-name-link">guiLight</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>(package private) <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#parent" class="member-name-link">parent</a></code></div>
+<div class="col-first even-row-color"><code>(package private) final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="../../ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#itemLayerFaceData" class="member-name-link">itemLayerFaceData</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>(package private) <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#parent" class="member-name-link">parent</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>(package private) final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#partVisibilities" class="member-name-link">partVisibilities</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>(package private) final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../../../../minecraft/client/data/models/model/TextureSlot.html" title="class in net.minecraft.client.data.models.model">TextureSlot</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#requiredSlots" class="member-name-link">requiredSlots</a></code></div>
@@ -215,33 +226,50 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the gui light style for this model.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.client.data.models.model.ModelTemplate)" class="member-name-link">of</a><wbr>(<a href="../../../../../../minecraft/client/data/models/model/ModelTemplate.html" title="class in net.minecraft.client.data.models.model">ModelTemplate</a>&nbsp;template)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parent(net.minecraft.resources.Identifier)" class="member-name-link">parent</a><wbr>(<a href="../../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;parent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#itemLayerFaceData(java.lang.String,net.neoforged.neoforge.client.model.ExtraFaceData)" class="member-name-link">itemLayerFaceData</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;layer,
+ <a href="../../ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Specify the provided <a href="../../ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model"><code>ExtraFaceData</code></a> for the given layer.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.client.data.models.model.ModelTemplate)" class="member-name-link">of</a><wbr>(<a href="../../../../../../minecraft/client/data/models/model/ModelTemplate.html" title="class in net.minecraft.client.data.models.model">ModelTemplate</a>&nbsp;template)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parent(net.minecraft.resources.Identifier)" class="member-name-link">parent</a><wbr>(<a href="../../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;parent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Parent model which this template will inherit its properties from.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#partVisibilities(java.util.Map)" class="member-name-link">partVisibilities</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;newVisibilities)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Replace all the stored visibilities with a copy of the supplied map.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiredTextureSlot(net.minecraft.client.data.models.model.TextureSlot)" class="member-name-link">requiredTextureSlot</a><wbr>(<a href="../../../../../../minecraft/client/data/models/model/TextureSlot.html" title="class in net.minecraft.client.data.models.model">TextureSlot</a>&nbsp;slot)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#partVisibility(java.lang.String,boolean)" class="member-name-link">partVisibility</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;part,
+ boolean&nbsp;visible)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set a model part's visibility.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiredTextureSlot(net.minecraft.client.data.models.model.TextureSlot)" class="member-name-link">requiredTextureSlot</a><wbr>(<a href="../../../../../../minecraft/client/data/models/model/TextureSlot.html" title="class in net.minecraft.client.data.models.model">TextureSlot</a>&nbsp;slot)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Marks the given <a href="../../../../../../minecraft/client/data/models/model/TextureSlot.html" title="class in net.minecraft.client.data.models.model"><code>slot</code></a> as required, meaning that it must be specified in the given <a href="../../../../../../minecraft/client/data/models/model/TextureMapping.html" title="class in net.minecraft.client.data.models.model"><code>texture mappings</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rootTransforms(java.util.function.Consumer)" class="member-name-link">rootTransforms</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="RootTransformsBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">RootTransformsBuilder</a>&gt;&nbsp;action)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rootTransforms(java.util.function.Consumer)" class="member-name-link">rootTransforms</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="RootTransformsBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">RootTransformsBuilder</a>&gt;&nbsp;action)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Modifies the transformation applied right before item display transformations and rotations specified in block states.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#suffix(java.lang.String)" class="member-name-link">suffix</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;suffix)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#suffix(java.lang.String)" class="member-name-link">suffix</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;suffix)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Suffix appended onto the models file path.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transform(net.minecraft.world.item.ItemDisplayContext,java.util.function.Consumer)" class="member-name-link">transform</a><wbr>(<a href="../../../../../../minecraft/world/item/ItemDisplayContext.html" title="enum class in net.minecraft.world.item">ItemDisplayContext</a>&nbsp;type,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transform(net.minecraft.world.item.ItemDisplayContext,java.util.function.Consumer)" class="member-name-link">transform</a><wbr>(<a href="../../../../../../minecraft/world/item/ItemDisplayContext.html" title="enum class in net.minecraft.world.item">ItemDisplayContext</a>&nbsp;type,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="TransformVecBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">TransformVecBuilder</a>&gt;&nbsp;action)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Begin building a new transform for the given perspective.</div>
 </div>
 </div>
@@ -318,6 +346,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="partVisibilities">
+<h3>partVisibilities</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">partVisibilities</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="ambientOcclusion">
 <h3>ambientOcclusion</h3>
 <div class="horizontal-scroll">
@@ -330,6 +366,14 @@ loadScripts(document, 'script');</script>
 <h3>guiLight</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">@Nullable <a href="../../../../../../minecraft/client/resources/model/UnbakedModel.GuiLight.html" title="enum class in net.minecraft.client.resources.model">UnbakedModel.GuiLight</a></span>&nbsp;<span class="element-name">guiLight</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="itemLayerFaceData">
+<h3>itemLayerFaceData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="../../ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;</span>&nbsp;<span class="element-name">itemLayerFaceData</span></div>
 </div>
 </section>
 </li>
@@ -508,6 +552,41 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></span>&nbsp;<span class="element-name">rootTransforms</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="RootTransformsBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">RootTransformsBuilder</a>&gt;&nbsp;action)</span></div>
 <div class="block">Modifies the transformation applied right before item display transformations and rotations specified in block states.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="itemLayerFaceData(java.lang.String,net.neoforged.neoforge.client.model.ExtraFaceData)">
+<h3>itemLayerFaceData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></span>&nbsp;<span class="element-name">itemLayerFaceData</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;layer,
+ <a href="../../ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</span></div>
+<div class="block"><p>Specify the provided <a href="../../ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model"><code>ExtraFaceData</code></a> for the given layer.</p>
+<p>The provided layer must be one of <a href="../../../../../../minecraft/client/resources/model/cuboid/ItemModelGenerator.html#LAYERS"><code>ItemModelGenerator.LAYERS</code></a> and must be declared as a <a href="#requiredTextureSlot(net.minecraft.client.data.models.model.TextureSlot)">required texture slot</a>.</p>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="partVisibilities(java.util.Map)">
+<h3>partVisibilities</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></span>&nbsp;<span class="element-name">partVisibilities</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;newVisibilities)</span></div>
+<div class="block"><p>Replace all the stored visibilities with a copy of the supplied map.</p>
+<p>Existing values are cleared.</p>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="partVisibility(java.lang.String,boolean)">
+<h3>partVisibility</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ExtendedModelTemplateBuilder.html" title="class in net.neoforged.neoforge.client.model.generators.template">ExtendedModelTemplateBuilder</a></span>&nbsp;<span class="element-name">partVisibility</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;part,
+ boolean&nbsp;visible)</span></div>
+<div class="block"><p>Set a model part's visibility.</p>
+<p>Unless overriding a parent model's part visibility, setting an entry to true is not necessary.</p>
+</div>
 </div>
 </section>
 </li>

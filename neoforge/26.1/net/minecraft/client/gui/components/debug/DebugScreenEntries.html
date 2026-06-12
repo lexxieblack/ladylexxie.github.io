@@ -106,6 +106,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#VISUALIZE_SKY_LIGHT_SECTIONS" tabindex="0">VISUALIZE_SKY_LIGHT_SECTIONS</a></li>
 <li><a href="#CHUNK_SECTION_VISIBILITY" tabindex="0">CHUNK_SECTION_VISIBILITY</a></li>
 <li><a href="#PROFILES" tabindex="0">PROFILES</a></li>
+<li><a href="#PROFILES_MUTABLE" tabindex="0">PROFILES_MUTABLE</a></li>
+<li><a href="#MODDED_ENTRIES_REGISTERED" tabindex="0">MODDED_ENTRIES_REGISTERED</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -119,6 +121,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#register(net.minecraft.resources.Identifier,net.minecraft.client.gui.components.debug.DebugScreenEntry)" tabindex="0">register(Identifier, DebugScreenEntry)</a></li>
 <li><a href="#allEntries()" tabindex="0">allEntries()</a></li>
 <li><a href="#getEntry(net.minecraft.resources.Identifier)" tabindex="0">getEntry(Identifier)</a></li>
+<li><a href="#registerModdedDebugEntries()" tabindex="0">registerModdedDebugEntries()</a></li>
 </ol>
 </li>
 </ol>
@@ -230,20 +233,26 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
 <div class="col-second even-row-color"><code><a href="#MEMORY" class="member-name-link">MEMORY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#PARTICLE_RENDER_STATS" class="member-name-link">PARTICLE_RENDER_STATS</a></code></div>
+<div class="col-first odd-row-color"><code>private static boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#MODDED_ENTRIES_REGISTERED" class="member-name-link">MODDED_ENTRIES_REGISTERED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second even-row-color"><code><a href="#PLAYER_POSITION" class="member-name-link">PLAYER_POSITION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#PARTICLE_RENDER_STATS" class="member-name-link">PARTICLE_RENDER_STATS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#PLAYER_SECTION_POSITION" class="member-name-link">PLAYER_SECTION_POSITION</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#PLAYER_POSITION" class="member-name-link">PLAYER_POSITION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second even-row-color"><code><a href="#POST_EFFECT" class="member-name-link">POST_EFFECT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#PLAYER_SECTION_POSITION" class="member-name-link">PLAYER_SECTION_POSITION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="DebugScreenProfile.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenProfile</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="DebugScreenEntryStatus.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenEntryStatus</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#PROFILES" class="member-name-link">PROFILES</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#POST_EFFECT" class="member-name-link">POST_EFFECT</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="DebugScreenProfile.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenProfile</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="DebugScreenEntryStatus.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenEntryStatus</a>&gt;&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#PROFILES" class="member-name-link">PROFILES</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="DebugScreenProfile.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenProfile</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="DebugScreenEntryStatus.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenEntryStatus</a>&gt;&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#PROFILES_MUTABLE" class="member-name-link">PROFILES_MUTABLE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SIMPLE_PERFORMANCE_IMPACTORS" class="member-name-link">SIMPLE_PERFORMANCE_IMPACTORS</a></code></div>
@@ -331,6 +340,9 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#register(net.minecraft.resources.Identifier,net.minecraft.client.gui.components.debug.DebugScreenEntry)" class="member-name-link">register</a><wbr>(<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;identifier,
  <a href="DebugScreenEntry.html" title="interface in net.minecraft.client.gui.components.debug">DebugScreenEntry</a>&nbsp;entry)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#registerModdedDebugEntries()" class="member-name-link">registerModdedDebugEntries</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -724,6 +736,22 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="PROFILES_MUTABLE">
+<h3>PROFILES_MUTABLE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="DebugScreenProfile.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenProfile</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="DebugScreenEntryStatus.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenEntryStatus</a>&gt;&gt;</span>&nbsp;<span class="element-name">PROFILES_MUTABLE</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="MODDED_ENTRIES_REGISTERED">
+<h3>MODDED_ENTRIES_REGISTERED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">MODDED_ENTRIES_REGISTERED</span></div>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -779,6 +807,15 @@ loadScripts(document, 'script');</script>
 <h3>getEntry</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">@Nullable <a href="DebugScreenEntry.html" title="interface in net.minecraft.client.gui.components.debug">DebugScreenEntry</a></span>&nbsp;<span class="element-name">getEntry</span><wbr><span class="parameters">(<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="registerModdedDebugEntries()">
+<h3>registerModdedDebugEntries</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations">@Internal
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerModdedDebugEntries</span>()</div>
 </div>
 </section>
 </li>

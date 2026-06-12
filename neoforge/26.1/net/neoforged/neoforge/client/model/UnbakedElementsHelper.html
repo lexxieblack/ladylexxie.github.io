@@ -66,6 +66,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#bakeItemMaskQuads(net.minecraft.client.resources.model.ModelBaker,int,net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.renderer.block.dispatch.ModelState)" tabindex="0">bakeItemMaskQuads(ModelBaker, int, Material.Baked, Material.Baked, ModelState)</a></li>
 <li><a href="#bakeItemMaskQuads(net.minecraft.client.resources.model.ModelBaker,int,net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.renderer.block.dispatch.ModelState,net.neoforged.neoforge.client.model.ExtraFaceData)" tabindex="0">bakeItemMaskQuads(ModelBaker, int, Material.Baked, Material.Baked, ModelState, ExtraFaceData)</a></li>
 <li><a href="#bakeItemMaskQuads(net.minecraft.client.resources.model.ModelBaker,int,net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.renderer.block.dispatch.ModelState,net.neoforged.neoforge.client.model.ExtraFaceData,java.util.function.UnaryOperator)" tabindex="0">bakeItemMaskQuads(ModelBaker, int, Material.Baked, Material.Baked, ModelState, ExtraFaceData, UnaryOperator)</a></li>
+<li><a href="#bakeItemMaskQuads(net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.minecraft.client.renderer.block.dispatch.ModelState,net.neoforged.neoforge.client.model.ExtraFaceData)" tabindex="0">bakeItemMaskQuads(ModelBaker, Material.Baked, BakedQuad.MaterialInfo, ModelState, ExtraFaceData)</a></li>
 <li><a href="#bakeElements(net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.resources.model.geometry.QuadCollection.Builder,java.util.List,java.util.function.Function,net.minecraft.client.renderer.block.dispatch.ModelState)" tabindex="0">bakeElements(ModelBaker, QuadCollection.Builder, List, Function, ModelState)</a></li>
 <li><a href="#bakeElements(net.minecraft.client.resources.model.ModelBaker,java.util.List,java.util.function.Function,net.minecraft.client.renderer.block.dispatch.ModelState)" tabindex="0">bakeElements(ModelBaker, List, Function, ModelState)</a></li>
 <li><a href="#composeRootTransformIntoModelState(net.minecraft.client.renderer.block.dispatch.ModelState,com.mojang.math.Transformation)" tabindex="0">composeRootTransformIntoModelState(ModelState, Transformation)</a></li>
@@ -161,10 +162,19 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Bakes quads in the shape of the specified mask texture with the specified output texture applied to them.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../minecraft/client/renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#composeRootTransformIntoModelState(net.minecraft.client.renderer.block.dispatch.ModelState,com.mojang.math.Transformation)" class="member-name-link">composeRootTransformIntoModelState</a><wbr>(<a href="../../../../minecraft/client/renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
- <a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&nbsp;rootTransform)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../minecraft/client/resources/model/geometry/QuadCollection.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bakeItemMaskQuads(net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.minecraft.client.renderer.block.dispatch.ModelState,net.neoforged.neoforge.client.model.ExtraFaceData)" class="member-name-link">bakeItemMaskQuads</a><wbr>(<a href="../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker,
+ <a href="../../../../minecraft/client/resources/model/sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a>&nbsp;maskMaterial,
+ <a href="../../../../minecraft/client/resources/model/geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;outMaterialInfo,
+ <a href="../../../../minecraft/client/renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ <a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Bakes quads in the shape of the specified mask texture with the specified output texture applied to them.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../minecraft/client/renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#composeRootTransformIntoModelState(net.minecraft.client.renderer.block.dispatch.ModelState,com.mojang.math.Transformation)" class="member-name-link">composeRootTransformIntoModelState</a><wbr>(<a href="../../../../minecraft/client/renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ <a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&nbsp;rootTransform)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a <a href="../../../../minecraft/client/renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch"><code>ModelState</code></a> that combines the existing model state and the <a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">root transform</a>.</div>
 </div>
 </div>
@@ -250,6 +260,21 @@ The <a href="../../../../minecraft/core/Direction.html#NORTH"><code>Direction.NO
 <div class="block">Bakes quads in the shape of the specified mask texture with the specified output texture applied to them.
 <p>
 The <a href="../../../../minecraft/core/Direction.html#NORTH"><code>Direction.NORTH</code></a> and <a href="../../../../minecraft/core/Direction.html#SOUTH"><code>Direction.SOUTH</code></a> faces take up only the pixels the mask texture uses.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bakeItemMaskQuads(net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.resources.model.sprite.Material.Baked,net.minecraft.client.resources.model.geometry.BakedQuad.MaterialInfo,net.minecraft.client.renderer.block.dispatch.ModelState,net.neoforged.neoforge.client.model.ExtraFaceData)">
+<h3>bakeItemMaskQuads</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/client/resources/model/geometry/QuadCollection.html" title="class in net.minecraft.client.resources.model.geometry">QuadCollection</a></span>&nbsp;<span class="element-name">bakeItemMaskQuads</span><wbr><span class="parameters">(<a href="../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker,
+ <a href="../../../../minecraft/client/resources/model/sprite/Material.Baked.html" title="class in net.minecraft.client.resources.model.sprite">Material.Baked</a>&nbsp;maskMaterial,
+ <a href="../../../../minecraft/client/resources/model/geometry/BakedQuad.MaterialInfo.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad.MaterialInfo</a>&nbsp;outMaterialInfo,
+ <a href="../../../../minecraft/client/renderer/block/dispatch/ModelState.html" title="interface in net.minecraft.client.renderer.block.dispatch">ModelState</a>&nbsp;modelState,
+ <a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&nbsp;faceData)</span></div>
+<div class="block"><p>Bakes quads in the shape of the specified mask texture with the specified output texture applied to them.</p>
+<p>The <a href="../../../../minecraft/core/Direction.html#NORTH"><code>Direction.NORTH</code></a> and <a href="../../../../minecraft/core/Direction.html#SOUTH"><code>Direction.SOUTH</code></a> faces take up only the pixels the mask texture uses.</p>
+</div>
 </div>
 </section>
 </li>

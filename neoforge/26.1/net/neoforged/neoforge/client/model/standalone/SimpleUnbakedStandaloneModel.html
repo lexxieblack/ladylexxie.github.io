@@ -66,12 +66,12 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(net.minecraft.resources.Identifier,java.util.function.BiFunction)" tabindex="0">SimpleUnbakedStandaloneModel(Identifier, BiFunction)</a></li>
+<li><a href="#%3Cinit%3E(net.minecraft.resources.Identifier,net.neoforged.neoforge.client.model.standalone.SimpleUnbakedStandaloneModel.SimpleBaker)" tabindex="0">SimpleUnbakedStandaloneModel(Identifier, SimpleUnbakedStandaloneModel.SimpleBaker)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#bake(net.minecraft.client.resources.model.ModelBaker)" tabindex="0">bake(ModelBaker)</a></li>
+<li><a href="#bake(net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.resources.model.ModelDebugName)" tabindex="0">bake(ModelBaker, ModelDebugName)</a></li>
 <li><a href="#resolveDependencies(net.minecraft.client.resources.model.ResolvableModel.Resolver)" tabindex="0">resolveDependencies(ResolvableModel.Resolver)</a></li>
 <li><a href="#simpleModelWrapper(net.minecraft.resources.Identifier)" tabindex="0">simpleModelWrapper(Identifier)</a></li>
 <li><a href="#simpleModelWrapper(net.minecraft.resources.Identifier,net.minecraft.client.renderer.block.dispatch.ModelState)" tabindex="0">simpleModelWrapper(Identifier, ModelState)</a></li>
@@ -130,6 +130,15 @@ and store them in an object of arbitrary type <code>T</code>.
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="SimpleUnbakedStandaloneModel.SimpleBaker.html" class="type-name-link" title="interface in net.neoforged.neoforge.client.model.standalone">SimpleUnbakedStandaloneModel.SimpleBaker</a>&lt;<a href="SimpleUnbakedStandaloneModel.SimpleBaker.html#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel.SimpleBaker">T</a>&gt;</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.minecraft.client.resources.model.ResolvableModel">Nested classes/interfaces inherited from interface&nbsp;<a href="../../../../../minecraft/client/resources/model/ResolvableModel.html#nested-class-summary" title="interface in net.minecraft.client.resources.model">ResolvableModel</a></h3>
 <code><a href="../../../../../minecraft/client/resources/model/ResolvableModel.Resolver.html" title="interface in net.minecraft.client.resources.model">ResolvableModel.Resolver</a></code></div>
@@ -144,7 +153,7 @@ and store them in an object of arbitrary type <code>T</code>.
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a><wbr>&lt;<a href="../../../../../minecraft/client/resources/model/ResolvedModel.html" title="interface in net.minecraft.client.resources.model">ResolvedModel</a>, <a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>, <a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>private final <a href="SimpleUnbakedStandaloneModel.SimpleBaker.html" title="interface in net.neoforged.neoforge.client.model.standalone">SimpleUnbakedStandaloneModel.SimpleBaker</a><wbr>&lt;<a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#bake" class="member-name-link">bake</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>private final <a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
@@ -161,8 +170,8 @@ and store them in an object of arbitrary type <code>T</code>.
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.resources.Identifier,java.util.function.BiFunction)" class="member-name-link">SimpleUnbakedStandaloneModel</a><wbr>(<a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;modelId,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="../../../../../minecraft/client/resources/model/ResolvedModel.html" title="interface in net.minecraft.client.resources.model">ResolvedModel</a>, <a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>, <a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;&nbsp;bake)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.resources.Identifier,net.neoforged.neoforge.client.model.standalone.SimpleUnbakedStandaloneModel.SimpleBaker)" class="member-name-link">SimpleUnbakedStandaloneModel</a><wbr>(<a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;modelId,
+ <a href="SimpleUnbakedStandaloneModel.SimpleBaker.html" title="interface in net.neoforged.neoforge.client.model.standalone">SimpleUnbakedStandaloneModel.SimpleBaker</a>&lt;<a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;&nbsp;bake)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Construct a new <a href="SimpleUnbakedStandaloneModel.html" title="class in net.neoforged.neoforge.client.model.standalone"><code>SimpleUnbakedStandaloneModel</code></a>.</div>
 </div>
@@ -181,7 +190,8 @@ and store them in an object of arbitrary type <code>T</code>.
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bake(net.minecraft.client.resources.model.ModelBaker)" class="member-name-link">bake</a><wbr>(<a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bake(net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.resources.model.ModelDebugName)" class="member-name-link">bake</a><wbr>(<a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker,
+ <a href="../../../../../minecraft/client/resources/model/ModelDebugName.html" title="interface in net.minecraft.client.resources.model">ModelDebugName</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Bake this model.</div>
 </div>
@@ -250,7 +260,7 @@ and store them in an object of arbitrary type <code>T</code>.
 <section class="detail" id="bake">
 <h3>bake</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="../../../../../minecraft/client/resources/model/ResolvedModel.html" title="interface in net.minecraft.client.resources.model">ResolvedModel</a>, <a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>, <a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;</span>&nbsp;<span class="element-name">bake</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="SimpleUnbakedStandaloneModel.SimpleBaker.html" title="interface in net.neoforged.neoforge.client.model.standalone">SimpleUnbakedStandaloneModel.SimpleBaker</a>&lt;<a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;</span>&nbsp;<span class="element-name">bake</span></div>
 </div>
 </section>
 </li>
@@ -263,11 +273,11 @@ and store them in an object of arbitrary type <code>T</code>.
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.resources.Identifier,java.util.function.BiFunction)">
+<section class="detail" id="&lt;init&gt;(net.minecraft.resources.Identifier,net.neoforged.neoforge.client.model.standalone.SimpleUnbakedStandaloneModel.SimpleBaker)">
 <h3>SimpleUnbakedStandaloneModel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SimpleUnbakedStandaloneModel</span><wbr><span class="parameters">(<a href="../../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;modelId,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="../../../../../minecraft/client/resources/model/ResolvedModel.html" title="interface in net.minecraft.client.resources.model">ResolvedModel</a>, <a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>, <a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;&nbsp;bake)</span></div>
+ <a href="SimpleUnbakedStandaloneModel.SimpleBaker.html" title="interface in net.neoforged.neoforge.client.model.standalone">SimpleUnbakedStandaloneModel.SimpleBaker</a>&lt;<a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;&nbsp;bake)</span></div>
 <div class="block">Construct a new <a href="SimpleUnbakedStandaloneModel.html" title="class in net.neoforged.neoforge.client.model.standalone"><code>SimpleUnbakedStandaloneModel</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -286,17 +296,19 @@ and store them in an object of arbitrary type <code>T</code>.
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="bake(net.minecraft.client.resources.model.ModelBaker)">
+<section class="detail" id="bake(net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.resources.model.ModelDebugName)">
 <h3>bake</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a></span>&nbsp;<span class="element-name">bake</span><wbr><span class="parameters">(<a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="UnbakedStandaloneModel.html#bake(net.minecraft.client.resources.model.ModelBaker)">UnbakedStandaloneModel</a></code></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a></span>&nbsp;<span class="element-name">bake</span><wbr><span class="parameters">(<a href="../../../../../minecraft/client/resources/model/ModelBaker.html" title="interface in net.minecraft.client.resources.model">ModelBaker</a>&nbsp;baker,
+ <a href="../../../../../minecraft/client/resources/model/ModelDebugName.html" title="interface in net.minecraft.client.resources.model">ModelDebugName</a>&nbsp;name)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="UnbakedStandaloneModel.html#bake(net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.resources.model.ModelDebugName)">UnbakedStandaloneModel</a></code></span></div>
 <div class="block">Bake this model.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="UnbakedStandaloneModel.html#bake(net.minecraft.client.resources.model.ModelBaker)">bake</a></code>&nbsp;in interface&nbsp;<code><a href="UnbakedStandaloneModel.html" title="interface in net.neoforged.neoforge.client.model.standalone">UnbakedStandaloneModel</a>&lt;<a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;</code></dd>
+<dd><code><a href="UnbakedStandaloneModel.html#bake(net.minecraft.client.resources.model.ModelBaker,net.minecraft.client.resources.model.ModelDebugName)">bake</a></code>&nbsp;in interface&nbsp;<code><a href="UnbakedStandaloneModel.html" title="interface in net.neoforged.neoforge.client.model.standalone">UnbakedStandaloneModel</a>&lt;<a href="#type-param-T" title="type parameter in SimpleUnbakedStandaloneModel">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
 <dd><code>baker</code> - The current model baker.</dd>
+<dd><code>name</code> - The debug name of this model currently being baked.</dd>
 <dt>Returns:</dt>
 <dd>The fully-baked model.</dd>
 </dl>

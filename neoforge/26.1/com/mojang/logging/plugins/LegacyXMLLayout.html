@@ -1,0 +1,623 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>LegacyXMLLayout (NeoForge 26.1)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="declaration: package: com.mojang.logging.plugins, class: LegacyXMLLayout">
+<meta name="generator" content="javadoc/ClassWriter">
+<link rel="stylesheet" type="text/css" href="../../../../resource-files/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="../../../../resource-files/stylesheet.css">
+<script type="text/javascript" src="../../../../script-files/script.js"></script>
+<script type="text/javascript" src="../../../../script-files/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../../../../script-files/jquery-ui.min.js"></script>
+</head>
+<body class="class-declaration-page">
+<script type="text/javascript">const pathtoroot = "../../../../";
+loadScripts(document, 'script');</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<header role="banner">
+<nav role="navigation">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="top-nav" id="navbar-top">
+<div class="nav-content">
+<div class="nav-menu-button"><button id="navbar-toggle-button" aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation links"><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span></button></div>
+<div class="skip-nav"><a href="#skip-navbar-top" title="Skip navigation links">Skip navigation links</a></div>
+<ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
+<li><a href="../../../../index.html">Overview</a></li>
+<li class="nav-bar-cell1-rev">Class</li>
+<li><a href="class-use/LegacyXMLLayout.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../search.html">Search</a></li>
+<li><a href="../../../../help-doc.html#class">Help</a></li>
+</ul>
+</div>
+</div>
+<div class="sub-nav">
+<div class="nav-content">
+<ol class="sub-nav-list">
+<li><a href="package-summary.html">com.mojang.logging.plugins</a></li>
+<li><a href="LegacyXMLLayout.html" class="current-selection">LegacyXMLLayout</a></li>
+</ol>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="Search documentation (type /)" aria-label="Search in documentation" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="Reset"></div>
+</div>
+</div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<span class="skip-nav" id="skip-navbar-top"></span></nav>
+</header>
+<div class="main-grid">
+<nav role="navigation" class="toc" aria-label="Table of contents">
+<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<ol class="toc-list" tabindex="-1">
+<li><a href="#" tabindex="0">Description</a></li>
+<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
+<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
+<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
+<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
+<li><a href="#field-detail" tabindex="0">Field Details</a>
+<ol class="toc-list">
+<li><a href="#XML_NAMESPACE" tabindex="0">XML_NAMESPACE</a></li>
+<li><a href="#ROOT_TAG" tabindex="0">ROOT_TAG</a></li>
+<li><a href="#DEFAULT_SIZE" tabindex="0">DEFAULT_SIZE</a></li>
+<li><a href="#DEFAULT_EOL" tabindex="0">DEFAULT_EOL</a></li>
+<li><a href="#COMPACT_EOL" tabindex="0">COMPACT_EOL</a></li>
+<li><a href="#DEFAULT_INDENT" tabindex="0">DEFAULT_INDENT</a></li>
+<li><a href="#COMPACT_INDENT" tabindex="0">COMPACT_INDENT</a></li>
+<li><a href="#DEFAULT_NS_PREFIX" tabindex="0">DEFAULT_NS_PREFIX</a></li>
+<li><a href="#FORMATS" tabindex="0">FORMATS</a></li>
+<li><a href="#locationInfo" tabindex="0">locationInfo</a></li>
+<li><a href="#properties" tabindex="0">properties</a></li>
+<li><a href="#complete" tabindex="0">complete</a></li>
+<li><a href="#namespacePrefix" tabindex="0">namespacePrefix</a></li>
+<li><a href="#eol" tabindex="0">eol</a></li>
+<li><a href="#indent1" tabindex="0">indent1</a></li>
+<li><a href="#indent2" tabindex="0">indent2</a></li>
+<li><a href="#indent3" tabindex="0">indent3</a></li>
+</ol>
+</li>
+<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<ol class="toc-list">
+<li><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,java.lang.String,java.nio.charset.Charset)" tabindex="0">LegacyXMLLayout(boolean, boolean, boolean, boolean, String, Charset)</a></li>
+</ol>
+</li>
+<li><a href="#method-detail" tabindex="0">Method Details</a>
+<ol class="toc-list">
+<li><a href="#toSerializable(org.apache.logging.log4j.core.LogEvent)" tabindex="0">toSerializable(LogEvent)</a></li>
+<li><a href="#getHeader()" tabindex="0">getHeader()</a></li>
+<li><a href="#getFooter()" tabindex="0">getFooter()</a></li>
+<li><a href="#getContentFormat()" tabindex="0">getContentFormat()</a></li>
+<li><a href="#getContentType()" tabindex="0">getContentType()</a></li>
+<li><a href="#getEventLevel(org.apache.logging.log4j.core.LogEvent)" tabindex="0">getEventLevel(LogEvent)</a></li>
+<li><a href="#createLayout(boolean,boolean,boolean,boolean,java.lang.String,java.nio.charset.Charset)" tabindex="0">createLayout(boolean, boolean, boolean, boolean, String, Charset)</a></li>
+</ol>
+</li>
+</ol>
+<button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
+<main role="main">
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<h1 title="Class LegacyXMLLayout" class="title">Class LegacyXMLLayout</h1>
+</div>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance">org.apache.logging.log4j.core.layout.AbstractLayout&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;
+<div class="inheritance">org.apache.logging.log4j.core.layout.AbstractStringLayout
+<div class="inheritance">com.mojang.logging.plugins.LegacyXMLLayout</div>
+</div>
+</div>
+</div>
+<section class="class-description" id="class-description">
+<dl class="notes">
+<dt>All Implemented Interfaces:</dt>
+<dd><code>org.apache.logging.log4j.core.impl.LocationAware, org.apache.logging.log4j.core.Layout&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;, org.apache.logging.log4j.core.layout.Encoder&lt;org.apache.logging.log4j.core.LogEvent&gt;, org.apache.logging.log4j.core.StringLayout</code></dd>
+</dl>
+<hr>
+<div class="horizontal-scroll">
+<div class="type-signature"><span class="annotations">@Plugin(name="LegacyXMLLayout",
+        category="Core",
+        elementType="layout",
+        printObject=true)
+</span><span class="modifiers">public class </span><span class="element-name type-name-label">LegacyXMLLayout</span>
+<span class="extends-implements">extends org.apache.logging.log4j.core.layout.AbstractStringLayout</span></div>
+</div>
+</section>
+<section class="summary">
+<ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="inherited-list">
+<h3 id="nested-classes-inherited-from-class-org.apache.logging.log4j.core.layout.AbstractStringLayout">Nested classes/interfaces inherited from class&nbsp;org.apache.logging.log4j.core.layout.AbstractStringLayout</h3>
+<code>org.apache.logging.log4j.core.layout.AbstractStringLayout.Builder&lt;B&gt;, org.apache.logging.log4j.core.layout.AbstractStringLayout.Serializer, org.apache.logging.log4j.core.layout.AbstractStringLayout.Serializer2</code></div>
+</section>
+</li>
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="caption"><span>Fields</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#COMPACT_EOL" class="member-name-link">COMPACT_EOL</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#COMPACT_INDENT" class="member-name-link">COMPACT_INDENT</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#complete" class="member-name-link">complete</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#DEFAULT_EOL" class="member-name-link">DEFAULT_EOL</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#DEFAULT_INDENT" class="member-name-link">DEFAULT_INDENT</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#DEFAULT_NS_PREFIX" class="member-name-link">DEFAULT_NS_PREFIX</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#DEFAULT_SIZE" class="member-name-link">DEFAULT_SIZE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#eol" class="member-name-link">eol</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
+<div class="col-second even-row-color"><code><a href="#FORMATS" class="member-name-link">FORMATS</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#indent1" class="member-name-link">indent1</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#indent2" class="member-name-link">indent2</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#indent3" class="member-name-link">indent3</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#locationInfo" class="member-name-link">locationInfo</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#namespacePrefix" class="member-name-link">namespacePrefix</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#properties" class="member-name-link">properties</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ROOT_TAG" class="member-name-link">ROOT_TAG</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#XML_NAMESPACE" class="member-name-link">XML_NAMESPACE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-org.apache.logging.log4j.core.layout.AbstractStringLayout">Fields inherited from class&nbsp;org.apache.logging.log4j.core.layout.AbstractStringLayout</h3>
+<code>DEFAULT_STRING_BUILDER_SIZE, MAX_STRING_BUILDER_SIZE</code></div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-org.apache.logging.log4j.core.layout.AbstractLayout">Fields inherited from class&nbsp;org.apache.logging.log4j.core.layout.AbstractLayout</h3>
+<code>configuration, eventCount, footer, header, LOGGER</code></div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-org.apache.logging.log4j.core.Layout">Fields inherited from interface&nbsp;org.apache.logging.log4j.core.Layout</h3>
+<code>ELEMENT_TYPE</code></div>
+</section>
+</li>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<li>
+<section class="constructor-summary" id="constructor-summary">
+<h2>Constructor Summary</h2>
+<div class="caption"><span>Constructors</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected </code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,java.lang.String,java.nio.charset.Charset)" class="member-name-link">LegacyXMLLayout</a><wbr>(boolean&nbsp;locationInfo,
+ boolean&nbsp;properties,
+ boolean&nbsp;complete,
+ boolean&nbsp;compact,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nsPrefix,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link">Charset</a>&nbsp;charset)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<!-- ========== METHOD SUMMARY =========== -->
+<li>
+<section class="method-summary" id="method-summary">
+<h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="LegacyXMLLayout.html" title="class in com.mojang.logging.plugins">LegacyXMLLayout</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createLayout(boolean,boolean,boolean,boolean,java.lang.String,java.nio.charset.Charset)" class="member-name-link">createLayout</a><wbr>(boolean&nbsp;locationInfo,
+ boolean&nbsp;properties,
+ boolean&nbsp;completeStr,
+ boolean&nbsp;compactStr,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;namespacePrefix,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link">Charset</a>&nbsp;charset)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getContentFormat()" class="member-name-link">getContentFormat</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getContentType()" class="member-name-link">getContentType</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getEventLevel(org.apache.logging.log4j.core.LogEvent)" class="member-name-link">getEventLevel</a><wbr>(org.apache.logging.log4j.core.LogEvent&nbsp;event)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFooter()" class="member-name-link">getFooter</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHeader()" class="member-name-link">getHeader</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toSerializable(org.apache.logging.log4j.core.LogEvent)" class="member-name-link">toSerializable</a><wbr>(org.apache.logging.log4j.core.LogEvent&nbsp;event)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.apache.logging.log4j.core.layout.AbstractStringLayout">Methods inherited from class&nbsp;org.apache.logging.log4j.core.layout.AbstractStringLayout</h3>
+<code>getBytes, getCharset, getFooterSerializer, getHeaderSerializer, getStringBuilder, getStringBuilderEncoder, requiresLocation, serializeToBytes, serializeToString, toByteArray, trimToMaxSize</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.apache.logging.log4j.core.layout.AbstractLayout">Methods inherited from class&nbsp;org.apache.logging.log4j.core.layout.AbstractLayout</h3>
+<code>encode, getConfiguration, markEvent</code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.apache.logging.log4j.core.layout.Encoder">Methods inherited from interface&nbsp;org.apache.logging.log4j.core.layout.Encoder</h3>
+<code>encode</code></div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field-detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="XML_NAMESPACE">
+<h3>XML_NAMESPACE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">XML_NAMESPACE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#com.mojang.logging.plugins.LegacyXMLLayout.XML_NAMESPACE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ROOT_TAG">
+<h3>ROOT_TAG</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">ROOT_TAG</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#com.mojang.logging.plugins.LegacyXMLLayout.ROOT_TAG">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="DEFAULT_SIZE">
+<h3>DEFAULT_SIZE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_SIZE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#com.mojang.logging.plugins.LegacyXMLLayout.DEFAULT_SIZE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="DEFAULT_EOL">
+<h3>DEFAULT_EOL</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DEFAULT_EOL</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#com.mojang.logging.plugins.LegacyXMLLayout.DEFAULT_EOL">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="COMPACT_EOL">
+<h3>COMPACT_EOL</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">COMPACT_EOL</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#com.mojang.logging.plugins.LegacyXMLLayout.COMPACT_EOL">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="DEFAULT_INDENT">
+<h3>DEFAULT_INDENT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DEFAULT_INDENT</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#com.mojang.logging.plugins.LegacyXMLLayout.DEFAULT_INDENT">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="COMPACT_INDENT">
+<h3>COMPACT_INDENT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">COMPACT_INDENT</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#com.mojang.logging.plugins.LegacyXMLLayout.COMPACT_INDENT">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="DEFAULT_NS_PREFIX">
+<h3>DEFAULT_NS_PREFIX</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DEFAULT_NS_PREFIX</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#com.mojang.logging.plugins.LegacyXMLLayout.DEFAULT_NS_PREFIX">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="FORMATS">
+<h3>FORMATS</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">FORMATS</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="locationInfo">
+<h3>locationInfo</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">locationInfo</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="properties">
+<h3>properties</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">properties</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="complete">
+<h3>complete</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">complete</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="namespacePrefix">
+<h3>namespacePrefix</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">namespacePrefix</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="eol">
+<h3>eol</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">eol</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="indent1">
+<h3>indent1</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">indent1</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="indent2">
+<h3>indent2</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">indent2</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="indent3">
+<h3>indent3</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">indent3</span></div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<li>
+<section class="constructor-details" id="constructor-detail">
+<h2>Constructor Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="&lt;init&gt;(boolean,boolean,boolean,boolean,java.lang.String,java.nio.charset.Charset)">
+<h3>LegacyXMLLayout</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">LegacyXMLLayout</span><wbr><span class="parameters">(boolean&nbsp;locationInfo,
+ boolean&nbsp;properties,
+ boolean&nbsp;complete,
+ boolean&nbsp;compact,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nsPrefix,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link">Charset</a>&nbsp;charset)</span></div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="toSerializable(org.apache.logging.log4j.core.LogEvent)">
+<h3>toSerializable</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toSerializable</span><wbr><span class="parameters">(org.apache.logging.log4j.core.LogEvent&nbsp;event)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getHeader()">
+<h3>getHeader</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">getHeader</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getHeader</code>&nbsp;in interface&nbsp;<code>org.apache.logging.log4j.core.Layout&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></dd>
+<dt>Overrides:</dt>
+<dd><code>getHeader</code>&nbsp;in class&nbsp;<code>org.apache.logging.log4j.core.layout.AbstractStringLayout</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getFooter()">
+<h3>getFooter</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">getFooter</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getFooter</code>&nbsp;in interface&nbsp;<code>org.apache.logging.log4j.core.Layout&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></dd>
+<dt>Overrides:</dt>
+<dd><code>getFooter</code>&nbsp;in class&nbsp;<code>org.apache.logging.log4j.core.layout.AbstractStringLayout</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getContentFormat()">
+<h3>getContentFormat</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getContentFormat</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getContentFormat</code>&nbsp;in interface&nbsp;<code>org.apache.logging.log4j.core.Layout&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></dd>
+<dt>Overrides:</dt>
+<dd><code>getContentFormat</code>&nbsp;in class&nbsp;<code>org.apache.logging.log4j.core.layout.AbstractLayout&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getContentType()">
+<h3>getContentType</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getContentType</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getContentType</code>&nbsp;in interface&nbsp;<code>org.apache.logging.log4j.core.Layout&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></dd>
+<dt>Overrides:</dt>
+<dd><code>getContentType</code>&nbsp;in class&nbsp;<code>org.apache.logging.log4j.core.layout.AbstractStringLayout</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getEventLevel(org.apache.logging.log4j.core.LogEvent)">
+<h3>getEventLevel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getEventLevel</span><wbr><span class="parameters">(org.apache.logging.log4j.core.LogEvent&nbsp;event)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="createLayout(boolean,boolean,boolean,boolean,java.lang.String,java.nio.charset.Charset)">
+<h3>createLayout</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations">@PluginFactory
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="LegacyXMLLayout.html" title="class in com.mojang.logging.plugins">LegacyXMLLayout</a></span>&nbsp;<span class="element-name">createLayout</span><wbr><span class="parameters">(@PluginAttribute("locationInfo")
+ boolean&nbsp;locationInfo,
+ @PluginAttribute("properties")
+ boolean&nbsp;properties,
+ @PluginAttribute("complete")
+ boolean&nbsp;completeStr,
+ @PluginAttribute("compact")
+ boolean&nbsp;compactStr,
+ @PluginAttribute("namespacePrefix")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;namespacePrefix,
+ @PluginAttribute(value="charset",defaultString="UTF-8")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/charset/Charset.html" title="class or interface in java.nio.charset" class="external-link">Charset</a>&nbsp;charset)</span></div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+<!-- ========= END OF CLASS DATA ========= -->
+</main>
+</div>
+</body>
+</html>

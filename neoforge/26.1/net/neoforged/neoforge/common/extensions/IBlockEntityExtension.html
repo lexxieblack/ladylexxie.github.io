@@ -67,6 +67,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getModelData()" tabindex="0">getModelData()</a></li>
 <li><a href="#invalidateCapabilities()" tabindex="0">invalidateCapabilities()</a></li>
 <li><a href="#hasCustomOutlineRendering(net.minecraft.world.entity.player.Player)" tabindex="0">hasCustomOutlineRendering(Player)</a></li>
+<li><a href="#applyStructureRotation(net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation)" tabindex="0">applyStructureRotation(Mirror, Rotation)</a></li>
 </ol>
 </li>
 </ol>
@@ -99,56 +100,62 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../model/data/ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getModelData()" class="member-name-link">getModelData</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#applyStructureRotation(net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation)" class="member-name-link">applyStructureRotation</a><wbr>(<a href="../../../../minecraft/world/level/block/Mirror.html" title="enum class in net.minecraft.world.level.block">Mirror</a>&nbsp;mirror,
+ <a href="../../../../minecraft/world/level/block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">React to the rotation and mirroring applied by a structure to the block this BE belongs to.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../model/data/ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getModelData()" class="member-name-link">getModelData</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Allows you to return additional model data.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPersistentData()" class="member-name-link">getPersistentData</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPersistentData()" class="member-name-link">getPersistentData</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets a <a href="../../../../minecraft/nbt/CompoundTag.html" title="class in net.minecraft.nbt"><code>CompoundTag</code></a> that can be used to store custom data for this block entity.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#handleUpdateTag(net.minecraft.world.level.storage.ValueInput)" class="member-name-link">handleUpdateTag</a><wbr>(<a href="../../../../minecraft/world/level/storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#handleUpdateTag(net.minecraft.world.level.storage.ValueInput)" class="member-name-link">handleUpdateTag</a><wbr>(<a href="../../../../minecraft/world/level/storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Called when the chunk's TE update tag, gotten from <a href="../../../../minecraft/world/level/block/entity/BlockEntity.html#getUpdateTag(net.minecraft.core.HolderLookup.Provider)"><code>BlockEntity.getUpdateTag(HolderLookup.Provider)</code></a>, is received on the client.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#hasCustomOutlineRendering(net.minecraft.world.entity.player.Player)" class="member-name-link">hasCustomOutlineRendering</a><wbr>(<a href="../../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#hasCustomOutlineRendering(net.minecraft.world.entity.player.Player)" class="member-name-link">hasCustomOutlineRendering</a><wbr>(<a href="../../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns whether this <a href="../../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity"><code>BlockEntity</code></a> has custom outline rendering behavior.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#invalidateCapabilities()" class="member-name-link">invalidateCapabilities</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#invalidateCapabilities()" class="member-name-link">invalidateCapabilities</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Notify all listeners that the capabilities at the positions of this block entity might have changed.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onChunkUnloaded()" class="member-name-link">onChunkUnloaded</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onDataPacket(net.minecraft.network.Connection,net.minecraft.world.level.storage.ValueInput)" class="member-name-link">onDataPacket</a><wbr>(<a href="../../../../minecraft/network/Connection.html" title="class in net.minecraft.network">Connection</a>&nbsp;net,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onChunkUnloaded()" class="member-name-link">onChunkUnloaded</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onDataPacket(net.minecraft.network.Connection,net.minecraft.world.level.storage.ValueInput)" class="member-name-link">onDataPacket</a><wbr>(<a href="../../../../minecraft/network/Connection.html" title="class in net.minecraft.network">Connection</a>&nbsp;net,
  <a href="../../../../minecraft/world/level/storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;valueInput)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Called when you receive a TileEntityData packet for the location this
 TileEntity is currently in.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onLoad()" class="member-name-link">onLoad</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onLoad()" class="member-name-link">onLoad</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Called when this is first added to the world (by <a href="../../../../minecraft/world/level/chunk/LevelChunk.html#addAndRegisterBlockEntity(net.minecraft.world.level.block.entity.BlockEntity)"><code>LevelChunk.addAndRegisterBlockEntity(BlockEntity)</code></a>)
 or right before the first tick when the chunk is generated or loaded from disk.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#requestModelDataUpdate()" class="member-name-link">requestModelDataUpdate</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#requestModelDataUpdate()" class="member-name-link">requestModelDataUpdate</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Requests a refresh for the model data of your TE
 Call this every time your <a href="#getModelData()"><code>getModelData()</code></a> changes</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2"><code>private <a href="../../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2"><code><a href="#self()" class="member-name-link">self</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2"><code>private <a href="../../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2"><code><a href="#self()" class="member-name-link">self</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -288,6 +295,25 @@ This is just a convenience method for <a href="ILevelExtension.html#invalidateCa
 <dd><code>player</code> - the local player currently viewing this <code>BlockEntity</code></dd>
 <dt>Returns:</dt>
 <dd><code>true</code> to enable outline processing</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="applyStructureRotation(net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation)">
+<h3>applyStructureRotation</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyStructureRotation</span><wbr><span class="parameters">(<a href="../../../../minecraft/world/level/block/Mirror.html" title="enum class in net.minecraft.world.level.block">Mirror</a>&nbsp;mirror,
+ <a href="../../../../minecraft/world/level/block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation)</span></div>
+<div class="block"><p>React to the rotation and mirroring applied by a structure to the block this BE belongs to.</p>
+<p>This method may be called in a worldgen context on a worker thread where this BE has no <a href="../../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level"><code>Level</code></a>
+set yet. Implementations of this method may only mutate the BE's internal state and access
+neither the BE's level nor any other non-thread-safe data storage.</p>
+</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>mirror</code> - The mirroring applied to this BE's host block</dd>
+<dd><code>rotation</code> - The rotation applied to this BE's host block</dd>
 </dl>
 </div>
 </section>

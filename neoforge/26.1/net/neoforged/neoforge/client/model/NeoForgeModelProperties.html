@@ -61,6 +61,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#TRANSFORM" tabindex="0">TRANSFORM</a></li>
 <li><a href="#PART_VISIBILITY" tabindex="0">PART_VISIBILITY</a></li>
+<li><a href="#ITEM_LAYER_FACE_DATA" tabindex="0">ITEM_LAYER_FACE_DATA</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -72,8 +73,11 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#deserializeRootTransform(com.google.gson.JsonObject,com.google.gson.JsonDeserializationContext)" tabindex="0">deserializeRootTransform(JsonObject, JsonDeserializationContext)</a></li>
 <li><a href="#deserializePartVisibility(com.google.gson.JsonObject)" tabindex="0">deserializePartVisibility(JsonObject)</a></li>
+<li><a href="#deserializeItemLayerFaceData(com.google.gson.JsonObject)" tabindex="0">deserializeItemLayerFaceData(JsonObject)</a></li>
 <li><a href="#fillRootTransformProperty(net.minecraft.util.context.ContextMap.Builder,com.mojang.math.Transformation)" tabindex="0">fillRootTransformProperty(ContextMap.Builder, Transformation)</a></li>
 <li><a href="#fillPartVisibilityProperty(net.minecraft.util.context.ContextMap.Builder,java.util.Map)" tabindex="0">fillPartVisibilityProperty(ContextMap.Builder, Map)</a></li>
+<li><a href="#fillItemLayerFaceData(net.minecraft.util.context.ContextMap.Builder,it.unimi.dsi.fastutil.ints.Int2ObjectMap)" tabindex="0">fillItemLayerFaceData(ContextMap.Builder, Int2ObjectMap)</a></li>
+<li><a href="#getItemLayerFaceData(net.minecraft.util.context.ContextMap,int)" tabindex="0">getItemLayerFaceData(ContextMap, int)</a></li>
 </ol>
 </li>
 </ol>
@@ -105,14 +109,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final <a href="../../../../minecraft/util/context/ContextKey.html" title="class in net.minecraft.util.context">ContextKey</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#PART_VISIBILITY" class="member-name-link">PART_VISIBILITY</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../minecraft/util/context/ContextKey.html" title="class in net.minecraft.util.context">ContextKey</a><wbr>&lt;it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#ITEM_LAYER_FACE_DATA" class="member-name-link">ITEM_LAYER_FACE_DATA</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Item layer model face data.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../../../minecraft/util/context/ContextKey.html" title="class in net.minecraft.util.context">ContextKey</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#PART_VISIBILITY" class="member-name-link">PART_VISIBILITY</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Part visibilities.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../minecraft/util/context/ContextKey.html" title="class in net.minecraft.util.context">ContextKey</a><wbr>&lt;<a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#TRANSFORM" class="member-name-link">TRANSFORM</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>static final <a href="../../../../minecraft/util/context/ContextKey.html" title="class in net.minecraft.util.context">ContextKey</a><wbr>&lt;<a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#TRANSFORM" class="member-name-link">TRANSFORM</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Root transform.</div>
 </div>
 </div>
@@ -144,16 +153,28 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deserializePartVisibility(com.google.gson.JsonObject)" class="member-name-link">deserializePartVisibility</a><wbr>(com.google.gson.JsonObject&nbsp;jsonObject)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static it.unimi.dsi.fastutil.ints.Int2ObjectMap<wbr>&lt;<a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deserializeItemLayerFaceData(com.google.gson.JsonObject)" class="member-name-link">deserializeItemLayerFaceData</a><wbr>(com.google.gson.JsonObject&nbsp;jsonObject)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns a map of item layer face data entries if the <code>neoforge_data</code> key is present on at least one entry of the <code>textures</code> object, otherwise an empty map.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deserializePartVisibility(com.google.gson.JsonObject)" class="member-name-link">deserializePartVisibility</a><wbr>(com.google.gson.JsonObject&nbsp;jsonObject)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a map of part visibilities if the <code>visibility</code> key is present, otherwise an empty map.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deserializeRootTransform(com.google.gson.JsonObject,com.google.gson.JsonDeserializationContext)" class="member-name-link">deserializeRootTransform</a><wbr>(com.google.gson.JsonObject&nbsp;jsonObject,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deserializeRootTransform(com.google.gson.JsonObject,com.google.gson.JsonDeserializationContext)" class="member-name-link">deserializeRootTransform</a><wbr>(com.google.gson.JsonObject&nbsp;jsonObject,
  com.google.gson.JsonDeserializationContext&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a <a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math"><code>Transformation</code></a> if the <code>transform</code> key is present, otherwise <code>null</code>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillItemLayerFaceData(net.minecraft.util.context.ContextMap.Builder,it.unimi.dsi.fastutil.ints.Int2ObjectMap)" class="member-name-link">fillItemLayerFaceData</a><wbr>(<a href="../../../../minecraft/util/context/ContextMap.Builder.html" title="class in net.minecraft.util.context">ContextMap.Builder</a>&nbsp;propertiesBuilder,
+ it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;&nbsp;layerFaceData)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Puts the given item layer face data into the given builder if present, merging with values from parent models
+on a per-layer basis and overwriting existing layers</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fillPartVisibilityProperty(net.minecraft.util.context.ContextMap.Builder,java.util.Map)" class="member-name-link">fillPartVisibilityProperty</a><wbr>(<a href="../../../../minecraft/util/context/ContextMap.Builder.html" title="class in net.minecraft.util.context">ContextMap.Builder</a>&nbsp;propertiesBuilder,
@@ -167,6 +188,12 @@ on a per-key basis and overwriting existing keys</div>
  @Nullable <a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&nbsp;rootTransform)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Puts the given <a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">root transform</a> into the given builder if present, overwriting any value specified in a parent model</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getItemLayerFaceData(net.minecraft.util.context.ContextMap,int)" class="member-name-link">getItemLayerFaceData</a><wbr>(<a href="../../../../minecraft/util/context/ContextMap.html" title="class in net.minecraft.util.context">ContextMap</a>&nbsp;additionalProperties,
+ int&nbsp;layer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Retrieves the <a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model"><code>ExtraFaceData</code></a> for the given layer index from the given properties map</div>
 </div>
 </div>
 </div>
@@ -200,6 +227,16 @@ on a per-key basis and overwriting existing keys</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/util/context/ContextKey.html" title="class in net.minecraft.util.context">ContextKey</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&gt;</span>&nbsp;<span class="element-name">PART_VISIBILITY</span></div>
 <div class="block">Part visibilities. For models with named parts (i.e. OBJ and composite), this can be specified under the <code>visibility</code> JSON key</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ITEM_LAYER_FACE_DATA">
+<h3>ITEM_LAYER_FACE_DATA</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/util/context/ContextKey.html" title="class in net.minecraft.util.context">ContextKey</a>&lt;it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;&gt;</span>&nbsp;<span class="element-name">ITEM_LAYER_FACE_DATA</span></div>
+<div class="block">Item layer model face data. For item layer models, the values can be specified in the entries of the <code>textures</code>
+object via the <code>neoforge_data</code> JSON key</div>
 </div>
 </section>
 </li>
@@ -255,6 +292,19 @@ on a per-key basis and overwriting existing keys</div>
 </section>
 </li>
 <li>
+<section class="detail" id="deserializeItemLayerFaceData(com.google.gson.JsonObject)">
+<h3>deserializeItemLayerFaceData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;</span>&nbsp;<span class="element-name">deserializeItemLayerFaceData</span><wbr><span class="parameters">(com.google.gson.JsonObject&nbsp;jsonObject)</span></div>
+<div class="block">Returns a map of item layer face data entries if the <code>neoforge_data</code> key is present on at least one entry of the <code>textures</code> object, otherwise an empty map.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a map of item layer face data entries if the <code>neoforge_data</code> key is present on at least one entry of the <code>textures</code> object, otherwise an empty map</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="fillRootTransformProperty(net.minecraft.util.context.ContextMap.Builder,com.mojang.math.Transformation)">
 <h3>fillRootTransformProperty</h3>
 <div class="horizontal-scroll">
@@ -272,6 +322,27 @@ on a per-key basis and overwriting existing keys</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;&nbsp;partVisibility)</span></div>
 <div class="block">Puts the given part visibility into the given builder if present, merging the with values from parent models
 on a per-key basis and overwriting existing keys</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="fillItemLayerFaceData(net.minecraft.util.context.ContextMap.Builder,it.unimi.dsi.fastutil.ints.Int2ObjectMap)">
+<h3>fillItemLayerFaceData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fillItemLayerFaceData</span><wbr><span class="parameters">(<a href="../../../../minecraft/util/context/ContextMap.Builder.html" title="class in net.minecraft.util.context">ContextMap.Builder</a>&nbsp;propertiesBuilder,
+ it.unimi.dsi.fastutil.ints.Int2ObjectMap&lt;<a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a>&gt;&nbsp;layerFaceData)</span></div>
+<div class="block">Puts the given item layer face data into the given builder if present, merging with values from parent models
+on a per-layer basis and overwriting existing layers</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getItemLayerFaceData(net.minecraft.util.context.ContextMap,int)">
+<h3>getItemLayerFaceData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model">ExtraFaceData</a></span>&nbsp;<span class="element-name">getItemLayerFaceData</span><wbr><span class="parameters">(<a href="../../../../minecraft/util/context/ContextMap.html" title="class in net.minecraft.util.context">ContextMap</a>&nbsp;additionalProperties,
+ int&nbsp;layer)</span></div>
+<div class="block">Retrieves the <a href="ExtraFaceData.html" title="class in net.neoforged.neoforge.client.model"><code>ExtraFaceData</code></a> for the given layer index from the given properties map</div>
 </div>
 </section>
 </li>
