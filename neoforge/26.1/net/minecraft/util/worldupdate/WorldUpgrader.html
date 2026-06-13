@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>WorldUpgrader (NeoForge 26.1)</title>
+<title>WorldUpgrader (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.util.worldupdate, class: WorldUpgrader">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/WorldUpgrader.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,25 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#THREAD_FACTORY" tabindex="0">THREAD_FACTORY</a></li>
-<li><a href="#statusTranslator" tabindex="0">statusTranslator</a></li>
-<li><a href="#dimensions" tabindex="0">dimensions</a></li>
-<li><a href="#levels" tabindex="0">levels</a></li>
-<li><a href="#eraseCache" tabindex="0">eraseCache</a></li>
-<li><a href="#recreateRegionFiles" tabindex="0">recreateRegionFiles</a></li>
-<li><a href="#levelStorage" tabindex="0">levelStorage</a></li>
-<li><a href="#thread" tabindex="0">thread</a></li>
-<li><a href="#dataFixer" tabindex="0">dataFixer</a></li>
-<li><a href="#upgradeProgress" tabindex="0">upgradeProgress</a></li>
-<li><a href="#overworldSavedDataStorage" tabindex="0">overworldSavedDataStorage</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess,com.mojang.datafixers.DataFixer,net.minecraft.core.RegistryAccess,boolean,boolean)" tabindex="0">WorldUpgrader(LevelStorageSource.LevelStorageAccess, DataFixer, RegistryAccess, boolean, boolean)</a></li>
@@ -84,9 +67,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#verifyChunkPosAndEraseCache(net.minecraft.world.level.ChunkPos,net.minecraft.nbt.CompoundTag)" tabindex="0">verifyChunkPosAndEraseCache(ChunkPos, CompoundTag)</a></li>
 <li><a href="#verifyChunkPos(net.minecraft.world.level.ChunkPos,net.minecraft.nbt.CompoundTag)" tabindex="0">verifyChunkPos(ChunkPos, CompoundTag)</a></li>
 <li><a href="#cancel()" tabindex="0">cancel()</a></li>
-<li><a href="#work()" tabindex="0">work()</a></li>
-<li><a href="#upgradeLevels(net.minecraft.util.datafix.DataFixTypes,net.minecraft.util.worldupdate.RegionStorageUpgrader.Builder)" tabindex="0">upgradeLevels(DataFixTypes, RegionStorageUpgrader.Builder)</a></li>
-<li><a href="#upgradeLevels(net.minecraft.util.datafix.DataFixTypes,net.minecraft.util.worldupdate.RegionStorageUpgrader.Builder,java.util.function.BiFunction)" tabindex="0">upgradeLevels(DataFixTypes, RegionStorageUpgrader.Builder, BiFunction)</a></li>
 <li><a href="#isFinished()" tabindex="0">isFinished()</a></li>
 <li><a href="#levels()" tabindex="0">levels()</a></li>
 <li><a href="#dimensionProgress(net.minecraft.resources.ResourceKey)" tabindex="0">dimensionProgress(ResourceKey)</a></li>
@@ -122,54 +102,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../com/mojang/datafixers/DataFixer.html" title="interface in com.mojang.datafixers">DataFixer</a></code></div>
-<div class="col-second even-row-color"><code><a href="#dataFixer" class="member-name-link">dataFixer</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a><wbr>&lt;<a href="../../world/level/dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#dimensions" class="member-name-link">dimensions</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#eraseCache" class="member-name-link">eraseCache</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#levels" class="member-name-link">levels</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../world/level/storage/LevelStorageSource.LevelStorageAccess.html" title="class in net.minecraft.world.level.storage">LevelStorageSource.LevelStorageAccess</a></code></div>
-<div class="col-second even-row-color"><code><a href="#levelStorage" class="member-name-link">levelStorage</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../world/level/storage/SavedDataStorage.html" title="class in net.minecraft.world.level.storage">SavedDataStorage</a></code></div>
-<div class="col-second even-row-color"><code><a href="#overworldSavedDataStorage" class="member-name-link">overworldSavedDataStorage</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#recreateRegionFiles" class="member-name-link">recreateRegionFiles</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="UpgradeStatusTranslator.html" title="class in net.minecraft.util.worldupdate">UpgradeStatusTranslator</a></code></div>
-<div class="col-second even-row-color"><code><a href="#statusTranslator" class="member-name-link">statusTranslator</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#thread" class="member-name-link">thread</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ThreadFactory.html" title="class or interface in java.util.concurrent" class="external-link">ThreadFactory</a></code></div>
-<div class="col-second even-row-color"><code><a href="#THREAD_FACTORY" class="member-name-link">THREAD_FACTORY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="UpgradeProgress.html" title="class in net.minecraft.util.worldupdate">UpgradeProgress</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#upgradeProgress" class="member-name-link">upgradeProgress</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -232,15 +164,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#levels()" class="member-name-link">levels</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#upgradeLevels(net.minecraft.util.datafix.DataFixTypes,net.minecraft.util.worldupdate.RegionStorageUpgrader.Builder)" class="member-name-link">upgradeLevels</a><wbr>(<a href="../datafix/DataFixTypes.html" title="enum class in net.minecraft.util.datafix">DataFixTypes</a>&nbsp;dataFixType,
- <a href="RegionStorageUpgrader.Builder.html" title="class in net.minecraft.util.worldupdate">RegionStorageUpgrader.Builder</a>&nbsp;builder)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#upgradeLevels(net.minecraft.util.datafix.DataFixTypes,net.minecraft.util.worldupdate.RegionStorageUpgrader.Builder,java.util.function.BiFunction)" class="member-name-link">upgradeLevels</a><wbr>(<a href="../datafix/DataFixTypes.html" title="enum class in net.minecraft.util.datafix">DataFixTypes</a>&nbsp;dataFixType,
- <a href="RegionStorageUpgrader.Builder.html" title="class in net.minecraft.util.worldupdate">RegionStorageUpgrader.Builder</a>&nbsp;builder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="RegionStorageUpgrader.Builder.html" title="class in net.minecraft.util.worldupdate">RegionStorageUpgrader.Builder</a>, <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&gt;, <a href="RegionStorageUpgrader.Builder.html" title="class in net.minecraft.util.worldupdate">RegionStorageUpgrader.Builder</a>&gt;&nbsp;levelSpecificBuilder)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#verifyChunkPos(net.minecraft.world.level.ChunkPos,net.minecraft.nbt.CompoundTag)" class="member-name-link">verifyChunkPos</a><wbr>(<a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
  <a href="../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;upgradedTag)</code></div>
@@ -249,125 +172,18 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#verifyChunkPosAndEraseCache(net.minecraft.world.level.ChunkPos,net.minecraft.nbt.CompoundTag)" class="member-name-link">verifyChunkPosAndEraseCache</a><wbr>(<a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
  <a href="../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;upgradedTag)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#work()" class="member-name-link">work</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="THREAD_FACTORY">
-<h3>THREAD_FACTORY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ThreadFactory.html" title="class or interface in java.util.concurrent" class="external-link">ThreadFactory</a></span>&nbsp;<span class="element-name">THREAD_FACTORY</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="statusTranslator">
-<h3>statusTranslator</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="UpgradeStatusTranslator.html" title="class in net.minecraft.util.worldupdate">UpgradeStatusTranslator</a></span>&nbsp;<span class="element-name">statusTranslator</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dimensions">
-<h3>dimensions</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="../../world/level/dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;</span>&nbsp;<span class="element-name">dimensions</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="levels">
-<h3>levels</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&gt;</span>&nbsp;<span class="element-name">levels</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="eraseCache">
-<h3>eraseCache</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">eraseCache</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="recreateRegionFiles">
-<h3>recreateRegionFiles</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">recreateRegionFiles</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="levelStorage">
-<h3>levelStorage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../world/level/storage/LevelStorageSource.LevelStorageAccess.html" title="class in net.minecraft.world.level.storage">LevelStorageSource.LevelStorageAccess</a></span>&nbsp;<span class="element-name">levelStorage</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="thread">
-<h3>thread</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></span>&nbsp;<span class="element-name">thread</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dataFixer">
-<h3>dataFixer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/datafixers/DataFixer.html" title="interface in com.mojang.datafixers">DataFixer</a></span>&nbsp;<span class="element-name">dataFixer</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="upgradeProgress">
-<h3>upgradeProgress</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="UpgradeProgress.html" title="class in net.minecraft.util.worldupdate">UpgradeProgress</a></span>&nbsp;<span class="element-name">upgradeProgress</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="overworldSavedDataStorage">
-<h3>overworldSavedDataStorage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../world/level/storage/SavedDataStorage.html" title="class in net.minecraft.world.level.storage">SavedDataStorage</a></span>&nbsp;<span class="element-name">overworldSavedDataStorage</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -425,33 +241,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <h3>cancel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">cancel</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="work()">
-<h3>work</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">work</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="upgradeLevels(net.minecraft.util.datafix.DataFixTypes,net.minecraft.util.worldupdate.RegionStorageUpgrader.Builder)">
-<h3>upgradeLevels</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">upgradeLevels</span><wbr><span class="parameters">(<a href="../datafix/DataFixTypes.html" title="enum class in net.minecraft.util.datafix">DataFixTypes</a>&nbsp;dataFixType,
- <a href="RegionStorageUpgrader.Builder.html" title="class in net.minecraft.util.worldupdate">RegionStorageUpgrader.Builder</a>&nbsp;builder)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="upgradeLevels(net.minecraft.util.datafix.DataFixTypes,net.minecraft.util.worldupdate.RegionStorageUpgrader.Builder,java.util.function.BiFunction)">
-<h3>upgradeLevels</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">upgradeLevels</span><wbr><span class="parameters">(<a href="../datafix/DataFixTypes.html" title="enum class in net.minecraft.util.datafix">DataFixTypes</a>&nbsp;dataFixType,
- <a href="RegionStorageUpgrader.Builder.html" title="class in net.minecraft.util.worldupdate">RegionStorageUpgrader.Builder</a>&nbsp;builder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="RegionStorageUpgrader.Builder.html" title="class in net.minecraft.util.worldupdate">RegionStorageUpgrader.Builder</a>, <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&gt;, <a href="RegionStorageUpgrader.Builder.html" title="class in net.minecraft.util.worldupdate">RegionStorageUpgrader.Builder</a>&gt;&nbsp;levelSpecificBuilder)</span></div>
 </div>
 </section>
 </li>

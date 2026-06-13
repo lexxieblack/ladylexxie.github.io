@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>PositionMoveRotation (NeoForge 26.1)</title>
+<title>PositionMoveRotation (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity, record: PositionMoveRotation">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/PositionMoveRotation.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,10 +59,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#position" tabindex="0">position</a></li>
-<li><a href="#deltaMovement" tabindex="0">deltaMovement</a></li>
-<li><a href="#yRot" tabindex="0">yRot</a></li>
-<li><a href="#xRot" tabindex="0">xRot</a></li>
 <li><a href="#STREAM_CODEC" tabindex="0">STREAM_CODEC</a></li>
 </ol>
 </li>
@@ -77,7 +73,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#withRotation(float,float)" tabindex="0">withRotation(float, float)</a></li>
 <li><a href="#of(net.minecraft.world.level.portal.TeleportTransition)" tabindex="0">of(TeleportTransition)</a></li>
 <li><a href="#calculateAbsolute(net.minecraft.world.entity.PositionMoveRotation,net.minecraft.world.entity.PositionMoveRotation,java.util.Set)" tabindex="0">calculateAbsolute(PositionMoveRotation, PositionMoveRotation, Set)</a></li>
-<li><a href="#calculateDelta(double,double,java.util.Set,net.minecraft.world.entity.Relative)" tabindex="0">calculateDelta(double, double, Set, Relative)</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
 <li><a href="#equals(java.lang.Object)" tabindex="0">equals(Object)</a></li>
@@ -117,29 +112,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color"><code><a href="#deltaMovement" class="member-name-link">deltaMovement</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">The field for the <code>deltaMovement</code> record component.</div>
-</div>
-<div class="col-first odd-row-color"><code>private final <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#position" class="member-name-link">position</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">The field for the <code>position</code> record component.</div>
-</div>
 <div class="col-first even-row-color"><code>static final <a href="../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="../../network/FriendlyByteBuf.html" title="class in net.minecraft.network">FriendlyByteBuf</a>, <a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#STREAM_CODEC" class="member-name-link">STREAM_CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#xRot" class="member-name-link">xRot</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">The field for the <code>xRot</code> record component.</div>
-</div>
-<div class="col-first even-row-color"><code>private final float</code></div>
-<div class="col-second even-row-color"><code><a href="#yRot" class="member-name-link">yRot</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">The field for the <code>yRot</code> record component.</div>
-</div>
 </div>
 </section>
 </li>
@@ -177,55 +152,49 @@ loadScripts(document, 'script');</script>
  <a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a>&nbsp;change,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Relative.html" title="enum class in net.minecraft.world.entity">Relative</a>&gt;&nbsp;relatives)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#calculateDelta(double,double,java.util.Set,net.minecraft.world.entity.Relative)" class="member-name-link">calculateDelta</a><wbr>(double&nbsp;currentDelta,
- double&nbsp;deltaChange,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Relative.html" title="enum class in net.minecraft.world.entity">Relative</a>&gt;&nbsp;relatives,
- <a href="Relative.html" title="enum class in net.minecraft.world.entity">Relative</a>&nbsp;relative)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deltaMovement()" class="member-name-link">deltaMovement</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deltaMovement()" class="member-name-link">deltaMovement</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>deltaMovement</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.world.entity.Entity)" class="member-name-link">of</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.world.level.portal.TeleportTransition)" class="member-name-link">of</a><wbr>(<a href="../level/portal/TeleportTransition.html" title="class in net.minecraft.world.level.portal">TeleportTransition</a>&nbsp;transition)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.world.entity.Entity)" class="member-name-link">of</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#position()" class="member-name-link">position</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.world.level.portal.TeleportTransition)" class="member-name-link">of</a><wbr>(<a href="../level/portal/TeleportTransition.html" title="class in net.minecraft.world.level.portal">TeleportTransition</a>&nbsp;transition)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#position()" class="member-name-link">position</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>position</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this record class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withRotation(float,float)" class="member-name-link">withRotation</a><wbr>(float&nbsp;yRot,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withRotation(float,float)" class="member-name-link">withRotation</a><wbr>(float&nbsp;yRot,
  float&nbsp;xRot)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#xRot()" class="member-name-link">xRot</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#xRot()" class="member-name-link">xRot</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>xRot</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#yRot()" class="member-name-link">yRot</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#yRot()" class="member-name-link">yRot</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>yRot</code> record component.</div>
 </div>
 </div>
@@ -233,7 +202,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -245,42 +214,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="position">
-<h3>position</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">position</span></div>
-<div class="block">The field for the <code>position</code> record component.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="deltaMovement">
-<h3>deltaMovement</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">deltaMovement</span></div>
-<div class="block">The field for the <code>deltaMovement</code> record component.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="yRot">
-<h3>yRot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">yRot</span></div>
-<div class="block">The field for the <code>yRot</code> record component.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="xRot">
-<h3>xRot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">xRot</span></div>
-<div class="block">The field for the <code>xRot</code> record component.</div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="STREAM_CODEC">
 <h3>STREAM_CODEC</h3>
@@ -356,17 +289,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a></span>&nbsp;<span class="element-name">calculateAbsolute</span><wbr><span class="parameters">(<a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a>&nbsp;source,
  <a href="PositionMoveRotation.html" title="class in net.minecraft.world.entity">PositionMoveRotation</a>&nbsp;change,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Relative.html" title="enum class in net.minecraft.world.entity">Relative</a>&gt;&nbsp;relatives)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateDelta(double,double,java.util.Set,net.minecraft.world.entity.Relative)">
-<h3>calculateDelta</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">calculateDelta</span><wbr><span class="parameters">(double&nbsp;currentDelta,
- double&nbsp;deltaChange,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Relative.html" title="enum class in net.minecraft.world.entity">Relative</a>&gt;&nbsp;relatives,
- <a href="Relative.html" title="enum class in net.minecraft.world.entity">Relative</a>&nbsp;relative)</span></div>
 </div>
 </section>
 </li>

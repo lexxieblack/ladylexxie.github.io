@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>PathNavigation (NeoForge 26.1)</title>
+<title>PathNavigation (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity.ai.navigation, class: PathNavigation">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/PathNavigation.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,37 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#MAX_TIME_RECOMPUTE" tabindex="0">MAX_TIME_RECOMPUTE</a></li>
-<li><a href="#STUCK_CHECK_INTERVAL" tabindex="0">STUCK_CHECK_INTERVAL</a></li>
-<li><a href="#STUCK_THRESHOLD_DISTANCE_FACTOR" tabindex="0">STUCK_THRESHOLD_DISTANCE_FACTOR</a></li>
-<li><a href="#mob" tabindex="0">mob</a></li>
-<li><a href="#level" tabindex="0">level</a></li>
-<li><a href="#path" tabindex="0">path</a></li>
-<li><a href="#speedModifier" tabindex="0">speedModifier</a></li>
-<li><a href="#tick" tabindex="0">tick</a></li>
-<li><a href="#lastStuckCheck" tabindex="0">lastStuckCheck</a></li>
-<li><a href="#lastStuckCheckPos" tabindex="0">lastStuckCheckPos</a></li>
-<li><a href="#timeoutCachedNode" tabindex="0">timeoutCachedNode</a></li>
-<li><a href="#timeoutTimer" tabindex="0">timeoutTimer</a></li>
-<li><a href="#lastTimeoutCheck" tabindex="0">lastTimeoutCheck</a></li>
-<li><a href="#timeoutLimit" tabindex="0">timeoutLimit</a></li>
-<li><a href="#maxDistanceToWaypoint" tabindex="0">maxDistanceToWaypoint</a></li>
-<li><a href="#hasDelayedRecomputation" tabindex="0">hasDelayedRecomputation</a></li>
-<li><a href="#timeLastRecompute" tabindex="0">timeLastRecompute</a></li>
-<li><a href="#nodeEvaluator" tabindex="0">nodeEvaluator</a></li>
-<li><a href="#targetPos" tabindex="0">targetPos</a></li>
-<li><a href="#reachRange" tabindex="0">reachRange</a></li>
-<li><a href="#maxVisitedNodesMultiplier" tabindex="0">maxVisitedNodesMultiplier</a></li>
-<li><a href="#pathFinder" tabindex="0">pathFinder</a></li>
-<li><a href="#isStuck" tabindex="0">isStuck</a></li>
-<li><a href="#requiredPathLength" tabindex="0">requiredPathLength</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.world.entity.Mob,net.minecraft.world.level.Level)" tabindex="0">PathNavigation(Mob, Level)</a></li>
@@ -94,11 +65,9 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#updatePathfinderMaxVisitedNodes()" tabindex="0">updatePathfinderMaxVisitedNodes()</a></li>
 <li><a href="#setRequiredPathLength(float)" tabindex="0">setRequiredPathLength(float)</a></li>
-<li><a href="#getMaxPathLength()" tabindex="0">getMaxPathLength()</a></li>
 <li><a href="#resetMaxVisitedNodesMultiplier()" tabindex="0">resetMaxVisitedNodesMultiplier()</a></li>
 <li><a href="#setMaxVisitedNodesMultiplier(float)" tabindex="0">setMaxVisitedNodesMultiplier(float)</a></li>
 <li><a href="#getTargetPos()" tabindex="0">getTargetPos()</a></li>
-<li><a href="#createPathFinder(int)" tabindex="0">createPathFinder(int)</a></li>
 <li><a href="#setSpeedModifier(double)" tabindex="0">setSpeedModifier(double)</a></li>
 <li><a href="#recomputePath()" tabindex="0">recomputePath()</a></li>
 <li><a href="#createPath(double,double,double,int)" tabindex="0">createPath(double, double, double, int)</a></li>
@@ -107,29 +76,16 @@ loadScripts(document, 'script');</script>
 <li><a href="#createPath(net.minecraft.core.BlockPos,int)" tabindex="0">createPath(BlockPos, int)</a></li>
 <li><a href="#createPath(net.minecraft.core.BlockPos,int,int)" tabindex="0">createPath(BlockPos, int, int)</a></li>
 <li><a href="#createPath(net.minecraft.world.entity.Entity,int)" tabindex="0">createPath(Entity, int)</a></li>
-<li><a href="#createPath(java.util.Set,int,boolean,int)" tabindex="0">createPath(Set, int, boolean, int)</a></li>
-<li><a href="#createPath(java.util.Set,int,boolean,int,float)" tabindex="0">createPath(Set, int, boolean, int, float)</a></li>
 <li><a href="#moveTo(double,double,double,double)" tabindex="0">moveTo(double, double, double, double)</a></li>
 <li><a href="#moveTo(double,double,double,int,double)" tabindex="0">moveTo(double, double, double, int, double)</a></li>
 <li><a href="#moveTo(net.minecraft.world.entity.Entity,double)" tabindex="0">moveTo(Entity, double)</a></li>
 <li><a href="#moveTo(net.minecraft.world.level.pathfinder.Path,double)" tabindex="0">moveTo(Path, double)</a></li>
 <li><a href="#getPath()" tabindex="0">getPath()</a></li>
 <li><a href="#tick()" tabindex="0">tick()</a></li>
-<li><a href="#getGroundY(net.minecraft.world.phys.Vec3)" tabindex="0">getGroundY(Vec3)</a></li>
-<li><a href="#followThePath()" tabindex="0">followThePath()</a></li>
-<li><a href="#shouldTargetNextNodeInDirection(net.minecraft.world.phys.Vec3)" tabindex="0">shouldTargetNextNodeInDirection(Vec3)</a></li>
-<li><a href="#doStuckDetection(net.minecraft.world.phys.Vec3)" tabindex="0">doStuckDetection(Vec3)</a></li>
-<li><a href="#timeoutPath()" tabindex="0">timeoutPath()</a></li>
-<li><a href="#resetStuckTimeout()" tabindex="0">resetStuckTimeout()</a></li>
 <li><a href="#isDone()" tabindex="0">isDone()</a></li>
 <li><a href="#isInProgress()" tabindex="0">isInProgress()</a></li>
 <li><a href="#stop()" tabindex="0">stop()</a></li>
-<li><a href="#getTempMobPos()" tabindex="0">getTempMobPos()</a></li>
-<li><a href="#canUpdatePath()" tabindex="0">canUpdatePath()</a></li>
-<li><a href="#trimPath()" tabindex="0">trimPath()</a></li>
-<li><a href="#canMoveDirectly(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3)" tabindex="0">canMoveDirectly(Vec3, Vec3)</a></li>
 <li><a href="#canCutCorner(net.minecraft.world.level.pathfinder.PathType)" tabindex="0">canCutCorner(PathType)</a></li>
-<li><a href="#isClearForMovementBetween(net.minecraft.world.entity.Mob,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,boolean)" tabindex="0">isClearForMovementBetween(Mob, Vec3, Vec3, boolean)</a></li>
 <li><a href="#isStableDestination(net.minecraft.core.BlockPos)" tabindex="0">isStableDestination(BlockPos)</a></li>
 <li><a href="#getNodeEvaluator()" tabindex="0">getNodeEvaluator()</a></li>
 <li><a href="#setCanFloat(boolean)" tabindex="0">setCanFloat(boolean)</a></li>
@@ -164,90 +120,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#hasDelayedRecomputation" class="member-name-link">hasDelayedRecomputation</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#isStuck" class="member-name-link">isStuck</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected int</code></div>
-<div class="col-second even-row-color"><code><a href="#lastStuckCheck" class="member-name-link">lastStuckCheck</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#lastStuckCheckPos" class="member-name-link">lastStuckCheckPos</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected long</code></div>
-<div class="col-second even-row-color"><code><a href="#lastTimeoutCheck" class="member-name-link">lastTimeoutCheck</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="../../../level/Level.html" title="class in net.minecraft.world.level">Level</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#level" class="member-name-link">level</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#MAX_TIME_RECOMPUTE" class="member-name-link">MAX_TIME_RECOMPUTE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected float</code></div>
-<div class="col-second odd-row-color"><code><a href="#maxDistanceToWaypoint" class="member-name-link">maxDistanceToWaypoint</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private float</code></div>
-<div class="col-second even-row-color"><code><a href="#maxVisitedNodesMultiplier" class="member-name-link">maxVisitedNodesMultiplier</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="../../Mob.html" title="class in net.minecraft.world.entity">Mob</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#mob" class="member-name-link">mob</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected <a href="../../../level/pathfinder/NodeEvaluator.html" title="class in net.minecraft.world.level.pathfinder">NodeEvaluator</a></code></div>
-<div class="col-second even-row-color"><code><a href="#nodeEvaluator" class="member-name-link">nodeEvaluator</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected @Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#path" class="member-name-link">path</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../level/pathfinder/PathFinder.html" title="class in net.minecraft.world.level.pathfinder">PathFinder</a></code></div>
-<div class="col-second even-row-color"><code><a href="#pathFinder" class="member-name-link">pathFinder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#reachRange" class="member-name-link">reachRange</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private float</code></div>
-<div class="col-second even-row-color"><code><a href="#requiredPathLength" class="member-name-link">requiredPathLength</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected double</code></div>
-<div class="col-second odd-row-color"><code><a href="#speedModifier" class="member-name-link">speedModifier</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#STUCK_CHECK_INTERVAL" class="member-name-link">STUCK_CHECK_INTERVAL</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#STUCK_THRESHOLD_DISTANCE_FACTOR" class="member-name-link">STUCK_THRESHOLD_DISTANCE_FACTOR</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second even-row-color"><code><a href="#targetPos" class="member-name-link">targetPos</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected int</code></div>
-<div class="col-second odd-row-color"><code><a href="#tick" class="member-name-link">tick</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected long</code></div>
-<div class="col-second even-row-color"><code><a href="#timeLastRecompute" class="member-name-link">timeLastRecompute</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected <a href="../../../../core/Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#timeoutCachedNode" class="member-name-link">timeoutCachedNode</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected double</code></div>
-<div class="col-second even-row-color"><code><a href="#timeoutLimit" class="member-name-link">timeoutLimit</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected long</code></div>
-<div class="col-second odd-row-color"><code><a href="#timeoutTimer" class="member-name-link">timeoutTimer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -267,7 +139,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -279,15 +151,8 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canFloat()" class="member-name-link">canFloat</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canMoveDirectly(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3)" class="member-name-link">canMoveDirectly</a><wbr>(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;startPos,
- <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;stopPos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#canNavigateGround()" class="member-name-link">canNavigateGround</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#canUpdatePath()" class="member-name-link">canUpdatePath</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#canNavigateGround()" class="member-name-link">canNavigateGround</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final @Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(double,double,double,int)" class="member-name-link">createPath</a><wbr>(double&nbsp;x,
@@ -298,19 +163,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(java.util.Set,int)" class="member-name-link">createPath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;&nbsp;positions,
  int&nbsp;reachRange)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(java.util.Set,int,boolean,int)" class="member-name-link">createPath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;&nbsp;targets,
- int&nbsp;radiusOffset,
- boolean&nbsp;above,
- int&nbsp;reachRange)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(java.util.Set,int,boolean,int,float)" class="member-name-link">createPath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;&nbsp;targets,
- int&nbsp;radiusOffset,
- boolean&nbsp;above,
- int&nbsp;reachRange,
- float&nbsp;maxPathLength)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(java.util.stream.Stream,int)" class="member-name-link">createPath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;&nbsp;positions,
@@ -329,83 +181,56 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(net.minecraft.world.entity.Entity,int)" class="member-name-link">createPath</a><wbr>(<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target,
  int&nbsp;reachRange)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../../level/pathfinder/PathFinder.html" title="class in net.minecraft.world.level.pathfinder">PathFinder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createPathFinder(int)" class="member-name-link">createPathFinder</a><wbr>(int&nbsp;maxVisitedNodes)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doStuckDetection(net.minecraft.world.phys.Vec3)" class="member-name-link">doStuckDetection</a><wbr>(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;mobPos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#followThePath()" class="member-name-link">followThePath</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGroundY(net.minecraft.world.phys.Vec3)" class="member-name-link">getGroundY</a><wbr>(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;target)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxDistanceToWaypoint()" class="member-name-link">getMaxDistanceToWaypoint</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxPathLength()" class="member-name-link">getMaxPathLength</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../level/pathfinder/NodeEvaluator.html" title="class in net.minecraft.world.level.pathfinder">NodeEvaluator</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNodeEvaluator()" class="member-name-link">getNodeEvaluator</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../level/pathfinder/NodeEvaluator.html" title="class in net.minecraft.world.level.pathfinder">NodeEvaluator</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNodeEvaluator()" class="member-name-link">getNodeEvaluator</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPath()" class="member-name-link">getPath</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPath()" class="member-name-link">getPath</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetPos()" class="member-name-link">getTargetPos</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getTempMobPos()" class="member-name-link">getTempMobPos</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isClearForMovementBetween(net.minecraft.world.entity.Mob,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,boolean)" class="member-name-link">isClearForMovementBetween</a><wbr>(<a href="../../Mob.html" title="class in net.minecraft.world.entity">Mob</a>&nbsp;mob,
- <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;startPos,
- <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;stopPos,
- boolean&nbsp;blockedByFluids)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDone()" class="member-name-link">isDone</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetPos()" class="member-name-link">getTargetPos</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInProgress()" class="member-name-link">isInProgress</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDone()" class="member-name-link">isDone</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStableDestination(net.minecraft.core.BlockPos)" class="member-name-link">isStableDestination</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInProgress()" class="member-name-link">isInProgress</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStuck()" class="member-name-link">isStuck</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStableDestination(net.minecraft.core.BlockPos)" class="member-name-link">isStableDestination</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveTo(double,double,double,double)" class="member-name-link">moveTo</a><wbr>(double&nbsp;x,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStuck()" class="member-name-link">isStuck</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveTo(double,double,double,double)" class="member-name-link">moveTo</a><wbr>(double&nbsp;x,
  double&nbsp;y,
  double&nbsp;z,
  double&nbsp;speedModifier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveTo(double,double,double,int,double)" class="member-name-link">moveTo</a><wbr>(double&nbsp;x,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveTo(double,double,double,int,double)" class="member-name-link">moveTo</a><wbr>(double&nbsp;x,
  double&nbsp;y,
  double&nbsp;z,
  int&nbsp;reachRange,
  double&nbsp;speedModifier)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveTo(net.minecraft.world.entity.Entity,double)" class="member-name-link">moveTo</a><wbr>(<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target,
- double&nbsp;speedModifier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveTo(net.minecraft.world.level.pathfinder.Path,double)" class="member-name-link">moveTo</a><wbr>(@Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a>&nbsp;newPath,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveTo(net.minecraft.world.entity.Entity,double)" class="member-name-link">moveTo</a><wbr>(<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target,
  double&nbsp;speedModifier)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recomputePath()" class="member-name-link">recomputePath</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveTo(net.minecraft.world.level.pathfinder.Path,double)" class="member-name-link">moveTo</a><wbr>(@Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a>&nbsp;newPath,
+ double&nbsp;speedModifier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetMaxVisitedNodesMultiplier()" class="member-name-link">resetMaxVisitedNodesMultiplier</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recomputePath()" class="member-name-link">recomputePath</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetStuckTimeout()" class="member-name-link">resetStuckTimeout</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetMaxVisitedNodesMultiplier()" class="member-name-link">resetMaxVisitedNodesMultiplier</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCanFloat(boolean)" class="member-name-link">setCanFloat</a><wbr>(boolean&nbsp;canFloat)</code></div>
@@ -425,260 +250,27 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldRecomputePath(net.minecraft.core.BlockPos)" class="member-name-link">shouldRecomputePath</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldTargetNextNodeInDirection(net.minecraft.world.phys.Vec3)" class="member-name-link">shouldTargetNextNodeInDirection</a><wbr>(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;mobPosition)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePathfinderMaxVisitedNodes()" class="member-name-link">updatePathfinderMaxVisitedNodes</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#timeoutPath()" class="member-name-link">timeoutPath</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#trimPath()" class="member-name-link">trimPath</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePathfinderMaxVisitedNodes()" class="member-name-link">updatePathfinderMaxVisitedNodes</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="MAX_TIME_RECOMPUTE">
-<h3>MAX_TIME_RECOMPUTE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAX_TIME_RECOMPUTE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.ai.navigation.PathNavigation.MAX_TIME_RECOMPUTE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="STUCK_CHECK_INTERVAL">
-<h3>STUCK_CHECK_INTERVAL</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">STUCK_CHECK_INTERVAL</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.ai.navigation.PathNavigation.STUCK_CHECK_INTERVAL">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="STUCK_THRESHOLD_DISTANCE_FACTOR">
-<h3>STUCK_THRESHOLD_DISTANCE_FACTOR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">STUCK_THRESHOLD_DISTANCE_FACTOR</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.ai.navigation.PathNavigation.STUCK_THRESHOLD_DISTANCE_FACTOR">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="mob">
-<h3>mob</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../Mob.html" title="class in net.minecraft.world.entity">Mob</a></span>&nbsp;<span class="element-name">mob</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="level">
-<h3>level</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../../level/Level.html" title="class in net.minecraft.world.level">Level</a></span>&nbsp;<span class="element-name">level</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="path">
-<h3>path</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></span>&nbsp;<span class="element-name">path</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="speedModifier">
-<h3>speedModifier</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">speedModifier</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="tick">
-<h3>tick</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">tick</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastStuckCheck">
-<h3>lastStuckCheck</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">lastStuckCheck</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastStuckCheckPos">
-<h3>lastStuckCheckPos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">lastStuckCheckPos</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="timeoutCachedNode">
-<h3>timeoutCachedNode</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../../core/Vec3i.html" title="class in net.minecraft.core">Vec3i</a></span>&nbsp;<span class="element-name">timeoutCachedNode</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="timeoutTimer">
-<h3>timeoutTimer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">timeoutTimer</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastTimeoutCheck">
-<h3>lastTimeoutCheck</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">lastTimeoutCheck</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="timeoutLimit">
-<h3>timeoutLimit</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">timeoutLimit</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="maxDistanceToWaypoint">
-<h3>maxDistanceToWaypoint</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">maxDistanceToWaypoint</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hasDelayedRecomputation">
-<h3>hasDelayedRecomputation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasDelayedRecomputation</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="timeLastRecompute">
-<h3>timeLastRecompute</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">timeLastRecompute</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nodeEvaluator">
-<h3>nodeEvaluator</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../level/pathfinder/NodeEvaluator.html" title="class in net.minecraft.world.level.pathfinder">NodeEvaluator</a></span>&nbsp;<span class="element-name">nodeEvaluator</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="targetPos">
-<h3>targetPos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></span>&nbsp;<span class="element-name">targetPos</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="reachRange">
-<h3>reachRange</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">reachRange</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="maxVisitedNodesMultiplier">
-<h3>maxVisitedNodesMultiplier</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">maxVisitedNodesMultiplier</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pathFinder">
-<h3>pathFinder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../level/pathfinder/PathFinder.html" title="class in net.minecraft.world.level.pathfinder">PathFinder</a></span>&nbsp;<span class="element-name">pathFinder</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isStuck">
-<h3>isStuck</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isStuck</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="requiredPathLength">
-<h3>requiredPathLength</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">requiredPathLength</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -718,14 +310,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getMaxPathLength()">
-<h3>getMaxPathLength</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getMaxPathLength</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="resetMaxVisitedNodesMultiplier()">
 <h3>resetMaxVisitedNodesMultiplier</h3>
 <div class="horizontal-scroll">
@@ -746,14 +330,6 @@ loadScripts(document, 'script');</script>
 <h3>getTargetPos</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></span>&nbsp;<span class="element-name">getTargetPos</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createPathFinder(int)">
-<h3>createPathFinder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../../../level/pathfinder/PathFinder.html" title="class in net.minecraft.world.level.pathfinder">PathFinder</a></span>&nbsp;<span class="element-name">createPathFinder</span><wbr><span class="parameters">(int&nbsp;maxVisitedNodes)</span></div>
 </div>
 </section>
 </li>
@@ -831,29 +407,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="createPath(java.util.Set,int,boolean,int)">
-<h3>createPath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></span>&nbsp;<span class="element-name">createPath</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;&nbsp;targets,
- int&nbsp;radiusOffset,
- boolean&nbsp;above,
- int&nbsp;reachRange)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createPath(java.util.Set,int,boolean,int,float)">
-<h3>createPath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></span>&nbsp;<span class="element-name">createPath</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;&nbsp;targets,
- int&nbsp;radiusOffset,
- boolean&nbsp;above,
- int&nbsp;reachRange,
- float&nbsp;maxPathLength)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="moveTo(double,double,double,double)">
 <h3>moveTo</h3>
 <div class="horizontal-scroll">
@@ -911,54 +464,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getGroundY(net.minecraft.world.phys.Vec3)">
-<h3>getGroundY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getGroundY</span><wbr><span class="parameters">(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;target)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="followThePath()">
-<h3>followThePath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">followThePath</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="shouldTargetNextNodeInDirection(net.minecraft.world.phys.Vec3)">
-<h3>shouldTargetNextNodeInDirection</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shouldTargetNextNodeInDirection</span><wbr><span class="parameters">(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;mobPosition)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="doStuckDetection(net.minecraft.world.phys.Vec3)">
-<h3>doStuckDetection</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">doStuckDetection</span><wbr><span class="parameters">(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;mobPos)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="timeoutPath()">
-<h3>timeoutPath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">timeoutPath</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resetStuckTimeout()">
-<h3>resetStuckTimeout</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resetStuckTimeout</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="isDone()">
 <h3>isDone</h3>
 <div class="horizontal-scroll">
@@ -983,54 +488,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getTempMobPos()">
-<h3>getTempMobPos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">getTempMobPos</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="canUpdatePath()">
-<h3>canUpdatePath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canUpdatePath</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="trimPath()">
-<h3>trimPath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">trimPath</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="canMoveDirectly(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3)">
-<h3>canMoveDirectly</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canMoveDirectly</span><wbr><span class="parameters">(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;startPos,
- <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;stopPos)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="canCutCorner(net.minecraft.world.level.pathfinder.PathType)">
 <h3>canCutCorner</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canCutCorner</span><wbr><span class="parameters">(<a href="../../../level/pathfinder/PathType.html" title="enum class in net.minecraft.world.level.pathfinder">PathType</a>&nbsp;pathType)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isClearForMovementBetween(net.minecraft.world.entity.Mob,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,boolean)">
-<h3>isClearForMovementBetween</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isClearForMovementBetween</span><wbr><span class="parameters">(<a href="../../Mob.html" title="class in net.minecraft.world.entity">Mob</a>&nbsp;mob,
- <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;startPos,
- <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;stopPos,
- boolean&nbsp;blockedByFluids)</span></div>
 </div>
 </section>
 </li>

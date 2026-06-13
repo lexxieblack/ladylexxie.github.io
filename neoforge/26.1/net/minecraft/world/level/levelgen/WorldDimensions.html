@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>WorldDimensions (NeoForge 26.1)</title>
+<title>WorldDimensions (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.levelgen, record: WorldDimensions">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/WorldDimensions.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,9 +60,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#dimensions" tabindex="0">dimensions</a></li>
 <li><a href="#CODEC" tabindex="0">CODEC</a></li>
-<li><a href="#BUILTIN_ORDER" tabindex="0">BUILTIN_ORDER</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -81,12 +79,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#get(net.minecraft.resources.ResourceKey)" tabindex="0">get(ResourceKey)</a></li>
 <li><a href="#levels()" tabindex="0">levels()</a></li>
 <li><a href="#isDebug()" tabindex="0">isDebug()</a></li>
-<li><a href="#specialWorldProperty(net.minecraft.core.Registry)" tabindex="0">specialWorldProperty(Registry)</a></li>
-<li><a href="#checkStability(net.minecraft.resources.ResourceKey,net.minecraft.world.level.dimension.LevelStem)" tabindex="0">checkStability(ResourceKey, LevelStem)</a></li>
-<li><a href="#isVanillaLike(net.minecraft.resources.ResourceKey,net.minecraft.world.level.dimension.LevelStem)" tabindex="0">isVanillaLike(ResourceKey, LevelStem)</a></li>
-<li><a href="#isStableOverworld(net.minecraft.world.level.dimension.LevelStem)" tabindex="0">isStableOverworld(LevelStem)</a></li>
-<li><a href="#isStableNether(net.minecraft.world.level.dimension.LevelStem)" tabindex="0">isStableNether(LevelStem)</a></li>
-<li><a href="#isStableEnd(net.minecraft.world.level.dimension.LevelStem)" tabindex="0">isStableEnd(LevelStem)</a></li>
 <li><a href="#bake(net.minecraft.core.Registry)" tabindex="0">bake(Registry)</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
@@ -139,17 +131,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#BUILTIN_ORDER" class="member-name-link">BUILTIN_ORDER</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a><wbr>&lt;<a href="WorldDimensions.html" title="class in net.minecraft.world.level.levelgen">WorldDimensions</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#CODEC" class="member-name-link">CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a><wbr>&lt;<a href="WorldDimensions.html" title="class in net.minecraft.world.level.levelgen">WorldDimensions</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#CODEC" class="member-name-link">CODEC</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;, <a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#dimensions" class="member-name-link">dimensions</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">The field for the <code>dimensions</code> record component.</div>
-</div>
 </div>
 </section>
 </li>
@@ -184,60 +168,40 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="WorldDimensions.Complete.html" title="class in net.minecraft.world.level.levelgen">WorldDimensions.Complete</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bake(net.minecraft.core.Registry)" class="member-name-link">bake</a><wbr>(<a href="../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;baseDimensions)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#checkStability(net.minecraft.resources.ResourceKey,net.minecraft.world.level.dimension.LevelStem)" class="member-name-link">checkStability</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;key,
- <a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;, <a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dimensions()" class="member-name-link">dimensions</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;, <a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dimensions()" class="member-name-link">dimensions</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>dimensions</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(net.minecraft.resources.ResourceKey)" class="member-name-link">get</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;key)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(net.minecraft.resources.ResourceKey)" class="member-name-link">get</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;key)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDebug()" class="member-name-link">isDebug</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isStableEnd(net.minecraft.world.level.dimension.LevelStem)" class="member-name-link">isStableEnd</a><wbr>(<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isStableNether(net.minecraft.world.level.dimension.LevelStem)" class="member-name-link">isStableNether</a><wbr>(<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isStableOverworld(net.minecraft.world.level.dimension.LevelStem)" class="member-name-link">isStableOverworld</a><wbr>(<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isVanillaLike(net.minecraft.resources.ResourceKey,net.minecraft.world.level.dimension.LevelStem)" class="member-name-link">isVanillaLike</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;key,
- <a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#keysInOrder(java.util.Set)" class="member-name-link">keysInOrder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&gt;&nbsp;knownKeys)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.google.common.collect.ImmutableSet<wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#levels()" class="member-name-link">levels</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../chunk/ChunkGenerator.html" title="class in net.minecraft.world.level.chunk">ChunkGenerator</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overworld()" class="member-name-link">overworld</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDebug()" class="member-name-link">isDebug</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="WorldDimensions.html" title="class in net.minecraft.world.level.levelgen">WorldDimensions</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replaceOverworldGenerator(net.minecraft.core.HolderLookup.Provider,net.minecraft.world.level.chunk.ChunkGenerator)" class="member-name-link">replaceOverworldGenerator</a><wbr>(<a href="../../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;registries,
- <a href="../chunk/ChunkGenerator.html" title="class in net.minecraft.world.level.chunk">ChunkGenerator</a>&nbsp;generator)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#keysInOrder(java.util.Set)" class="member-name-link">keysInOrder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&gt;&nbsp;knownKeys)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.google.common.collect.ImmutableSet<wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#levels()" class="member-name-link">levels</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../chunk/ChunkGenerator.html" title="class in net.minecraft.world.level.chunk">ChunkGenerator</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overworld()" class="member-name-link">overworld</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../storage/PrimaryLevelData.SpecialWorldProperty.html" title="enum class in net.minecraft.world.level.storage">PrimaryLevelData.SpecialWorldProperty</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#specialWorldProperty(net.minecraft.core.Registry)" class="member-name-link">specialWorldProperty</a><wbr>(<a href="../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;registry)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="WorldDimensions.html" title="class in net.minecraft.world.level.levelgen">WorldDimensions</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#replaceOverworldGenerator(net.minecraft.core.HolderLookup.Provider,net.minecraft.world.level.chunk.ChunkGenerator)" class="member-name-link">replaceOverworldGenerator</a><wbr>(<a href="../../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;registries,
+ <a href="../chunk/ChunkGenerator.html" title="class in net.minecraft.world.level.chunk">ChunkGenerator</a>&nbsp;generator)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -258,7 +222,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -271,27 +235,10 @@ loadScripts(document, 'script');</script>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="dimensions">
-<h3>dimensions</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;, <a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;</span>&nbsp;<span class="element-name">dimensions</span></div>
-<div class="block">The field for the <code>dimensions</code> record component.</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="CODEC">
 <h3>CODEC</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a>&lt;<a href="WorldDimensions.html" title="class in net.minecraft.world.level.levelgen">WorldDimensions</a>&gt;</span>&nbsp;<span class="element-name">CODEC</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="BUILTIN_ORDER">
-<h3>BUILTIN_ORDER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&gt;</span>&nbsp;<span class="element-name">BUILTIN_ORDER</span></div>
 </div>
 </section>
 </li>
@@ -398,56 +345,6 @@ loadScripts(document, 'script');</script>
 <h3>isDebug</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDebug</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="specialWorldProperty(net.minecraft.core.Registry)">
-<h3>specialWorldProperty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../storage/PrimaryLevelData.SpecialWorldProperty.html" title="enum class in net.minecraft.world.level.storage">PrimaryLevelData.SpecialWorldProperty</a></span>&nbsp;<span class="element-name">specialWorldProperty</span><wbr><span class="parameters">(<a href="../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;registry)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="checkStability(net.minecraft.resources.ResourceKey,net.minecraft.world.level.dimension.LevelStem)">
-<h3>checkStability</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a></span>&nbsp;<span class="element-name">checkStability</span><wbr><span class="parameters">(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;key,
- <a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isVanillaLike(net.minecraft.resources.ResourceKey,net.minecraft.world.level.dimension.LevelStem)">
-<h3>isVanillaLike</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isVanillaLike</span><wbr><span class="parameters">(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;key,
- <a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isStableOverworld(net.minecraft.world.level.dimension.LevelStem)">
-<h3>isStableOverworld</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isStableOverworld</span><wbr><span class="parameters">(<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isStableNether(net.minecraft.world.level.dimension.LevelStem)">
-<h3>isStableNether</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isStableNether</span><wbr><span class="parameters">(<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isStableEnd(net.minecraft.world.level.dimension.LevelStem)">
-<h3>isStableEnd</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isStableEnd</span><wbr><span class="parameters">(<a href="../dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&nbsp;dimension)</span></div>
 </div>
 </section>
 </li>

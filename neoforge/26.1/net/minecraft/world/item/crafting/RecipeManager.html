@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>RecipeManager (NeoForge 26.1)</title>
+<title>RecipeManager (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.item.crafting, class: RecipeManager">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/RecipeManager.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,23 +55,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#RECIPE_PROPERTY_SETS" tabindex="0">RECIPE_PROPERTY_SETS</a></li>
-<li><a href="#RECIPE_LISTER" tabindex="0">RECIPE_LISTER</a></li>
-<li><a href="#registries" tabindex="0">registries</a></li>
-<li><a href="#recipes" tabindex="0">recipes</a></li>
-<li><a href="#propertySets" tabindex="0">propertySets</a></li>
-<li><a href="#stonecutterRecipes" tabindex="0">stonecutterRecipes</a></li>
-<li><a href="#allDisplays" tabindex="0">allDisplays</a></li>
-<li><a href="#recipeToDisplay" tabindex="0">recipeToDisplay</a></li>
-<li><a href="#recipePriorities" tabindex="0">recipePriorities</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.core.HolderLookup.Provider)" tabindex="0">RecipeManager(HolderLookup.Provider)</a></li>
@@ -79,16 +64,11 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">prepare(ResourceManager, ProfilerFiller)</a></li>
-<li><a href="#apply(net.minecraft.world.item.crafting.RecipeMap,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">apply(RecipeMap, ResourceManager, ProfilerFiller)</a></li>
 <li><a href="#finalizeRecipeLoading(net.minecraft.world.flag.FeatureFlagSet)" tabindex="0">finalizeRecipeLoading(FeatureFlagSet)</a></li>
-<li><a href="#filterDisabled(net.minecraft.world.flag.FeatureFlagSet,java.util.List)" tabindex="0">filterDisabled(FeatureFlagSet, List)</a></li>
-<li><a href="#isIngredientEnabled(net.minecraft.world.flag.FeatureFlagSet,net.minecraft.world.item.crafting.Ingredient)" tabindex="0">isIngredientEnabled(FeatureFlagSet, Ingredient)</a></li>
 <li><a href="#getRecipeFor(net.minecraft.world.item.crafting.RecipeType,I,net.minecraft.world.level.Level,net.minecraft.resources.ResourceKey)" tabindex="0">getRecipeFor(RecipeType, I, Level, ResourceKey)</a></li>
 <li><a href="#getRecipeFor(net.minecraft.world.item.crafting.RecipeType,I,net.minecraft.world.level.Level,net.minecraft.world.item.crafting.RecipeHolder)" tabindex="0">getRecipeFor(RecipeType, I, Level, RecipeHolder)</a></li>
 <li><a href="#getRecipeFor(net.minecraft.world.item.crafting.RecipeType,I,net.minecraft.world.level.Level)" tabindex="0">getRecipeFor(RecipeType, I, Level)</a></li>
 <li><a href="#byKey(net.minecraft.resources.ResourceKey)" tabindex="0">byKey(ResourceKey)</a></li>
-<li><a href="#byKeyTyped(net.minecraft.world.item.crafting.RecipeType,net.minecraft.resources.ResourceKey)" tabindex="0">byKeyTyped(RecipeType, ResourceKey)</a></li>
 <li><a href="#getSynchronizedItemProperties()" tabindex="0">getSynchronizedItemProperties()</a></li>
 <li><a href="#getSynchronizedStonecutterRecipes()" tabindex="0">getSynchronizedStonecutterRecipes()</a></li>
 <li><a href="#propertySet(net.minecraft.resources.ResourceKey)" tabindex="0">propertySet(ResourceKey)</a></li>
@@ -96,10 +76,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getRecipes()" tabindex="0">getRecipes()</a></li>
 <li><a href="#getRecipeFromDisplay(net.minecraft.world.item.crafting.display.RecipeDisplayId)" tabindex="0">getRecipeFromDisplay(RecipeDisplayId)</a></li>
 <li><a href="#listDisplaysForRecipe(net.minecraft.resources.ResourceKey,java.util.function.Consumer)" tabindex="0">listDisplaysForRecipe(ResourceKey, Consumer)</a></li>
-<li><a href="#fromJson(net.minecraft.resources.ResourceKey,com.google.gson.JsonObject,net.minecraft.core.HolderLookup.Provider)" tabindex="0">fromJson(ResourceKey, JsonObject, HolderLookup.Provider)</a></li>
 <li><a href="#createCheck(net.minecraft.world.item.crafting.RecipeType)" tabindex="0">createCheck(RecipeType)</a></li>
-<li><a href="#unpackRecipeInfo(java.lang.Iterable,net.minecraft.world.flag.FeatureFlagSet)" tabindex="0">unpackRecipeInfo(Iterable, FeatureFlagSet)</a></li>
-<li><a href="#forSingleInput(net.minecraft.world.item.crafting.RecipeType)" tabindex="0">forSingleInput(RecipeType)</a></li>
 <li><a href="#recipeMap()" tabindex="0">recipeMap()</a></li>
 <li><a href="#setPriorityMap(it.unimi.dsi.fastutil.objects.Object2IntMap)" tabindex="0">setPriorityMap(Object2IntMap)</a></li>
 </ol>
@@ -159,48 +136,6 @@ implements <a href="RecipeAccess.html" title="interface in net.minecraft.world.i
 <code><a href="../../../server/packs/resources/PreparableReloadListener.PreparationBarrier.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener.PreparationBarrier</a>, <a href="../../../server/packs/resources/PreparableReloadListener.SharedState.html" title="class in net.minecraft.server.packs.resources">PreparableReloadListener.SharedState</a>, <a href="../../../server/packs/resources/PreparableReloadListener.StateKey.html" title="class in net.minecraft.server.packs.resources">PreparableReloadListener.StateKey</a>&lt;T&gt;</code></div>
 </section>
 </li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="RecipeManager.ServerDisplayInfo.html" title="class in net.minecraft.world.item.crafting">RecipeManager.ServerDisplayInfo</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#allDisplays" class="member-name-link">allDisplays</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;, <a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#propertySets" class="member-name-link">propertySets</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../resources/FileToIdConverter.html" title="class in net.minecraft.resources">FileToIdConverter</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#RECIPE_LISTER" class="member-name-link">RECIPE_LISTER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;, <a href="RecipeManager.IngredientExtractor.html" title="interface in net.minecraft.world.item.crafting">RecipeManager.IngredientExtractor</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#RECIPE_PROPERTY_SETS" class="member-name-link">RECIPE_PROPERTY_SETS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private it.unimi.dsi.fastutil.objects.Object2IntMap<wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#recipePriorities" class="member-name-link">recipePriorities</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a></code></div>
-<div class="col-second even-row-color"><code><a href="#recipes" class="member-name-link">recipes</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RecipeManager.ServerDisplayInfo.html" title="class in net.minecraft.world.item.crafting">RecipeManager.ServerDisplayInfo</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#recipeToDisplay" class="member-name-link">recipeToDisplay</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></code></div>
-<div class="col-second even-row-color"><code><a href="#registries" class="member-name-link">registries</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="SelectableRecipe.SingleInputSet.html" title="class in net.minecraft.world.item.crafting">SelectableRecipe.SingleInputSet</a><wbr>&lt;<a href="StonecutterRecipe.html" title="class in net.minecraft.world.item.crafting">StonecutterRecipe</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#stonecutterRecipes" class="member-name-link">stonecutterRecipes</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -225,93 +160,60 @@ implements <a href="RecipeAccess.html" title="interface in net.minecraft.world.i
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apply(net.minecraft.world.item.crafting.RecipeMap,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">apply</a><wbr>(<a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a>&nbsp;recipes,
- <a href="../../../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#byKey(net.minecraft.resources.ResourceKey)" class="member-name-link">byKey</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&nbsp;recipeId)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private &lt;T extends <a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;<br>@Nullable <a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#byKeyTyped(net.minecraft.world.item.crafting.RecipeType,net.minecraft.resources.ResourceKey)" class="member-name-link">byKeyTyped</a><wbr>(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type,
- <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&nbsp;recipeId)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;?&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#byKey(net.minecraft.resources.ResourceKey)" class="member-name-link">byKey</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&nbsp;recipeId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;I extends <a href="RecipeInput.html" title="interface in net.minecraft.world.item.crafting">RecipeInput</a>, T extends <a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;I&gt;&gt;<br><a href="RecipeManager.CachedCheck.html" title="interface in net.minecraft.world.item.crafting">RecipeManager.CachedCheck</a><wbr>&lt;I,<wbr>T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createCheck(net.minecraft.world.item.crafting.RecipeType)" class="member-name-link">createCheck</a><wbr>(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#filterDisabled(net.minecraft.world.flag.FeatureFlagSet,java.util.List)" class="member-name-link">filterDisabled</a><wbr>(<a href="../../flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFlags,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a>&gt;&nbsp;ingredients)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#finalizeRecipeLoading(net.minecraft.world.flag.FeatureFlagSet)" class="member-name-link">finalizeRecipeLoading</a><wbr>(<a href="../../flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFlags)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="RecipeManager.IngredientExtractor.html" title="interface in net.minecraft.world.item.crafting">RecipeManager.IngredientExtractor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#forSingleInput(net.minecraft.world.item.crafting.RecipeType)" class="member-name-link">forSingleInput</a><wbr>(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;? extends <a href="SingleItemRecipe.html" title="class in net.minecraft.world.item.crafting">SingleItemRecipe</a>&gt;&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static <a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fromJson(net.minecraft.resources.ResourceKey,com.google.gson.JsonObject,net.minecraft.core.HolderLookup.Provider)" class="member-name-link">fromJson</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&nbsp;id,
- com.google.gson.JsonObject&nbsp;object,
- <a href="../../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;registries)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;I extends <a href="RecipeInput.html" title="interface in net.minecraft.world.item.crafting">RecipeInput</a>, T extends <a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;I&gt;&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;T&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeFor(net.minecraft.world.item.crafting.RecipeType,I,net.minecraft.world.level.Level)" class="member-name-link">getRecipeFor</a><wbr>(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type,
- I&nbsp;input,
- <a href="../../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#finalizeRecipeLoading(net.minecraft.world.flag.FeatureFlagSet)" class="member-name-link">finalizeRecipeLoading</a><wbr>(<a href="../../flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFlags)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;I extends <a href="RecipeInput.html" title="interface in net.minecraft.world.item.crafting">RecipeInput</a>, T extends <a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;I&gt;&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;T&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeFor(net.minecraft.world.item.crafting.RecipeType,I,net.minecraft.world.level.Level,net.minecraft.resources.ResourceKey)" class="member-name-link">getRecipeFor</a><wbr>(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeFor(net.minecraft.world.item.crafting.RecipeType,I,net.minecraft.world.level.Level)" class="member-name-link">getRecipeFor</a><wbr>(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type,
+ I&nbsp;input,
+ <a href="../../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;I extends <a href="RecipeInput.html" title="interface in net.minecraft.world.item.crafting">RecipeInput</a>, T extends <a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;I&gt;&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;T&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeFor(net.minecraft.world.item.crafting.RecipeType,I,net.minecraft.world.level.Level,net.minecraft.resources.ResourceKey)" class="member-name-link">getRecipeFor</a><wbr>(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type,
  I&nbsp;input,
  <a href="../../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  @Nullable <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&nbsp;recipeHint)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;I extends <a href="RecipeInput.html" title="interface in net.minecraft.world.item.crafting">RecipeInput</a>, T extends <a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;I&gt;&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;T&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeFor(net.minecraft.world.item.crafting.RecipeType,I,net.minecraft.world.level.Level,net.minecraft.world.item.crafting.RecipeHolder)" class="member-name-link">getRecipeFor</a><wbr>(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;I extends <a href="RecipeInput.html" title="interface in net.minecraft.world.item.crafting">RecipeInput</a>, T extends <a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;I&gt;&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;T&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeFor(net.minecraft.world.item.crafting.RecipeType,I,net.minecraft.world.level.Level,net.minecraft.world.item.crafting.RecipeHolder)" class="member-name-link">getRecipeFor</a><wbr>(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type,
  I&nbsp;input,
  <a href="../../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  @Nullable <a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;T&gt;&nbsp;recipeHint)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="RecipeManager.ServerDisplayInfo.html" title="class in net.minecraft.world.item.crafting">RecipeManager.ServerDisplayInfo</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeFromDisplay(net.minecraft.world.item.crafting.display.RecipeDisplayId)" class="member-name-link">getRecipeFromDisplay</a><wbr>(<a href="display/RecipeDisplayId.html" title="class in net.minecraft.world.item.crafting.display">RecipeDisplayId</a>&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipes()" class="member-name-link">getRecipes</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="RecipeManager.ServerDisplayInfo.html" title="class in net.minecraft.world.item.crafting">RecipeManager.ServerDisplayInfo</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipeFromDisplay(net.minecraft.world.item.crafting.display.RecipeDisplayId)" class="member-name-link">getRecipeFromDisplay</a><wbr>(<a href="display/RecipeDisplayId.html" title="class in net.minecraft.world.item.crafting.display">RecipeDisplayId</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;, <a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSynchronizedItemProperties()" class="member-name-link">getSynchronizedItemProperties</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;?&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRecipes()" class="member-name-link">getRecipes</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SelectableRecipe.SingleInputSet.html" title="class in net.minecraft.world.item.crafting">SelectableRecipe.SingleInputSet</a><wbr>&lt;<a href="StonecutterRecipe.html" title="class in net.minecraft.world.item.crafting">StonecutterRecipe</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSynchronizedStonecutterRecipes()" class="member-name-link">getSynchronizedStonecutterRecipes</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;, <a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSynchronizedItemProperties()" class="member-name-link">getSynchronizedItemProperties</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIngredientEnabled(net.minecraft.world.flag.FeatureFlagSet,net.minecraft.world.item.crafting.Ingredient)" class="member-name-link">isIngredientEnabled</a><wbr>(<a href="../../flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFlags,
- <a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a>&nbsp;ingredient)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SelectableRecipe.SingleInputSet.html" title="class in net.minecraft.world.item.crafting">SelectableRecipe.SingleInputSet</a><wbr>&lt;<a href="StonecutterRecipe.html" title="class in net.minecraft.world.item.crafting">StonecutterRecipe</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSynchronizedStonecutterRecipes()" class="member-name-link">getSynchronizedStonecutterRecipes</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#listDisplaysForRecipe(net.minecraft.resources.ResourceKey,java.util.function.Consumer)" class="member-name-link">listDisplaysForRecipe</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="display/RecipeDisplayEntry.html" title="class in net.minecraft.world.item.crafting.display">RecipeDisplayEntry</a>&gt;&nbsp;output)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">prepare</a><wbr>(<a href="../../../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#propertySet(net.minecraft.resources.ResourceKey)" class="member-name-link">propertySet</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#propertySet(net.minecraft.resources.ResourceKey)" class="member-name-link">propertySet</a><wbr>(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;&nbsp;id)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recipeMap()" class="member-name-link">recipeMap</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recipeMap()" class="member-name-link">recipeMap</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPriorityMap(it.unimi.dsi.fastutil.objects.Object2IntMap)" class="member-name-link">setPriorityMap</a><wbr>(<a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/objects/Object2IntMap.html" title="class or interface in it.unimi.dsi.fastutil.objects" class="external-link">Object2IntMap</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&gt;&nbsp;recipePriorities)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPriorityMap(it.unimi.dsi.fastutil.objects.Object2IntMap)" class="member-name-link">setPriorityMap</a><wbr>(it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&gt;&nbsp;recipePriorities)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SelectableRecipe.SingleInputSet.html" title="class in net.minecraft.world.item.crafting">SelectableRecipe.SingleInputSet</a><wbr>&lt;<a href="StonecutterRecipe.html" title="class in net.minecraft.world.item.crafting">StonecutterRecipe</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stonecutterRecipes()" class="member-name-link">stonecutterRecipes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SelectableRecipe.SingleInputSet.html" title="class in net.minecraft.world.item.crafting">SelectableRecipe.SingleInputSet</a><wbr>&lt;<a href="StonecutterRecipe.html" title="class in net.minecraft.world.item.crafting">StonecutterRecipe</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stonecutterRecipes()" class="member-name-link">stonecutterRecipes</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="RecipeManager.ServerDisplayInfo.html" title="class in net.minecraft.world.item.crafting">RecipeManager.ServerDisplayInfo</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#unpackRecipeInfo(java.lang.Iterable,net.minecraft.world.flag.FeatureFlagSet)" class="member-name-link">unpackRecipeInfo</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;?&gt;&gt;&nbsp;recipes,
- <a href="../../flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFeatures)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -320,10 +222,10 @@ implements <a href="RecipeAccess.html" title="interface in net.minecraft.world.i
 <code><a href="../../../server/packs/resources/SimplePreparableReloadListener.html#reload(net.minecraft.server.packs.resources.PreparableReloadListener.SharedState,java.util.concurrent.Executor,net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier,java.util.concurrent.Executor)" title="reload(PreparableReloadListener.SharedState, Executor, PreparableReloadListener.PreparationBarrier, Executor)">reload</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.resource.ContextAwareReloadListener">Methods inherited from class&nbsp;<a href="../../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#method-summary" title="class in net.neoforged.neoforge.resource">ContextAwareReloadListener</a></h3>
-<code><a href="../../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#getContext()" title="getContext()">getContext</a>, <a href="../../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#getRegistryLookup()" title="getRegistryLookup()">getRegistryLookup</a>, <a href="../../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#injectContext(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.HolderLookup.Provider)" title="injectContext(ICondition.IContext, HolderLookup.Provider)">injectContext</a>, <a href="../../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#makeConditionalOps()" title="makeConditionalOps()">makeConditionalOps</a>, <a href="../../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#makeConditionalOps(com.mojang.serialization.DynamicOps)" title="makeConditionalOps(DynamicOps)">makeConditionalOps</a></code></div>
+<code><a href="../../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#injectContext(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.HolderLookup.Provider)" title="injectContext(ICondition.IContext, HolderLookup.Provider)">injectContext</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.packs.resources.PreparableReloadListener">Methods inherited from interface&nbsp;<a href="../../../server/packs/resources/PreparableReloadListener.html#method-summary" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a></h3>
 <code><a href="../../../server/packs/resources/PreparableReloadListener.html#getName()" title="getName()">getName</a>, <a href="../../../server/packs/resources/PreparableReloadListener.html#prepareSharedState(net.minecraft.server.packs.resources.PreparableReloadListener.SharedState)" title="prepareSharedState(PreparableReloadListener.SharedState)">prepareSharedState</a></code></div>
@@ -333,94 +235,6 @@ implements <a href="RecipeAccess.html" title="interface in net.minecraft.world.i
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="RECIPE_PROPERTY_SETS">
-<h3>RECIPE_PROPERTY_SETS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;, <a href="RecipeManager.IngredientExtractor.html" title="interface in net.minecraft.world.item.crafting">RecipeManager.IngredientExtractor</a>&gt;</span>&nbsp;<span class="element-name">RECIPE_PROPERTY_SETS</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="RECIPE_LISTER">
-<h3>RECIPE_LISTER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../resources/FileToIdConverter.html" title="class in net.minecraft.resources">FileToIdConverter</a></span>&nbsp;<span class="element-name">RECIPE_LISTER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="registries">
-<h3>registries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a></span>&nbsp;<span class="element-name">registries</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="recipes">
-<h3>recipes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a></span>&nbsp;<span class="element-name">recipes</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="propertySets">
-<h3>propertySets</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;, <a href="RecipePropertySet.html" title="class in net.minecraft.world.item.crafting">RecipePropertySet</a>&gt;</span>&nbsp;<span class="element-name">propertySets</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stonecutterRecipes">
-<h3>stonecutterRecipes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="SelectableRecipe.SingleInputSet.html" title="class in net.minecraft.world.item.crafting">SelectableRecipe.SingleInputSet</a>&lt;<a href="StonecutterRecipe.html" title="class in net.minecraft.world.item.crafting">StonecutterRecipe</a>&gt;</span>&nbsp;<span class="element-name">stonecutterRecipes</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="allDisplays">
-<h3>allDisplays</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RecipeManager.ServerDisplayInfo.html" title="class in net.minecraft.world.item.crafting">RecipeManager.ServerDisplayInfo</a>&gt;</span>&nbsp;<span class="element-name">allDisplays</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="recipeToDisplay">
-<h3>recipeToDisplay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RecipeManager.ServerDisplayInfo.html" title="class in net.minecraft.world.item.crafting">RecipeManager.ServerDisplayInfo</a>&gt;&gt;</span>&nbsp;<span class="element-name">recipeToDisplay</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="recipePriorities">
-<h3>recipePriorities</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&gt;</span>&nbsp;<span class="element-name">recipePriorities</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -443,55 +257,10 @@ implements <a href="RecipeAccess.html" title="interface in net.minecraft.world.i
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">
-<h3>prepare</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a></span>&nbsp;<span class="element-name">prepare</span><wbr><span class="parameters">(<a href="../../../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../../server/packs/resources/SimplePreparableReloadListener.html#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">prepare</a></code>&nbsp;in class&nbsp;<code><a href="../../../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;<a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="apply(net.minecraft.world.item.crafting.RecipeMap,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">
-<h3>apply</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">apply</span><wbr><span class="parameters">(<a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a>&nbsp;recipes,
- <a href="../../../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../../server/packs/resources/SimplePreparableReloadListener.html#apply(T,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">apply</a></code>&nbsp;in class&nbsp;<code><a href="../../../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;<a href="RecipeMap.html" title="class in net.minecraft.world.item.crafting">RecipeMap</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="finalizeRecipeLoading(net.minecraft.world.flag.FeatureFlagSet)">
 <h3>finalizeRecipeLoading</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">finalizeRecipeLoading</span><wbr><span class="parameters">(<a href="../../flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFlags)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="filterDisabled(net.minecraft.world.flag.FeatureFlagSet,java.util.List)">
-<h3>filterDisabled</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a>&gt;</span>&nbsp;<span class="element-name">filterDisabled</span><wbr><span class="parameters">(<a href="../../flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFlags,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a>&gt;&nbsp;ingredients)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isIngredientEnabled(net.minecraft.world.flag.FeatureFlagSet,net.minecraft.world.item.crafting.Ingredient)">
-<h3>isIngredientEnabled</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isIngredientEnabled</span><wbr><span class="parameters">(<a href="../../flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFlags,
- <a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a>&nbsp;ingredient)</span></div>
 </div>
 </section>
 </li>
@@ -535,16 +304,6 @@ implements <a href="RecipeAccess.html" title="interface in net.minecraft.world.i
 <h3>byKey</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">byKey</span><wbr><span class="parameters">(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&nbsp;recipeId)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="byKeyTyped(net.minecraft.world.item.crafting.RecipeType,net.minecraft.resources.ResourceKey)">
-<h3>byKeyTyped</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;</span>
-<span class="return-type">@Nullable <a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;T&gt;</span>&nbsp;<span class="element-name">byKeyTyped</span><wbr><span class="parameters">(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type,
- <a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&nbsp;recipeId)</span></div>
 </div>
 </section>
 </li>
@@ -614,38 +373,11 @@ implements <a href="RecipeAccess.html" title="interface in net.minecraft.world.i
 </section>
 </li>
 <li>
-<section class="detail" id="fromJson(net.minecraft.resources.ResourceKey,com.google.gson.JsonObject,net.minecraft.core.HolderLookup.Provider)">
-<h3>fromJson</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type"><a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;?&gt;</span>&nbsp;<span class="element-name">fromJson</span><wbr><span class="parameters">(<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&nbsp;id,
- com.google.gson.JsonObject&nbsp;object,
- <a href="../../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;registries)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="createCheck(net.minecraft.world.item.crafting.RecipeType)">
 <h3>createCheck</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;I extends <a href="RecipeInput.html" title="interface in net.minecraft.world.item.crafting">RecipeInput</a>, T extends <a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;I&gt;&gt;</span>
 <span class="return-type"><a href="RecipeManager.CachedCheck.html" title="interface in net.minecraft.world.item.crafting">RecipeManager.CachedCheck</a>&lt;I,<wbr>T&gt;</span>&nbsp;<span class="element-name">createCheck</span><wbr><span class="parameters">(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;T&gt;&nbsp;type)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="unpackRecipeInfo(java.lang.Iterable,net.minecraft.world.flag.FeatureFlagSet)">
-<h3>unpackRecipeInfo</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RecipeManager.ServerDisplayInfo.html" title="class in net.minecraft.world.item.crafting">RecipeManager.ServerDisplayInfo</a>&gt;</span>&nbsp;<span class="element-name">unpackRecipeInfo</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="RecipeHolder.html" title="class in net.minecraft.world.item.crafting">RecipeHolder</a>&lt;?&gt;&gt;&nbsp;recipes,
- <a href="../../flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a>&nbsp;enabledFeatures)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="forSingleInput(net.minecraft.world.item.crafting.RecipeType)">
-<h3>forSingleInput</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="RecipeManager.IngredientExtractor.html" title="interface in net.minecraft.world.item.crafting">RecipeManager.IngredientExtractor</a></span>&nbsp;<span class="element-name">forSingleInput</span><wbr><span class="parameters">(<a href="RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;? extends <a href="SingleItemRecipe.html" title="class in net.minecraft.world.item.crafting">SingleItemRecipe</a>&gt;&nbsp;type)</span></div>
 </div>
 </section>
 </li>
@@ -661,7 +393,7 @@ implements <a href="RecipeAccess.html" title="interface in net.minecraft.world.i
 <section class="detail" id="setPriorityMap(it.unimi.dsi.fastutil.objects.Object2IntMap)">
 <h3>setPriorityMap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPriorityMap</span><wbr><span class="parameters">(it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&gt;&nbsp;recipePriorities)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPriorityMap</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/objects/Object2IntMap.html" title="class or interface in it.unimi.dsi.fastutil.objects" class="external-link">Object2IntMap</a>&lt;<a href="../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;?&gt;&gt;&gt;&nbsp;recipePriorities)</span></div>
 </div>
 </section>
 </li>

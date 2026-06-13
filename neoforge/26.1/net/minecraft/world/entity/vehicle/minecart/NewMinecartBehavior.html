@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>NewMinecartBehavior (NeoForge 26.1)</title>
+<title>NewMinecartBehavior (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity.vehicle.minecart, class: NewMinecartBehavior">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/NewMinecartBehavior.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -63,10 +63,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#POS_ROT_LERP_TICKS" tabindex="0">POS_ROT_LERP_TICKS</a></li>
 <li><a href="#ON_RAIL_Y_OFFSET" tabindex="0">ON_RAIL_Y_OFFSET</a></li>
 <li><a href="#OPPOSING_SLOPES_REST_AT_SPEED_THRESHOLD" tabindex="0">OPPOSING_SLOPES_REST_AT_SPEED_THRESHOLD</a></li>
-<li><a href="#cacheIndexAlpha" tabindex="0">cacheIndexAlpha</a></li>
-<li><a href="#cachedLerpDelay" tabindex="0">cachedLerpDelay</a></li>
-<li><a href="#cachedPartialTick" tabindex="0">cachedPartialTick</a></li>
-<li><a href="#lerpDelay" tabindex="0">lerpDelay</a></li>
 <li><a href="#lerpSteps" tabindex="0">lerpSteps</a></li>
 <li><a href="#currentLerpSteps" tabindex="0">currentLerpSteps</a></li>
 <li><a href="#currentLerpStepsTotalWeight" tabindex="0">currentLerpStepsTotalWeight</a></li>
@@ -81,26 +77,16 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#tick()" tabindex="0">tick()</a></li>
-<li><a href="#lerpClientPositionAndRotation()" tabindex="0">lerpClientPositionAndRotation()</a></li>
 <li><a href="#setOldLerpValues()" tabindex="0">setOldLerpValues()</a></li>
 <li><a href="#cartHasPosRotLerp()" tabindex="0">cartHasPosRotLerp()</a></li>
 <li><a href="#getCartLerpXRot(float)" tabindex="0">getCartLerpXRot(float)</a></li>
 <li><a href="#getCartLerpYRot(float)" tabindex="0">getCartLerpYRot(float)</a></li>
 <li><a href="#getCartLerpPosition(float)" tabindex="0">getCartLerpPosition(float)</a></li>
 <li><a href="#getCartLerpMovements(float)" tabindex="0">getCartLerpMovements(float)</a></li>
-<li><a href="#getCurrentLerpStep(float)" tabindex="0">getCurrentLerpStep(float)</a></li>
 <li><a href="#adjustToRails(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,boolean)" tabindex="0">adjustToRails(BlockPos, BlockState, boolean)</a></li>
-<li><a href="#setRotation(float,float)" tabindex="0">setRotation(float, float)</a></li>
 <li><a href="#moveAlongTrack(net.minecraft.server.level.ServerLevel)" tabindex="0">moveAlongTrack(ServerLevel)</a></li>
-<li><a href="#calculateTrackSpeed(net.minecraft.server.level.ServerLevel,net.minecraft.world.phys.Vec3,net.minecraft.world.entity.vehicle.minecart.NewMinecartBehavior.TrackIteration,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.state.properties.RailShape)" tabindex="0">calculateTrackSpeed(ServerLevel, Vec3, NewMinecartBehavior.TrackIteration, BlockPos, BlockState, RailShape)</a></li>
-<li><a href="#calculateSlopeSpeed(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.state.properties.RailShape)" tabindex="0">calculateSlopeSpeed(Vec3, RailShape)</a></li>
-<li><a href="#calculatePlayerInputSpeed(net.minecraft.world.phys.Vec3)" tabindex="0">calculatePlayerInputSpeed(Vec3)</a></li>
-<li><a href="#calculateHaltTrackSpeed(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.state.BlockState)" tabindex="0">calculateHaltTrackSpeed(Vec3, BlockState)</a></li>
-<li><a href="#calculateBoostTrackSpeed(net.minecraft.world.phys.Vec3,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" tabindex="0">calculateBoostTrackSpeed(Vec3, BlockPos, BlockState)</a></li>
 <li><a href="#stepAlongTrack(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.properties.RailShape,double)" tabindex="0">stepAlongTrack(BlockPos, RailShape, double)</a></li>
-<li><a href="#restAtVShape(net.minecraft.world.level.block.state.properties.RailShape,net.minecraft.world.level.block.state.properties.RailShape)" tabindex="0">restAtVShape(RailShape, RailShape)</a></li>
 <li><a href="#getMaxSpeed(net.minecraft.server.level.ServerLevel)" tabindex="0">getMaxSpeed(ServerLevel)</a></li>
-<li><a href="#isDecending(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.state.properties.RailShape)" tabindex="0">isDecending(Vec3, RailShape)</a></li>
 <li><a href="#getSlowdownFactor()" tabindex="0">getSlowdownFactor()</a></li>
 <li><a href="#pushAndPickupEntities()" tabindex="0">pushAndPickupEntities()</a></li>
 <li><a href="#pickupEntities(net.minecraft.world.phys.AABB)" tabindex="0">pickupEntities(AABB)</a></li>
@@ -140,12 +126,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final record&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="NewMinecartBehavior.MinecartStep.html" class="type-name-link" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.MinecartStep</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="NewMinecartBehavior.StepPartialTicks.html" class="type-name-link" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.StepPartialTicks</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="NewMinecartBehavior.TrackIteration.html" class="type-name-link" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.TrackIteration</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -158,23 +138,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#cachedLerpDelay" class="member-name-link">cachedLerpDelay</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="NewMinecartBehavior.MinecartStep.html" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.MinecartStep</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#currentLerpSteps" class="member-name-link">currentLerpSteps</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private float</code></div>
-<div class="col-second odd-row-color"><code><a href="#cachedPartialTick" class="member-name-link">cachedPartialTick</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="NewMinecartBehavior.StepPartialTicks.html" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.StepPartialTicks</a></code></div>
-<div class="col-second even-row-color"><code><a href="#cacheIndexAlpha" class="member-name-link">cacheIndexAlpha</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="NewMinecartBehavior.MinecartStep.html" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.MinecartStep</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#currentLerpSteps" class="member-name-link">currentLerpSteps</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>double</code></div>
-<div class="col-second even-row-color"><code><a href="#currentLerpStepsTotalWeight" class="member-name-link">currentLerpStepsTotalWeight</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#lerpDelay" class="member-name-link">lerpDelay</a></code></div>
+<div class="col-first odd-row-color"><code>double</code></div>
+<div class="col-second odd-row-color"><code><a href="#currentLerpStepsTotalWeight" class="member-name-link">currentLerpStepsTotalWeight</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="NewMinecartBehavior.MinecartStep.html" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.MinecartStep</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#lerpSteps" class="member-name-link">lerpSteps</a></code></div>
@@ -192,9 +160,6 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#POS_ROT_LERP_TICKS" class="member-name-link">POS_ROT_LERP_TICKS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.world.entity.vehicle.minecart.MinecartBehavior">Fields inherited from class&nbsp;<a href="MinecartBehavior.html#field-summary" title="class in net.minecraft.world.entity.vehicle.minecart">MinecartBehavior</a></h3>
-<code><a href="MinecartBehavior.html#minecart">minecart</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -226,60 +191,26 @@ loadScripts(document, 'script');</script>
  <a href="../../../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;currentState,
  boolean&nbsp;instant)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateBoostTrackSpeed(net.minecraft.world.phys.Vec3,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">calculateBoostTrackSpeed</a><wbr>(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateHaltTrackSpeed(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">calculateHaltTrackSpeed</a><wbr>(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement,
- <a href="../../../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculatePlayerInputSpeed(net.minecraft.world.phys.Vec3)" class="member-name-link">calculatePlayerInputSpeed</a><wbr>(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateSlopeSpeed(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.state.properties.RailShape)" class="member-name-link">calculateSlopeSpeed</a><wbr>(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement,
- <a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;shape)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateTrackSpeed(net.minecraft.server.level.ServerLevel,net.minecraft.world.phys.Vec3,net.minecraft.world.entity.vehicle.minecart.NewMinecartBehavior.TrackIteration,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.state.properties.RailShape)" class="member-name-link">calculateTrackSpeed</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement,
- <a href="NewMinecartBehavior.TrackIteration.html" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.TrackIteration</a>&nbsp;trackIteration,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;currentPos,
- <a href="../../../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;currentState,
- <a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;shape)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cartHasPosRotLerp()" class="member-name-link">cartHasPosRotLerp</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCartLerpMovements(float)" class="member-name-link">getCartLerpMovements</a><wbr>(float&nbsp;partialTicks)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cartHasPosRotLerp()" class="member-name-link">cartHasPosRotLerp</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCartLerpPosition(float)" class="member-name-link">getCartLerpPosition</a><wbr>(float&nbsp;partialTicks)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCartLerpMovements(float)" class="member-name-link">getCartLerpMovements</a><wbr>(float&nbsp;partialTicks)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCartLerpXRot(float)" class="member-name-link">getCartLerpXRot</a><wbr>(float&nbsp;partialTicks)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCartLerpPosition(float)" class="member-name-link">getCartLerpPosition</a><wbr>(float&nbsp;partialTicks)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCartLerpYRot(float)" class="member-name-link">getCartLerpYRot</a><wbr>(float&nbsp;partialTicks)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCartLerpXRot(float)" class="member-name-link">getCartLerpXRot</a><wbr>(float&nbsp;partialTicks)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="NewMinecartBehavior.StepPartialTicks.html" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.StepPartialTicks</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentLerpStep(float)" class="member-name-link">getCurrentLerpStep</a><wbr>(float&nbsp;partialTick)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCartLerpYRot(float)" class="member-name-link">getCartLerpYRot</a><wbr>(float&nbsp;partialTicks)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxSpeed(net.minecraft.server.level.ServerLevel)" class="member-name-link">getMaxSpeed</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSlowdownFactor()" class="member-name-link">getSlowdownFactor</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDecending(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.state.properties.RailShape)" class="member-name-link">isDecending</a><wbr>(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;movement,
- <a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;shape)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lerpClientPositionAndRotation()" class="member-name-link">lerpClientPositionAndRotation</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveAlongTrack(net.minecraft.server.level.ServerLevel)" class="member-name-link">moveAlongTrack</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</code></div>
@@ -293,16 +224,8 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pushEntities(net.minecraft.world.phys.AABB)" class="member-name-link">pushEntities</a><wbr>(<a href="../../../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;hitbox)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#restAtVShape(net.minecraft.world.level.block.state.properties.RailShape,net.minecraft.world.level.block.state.properties.RailShape)" class="member-name-link">restAtVShape</a><wbr>(<a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;currentRailShape,
- <a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;newRailShape)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOldLerpValues()" class="member-name-link">setOldLerpValues</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRotation(float,float)" class="member-name-link">setRotation</a><wbr>(float&nbsp;yRot,
- float&nbsp;xRot)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOldLerpValues()" class="member-name-link">setOldLerpValues</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stepAlongTrack(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.properties.RailShape,double)" class="member-name-link">stepAlongTrack</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
@@ -320,7 +243,7 @@ loadScripts(document, 'script');</script>
 <code><a href="MinecartBehavior.html#getDeltaMovement()" title="getDeltaMovement()">getDeltaMovement</a>, <a href="MinecartBehavior.html#getInterpolation()" title="getInterpolation()">getInterpolation</a>, <a href="MinecartBehavior.html#getKnownMovement(net.minecraft.world.phys.Vec3)" title="getKnownMovement(Vec3)">getKnownMovement</a>, <a href="MinecartBehavior.html#getMotionDirection()" title="getMotionDirection()">getMotionDirection</a>, <a href="MinecartBehavior.html#getX()" title="getX()">getX</a>, <a href="MinecartBehavior.html#getXRot()" title="getXRot()">getXRot</a>, <a href="MinecartBehavior.html#getY()" title="getY()">getY</a>, <a href="MinecartBehavior.html#getYRot()" title="getYRot()">getYRot</a>, <a href="MinecartBehavior.html#getZ()" title="getZ()">getZ</a>, <a href="MinecartBehavior.html#lerpMotion(net.minecraft.world.phys.Vec3)" title="lerpMotion(Vec3)">lerpMotion</a>, <a href="MinecartBehavior.html#level()" title="level()">level</a>, <a href="MinecartBehavior.html#position()" title="position()">position</a>, <a href="MinecartBehavior.html#setDeltaMovement(double,double,double)" title="setDeltaMovement(double, double, double)">setDeltaMovement</a>, <a href="MinecartBehavior.html#setDeltaMovement(net.minecraft.world.phys.Vec3)" title="setDeltaMovement(Vec3)">setDeltaMovement</a>, <a href="MinecartBehavior.html#setPos(double,double,double)" title="setPos(double, double, double)">setPos</a>, <a href="MinecartBehavior.html#setPos(net.minecraft.world.phys.Vec3)" title="setPos(Vec3)">setPos</a>, <a href="MinecartBehavior.html#setXRot(float)" title="setXRot(float)">setXRot</a>, <a href="MinecartBehavior.html#setYRot(float)" title="setYRot(float)">setYRot</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -377,38 +300,6 @@ loadScripts(document, 'script');</script>
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cacheIndexAlpha">
-<h3>cacheIndexAlpha</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="NewMinecartBehavior.StepPartialTicks.html" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.StepPartialTicks</a></span>&nbsp;<span class="element-name">cacheIndexAlpha</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cachedLerpDelay">
-<h3>cachedLerpDelay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">cachedLerpDelay</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cachedPartialTick">
-<h3>cachedPartialTick</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">cachedPartialTick</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lerpDelay">
-<h3>lerpDelay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">lerpDelay</span></div>
 </div>
 </section>
 </li>
@@ -481,14 +372,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="lerpClientPositionAndRotation()">
-<h3>lerpClientPositionAndRotation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">lerpClientPositionAndRotation</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="setOldLerpValues()">
 <h3>setOldLerpValues</h3>
 <div class="horizontal-scroll">
@@ -537,29 +420,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getCurrentLerpStep(float)">
-<h3>getCurrentLerpStep</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="NewMinecartBehavior.StepPartialTicks.html" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.StepPartialTicks</a></span>&nbsp;<span class="element-name">getCurrentLerpStep</span><wbr><span class="parameters">(float&nbsp;partialTick)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="adjustToRails(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,boolean)">
 <h3>adjustToRails</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">adjustToRails</span><wbr><span class="parameters">(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;targetBlockPos,
  <a href="../../../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;currentState,
  boolean&nbsp;instant)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setRotation(float,float)">
-<h3>setRotation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRotation</span><wbr><span class="parameters">(float&nbsp;yRot,
- float&nbsp;xRot)</span></div>
 </div>
 </section>
 </li>
@@ -572,55 +438,6 @@ loadScripts(document, 'script');</script>
 <dt>Specified by:</dt>
 <dd><code><a href="MinecartBehavior.html#moveAlongTrack(net.minecraft.server.level.ServerLevel)">moveAlongTrack</a></code>&nbsp;in class&nbsp;<code><a href="MinecartBehavior.html" title="class in net.minecraft.world.entity.vehicle.minecart">MinecartBehavior</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateTrackSpeed(net.minecraft.server.level.ServerLevel,net.minecraft.world.phys.Vec3,net.minecraft.world.entity.vehicle.minecart.NewMinecartBehavior.TrackIteration,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.state.properties.RailShape)">
-<h3>calculateTrackSpeed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">calculateTrackSpeed</span><wbr><span class="parameters">(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement,
- <a href="NewMinecartBehavior.TrackIteration.html" title="class in net.minecraft.world.entity.vehicle.minecart">NewMinecartBehavior.TrackIteration</a>&nbsp;trackIteration,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;currentPos,
- <a href="../../../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;currentState,
- <a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;shape)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateSlopeSpeed(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.state.properties.RailShape)">
-<h3>calculateSlopeSpeed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">calculateSlopeSpeed</span><wbr><span class="parameters">(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement,
- <a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;shape)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculatePlayerInputSpeed(net.minecraft.world.phys.Vec3)">
-<h3>calculatePlayerInputSpeed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">calculatePlayerInputSpeed</span><wbr><span class="parameters">(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateHaltTrackSpeed(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.state.BlockState)">
-<h3>calculateHaltTrackSpeed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">calculateHaltTrackSpeed</span><wbr><span class="parameters">(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement,
- <a href="../../../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateBoostTrackSpeed(net.minecraft.world.phys.Vec3,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)">
-<h3>calculateBoostTrackSpeed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">calculateBoostTrackSpeed</span><wbr><span class="parameters">(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMovement,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</span></div>
 </div>
 </section>
 </li>
@@ -639,15 +456,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="restAtVShape(net.minecraft.world.level.block.state.properties.RailShape,net.minecraft.world.level.block.state.properties.RailShape)">
-<h3>restAtVShape</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">restAtVShape</span><wbr><span class="parameters">(<a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;currentRailShape,
- <a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;newRailShape)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getMaxSpeed(net.minecraft.server.level.ServerLevel)">
 <h3>getMaxSpeed</h3>
 <div class="horizontal-scroll">
@@ -656,15 +464,6 @@ loadScripts(document, 'script');</script>
 <dt>Specified by:</dt>
 <dd><code><a href="MinecartBehavior.html#getMaxSpeed(net.minecraft.server.level.ServerLevel)">getMaxSpeed</a></code>&nbsp;in class&nbsp;<code><a href="MinecartBehavior.html" title="class in net.minecraft.world.entity.vehicle.minecart">MinecartBehavior</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isDecending(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.state.properties.RailShape)">
-<h3>isDecending</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDecending</span><wbr><span class="parameters">(<a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;movement,
- <a href="../../../level/block/state/properties/RailShape.html" title="enum class in net.minecraft.world.level.block.state.properties">RailShape</a>&nbsp;shape)</span></div>
 </div>
 </section>
 </li>

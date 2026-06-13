@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>DataCommands (NeoForge 26.1)</title>
+<title>DataCommands (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server.commands.data, class: DataCommands">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/DataCommands.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,13 +60,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#ERROR_MERGE_UNCHANGED" tabindex="0">ERROR_MERGE_UNCHANGED</a></li>
-<li><a href="#ERROR_GET_NOT_NUMBER" tabindex="0">ERROR_GET_NOT_NUMBER</a></li>
-<li><a href="#ERROR_GET_NON_EXISTENT" tabindex="0">ERROR_GET_NON_EXISTENT</a></li>
-<li><a href="#ERROR_MULTIPLE_TAGS" tabindex="0">ERROR_MULTIPLE_TAGS</a></li>
-<li><a href="#ERROR_EXPECTED_OBJECT" tabindex="0">ERROR_EXPECTED_OBJECT</a></li>
-<li><a href="#ERROR_EXPECTED_VALUE" tabindex="0">ERROR_EXPECTED_VALUE</a></li>
-<li><a href="#ERROR_INVALID_SUBSTRING" tabindex="0">ERROR_INVALID_SUBSTRING</a></li>
 <li><a href="#ALL_PROVIDERS" tabindex="0">ALL_PROVIDERS</a></li>
 <li><a href="#TARGET_PROVIDERS" tabindex="0">TARGET_PROVIDERS</a></li>
 <li><a href="#SOURCE_PROVIDERS" tabindex="0">SOURCE_PROVIDERS</a></li>
@@ -80,22 +73,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#register(com.mojang.brigadier.CommandDispatcher)" tabindex="0">register(CommandDispatcher)</a></li>
-<li><a href="#getAsText(net.minecraft.nbt.Tag)" tabindex="0">getAsText(Tag)</a></li>
-<li><a href="#stringifyTagList(java.util.List,net.minecraft.server.commands.data.DataCommands.StringProcessor)" tabindex="0">stringifyTagList(List, DataCommands.StringProcessor)</a></li>
-<li><a href="#decorateModification(java.util.function.BiConsumer)" tabindex="0">decorateModification(BiConsumer)</a></li>
-<li><a href="#validatedSubstring(java.lang.String,int,int)" tabindex="0">validatedSubstring(String, int, int)</a></li>
-<li><a href="#substring(java.lang.String,int,int)" tabindex="0">substring(String, int, int)</a></li>
-<li><a href="#substring(java.lang.String,int)" tabindex="0">substring(String, int)</a></li>
-<li><a href="#getOffset(int,int)" tabindex="0">getOffset(int, int)</a></li>
-<li><a href="#getSingletonSource(com.mojang.brigadier.context.CommandContext,net.minecraft.server.commands.data.DataCommands.DataProvider)" tabindex="0">getSingletonSource(CommandContext, DataCommands.DataProvider)</a></li>
-<li><a href="#resolveSourcePath(com.mojang.brigadier.context.CommandContext,net.minecraft.server.commands.data.DataCommands.DataProvider)" tabindex="0">resolveSourcePath(CommandContext, DataCommands.DataProvider)</a></li>
-<li><a href="#manipulateData(com.mojang.brigadier.context.CommandContext,net.minecraft.server.commands.data.DataCommands.DataProvider,net.minecraft.server.commands.data.DataCommands.DataManipulator,java.util.List)" tabindex="0">manipulateData(CommandContext, DataCommands.DataProvider, DataCommands.DataManipulator, List)</a></li>
-<li><a href="#removeData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.commands.arguments.NbtPathArgument.NbtPath)" tabindex="0">removeData(CommandSourceStack, DataAccessor, NbtPathArgument.NbtPath)</a></li>
 <li><a href="#getSingleTag(net.minecraft.commands.arguments.NbtPathArgument.NbtPath,net.minecraft.server.commands.data.DataAccessor)" tabindex="0">getSingleTag(NbtPathArgument.NbtPath, DataAccessor)</a></li>
-<li><a href="#getData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.commands.arguments.NbtPathArgument.NbtPath)" tabindex="0">getData(CommandSourceStack, DataAccessor, NbtPathArgument.NbtPath)</a></li>
-<li><a href="#getNumeric(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.commands.arguments.NbtPathArgument.NbtPath,double)" tabindex="0">getNumeric(CommandSourceStack, DataAccessor, NbtPathArgument.NbtPath, double)</a></li>
-<li><a href="#getData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor)" tabindex="0">getData(CommandSourceStack, DataAccessor)</a></li>
-<li><a href="#mergeData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.nbt.CompoundTag)" tabindex="0">mergeData(CommandSourceStack, DataAccessor, CompoundTag)</a></li>
 </ol>
 </li>
 </ol>
@@ -126,18 +104,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="DataCommands.DataManipulator.html" class="type-name-link" title="interface in net.minecraft.server.commands.data">DataCommands.DataManipulator</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static interface&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="DataCommands.DataManipulatorDecorator.html" class="type-name-link" title="interface in net.minecraft.server.commands.data">DataCommands.DataManipulatorDecorator</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="DataCommands.DataProvider.html" class="type-name-link" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static interface&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="DataCommands.StringProcessor.html" class="type-name-link" title="interface in net.minecraft.server.commands.data">DataCommands.StringProcessor</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -153,33 +122,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&gt;&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#ALL_PROVIDERS" class="member-name-link">ALL_PROVIDERS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ERROR_EXPECTED_OBJECT" class="member-name-link">ERROR_EXPECTED_OBJECT</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></code></div>
-<div class="col-second even-row-color"><code><a href="#ERROR_EXPECTED_VALUE" class="member-name-link">ERROR_EXPECTED_VALUE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ERROR_GET_NON_EXISTENT" class="member-name-link">ERROR_GET_NON_EXISTENT</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></code></div>
-<div class="col-second even-row-color"><code><a href="#ERROR_GET_NOT_NUMBER" class="member-name-link">ERROR_GET_NOT_NUMBER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../../../com/mojang/brigadier/exceptions/Dynamic2CommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">Dynamic2CommandExceptionType</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ERROR_INVALID_SUBSTRING" class="member-name-link">ERROR_INVALID_SUBSTRING</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../../../com/mojang/brigadier/exceptions/SimpleCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">SimpleCommandExceptionType</a></code></div>
-<div class="col-second even-row-color"><code><a href="#ERROR_MERGE_UNCHANGED" class="member-name-link">ERROR_MERGE_UNCHANGED</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../../../com/mojang/brigadier/exceptions/SimpleCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">SimpleCommandExceptionType</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ERROR_MULTIPLE_TAGS" class="member-name-link">ERROR_MULTIPLE_TAGS</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#SOURCE_PROVIDERS" class="member-name-link">SOURCE_PROVIDERS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#SOURCE_PROVIDERS" class="member-name-link">SOURCE_PROVIDERS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TARGET_PROVIDERS" class="member-name-link">TARGET_PROVIDERS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#TARGET_PROVIDERS" class="member-name-link">TARGET_PROVIDERS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -207,86 +155,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../../../com/mojang/brigadier/builder/ArgumentBuilder.html" title="class in com.mojang.brigadier.builder">ArgumentBuilder</a><wbr>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>, ?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decorateModification(java.util.function.BiConsumer)" class="member-name-link">decorateModification</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../../../../../com/mojang/brigadier/builder/ArgumentBuilder.html" title="class in com.mojang.brigadier.builder">ArgumentBuilder</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>, ?&gt;, <a href="DataCommands.DataManipulatorDecorator.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataManipulatorDecorator</a>&gt;&nbsp;nodeSupplier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getAsText(net.minecraft.nbt.Tag)" class="member-name-link">getAsText</a><wbr>(<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&nbsp;tag)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor)" class="member-name-link">getData</a><wbr>(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.commands.arguments.NbtPathArgument.NbtPath)" class="member-name-link">getData</a><wbr>(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor,
- <a href="../../../commands/arguments/NbtPathArgument.NbtPath.html" title="class in net.minecraft.commands.arguments">NbtPathArgument.NbtPath</a>&nbsp;path)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getNumeric(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.commands.arguments.NbtPathArgument.NbtPath,double)" class="member-name-link">getNumeric</a><wbr>(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor,
- <a href="../../../commands/arguments/NbtPathArgument.NbtPath.html" title="class in net.minecraft.commands.arguments">NbtPathArgument.NbtPath</a>&nbsp;path,
- double&nbsp;scale)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getOffset(int,int)" class="member-name-link">getOffset</a><wbr>(int&nbsp;index,
- int&nbsp;length)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSingleTag(net.minecraft.commands.arguments.NbtPathArgument.NbtPath,net.minecraft.server.commands.data.DataAccessor)" class="member-name-link">getSingleTag</a><wbr>(<a href="../../../commands/arguments/NbtPathArgument.NbtPath.html" title="class in net.minecraft.commands.arguments">NbtPathArgument.NbtPath</a>&nbsp;path,
  <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSingletonSource(com.mojang.brigadier.context.CommandContext,net.minecraft.server.commands.data.DataCommands.DataProvider)" class="member-name-link">getSingletonSource</a><wbr>(<a href="../../../../../com/mojang/brigadier/context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;&nbsp;context,
- <a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&nbsp;sourceProvider)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#register(com.mojang.brigadier.CommandDispatcher)" class="member-name-link">register</a><wbr>(<a href="../../../../../com/mojang/brigadier/CommandDispatcher.html" title="class in com.mojang.brigadier">CommandDispatcher</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;&nbsp;dispatcher)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#manipulateData(com.mojang.brigadier.context.CommandContext,net.minecraft.server.commands.data.DataCommands.DataProvider,net.minecraft.server.commands.data.DataCommands.DataManipulator,java.util.List)" class="member-name-link">manipulateData</a><wbr>(<a href="../../../../../com/mojang/brigadier/context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;&nbsp;context,
- <a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&nbsp;targetProvider,
- <a href="DataCommands.DataManipulator.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataManipulator</a>&nbsp;manipulator,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;&nbsp;source)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#mergeData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.nbt.CompoundTag)" class="member-name-link">mergeData</a><wbr>(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor,
- <a href="../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;nbt)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#register(com.mojang.brigadier.CommandDispatcher)" class="member-name-link">register</a><wbr>(<a href="../../../../../com/mojang/brigadier/CommandDispatcher.html" title="class in com.mojang.brigadier">CommandDispatcher</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;&nbsp;dispatcher)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.commands.arguments.NbtPathArgument.NbtPath)" class="member-name-link">removeData</a><wbr>(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor,
- <a href="../../../commands/arguments/NbtPathArgument.NbtPath.html" title="class in net.minecraft.commands.arguments">NbtPathArgument.NbtPath</a>&nbsp;path)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resolveSourcePath(com.mojang.brigadier.context.CommandContext,net.minecraft.server.commands.data.DataCommands.DataProvider)" class="member-name-link">resolveSourcePath</a><wbr>(<a href="../../../../../com/mojang/brigadier/context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;&nbsp;context,
- <a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&nbsp;sourceProvider)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stringifyTagList(java.util.List,net.minecraft.server.commands.data.DataCommands.StringProcessor)" class="member-name-link">stringifyTagList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;&nbsp;source,
- <a href="DataCommands.StringProcessor.html" title="interface in net.minecraft.server.commands.data">DataCommands.StringProcessor</a>&nbsp;stringProcessor)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#substring(java.lang.String,int)" class="member-name-link">substring</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input,
- int&nbsp;start)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#substring(java.lang.String,int,int)" class="member-name-link">substring</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input,
- int&nbsp;start,
- int&nbsp;end)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#validatedSubstring(java.lang.String,int,int)" class="member-name-link">validatedSubstring</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input,
- int&nbsp;start,
- int&nbsp;end)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -298,62 +179,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="ERROR_MERGE_UNCHANGED">
-<h3>ERROR_MERGE_UNCHANGED</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/brigadier/exceptions/SimpleCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">SimpleCommandExceptionType</a></span>&nbsp;<span class="element-name">ERROR_MERGE_UNCHANGED</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ERROR_GET_NOT_NUMBER">
-<h3>ERROR_GET_NOT_NUMBER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></span>&nbsp;<span class="element-name">ERROR_GET_NOT_NUMBER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ERROR_GET_NON_EXISTENT">
-<h3>ERROR_GET_NON_EXISTENT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></span>&nbsp;<span class="element-name">ERROR_GET_NON_EXISTENT</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ERROR_MULTIPLE_TAGS">
-<h3>ERROR_MULTIPLE_TAGS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/brigadier/exceptions/SimpleCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">SimpleCommandExceptionType</a></span>&nbsp;<span class="element-name">ERROR_MULTIPLE_TAGS</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ERROR_EXPECTED_OBJECT">
-<h3>ERROR_EXPECTED_OBJECT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></span>&nbsp;<span class="element-name">ERROR_EXPECTED_OBJECT</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ERROR_EXPECTED_VALUE">
-<h3>ERROR_EXPECTED_VALUE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/brigadier/exceptions/DynamicCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">DynamicCommandExceptionType</a></span>&nbsp;<span class="element-name">ERROR_EXPECTED_VALUE</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ERROR_INVALID_SUBSTRING">
-<h3>ERROR_INVALID_SUBSTRING</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/brigadier/exceptions/Dynamic2CommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">Dynamic2CommandExceptionType</a></span>&nbsp;<span class="element-name">ERROR_INVALID_SUBSTRING</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="ALL_PROVIDERS">
 <h3>ALL_PROVIDERS</h3>
@@ -411,219 +236,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getAsText(net.minecraft.nbt.Tag)">
-<h3>getAsText</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getAsText</span><wbr><span class="parameters">(<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&nbsp;tag)</span>
-                         throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stringifyTagList(java.util.List,net.minecraft.server.commands.data.DataCommands.StringProcessor)">
-<h3>stringifyTagList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;</span>&nbsp;<span class="element-name">stringifyTagList</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;&nbsp;source,
- <a href="DataCommands.StringProcessor.html" title="interface in net.minecraft.server.commands.data">DataCommands.StringProcessor</a>&nbsp;stringProcessor)</span>
-                                   throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="decorateModification(java.util.function.BiConsumer)">
-<h3>decorateModification</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/brigadier/builder/ArgumentBuilder.html" title="class in com.mojang.brigadier.builder">ArgumentBuilder</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>, ?&gt;</span>&nbsp;<span class="element-name">decorateModification</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../../../../../com/mojang/brigadier/builder/ArgumentBuilder.html" title="class in com.mojang.brigadier.builder">ArgumentBuilder</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>, ?&gt;, <a href="DataCommands.DataManipulatorDecorator.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataManipulatorDecorator</a>&gt;&nbsp;nodeSupplier)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="validatedSubstring(java.lang.String,int,int)">
-<h3>validatedSubstring</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">validatedSubstring</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input,
- int&nbsp;start,
- int&nbsp;end)</span>
-                                  throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="substring(java.lang.String,int,int)">
-<h3>substring</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">substring</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input,
- int&nbsp;start,
- int&nbsp;end)</span>
-                         throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="substring(java.lang.String,int)">
-<h3>substring</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">substring</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input,
- int&nbsp;start)</span>
-                         throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getOffset(int,int)">
-<h3>getOffset</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getOffset</span><wbr><span class="parameters">(int&nbsp;index,
- int&nbsp;length)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getSingletonSource(com.mojang.brigadier.context.CommandContext,net.minecraft.server.commands.data.DataCommands.DataProvider)">
-<h3>getSingletonSource</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;</span>&nbsp;<span class="element-name">getSingletonSource</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/brigadier/context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;&nbsp;context,
- <a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&nbsp;sourceProvider)</span>
-                                     throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resolveSourcePath(com.mojang.brigadier.context.CommandContext,net.minecraft.server.commands.data.DataCommands.DataProvider)">
-<h3>resolveSourcePath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;</span>&nbsp;<span class="element-name">resolveSourcePath</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/brigadier/context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;&nbsp;context,
- <a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&nbsp;sourceProvider)</span>
-                                    throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="manipulateData(com.mojang.brigadier.context.CommandContext,net.minecraft.server.commands.data.DataCommands.DataProvider,net.minecraft.server.commands.data.DataCommands.DataManipulator,java.util.List)">
-<h3>manipulateData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">manipulateData</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/brigadier/context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;&nbsp;context,
- <a href="DataCommands.DataProvider.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataProvider</a>&nbsp;targetProvider,
- <a href="DataCommands.DataManipulator.html" title="interface in net.minecraft.server.commands.data">DataCommands.DataManipulator</a>&nbsp;manipulator,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a>&gt;&nbsp;source)</span>
-                           throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="removeData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.commands.arguments.NbtPathArgument.NbtPath)">
-<h3>removeData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">removeData</span><wbr><span class="parameters">(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor,
- <a href="../../../commands/arguments/NbtPathArgument.NbtPath.html" title="class in net.minecraft.commands.arguments">NbtPathArgument.NbtPath</a>&nbsp;path)</span>
-                       throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getSingleTag(net.minecraft.commands.arguments.NbtPathArgument.NbtPath,net.minecraft.server.commands.data.DataAccessor)">
 <h3>getSingleTag</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../nbt/Tag.html" title="interface in net.minecraft.nbt">Tag</a></span>&nbsp;<span class="element-name">getSingleTag</span><wbr><span class="parameters">(<a href="../../../commands/arguments/NbtPathArgument.NbtPath.html" title="class in net.minecraft.commands.arguments">NbtPathArgument.NbtPath</a>&nbsp;path,
  <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor)</span>
                         throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.commands.arguments.NbtPathArgument.NbtPath)">
-<h3>getData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getData</span><wbr><span class="parameters">(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor,
- <a href="../../../commands/arguments/NbtPathArgument.NbtPath.html" title="class in net.minecraft.commands.arguments">NbtPathArgument.NbtPath</a>&nbsp;path)</span>
-                    throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getNumeric(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.commands.arguments.NbtPathArgument.NbtPath,double)">
-<h3>getNumeric</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getNumeric</span><wbr><span class="parameters">(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor,
- <a href="../../../commands/arguments/NbtPathArgument.NbtPath.html" title="class in net.minecraft.commands.arguments">NbtPathArgument.NbtPath</a>&nbsp;path,
- double&nbsp;scale)</span>
-                       throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor)">
-<h3>getData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getData</span><wbr><span class="parameters">(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor)</span>
-                    throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="mergeData(net.minecraft.commands.CommandSourceStack,net.minecraft.server.commands.data.DataAccessor,net.minecraft.nbt.CompoundTag)">
-<h3>mergeData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">mergeData</span><wbr><span class="parameters">(<a href="../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&nbsp;source,
- <a href="DataAccessor.html" title="interface in net.minecraft.server.commands.data">DataAccessor</a>&nbsp;accessor,
- <a href="../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;nbt)</span>
-                      throws <span class="exceptions"><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="../../../../../com/mojang/brigadier/exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>

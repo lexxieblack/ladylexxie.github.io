@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>GoatAi (NeoForge 26.1)</title>
+<title>GoatAi (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity.animal.goat, class: GoatAi">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/GoatAi.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,20 +61,9 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#RAM_PREPARE_TIME" tabindex="0">RAM_PREPARE_TIME</a></li>
 <li><a href="#RAM_MAX_DISTANCE" tabindex="0">RAM_MAX_DISTANCE</a></li>
-<li><a href="#ADULT_FOLLOW_RANGE" tabindex="0">ADULT_FOLLOW_RANGE</a></li>
-<li><a href="#SPEED_MULTIPLIER_WHEN_IDLING" tabindex="0">SPEED_MULTIPLIER_WHEN_IDLING</a></li>
-<li><a href="#SPEED_MULTIPLIER_WHEN_FOLLOWING_ADULT" tabindex="0">SPEED_MULTIPLIER_WHEN_FOLLOWING_ADULT</a></li>
-<li><a href="#SPEED_MULTIPLIER_WHEN_TEMPTED" tabindex="0">SPEED_MULTIPLIER_WHEN_TEMPTED</a></li>
-<li><a href="#SPEED_MULTIPLIER_WHEN_PANICKING" tabindex="0">SPEED_MULTIPLIER_WHEN_PANICKING</a></li>
-<li><a href="#SPEED_MULTIPLIER_WHEN_PREPARING_TO_RAM" tabindex="0">SPEED_MULTIPLIER_WHEN_PREPARING_TO_RAM</a></li>
-<li><a href="#TIME_BETWEEN_LONG_JUMPS" tabindex="0">TIME_BETWEEN_LONG_JUMPS</a></li>
 <li><a href="#MAX_LONG_JUMP_HEIGHT" tabindex="0">MAX_LONG_JUMP_HEIGHT</a></li>
 <li><a href="#MAX_LONG_JUMP_WIDTH" tabindex="0">MAX_LONG_JUMP_WIDTH</a></li>
 <li><a href="#MAX_JUMP_VELOCITY_MULTIPLIER" tabindex="0">MAX_JUMP_VELOCITY_MULTIPLIER</a></li>
-<li><a href="#TIME_BETWEEN_RAMS" tabindex="0">TIME_BETWEEN_RAMS</a></li>
-<li><a href="#TIME_BETWEEN_RAMS_SCREAMER" tabindex="0">TIME_BETWEEN_RAMS_SCREAMER</a></li>
-<li><a href="#RAM_TARGET_CONDITIONS" tabindex="0">RAM_TARGET_CONDITIONS</a></li>
-<li><a href="#SPEED_MULTIPLIER_WHEN_RAMMING" tabindex="0">SPEED_MULTIPLIER_WHEN_RAMMING</a></li>
 <li><a href="#RAM_MIN_DISTANCE" tabindex="0">RAM_MIN_DISTANCE</a></li>
 <li><a href="#ADULT_RAM_KNOCKBACK_FORCE" tabindex="0">ADULT_RAM_KNOCKBACK_FORCE</a></li>
 <li><a href="#BABY_RAM_KNOCKBACK_FORCE" tabindex="0">BABY_RAM_KNOCKBACK_FORCE</a></li>
@@ -87,12 +76,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#initMemories(net.minecraft.world.entity.animal.goat.Goat,net.minecraft.util.RandomSource)" tabindex="0">initMemories(Goat, RandomSource)</a></li>
-<li><a href="#getActivities()" tabindex="0">getActivities()</a></li>
-<li><a href="#initCoreActivity()" tabindex="0">initCoreActivity()</a></li>
-<li><a href="#initIdleActivity()" tabindex="0">initIdleActivity()</a></li>
-<li><a href="#initLongJumpActivity()" tabindex="0">initLongJumpActivity()</a></li>
-<li><a href="#initRamActivity()" tabindex="0">initRamActivity()</a></li>
 <li><a href="#updateActivity(net.minecraft.world.entity.animal.goat.Goat)" tabindex="0">updateActivity(Goat)</a></li>
 </ol>
 </li>
@@ -124,63 +107,30 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></code></div>
-<div class="col-second even-row-color"><code><a href="#ADULT_FOLLOW_RANGE" class="member-name-link">ADULT_FOLLOW_RANGE</a></code></div>
+<div class="col-first even-row-color"><code>static final float</code></div>
+<div class="col-second even-row-color"><code><a href="#ADULT_RAM_KNOCKBACK_FORCE" class="member-name-link">ADULT_RAM_KNOCKBACK_FORCE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#ADULT_RAM_KNOCKBACK_FORCE" class="member-name-link">ADULT_RAM_KNOCKBACK_FORCE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#BABY_RAM_KNOCKBACK_FORCE" class="member-name-link">BABY_RAM_KNOCKBACK_FORCE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#BABY_RAM_KNOCKBACK_FORCE" class="member-name-link">BABY_RAM_KNOCKBACK_FORCE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#MAX_JUMP_VELOCITY_MULTIPLIER" class="member-name-link">MAX_JUMP_VELOCITY_MULTIPLIER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#MAX_LONG_JUMP_HEIGHT" class="member-name-link">MAX_LONG_JUMP_HEIGHT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MAX_JUMP_VELOCITY_MULTIPLIER" class="member-name-link">MAX_JUMP_VELOCITY_MULTIPLIER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#MAX_LONG_JUMP_WIDTH" class="member-name-link">MAX_LONG_JUMP_WIDTH</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#MAX_LONG_JUMP_HEIGHT" class="member-name-link">MAX_LONG_JUMP_HEIGHT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#RAM_MAX_DISTANCE" class="member-name-link">RAM_MAX_DISTANCE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MAX_LONG_JUMP_WIDTH" class="member-name-link">MAX_LONG_JUMP_WIDTH</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#RAM_MIN_DISTANCE" class="member-name-link">RAM_MIN_DISTANCE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RAM_MAX_DISTANCE" class="member-name-link">RAM_MAX_DISTANCE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#RAM_PREPARE_TIME" class="member-name-link">RAM_PREPARE_TIME</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RAM_MIN_DISTANCE" class="member-name-link">RAM_MIN_DISTANCE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../ai/targeting/TargetingConditions.html" title="class in net.minecraft.world.entity.ai.targeting">TargetingConditions</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#RAM_TARGET_CONDITIONS" class="member-name-link">RAM_TARGET_CONDITIONS</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#RAM_PREPARE_TIME" class="member-name-link">RAM_PREPARE_TIME</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#SPEED_MULTIPLIER_WHEN_FOLLOWING_ADULT" class="member-name-link">SPEED_MULTIPLIER_WHEN_FOLLOWING_ADULT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#SPEED_MULTIPLIER_WHEN_IDLING" class="member-name-link">SPEED_MULTIPLIER_WHEN_IDLING</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#SPEED_MULTIPLIER_WHEN_PANICKING" class="member-name-link">SPEED_MULTIPLIER_WHEN_PANICKING</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#SPEED_MULTIPLIER_WHEN_PREPARING_TO_RAM" class="member-name-link">SPEED_MULTIPLIER_WHEN_PREPARING_TO_RAM</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#SPEED_MULTIPLIER_WHEN_RAMMING" class="member-name-link">SPEED_MULTIPLIER_WHEN_RAMMING</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#SPEED_MULTIPLIER_WHEN_TEMPTED" class="member-name-link">SPEED_MULTIPLIER_WHEN_TEMPTED</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></code></div>
-<div class="col-second even-row-color"><code><a href="#TIME_BETWEEN_LONG_JUMPS" class="member-name-link">TIME_BETWEEN_LONG_JUMPS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#TIME_BETWEEN_RAMS" class="member-name-link">TIME_BETWEEN_RAMS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></code></div>
-<div class="col-second even-row-color"><code><a href="#TIME_BETWEEN_RAMS_SCREAMER" class="member-name-link">TIME_BETWEEN_RAMS_SCREAMER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -208,25 +158,6 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getActivities()" class="member-name-link">getActivities</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a><wbr>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initCoreActivity()" class="member-name-link">initCoreActivity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a><wbr>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initIdleActivity()" class="member-name-link">initIdleActivity</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a><wbr>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initLongJumpActivity()" class="member-name-link">initLongJumpActivity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initMemories(net.minecraft.world.entity.animal.goat.Goat,net.minecraft.util.RandomSource)" class="member-name-link">initMemories</a><wbr>(<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&nbsp;body,
- <a href="../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a><wbr>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initRamActivity()" class="member-name-link">initRamActivity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateActivity(net.minecraft.world.entity.animal.goat.Goat)" class="member-name-link">updateActivity</a><wbr>(<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&nbsp;body)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -235,7 +166,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -276,102 +207,6 @@ loadScripts(document, 'script');</script>
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ADULT_FOLLOW_RANGE">
-<h3>ADULT_FOLLOW_RANGE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></span>&nbsp;<span class="element-name">ADULT_FOLLOW_RANGE</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SPEED_MULTIPLIER_WHEN_IDLING">
-<h3>SPEED_MULTIPLIER_WHEN_IDLING</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">SPEED_MULTIPLIER_WHEN_IDLING</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.animal.goat.GoatAi.SPEED_MULTIPLIER_WHEN_IDLING">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SPEED_MULTIPLIER_WHEN_FOLLOWING_ADULT">
-<h3>SPEED_MULTIPLIER_WHEN_FOLLOWING_ADULT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">SPEED_MULTIPLIER_WHEN_FOLLOWING_ADULT</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.animal.goat.GoatAi.SPEED_MULTIPLIER_WHEN_FOLLOWING_ADULT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SPEED_MULTIPLIER_WHEN_TEMPTED">
-<h3>SPEED_MULTIPLIER_WHEN_TEMPTED</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">SPEED_MULTIPLIER_WHEN_TEMPTED</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.animal.goat.GoatAi.SPEED_MULTIPLIER_WHEN_TEMPTED">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SPEED_MULTIPLIER_WHEN_PANICKING">
-<h3>SPEED_MULTIPLIER_WHEN_PANICKING</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">SPEED_MULTIPLIER_WHEN_PANICKING</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.animal.goat.GoatAi.SPEED_MULTIPLIER_WHEN_PANICKING">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SPEED_MULTIPLIER_WHEN_PREPARING_TO_RAM">
-<h3>SPEED_MULTIPLIER_WHEN_PREPARING_TO_RAM</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">SPEED_MULTIPLIER_WHEN_PREPARING_TO_RAM</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.animal.goat.GoatAi.SPEED_MULTIPLIER_WHEN_PREPARING_TO_RAM">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="TIME_BETWEEN_LONG_JUMPS">
-<h3>TIME_BETWEEN_LONG_JUMPS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></span>&nbsp;<span class="element-name">TIME_BETWEEN_LONG_JUMPS</span></div>
 </div>
 </section>
 </li>
@@ -417,46 +252,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.animal.goat.GoatAi.MAX_JUMP_VELOCITY_MULTIPLIER">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="TIME_BETWEEN_RAMS">
-<h3>TIME_BETWEEN_RAMS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></span>&nbsp;<span class="element-name">TIME_BETWEEN_RAMS</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="TIME_BETWEEN_RAMS_SCREAMER">
-<h3>TIME_BETWEEN_RAMS_SCREAMER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></span>&nbsp;<span class="element-name">TIME_BETWEEN_RAMS_SCREAMER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="RAM_TARGET_CONDITIONS">
-<h3>RAM_TARGET_CONDITIONS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../ai/targeting/TargetingConditions.html" title="class in net.minecraft.world.entity.ai.targeting">TargetingConditions</a></span>&nbsp;<span class="element-name">RAM_TARGET_CONDITIONS</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SPEED_MULTIPLIER_WHEN_RAMMING">
-<h3>SPEED_MULTIPLIER_WHEN_RAMMING</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">SPEED_MULTIPLIER_WHEN_RAMMING</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.animal.goat.GoatAi.SPEED_MULTIPLIER_WHEN_RAMMING">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -535,55 +330,6 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="initMemories(net.minecraft.world.entity.animal.goat.Goat,net.minecraft.util.RandomSource)">
-<h3>initMemories</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">initMemories</span><wbr><span class="parameters">(<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&nbsp;body,
- <a href="../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getActivities()">
-<h3>getActivities</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;&gt;</span>&nbsp;<span class="element-name">getActivities</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="initCoreActivity()">
-<h3>initCoreActivity</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;</span>&nbsp;<span class="element-name">initCoreActivity</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="initIdleActivity()">
-<h3>initIdleActivity</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;</span>&nbsp;<span class="element-name">initIdleActivity</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="initLongJumpActivity()">
-<h3>initLongJumpActivity</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;</span>&nbsp;<span class="element-name">initLongJumpActivity</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="initRamActivity()">
-<h3>initRamActivity</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../ai/ActivityData.html" title="class in net.minecraft.world.entity.ai">ActivityData</a>&lt;<a href="Goat.html" title="class in net.minecraft.world.entity.animal.goat">Goat</a>&gt;</span>&nbsp;<span class="element-name">initRamActivity</span>()</div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="updateActivity(net.minecraft.world.entity.animal.goat.Goat)">
 <h3>updateActivity</h3>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>CanyonWorldCarver (NeoForge 26.1)</title>
+<title>CanyonWorldCarver (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.levelgen.carver, class: CanyonWorldCarver">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/CanyonWorldCarver.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -67,10 +67,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#isStartChunk(net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.util.RandomSource)" tabindex="0">isStartChunk(CanyonCarverConfiguration, RandomSource)</a></li>
 <li><a href="#carve(net.minecraft.world.level.levelgen.carver.CarvingContext,net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.world.level.chunk.ChunkAccess,java.util.function.Function,net.minecraft.util.RandomSource,net.minecraft.world.level.levelgen.Aquifer,net.minecraft.world.level.ChunkPos,net.minecraft.world.level.chunk.CarvingMask)" tabindex="0">carve(CarvingContext, CanyonCarverConfiguration, ChunkAccess, Function, RandomSource, Aquifer, ChunkPos, CarvingMask)</a></li>
-<li><a href="#doCarve(net.minecraft.world.level.levelgen.carver.CarvingContext,net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.world.level.chunk.ChunkAccess,java.util.function.Function,long,net.minecraft.world.level.levelgen.Aquifer,double,double,double,float,float,float,int,int,double,net.minecraft.world.level.chunk.CarvingMask)" tabindex="0">doCarve(CarvingContext, CanyonCarverConfiguration, ChunkAccess, Function, long, Aquifer, double, double, double, float, float, float, int, int, double, CarvingMask)</a></li>
-<li><a href="#initWidthFactors(net.minecraft.world.level.levelgen.carver.CarvingContext,net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.util.RandomSource)" tabindex="0">initWidthFactors(CarvingContext, CanyonCarverConfiguration, RandomSource)</a></li>
-<li><a href="#updateVerticalRadius(net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.util.RandomSource,double,float,float)" tabindex="0">updateVerticalRadius(CanyonCarverConfiguration, RandomSource, double, float, float)</a></li>
-<li><a href="#shouldSkip(net.minecraft.world.level.levelgen.carver.CarvingContext,float%5B%5D,double,double,double,int)" tabindex="0">shouldSkip(CarvingContext, float[], double, double, double, int)</a></li>
 </ol>
 </li>
 </ol>
@@ -109,7 +105,7 @@ loadScripts(document, 'script');</script>
 <h2>Field Summary</h2>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.level.levelgen.carver.WorldCarver">Fields inherited from class&nbsp;<a href="WorldCarver.html#field-summary" title="class in net.minecraft.world.level.levelgen.carver">WorldCarver</a></h3>
-<code><a href="WorldCarver.html#AIR">AIR</a>, <a href="WorldCarver.html#CANYON">CANYON</a>, <a href="WorldCarver.html#CAVE">CAVE</a>, <a href="WorldCarver.html#CAVE_AIR">CAVE_AIR</a>, <a href="WorldCarver.html#LAVA">LAVA</a>, <a href="WorldCarver.html#liquids">liquids</a>, <a href="WorldCarver.html#NETHER_CAVE">NETHER_CAVE</a>, <a href="WorldCarver.html#WATER">WATER</a></code></div>
+<code><a href="WorldCarver.html#CANYON">CANYON</a>, <a href="WorldCarver.html#CAVE">CAVE</a>, <a href="WorldCarver.html#NETHER_CAVE">NETHER_CAVE</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -146,57 +142,19 @@ loadScripts(document, 'script');</script>
  <a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;sourceChunkPos,
  <a href="../../chunk/CarvingMask.html" title="class in net.minecraft.world.level.chunk">CarvingMask</a>&nbsp;mask)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doCarve(net.minecraft.world.level.levelgen.carver.CarvingContext,net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.world.level.chunk.ChunkAccess,java.util.function.Function,long,net.minecraft.world.level.levelgen.Aquifer,double,double,double,float,float,float,int,int,double,net.minecraft.world.level.chunk.CarvingMask)" class="member-name-link">doCarve</a><wbr>(<a href="CarvingContext.html" title="class in net.minecraft.world.level.levelgen.carver">CarvingContext</a>&nbsp;context,
- <a href="CanyonCarverConfiguration.html" title="class in net.minecraft.world.level.levelgen.carver">CanyonCarverConfiguration</a>&nbsp;configuration,
- <a href="../../chunk/ChunkAccess.html" title="class in net.minecraft.world.level.chunk">ChunkAccess</a>&nbsp;chunk,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>, <a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a>&gt;&gt;&nbsp;biomeGetter,
- long&nbsp;tunnelSeed,
- <a href="../Aquifer.html" title="interface in net.minecraft.world.level.levelgen">Aquifer</a>&nbsp;aquifer,
- double&nbsp;x,
- double&nbsp;y,
- double&nbsp;z,
- float&nbsp;thickness,
- float&nbsp;horizontalRotation,
- float&nbsp;verticalRotation,
- int&nbsp;step,
- int&nbsp;distance,
- double&nbsp;yScale,
- <a href="../../chunk/CarvingMask.html" title="class in net.minecraft.world.level.chunk">CarvingMask</a>&nbsp;mask)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private float[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initWidthFactors(net.minecraft.world.level.levelgen.carver.CarvingContext,net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.util.RandomSource)" class="member-name-link">initWidthFactors</a><wbr>(<a href="CarvingContext.html" title="class in net.minecraft.world.level.levelgen.carver">CarvingContext</a>&nbsp;context,
- <a href="CanyonCarverConfiguration.html" title="class in net.minecraft.world.level.levelgen.carver">CanyonCarverConfiguration</a>&nbsp;configuration,
- <a href="../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStartChunk(net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.util.RandomSource)" class="member-name-link">isStartChunk</a><wbr>(<a href="CanyonCarverConfiguration.html" title="class in net.minecraft.world.level.levelgen.carver">CanyonCarverConfiguration</a>&nbsp;configuration,
  <a href="../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldSkip(net.minecraft.world.level.levelgen.carver.CarvingContext,float%5B%5D,double,double,double,int)" class="member-name-link">shouldSkip</a><wbr>(<a href="CarvingContext.html" title="class in net.minecraft.world.level.levelgen.carver">CarvingContext</a>&nbsp;context,
- float[]&nbsp;widthFactorPerHeight,
- double&nbsp;xd,
- double&nbsp;yd,
- double&nbsp;zd,
- int&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateVerticalRadius(net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.util.RandomSource,double,float,float)" class="member-name-link">updateVerticalRadius</a><wbr>(<a href="CanyonCarverConfiguration.html" title="class in net.minecraft.world.level.levelgen.carver">CanyonCarverConfiguration</a>&nbsp;configuration,
- <a href="../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
- double&nbsp;verticalRadius,
- float&nbsp;distance,
- float&nbsp;currentStep)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.level.levelgen.carver.WorldCarver">Methods inherited from class&nbsp;<a href="WorldCarver.html#method-summary" title="class in net.minecraft.world.level.levelgen.carver">WorldCarver</a></h3>
-<code><a href="WorldCarver.html#canReach(net.minecraft.world.level.ChunkPos,double,double,int,int,float)" title="canReach(ChunkPos, double, double, int, int, float)">canReach</a>, <a href="WorldCarver.html#canReplaceBlock(C,net.minecraft.world.level.block.state.BlockState)" title="canReplaceBlock(CanyonCarverConfiguration, BlockState)">canReplaceBlock</a>, <a href="WorldCarver.html#carveBlock(net.minecraft.world.level.levelgen.carver.CarvingContext,C,net.minecraft.world.level.chunk.ChunkAccess,java.util.function.Function,net.minecraft.world.level.chunk.CarvingMask,net.minecraft.core.BlockPos.MutableBlockPos,net.minecraft.core.BlockPos.MutableBlockPos,net.minecraft.world.level.levelgen.Aquifer,org.apache.commons.lang3.mutable.MutableBoolean)" title="carveBlock(CarvingContext, CanyonCarverConfiguration, ChunkAccess, Function, CarvingMask, BlockPos.MutableBlockPos, BlockPos.MutableBlockPos, Aquifer, MutableBoolean)">carveBlock</a>, <a href="WorldCarver.html#carveEllipsoid(net.minecraft.world.level.levelgen.carver.CarvingContext,C,net.minecraft.world.level.chunk.ChunkAccess,java.util.function.Function,net.minecraft.world.level.levelgen.Aquifer,double,double,double,double,double,net.minecraft.world.level.chunk.CarvingMask,net.minecraft.world.level.levelgen.carver.WorldCarver.CarveSkipChecker)" title="carveEllipsoid(CarvingContext, CanyonCarverConfiguration, ChunkAccess, Function, Aquifer, double, double, double, double, double, CarvingMask, WorldCarver.CarveSkipChecker)">carveEllipsoid</a>, <a href="WorldCarver.html#configured(C)" title="configured(CanyonCarverConfiguration)">configured</a>, <a href="WorldCarver.html#configuredCodec()" title="configuredCodec()">configuredCodec</a>, <a href="WorldCarver.html#getRange()" title="getRange()">getRange</a></code></div>
+<code><a href="WorldCarver.html#configured(C)" title="configured(CanyonCarverConfiguration)">configured</a>, <a href="WorldCarver.html#configuredCodec()" title="configuredCodec()">configuredCodec</a>, <a href="WorldCarver.html#getRange()" title="getRange()">getRange</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -253,64 +211,6 @@ loadScripts(document, 'script');</script>
 <dt>Specified by:</dt>
 <dd><code><a href="WorldCarver.html#carve(net.minecraft.world.level.levelgen.carver.CarvingContext,C,net.minecraft.world.level.chunk.ChunkAccess,java.util.function.Function,net.minecraft.util.RandomSource,net.minecraft.world.level.levelgen.Aquifer,net.minecraft.world.level.ChunkPos,net.minecraft.world.level.chunk.CarvingMask)">carve</a></code>&nbsp;in class&nbsp;<code><a href="WorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">WorldCarver</a>&lt;<a href="CanyonCarverConfiguration.html" title="class in net.minecraft.world.level.levelgen.carver">CanyonCarverConfiguration</a>&gt;</code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="doCarve(net.minecraft.world.level.levelgen.carver.CarvingContext,net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.world.level.chunk.ChunkAccess,java.util.function.Function,long,net.minecraft.world.level.levelgen.Aquifer,double,double,double,float,float,float,int,int,double,net.minecraft.world.level.chunk.CarvingMask)">
-<h3>doCarve</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">doCarve</span><wbr><span class="parameters">(<a href="CarvingContext.html" title="class in net.minecraft.world.level.levelgen.carver">CarvingContext</a>&nbsp;context,
- <a href="CanyonCarverConfiguration.html" title="class in net.minecraft.world.level.levelgen.carver">CanyonCarverConfiguration</a>&nbsp;configuration,
- <a href="../../chunk/ChunkAccess.html" title="class in net.minecraft.world.level.chunk">ChunkAccess</a>&nbsp;chunk,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>, <a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a>&gt;&gt;&nbsp;biomeGetter,
- long&nbsp;tunnelSeed,
- <a href="../Aquifer.html" title="interface in net.minecraft.world.level.levelgen">Aquifer</a>&nbsp;aquifer,
- double&nbsp;x,
- double&nbsp;y,
- double&nbsp;z,
- float&nbsp;thickness,
- float&nbsp;horizontalRotation,
- float&nbsp;verticalRotation,
- int&nbsp;step,
- int&nbsp;distance,
- double&nbsp;yScale,
- <a href="../../chunk/CarvingMask.html" title="class in net.minecraft.world.level.chunk">CarvingMask</a>&nbsp;mask)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="initWidthFactors(net.minecraft.world.level.levelgen.carver.CarvingContext,net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.util.RandomSource)">
-<h3>initWidthFactors</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float[]</span>&nbsp;<span class="element-name">initWidthFactors</span><wbr><span class="parameters">(<a href="CarvingContext.html" title="class in net.minecraft.world.level.levelgen.carver">CarvingContext</a>&nbsp;context,
- <a href="CanyonCarverConfiguration.html" title="class in net.minecraft.world.level.levelgen.carver">CanyonCarverConfiguration</a>&nbsp;configuration,
- <a href="../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updateVerticalRadius(net.minecraft.world.level.levelgen.carver.CanyonCarverConfiguration,net.minecraft.util.RandomSource,double,float,float)">
-<h3>updateVerticalRadius</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">updateVerticalRadius</span><wbr><span class="parameters">(<a href="CanyonCarverConfiguration.html" title="class in net.minecraft.world.level.levelgen.carver">CanyonCarverConfiguration</a>&nbsp;configuration,
- <a href="../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
- double&nbsp;verticalRadius,
- float&nbsp;distance,
- float&nbsp;currentStep)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="shouldSkip(net.minecraft.world.level.levelgen.carver.CarvingContext,float[],double,double,double,int)">
-<h3>shouldSkip</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shouldSkip</span><wbr><span class="parameters">(<a href="CarvingContext.html" title="class in net.minecraft.world.level.levelgen.carver">CarvingContext</a>&nbsp;context,
- float[]&nbsp;widthFactorPerHeight,
- double&nbsp;xd,
- double&nbsp;yd,
- double&nbsp;zd,
- int&nbsp;y)</span></div>
 </div>
 </section>
 </li>

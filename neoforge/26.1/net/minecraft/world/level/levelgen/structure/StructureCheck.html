@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>StructureCheck (NeoForge 26.1)</title>
+<title>StructureCheck (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.levelgen.structure, class: StructureCheck">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/StructureCheck.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,27 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#NO_STRUCTURE" tabindex="0">NO_STRUCTURE</a></li>
-<li><a href="#storageAccess" tabindex="0">storageAccess</a></li>
-<li><a href="#registryAccess" tabindex="0">registryAccess</a></li>
-<li><a href="#structureTemplateManager" tabindex="0">structureTemplateManager</a></li>
-<li><a href="#dimension" tabindex="0">dimension</a></li>
-<li><a href="#chunkGenerator" tabindex="0">chunkGenerator</a></li>
-<li><a href="#randomState" tabindex="0">randomState</a></li>
-<li><a href="#heightAccessor" tabindex="0">heightAccessor</a></li>
-<li><a href="#biomeSource" tabindex="0">biomeSource</a></li>
-<li><a href="#seed" tabindex="0">seed</a></li>
-<li><a href="#fixerUpper" tabindex="0">fixerUpper</a></li>
-<li><a href="#loadedChunks" tabindex="0">loadedChunks</a></li>
-<li><a href="#featureChecks" tabindex="0">featureChecks</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.world.level.chunk.storage.ChunkScanAccess,net.minecraft.core.RegistryAccess,net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager,net.minecraft.resources.ResourceKey,net.minecraft.world.level.chunk.ChunkGenerator,net.minecraft.world.level.levelgen.RandomState,net.minecraft.world.level.LevelHeightAccessor,net.minecraft.world.level.biome.BiomeSource,long,com.mojang.datafixers.DataFixer)" tabindex="0">StructureCheck(ChunkScanAccess, RegistryAccess, StructureTemplateManager, ResourceKey, ChunkGenerator, RandomState, LevelHeightAccessor, BiomeSource, long, DataFixer)</a></li>
@@ -83,13 +64,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#checkStart(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure,net.minecraft.world.level.levelgen.structure.placement.StructurePlacement,boolean)" tabindex="0">checkStart(ChunkPos, Structure, StructurePlacement, boolean)</a></li>
-<li><a href="#canCreateStructure(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure)" tabindex="0">canCreateStructure(ChunkPos, Structure)</a></li>
-<li><a href="#tryLoadFromStorage(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure,boolean,long)" tabindex="0">tryLoadFromStorage(ChunkPos, Structure, boolean, long)</a></li>
-<li><a href="#loadStructures(net.minecraft.nbt.CompoundTag)" tabindex="0">loadStructures(CompoundTag)</a></li>
-<li><a href="#deduplicateEmptyMap(it.unimi.dsi.fastutil.objects.Object2IntMap)" tabindex="0">deduplicateEmptyMap(Object2IntMap)</a></li>
-<li><a href="#checkStructureInfo(it.unimi.dsi.fastutil.objects.Object2IntMap,net.minecraft.world.level.levelgen.structure.Structure,boolean)" tabindex="0">checkStructureInfo(Object2IntMap, Structure, boolean)</a></li>
 <li><a href="#onStructureLoad(net.minecraft.world.level.ChunkPos,java.util.Map)" tabindex="0">onStructureLoad(ChunkPos, Map)</a></li>
-<li><a href="#storeFullResults(long,it.unimi.dsi.fastutil.objects.Object2IntMap)" tabindex="0">storeFullResults(long, Object2IntMap)</a></li>
 <li><a href="#incrementReference(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure)" tabindex="0">incrementReference(ChunkPos, Structure)</a></li>
 </ol>
 </li>
@@ -112,60 +87,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../../biome/BiomeSource.html" title="class in net.minecraft.world.level.biome">BiomeSource</a></code></div>
-<div class="col-second even-row-color"><code><a href="#biomeSource" class="member-name-link">biomeSource</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../chunk/ChunkGenerator.html" title="class in net.minecraft.world.level.chunk">ChunkGenerator</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#chunkGenerator" class="member-name-link">chunkGenerator</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a><wbr>&lt;<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#dimension" class="member-name-link">dimension</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>, it.unimi.dsi.fastutil.longs.Long2BooleanMap&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#featureChecks" class="member-name-link">featureChecks</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../../../com/mojang/datafixers/DataFixer.html" title="interface in com.mojang.datafixers">DataFixer</a></code></div>
-<div class="col-second even-row-color"><code><a href="#fixerUpper" class="member-name-link">fixerUpper</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../LevelHeightAccessor.html" title="interface in net.minecraft.world.level">LevelHeightAccessor</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#heightAccessor" class="member-name-link">heightAccessor</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final it.unimi.dsi.fastutil.longs.Long2ObjectMap<wbr>&lt;it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#loadedChunks" class="member-name-link">loadedChunks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#NO_STRUCTURE" class="member-name-link">NO_STRUCTURE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../RandomState.html" title="class in net.minecraft.world.level.levelgen">RandomState</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#randomState" class="member-name-link">randomState</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></code></div>
-<div class="col-second even-row-color"><code><a href="#registryAccess" class="member-name-link">registryAccess</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#seed" class="member-name-link">seed</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../chunk/storage/ChunkScanAccess.html" title="interface in net.minecraft.world.level.chunk.storage">ChunkScanAccess</a></code></div>
-<div class="col-second even-row-color"><code><a href="#storageAccess" class="member-name-link">storageAccess</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="templatesystem/StructureTemplateManager.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplateManager</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#structureTemplateManager" class="member-name-link">structureTemplateManager</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -193,191 +114,38 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canCreateStructure(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure)" class="member-name-link">canCreateStructure</a><wbr>(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
- <a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&nbsp;structure)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="StructureCheckResult.html" title="enum class in net.minecraft.world.level.levelgen.structure">StructureCheckResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkStart(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure,net.minecraft.world.level.levelgen.structure.placement.StructurePlacement,boolean)" class="member-name-link">checkStart</a><wbr>(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="StructureCheckResult.html" title="enum class in net.minecraft.world.level.levelgen.structure">StructureCheckResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkStart(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure,net.minecraft.world.level.levelgen.structure.placement.StructurePlacement,boolean)" class="member-name-link">checkStart</a><wbr>(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
  <a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&nbsp;structure,
  <a href="placement/StructurePlacement.html" title="class in net.minecraft.world.level.levelgen.structure.placement">StructurePlacement</a>&nbsp;placement,
  boolean&nbsp;requireUnreferenced)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="StructureCheckResult.html" title="enum class in net.minecraft.world.level.levelgen.structure">StructureCheckResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkStructureInfo(it.unimi.dsi.fastutil.objects.Object2IntMap,net.minecraft.world.level.levelgen.structure.Structure,boolean)" class="member-name-link">checkStructureInfo</a><wbr>(it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;&nbsp;cachedResult,
- <a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&nbsp;structure,
- boolean&nbsp;requireUnreferenced)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static it.unimi.dsi.fastutil.objects.Object2IntMap<wbr>&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deduplicateEmptyMap(it.unimi.dsi.fastutil.objects.Object2IntMap)" class="member-name-link">deduplicateEmptyMap</a><wbr>(it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;&nbsp;map)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#incrementReference(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure)" class="member-name-link">incrementReference</a><wbr>(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;chunkPos,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#incrementReference(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure)" class="member-name-link">incrementReference</a><wbr>(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;chunkPos,
  <a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&nbsp;structure)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private @Nullable it.unimi.dsi.fastutil.objects.Object2IntMap<wbr>&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadStructures(net.minecraft.nbt.CompoundTag)" class="member-name-link">loadStructures</a><wbr>(<a href="../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;chunkTag)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onStructureLoad(net.minecraft.world.level.ChunkPos,java.util.Map)" class="member-name-link">onStructureLoad</a><wbr>(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>, <a href="StructureStart.html" title="class in net.minecraft.world.level.levelgen.structure">StructureStart</a>&gt;&nbsp;starts)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#storeFullResults(long,it.unimi.dsi.fastutil.objects.Object2IntMap)" class="member-name-link">storeFullResults</a><wbr>(long&nbsp;posKey,
- it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;&nbsp;starts)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private @Nullable <a href="StructureCheckResult.html" title="enum class in net.minecraft.world.level.levelgen.structure">StructureCheckResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryLoadFromStorage(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure,boolean,long)" class="member-name-link">tryLoadFromStorage</a><wbr>(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
- <a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&nbsp;structure,
- boolean&nbsp;requireUnreferenced,
- long&nbsp;posKey)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="NO_STRUCTURE">
-<h3>NO_STRUCTURE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">NO_STRUCTURE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.levelgen.structure.StructureCheck.NO_STRUCTURE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="storageAccess">
-<h3>storageAccess</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../chunk/storage/ChunkScanAccess.html" title="interface in net.minecraft.world.level.chunk.storage">ChunkScanAccess</a></span>&nbsp;<span class="element-name">storageAccess</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="registryAccess">
-<h3>registryAccess</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a></span>&nbsp;<span class="element-name">registryAccess</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="structureTemplateManager">
-<h3>structureTemplateManager</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="templatesystem/StructureTemplateManager.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplateManager</a></span>&nbsp;<span class="element-name">structureTemplateManager</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dimension">
-<h3>dimension</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;</span>&nbsp;<span class="element-name">dimension</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="chunkGenerator">
-<h3>chunkGenerator</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../chunk/ChunkGenerator.html" title="class in net.minecraft.world.level.chunk">ChunkGenerator</a></span>&nbsp;<span class="element-name">chunkGenerator</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="randomState">
-<h3>randomState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../RandomState.html" title="class in net.minecraft.world.level.levelgen">RandomState</a></span>&nbsp;<span class="element-name">randomState</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="heightAccessor">
-<h3>heightAccessor</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../LevelHeightAccessor.html" title="interface in net.minecraft.world.level">LevelHeightAccessor</a></span>&nbsp;<span class="element-name">heightAccessor</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="biomeSource">
-<h3>biomeSource</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../biome/BiomeSource.html" title="class in net.minecraft.world.level.biome">BiomeSource</a></span>&nbsp;<span class="element-name">biomeSource</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="seed">
-<h3>seed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">seed</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fixerUpper">
-<h3>fixerUpper</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../../com/mojang/datafixers/DataFixer.html" title="interface in com.mojang.datafixers">DataFixer</a></span>&nbsp;<span class="element-name">fixerUpper</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="loadedChunks">
-<h3>loadedChunks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.Long2ObjectMap&lt;it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;&gt;</span>&nbsp;<span class="element-name">loadedChunks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="featureChecks">
-<h3>featureChecks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>, it.unimi.dsi.fastutil.longs.Long2BooleanMap&gt;</span>&nbsp;<span class="element-name">featureChecks</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -420,66 +188,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="canCreateStructure(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure)">
-<h3>canCreateStructure</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canCreateStructure</span><wbr><span class="parameters">(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
- <a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&nbsp;structure)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="tryLoadFromStorage(net.minecraft.world.level.ChunkPos,net.minecraft.world.level.levelgen.structure.Structure,boolean,long)">
-<h3>tryLoadFromStorage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="StructureCheckResult.html" title="enum class in net.minecraft.world.level.levelgen.structure">StructureCheckResult</a></span>&nbsp;<span class="element-name">tryLoadFromStorage</span><wbr><span class="parameters">(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
- <a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&nbsp;structure,
- boolean&nbsp;requireUnreferenced,
- long&nbsp;posKey)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="loadStructures(net.minecraft.nbt.CompoundTag)">
-<h3>loadStructures</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;</span>&nbsp;<span class="element-name">loadStructures</span><wbr><span class="parameters">(<a href="../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;chunkTag)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="deduplicateEmptyMap(it.unimi.dsi.fastutil.objects.Object2IntMap)">
-<h3>deduplicateEmptyMap</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;</span>&nbsp;<span class="element-name">deduplicateEmptyMap</span><wbr><span class="parameters">(it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;&nbsp;map)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="checkStructureInfo(it.unimi.dsi.fastutil.objects.Object2IntMap,net.minecraft.world.level.levelgen.structure.Structure,boolean)">
-<h3>checkStructureInfo</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="StructureCheckResult.html" title="enum class in net.minecraft.world.level.levelgen.structure">StructureCheckResult</a></span>&nbsp;<span class="element-name">checkStructureInfo</span><wbr><span class="parameters">(it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;&nbsp;cachedResult,
- <a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&nbsp;structure,
- boolean&nbsp;requireUnreferenced)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="onStructureLoad(net.minecraft.world.level.ChunkPos,java.util.Map)">
 <h3>onStructureLoad</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onStructureLoad</span><wbr><span class="parameters">(<a href="../../ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;pos,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>, <a href="StructureStart.html" title="class in net.minecraft.world.level.levelgen.structure">StructureStart</a>&gt;&nbsp;starts)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="storeFullResults(long,it.unimi.dsi.fastutil.objects.Object2IntMap)">
-<h3>storeFullResults</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">storeFullResults</span><wbr><span class="parameters">(long&nbsp;posKey,
- it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="Structure.html" title="class in net.minecraft.world.level.levelgen.structure">Structure</a>&gt;&nbsp;starts)</span></div>
 </div>
 </section>
 </li>

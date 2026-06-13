@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>CollisionGetter (NeoForge 26.1)</title>
+<title>CollisionGetter (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level, interface: CollisionGetter">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/CollisionGetter.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -76,8 +76,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getPreMoveCollisions(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB,net.minecraft.world.phys.Vec3)" tabindex="0">getPreMoveCollisions(Entity, AABB, Vec3)</a></li>
 <li><a href="#getBlockCollisions(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" tabindex="0">getBlockCollisions(Entity, AABB)</a></li>
 <li><a href="#getBlockAndLiquidCollisions(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" tabindex="0">getBlockAndLiquidCollisions(Entity, AABB)</a></li>
-<li><a href="#getBlockCollisionsFromContext(net.minecraft.world.phys.shapes.CollisionContext,net.minecraft.world.phys.AABB)" tabindex="0">getBlockCollisionsFromContext(CollisionContext, AABB)</a></li>
-<li><a href="#borderCollision(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" tabindex="0">borderCollision(Entity, AABB)</a></li>
 <li><a href="#clipIncludingBorder(net.minecraft.world.level.ClipContext)" tabindex="0">clipIncludingBorder(ClipContext)</a></li>
 <li><a href="#collidesWithSuffocatingBlock(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" tabindex="0">collidesWithSuffocatingBlock(Entity, AABB)</a></li>
 <li><a href="#findSupportingBlock(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" tabindex="0">findSupportingBlock(Entity, AABB)</a></li>
@@ -132,41 +130,33 @@ extends <a href="BlockGetter.html" title="interface in net.minecraft.world.level
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2"><code>private @Nullable <a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2"><code><a href="#borderCollision(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" class="member-name-link">borderCollision</a><wbr>(<a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
- <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#clipIncludingBorder(net.minecraft.world.level.ClipContext)" class="member-name-link">clipIncludingBorder</a><wbr>(<a href="ClipContext.html" title="class in net.minecraft.world.level">ClipContext</a>&nbsp;c)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#collidesWithSuffocatingBlock(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" class="member-name-link">collidesWithSuffocatingBlock</a><wbr>(@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
- <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#clipIncludingBorder(net.minecraft.world.level.ClipContext)" class="member-name-link">clipIncludingBorder</a><wbr>(<a href="ClipContext.html" title="class in net.minecraft.world.level">ClipContext</a>&nbsp;c)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findFreePosition(net.minecraft.world.entity.Entity,net.minecraft.world.phys.shapes.VoxelShape,net.minecraft.world.phys.Vec3,double,double,double)" class="member-name-link">findFreePosition</a><wbr>(@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#collidesWithSuffocatingBlock(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" class="member-name-link">collidesWithSuffocatingBlock</a><wbr>(@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
+ <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findFreePosition(net.minecraft.world.entity.Entity,net.minecraft.world.phys.shapes.VoxelShape,net.minecraft.world.phys.Vec3,double,double,double)" class="member-name-link">findFreePosition</a><wbr>(@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
  <a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&nbsp;allowedCenters,
  <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;preferredCenter,
  double&nbsp;sizeX,
  double&nbsp;sizeY,
  double&nbsp;sizeZ)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findSupportingBlock(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" class="member-name-link">findSupportingBlock</a><wbr>(<a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
- <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a><wbr>&lt;<a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockAndLiquidCollisions(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" class="member-name-link">getBlockAndLiquidCollisions</a><wbr>(@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findSupportingBlock(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" class="member-name-link">findSupportingBlock</a><wbr>(<a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
  <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a><wbr>&lt;<a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockCollisions(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" class="member-name-link">getBlockCollisions</a><wbr>(@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockAndLiquidCollisions(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" class="member-name-link">getBlockAndLiquidCollisions</a><wbr>(@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
  <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a><wbr>&lt;<a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2"><code><a href="#getBlockCollisionsFromContext(net.minecraft.world.phys.shapes.CollisionContext,net.minecraft.world.phys.AABB)" class="member-name-link">getBlockCollisionsFromContext</a><wbr>(<a href="../phys/shapes/CollisionContext.html" title="interface in net.minecraft.world.phys.shapes">CollisionContext</a>&nbsp;source,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a><wbr>&lt;<a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockCollisions(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)" class="member-name-link">getBlockCollisions</a><wbr>(@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
  <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@Nullable <a href="BlockGetter.html" title="interface in net.minecraft.world.level">BlockGetter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getChunkForCollisions(int,int)" class="member-name-link">getChunkForCollisions</a><wbr>(int&nbsp;chunkX,
  int&nbsp;chunkZ)</code></div>
@@ -412,24 +402,6 @@ extends <a href="BlockGetter.html" title="interface in net.minecraft.world.level
 <h3>getBlockAndLiquidCollisions</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&gt;</span>&nbsp;<span class="element-name">getBlockAndLiquidCollisions</span><wbr><span class="parameters">(@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
- <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getBlockCollisionsFromContext(net.minecraft.world.phys.shapes.CollisionContext,net.minecraft.world.phys.AABB)">
-<h3>getBlockCollisionsFromContext</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&gt;</span>&nbsp;<span class="element-name">getBlockCollisionsFromContext</span><wbr><span class="parameters">(<a href="../phys/shapes/CollisionContext.html" title="interface in net.minecraft.world.phys.shapes">CollisionContext</a>&nbsp;source,
- <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="borderCollision(net.minecraft.world.entity.Entity,net.minecraft.world.phys.AABB)">
-<h3>borderCollision</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a></span>&nbsp;<span class="element-name">borderCollision</span><wbr><span class="parameters">(<a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;source,
  <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</span></div>
 </div>
 </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>SynchronizeRegistriesTask (NeoForge 26.1)</title>
+<title>SynchronizeRegistriesTask (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server.network.config, class: SynchronizeRegistriesTask">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/SynchronizeRegistriesTask.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,8 +61,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#TYPE" tabindex="0">TYPE</a></li>
-<li><a href="#requestedPacks" tabindex="0">requestedPacks</a></li>
-<li><a href="#registries" tabindex="0">registries</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -73,7 +71,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#start(java.util.function.Consumer)" tabindex="0">start(Consumer)</a></li>
-<li><a href="#sendRegistries(java.util.function.Consumer,java.util.Set)" tabindex="0">sendRegistries(Consumer, Set)</a></li>
 <li><a href="#handleResponse(java.util.List,java.util.function.Consumer)" tabindex="0">handleResponse(List, Consumer)</a></li>
 <li><a href="#type()" tabindex="0">type()</a></li>
 </ol>
@@ -120,12 +117,6 @@ implements <a href="../ConfigurationTask.html" title="interface in net.minecraft
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../core/LayeredRegistryAccess.html" title="class in net.minecraft.core">LayeredRegistryAccess</a><wbr>&lt;<a href="../../RegistryLayer.html" title="enum class in net.minecraft.server">RegistryLayer</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#registries" class="member-name-link">registries</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../packs/repository/KnownPack.html" title="class in net.minecraft.server.packs.repository">KnownPack</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#requestedPacks" class="member-name-link">requestedPacks</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../ConfigurationTask.Type.html" title="class in net.minecraft.server.network">ConfigurationTask.Type</a></code></div>
 <div class="col-second even-row-color"><code><a href="#TYPE" class="member-name-link">TYPE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -161,22 +152,18 @@ implements <a href="../ConfigurationTask.html" title="interface in net.minecraft
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleResponse(java.util.List,java.util.function.Consumer)" class="member-name-link">handleResponse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../packs/repository/KnownPack.html" title="class in net.minecraft.server.packs.repository">KnownPack</a>&gt;&nbsp;acceptedPacks,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&gt;&nbsp;connection)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendRegistries(java.util.function.Consumer,java.util.Set)" class="member-name-link">sendRegistries</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&gt;&nbsp;connection,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../packs/repository/KnownPack.html" title="class in net.minecraft.server.packs.repository">KnownPack</a>&gt;&nbsp;negotiatedPacks)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#start(java.util.function.Consumer)" class="member-name-link">start</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&gt;&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#start(java.util.function.Consumer)" class="member-name-link">start</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&gt;&nbsp;connection)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../ConfigurationTask.Type.html" title="class in net.minecraft.server.network">ConfigurationTask.Type</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type()" class="member-name-link">type</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../ConfigurationTask.Type.html" title="class in net.minecraft.server.network">ConfigurationTask.Type</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type()" class="member-name-link">type</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.network.ConfigurationTask">Methods inherited from interface&nbsp;<a href="../ConfigurationTask.html#method-summary" title="interface in net.minecraft.server.network">ConfigurationTask</a></h3>
 <code><a href="../ConfigurationTask.html#tick()" title="tick()">tick</a></code></div>
@@ -196,22 +183,6 @@ implements <a href="../ConfigurationTask.html" title="interface in net.minecraft
 <h3>TYPE</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../ConfigurationTask.Type.html" title="class in net.minecraft.server.network">ConfigurationTask.Type</a></span>&nbsp;<span class="element-name">TYPE</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="requestedPacks">
-<h3>requestedPacks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../packs/repository/KnownPack.html" title="class in net.minecraft.server.packs.repository">KnownPack</a>&gt;</span>&nbsp;<span class="element-name">requestedPacks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="registries">
-<h3>registries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../core/LayeredRegistryAccess.html" title="class in net.minecraft.core">LayeredRegistryAccess</a>&lt;<a href="../../RegistryLayer.html" title="enum class in net.minecraft.server">RegistryLayer</a>&gt;</span>&nbsp;<span class="element-name">registries</span></div>
 </div>
 </section>
 </li>
@@ -249,15 +220,6 @@ implements <a href="../ConfigurationTask.html" title="interface in net.minecraft
 <dt>Specified by:</dt>
 <dd><code><a href="../ConfigurationTask.html#start(java.util.function.Consumer)">start</a></code>&nbsp;in interface&nbsp;<code><a href="../ConfigurationTask.html" title="interface in net.minecraft.server.network">ConfigurationTask</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="sendRegistries(java.util.function.Consumer,java.util.Set)">
-<h3>sendRegistries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendRegistries</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&gt;&nbsp;connection,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../packs/repository/KnownPack.html" title="class in net.minecraft.server.packs.repository">KnownPack</a>&gt;&nbsp;negotiatedPacks)</span></div>
 </div>
 </section>
 </li>

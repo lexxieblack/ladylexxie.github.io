@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>LegacyTextFilter (NeoForge 26.1)</title>
+<title>LegacyTextFilter (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server.network, class: LegacyTextFilter">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/LegacyTextFilter.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,32 +55,11 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#ENDPOINT" tabindex="0">ENDPOINT</a></li>
-<li><a href="#joinEndpoint" tabindex="0">joinEndpoint</a></li>
-<li><a href="#joinEncoder" tabindex="0">joinEncoder</a></li>
-<li><a href="#leaveEndpoint" tabindex="0">leaveEndpoint</a></li>
-<li><a href="#leaveEncoder" tabindex="0">leaveEncoder</a></li>
-<li><a href="#authKey" tabindex="0">authKey</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(java.net.URL,net.minecraft.server.network.ServerTextFilter.MessageEncoder,java.net.URL,net.minecraft.server.network.LegacyTextFilter.JoinOrLeaveEncoder,java.net.URL,net.minecraft.server.network.LegacyTextFilter.JoinOrLeaveEncoder,java.lang.String,net.minecraft.server.network.ServerTextFilter.IgnoreStrategy,java.util.concurrent.ExecutorService)" tabindex="0">LegacyTextFilter(URL, ServerTextFilter.MessageEncoder, URL, LegacyTextFilter.JoinOrLeaveEncoder, URL, LegacyTextFilter.JoinOrLeaveEncoder, String, ServerTextFilter.IgnoreStrategy, ExecutorService)</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#createTextFilterFromConfig(java.lang.String)" tabindex="0">createTextFilterFromConfig(String)</a></li>
 <li><a href="#createContext(com.mojang.authlib.GameProfile)" tabindex="0">createContext(GameProfile)</a></li>
-<li><a href="#processJoinOrLeave(com.mojang.authlib.GameProfile,java.net.URL,net.minecraft.server.network.LegacyTextFilter.JoinOrLeaveEncoder,java.util.concurrent.Executor)" tabindex="0">processJoinOrLeave(GameProfile, URL, LegacyTextFilter.JoinOrLeaveEncoder, Executor)</a></li>
-<li><a href="#processRequest(com.google.gson.JsonObject,java.net.URL)" tabindex="0">processRequest(JsonObject, URL)</a></li>
-<li><a href="#setAuthorizationProperty(java.net.HttpURLConnection)" tabindex="0">setAuthorizationProperty(HttpURLConnection)</a></li>
-<li><a href="#filterText(java.lang.String,net.minecraft.server.network.ServerTextFilter.IgnoreStrategy,com.google.gson.JsonObject)" tabindex="0">filterText(String, ServerTextFilter.IgnoreStrategy, JsonObject)</a></li>
 </ol>
 </li>
 </ol>
@@ -112,74 +91,9 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="LegacyTextFilter.JoinOrLeaveEncoder.html" class="type-name-link" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.minecraft.server.network.ServerTextFilter">Nested classes/interfaces inherited from class&nbsp;<a href="ServerTextFilter.html#nested-class-summary" title="class in net.minecraft.server.network">ServerTextFilter</a></h3>
-<code><a href="ServerTextFilter.IgnoreStrategy.html" title="interface in net.minecraft.server.network">ServerTextFilter.IgnoreStrategy</a>, <a href="ServerTextFilter.MessageEncoder.html" title="interface in net.minecraft.server.network">ServerTextFilter.MessageEncoder</a>, <a href="ServerTextFilter.PlayerContext.html" title="class in net.minecraft.server.network">ServerTextFilter.PlayerContext</a>, <a href="ServerTextFilter.RequestFailedException.html" title="class in net.minecraft.server.network">ServerTextFilter.RequestFailedException</a></code></div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#authKey" class="member-name-link">authKey</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ENDPOINT" class="member-name-link">ENDPOINT</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a></code></div>
-<div class="col-second even-row-color"><code><a href="#joinEncoder" class="member-name-link">joinEncoder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#joinEndpoint" class="member-name-link">joinEndpoint</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a></code></div>
-<div class="col-second even-row-color"><code><a href="#leaveEncoder" class="member-name-link">leaveEncoder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#leaveEndpoint" class="member-name-link">leaveEndpoint</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.server.network.ServerTextFilter">Fields inherited from class&nbsp;<a href="ServerTextFilter.html#field-summary" title="class in net.minecraft.server.network">ServerTextFilter</a></h3>
-<code><a href="ServerTextFilter.html#LOGGER">LOGGER</a></code></div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.net.URL,net.minecraft.server.network.ServerTextFilter.MessageEncoder,java.net.URL,net.minecraft.server.network.LegacyTextFilter.JoinOrLeaveEncoder,java.net.URL,net.minecraft.server.network.LegacyTextFilter.JoinOrLeaveEncoder,java.lang.String,net.minecraft.server.network.ServerTextFilter.IgnoreStrategy,java.util.concurrent.ExecutorService)" class="member-name-link">LegacyTextFilter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;chatEndpoint,
- <a href="ServerTextFilter.MessageEncoder.html" title="interface in net.minecraft.server.network">ServerTextFilter.MessageEncoder</a>&nbsp;chatEncoder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;joinEndpoint,
- <a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a>&nbsp;joinEncoder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;leaveEndpoint,
- <a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a>&nbsp;leaveEncoder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;authKey,
- <a href="ServerTextFilter.IgnoreStrategy.html" title="interface in net.minecraft.server.network">ServerTextFilter.IgnoreStrategy</a>&nbsp;chatIgnoreStrategy,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ExecutorService</a>&nbsp;workerPool)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
+<code><a href="ServerTextFilter.IgnoreStrategy.html" title="interface in net.minecraft.server.network">ServerTextFilter.IgnoreStrategy</a></code></div>
 </section>
 </li>
 <!-- ========== METHOD SUMMARY =========== -->
@@ -199,127 +113,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="ServerTextFilter.html" title="class in net.minecraft.server.network">ServerTextFilter</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createTextFilterFromConfig(java.lang.String)" class="member-name-link">createTextFilterFromConfig</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;config)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="FilteredText.html" title="class in net.minecraft.server.network">FilteredText</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterText(java.lang.String,net.minecraft.server.network.ServerTextFilter.IgnoreStrategy,com.google.gson.JsonObject)" class="member-name-link">filterText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
- <a href="ServerTextFilter.IgnoreStrategy.html" title="interface in net.minecraft.server.network">ServerTextFilter.IgnoreStrategy</a>&nbsp;ignoreStrategy,
- com.google.gson.JsonObject&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processJoinOrLeave(com.mojang.authlib.GameProfile,java.net.URL,net.minecraft.server.network.LegacyTextFilter.JoinOrLeaveEncoder,java.util.concurrent.Executor)" class="member-name-link">processJoinOrLeave</a><wbr>(<a href="../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a>&nbsp;user,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;endpoint,
- <a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a>&nbsp;encoder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;executor)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processRequest(com.google.gson.JsonObject,java.net.URL)" class="member-name-link">processRequest</a><wbr>(com.google.gson.JsonObject&nbsp;payload,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;url)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAuthorizationProperty(java.net.HttpURLConnection)" class="member-name-link">setAuthorizationProperty</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/HttpURLConnection.html" title="class or interface in java.net" class="external-link">HttpURLConnection</a>&nbsp;connection)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.network.ServerTextFilter">Methods inherited from class&nbsp;<a href="ServerTextFilter.html#method-summary" title="class in net.minecraft.server.network">ServerTextFilter</a></h3>
-<code><a href="ServerTextFilter.html#close()" title="close()">close</a>, <a href="ServerTextFilter.html#connectionReadTimeout()" title="connectionReadTimeout()">connectionReadTimeout</a>, <a href="ServerTextFilter.html#createFromConfig(net.minecraft.server.dedicated.DedicatedServerProperties)" title="createFromConfig(DedicatedServerProperties)">createFromConfig</a>, <a href="ServerTextFilter.html#createWorkerPool(int)" title="createWorkerPool(int)">createWorkerPool</a>, <a href="ServerTextFilter.html#drainStream(java.io.InputStream)" title="drainStream(InputStream)">drainStream</a>, <a href="ServerTextFilter.html#getEndpoint(java.net.URI,com.google.gson.JsonObject,java.lang.String,java.lang.String)" title="getEndpoint(URI, JsonObject, String, String)">getEndpoint</a>, <a href="ServerTextFilter.html#getEndpointFromConfig(com.google.gson.JsonObject,java.lang.String,java.lang.String)" title="getEndpointFromConfig(JsonObject, String, String)">getEndpointFromConfig</a>, <a href="ServerTextFilter.html#getURLConnection(java.net.URL)" title="getURLConnection(URL)">getURLConnection</a>, <a href="ServerTextFilter.html#makeRequest(com.google.gson.JsonObject,java.net.URL)" title="makeRequest(JsonObject, URL)">makeRequest</a>, <a href="ServerTextFilter.html#parseMask(java.lang.String,com.google.gson.JsonArray,net.minecraft.server.network.ServerTextFilter.IgnoreStrategy)" title="parseMask(String, JsonArray, ServerTextFilter.IgnoreStrategy)">parseMask</a>, <a href="ServerTextFilter.html#requestMessageProcessing(com.mojang.authlib.GameProfile,java.lang.String,net.minecraft.server.network.ServerTextFilter.IgnoreStrategy,java.util.concurrent.Executor)" title="requestMessageProcessing(GameProfile, String, ServerTextFilter.IgnoreStrategy, Executor)">requestMessageProcessing</a></code></div>
+<code><a href="ServerTextFilter.html#close()" title="close()">close</a>, <a href="ServerTextFilter.html#createFromConfig(net.minecraft.server.dedicated.DedicatedServerProperties)" title="createFromConfig(DedicatedServerProperties)">createFromConfig</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="ENDPOINT">
-<h3>ENDPOINT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">ENDPOINT</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.server.network.LegacyTextFilter.ENDPOINT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="joinEndpoint">
-<h3>joinEndpoint</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></span>&nbsp;<span class="element-name">joinEndpoint</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="joinEncoder">
-<h3>joinEncoder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a></span>&nbsp;<span class="element-name">joinEncoder</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="leaveEndpoint">
-<h3>leaveEndpoint</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></span>&nbsp;<span class="element-name">leaveEndpoint</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="leaveEncoder">
-<h3>leaveEncoder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a></span>&nbsp;<span class="element-name">leaveEncoder</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="authKey">
-<h3>authKey</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">authKey</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(java.net.URL,net.minecraft.server.network.ServerTextFilter.MessageEncoder,java.net.URL,net.minecraft.server.network.LegacyTextFilter.JoinOrLeaveEncoder,java.net.URL,net.minecraft.server.network.LegacyTextFilter.JoinOrLeaveEncoder,java.lang.String,net.minecraft.server.network.ServerTextFilter.IgnoreStrategy,java.util.concurrent.ExecutorService)">
-<h3>LegacyTextFilter</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">LegacyTextFilter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;chatEndpoint,
- <a href="ServerTextFilter.MessageEncoder.html" title="interface in net.minecraft.server.network">ServerTextFilter.MessageEncoder</a>&nbsp;chatEncoder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;joinEndpoint,
- <a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a>&nbsp;joinEncoder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;leaveEndpoint,
- <a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a>&nbsp;leaveEncoder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;authKey,
- <a href="ServerTextFilter.IgnoreStrategy.html" title="interface in net.minecraft.server.network">ServerTextFilter.IgnoreStrategy</a>&nbsp;chatIgnoreStrategy,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ExecutorService</a>&nbsp;workerPool)</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -341,57 +149,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="ServerTextFilter.html#createContext(com.mojang.authlib.GameProfile)">createContext</a></code>&nbsp;in class&nbsp;<code><a href="ServerTextFilter.html" title="class in net.minecraft.server.network">ServerTextFilter</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="processJoinOrLeave(com.mojang.authlib.GameProfile,java.net.URL,net.minecraft.server.network.LegacyTextFilter.JoinOrLeaveEncoder,java.util.concurrent.Executor)">
-<h3>processJoinOrLeave</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processJoinOrLeave</span><wbr><span class="parameters">(<a href="../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a>&nbsp;user,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;endpoint,
- <a href="LegacyTextFilter.JoinOrLeaveEncoder.html" title="interface in net.minecraft.server.network">LegacyTextFilter.JoinOrLeaveEncoder</a>&nbsp;encoder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;executor)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="processRequest(com.google.gson.JsonObject,java.net.URL)">
-<h3>processRequest</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processRequest</span><wbr><span class="parameters">(com.google.gson.JsonObject&nbsp;payload,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&nbsp;url)</span>
-                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setAuthorizationProperty(java.net.HttpURLConnection)">
-<h3>setAuthorizationProperty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAuthorizationProperty</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/HttpURLConnection.html" title="class or interface in java.net" class="external-link">HttpURLConnection</a>&nbsp;connection)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ServerTextFilter.html#setAuthorizationProperty(java.net.HttpURLConnection)">setAuthorizationProperty</a></code>&nbsp;in class&nbsp;<code><a href="ServerTextFilter.html" title="class in net.minecraft.server.network">ServerTextFilter</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="filterText(java.lang.String,net.minecraft.server.network.ServerTextFilter.IgnoreStrategy,com.google.gson.JsonObject)">
-<h3>filterText</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="FilteredText.html" title="class in net.minecraft.server.network">FilteredText</a></span>&nbsp;<span class="element-name">filterText</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
- <a href="ServerTextFilter.IgnoreStrategy.html" title="interface in net.minecraft.server.network">ServerTextFilter.IgnoreStrategy</a>&nbsp;ignoreStrategy,
- com.google.gson.JsonObject&nbsp;result)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ServerTextFilter.html#filterText(java.lang.String,net.minecraft.server.network.ServerTextFilter.IgnoreStrategy,com.google.gson.JsonObject)">filterText</a></code>&nbsp;in class&nbsp;<code><a href="ServerTextFilter.html" title="class in net.minecraft.server.network">ServerTextFilter</a></code></dd>
 </dl>
 </div>
 </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>BaseSpawner (NeoForge 26.1)</title>
+<title>BaseSpawner (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level, class: BaseSpawner">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/BaseSpawner.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,28 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
 <li><a href="#SPAWN_DATA_TAG" tabindex="0">SPAWN_DATA_TAG</a></li>
-<li><a href="#EVENT_SPAWN" tabindex="0">EVENT_SPAWN</a></li>
-<li><a href="#DEFAULT_SPAWN_DELAY" tabindex="0">DEFAULT_SPAWN_DELAY</a></li>
-<li><a href="#DEFAULT_MIN_SPAWN_DELAY" tabindex="0">DEFAULT_MIN_SPAWN_DELAY</a></li>
-<li><a href="#DEFAULT_MAX_SPAWN_DELAY" tabindex="0">DEFAULT_MAX_SPAWN_DELAY</a></li>
-<li><a href="#DEFAULT_SPAWN_COUNT" tabindex="0">DEFAULT_SPAWN_COUNT</a></li>
-<li><a href="#DEFAULT_MAX_NEARBY_ENTITIES" tabindex="0">DEFAULT_MAX_NEARBY_ENTITIES</a></li>
-<li><a href="#DEFAULT_REQUIRED_PLAYER_RANGE" tabindex="0">DEFAULT_REQUIRED_PLAYER_RANGE</a></li>
-<li><a href="#DEFAULT_SPAWN_RANGE" tabindex="0">DEFAULT_SPAWN_RANGE</a></li>
-<li><a href="#spawnDelay" tabindex="0">spawnDelay</a></li>
-<li><a href="#spawnPotentials" tabindex="0">spawnPotentials</a></li>
-<li><a href="#nextSpawnData" tabindex="0">nextSpawnData</a></li>
-<li><a href="#spin" tabindex="0">spin</a></li>
-<li><a href="#oSpin" tabindex="0">oSpin</a></li>
-<li><a href="#minSpawnDelay" tabindex="0">minSpawnDelay</a></li>
-<li><a href="#maxSpawnDelay" tabindex="0">maxSpawnDelay</a></li>
-<li><a href="#spawnCount" tabindex="0">spawnCount</a></li>
-<li><a href="#displayEntity" tabindex="0">displayEntity</a></li>
-<li><a href="#maxNearbyEntities" tabindex="0">maxNearbyEntities</a></li>
-<li><a href="#requiredPlayerRange" tabindex="0">requiredPlayerRange</a></li>
-<li><a href="#spawnRange" tabindex="0">spawnRange</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -91,16 +70,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#setEntityId(net.minecraft.world.entity.EntityType,net.minecraft.world.level.Level,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos)" tabindex="0">setEntityId(EntityType, Level, RandomSource, BlockPos)</a></li>
-<li><a href="#isNearPlayer(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" tabindex="0">isNearPlayer(Level, BlockPos)</a></li>
 <li><a href="#clientTick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" tabindex="0">clientTick(Level, BlockPos)</a></li>
 <li><a href="#serverTick(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos)" tabindex="0">serverTick(ServerLevel, BlockPos)</a></li>
-<li><a href="#delay(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" tabindex="0">delay(Level, BlockPos)</a></li>
 <li><a href="#load(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.storage.ValueInput)" tabindex="0">load(Level, BlockPos, ValueInput)</a></li>
 <li><a href="#save(net.minecraft.world.level.storage.ValueOutput)" tabindex="0">save(ValueOutput)</a></li>
 <li><a href="#getOrCreateDisplayEntity(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" tabindex="0">getOrCreateDisplayEntity(Level, BlockPos)</a></li>
 <li><a href="#onEventTriggered(net.minecraft.world.level.Level,int)" tabindex="0">onEventTriggered(Level, int)</a></li>
-<li><a href="#setNextSpawnData(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.SpawnData)" tabindex="0">setNextSpawnData(Level, BlockPos, SpawnData)</a></li>
-<li><a href="#getOrCreateNextSpawnData(net.minecraft.world.level.Level,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos)" tabindex="0">getOrCreateNextSpawnData(Level, RandomSource, BlockPos)</a></li>
 <li><a href="#broadcastEvent(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,int)" tabindex="0">broadcastEvent(Level, BlockPos, int)</a></li>
 <li><a href="#getSpin()" tabindex="0">getSpin()</a></li>
 <li><a href="#getOSpin()" tabindex="0">getOSpin()</a></li>
@@ -140,72 +115,9 @@ implements <a href="../../../neoforged/neoforge/common/extensions/IOwnedSpawner.
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#DEFAULT_MAX_NEARBY_ENTITIES" class="member-name-link">DEFAULT_MAX_NEARBY_ENTITIES</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#DEFAULT_MAX_SPAWN_DELAY" class="member-name-link">DEFAULT_MAX_SPAWN_DELAY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#DEFAULT_MIN_SPAWN_DELAY" class="member-name-link">DEFAULT_MIN_SPAWN_DELAY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#DEFAULT_REQUIRED_PLAYER_RANGE" class="member-name-link">DEFAULT_REQUIRED_PLAYER_RANGE</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#DEFAULT_SPAWN_COUNT" class="member-name-link">DEFAULT_SPAWN_COUNT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#DEFAULT_SPAWN_DELAY" class="member-name-link">DEFAULT_SPAWN_DELAY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#DEFAULT_SPAWN_RANGE" class="member-name-link">DEFAULT_SPAWN_RANGE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#displayEntity" class="member-name-link">displayEntity</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#EVENT_SPAWN" class="member-name-link">EVENT_SPAWN</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#maxNearbyEntities" class="member-name-link">maxNearbyEntities</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#maxSpawnDelay" class="member-name-link">maxSpawnDelay</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#minSpawnDelay" class="member-name-link">minSpawnDelay</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="SpawnData.html" title="class in net.minecraft.world.level">SpawnData</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#nextSpawnData" class="member-name-link">nextSpawnData</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#oSpin" class="member-name-link">oSpin</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#requiredPlayerRange" class="member-name-link">requiredPlayerRange</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SPAWN_DATA_TAG" class="member-name-link">SPAWN_DATA_TAG</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#spawnCount" class="member-name-link">spawnCount</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#spawnDelay" class="member-name-link">spawnDelay</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="../../util/random/WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a><wbr>&lt;<a href="SpawnData.html" title="class in net.minecraft.world.level">SpawnData</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#spawnPotentials" class="member-name-link">spawnPotentials</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#spawnRange" class="member-name-link">spawnRange</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private double</code></div>
-<div class="col-second odd-row-color"><code><a href="#spin" class="member-name-link">spin</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -242,17 +154,8 @@ implements <a href="../../../neoforged/neoforge/common/extensions/IOwnedSpawner.
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clientTick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" class="member-name-link">clientTick</a><wbr>(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#delay(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" class="member-name-link">delay</a><wbr>(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOrCreateDisplayEntity(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" class="member-name-link">getOrCreateDisplayEntity</a><wbr>(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="SpawnData.html" title="class in net.minecraft.world.level">SpawnData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOrCreateNextSpawnData(net.minecraft.world.level.Level,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos)" class="member-name-link">getOrCreateNextSpawnData</a><wbr>(@Nullable <a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOrCreateDisplayEntity(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" class="member-name-link">getOrCreateDisplayEntity</a><wbr>(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
@@ -266,43 +169,34 @@ implements <a href="../../../neoforged/neoforge/common/extensions/IOwnedSpawner.
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpin()" class="member-name-link">getSpin</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNearPlayer(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" class="member-name-link">isNearPlayer</a><wbr>(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.storage.ValueInput)" class="member-name-link">load</a><wbr>(@Nullable <a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.storage.ValueInput)" class="member-name-link">load</a><wbr>(@Nullable <a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onEventTriggered(net.minecraft.world.level.Level,int)" class="member-name-link">onEventTriggered</a><wbr>(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- int&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save(net.minecraft.world.level.storage.ValueOutput)" class="member-name-link">save</a><wbr>(<a href="storage/ValueOutput.html" title="interface in net.minecraft.world.level.storage">ValueOutput</a>&nbsp;output)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onEventTriggered(net.minecraft.world.level.Level,int)" class="member-name-link">onEventTriggered</a><wbr>(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+ int&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#serverTick(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos)" class="member-name-link">serverTick</a><wbr>(<a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save(net.minecraft.world.level.storage.ValueOutput)" class="member-name-link">save</a><wbr>(<a href="storage/ValueOutput.html" title="interface in net.minecraft.world.level.storage">ValueOutput</a>&nbsp;output)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEntityId(net.minecraft.world.entity.EntityType,net.minecraft.world.level.Level,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos)" class="member-name-link">setEntityId</a><wbr>(<a href="../entity/EntityType.html" title="class in net.minecraft.world.entity">EntityType</a>&lt;?&gt;&nbsp;type,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#serverTick(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos)" class="member-name-link">serverTick</a><wbr>(<a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
+ <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEntityId(net.minecraft.world.entity.EntityType,net.minecraft.world.level.Level,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos)" class="member-name-link">setEntityId</a><wbr>(<a href="../entity/EntityType.html" title="class in net.minecraft.world.entity">EntityType</a>&lt;?&gt;&nbsp;type,
  @Nullable <a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNextSpawnData(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.SpawnData)" class="member-name-link">setNextSpawnData</a><wbr>(@Nullable <a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="SpawnData.html" title="class in net.minecraft.world.level">SpawnData</a>&nbsp;nextSpawnData)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -314,14 +208,6 @@ implements <a href="../../../neoforged/neoforge/common/extensions/IOwnedSpawner.
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="SPAWN_DATA_TAG">
 <h3>SPAWN_DATA_TAG</h3>
@@ -335,230 +221,6 @@ implements <a href="../../../neoforged/neoforge/common/extensions/IOwnedSpawner.
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="EVENT_SPAWN">
-<h3>EVENT_SPAWN</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">EVENT_SPAWN</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.world.level.BaseSpawner.EVENT_SPAWN">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_SPAWN_DELAY">
-<h3>DEFAULT_SPAWN_DELAY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_SPAWN_DELAY</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.world.level.BaseSpawner.DEFAULT_SPAWN_DELAY">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_MIN_SPAWN_DELAY">
-<h3>DEFAULT_MIN_SPAWN_DELAY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_MIN_SPAWN_DELAY</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.world.level.BaseSpawner.DEFAULT_MIN_SPAWN_DELAY">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_MAX_SPAWN_DELAY">
-<h3>DEFAULT_MAX_SPAWN_DELAY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_MAX_SPAWN_DELAY</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.world.level.BaseSpawner.DEFAULT_MAX_SPAWN_DELAY">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_SPAWN_COUNT">
-<h3>DEFAULT_SPAWN_COUNT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_SPAWN_COUNT</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.world.level.BaseSpawner.DEFAULT_SPAWN_COUNT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_MAX_NEARBY_ENTITIES">
-<h3>DEFAULT_MAX_NEARBY_ENTITIES</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_MAX_NEARBY_ENTITIES</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.world.level.BaseSpawner.DEFAULT_MAX_NEARBY_ENTITIES">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_REQUIRED_PLAYER_RANGE">
-<h3>DEFAULT_REQUIRED_PLAYER_RANGE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_REQUIRED_PLAYER_RANGE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.world.level.BaseSpawner.DEFAULT_REQUIRED_PLAYER_RANGE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_SPAWN_RANGE">
-<h3>DEFAULT_SPAWN_RANGE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_SPAWN_RANGE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.world.level.BaseSpawner.DEFAULT_SPAWN_RANGE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spawnDelay">
-<h3>spawnDelay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">spawnDelay</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spawnPotentials">
-<h3>spawnPotentials</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../util/random/WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a>&lt;<a href="SpawnData.html" title="class in net.minecraft.world.level">SpawnData</a>&gt;</span>&nbsp;<span class="element-name">spawnPotentials</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nextSpawnData">
-<h3>nextSpawnData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="SpawnData.html" title="class in net.minecraft.world.level">SpawnData</a></span>&nbsp;<span class="element-name">nextSpawnData</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spin">
-<h3>spin</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">spin</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="oSpin">
-<h3>oSpin</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">oSpin</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="minSpawnDelay">
-<h3>minSpawnDelay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">minSpawnDelay</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="maxSpawnDelay">
-<h3>maxSpawnDelay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxSpawnDelay</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spawnCount">
-<h3>spawnCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">spawnCount</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="displayEntity">
-<h3>displayEntity</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></span>&nbsp;<span class="element-name">displayEntity</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="maxNearbyEntities">
-<h3>maxNearbyEntities</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxNearbyEntities</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="requiredPlayerRange">
-<h3>requiredPlayerRange</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">requiredPlayerRange</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spawnRange">
-<h3>spawnRange</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">spawnRange</span></div>
 </div>
 </section>
 </li>
@@ -598,15 +260,6 @@ implements <a href="../../../neoforged/neoforge/common/extensions/IOwnedSpawner.
 </section>
 </li>
 <li>
-<section class="detail" id="isNearPlayer(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)">
-<h3>isNearPlayer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNearPlayer</span><wbr><span class="parameters">(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="clientTick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)">
 <h3>clientTick</h3>
 <div class="horizontal-scroll">
@@ -620,15 +273,6 @@ implements <a href="../../../neoforged/neoforge/common/extensions/IOwnedSpawner.
 <h3>serverTick</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">serverTick</span><wbr><span class="parameters">(<a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="delay(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)">
-<h3>delay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">delay</span><wbr><span class="parameters">(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</span></div>
 </div>
 </section>
@@ -666,26 +310,6 @@ implements <a href="../../../neoforged/neoforge/common/extensions/IOwnedSpawner.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">onEventTriggered</span><wbr><span class="parameters">(<a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  int&nbsp;id)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setNextSpawnData(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.SpawnData)">
-<h3>setNextSpawnData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setNextSpawnData</span><wbr><span class="parameters">(@Nullable <a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="SpawnData.html" title="class in net.minecraft.world.level">SpawnData</a>&nbsp;nextSpawnData)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getOrCreateNextSpawnData(net.minecraft.world.level.Level,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos)">
-<h3>getOrCreateNextSpawnData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="SpawnData.html" title="class in net.minecraft.world.level">SpawnData</a></span>&nbsp;<span class="element-name">getOrCreateNextSpawnData</span><wbr><span class="parameters">(@Nullable <a href="Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</span></div>
 </div>
 </section>
 </li>

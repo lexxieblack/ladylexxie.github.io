@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>UseBonemeal (NeoForge 26.1)</title>
+<title>UseBonemeal (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity.ai.behavior, class: UseBonemeal">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/UseBonemeal.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -58,30 +58,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#BONEMEALING_DURATION" tabindex="0">BONEMEALING_DURATION</a></li>
-<li><a href="#nextWorkCycleTime" tabindex="0">nextWorkCycleTime</a></li>
-<li><a href="#lastBonemealingSession" tabindex="0">lastBonemealingSession</a></li>
-<li><a href="#timeWorkedSoFar" tabindex="0">timeWorkedSoFar</a></li>
-<li><a href="#cropPos" tabindex="0">cropPos</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">UseBonemeal()</a></li>
-</ol>
-</li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
-<ol class="toc-list">
-<li><a href="#checkExtraStartConditions(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager)" tabindex="0">checkExtraStartConditions(ServerLevel, Villager)</a></li>
-<li><a href="#canStillUse(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)" tabindex="0">canStillUse(ServerLevel, Villager, long)</a></li>
-<li><a href="#pickNextTarget(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager)" tabindex="0">pickNextTarget(ServerLevel, Villager)</a></li>
-<li><a href="#validPos(net.minecraft.core.BlockPos,net.minecraft.server.level.ServerLevel)" tabindex="0">validPos(BlockPos, ServerLevel)</a></li>
-<li><a href="#start(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)" tabindex="0">start(ServerLevel, Villager, long)</a></li>
-<li><a href="#setCurrentCropAsTarget(net.minecraft.world.entity.npc.villager.Villager)" tabindex="0">setCurrentCropAsTarget(Villager)</a></li>
-<li><a href="#stop(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)" tabindex="0">stop(ServerLevel, Villager, long)</a></li>
-<li><a href="#tick(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)" tabindex="0">tick(ServerLevel, Villager, long)</a></li>
 </ol>
 </li>
 </ol>
@@ -122,30 +101,9 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#BONEMEALING_DURATION" class="member-name-link">BONEMEALING_DURATION</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#cropPos" class="member-name-link">cropPos</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private long</code></div>
-<div class="col-second even-row-color"><code><a href="#lastBonemealingSession" class="member-name-link">lastBonemealingSession</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private long</code></div>
-<div class="col-second odd-row-color"><code><a href="#nextWorkCycleTime" class="member-name-link">nextWorkCycleTime</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#timeWorkedSoFar" class="member-name-link">timeWorkedSoFar</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.entity.ai.behavior.Behavior">Fields inherited from class&nbsp;<a href="Behavior.html#field-summary" title="class in net.minecraft.world.entity.ai.behavior">Behavior</a></h3>
-<code><a href="Behavior.html#DEFAULT_DURATION">DEFAULT_DURATION</a>, <a href="Behavior.html#entryCondition">entryCondition</a></code></div>
+<code><a href="Behavior.html#DEFAULT_DURATION">DEFAULT_DURATION</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -165,119 +123,18 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
-<div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canStillUse(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)" class="member-name-link">canStillUse</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body,
- long&nbsp;timestamp)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkExtraStartConditions(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager)" class="member-name-link">checkExtraStartConditions</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pickNextTarget(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager)" class="member-name-link">pickNextTarget</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentCropAsTarget(net.minecraft.world.entity.npc.villager.Villager)" class="member-name-link">setCurrentCropAsTarget</a><wbr>(<a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#start(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)" class="member-name-link">start</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body,
- long&nbsp;timestamp)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)" class="member-name-link">stop</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body,
- long&nbsp;timestamp)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)" class="member-name-link">tick</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body,
- long&nbsp;timestamp)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validPos(net.minecraft.core.BlockPos,net.minecraft.server.level.ServerLevel)" class="member-name-link">validPos</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
- <a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-</div>
-</div>
-</div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.entity.ai.behavior.Behavior">Methods inherited from class&nbsp;<a href="Behavior.html#method-summary" title="class in net.minecraft.world.entity.ai.behavior">Behavior</a></h3>
-<code><a href="Behavior.html#debugString()" title="debugString()">debugString</a>, <a href="Behavior.html#doStop(net.minecraft.server.level.ServerLevel,E,long)" title="doStop(ServerLevel, Villager, long)">doStop</a>, <a href="Behavior.html#getRequiredMemories()" title="getRequiredMemories()">getRequiredMemories</a>, <a href="Behavior.html#getStatus()" title="getStatus()">getStatus</a>, <a href="Behavior.html#hasRequiredMemories(E)" title="hasRequiredMemories(Villager)">hasRequiredMemories</a>, <a href="Behavior.html#tickOrStop(net.minecraft.server.level.ServerLevel,E,long)" title="tickOrStop(ServerLevel, Villager, long)">tickOrStop</a>, <a href="Behavior.html#timedOut(long)" title="timedOut(long)">timedOut</a>, <a href="Behavior.html#tryStart(net.minecraft.server.level.ServerLevel,E,long)" title="tryStart(ServerLevel, Villager, long)">tryStart</a></code></div>
+<code><a href="Behavior.html#debugString()" title="debugString()">debugString</a>, <a href="Behavior.html#doStop(net.minecraft.server.level.ServerLevel,E,long)" title="doStop(ServerLevel, Villager, long)">doStop</a>, <a href="Behavior.html#getRequiredMemories()" title="getRequiredMemories()">getRequiredMemories</a>, <a href="Behavior.html#getStatus()" title="getStatus()">getStatus</a>, <a href="Behavior.html#tickOrStop(net.minecraft.server.level.ServerLevel,E,long)" title="tickOrStop(ServerLevel, Villager, long)">tickOrStop</a>, <a href="Behavior.html#tryStart(net.minecraft.server.level.ServerLevel,E,long)" title="tryStart(ServerLevel, Villager, long)">tryStart</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="BONEMEALING_DURATION">
-<h3>BONEMEALING_DURATION</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">BONEMEALING_DURATION</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.ai.behavior.UseBonemeal.BONEMEALING_DURATION">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nextWorkCycleTime">
-<h3>nextWorkCycleTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">nextWorkCycleTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastBonemealingSession">
-<h3>lastBonemealingSession</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">lastBonemealingSession</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="timeWorkedSoFar">
-<h3>timeWorkedSoFar</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">timeWorkedSoFar</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cropPos">
-<h3>cropPos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;</span>&nbsp;<span class="element-name">cropPos</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -288,109 +145,6 @@ loadScripts(document, 'script');</script>
 <h3>UseBonemeal</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">UseBonemeal</span>()</div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ============ METHOD DETAIL ========== -->
-<li>
-<section class="method-details" id="method-detail">
-<h2>Method Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="checkExtraStartConditions(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager)">
-<h3>checkExtraStartConditions</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkExtraStartConditions</span><wbr><span class="parameters">(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Behavior.html#checkExtraStartConditions(net.minecraft.server.level.ServerLevel,E)">checkExtraStartConditions</a></code>&nbsp;in class&nbsp;<code><a href="Behavior.html" title="class in net.minecraft.world.entity.ai.behavior">Behavior</a>&lt;<a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="canStillUse(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)">
-<h3>canStillUse</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canStillUse</span><wbr><span class="parameters">(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body,
- long&nbsp;timestamp)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Behavior.html#canStillUse(net.minecraft.server.level.ServerLevel,E,long)">canStillUse</a></code>&nbsp;in class&nbsp;<code><a href="Behavior.html" title="class in net.minecraft.world.entity.ai.behavior">Behavior</a>&lt;<a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pickNextTarget(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager)">
-<h3>pickNextTarget</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;</span>&nbsp;<span class="element-name">pickNextTarget</span><wbr><span class="parameters">(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="validPos(net.minecraft.core.BlockPos,net.minecraft.server.level.ServerLevel)">
-<h3>validPos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">validPos</span><wbr><span class="parameters">(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
- <a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="start(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)">
-<h3>start</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">start</span><wbr><span class="parameters">(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body,
- long&nbsp;timestamp)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Behavior.html#start(net.minecraft.server.level.ServerLevel,E,long)">start</a></code>&nbsp;in class&nbsp;<code><a href="Behavior.html" title="class in net.minecraft.world.entity.ai.behavior">Behavior</a>&lt;<a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setCurrentCropAsTarget(net.minecraft.world.entity.npc.villager.Villager)">
-<h3>setCurrentCropAsTarget</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCurrentCropAsTarget</span><wbr><span class="parameters">(<a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stop(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)">
-<h3>stop</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stop</span><wbr><span class="parameters">(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body,
- long&nbsp;timestamp)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Behavior.html#stop(net.minecraft.server.level.ServerLevel,E,long)">stop</a></code>&nbsp;in class&nbsp;<code><a href="Behavior.html" title="class in net.minecraft.world.entity.ai.behavior">Behavior</a>&lt;<a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="tick(net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.npc.villager.Villager,long)">
-<h3>tick</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">tick</span><wbr><span class="parameters">(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&nbsp;body,
- long&nbsp;timestamp)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Behavior.html#tick(net.minecraft.server.level.ServerLevel,E,long)">tick</a></code>&nbsp;in class&nbsp;<code><a href="Behavior.html" title="class in net.minecraft.world.entity.ai.behavior">Behavior</a>&lt;<a href="../../npc/villager/Villager.html" title="class in net.minecraft.world.entity.npc.villager">Villager</a>&gt;</code></dd>
-</dl>
 </div>
 </section>
 </li>

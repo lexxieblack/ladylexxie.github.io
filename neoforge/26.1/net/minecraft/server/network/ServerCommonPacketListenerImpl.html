@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ServerCommonPacketListenerImpl (NeoForge 26.1)</title>
+<title>ServerCommonPacketListenerImpl (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server.network, class: ServerCommonPacketListenerImpl">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ServerCommonPacketListenerImpl.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,22 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
 <li><a href="#LATENCY_CHECK_INTERVAL" tabindex="0">LATENCY_CHECK_INTERVAL</a></li>
-<li><a href="#CLOSED_LISTENER_TIMEOUT" tabindex="0">CLOSED_LISTENER_TIMEOUT</a></li>
-<li><a href="#TIMEOUT_DISCONNECTION_MESSAGE" tabindex="0">TIMEOUT_DISCONNECTION_MESSAGE</a></li>
-<li><a href="#DISCONNECT_UNEXPECTED_QUERY" tabindex="0">DISCONNECT_UNEXPECTED_QUERY</a></li>
-<li><a href="#server" tabindex="0">server</a></li>
-<li><a href="#connection" tabindex="0">connection</a></li>
-<li><a href="#transferred" tabindex="0">transferred</a></li>
-<li><a href="#keepAliveTime" tabindex="0">keepAliveTime</a></li>
-<li><a href="#keepAlivePending" tabindex="0">keepAlivePending</a></li>
-<li><a href="#keepAliveChallenge" tabindex="0">keepAliveChallenge</a></li>
-<li><a href="#closedListenerTime" tabindex="0">closedListenerTime</a></li>
-<li><a href="#closed" tabindex="0">closed</a></li>
-<li><a href="#latency" tabindex="0">latency</a></li>
-<li><a href="#suspendFlushingOnServerThread" tabindex="0">suspendFlushingOnServerThread</a></li>
-<li><a href="#connectionType" tabindex="0">connectionType</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -84,7 +69,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#close()" tabindex="0">close()</a></li>
 <li><a href="#onDisconnect(net.minecraft.network.DisconnectionDetails)" tabindex="0">onDisconnect(DisconnectionDetails)</a></li>
 <li><a href="#onPacketError(net.minecraft.network.protocol.Packet,java.lang.Exception)" tabindex="0">onPacketError(Packet, Exception)</a></li>
 <li><a href="#handleKeepAlive(net.minecraft.network.protocol.common.ServerboundKeepAlivePacket)" tabindex="0">handleKeepAlive(ServerboundKeepAlivePacket)</a></li>
@@ -93,20 +77,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#handleCustomClickAction(net.minecraft.network.protocol.common.ServerboundCustomClickActionPacket)" tabindex="0">handleCustomClickAction(ServerboundCustomClickActionPacket)</a></li>
 <li><a href="#handleResourcePackResponse(net.minecraft.network.protocol.common.ServerboundResourcePackPacket)" tabindex="0">handleResourcePackResponse(ServerboundResourcePackPacket)</a></li>
 <li><a href="#handleCookieResponse(net.minecraft.network.protocol.cookie.ServerboundCookieResponsePacket)" tabindex="0">handleCookieResponse(ServerboundCookieResponsePacket)</a></li>
-<li><a href="#keepConnectionAlive()" tabindex="0">keepConnectionAlive()</a></li>
-<li><a href="#checkIfClosed(long)" tabindex="0">checkIfClosed(long)</a></li>
 <li><a href="#suspendFlushing()" tabindex="0">suspendFlushing()</a></li>
 <li><a href="#resumeFlushing()" tabindex="0">resumeFlushing()</a></li>
 <li><a href="#send(net.minecraft.network.protocol.Packet)" tabindex="0">send(Packet)</a></li>
 <li><a href="#send(net.minecraft.network.protocol.Packet,io.netty.channel.ChannelFutureListener)" tabindex="0">send(Packet, ChannelFutureListener)</a></li>
 <li><a href="#disconnect(net.minecraft.network.chat.Component)" tabindex="0">disconnect(Component)</a></li>
 <li><a href="#disconnect(net.minecraft.network.DisconnectionDetails)" tabindex="0">disconnect(DisconnectionDetails)</a></li>
-<li><a href="#isSingleplayerOwner()" tabindex="0">isSingleplayerOwner()</a></li>
-<li><a href="#playerProfile()" tabindex="0">playerProfile()</a></li>
 <li><a href="#getOwner()" tabindex="0">getOwner()</a></li>
 <li><a href="#latency()" tabindex="0">latency()</a></li>
-<li><a href="#createCookie(net.minecraft.server.level.ClientInformation)" tabindex="0">createCookie(ClientInformation)</a></li>
-<li><a href="#createCookie(net.minecraft.server.level.ClientInformation,net.neoforged.neoforge.network.connection.ConnectionType)" tabindex="0">createCookie(ClientInformation, ConnectionType)</a></li>
 <li><a href="#getConnection()" tabindex="0">getConnection()</a></li>
 <li><a href="#getPacketProcessor()" tabindex="0">getPacketProcessor()</a></li>
 <li><a href="#getConnectionType()" tabindex="0">getConnectionType()</a></li>
@@ -149,56 +127,9 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#closed" class="member-name-link">closed</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#CLOSED_LISTENER_TIMEOUT" class="member-name-link">CLOSED_LISTENER_TIMEOUT</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private long</code></div>
-<div class="col-second even-row-color"><code><a href="#closedListenerTime" class="member-name-link">closedListenerTime</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="../../network/Connection.html" title="class in net.minecraft.network">Connection</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#connection" class="member-name-link">connection</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected <a href="../../../neoforged/neoforge/network/connection/ConnectionType.html" title="enum class in net.neoforged.neoforge.network.connection">ConnectionType</a></code></div>
-<div class="col-second even-row-color"><code><a href="#connectionType" class="member-name-link">connectionType</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Holds the current connection type, based on the types of payloads that have been received so far.</div>
-</div>
-<div class="col-first odd-row-color"><code>(package private) static final <a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#DISCONNECT_UNEXPECTED_QUERY" class="member-name-link">DISCONNECT_UNEXPECTED_QUERY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private long</code></div>
-<div class="col-second even-row-color"><code><a href="#keepAliveChallenge" class="member-name-link">keepAliveChallenge</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#keepAlivePending" class="member-name-link">keepAlivePending</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private long</code></div>
-<div class="col-second even-row-color"><code><a href="#keepAliveTime" class="member-name-link">keepAliveTime</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#latency" class="member-name-link">latency</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#LATENCY_CHECK_INTERVAL" class="member-name-link">LATENCY_CHECK_INTERVAL</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected final <a href="../MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></code></div>
-<div class="col-second even-row-color"><code><a href="#server" class="member-name-link">server</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#suspendFlushingOnServerThread" class="member-name-link">suspendFlushingOnServerThread</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second even-row-color"><code><a href="#TIMEOUT_DISCONNECTION_MESSAGE" class="member-name-link">TIMEOUT_DISCONNECTION_MESSAGE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#transferred" class="member-name-link">transferred</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -222,31 +153,12 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkIfClosed(long)" class="member-name-link">checkIfClosed</a><wbr>(long&nbsp;now)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected <a href="CommonListenerCookie.html" title="class in net.minecraft.server.network">CommonListenerCookie</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#createCookie(net.minecraft.server.level.ClientInformation)" class="member-name-link">createCookie</a><wbr>(<a href="../level/ClientInformation.html" title="class in net.minecraft.server.level">ClientInformation</a>&nbsp;clientInformation)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Use <a href="#createCookie(net.minecraft.server.level.ClientInformation,net.neoforged.neoforge.network.connection.ConnectionType)"><code>createCookie(ClientInformation, net.neoforged.neoforge.network.connection.ConnectionType)</code></a> instead, keeping the connection type information available.</div>
-</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="CommonListenerCookie.html" title="class in net.minecraft.server.network">CommonListenerCookie</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createCookie(net.minecraft.server.level.ClientInformation,net.neoforged.neoforge.network.connection.ConnectionType)" class="member-name-link">createCookie</a><wbr>(<a href="../level/ClientInformation.html" title="class in net.minecraft.server.level">ClientInformation</a>&nbsp;clientInformation,
- <a href="../../../neoforged/neoforge/network/connection/ConnectionType.html" title="enum class in net.neoforged.neoforge.network.connection">ConnectionType</a>&nbsp;connectionType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Creates a new cookie for this connection.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#disconnect(net.minecraft.network.chat.Component)" class="member-name-link">disconnect</a><wbr>(<a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;reason)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -291,12 +203,6 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleResourcePackResponse(net.minecraft.network.protocol.common.ServerboundResourcePackPacket)" class="member-name-link">handleResourcePackResponse</a><wbr>(<a href="../../network/protocol/common/ServerboundResourcePackPacket.html" title="class in net.minecraft.network.protocol.common">ServerboundResourcePackPacket</a>&nbsp;packet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSingleplayerOwner()" class="member-name-link">isSingleplayerOwner</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keepConnectionAlive()" class="member-name-link">keepConnectionAlive</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#latency()" class="member-name-link">latency</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -307,32 +213,29 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onPacketError(net.minecraft.network.protocol.Packet,java.lang.Exception)" class="member-name-link">onPacketError</a><wbr>(<a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&nbsp;packet,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&nbsp;e)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#playerProfile()" class="member-name-link">playerProfile</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resumeFlushing()" class="member-name-link">resumeFlushing</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#send(net.minecraft.network.protocol.Packet)" class="member-name-link">send</a><wbr>(<a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&nbsp;packet)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resumeFlushing()" class="member-name-link">resumeFlushing</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#send(net.minecraft.network.protocol.Packet)" class="member-name-link">send</a><wbr>(<a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&nbsp;packet)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sends a packet to the target of this listener.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#send(net.minecraft.network.protocol.Packet,io.netty.channel.ChannelFutureListener)" class="member-name-link">send</a><wbr>(<a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&nbsp;packet,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#send(net.minecraft.network.protocol.Packet,io.netty.channel.ChannelFutureListener)" class="member-name-link">send</a><wbr>(<a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&nbsp;packet,
  @Nullable io.netty.channel.ChannelFutureListener&nbsp;listener)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sends a packet to the client of this listener.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#suspendFlushing()" class="member-name-link">suspendFlushing</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#suspendFlushing()" class="member-name-link">suspendFlushing</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.common.extensions.ICommonPacketListener">Methods inherited from interface&nbsp;<a href="../../../neoforged/neoforge/common/extensions/ICommonPacketListener.html#method-summary" title="interface in net.neoforged.neoforge.common.extensions">ICommonPacketListener</a></h3>
 <code><a href="../../../neoforged/neoforge/common/extensions/ICommonPacketListener.html#hasChannel(net.minecraft.network.protocol.common.custom.CustomPacketPayload)" title="hasChannel(CustomPacketPayload)">hasChannel</a>, <a href="../../../neoforged/neoforge/common/extensions/ICommonPacketListener.html#hasChannel(net.minecraft.network.protocol.common.custom.CustomPacketPayload.Type)" title="hasChannel(CustomPacketPayload.Type)">hasChannel</a>, <a href="../../../neoforged/neoforge/common/extensions/ICommonPacketListener.html#hasChannel(net.minecraft.resources.Identifier)" title="hasChannel(Identifier)">hasChannel</a></code></div>
@@ -360,14 +263,6 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="LATENCY_CHECK_INTERVAL">
 <h3>LATENCY_CHECK_INTERVAL</h3>
 <div class="horizontal-scroll">
@@ -380,127 +275,6 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="CLOSED_LISTENER_TIMEOUT">
-<h3>CLOSED_LISTENER_TIMEOUT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">CLOSED_LISTENER_TIMEOUT</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.server.network.ServerCommonPacketListenerImpl.CLOSED_LISTENER_TIMEOUT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="TIMEOUT_DISCONNECTION_MESSAGE">
-<h3>TIMEOUT_DISCONNECTION_MESSAGE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></span>&nbsp;<span class="element-name">TIMEOUT_DISCONNECTION_MESSAGE</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DISCONNECT_UNEXPECTED_QUERY">
-<h3>DISCONNECT_UNEXPECTED_QUERY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></span>&nbsp;<span class="element-name">DISCONNECT_UNEXPECTED_QUERY</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="server">
-<h3>server</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></span>&nbsp;<span class="element-name">server</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="connection">
-<h3>connection</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../network/Connection.html" title="class in net.minecraft.network">Connection</a></span>&nbsp;<span class="element-name">connection</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="transferred">
-<h3>transferred</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">transferred</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="keepAliveTime">
-<h3>keepAliveTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">keepAliveTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="keepAlivePending">
-<h3>keepAlivePending</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">keepAlivePending</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="keepAliveChallenge">
-<h3>keepAliveChallenge</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">keepAliveChallenge</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="closedListenerTime">
-<h3>closedListenerTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">closedListenerTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="closed">
-<h3>closed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">closed</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="latency">
-<h3>latency</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">latency</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="suspendFlushingOnServerThread">
-<h3>suspendFlushingOnServerThread</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">suspendFlushingOnServerThread</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="connectionType">
-<h3>connectionType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../neoforged/neoforge/network/connection/ConnectionType.html" title="enum class in net.neoforged.neoforge.network.connection">ConnectionType</a></span>&nbsp;<span class="element-name">connectionType</span></div>
-<div class="block">Holds the current connection type, based on the types of payloads that have been received so far.</div>
 </div>
 </section>
 </li>
@@ -530,14 +304,6 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="close()">
-<h3>close</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()</div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="onDisconnect(net.minecraft.network.DisconnectionDetails)">
 <h3>onDisconnect</h3>
@@ -641,22 +407,6 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 </section>
 </li>
 <li>
-<section class="detail" id="keepConnectionAlive()">
-<h3>keepConnectionAlive</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">keepConnectionAlive</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="checkIfClosed(long)">
-<h3>checkIfClosed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkIfClosed</span><wbr><span class="parameters">(long&nbsp;now)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="suspendFlushing()">
 <h3>suspendFlushing</h3>
 <div class="horizontal-scroll">
@@ -728,22 +478,6 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 </section>
 </li>
 <li>
-<section class="detail" id="isSingleplayerOwner()">
-<h3>isSingleplayerOwner</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSingleplayerOwner</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="playerProfile()">
-<h3>playerProfile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a></span>&nbsp;<span class="element-name">playerProfile</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getOwner()">
 <h3>getOwner</h3>
 <div class="horizontal-scroll">
@@ -756,42 +490,6 @@ implements <a href="../../network/protocol/common/ServerCommonPacketListener.htm
 <h3>latency</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">latency</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createCookie(net.minecraft.server.level.ClientInformation)">
-<h3>createCookie</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
-</span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="CommonListenerCookie.html" title="class in net.minecraft.server.network">CommonListenerCookie</a></span>&nbsp;<span class="element-name">createCookie</span><wbr><span class="parameters">(<a href="../level/ClientInformation.html" title="class in net.minecraft.server.level">ClientInformation</a>&nbsp;clientInformation)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Use <a href="#createCookie(net.minecraft.server.level.ClientInformation,net.neoforged.neoforge.network.connection.ConnectionType)"><code>createCookie(ClientInformation, net.neoforged.neoforge.network.connection.ConnectionType)</code></a> instead, keeping the connection type information available.</div>
-</div>
-<div class="block">Creates a new cookie for this connection.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>clientInformation</code> - The client information.</dd>
-<dt>Returns:</dt>
-<dd>The cookie.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createCookie(net.minecraft.server.level.ClientInformation,net.neoforged.neoforge.network.connection.ConnectionType)">
-<h3>createCookie</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="CommonListenerCookie.html" title="class in net.minecraft.server.network">CommonListenerCookie</a></span>&nbsp;<span class="element-name">createCookie</span><wbr><span class="parameters">(<a href="../level/ClientInformation.html" title="class in net.minecraft.server.level">ClientInformation</a>&nbsp;clientInformation,
- <a href="../../../neoforged/neoforge/network/connection/ConnectionType.html" title="enum class in net.neoforged.neoforge.network.connection">ConnectionType</a>&nbsp;connectionType)</span></div>
-<div class="block">Creates a new cookie for this connection.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>clientInformation</code> - The client information.</dd>
-<dd><code>connectionType</code> - Whether the connection is modded.</dd>
-<dt>Returns:</dt>
-<dd>The cookie.</dd>
-</dl>
 </div>
 </section>
 </li>

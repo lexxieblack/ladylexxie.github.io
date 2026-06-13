@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ServerScoreboard (NeoForge 26.1)</title>
+<title>ServerScoreboard (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server, class: ServerScoreboard">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ServerScoreboard.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -58,13 +58,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#server" tabindex="0">server</a></li>
-<li><a href="#trackedObjectives" tabindex="0">trackedObjectives</a></li>
-<li><a href="#dirty" tabindex="0">dirty</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.server.MinecraftServer)" tabindex="0">ServerScoreboard(MinecraftServer)</a></li>
@@ -73,9 +66,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#load(net.minecraft.world.scores.ScoreboardSaveData.Packed)" tabindex="0">load(ScoreboardSaveData.Packed)</a></li>
-<li><a href="#store()" tabindex="0">store()</a></li>
-<li><a href="#onScoreChanged(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective,net.minecraft.world.scores.Score)" tabindex="0">onScoreChanged(ScoreHolder, Objective, Score)</a></li>
-<li><a href="#onScoreLockChanged(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" tabindex="0">onScoreLockChanged(ScoreHolder, Objective)</a></li>
 <li><a href="#onPlayerRemoved(net.minecraft.world.scores.ScoreHolder)" tabindex="0">onPlayerRemoved(ScoreHolder)</a></li>
 <li><a href="#onPlayerScoreRemoved(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" tabindex="0">onPlayerScoreRemoved(ScoreHolder, Objective)</a></li>
 <li><a href="#setDisplayObjective(net.minecraft.world.scores.DisplaySlot,net.minecraft.world.scores.Objective)" tabindex="0">setDisplayObjective(DisplaySlot, Objective)</a></li>
@@ -87,15 +77,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#onTeamAdded(net.minecraft.world.scores.PlayerTeam)" tabindex="0">onTeamAdded(PlayerTeam)</a></li>
 <li><a href="#onTeamChanged(net.minecraft.world.scores.PlayerTeam)" tabindex="0">onTeamChanged(PlayerTeam)</a></li>
 <li><a href="#onTeamRemoved(net.minecraft.world.scores.PlayerTeam)" tabindex="0">onTeamRemoved(PlayerTeam)</a></li>
-<li><a href="#setDirty()" tabindex="0">setDirty()</a></li>
 <li><a href="#storeToSaveDataIfDirty(net.minecraft.world.scores.ScoreboardSaveData)" tabindex="0">storeToSaveDataIfDirty(ScoreboardSaveData)</a></li>
 <li><a href="#getStartTrackingPackets(net.minecraft.world.scores.Objective)" tabindex="0">getStartTrackingPackets(Objective)</a></li>
 <li><a href="#startTrackingObjective(net.minecraft.world.scores.Objective)" tabindex="0">startTrackingObjective(Objective)</a></li>
 <li><a href="#getStopTrackingPackets(net.minecraft.world.scores.Objective)" tabindex="0">getStopTrackingPackets(Objective)</a></li>
 <li><a href="#stopTrackingObjective(net.minecraft.world.scores.Objective)" tabindex="0">stopTrackingObjective(Objective)</a></li>
 <li><a href="#getObjectiveDisplaySlotCount(net.minecraft.world.scores.Objective)" tabindex="0">getObjectiveDisplaySlotCount(Objective)</a></li>
-<li><a href="#updatePlayerWaypoint(java.lang.String)" tabindex="0">updatePlayerWaypoint(String)</a></li>
-<li><a href="#updateTeamWaypoints(net.minecraft.world.scores.PlayerTeam)" tabindex="0">updateTeamWaypoints(PlayerTeam)</a></li>
 </ol>
 </li>
 </ol>
@@ -132,21 +119,6 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#dirty" class="member-name-link">dirty</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#server" class="member-name-link">server</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#trackedObjectives" class="member-name-link">trackedObjectives</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.scores.Scoreboard">Fields inherited from class&nbsp;<a href="../world/scores/Scoreboard.html#field-summary" title="class in net.minecraft.world.scores">Scoreboard</a></h3>
 <code><a href="../world/scores/Scoreboard.html#HIDDEN_SCORE_PREFIX">HIDDEN_SCORE_PREFIX</a></code></div>
@@ -208,15 +180,6 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onPlayerScoreRemoved(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" class="member-name-link">onPlayerScoreRemoved</a><wbr>(<a href="../world/scores/ScoreHolder.html" title="interface in net.minecraft.world.scores">ScoreHolder</a>&nbsp;player,
  <a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onScoreChanged(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective,net.minecraft.world.scores.Score)" class="member-name-link">onScoreChanged</a><wbr>(<a href="../world/scores/ScoreHolder.html" title="interface in net.minecraft.world.scores">ScoreHolder</a>&nbsp;owner,
- <a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective,
- <a href="../world/scores/Score.html" title="class in net.minecraft.world.scores">Score</a>&nbsp;score)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onScoreLockChanged(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" class="member-name-link">onScoreLockChanged</a><wbr>(<a href="../world/scores/ScoreHolder.html" title="interface in net.minecraft.world.scores">ScoreHolder</a>&nbsp;owner,
- <a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onTeamAdded(net.minecraft.world.scores.PlayerTeam)" class="member-name-link">onTeamAdded</a><wbr>(<a href="../world/scores/PlayerTeam.html" title="class in net.minecraft.world.scores">PlayerTeam</a>&nbsp;team)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -230,78 +193,34 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removePlayerFromTeam(java.lang.String,net.minecraft.world.scores.PlayerTeam)" class="member-name-link">removePlayerFromTeam</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;player,
  <a href="../world/scores/PlayerTeam.html" title="class in net.minecraft.world.scores">PlayerTeam</a>&nbsp;team)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDirty()" class="member-name-link">setDirty</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDisplayObjective(net.minecraft.world.scores.DisplaySlot,net.minecraft.world.scores.Objective)" class="member-name-link">setDisplayObjective</a><wbr>(<a href="../world/scores/DisplaySlot.html" title="enum class in net.minecraft.world.scores">DisplaySlot</a>&nbsp;slot,
+ @Nullable <a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDisplayObjective(net.minecraft.world.scores.DisplaySlot,net.minecraft.world.scores.Objective)" class="member-name-link">setDisplayObjective</a><wbr>(<a href="../world/scores/DisplaySlot.html" title="enum class in net.minecraft.world.scores">DisplaySlot</a>&nbsp;slot,
- @Nullable <a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTrackingObjective(net.minecraft.world.scores.Objective)" class="member-name-link">startTrackingObjective</a><wbr>(<a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTrackingObjective(net.minecraft.world.scores.Objective)" class="member-name-link">startTrackingObjective</a><wbr>(<a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopTrackingObjective(net.minecraft.world.scores.Objective)" class="member-name-link">stopTrackingObjective</a><wbr>(<a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../world/scores/ScoreboardSaveData.Packed.html" title="class in net.minecraft.world.scores">ScoreboardSaveData.Packed</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#store()" class="member-name-link">store</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopTrackingObjective(net.minecraft.world.scores.Objective)" class="member-name-link">stopTrackingObjective</a><wbr>(<a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#storeToSaveDataIfDirty(net.minecraft.world.scores.ScoreboardSaveData)" class="member-name-link">storeToSaveDataIfDirty</a><wbr>(<a href="../world/scores/ScoreboardSaveData.html" title="class in net.minecraft.world.scores">ScoreboardSaveData</a>&nbsp;saveData)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePlayerWaypoint(java.lang.String)" class="member-name-link">updatePlayerWaypoint</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateTeamWaypoints(net.minecraft.world.scores.PlayerTeam)" class="member-name-link">updateTeamWaypoints</a><wbr>(<a href="../world/scores/PlayerTeam.html" title="class in net.minecraft.world.scores">PlayerTeam</a>&nbsp;team)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.scores.Scoreboard">Methods inherited from class&nbsp;<a href="../world/scores/Scoreboard.html#method-summary" title="class in net.minecraft.world.scores">Scoreboard</a></h3>
-<code><a href="../world/scores/Scoreboard.html#addObjective(java.lang.String,net.minecraft.world.scores.criteria.ObjectiveCriteria,net.minecraft.network.chat.Component,net.minecraft.world.scores.criteria.ObjectiveCriteria.RenderType,boolean,net.minecraft.network.chat.numbers.NumberFormat)" title="addObjective(String, ObjectiveCriteria, Component, ObjectiveCriteria.RenderType, boolean, NumberFormat)">addObjective</a>, <a href="../world/scores/Scoreboard.html#addPlayerTeam(java.lang.String)" title="addPlayerTeam(String)">addPlayerTeam</a>, <a href="../world/scores/Scoreboard.html#entityRemoved(net.minecraft.world.entity.Entity)" title="entityRemoved(Entity)">entityRemoved</a>, <a href="../world/scores/Scoreboard.html#forAllObjectives(net.minecraft.world.scores.criteria.ObjectiveCriteria,net.minecraft.world.scores.ScoreHolder,java.util.function.Consumer)" title="forAllObjectives(ObjectiveCriteria, ScoreHolder, Consumer)">forAllObjectives</a>, <a href="../world/scores/Scoreboard.html#getDisplayObjective(net.minecraft.world.scores.DisplaySlot)" title="getDisplayObjective(DisplaySlot)">getDisplayObjective</a>, <a href="../world/scores/Scoreboard.html#getObjective(java.lang.String)" title="getObjective(String)">getObjective</a>, <a href="../world/scores/Scoreboard.html#getObjectiveNames()" title="getObjectiveNames()">getObjectiveNames</a>, <a href="../world/scores/Scoreboard.html#getObjectives()" title="getObjectives()">getObjectives</a>, <a href="../world/scores/Scoreboard.html#getOrCreatePlayerScore(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" title="getOrCreatePlayerScore(ScoreHolder, Objective)">getOrCreatePlayerScore</a>, <a href="../world/scores/Scoreboard.html#getOrCreatePlayerScore(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective,boolean)" title="getOrCreatePlayerScore(ScoreHolder, Objective, boolean)">getOrCreatePlayerScore</a>, <a href="../world/scores/Scoreboard.html#getPlayerScoreInfo(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" title="getPlayerScoreInfo(ScoreHolder, Objective)">getPlayerScoreInfo</a>, <a href="../world/scores/Scoreboard.html#getPlayersTeam(java.lang.String)" title="getPlayersTeam(String)">getPlayersTeam</a>, <a href="../world/scores/Scoreboard.html#getPlayerTeam(java.lang.String)" title="getPlayerTeam(String)">getPlayerTeam</a>, <a href="../world/scores/Scoreboard.html#getPlayerTeams()" title="getPlayerTeams()">getPlayerTeams</a>, <a href="../world/scores/Scoreboard.html#getTeamNames()" title="getTeamNames()">getTeamNames</a>, <a href="../world/scores/Scoreboard.html#getTrackedPlayers()" title="getTrackedPlayers()">getTrackedPlayers</a>, <a href="../world/scores/Scoreboard.html#listPlayerScores(net.minecraft.world.scores.Objective)" title="listPlayerScores(Objective)">listPlayerScores</a>, <a href="../world/scores/Scoreboard.html#listPlayerScores(net.minecraft.world.scores.ScoreHolder)" title="listPlayerScores(ScoreHolder)">listPlayerScores</a>, <a href="../world/scores/Scoreboard.html#loadObjective(net.minecraft.world.scores.Objective.Packed)" title="loadObjective(Objective.Packed)">loadObjective</a>, <a href="../world/scores/Scoreboard.html#loadPlayerScore(net.minecraft.world.scores.Scoreboard.PackedScore)" title="loadPlayerScore(Scoreboard.PackedScore)">loadPlayerScore</a>, <a href="../world/scores/Scoreboard.html#loadPlayerTeam(net.minecraft.world.scores.PlayerTeam.Packed)" title="loadPlayerTeam(PlayerTeam.Packed)">loadPlayerTeam</a>, <a href="../world/scores/Scoreboard.html#packDisplaySlots()" title="packDisplaySlots()">packDisplaySlots</a>, <a href="../world/scores/Scoreboard.html#packObjectives()" title="packObjectives()">packObjectives</a>, <a href="../world/scores/Scoreboard.html#packPlayerScores()" title="packPlayerScores()">packPlayerScores</a>, <a href="../world/scores/Scoreboard.html#packPlayerTeams()" title="packPlayerTeams()">packPlayerTeams</a>, <a href="../world/scores/Scoreboard.html#removeObjective(net.minecraft.world.scores.Objective)" title="removeObjective(Objective)">removeObjective</a>, <a href="../world/scores/Scoreboard.html#removePlayerFromTeam(java.lang.String)" title="removePlayerFromTeam(String)">removePlayerFromTeam</a>, <a href="../world/scores/Scoreboard.html#removePlayerTeam(net.minecraft.world.scores.PlayerTeam)" title="removePlayerTeam(PlayerTeam)">removePlayerTeam</a>, <a href="../world/scores/Scoreboard.html#resetAllPlayerScores(net.minecraft.world.scores.ScoreHolder)" title="resetAllPlayerScores(ScoreHolder)">resetAllPlayerScores</a>, <a href="../world/scores/Scoreboard.html#resetSinglePlayerScore(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" title="resetSinglePlayerScore(ScoreHolder, Objective)">resetSinglePlayerScore</a></code></div>
+<code><a href="../world/scores/Scoreboard.html#addObjective(java.lang.String,net.minecraft.world.scores.criteria.ObjectiveCriteria,net.minecraft.network.chat.Component,net.minecraft.world.scores.criteria.ObjectiveCriteria.RenderType,boolean,net.minecraft.network.chat.numbers.NumberFormat)" title="addObjective(String, ObjectiveCriteria, Component, ObjectiveCriteria.RenderType, boolean, NumberFormat)">addObjective</a>, <a href="../world/scores/Scoreboard.html#addPlayerTeam(java.lang.String)" title="addPlayerTeam(String)">addPlayerTeam</a>, <a href="../world/scores/Scoreboard.html#entityRemoved(net.minecraft.world.entity.Entity)" title="entityRemoved(Entity)">entityRemoved</a>, <a href="../world/scores/Scoreboard.html#forAllObjectives(net.minecraft.world.scores.criteria.ObjectiveCriteria,net.minecraft.world.scores.ScoreHolder,java.util.function.Consumer)" title="forAllObjectives(ObjectiveCriteria, ScoreHolder, Consumer)">forAllObjectives</a>, <a href="../world/scores/Scoreboard.html#getDisplayObjective(net.minecraft.world.scores.DisplaySlot)" title="getDisplayObjective(DisplaySlot)">getDisplayObjective</a>, <a href="../world/scores/Scoreboard.html#getObjective(java.lang.String)" title="getObjective(String)">getObjective</a>, <a href="../world/scores/Scoreboard.html#getObjectiveNames()" title="getObjectiveNames()">getObjectiveNames</a>, <a href="../world/scores/Scoreboard.html#getObjectives()" title="getObjectives()">getObjectives</a>, <a href="../world/scores/Scoreboard.html#getOrCreatePlayerScore(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" title="getOrCreatePlayerScore(ScoreHolder, Objective)">getOrCreatePlayerScore</a>, <a href="../world/scores/Scoreboard.html#getOrCreatePlayerScore(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective,boolean)" title="getOrCreatePlayerScore(ScoreHolder, Objective, boolean)">getOrCreatePlayerScore</a>, <a href="../world/scores/Scoreboard.html#getPlayerScoreInfo(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" title="getPlayerScoreInfo(ScoreHolder, Objective)">getPlayerScoreInfo</a>, <a href="../world/scores/Scoreboard.html#getPlayersTeam(java.lang.String)" title="getPlayersTeam(String)">getPlayersTeam</a>, <a href="../world/scores/Scoreboard.html#getPlayerTeam(java.lang.String)" title="getPlayerTeam(String)">getPlayerTeam</a>, <a href="../world/scores/Scoreboard.html#getPlayerTeams()" title="getPlayerTeams()">getPlayerTeams</a>, <a href="../world/scores/Scoreboard.html#getTeamNames()" title="getTeamNames()">getTeamNames</a>, <a href="../world/scores/Scoreboard.html#getTrackedPlayers()" title="getTrackedPlayers()">getTrackedPlayers</a>, <a href="../world/scores/Scoreboard.html#listPlayerScores(net.minecraft.world.scores.Objective)" title="listPlayerScores(Objective)">listPlayerScores</a>, <a href="../world/scores/Scoreboard.html#listPlayerScores(net.minecraft.world.scores.ScoreHolder)" title="listPlayerScores(ScoreHolder)">listPlayerScores</a>, <a href="../world/scores/Scoreboard.html#removeObjective(net.minecraft.world.scores.Objective)" title="removeObjective(Objective)">removeObjective</a>, <a href="../world/scores/Scoreboard.html#removePlayerFromTeam(java.lang.String)" title="removePlayerFromTeam(String)">removePlayerFromTeam</a>, <a href="../world/scores/Scoreboard.html#removePlayerTeam(net.minecraft.world.scores.PlayerTeam)" title="removePlayerTeam(PlayerTeam)">removePlayerTeam</a>, <a href="../world/scores/Scoreboard.html#resetAllPlayerScores(net.minecraft.world.scores.ScoreHolder)" title="resetAllPlayerScores(ScoreHolder)">resetAllPlayerScores</a>, <a href="../world/scores/Scoreboard.html#resetSinglePlayerScore(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)" title="resetSinglePlayerScore(ScoreHolder, Objective)">resetSinglePlayerScore</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="server">
-<h3>server</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></span>&nbsp;<span class="element-name">server</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="trackedObjectives">
-<h3>trackedObjectives</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&gt;</span>&nbsp;<span class="element-name">trackedObjectives</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dirty">
-<h3>dirty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">dirty</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -328,41 +247,6 @@ loadScripts(document, 'script');</script>
 <h3>load</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../world/scores/ScoreboardSaveData.Packed.html" title="class in net.minecraft.world.scores">ScoreboardSaveData.Packed</a>&nbsp;data)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="store()">
-<h3>store</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../world/scores/ScoreboardSaveData.Packed.html" title="class in net.minecraft.world.scores">ScoreboardSaveData.Packed</a></span>&nbsp;<span class="element-name">store</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onScoreChanged(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective,net.minecraft.world.scores.Score)">
-<h3>onScoreChanged</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onScoreChanged</span><wbr><span class="parameters">(<a href="../world/scores/ScoreHolder.html" title="interface in net.minecraft.world.scores">ScoreHolder</a>&nbsp;owner,
- <a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective,
- <a href="../world/scores/Score.html" title="class in net.minecraft.world.scores">Score</a>&nbsp;score)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../world/scores/Scoreboard.html#onScoreChanged(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective,net.minecraft.world.scores.Score)">onScoreChanged</a></code>&nbsp;in class&nbsp;<code><a href="../world/scores/Scoreboard.html" title="class in net.minecraft.world.scores">Scoreboard</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onScoreLockChanged(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)">
-<h3>onScoreLockChanged</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onScoreLockChanged</span><wbr><span class="parameters">(<a href="../world/scores/ScoreHolder.html" title="interface in net.minecraft.world.scores">ScoreHolder</a>&nbsp;owner,
- <a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../world/scores/Scoreboard.html#onScoreLockChanged(net.minecraft.world.scores.ScoreHolder,net.minecraft.world.scores.Objective)">onScoreLockChanged</a></code>&nbsp;in class&nbsp;<code><a href="../world/scores/Scoreboard.html" title="class in net.minecraft.world.scores">Scoreboard</a></code></dd>
-</dl>
 </div>
 </section>
 </li>
@@ -503,14 +387,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="setDirty()">
-<h3>setDirty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDirty</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="storeToSaveDataIfDirty(net.minecraft.world.scores.ScoreboardSaveData)">
 <h3>storeToSaveDataIfDirty</h3>
 <div class="horizontal-scroll">
@@ -555,22 +431,6 @@ loadScripts(document, 'script');</script>
 <h3>getObjectiveDisplaySlotCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getObjectiveDisplaySlotCount</span><wbr><span class="parameters">(<a href="../world/scores/Objective.html" title="class in net.minecraft.world.scores">Objective</a>&nbsp;objective)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updatePlayerWaypoint(java.lang.String)">
-<h3>updatePlayerWaypoint</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updatePlayerWaypoint</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;player)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updateTeamWaypoints(net.minecraft.world.scores.PlayerTeam)">
-<h3>updateTeamWaypoints</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateTeamWaypoints</span><wbr><span class="parameters">(<a href="../world/scores/PlayerTeam.html" title="class in net.minecraft.world.scores">PlayerTeam</a>&nbsp;team)</span></div>
 </div>
 </section>
 </li>

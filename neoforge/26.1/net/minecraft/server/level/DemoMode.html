@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>DemoMode (NeoForge 26.1)</title>
+<title>DemoMode (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server.level, class: DemoMode">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/DemoMode.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,10 +61,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#DEMO_DAYS" tabindex="0">DEMO_DAYS</a></li>
 <li><a href="#TOTAL_PLAY_TICKS" tabindex="0">TOTAL_PLAY_TICKS</a></li>
-<li><a href="#displayedIntro" tabindex="0">displayedIntro</a></li>
-<li><a href="#demoHasEnded" tabindex="0">demoHasEnded</a></li>
-<li><a href="#demoEndedReminder" tabindex="0">demoEndedReminder</a></li>
-<li><a href="#gameModeTicks" tabindex="0">gameModeTicks</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -75,7 +71,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#tick()" tabindex="0">tick()</a></li>
-<li><a href="#outputDemoReminder()" tabindex="0">outputDemoReminder()</a></li>
 <li><a href="#handleBlockBreakAction(net.minecraft.core.BlockPos,net.minecraft.network.protocol.game.ServerboundPlayerActionPacket.Action,net.minecraft.core.Direction,int,int)" tabindex="0">handleBlockBreakAction(BlockPos, ServerboundPlayerActionPacket.Action, Direction, int, int)</a></li>
 <li><a href="#useItem(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.Level,net.minecraft.world.item.ItemStack,net.minecraft.world.InteractionHand)" tabindex="0">useItem(ServerPlayer, Level, ItemStack, InteractionHand)</a></li>
 <li><a href="#useItemOn(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.Level,net.minecraft.world.item.ItemStack,net.minecraft.world.InteractionHand,net.minecraft.world.phys.BlockHitResult)" tabindex="0">useItemOn(ServerPlayer, Level, ItemStack, InteractionHand, BlockHitResult)</a></li>
@@ -114,25 +109,10 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#DEMO_DAYS" class="member-name-link">DEMO_DAYS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#demoEndedReminder" class="member-name-link">demoEndedReminder</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#demoHasEnded" class="member-name-link">demoHasEnded</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#displayedIntro" class="member-name-link">displayedIntro</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#gameModeTicks" class="member-name-link">gameModeTicks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#TOTAL_PLAY_TICKS" class="member-name-link">TOTAL_PLAY_TICKS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.server.level.ServerPlayerGameMode">Fields inherited from class&nbsp;<a href="ServerPlayerGameMode.html#field-summary" title="class in net.minecraft.server.level">ServerPlayerGameMode</a></h3>
-<code><a href="ServerPlayerGameMode.html#level">level</a>, <a href="ServerPlayerGameMode.html#player">player</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -166,34 +146,31 @@ loadScripts(document, 'script');</script>
  int&nbsp;maxY,
  int&nbsp;sequence)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#outputDemoReminder()" class="member-name-link">outputDemoReminder</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useItem(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.Level,net.minecraft.world.item.ItemStack,net.minecraft.world.InteractionHand)" class="member-name-link">useItem</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useItem(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.Level,net.minecraft.world.item.ItemStack,net.minecraft.world.InteractionHand)" class="member-name-link">useItem</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
  <a href="../../world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useItemOn(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.Level,net.minecraft.world.item.ItemStack,net.minecraft.world.InteractionHand,net.minecraft.world.phys.BlockHitResult)" class="member-name-link">useItemOn</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useItemOn(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.Level,net.minecraft.world.item.ItemStack,net.minecraft.world.InteractionHand,net.minecraft.world.phys.BlockHitResult)" class="member-name-link">useItemOn</a><wbr>(<a href="ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  <a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
  <a href="../../world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
  <a href="../../world/phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a>&nbsp;hitResult)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.level.ServerPlayerGameMode">Methods inherited from class&nbsp;<a href="ServerPlayerGameMode.html#method-summary" title="class in net.minecraft.server.level">ServerPlayerGameMode</a></h3>
-<code><a href="ServerPlayerGameMode.html#changeGameModeForPlayer(net.minecraft.world.level.GameType)" title="changeGameModeForPlayer(GameType)">changeGameModeForPlayer</a>, <a href="ServerPlayerGameMode.html#destroyAndAck(net.minecraft.core.BlockPos,int,java.lang.String)" title="destroyAndAck(BlockPos, int, String)">destroyAndAck</a>, <a href="ServerPlayerGameMode.html#destroyBlock(net.minecraft.core.BlockPos)" title="destroyBlock(BlockPos)">destroyBlock</a>, <a href="ServerPlayerGameMode.html#getGameModeForPlayer()" title="getGameModeForPlayer()">getGameModeForPlayer</a>, <a href="ServerPlayerGameMode.html#getPreviousGameModeForPlayer()" title="getPreviousGameModeForPlayer()">getPreviousGameModeForPlayer</a>, <a href="ServerPlayerGameMode.html#isCreative()" title="isCreative()">isCreative</a>, <a href="ServerPlayerGameMode.html#isSurvival()" title="isSurvival()">isSurvival</a>, <a href="ServerPlayerGameMode.html#setGameModeForPlayer(net.minecraft.world.level.GameType,net.minecraft.world.level.GameType)" title="setGameModeForPlayer(GameType, GameType)">setGameModeForPlayer</a>, <a href="ServerPlayerGameMode.html#setLevel(net.minecraft.server.level.ServerLevel)" title="setLevel(ServerLevel)">setLevel</a></code></div>
+<code><a href="ServerPlayerGameMode.html#changeGameModeForPlayer(net.minecraft.world.level.GameType)" title="changeGameModeForPlayer(GameType)">changeGameModeForPlayer</a>, <a href="ServerPlayerGameMode.html#destroyAndAck(net.minecraft.core.BlockPos,int,java.lang.String)" title="destroyAndAck(BlockPos, int, String)">destroyAndAck</a>, <a href="ServerPlayerGameMode.html#destroyBlock(net.minecraft.core.BlockPos)" title="destroyBlock(BlockPos)">destroyBlock</a>, <a href="ServerPlayerGameMode.html#getGameModeForPlayer()" title="getGameModeForPlayer()">getGameModeForPlayer</a>, <a href="ServerPlayerGameMode.html#getPreviousGameModeForPlayer()" title="getPreviousGameModeForPlayer()">getPreviousGameModeForPlayer</a>, <a href="ServerPlayerGameMode.html#isCreative()" title="isCreative()">isCreative</a>, <a href="ServerPlayerGameMode.html#isSurvival()" title="isSurvival()">isSurvival</a>, <a href="ServerPlayerGameMode.html#setLevel(net.minecraft.server.level.ServerLevel)" title="setLevel(ServerLevel)">setLevel</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -237,38 +214,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="displayedIntro">
-<h3>displayedIntro</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">displayedIntro</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="demoHasEnded">
-<h3>demoHasEnded</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">demoHasEnded</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="demoEndedReminder">
-<h3>demoEndedReminder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">demoEndedReminder</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="gameModeTicks">
-<h3>gameModeTicks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">gameModeTicks</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -302,14 +247,6 @@ loadScripts(document, 'script');</script>
 <dt>Overrides:</dt>
 <dd><code><a href="ServerPlayerGameMode.html#tick()">tick</a></code>&nbsp;in class&nbsp;<code><a href="ServerPlayerGameMode.html" title="class in net.minecraft.server.level">ServerPlayerGameMode</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="outputDemoReminder()">
-<h3>outputDemoReminder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">outputDemoReminder</span>()</div>
 </div>
 </section>
 </li>

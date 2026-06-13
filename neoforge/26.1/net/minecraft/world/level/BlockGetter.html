@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>BlockGetter (NeoForge 26.1)</title>
+<title>BlockGetter (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level, interface: BlockGetter">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/BlockGetter.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -71,8 +71,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getBlockFloorHeight(net.minecraft.core.BlockPos)" tabindex="0">getBlockFloorHeight(BlockPos)</a></li>
 <li><a href="#traverseBlocks(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,C,java.util.function.BiFunction,java.util.function.Function)" tabindex="0">traverseBlocks(Vec3, Vec3, C, BiFunction, Function)</a></li>
 <li><a href="#forEachBlockIntersectedBetween(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.AABB,net.minecraft.world.level.BlockGetter.BlockStepVisitor)" tabindex="0">forEachBlockIntersectedBetween(Vec3, Vec3, AABB, BlockGetter.BlockStepVisitor)</a></li>
-<li><a href="#addCollisionsAlongTravel(it.unimi.dsi.fastutil.longs.LongSet,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.AABB,net.minecraft.world.level.BlockGetter.BlockStepVisitor)" tabindex="0">addCollisionsAlongTravel(LongSet, Vec3, AABB, BlockGetter.BlockStepVisitor)</a></li>
-<li><a href="#getFurthestCorner(net.minecraft.world.phys.Vec3)" tabindex="0">getFurthestCorner(Vec3)</a></li>
 </ol>
 </li>
 </ol>
@@ -129,54 +127,45 @@ extends <a href="LevelHeightAccessor.html" title="interface in net.minecraft.wor
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>private static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#addCollisionsAlongTravel(it.unimi.dsi.fastutil.longs.LongSet,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.AABB,net.minecraft.world.level.BlockGetter.BlockStepVisitor)" class="member-name-link">addCollisionsAlongTravel</a><wbr>(it.unimi.dsi.fastutil.longs.LongSet&nbsp;visitedBlocks,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMove,
- <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;aabbAtTarget,
- <a href="BlockGetter.BlockStepVisitor.html" title="interface in net.minecraft.world.level">BlockGetter.BlockStepVisitor</a>&nbsp;visitor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#clip(net.minecraft.world.level.ClipContext)" class="member-name-link">clip</a><wbr>(<a href="ClipContext.html" title="class in net.minecraft.world.level">ClipContext</a>&nbsp;c)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default @Nullable <a href="../phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#clipWithInteractionOverride(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,net.minecraft.core.BlockPos,net.minecraft.world.phys.shapes.VoxelShape,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">clipWithInteractionOverride</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;from,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#clip(net.minecraft.world.level.ClipContext)" class="member-name-link">clip</a><wbr>(<a href="ClipContext.html" title="class in net.minecraft.world.level">ClipContext</a>&nbsp;c)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default @Nullable <a href="../phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#clipWithInteractionOverride(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,net.minecraft.core.BlockPos,net.minecraft.world.phys.shapes.VoxelShape,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">clipWithInteractionOverride</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;from,
  <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;to,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&nbsp;blockShape,
  <a href="block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;blockState)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#forEachBlockIntersectedBetween(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.AABB,net.minecraft.world.level.BlockGetter.BlockStepVisitor)" class="member-name-link">forEachBlockIntersectedBetween</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;from,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#forEachBlockIntersectedBetween(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.AABB,net.minecraft.world.level.BlockGetter.BlockStepVisitor)" class="member-name-link">forEachBlockIntersectedBetween</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;from,
  <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;to,
  <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;aabbAtTarget,
  <a href="BlockGetter.BlockStepVisitor.html" title="interface in net.minecraft.world.level">BlockGetter.BlockStepVisitor</a>&nbsp;visitor)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@Nullable <a href="block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBlockEntity(net.minecraft.core.BlockPos)" class="member-name-link">getBlockEntity</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T extends <a href="block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockEntity(net.minecraft.core.BlockPos,net.minecraft.world.level.block.entity.BlockEntityType)" class="member-name-link">getBlockEntity</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@Nullable <a href="block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBlockEntity(net.minecraft.core.BlockPos)" class="member-name-link">getBlockEntity</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T extends <a href="block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockEntity(net.minecraft.core.BlockPos,net.minecraft.world.level.block.entity.BlockEntityType)" class="member-name-link">getBlockEntity</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;T&gt;&nbsp;type)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockFloorHeight(net.minecraft.core.BlockPos)" class="member-name-link">getBlockFloorHeight</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockFloorHeight(net.minecraft.world.phys.shapes.VoxelShape,java.util.function.Supplier)" class="member-name-link">getBlockFloorHeight</a><wbr>(<a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&nbsp;blockShape,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockFloorHeight(net.minecraft.core.BlockPos)" class="member-name-link">getBlockFloorHeight</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockFloorHeight(net.minecraft.world.phys.shapes.VoxelShape,java.util.function.Supplier)" class="member-name-link">getBlockFloorHeight</a><wbr>(<a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&nbsp;blockShape,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="../phys/shapes/VoxelShape.html" title="class in net.minecraft.world.phys.shapes">VoxelShape</a>&gt;&nbsp;belowBlockShape)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBlockState(net.minecraft.core.BlockPos)" class="member-name-link">getBlockState</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockStates(net.minecraft.world.phys.AABB)" class="member-name-link">getBlockStates</a><wbr>(<a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="material/FluidState.html" title="class in net.minecraft.world.level.material">FluidState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFluidState(net.minecraft.core.BlockPos)" class="member-name-link">getFluidState</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>private static <a href="../../core/Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#getFurthestCorner(net.minecraft.world.phys.Vec3)" class="member-name-link">getFurthestCorner</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;direction)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBlockState(net.minecraft.core.BlockPos)" class="member-name-link">getBlockState</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getBlockStates(net.minecraft.world.phys.AABB)" class="member-name-link">getBlockStates</a><wbr>(<a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;box)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="material/FluidState.html" title="class in net.minecraft.world.level.material">FluidState</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFluidState(net.minecraft.core.BlockPos)" class="member-name-link">getFluidState</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getLightEmission(net.minecraft.core.BlockPos)" class="member-name-link">getLightEmission</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
@@ -324,25 +313,6 @@ extends <a href="LevelHeightAccessor.html" title="interface in net.minecraft.wor
  <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;to,
  <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;aabbAtTarget,
  <a href="BlockGetter.BlockStepVisitor.html" title="interface in net.minecraft.world.level">BlockGetter.BlockStepVisitor</a>&nbsp;visitor)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addCollisionsAlongTravel(it.unimi.dsi.fastutil.longs.LongSet,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.AABB,net.minecraft.world.level.BlockGetter.BlockStepVisitor)">
-<h3>addCollisionsAlongTravel</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">addCollisionsAlongTravel</span><wbr><span class="parameters">(it.unimi.dsi.fastutil.longs.LongSet&nbsp;visitedBlocks,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;deltaMove,
- <a href="../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;aabbAtTarget,
- <a href="BlockGetter.BlockStepVisitor.html" title="interface in net.minecraft.world.level">BlockGetter.BlockStepVisitor</a>&nbsp;visitor)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getFurthestCorner(net.minecraft.world.phys.Vec3)">
-<h3>getFurthestCorner</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../core/Vec3i.html" title="class in net.minecraft.core">Vec3i</a></span>&nbsp;<span class="element-name">getFurthestCorner</span><wbr><span class="parameters">(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;direction)</span></div>
 </div>
 </section>
 </li>
