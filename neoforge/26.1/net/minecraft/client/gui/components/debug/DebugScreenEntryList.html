@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>DebugScreenEntryList (NeoForge 26.1)</title>
+<title>DebugScreenEntryList (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.gui.components.debug, class: DebugScreenEntryList">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/DebugScreenEntryList.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,23 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#DEFAULT_DEBUG_PROFILE_VERSION" tabindex="0">DEFAULT_DEBUG_PROFILE_VERSION</a></li>
-<li><a href="#allStatuses" tabindex="0">allStatuses</a></li>
-<li><a href="#currentlyEnabled" tabindex="0">currentlyEnabled</a></li>
-<li><a href="#isOverlayVisible" tabindex="0">isOverlayVisible</a></li>
-<li><a href="#profile" tabindex="0">profile</a></li>
-<li><a href="#debugProfileFile" tabindex="0">debugProfileFile</a></li>
-<li><a href="#currentlyEnabledVersion" tabindex="0">currentlyEnabledVersion</a></li>
-<li><a href="#codec" tabindex="0">codec</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.io.File,com.mojang.datafixers.DataFixer)" tabindex="0">DebugScreenEntryList(File, DataFixer)</a></li>
@@ -79,8 +64,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#load()" tabindex="0">load()</a></li>
-<li><a href="#resetStatuses(java.util.Map)" tabindex="0">resetStatuses(Map)</a></li>
-<li><a href="#resetToProfile(net.minecraft.client.gui.components.debug.DebugScreenProfile)" tabindex="0">resetToProfile(DebugScreenProfile)</a></li>
 <li><a href="#loadProfile(net.minecraft.client.gui.components.debug.DebugScreenProfile)" tabindex="0">loadProfile(DebugScreenProfile)</a></li>
 <li><a href="#getStatus(net.minecraft.resources.Identifier)" tabindex="0">getStatus(Identifier)</a></li>
 <li><a href="#isCurrentlyEnabled(net.minecraft.resources.Identifier)" tabindex="0">isCurrentlyEnabled(Identifier)</a></li>
@@ -115,60 +98,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>(package private) static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="DebugScreenEntryList.SerializedOptions.html" class="type-name-link" title="class in net.minecraft.client.gui.components.debug">DebugScreenEntryList.SerializedOptions</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="DebugScreenEntryStatus.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenEntryStatus</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#allStatuses" class="member-name-link">allStatuses</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="DebugScreenEntryList.SerializedOptions.html" title="class in net.minecraft.client.gui.components.debug">DebugScreenEntryList.SerializedOptions</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#codec" class="member-name-link">codec</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#currentlyEnabled" class="member-name-link">currentlyEnabled</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private long</code></div>
-<div class="col-second odd-row-color"><code><a href="#currentlyEnabledVersion" class="member-name-link">currentlyEnabledVersion</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></code></div>
-<div class="col-second even-row-color"><code><a href="#debugProfileFile" class="member-name-link">debugProfileFile</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#DEFAULT_DEBUG_PROFILE_VERSION" class="member-name-link">DEFAULT_DEBUG_PROFILE_VERSION</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#isOverlayVisible" class="member-name-link">isOverlayVisible</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="DebugScreenProfile.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenProfile</a></code></div>
-<div class="col-second even-row-color"><code><a href="#profile" class="member-name-link">profile</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -221,12 +150,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rebuildCurrentList()" class="member-name-link">rebuildCurrentList</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetStatuses(java.util.Map)" class="member-name-link">resetStatuses</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="DebugScreenEntryStatus.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenEntryStatus</a>&gt;&nbsp;newEntries)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetToProfile(net.minecraft.client.gui.components.debug.DebugScreenProfile)" class="member-name-link">resetToProfile</a><wbr>(<a href="DebugScreenProfile.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenProfile</a>&nbsp;profile)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save()" class="member-name-link">save</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -248,101 +171,13 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_DEBUG_PROFILE_VERSION">
-<h3>DEFAULT_DEBUG_PROFILE_VERSION</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_DEBUG_PROFILE_VERSION</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.client.gui.components.debug.DebugScreenEntryList.DEFAULT_DEBUG_PROFILE_VERSION">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="allStatuses">
-<h3>allStatuses</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="DebugScreenEntryStatus.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenEntryStatus</a>&gt;</span>&nbsp;<span class="element-name">allStatuses</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="currentlyEnabled">
-<h3>currentlyEnabled</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</span>&nbsp;<span class="element-name">currentlyEnabled</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isOverlayVisible">
-<h3>isOverlayVisible</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isOverlayVisible</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="profile">
-<h3>profile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="DebugScreenProfile.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenProfile</a></span>&nbsp;<span class="element-name">profile</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="debugProfileFile">
-<h3>debugProfileFile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></span>&nbsp;<span class="element-name">debugProfileFile</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="currentlyEnabledVersion">
-<h3>currentlyEnabledVersion</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">currentlyEnabledVersion</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="codec">
-<h3>codec</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="DebugScreenEntryList.SerializedOptions.html" title="class in net.minecraft.client.gui.components.debug">DebugScreenEntryList.SerializedOptions</a>&gt;</span>&nbsp;<span class="element-name">codec</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -370,22 +205,6 @@ loadScripts(document, 'script');</script>
 <h3>load</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resetStatuses(java.util.Map)">
-<h3>resetStatuses</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resetStatuses</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="DebugScreenEntryStatus.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenEntryStatus</a>&gt;&nbsp;newEntries)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resetToProfile(net.minecraft.client.gui.components.debug.DebugScreenProfile)">
-<h3>resetToProfile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resetToProfile</span><wbr><span class="parameters">(<a href="DebugScreenProfile.html" title="enum class in net.minecraft.client.gui.components.debug">DebugScreenProfile</a>&nbsp;profile)</span></div>
 </div>
 </section>
 </li>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>GameProfileRepository (NeoForge 26.1)</title>
+<title>GameProfileRepository (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: com.mojang.authlib, interface: GameProfileRepository">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/GameProfileRepository.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -92,12 +92,18 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="yggdrasil/response/NameAndId.html" title="class in com.mojang.authlib.yggdrasil.response">NameAndId</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#findProfileByName(java.lang.String)" class="member-name-link">findProfileByName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;var1)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#findProfileByName(java.lang.String)" class="member-name-link">findProfileByName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Find UUID and canonical name for a single account.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#findProfilesByNames(java.lang.String%5B%5D,com.mojang.authlib.ProfileLookupCallback)" class="member-name-link">findProfilesByNames</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;var1,
- <a href="ProfileLookupCallback.html" title="interface in com.mojang.authlib">ProfileLookupCallback</a>&nbsp;var2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#findProfilesByNames(java.lang.String%5B%5D,com.mojang.authlib.ProfileLookupCallback)" class="member-name-link">findProfilesByNames</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;names,
+ <a href="ProfileLookupCallback.html" title="interface in com.mojang.authlib">ProfileLookupCallback</a>&nbsp;callback)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Find UUID and canonical name for muliple accounts
+Note 1: returned names might differ in casing from requested one
+Note 2: might be slower than <a href="#findProfileByName(java.lang.String)"><code>findProfileByName(String)</code></a></div>
+</div>
 </div>
 </div>
 </div>
@@ -116,8 +122,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="findProfilesByNames(java.lang.String[],com.mojang.authlib.ProfileLookupCallback)">
 <h3>findProfilesByNames</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">findProfilesByNames</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;var1,
- <a href="ProfileLookupCallback.html" title="interface in com.mojang.authlib">ProfileLookupCallback</a>&nbsp;var2)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">findProfilesByNames</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;names,
+ <a href="ProfileLookupCallback.html" title="interface in com.mojang.authlib">ProfileLookupCallback</a>&nbsp;callback)</span></div>
+<div class="block">Find UUID and canonical name for muliple accounts
+Note 1: returned names might differ in casing from requested one
+Note 2: might be slower than <a href="#findProfileByName(java.lang.String)"><code>findProfileByName(String)</code></a></div>
 </div>
 </section>
 </li>
@@ -125,7 +134,9 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="findProfileByName(java.lang.String)">
 <h3>findProfileByName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="yggdrasil/response/NameAndId.html" title="class in com.mojang.authlib.yggdrasil.response">NameAndId</a>&gt;</span>&nbsp;<span class="element-name">findProfileByName</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;var1)</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="yggdrasil/response/NameAndId.html" title="class in com.mojang.authlib.yggdrasil.response">NameAndId</a>&gt;</span>&nbsp;<span class="element-name">findProfileByName</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="block">Find UUID and canonical name for a single account.
+Note: returned name might differ in casing from requested one</div>
 </div>
 </section>
 </li>

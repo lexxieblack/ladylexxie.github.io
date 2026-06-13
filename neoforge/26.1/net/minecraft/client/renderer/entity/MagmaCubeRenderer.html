@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>MagmaCubeRenderer (NeoForge 26.1)</title>
+<title>MagmaCubeRenderer (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.renderer.entity, class: MagmaCubeRenderer">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/MagmaCubeRenderer.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -57,11 +57,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#MAGMACUBE_LOCATION" tabindex="0">MAGMACUBE_LOCATION</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.client.renderer.entity.EntityRendererProvider.Context)" tabindex="0">MagmaCubeRenderer(EntityRendererProvider.Context)</a></li>
@@ -69,12 +64,9 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#getBlockLightLevel(net.minecraft.world.entity.monster.MagmaCube,net.minecraft.core.BlockPos)" tabindex="0">getBlockLightLevel(MagmaCube, BlockPos)</a></li>
 <li><a href="#getTextureLocation(net.minecraft.client.renderer.entity.state.SlimeRenderState)" tabindex="0">getTextureLocation(SlimeRenderState)</a></li>
 <li><a href="#createRenderState()" tabindex="0">createRenderState()</a></li>
 <li><a href="#extractRenderState(net.minecraft.world.entity.monster.MagmaCube,net.minecraft.client.renderer.entity.state.SlimeRenderState,float)" tabindex="0">extractRenderState(MagmaCube, SlimeRenderState, float)</a></li>
-<li><a href="#getShadowRadius(net.minecraft.client.renderer.entity.state.SlimeRenderState)" tabindex="0">getShadowRadius(SlimeRenderState)</a></li>
-<li><a href="#scale(net.minecraft.client.renderer.entity.state.SlimeRenderState,com.mojang.blaze3d.vertex.PoseStack)" tabindex="0">scale(SlimeRenderState, PoseStack)</a></li>
 </ol>
 </li>
 </ol>
@@ -110,21 +102,9 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MAGMACUBE_LOCATION" class="member-name-link">MAGMACUBE_LOCATION</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.client.renderer.entity.LivingEntityRenderer">Fields inherited from class&nbsp;<a href="LivingEntityRenderer.html#field-summary" title="class in net.minecraft.client.renderer.entity">LivingEntityRenderer</a></h3>
-<code><a href="LivingEntityRenderer.html#itemModelResolver">itemModelResolver</a>, <a href="LivingEntityRenderer.html#layers">layers</a>, <a href="LivingEntityRenderer.html#model">model</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.renderer.entity.EntityRenderer">Fields inherited from class&nbsp;<a href="EntityRenderer.html#field-summary" title="class in net.minecraft.client.renderer.entity">EntityRenderer</a></h3>
-<code><a href="EntityRenderer.html#entityRenderDispatcher">entityRenderDispatcher</a>, <a href="EntityRenderer.html#NAMETAG_SCALE">NAMETAG_SCALE</a>, <a href="EntityRenderer.html#shadowRadius">shadowRadius</a>, <a href="EntityRenderer.html#shadowStrength">shadowStrength</a></code></div>
+<code><a href="EntityRenderer.html#NAMETAG_SCALE">NAMETAG_SCALE</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -159,57 +139,27 @@ loadScripts(document, 'script');</script>
  <a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>&nbsp;state,
  float&nbsp;partialTicks)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBlockLightLevel(net.minecraft.world.entity.monster.MagmaCube,net.minecraft.core.BlockPos)" class="member-name-link">getBlockLightLevel</a><wbr>(<a href="../../../world/entity/monster/MagmaCube.html" title="class in net.minecraft.world.entity.monster">MagmaCube</a>&nbsp;entity,
- <a href="../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShadowRadius(net.minecraft.client.renderer.entity.state.SlimeRenderState)" class="member-name-link">getShadowRadius</a><wbr>(<a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTextureLocation(net.minecraft.client.renderer.entity.state.SlimeRenderState)" class="member-name-link">getTextureLocation</a><wbr>(<a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>&nbsp;state)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scale(net.minecraft.client.renderer.entity.state.SlimeRenderState,com.mojang.blaze3d.vertex.PoseStack)" class="member-name-link">scale</a><wbr>(<a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>&nbsp;state,
- <a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.html" title="class in com.mojang.blaze3d.vertex">PoseStack</a>&nbsp;poseStack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.minecraft.client.renderer.entity.MobRenderer">Methods inherited from class&nbsp;<a href="MobRenderer.html#method-summary" title="class in net.minecraft.client.renderer.entity">MobRenderer</a></h3>
-<code><a href="MobRenderer.html#checkMagicName(net.minecraft.world.entity.Entity,java.lang.String)" title="checkMagicName(Entity, String)">checkMagicName</a>, <a href="MobRenderer.html#shouldShowName(T,double)" title="shouldShowName(MagmaCube, double)">shouldShowName</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.renderer.entity.LivingEntityRenderer">Methods inherited from class&nbsp;<a href="LivingEntityRenderer.html#method-summary" title="class in net.minecraft.client.renderer.entity">LivingEntityRenderer</a></h3>
-<code><a href="LivingEntityRenderer.html#addLayer(net.minecraft.client.renderer.entity.layers.RenderLayer)" title="addLayer(RenderLayer)">addLayer</a>, <a href="LivingEntityRenderer.html#getBoundingBoxForCulling(T)" title="getBoundingBoxForCulling(MagmaCube)">getBoundingBoxForCulling</a>, <a href="LivingEntityRenderer.html#getFlipDegrees()" title="getFlipDegrees()">getFlipDegrees</a>, <a href="LivingEntityRenderer.html#getModel()" title="getModel()">getModel</a>, <a href="LivingEntityRenderer.html#getModelTint(S)" title="getModelTint(SlimeRenderState)">getModelTint</a>, <a href="LivingEntityRenderer.html#getOverlayCoords(net.minecraft.client.renderer.entity.state.LivingEntityRenderState,float)" title="getOverlayCoords(LivingEntityRenderState, float)">getOverlayCoords</a>, <a href="LivingEntityRenderer.html#getRenderType(S,boolean,boolean,boolean)" title="getRenderType(SlimeRenderState, boolean, boolean, boolean)">getRenderType</a>, <a href="LivingEntityRenderer.html#getWhiteOverlayProgress(S)" title="getWhiteOverlayProgress(SlimeRenderState)">getWhiteOverlayProgress</a>, <a href="LivingEntityRenderer.html#isBodyVisible(S)" title="isBodyVisible(SlimeRenderState)">isBodyVisible</a>, <a href="LivingEntityRenderer.html#isEntityUpsideDown(T)" title="isEntityUpsideDown(MagmaCube)">isEntityUpsideDown</a>, <a href="LivingEntityRenderer.html#isShaking(S)" title="isShaking(SlimeRenderState)">isShaking</a>, <a href="LivingEntityRenderer.html#isUpsideDownName(java.lang.String)" title="isUpsideDownName(String)">isUpsideDownName</a>, <a href="LivingEntityRenderer.html#setupRotations(S,com.mojang.blaze3d.vertex.PoseStack,float,float)" title="setupRotations(SlimeRenderState, PoseStack, float, float)">setupRotations</a>, <a href="LivingEntityRenderer.html#shouldRenderLayers(S)" title="shouldRenderLayers(SlimeRenderState)">shouldRenderLayers</a>, <a href="LivingEntityRenderer.html#submit(S,com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.client.renderer.state.level.CameraRenderState)" title="submit(SlimeRenderState, PoseStack, SubmitNodeCollector, CameraRenderState)">submit</a></code></div>
+<code><a href="LivingEntityRenderer.html#addLayer(net.minecraft.client.renderer.entity.layers.RenderLayer)" title="addLayer(RenderLayer)">addLayer</a>, <a href="LivingEntityRenderer.html#getModel()" title="getModel()">getModel</a>, <a href="LivingEntityRenderer.html#getOverlayCoords(net.minecraft.client.renderer.entity.state.LivingEntityRenderState,float)" title="getOverlayCoords(LivingEntityRenderState, float)">getOverlayCoords</a>, <a href="LivingEntityRenderer.html#isEntityUpsideDown(T)" title="isEntityUpsideDown(MagmaCube)">isEntityUpsideDown</a>, <a href="LivingEntityRenderer.html#submit(S,com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.client.renderer.state.level.CameraRenderState)" title="submit(SlimeRenderState, PoseStack, SubmitNodeCollector, CameraRenderState)">submit</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.renderer.entity.EntityRenderer">Methods inherited from class&nbsp;<a href="EntityRenderer.html#method-summary" title="class in net.minecraft.client.renderer.entity">EntityRenderer</a></h3>
-<code><a href="EntityRenderer.html#affectedByCulling(T)" title="affectedByCulling(MagmaCube)">affectedByCulling</a>, <a href="EntityRenderer.html#createRenderState(T,float)" title="createRenderState(MagmaCube, float)">createRenderState</a>, <a href="EntityRenderer.html#finalizeRenderState(T,S)" title="finalizeRenderState(MagmaCube, SlimeRenderState)">finalizeRenderState</a>, <a href="EntityRenderer.html#getFont()" title="getFont()">getFont</a>, <a href="EntityRenderer.html#getNameTag(T)" title="getNameTag(MagmaCube)">getNameTag</a>, <a href="EntityRenderer.html#getPackedLightCoords(T,float)" title="getPackedLightCoords(MagmaCube, float)">getPackedLightCoords</a>, <a href="EntityRenderer.html#getRenderOffset(S)" title="getRenderOffset(SlimeRenderState)">getRenderOffset</a>, <a href="EntityRenderer.html#getShadowStrength(S)" title="getShadowStrength(SlimeRenderState)">getShadowStrength</a>, <a href="EntityRenderer.html#getSkyLightLevel(T,net.minecraft.core.BlockPos)" title="getSkyLightLevel(MagmaCube, BlockPos)">getSkyLightLevel</a>, <a href="EntityRenderer.html#shouldRender(T,net.minecraft.client.renderer.culling.Frustum,double,double,double)" title="shouldRender(MagmaCube, Frustum, double, double, double)">shouldRender</a>, <a href="EntityRenderer.html#submitNameDisplay(S,com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.client.renderer.state.level.CameraRenderState)" title="submitNameDisplay(SlimeRenderState, PoseStack, SubmitNodeCollector, CameraRenderState)">submitNameDisplay</a>, <a href="EntityRenderer.html#submitNameDisplay(S,com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.client.renderer.state.level.CameraRenderState,int)" title="submitNameDisplay(S, PoseStack, SubmitNodeCollector, CameraRenderState, int)">submitNameDisplay</a></code></div>
+<code><a href="EntityRenderer.html#createRenderState(T,float)" title="createRenderState(MagmaCube, float)">createRenderState</a>, <a href="EntityRenderer.html#getFont()" title="getFont()">getFont</a>, <a href="EntityRenderer.html#getPackedLightCoords(T,float)" title="getPackedLightCoords(MagmaCube, float)">getPackedLightCoords</a>, <a href="EntityRenderer.html#getRenderOffset(S)" title="getRenderOffset(SlimeRenderState)">getRenderOffset</a>, <a href="EntityRenderer.html#shouldRender(T,net.minecraft.client.renderer.culling.Frustum,double,double,double)" title="shouldRender(MagmaCube, Frustum, double, double, double)">shouldRender</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="MAGMACUBE_LOCATION">
-<h3>MAGMACUBE_LOCATION</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></span>&nbsp;<span class="element-name">MAGMACUBE_LOCATION</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -231,19 +181,6 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="getBlockLightLevel(net.minecraft.world.entity.monster.MagmaCube,net.minecraft.core.BlockPos)">
-<h3>getBlockLightLevel</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getBlockLightLevel</span><wbr><span class="parameters">(<a href="../../../world/entity/monster/MagmaCube.html" title="class in net.minecraft.world.entity.monster">MagmaCube</a>&nbsp;entity,
- <a href="../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="EntityRenderer.html#getBlockLightLevel(T,net.minecraft.core.BlockPos)">getBlockLightLevel</a></code>&nbsp;in class&nbsp;<code><a href="EntityRenderer.html" title="class in net.minecraft.client.renderer.entity">EntityRenderer</a>&lt;<a href="../../../world/entity/monster/MagmaCube.html" title="class in net.minecraft.world.entity.monster">MagmaCube</a>, <a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="getTextureLocation(net.minecraft.client.renderer.entity.state.SlimeRenderState)">
 <h3>getTextureLocation</h3>
@@ -278,31 +215,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="LivingEntityRenderer.html#extractRenderState(T,S,float)">extractRenderState</a></code>&nbsp;in class&nbsp;<code><a href="LivingEntityRenderer.html" title="class in net.minecraft.client.renderer.entity">LivingEntityRenderer</a>&lt;<a href="../../../world/entity/monster/MagmaCube.html" title="class in net.minecraft.world.entity.monster">MagmaCube</a>, <a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>, <a href="../../model/monster/slime/MagmaCubeModel.html" title="class in net.minecraft.client.model.monster.slime">MagmaCubeModel</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getShadowRadius(net.minecraft.client.renderer.entity.state.SlimeRenderState)">
-<h3>getShadowRadius</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getShadowRadius</span><wbr><span class="parameters">(<a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>&nbsp;state)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="MobRenderer.html#getShadowRadius(S)">getShadowRadius</a></code>&nbsp;in class&nbsp;<code><a href="MobRenderer.html" title="class in net.minecraft.client.renderer.entity">MobRenderer</a>&lt;<a href="../../../world/entity/monster/MagmaCube.html" title="class in net.minecraft.world.entity.monster">MagmaCube</a>, <a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>, <a href="../../model/monster/slime/MagmaCubeModel.html" title="class in net.minecraft.client.model.monster.slime">MagmaCubeModel</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="scale(net.minecraft.client.renderer.entity.state.SlimeRenderState,com.mojang.blaze3d.vertex.PoseStack)">
-<h3>scale</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scale</span><wbr><span class="parameters">(<a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>&nbsp;state,
- <a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.html" title="class in com.mojang.blaze3d.vertex">PoseStack</a>&nbsp;poseStack)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="LivingEntityRenderer.html#scale(S,com.mojang.blaze3d.vertex.PoseStack)">scale</a></code>&nbsp;in class&nbsp;<code><a href="LivingEntityRenderer.html" title="class in net.minecraft.client.renderer.entity">LivingEntityRenderer</a>&lt;<a href="../../../world/entity/monster/MagmaCube.html" title="class in net.minecraft.world.entity.monster">MagmaCube</a>, <a href="state/SlimeRenderState.html" title="class in net.minecraft.client.renderer.entity.state">SlimeRenderState</a>, <a href="../../model/monster/slime/MagmaCubeModel.html" title="class in net.minecraft.client.model.monster.slime">MagmaCubeModel</a>&gt;</code></dd>
 </dl>
 </div>
 </section>

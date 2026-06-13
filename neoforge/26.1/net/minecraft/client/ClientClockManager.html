@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ClientClockManager (NeoForge 26.1)</title>
+<title>ClientClockManager (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client, class: ClientClockManager">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ClientClockManager.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,16 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#clocks" tabindex="0">clocks</a></li>
-<li><a href="#lastTickGameTime" tabindex="0">lastTickGameTime</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">ClientClockManager()</a></li>
@@ -71,7 +63,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#getInstance(net.minecraft.core.Holder)" tabindex="0">getInstance(Holder)</a></li>
 <li><a href="#tick(long)" tabindex="0">tick(long)</a></li>
 <li><a href="#handleUpdates(long,java.util.Map)" tabindex="0">handleUpdates(long, Map)</a></li>
 <li><a href="#getTotalTicks(net.minecraft.core.Holder)" tabindex="0">getTotalTicks(Holder)</a></li>
@@ -102,39 +93,6 @@ implements <a href="../world/clock/ClockManager.html" title="interface in net.mi
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ClientClockManager.ClockInstance.html" class="type-name-link" title="class in net.minecraft.client">ClientClockManager.ClockInstance</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;, <a href="ClientClockManager.ClockInstance.html" title="class in net.minecraft.client">ClientClockManager.ClockInstance</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#clocks" class="member-name-link">clocks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private long</code></div>
-<div class="col-second odd-row-color"><code><a href="#lastTickGameTime" class="member-name-link">lastTickGameTime</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -159,28 +117,25 @@ implements <a href="../world/clock/ClockManager.html" title="interface in net.mi
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="ClientClockManager.ClockInstance.html" title="class in net.minecraft.client">ClientClockManager.ClockInstance</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInstance(net.minecraft.core.Holder)" class="member-name-link">getInstance</a><wbr>(<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;definition)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPartialTick(net.minecraft.core.Holder)" class="member-name-link">getPartialTick</a><wbr>(<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;definition)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPartialTick(net.minecraft.core.Holder)" class="member-name-link">getPartialTick</a><wbr>(<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;definition)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTotalTicks(net.minecraft.core.Holder)" class="member-name-link">getTotalTicks</a><wbr>(<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;definition)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleUpdates(long,java.util.Map)" class="member-name-link">handleUpdates</a><wbr>(long&nbsp;gameTime,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;, <a href="../world/clock/ClockNetworkState.html" title="class in net.minecraft.world.clock">ClockNetworkState</a>&gt;&nbsp;updates)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTotalTicks(net.minecraft.core.Holder)" class="member-name-link">getTotalTicks</a><wbr>(<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;definition)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick(long)" class="member-name-link">tick</a><wbr>(long&nbsp;gameTime)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleUpdates(long,java.util.Map)" class="member-name-link">handleUpdates</a><wbr>(long&nbsp;gameTime,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;, <a href="../world/clock/ClockNetworkState.html" title="class in net.minecraft.world.clock">ClockNetworkState</a>&gt;&nbsp;updates)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick(long)" class="member-name-link">tick</a><wbr>(long&nbsp;gameTime)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.clock.ClockManager">Methods inherited from interface&nbsp;<a href="../world/clock/ClockManager.html#method-summary" title="interface in net.minecraft.world.clock">ClockManager</a></h3>
 <code><a href="../world/clock/ClockManager.html#setRate(net.minecraft.core.Holder,float)" title="setRate(Holder, float)">setRate</a></code></div>
@@ -190,30 +145,6 @@ implements <a href="../world/clock/ClockManager.html" title="interface in net.mi
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="clocks">
-<h3>clocks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;, <a href="ClientClockManager.ClockInstance.html" title="class in net.minecraft.client">ClientClockManager.ClockInstance</a>&gt;</span>&nbsp;<span class="element-name">clocks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastTickGameTime">
-<h3>lastTickGameTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">lastTickGameTime</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -235,14 +166,6 @@ implements <a href="../world/clock/ClockManager.html" title="interface in net.mi
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="getInstance(net.minecraft.core.Holder)">
-<h3>getInstance</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="ClientClockManager.ClockInstance.html" title="class in net.minecraft.client">ClientClockManager.ClockInstance</a></span>&nbsp;<span class="element-name">getInstance</span><wbr><span class="parameters">(<a href="../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../world/clock/WorldClock.html" title="class in net.minecraft.world.clock">WorldClock</a>&gt;&nbsp;definition)</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="tick(long)">
 <h3>tick</h3>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>CommandDispatcher (NeoForge 26.1)</title>
+<title>CommandDispatcher (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: com.mojang.brigadier, class: CommandDispatcher">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/CommandDispatcher.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,14 +61,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#ARGUMENT_SEPARATOR" tabindex="0">ARGUMENT_SEPARATOR</a></li>
 <li><a href="#ARGUMENT_SEPARATOR_CHAR" tabindex="0">ARGUMENT_SEPARATOR_CHAR</a></li>
-<li><a href="#USAGE_OPTIONAL_OPEN" tabindex="0">USAGE_OPTIONAL_OPEN</a></li>
-<li><a href="#USAGE_OPTIONAL_CLOSE" tabindex="0">USAGE_OPTIONAL_CLOSE</a></li>
-<li><a href="#USAGE_REQUIRED_OPEN" tabindex="0">USAGE_REQUIRED_OPEN</a></li>
-<li><a href="#USAGE_REQUIRED_CLOSE" tabindex="0">USAGE_REQUIRED_CLOSE</a></li>
-<li><a href="#USAGE_OR" tabindex="0">USAGE_OR</a></li>
-<li><a href="#root" tabindex="0">root</a></li>
-<li><a href="#hasCommand" tabindex="0">hasCommand</a></li>
-<li><a href="#consumer" tabindex="0">consumer</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -86,18 +78,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#execute(com.mojang.brigadier.ParseResults)" tabindex="0">execute(ParseResults)</a></li>
 <li><a href="#parse(java.lang.String,S)" tabindex="0">parse(String, S)</a></li>
 <li><a href="#parse(com.mojang.brigadier.StringReader,S)" tabindex="0">parse(StringReader, S)</a></li>
-<li><a href="#parseNodes(com.mojang.brigadier.tree.CommandNode,com.mojang.brigadier.StringReader,com.mojang.brigadier.context.CommandContextBuilder)" tabindex="0">parseNodes(CommandNode, StringReader, CommandContextBuilder)</a></li>
 <li><a href="#getAllUsage(com.mojang.brigadier.tree.CommandNode,S,boolean)" tabindex="0">getAllUsage(CommandNode, S, boolean)</a></li>
-<li><a href="#getAllUsage(com.mojang.brigadier.tree.CommandNode,S,java.util.ArrayList,java.lang.String,boolean)" tabindex="0">getAllUsage(CommandNode, S, ArrayList, String, boolean)</a></li>
 <li><a href="#getSmartUsage(com.mojang.brigadier.tree.CommandNode,S)" tabindex="0">getSmartUsage(CommandNode, S)</a></li>
-<li><a href="#getSmartUsage(com.mojang.brigadier.tree.CommandNode,S,boolean,boolean)" tabindex="0">getSmartUsage(CommandNode, S, boolean, boolean)</a></li>
 <li><a href="#getCompletionSuggestions(com.mojang.brigadier.ParseResults)" tabindex="0">getCompletionSuggestions(ParseResults)</a></li>
 <li><a href="#getCompletionSuggestions(com.mojang.brigadier.ParseResults,int)" tabindex="0">getCompletionSuggestions(ParseResults, int)</a></li>
 <li><a href="#getRoot()" tabindex="0">getRoot()</a></li>
 <li><a href="#getPath(com.mojang.brigadier.tree.CommandNode)" tabindex="0">getPath(CommandNode)</a></li>
 <li><a href="#findNode(java.util.Collection)" tabindex="0">findNode(Collection)</a></li>
 <li><a href="#findAmbiguities(com.mojang.brigadier.AmbiguityConsumer)" tabindex="0">findAmbiguities(AmbiguityConsumer)</a></li>
-<li><a href="#addPaths(com.mojang.brigadier.tree.CommandNode,java.util.List,java.util.List)" tabindex="0">addPaths(CommandNode, List, List)</a></li>
 </ol>
 </li>
 </ol>
@@ -105,16 +93,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class CommandDispatcher" class="title">Class CommandDispatcher&lt;<span id="type-param-S">S</span>&gt;</h1>
+<h1 title="Class CommandDispatcher" class="title">Class CommandDispatcher&lt;S&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">com.mojang.brigadier.CommandDispatcher&lt;S&gt;</div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><span id="type-param-S"><code>S</code> - a custom "source" type, such as a user or originator of a command</span></dd>
+</dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CommandDispatcher&lt;S&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The core command dispatcher, for registering, parsing, and executing commands.</div>
 </div>
 </section>
 <section class="summary">
@@ -130,34 +123,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#ARGUMENT_SEPARATOR" class="member-name-link">ARGUMENT_SEPARATOR</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">The string required to separate individual arguments in an input string</div>
+</div>
 <div class="col-first odd-row-color"><code>static final char</code></div>
 <div class="col-second odd-row-color"><code><a href="#ARGUMENT_SEPARATOR_CHAR" class="member-name-link">ARGUMENT_SEPARATOR_CHAR</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="ResultConsumer.html" title="interface in com.mojang.brigadier">ResultConsumer</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#consumer" class="member-name-link">consumer</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a><wbr>&lt;<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#hasCommand" class="member-name-link">hasCommand</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="tree/RootCommandNode.html" title="class in com.mojang.brigadier.tree">RootCommandNode</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#root" class="member-name-link">root</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#USAGE_OPTIONAL_CLOSE" class="member-name-link">USAGE_OPTIONAL_CLOSE</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#USAGE_OPTIONAL_OPEN" class="member-name-link">USAGE_OPTIONAL_OPEN</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#USAGE_OR" class="member-name-link">USAGE_OR</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#USAGE_REQUIRED_CLOSE" class="member-name-link">USAGE_REQUIRED_CLOSE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#USAGE_REQUIRED_OPEN" class="member-name-link">USAGE_REQUIRED_OPEN</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">The char required to separate individual arguments in an input string</div>
+</div>
 </div>
 </section>
 </li>
@@ -170,9 +143,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">CommandDispatcher</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new <a href="CommandDispatcher.html" title="class in com.mojang.brigadier"><code>CommandDispatcher</code></a> with an empty command tree.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(com.mojang.brigadier.tree.RootCommandNode)" class="member-name-link">CommandDispatcher</a><wbr>(<a href="tree/RootCommandNode.html" title="class in com.mojang.brigadier.tree">RootCommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;root)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Create a new <a href="CommandDispatcher.html" title="class in com.mojang.brigadier"><code>CommandDispatcher</code></a> with the specified root node.</div>
+</div>
 </div>
 </section>
 </li>
@@ -187,88 +164,93 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addPaths(com.mojang.brigadier.tree.CommandNode,java.util.List,java.util.List)" class="member-name-link">addPaths</a><wbr>(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&gt;&gt;&nbsp;result,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&gt;&nbsp;parents)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute(com.mojang.brigadier.ParseResults)" class="member-name-link">execute</a><wbr>(<a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;parse)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute(com.mojang.brigadier.StringReader,S)" class="member-name-link">execute</a><wbr>(<a href="StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;input,
- <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute(com.mojang.brigadier.ParseResults)" class="member-name-link">execute</a><wbr>(<a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;parse)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Executes a given pre-parsed command.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute(java.lang.String,S)" class="member-name-link">execute</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute(com.mojang.brigadier.StringReader,S)" class="member-name-link">execute</a><wbr>(<a href="StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;input,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findAmbiguities(com.mojang.brigadier.AmbiguityConsumer)" class="member-name-link">findAmbiguities</a><wbr>(<a href="AmbiguityConsumer.html" title="interface in com.mojang.brigadier">AmbiguityConsumer</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findNode(java.util.Collection)" class="member-name-link">findNode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;path)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllUsage(com.mojang.brigadier.tree.CommandNode,S,boolean)" class="member-name-link">getAllUsage</a><wbr>(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Parses and executes a given command.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute(java.lang.String,S)" class="member-name-link">execute</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input,
+ <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Parses and executes a given command.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findAmbiguities(com.mojang.brigadier.AmbiguityConsumer)" class="member-name-link">findAmbiguities</a><wbr>(<a href="AmbiguityConsumer.html" title="interface in com.mojang.brigadier">AmbiguityConsumer</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Scans the command tree for potential ambiguous commands.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findNode(java.util.Collection)" class="member-name-link">findNode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;path)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Finds a node by its path</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllUsage(com.mojang.brigadier.tree.CommandNode,S,boolean)" class="member-name-link">getAllUsage</a><wbr>(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source,
  boolean&nbsp;restricted)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllUsage(com.mojang.brigadier.tree.CommandNode,S,java.util.ArrayList,java.lang.String,boolean)" class="member-name-link">getAllUsage</a><wbr>(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
- <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;result,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prefix,
- boolean&nbsp;restricted)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets all possible executable commands following the given node.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="suggestion/Suggestions.html" title="class in com.mojang.brigadier.suggestion">Suggestions</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCompletionSuggestions(com.mojang.brigadier.ParseResults)" class="member-name-link">getCompletionSuggestions</a><wbr>(<a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;parse)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets suggestions for a parsed input string on what comes next.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="suggestion/Suggestions.html" title="class in com.mojang.brigadier.suggestion">Suggestions</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCompletionSuggestions(com.mojang.brigadier.ParseResults,int)" class="member-name-link">getCompletionSuggestions</a><wbr>(<a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;parse,
  int&nbsp;cursor)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPath(com.mojang.brigadier.tree.CommandNode)" class="member-name-link">getPath</a><wbr>(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;target)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Finds a valid path to a given node on the command tree.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="tree/RootCommandNode.html" title="class in com.mojang.brigadier.tree">RootCommandNode</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoot()" class="member-name-link">getRoot</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets the root of this command tree.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSmartUsage(com.mojang.brigadier.tree.CommandNode,S)" class="member-name-link">getSmartUsage</a><wbr>(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSmartUsage(com.mojang.brigadier.tree.CommandNode,S,boolean,boolean)" class="member-name-link">getSmartUsage</a><wbr>(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
- <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source,
- boolean&nbsp;optional,
- boolean&nbsp;deep)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(com.mojang.brigadier.StringReader,S)" class="member-name-link">parse</a><wbr>(<a href="StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;command,
- <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets the possible executable commands from a specified node.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.lang.String,S)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;command,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(com.mojang.brigadier.StringReader,S)" class="member-name-link">parse</a><wbr>(<a href="StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;command,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseNodes(com.mojang.brigadier.tree.CommandNode,com.mojang.brigadier.StringReader,com.mojang.brigadier.context.CommandContextBuilder)" class="member-name-link">parseNodes</a><wbr>(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
- <a href="StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;originalReader,
- <a href="context/CommandContextBuilder.html" title="class in com.mojang.brigadier.context">CommandContextBuilder</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;contextSoFar)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Parses a given command.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse(java.lang.String,S)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;command,
+ <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Parses a given command.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="tree/LiteralCommandNode.html" title="class in com.mojang.brigadier.tree">LiteralCommandNode</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(com.mojang.brigadier.builder.LiteralArgumentBuilder)" class="member-name-link">register</a><wbr>(<a href="builder/LiteralArgumentBuilder.html" title="class in com.mojang.brigadier.builder">LiteralArgumentBuilder</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;command)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Utility method for registering new commands.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setConsumer(com.mojang.brigadier.ResultConsumer)" class="member-name-link">setConsumer</a><wbr>(<a href="ResultConsumer.html" title="interface in com.mojang.brigadier">ResultConsumer</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets a callback to be informed of the result of every command.</div>
+</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -285,10 +267,12 @@ loadScripts(document, 'script');</script>
 <h3>ARGUMENT_SEPARATOR</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">ARGUMENT_SEPARATOR</span></div>
+<div class="block">The string required to separate individual arguments in an input string</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
+<li><a href="#ARGUMENT_SEPARATOR_CHAR"><code>ARGUMENT_SEPARATOR_CHAR</code></a></li>
 <li><a href="../../../constant-values.html#com.mojang.brigadier.CommandDispatcher.ARGUMENT_SEPARATOR">Constant Field Values</a></li>
 </ul>
 </dd>
@@ -301,118 +285,16 @@ loadScripts(document, 'script');</script>
 <h3>ARGUMENT_SEPARATOR_CHAR</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">char</span>&nbsp;<span class="element-name">ARGUMENT_SEPARATOR_CHAR</span></div>
+<div class="block">The char required to separate individual arguments in an input string</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
+<li><a href="#ARGUMENT_SEPARATOR"><code>ARGUMENT_SEPARATOR</code></a></li>
 <li><a href="../../../constant-values.html#com.mojang.brigadier.CommandDispatcher.ARGUMENT_SEPARATOR_CHAR">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="USAGE_OPTIONAL_OPEN">
-<h3>USAGE_OPTIONAL_OPEN</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">USAGE_OPTIONAL_OPEN</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../constant-values.html#com.mojang.brigadier.CommandDispatcher.USAGE_OPTIONAL_OPEN">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="USAGE_OPTIONAL_CLOSE">
-<h3>USAGE_OPTIONAL_CLOSE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">USAGE_OPTIONAL_CLOSE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../constant-values.html#com.mojang.brigadier.CommandDispatcher.USAGE_OPTIONAL_CLOSE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="USAGE_REQUIRED_OPEN">
-<h3>USAGE_REQUIRED_OPEN</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">USAGE_REQUIRED_OPEN</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../constant-values.html#com.mojang.brigadier.CommandDispatcher.USAGE_REQUIRED_OPEN">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="USAGE_REQUIRED_CLOSE">
-<h3>USAGE_REQUIRED_CLOSE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">USAGE_REQUIRED_CLOSE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../constant-values.html#com.mojang.brigadier.CommandDispatcher.USAGE_REQUIRED_CLOSE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="USAGE_OR">
-<h3>USAGE_OR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">USAGE_OR</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../constant-values.html#com.mojang.brigadier.CommandDispatcher.USAGE_OR">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="root">
-<h3>root</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="tree/RootCommandNode.html" title="class in com.mojang.brigadier.tree">RootCommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</span>&nbsp;<span class="element-name">root</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hasCommand">
-<h3>hasCommand</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&gt;</span>&nbsp;<span class="element-name">hasCommand</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="consumer">
-<h3>consumer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="ResultConsumer.html" title="interface in com.mojang.brigadier">ResultConsumer</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</span>&nbsp;<span class="element-name">consumer</span></div>
 </div>
 </section>
 </li>
@@ -429,6 +311,13 @@ loadScripts(document, 'script');</script>
 <h3>CommandDispatcher</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CommandDispatcher</span><wbr><span class="parameters">(<a href="tree/RootCommandNode.html" title="class in com.mojang.brigadier.tree">RootCommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;root)</span></div>
+<div class="block">Create a new <a href="CommandDispatcher.html" title="class in com.mojang.brigadier"><code>CommandDispatcher</code></a> with the specified root node.
+
+<p>This is often useful to copy existing or pre-defined command trees.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>root</code> - the existing <a href="tree/RootCommandNode.html" title="class in com.mojang.brigadier.tree"><code>RootCommandNode</code></a> to use as the basis for this tree</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -437,6 +326,7 @@ loadScripts(document, 'script');</script>
 <h3>CommandDispatcher</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CommandDispatcher</span>()</div>
+<div class="block">Creates a new <a href="CommandDispatcher.html" title="class in com.mojang.brigadier"><code>CommandDispatcher</code></a> with an empty command tree.</div>
 </div>
 </section>
 </li>
@@ -453,6 +343,17 @@ loadScripts(document, 'script');</script>
 <h3>register</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="tree/LiteralCommandNode.html" title="class in com.mojang.brigadier.tree">LiteralCommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="builder/LiteralArgumentBuilder.html" title="class in com.mojang.brigadier.builder">LiteralArgumentBuilder</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;command)</span></div>
+<div class="block">Utility method for registering new commands.
+
+<p>This is a shortcut for calling <a href="tree/CommandNode.html#addChild(com.mojang.brigadier.tree.CommandNode)"><code>CommandNode.addChild(CommandNode)</code></a> after building the provided <code>command</code>.</p>
+
+<p>As <a href="tree/RootCommandNode.html" title="class in com.mojang.brigadier.tree"><code>RootCommandNode</code></a> can only hold literals, this method will only allow literal arguments.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>command</code> - a literal argument builder to add to this command tree</dd>
+<dt>Returns:</dt>
+<dd>the node added to this tree</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -461,6 +362,11 @@ loadScripts(document, 'script');</script>
 <h3>setConsumer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setConsumer</span><wbr><span class="parameters">(<a href="ResultConsumer.html" title="interface in com.mojang.brigadier">ResultConsumer</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;consumer)</span></div>
+<div class="block">Sets a callback to be informed of the result of every command.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>consumer</code> - the new result consumer to be called</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -471,9 +377,42 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">execute</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</span>
             throws <span class="exceptions"><a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
+<div class="block">Parses and executes a given command.
+
+<p>This is a shortcut to first <a href="#parse(com.mojang.brigadier.StringReader,S)"><code>parse(StringReader, Object)</code></a> and then <a href="#execute(com.mojang.brigadier.ParseResults)"><code>execute(ParseResults)</code></a>.</p>
+
+<p>It is recommended to parse and execute as separate steps, as parsing is often the most expensive step, and easiest to cache.</p>
+
+<p>If this command returns a value, then it successfully executed something. If it could not parse the command, or the execution was a failure,
+then an exception will be thrown. Most exceptions will be of type <a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions"><code>CommandSyntaxException</code></a>, but it is possible that a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>
+may bubble up from the result of a command. The meaning behind the returned result is arbitrary, and will depend
+entirely on what command was performed.</p>
+
+<p>If the command passes through a node that is <a href="tree/CommandNode.html#isFork()"><code>CommandNode.isFork()</code></a> then it will be 'forked'.
+A forked command will not bubble up any <a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions"><code>CommandSyntaxException</code></a>s, and the 'result' returned will turn into
+'amount of successful commands executes'.</p>
+
+<p>After each and any command is ran, a registered callback given to <a href="#setConsumer(com.mojang.brigadier.ResultConsumer)"><code>setConsumer(ResultConsumer)</code></a>
+will be notified of the result and success of the command. You can use that method to gather more meaningful
+results than this method will return, especially when a command forks.</p></div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>input</code> - a command string to parse &amp; execute</dd>
+<dd><code>source</code> - a custom "source" object, usually representing the originator of this command</dd>
+<dt>Returns:</dt>
+<dd>a numeric result from a "command" that was performed</dd>
 <dt>Throws:</dt>
-<dd><code><a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
+<dd><code><a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code> - if the command failed to parse or execute</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></code> - if the command failed to execute and was not handled gracefully</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#parse(java.lang.String,S)"><code>parse(String, Object)</code></a></li>
+<li><a href="#parse(com.mojang.brigadier.StringReader,S)"><code>parse(StringReader, Object)</code></a></li>
+<li><a href="#execute(com.mojang.brigadier.ParseResults)"><code>execute(ParseResults)</code></a></li>
+<li><a href="#execute(com.mojang.brigadier.StringReader,S)"><code>execute(StringReader, Object)</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -485,9 +424,42 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">execute</span><wbr><span class="parameters">(<a href="StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;input,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</span>
             throws <span class="exceptions"><a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
+<div class="block">Parses and executes a given command.
+
+<p>This is a shortcut to first <a href="#parse(com.mojang.brigadier.StringReader,S)"><code>parse(StringReader, Object)</code></a> and then <a href="#execute(com.mojang.brigadier.ParseResults)"><code>execute(ParseResults)</code></a>.</p>
+
+<p>It is recommended to parse and execute as separate steps, as parsing is often the most expensive step, and easiest to cache.</p>
+
+<p>If this command returns a value, then it successfully executed something. If it could not parse the command, or the execution was a failure,
+then an exception will be thrown. Most exceptions will be of type <a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions"><code>CommandSyntaxException</code></a>, but it is possible that a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>
+may bubble up from the result of a command. The meaning behind the returned result is arbitrary, and will depend
+entirely on what command was performed.</p>
+
+<p>If the command passes through a node that is <a href="tree/CommandNode.html#isFork()"><code>CommandNode.isFork()</code></a> then it will be 'forked'.
+A forked command will not bubble up any <a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions"><code>CommandSyntaxException</code></a>s, and the 'result' returned will turn into
+'amount of successful commands executes'.</p>
+
+<p>After each and any command is ran, a registered callback given to <a href="#setConsumer(com.mojang.brigadier.ResultConsumer)"><code>setConsumer(ResultConsumer)</code></a>
+will be notified of the result and success of the command. You can use that method to gather more meaningful
+results than this method will return, especially when a command forks.</p></div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>input</code> - a command string to parse &amp; execute</dd>
+<dd><code>source</code> - a custom "source" object, usually representing the originator of this command</dd>
+<dt>Returns:</dt>
+<dd>a numeric result from a "command" that was performed</dd>
 <dt>Throws:</dt>
-<dd><code><a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
+<dd><code><a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code> - if the command failed to parse or execute</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></code> - if the command failed to execute and was not handled gracefully</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#parse(java.lang.String,S)"><code>parse(String, Object)</code></a></li>
+<li><a href="#parse(com.mojang.brigadier.StringReader,S)"><code>parse(StringReader, Object)</code></a></li>
+<li><a href="#execute(com.mojang.brigadier.ParseResults)"><code>execute(ParseResults)</code></a></li>
+<li><a href="#execute(java.lang.String,S)"><code>execute(String, Object)</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -498,9 +470,38 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">execute</span><wbr><span class="parameters">(<a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;parse)</span>
             throws <span class="exceptions"><a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
+<div class="block">Executes a given pre-parsed command.
+
+<p>If this command returns a value, then it successfully executed something. If the execution was a failure,
+then an exception will be thrown.
+Most exceptions will be of type <a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions"><code>CommandSyntaxException</code></a>, but it is possible that a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>
+may bubble up from the result of a command. The meaning behind the returned result is arbitrary, and will depend
+entirely on what command was performed.</p>
+
+<p>If the command passes through a node that is <a href="tree/CommandNode.html#isFork()"><code>CommandNode.isFork()</code></a> then it will be 'forked'.
+A forked command will not bubble up any <a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions"><code>CommandSyntaxException</code></a>s, and the 'result' returned will turn into
+'amount of successful commands executes'.</p>
+
+<p>After each and any command is ran, a registered callback given to <a href="#setConsumer(com.mojang.brigadier.ResultConsumer)"><code>setConsumer(ResultConsumer)</code></a>
+will be notified of the result and success of the command. You can use that method to gather more meaningful
+results than this method will return, especially when a command forks.</p></div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>parse</code> - the result of a successful <a href="#parse(com.mojang.brigadier.StringReader,S)"><code>parse(StringReader, Object)</code></a></dd>
+<dt>Returns:</dt>
+<dd>a numeric result from a "command" that was performed.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code></dd>
+<dd><code><a href="exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></code> - if the command failed to parse or execute</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></code> - if the command failed to execute and was not handled gracefully</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#parse(java.lang.String,S)"><code>parse(String, Object)</code></a></li>
+<li><a href="#parse(com.mojang.brigadier.StringReader,S)"><code>parse(StringReader, Object)</code></a></li>
+<li><a href="#execute(java.lang.String,S)"><code>execute(String, Object)</code></a></li>
+<li><a href="#execute(com.mojang.brigadier.StringReader,S)"><code>execute(StringReader, Object)</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -511,6 +512,39 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;command,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</span></div>
+<div class="block">Parses a given command.
+
+<p>The result of this method can be cached, and it is advised to do so where appropriate. Parsing is often the
+most expensive step, and this allows you to essentially "precompile" a command if it will be ran often.</p>
+
+<p>If the command passes through a node that is <a href="tree/CommandNode.html#isFork()"><code>CommandNode.isFork()</code></a> then the resulting context will be marked as 'forked'.
+Forked contexts may contain child contexts, which may be modified by the <a href="RedirectModifier.html" title="interface in com.mojang.brigadier"><code>RedirectModifier</code></a> attached to the fork.</p>
+
+<p>Parsing a command can never fail, you will always be provided with a new <a href="ParseResults.html" title="class in com.mojang.brigadier"><code>ParseResults</code></a>.
+However, that does not mean that it will always parse into a valid command. You should inspect the returned results
+to check for validity. If its <a href="ParseResults.html#getReader()"><code>ParseResults.getReader()</code></a> <a href="StringReader.html#canRead()"><code>StringReader.canRead()</code></a> then it did not finish
+parsing successfully. You can use that position as an indicator to the user where the command stopped being valid.
+You may inspect <a href="ParseResults.html#getExceptions()"><code>ParseResults.getExceptions()</code></a> if you know the parse failed, as it will explain why it could
+not find any valid commands. It may contain multiple exceptions, one for each "potential node" that it could have visited,
+explaining why it did not go down that node.</p>
+
+<p>When you eventually call <a href="#execute(com.mojang.brigadier.ParseResults)"><code>execute(ParseResults)</code></a> with the result of this method, the above error checking
+will occur. You only need to inspect it yourself if you wish to handle that yourself.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>command</code> - a command string to parse</dd>
+<dd><code>source</code> - a custom "source" object, usually representing the originator of this command</dd>
+<dt>Returns:</dt>
+<dd>the result of parsing this command</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#parse(com.mojang.brigadier.StringReader,S)"><code>parse(StringReader, Object)</code></a></li>
+<li><a href="#execute(com.mojang.brigadier.ParseResults)"><code>execute(ParseResults)</code></a></li>
+<li><a href="#execute(java.lang.String,S)"><code>execute(String, Object)</code></a></li>
+</ul>
+</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -520,16 +554,39 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;command,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="parseNodes(com.mojang.brigadier.tree.CommandNode,com.mojang.brigadier.StringReader,com.mojang.brigadier.context.CommandContextBuilder)">
-<h3>parseNodes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</span>&nbsp;<span class="element-name">parseNodes</span><wbr><span class="parameters">(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
- <a href="StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;originalReader,
- <a href="context/CommandContextBuilder.html" title="class in com.mojang.brigadier.context">CommandContextBuilder</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;contextSoFar)</span></div>
+<div class="block">Parses a given command.
+
+<p>The result of this method can be cached, and it is advised to do so where appropriate. Parsing is often the
+most expensive step, and this allows you to essentially "precompile" a command if it will be ran often.</p>
+
+<p>If the command passes through a node that is <a href="tree/CommandNode.html#isFork()"><code>CommandNode.isFork()</code></a> then the resulting context will be marked as 'forked'.
+Forked contexts may contain child contexts, which may be modified by the <a href="RedirectModifier.html" title="interface in com.mojang.brigadier"><code>RedirectModifier</code></a> attached to the fork.</p>
+
+<p>Parsing a command can never fail, you will always be provided with a new <a href="ParseResults.html" title="class in com.mojang.brigadier"><code>ParseResults</code></a>.
+However, that does not mean that it will always parse into a valid command. You should inspect the returned results
+to check for validity. If its <a href="ParseResults.html#getReader()"><code>ParseResults.getReader()</code></a> <a href="StringReader.html#canRead()"><code>StringReader.canRead()</code></a> then it did not finish
+parsing successfully. You can use that position as an indicator to the user where the command stopped being valid.
+You may inspect <a href="ParseResults.html#getExceptions()"><code>ParseResults.getExceptions()</code></a> if you know the parse failed, as it will explain why it could
+not find any valid commands. It may contain multiple exceptions, one for each "potential node" that it could have visited,
+explaining why it did not go down that node.</p>
+
+<p>When you eventually call <a href="#execute(com.mojang.brigadier.ParseResults)"><code>execute(ParseResults)</code></a> with the result of this method, the above error checking
+will occur. You only need to inspect it yourself if you wish to handle that yourself.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>command</code> - a command string to parse</dd>
+<dd><code>source</code> - a custom "source" object, usually representing the originator of this command</dd>
+<dt>Returns:</dt>
+<dd>the result of parsing this command</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#parse(java.lang.String,S)"><code>parse(String, Object)</code></a></li>
+<li><a href="#execute(com.mojang.brigadier.ParseResults)"><code>execute(ParseResults)</code></a></li>
+<li><a href="#execute(java.lang.String,S)"><code>execute(String, Object)</code></a></li>
+</ul>
+</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -540,18 +597,28 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">getAllUsage</span><wbr><span class="parameters">(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source,
  boolean&nbsp;restricted)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getAllUsage(com.mojang.brigadier.tree.CommandNode,S,java.util.ArrayList,java.lang.String,boolean)">
-<h3 id="getAllUsage(com.mojang.brigadier.tree.CommandNode,java.lang.Object,java.util.ArrayList,java.lang.String,boolean)">getAllUsage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">getAllUsage</span><wbr><span class="parameters">(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
- <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;result,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prefix,
- boolean&nbsp;restricted)</span></div>
+<div class="block">Gets all possible executable commands following the given node.
+
+<p>You may use <a href="#getRoot()"><code>getRoot()</code></a> as a target to get all usage data for the entire command tree.</p>
+
+<p>The returned syntax will be in "simple" form: <code>&lt;param&gt;</code> and <code>literal</code>. "Optional" nodes will be
+listed as multiple entries: the parent node, and the child nodes.
+For example, a required literal "foo" followed by an optional param "int" will be two nodes:</p>
+<ul>
+    <li><code>foo</code></li>
+    <li><code>foo &lt;int&gt;</code></li>
+</ul>
+
+<p>The path to the specified node will <b>not</b> be prepended to the output, as there can theoretically be many
+ways to reach a given node. It will only give you paths relative to the specified node, not absolute from root.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>node</code> - target node to get child usage strings for</dd>
+<dd><code>source</code> - a custom "source" object, usually representing the originator of this command</dd>
+<dd><code>restricted</code> - if true, commands that the <code>source</code> cannot access will not be mentioned</dd>
+<dt>Returns:</dt>
+<dd>array of full usage strings under the target node</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -561,17 +628,28 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getSmartUsage</span><wbr><span class="parameters">(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
  <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getSmartUsage(com.mojang.brigadier.tree.CommandNode,S,boolean,boolean)">
-<h3 id="getSmartUsage(com.mojang.brigadier.tree.CommandNode,java.lang.Object,boolean,boolean)">getSmartUsage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getSmartUsage</span><wbr><span class="parameters">(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
- <a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&nbsp;source,
- boolean&nbsp;optional,
- boolean&nbsp;deep)</span></div>
+<div class="block">Gets the possible executable commands from a specified node.
+
+<p>You may use <a href="#getRoot()"><code>getRoot()</code></a> as a target to get usage data for the entire command tree.</p>
+
+<p>The returned syntax will be in "smart" form: <code>&lt;param&gt;</code>, <code>literal</code>, <code>[optional]</code> and <code>(either|or)</code>.
+These forms may be mixed and matched to provide as much information about the child nodes as it can, without being too verbose.
+For example, a required literal "foo" followed by an optional param "int" can be compressed into one string:</p>
+<ul>
+    <li><code>foo [&lt;int&gt;]</code></li>
+</ul>
+
+<p>The path to the specified node will <b>not</b> be prepended to the output, as there can theoretically be many
+ways to reach a given node. It will only give you paths relative to the specified node, not absolute from root.</p>
+
+<p>The returned usage will be restricted to only commands that the provided <code>source</code> can use.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>node</code> - target node to get child usage strings for</dd>
+<dd><code>source</code> - a custom "source" object, usually representing the originator of this command</dd>
+<dt>Returns:</dt>
+<dd>array of full usage strings under the target node</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -580,6 +658,22 @@ loadScripts(document, 'script');</script>
 <h3>getCompletionSuggestions</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="suggestion/Suggestions.html" title="class in com.mojang.brigadier.suggestion">Suggestions</a>&gt;</span>&nbsp;<span class="element-name">getCompletionSuggestions</span><wbr><span class="parameters">(<a href="ParseResults.html" title="class in com.mojang.brigadier">ParseResults</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;parse)</span></div>
+<div class="block">Gets suggestions for a parsed input string on what comes next.
+
+<p>As it is ultimately up to custom argument types to provide suggestions, it may be an asynchronous operation,
+for example getting in-game data or player names etc. As such, this method returns a future and no guarantees
+are made to when or how the future completes.</p>
+
+<p>The suggestions provided will be in the context of the end of the parsed input string, but may suggest
+new or replacement strings for earlier in the input string. For example, if the end of the string was
+<code>foobar</code> but an argument preferred it to be <code>minecraft:foobar</code>, it will suggest a replacement for that
+whole segment of the input.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>parse</code> - the result of a <a href="#parse(com.mojang.brigadier.StringReader,S)"><code>parse(StringReader, Object)</code></a></dd>
+<dt>Returns:</dt>
+<dd>a future that will eventually resolve into a <a href="suggestion/Suggestions.html" title="class in com.mojang.brigadier.suggestion"><code>Suggestions</code></a> object</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -597,6 +691,15 @@ loadScripts(document, 'script');</script>
 <h3>getRoot</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="tree/RootCommandNode.html" title="class in com.mojang.brigadier.tree">RootCommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</span>&nbsp;<span class="element-name">getRoot</span>()</div>
+<div class="block">Gets the root of this command tree.
+
+<p>This is often useful as a target of a <a href="builder/ArgumentBuilder.html#redirect(com.mojang.brigadier.tree.CommandNode)"><code>ArgumentBuilder.redirect(CommandNode)</code></a>,
+<a href="#getAllUsage(com.mojang.brigadier.tree.CommandNode,S,boolean)"><code>getAllUsage(CommandNode, Object, boolean)</code></a> or <a href="#getSmartUsage(com.mojang.brigadier.tree.CommandNode,S)"><code>getSmartUsage(CommandNode, Object)</code></a>.
+You may also use it to clone the command tree via <a href="#%3Cinit%3E(com.mojang.brigadier.tree.RootCommandNode)"><code>CommandDispatcher(RootCommandNode)</code></a>.</p></div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>root of the command tree</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -605,6 +708,21 @@ loadScripts(document, 'script');</script>
 <h3>getPath</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getPath</span><wbr><span class="parameters">(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;target)</span></div>
+<div class="block">Finds a valid path to a given node on the command tree.
+
+<p>There may theoretically be multiple paths to a node on the tree, especially with the use of forking or redirecting.
+As such, this method makes no guarantees about which path it finds. It will not look at forks or redirects,
+and find the first instance of the target node on the tree.</p>
+
+<p>The only guarantee made is that for the same command tree and the same version of this library, the result of
+this method will <b>always</b> be a valid input for <a href="#findNode(java.util.Collection)"><code>findNode(Collection)</code></a>, which should return the same node
+as provided to this method.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>target</code> - the target node you are finding a path for</dd>
+<dt>Returns:</dt>
+<dd>a path to the resulting node, or an empty list if it was not found</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -613,6 +731,18 @@ loadScripts(document, 'script');</script>
 <h3>findNode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;</span>&nbsp;<span class="element-name">findNode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;path)</span></div>
+<div class="block">Finds a node by its path
+
+<p>Paths may be generated with <a href="#getPath(com.mojang.brigadier.tree.CommandNode)"><code>getPath(CommandNode)</code></a>, and are guaranteed (for the same tree, and the
+same version of this library) to always produce the same valid node by this method.</p>
+
+<p>If a node could not be found at the specified path, then <code>null</code> will be returned.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>path</code> - a generated path to a node</dd>
+<dt>Returns:</dt>
+<dd>the node at the given path, or null if not found</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -621,16 +751,16 @@ loadScripts(document, 'script');</script>
 <h3>findAmbiguities</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">findAmbiguities</span><wbr><span class="parameters">(<a href="AmbiguityConsumer.html" title="interface in com.mojang.brigadier">AmbiguityConsumer</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;consumer)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addPaths(com.mojang.brigadier.tree.CommandNode,java.util.List,java.util.List)">
-<h3>addPaths</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addPaths</span><wbr><span class="parameters">(<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&nbsp;node,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&gt;&gt;&nbsp;result,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="tree/CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandDispatcher">S</a>&gt;&gt;&nbsp;parents)</span></div>
+<div class="block">Scans the command tree for potential ambiguous commands.
+
+<p>This is a shortcut for <a href="tree/CommandNode.html#findAmbiguities(com.mojang.brigadier.AmbiguityConsumer)"><code>CommandNode.findAmbiguities(AmbiguityConsumer)</code></a> on <a href="#getRoot()"><code>getRoot()</code></a>.</p>
+
+<p>Ambiguities are detected by testing every <a href="tree/CommandNode.html#getExamples()"><code>CommandNode.getExamples()</code></a> on one node verses every sibling
+node. This is not fool proof, and relies a lot on the providers of the used argument types to give good examples.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>consumer</code> - a callback to be notified of potential ambiguities</dd>
+</dl>
 </div>
 </section>
 </li>

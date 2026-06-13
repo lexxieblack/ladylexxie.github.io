@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>GuiRenderState (NeoForge 26.1)</title>
+<title>GuiRenderState (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.renderer.state.gui, class: GuiRenderState">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/GuiRenderState.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,12 +60,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#DEBUG_RECTANGLE_COLOR" tabindex="0">DEBUG_RECTANGLE_COLOR</a></li>
-<li><a href="#strata" tabindex="0">strata</a></li>
-<li><a href="#firstStratumAfterBlur" tabindex="0">firstStratumAfterBlur</a></li>
-<li><a href="#current" tabindex="0">current</a></li>
-<li><a href="#itemModelIdentities" tabindex="0">itemModelIdentities</a></li>
-<li><a href="#lastElementBounds" tabindex="0">lastElementBounds</a></li>
 <li><a href="#panoramaRenderState" tabindex="0">panoramaRenderState</a></li>
 <li><a href="#clearColorOverride" tabindex="0">clearColorOverride</a></li>
 </ol>
@@ -84,10 +78,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#addText(net.minecraft.client.renderer.state.gui.GuiTextRenderState)" tabindex="0">addText(GuiTextRenderState)</a></li>
 <li><a href="#addPicturesInPictureState(net.minecraft.client.renderer.state.gui.pip.PictureInPictureRenderState)" tabindex="0">addPicturesInPictureState(PictureInPictureRenderState)</a></li>
 <li><a href="#addGuiElement(net.minecraft.client.renderer.state.gui.GuiElementRenderState)" tabindex="0">addGuiElement(GuiElementRenderState)</a></li>
-<li><a href="#addDebugRectangleIfEnabled(net.minecraft.client.gui.navigation.ScreenRectangle)" tabindex="0">addDebugRectangleIfEnabled(ScreenRectangle)</a></li>
-<li><a href="#findAppropriateNode(net.minecraft.client.renderer.state.gui.ScreenArea)" tabindex="0">findAppropriateNode(ScreenArea)</a></li>
-<li><a href="#navigateToAboveHighestElementWithIntersectingBounds(net.minecraft.client.gui.navigation.ScreenRectangle)" tabindex="0">navigateToAboveHighestElementWithIntersectingBounds(ScreenRectangle)</a></li>
-<li><a href="#hasIntersection(net.minecraft.client.gui.navigation.ScreenRectangle,java.util.List)" tabindex="0">hasIntersection(ScreenRectangle, List)</a></li>
 <li><a href="#addBlitToCurrentLayer(net.minecraft.client.renderer.state.gui.BlitRenderState)" tabindex="0">addBlitToCurrentLayer(BlitRenderState)</a></li>
 <li><a href="#addGlyphToCurrentLayer(net.minecraft.client.renderer.state.gui.GuiElementRenderState)" tabindex="0">addGlyphToCurrentLayer(GuiElementRenderState)</a></li>
 <li><a href="#getItemModelIdentities()" tabindex="0">getItemModelIdentities()</a></li>
@@ -96,8 +86,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#forEachText(java.util.function.Consumer)" tabindex="0">forEachText(Consumer)</a></li>
 <li><a href="#forEachPictureInPicture(java.util.function.Consumer)" tabindex="0">forEachPictureInPicture(Consumer)</a></li>
 <li><a href="#sortElements(java.util.Comparator)" tabindex="0">sortElements(Comparator)</a></li>
-<li><a href="#traverse(java.util.function.Consumer,net.minecraft.client.renderer.state.gui.GuiRenderState.TraverseRange)" tabindex="0">traverse(Consumer, GuiRenderState.TraverseRange)</a></li>
-<li><a href="#traverse(net.minecraft.client.renderer.state.gui.GuiRenderState.Node,java.util.function.Consumer)" tabindex="0">traverse(GuiRenderState.Node, Consumer)</a></li>
 <li><a href="#reset()" tabindex="0">reset()</a></li>
 </ol>
 </li>
@@ -129,12 +117,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="GuiRenderState.Node.html" class="type-name-link" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a></code></div>
+<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="GuiRenderState.TraverseRange.html" class="type-name-link" title="enum class in net.minecraft.client.renderer.state.gui">GuiRenderState.TraverseRange</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="GuiRenderState.TraverseRange.html" class="type-name-link" title="enum class in net.minecraft.client.renderer.state.gui">GuiRenderState.TraverseRange</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -150,26 +135,8 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>int</code></div>
 <div class="col-second even-row-color"><code><a href="#clearColorOverride" class="member-name-link">clearColorOverride</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#current" class="member-name-link">current</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#DEBUG_RECTANGLE_COLOR" class="member-name-link">DEBUG_RECTANGLE_COLOR</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#firstStratumAfterBlur" class="member-name-link">firstStratumAfterBlur</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#itemModelIdentities" class="member-name-link">itemModelIdentities</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="../../../gui/navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#lastElementBounds" class="member-name-link">lastElementBounds</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>@Nullable <a href="PanoramaRenderState.html" title="class in net.minecraft.client.renderer.state.gui">PanoramaRenderState</a></code></div>
-<div class="col-second even-row-color"><code><a href="#panoramaRenderState" class="member-name-link">panoramaRenderState</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#strata" class="member-name-link">strata</a></code></div>
+<div class="col-first odd-row-color"><code>@Nullable <a href="PanoramaRenderState.html" title="class in net.minecraft.client.renderer.state.gui">PanoramaRenderState</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#panoramaRenderState" class="member-name-link">panoramaRenderState</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -201,29 +168,23 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addBlitToCurrentLayer(net.minecraft.client.renderer.state.gui.BlitRenderState)" class="member-name-link">addBlitToCurrentLayer</a><wbr>(<a href="BlitRenderState.html" title="class in net.minecraft.client.renderer.state.gui">BlitRenderState</a>&nbsp;blitState)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addDebugRectangleIfEnabled(net.minecraft.client.gui.navigation.ScreenRectangle)" class="member-name-link">addDebugRectangleIfEnabled</a><wbr>(@Nullable <a href="../../../gui/navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;bounds)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addGlyphToCurrentLayer(net.minecraft.client.renderer.state.gui.GuiElementRenderState)" class="member-name-link">addGlyphToCurrentLayer</a><wbr>(<a href="GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&nbsp;glyphState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addGlyphToCurrentLayer(net.minecraft.client.renderer.state.gui.GuiElementRenderState)" class="member-name-link">addGlyphToCurrentLayer</a><wbr>(<a href="GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&nbsp;glyphState)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addGuiElement(net.minecraft.client.renderer.state.gui.GuiElementRenderState)" class="member-name-link">addGuiElement</a><wbr>(<a href="GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&nbsp;blitState)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addGuiElement(net.minecraft.client.renderer.state.gui.GuiElementRenderState)" class="member-name-link">addGuiElement</a><wbr>(<a href="GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&nbsp;blitState)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addItem(net.minecraft.client.renderer.state.gui.GuiItemRenderState)" class="member-name-link">addItem</a><wbr>(<a href="GuiItemRenderState.html" title="class in net.minecraft.client.renderer.state.gui">GuiItemRenderState</a>&nbsp;itemState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addItem(net.minecraft.client.renderer.state.gui.GuiItemRenderState)" class="member-name-link">addItem</a><wbr>(<a href="GuiItemRenderState.html" title="class in net.minecraft.client.renderer.state.gui">GuiItemRenderState</a>&nbsp;itemState)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addPicturesInPictureState(net.minecraft.client.renderer.state.gui.pip.PictureInPictureRenderState)" class="member-name-link">addPicturesInPictureState</a><wbr>(<a href="pip/PictureInPictureRenderState.html" title="interface in net.minecraft.client.renderer.state.gui.pip">PictureInPictureRenderState</a>&nbsp;picturesInPictureState)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addPicturesInPictureState(net.minecraft.client.renderer.state.gui.pip.PictureInPictureRenderState)" class="member-name-link">addPicturesInPictureState</a><wbr>(<a href="pip/PictureInPictureRenderState.html" title="interface in net.minecraft.client.renderer.state.gui.pip">PictureInPictureRenderState</a>&nbsp;picturesInPictureState)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addText(net.minecraft.client.renderer.state.gui.GuiTextRenderState)" class="member-name-link">addText</a><wbr>(<a href="GuiTextRenderState.html" title="class in net.minecraft.client.renderer.state.gui">GuiTextRenderState</a>&nbsp;textState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addText(net.minecraft.client.renderer.state.gui.GuiTextRenderState)" class="member-name-link">addText</a><wbr>(<a href="GuiTextRenderState.html" title="class in net.minecraft.client.renderer.state.gui">GuiTextRenderState</a>&nbsp;textState)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#blurBeforeThisStratum()" class="member-name-link">blurBeforeThisStratum</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findAppropriateNode(net.minecraft.client.renderer.state.gui.ScreenArea)" class="member-name-link">findAppropriateNode</a><wbr>(<a href="ScreenArea.html" title="interface in net.minecraft.client.renderer.state.gui">ScreenArea</a>&nbsp;screenArea)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#blurBeforeThisStratum()" class="member-name-link">blurBeforeThisStratum</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#forEachElement(java.util.function.Consumer,net.minecraft.client.renderer.state.gui.GuiRenderState.TraverseRange)" class="member-name-link">forEachElement</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&gt;&nbsp;consumer,
@@ -241,13 +202,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItemModelIdentities()" class="member-name-link">getItemModelIdentities</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasIntersection(net.minecraft.client.gui.navigation.ScreenRectangle,java.util.List)" class="member-name-link">hasIntersection</a><wbr>(<a href="../../../gui/navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;bounds,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="ScreenArea.html" title="interface in net.minecraft.client.renderer.state.gui">ScreenArea</a>&gt;&nbsp;states)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#navigateToAboveHighestElementWithIntersectingBounds(net.minecraft.client.gui.navigation.ScreenRectangle)" class="member-name-link">navigateToAboveHighestElementWithIntersectingBounds</a><wbr>(<a href="../../../gui/navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;bounds)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nextStratum()" class="member-name-link">nextStratum</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -257,14 +211,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sortElements(java.util.Comparator)" class="member-name-link">sortElements</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a>&lt;<a href="GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&gt;&nbsp;comparator)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#traverse(java.util.function.Consumer,net.minecraft.client.renderer.state.gui.GuiRenderState.TraverseRange)" class="member-name-link">traverse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a>&gt;&nbsp;consumer,
- <a href="GuiRenderState.TraverseRange.html" title="enum class in net.minecraft.client.renderer.state.gui">GuiRenderState.TraverseRange</a>&nbsp;range)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#traverse(net.minecraft.client.renderer.state.gui.GuiRenderState.Node,java.util.function.Consumer)" class="member-name-link">traverse</a><wbr>(<a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a>&nbsp;node,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#up()" class="member-name-link">up</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -273,7 +219,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -285,62 +231,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="DEBUG_RECTANGLE_COLOR">
-<h3>DEBUG_RECTANGLE_COLOR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEBUG_RECTANGLE_COLOR</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.client.renderer.state.gui.GuiRenderState.DEBUG_RECTANGLE_COLOR">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="strata">
-<h3>strata</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a>&gt;</span>&nbsp;<span class="element-name">strata</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="firstStratumAfterBlur">
-<h3>firstStratumAfterBlur</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">firstStratumAfterBlur</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="current">
-<h3>current</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a></span>&nbsp;<span class="element-name">current</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="itemModelIdentities">
-<h3>itemModelIdentities</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">itemModelIdentities</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastElementBounds">
-<h3>lastElementBounds</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../../../gui/navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a></span>&nbsp;<span class="element-name">lastElementBounds</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="panoramaRenderState">
 <h3>panoramaRenderState</h3>
@@ -438,39 +328,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="addDebugRectangleIfEnabled(net.minecraft.client.gui.navigation.ScreenRectangle)">
-<h3>addDebugRectangleIfEnabled</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addDebugRectangleIfEnabled</span><wbr><span class="parameters">(@Nullable <a href="../../../gui/navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;bounds)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="findAppropriateNode(net.minecraft.client.renderer.state.gui.ScreenArea)">
-<h3>findAppropriateNode</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">findAppropriateNode</span><wbr><span class="parameters">(<a href="ScreenArea.html" title="interface in net.minecraft.client.renderer.state.gui">ScreenArea</a>&nbsp;screenArea)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="navigateToAboveHighestElementWithIntersectingBounds(net.minecraft.client.gui.navigation.ScreenRectangle)">
-<h3>navigateToAboveHighestElementWithIntersectingBounds</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">navigateToAboveHighestElementWithIntersectingBounds</span><wbr><span class="parameters">(<a href="../../../gui/navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;bounds)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hasIntersection(net.minecraft.client.gui.navigation.ScreenRectangle,java.util.List)">
-<h3>hasIntersection</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasIntersection</span><wbr><span class="parameters">(<a href="../../../gui/navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;bounds,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="ScreenArea.html" title="interface in net.minecraft.client.renderer.state.gui">ScreenArea</a>&gt;&nbsp;states)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="addBlitToCurrentLayer(net.minecraft.client.renderer.state.gui.BlitRenderState)">
 <h3>addBlitToCurrentLayer</h3>
 <div class="horizontal-scroll">
@@ -532,24 +389,6 @@ loadScripts(document, 'script');</script>
 <h3>sortElements</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sortElements</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a>&lt;<a href="GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&gt;&nbsp;comparator)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="traverse(java.util.function.Consumer,net.minecraft.client.renderer.state.gui.GuiRenderState.TraverseRange)">
-<h3>traverse</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">traverse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a>&gt;&nbsp;consumer,
- <a href="GuiRenderState.TraverseRange.html" title="enum class in net.minecraft.client.renderer.state.gui">GuiRenderState.TraverseRange</a>&nbsp;range)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="traverse(net.minecraft.client.renderer.state.gui.GuiRenderState.Node,java.util.function.Consumer)">
-<h3>traverse</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">traverse</span><wbr><span class="parameters">(<a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a>&nbsp;node,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="GuiRenderState.Node.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState.Node</a>&gt;&nbsp;consumer)</span></div>
 </div>
 </section>
 </li>

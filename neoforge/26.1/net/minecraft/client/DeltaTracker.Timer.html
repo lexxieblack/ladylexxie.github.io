@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>DeltaTracker.Timer (NeoForge 26.1)</title>
+<title>DeltaTracker.Timer (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client, interface: DeltaTracker, class: Timer">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/DeltaTracker.Timer.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,20 +59,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#deltaTicks" tabindex="0">deltaTicks</a></li>
-<li><a href="#deltaTickResidual" tabindex="0">deltaTickResidual</a></li>
-<li><a href="#realtimeDeltaTicks" tabindex="0">realtimeDeltaTicks</a></li>
-<li><a href="#pausedDeltaTickResidual" tabindex="0">pausedDeltaTickResidual</a></li>
-<li><a href="#lastMs" tabindex="0">lastMs</a></li>
-<li><a href="#lastUiMs" tabindex="0">lastUiMs</a></li>
-<li><a href="#msPerTick" tabindex="0">msPerTick</a></li>
-<li><a href="#targetMsptProvider" tabindex="0">targetMsptProvider</a></li>
-<li><a href="#paused" tabindex="0">paused</a></li>
-<li><a href="#frozen" tabindex="0">frozen</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(float,long,it.unimi.dsi.fastutil.floats.FloatUnaryOperator)" tabindex="0">Timer(float, long, FloatUnaryOperator)</a></li>
@@ -83,8 +69,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#advanceGameTime(long)" tabindex="0">advanceGameTime(long)</a></li>
 <li><a href="#advanceRealTime(long)" tabindex="0">advanceRealTime(long)</a></li>
 <li><a href="#updatePauseState(boolean)" tabindex="0">updatePauseState(boolean)</a></li>
-<li><a href="#pause()" tabindex="0">pause()</a></li>
-<li><a href="#unPause()" tabindex="0">unPause()</a></li>
 <li><a href="#updateFrozenState(boolean)" tabindex="0">updateFrozenState(boolean)</a></li>
 <li><a href="#getGameTimeDeltaTicks()" tabindex="0">getGameTimeDeltaTicks()</a></li>
 <li><a href="#getGameTimeDeltaPartialTick(boolean)" tabindex="0">getGameTimeDeltaPartialTick(boolean)</a></li>
@@ -132,42 +116,6 @@ implements <a href="DeltaTracker.html" title="interface in net.minecraft.client"
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private float</code></div>
-<div class="col-second even-row-color"><code><a href="#deltaTickResidual" class="member-name-link">deltaTickResidual</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private float</code></div>
-<div class="col-second odd-row-color"><code><a href="#deltaTicks" class="member-name-link">deltaTicks</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#frozen" class="member-name-link">frozen</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private long</code></div>
-<div class="col-second odd-row-color"><code><a href="#lastMs" class="member-name-link">lastMs</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private long</code></div>
-<div class="col-second even-row-color"><code><a href="#lastUiMs" class="member-name-link">lastUiMs</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#msPerTick" class="member-name-link">msPerTick</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#paused" class="member-name-link">paused</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private float</code></div>
-<div class="col-second odd-row-color"><code><a href="#pausedDeltaTickResidual" class="member-name-link">pausedDeltaTickResidual</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private float</code></div>
-<div class="col-second even-row-color"><code><a href="#realtimeDeltaTicks" class="member-name-link">realtimeDeltaTicks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final it.unimi.dsi.fastutil.floats.FloatUnaryOperator</code></div>
-<div class="col-second odd-row-color"><code><a href="#targetMsptProvider" class="member-name-link">targetMsptProvider</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.DeltaTracker">Fields inherited from interface&nbsp;<a href="DeltaTracker.html#field-summary" title="interface in net.minecraft.client">DeltaTracker</a></h3>
 <code><a href="DeltaTracker.html#ONE">ONE</a>, <a href="DeltaTracker.html#ZERO">ZERO</a></code></div>
@@ -183,7 +131,7 @@ implements <a href="DeltaTracker.html" title="interface in net.minecraft.client"
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(float,long,it.unimi.dsi.fastutil.floats.FloatUnaryOperator)" class="member-name-link">Timer</a><wbr>(float&nbsp;ticksPerSecond,
  long&nbsp;currentMs,
- it.unimi.dsi.fastutil.floats.FloatUnaryOperator&nbsp;targetMsptProvider)</code></div>
+ <a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/floats/FloatUnaryOperator.html" title="class or interface in it.unimi.dsi.fastutil.floats" class="external-link">FloatUnaryOperator</a>&nbsp;targetMsptProvider)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -214,12 +162,6 @@ implements <a href="DeltaTracker.html" title="interface in net.minecraft.client"
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRealtimeDeltaTicks()" class="member-name-link">getRealtimeDeltaTicks</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pause()" class="member-name-link">pause</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unPause()" class="member-name-link">unPause</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateFrozenState(boolean)" class="member-name-link">updateFrozenState</a><wbr>(boolean&nbsp;frozen)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -231,101 +173,13 @@ implements <a href="DeltaTracker.html" title="interface in net.minecraft.client"
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="deltaTicks">
-<h3>deltaTicks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">deltaTicks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="deltaTickResidual">
-<h3>deltaTickResidual</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">deltaTickResidual</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="realtimeDeltaTicks">
-<h3>realtimeDeltaTicks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">realtimeDeltaTicks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pausedDeltaTickResidual">
-<h3>pausedDeltaTickResidual</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">pausedDeltaTickResidual</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastMs">
-<h3>lastMs</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">lastMs</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastUiMs">
-<h3>lastUiMs</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">lastUiMs</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="msPerTick">
-<h3>msPerTick</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">msPerTick</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="targetMsptProvider">
-<h3>targetMsptProvider</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.floats.FloatUnaryOperator</span>&nbsp;<span class="element-name">targetMsptProvider</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="paused">
-<h3>paused</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">paused</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="frozen">
-<h3>frozen</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">frozen</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -337,7 +191,7 @@ implements <a href="DeltaTracker.html" title="interface in net.minecraft.client"
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Timer</span><wbr><span class="parameters">(float&nbsp;ticksPerSecond,
  long&nbsp;currentMs,
- it.unimi.dsi.fastutil.floats.FloatUnaryOperator&nbsp;targetMsptProvider)</span></div>
+ <a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/floats/FloatUnaryOperator.html" title="class or interface in it.unimi.dsi.fastutil.floats" class="external-link">FloatUnaryOperator</a>&nbsp;targetMsptProvider)</span></div>
 </div>
 </section>
 </li>
@@ -370,22 +224,6 @@ implements <a href="DeltaTracker.html" title="interface in net.minecraft.client"
 <h3>updatePauseState</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updatePauseState</span><wbr><span class="parameters">(boolean&nbsp;pauseState)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pause()">
-<h3>pause</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">pause</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="unPause()">
-<h3>unPause</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">unPause</span>()</div>
 </div>
 </section>
 </li>

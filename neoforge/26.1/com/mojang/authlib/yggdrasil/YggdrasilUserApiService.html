@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>YggdrasilUserApiService (NeoForge 26.1)</title>
+<title>YggdrasilUserApiService (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: com.mojang.authlib.yggdrasil, class: YggdrasilUserApiService">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/YggdrasilUserApiService.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -58,20 +58,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#BLOCKLIST_REQUEST_COOLDOWN_SECONDS" tabindex="0">BLOCKLIST_REQUEST_COOLDOWN_SECONDS</a></li>
-<li><a href="#ZERO_UUID" tabindex="0">ZERO_UUID</a></li>
-<li><a href="#routePrivileges" tabindex="0">routePrivileges</a></li>
-<li><a href="#routeBlocklist" tabindex="0">routeBlocklist</a></li>
-<li><a href="#routeKeyPair" tabindex="0">routeKeyPair</a></li>
-<li><a href="#routeAbuseReport" tabindex="0">routeAbuseReport</a></li>
-<li><a href="#minecraftClient" tabindex="0">minecraftClient</a></li>
-<li><a href="#environment" tabindex="0">environment</a></li>
-<li><a href="#nextAcceptableBlockRequest" tabindex="0">nextAcceptableBlockRequest</a></li>
-<li><a href="#blockList" tabindex="0">blockList</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.lang.String,java.net.Proxy,com.mojang.authlib.Environment)" tabindex="0">YggdrasilUserApiService(String, Proxy, Environment)</a></li>
@@ -83,11 +69,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#getKeyPair()" tabindex="0">getKeyPair()</a></li>
 <li><a href="#isBlockedPlayer(java.util.UUID)" tabindex="0">isBlockedPlayer(UUID)</a></li>
 <li><a href="#refreshBlockList()" tabindex="0">refreshBlockList()</a></li>
-<li><a href="#fetchBlockList()" tabindex="0">fetchBlockList()</a></li>
-<li><a href="#canMakeBlockListRequest()" tabindex="0">canMakeBlockListRequest()</a></li>
-<li><a href="#forceFetchBlockList()" tabindex="0">forceFetchBlockList()</a></li>
 <li><a href="#fetchProperties()" tabindex="0">fetchProperties()</a></li>
-<li><a href="#addFlagIfUserHasPrivilege(boolean,com.mojang.authlib.minecraft.UserApiService.UserFlag,com.google.common.collect.ImmutableSet.Builder)" tabindex="0">addFlagIfUserHasPrivilege(boolean, UserApiService.UserFlag, ImmutableSet.Builder)</a></li>
 <li><a href="#reportAbuse(com.mojang.authlib.yggdrasil.request.AbuseReportRequest)" tabindex="0">reportAbuse(AbuseReportRequest)</a></li>
 <li><a href="#canSendReports()" tabindex="0">canSendReports()</a></li>
 <li><a href="#getAbuseReportLimits()" tabindex="0">getAbuseReportLimits()</a></li>
@@ -130,42 +112,6 @@ implements <a href="../minecraft/UserApiService.html" title="interface in com.mo
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#blockList" class="member-name-link">blockList</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#BLOCKLIST_REQUEST_COOLDOWN_SECONDS" class="member-name-link">BLOCKLIST_REQUEST_COOLDOWN_SECONDS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../Environment.html" title="class in com.mojang.authlib">Environment</a></code></div>
-<div class="col-second even-row-color"><code><a href="#environment" class="member-name-link">environment</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../minecraft/client/MinecraftClient.html" title="class in com.mojang.authlib.minecraft.client">MinecraftClient</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#minecraftClient" class="member-name-link">minecraftClient</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Instant.html" title="class or interface in java.time" class="external-link">Instant</a></code></div>
-<div class="col-second even-row-color"><code><a href="#nextAcceptableBlockRequest" class="member-name-link">nextAcceptableBlockRequest</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#routeAbuseReport" class="member-name-link">routeAbuseReport</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></code></div>
-<div class="col-second even-row-color"><code><a href="#routeBlocklist" class="member-name-link">routeBlocklist</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#routeKeyPair" class="member-name-link">routeKeyPair</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></code></div>
-<div class="col-second even-row-color"><code><a href="#routePrivileges" class="member-name-link">routePrivileges</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ZERO_UUID" class="member-name-link">ZERO_UUID</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-com.mojang.authlib.minecraft.UserApiService">Fields inherited from interface&nbsp;<a href="../minecraft/UserApiService.html#field-summary" title="interface in com.mojang.authlib.minecraft">UserApiService</a></h3>
 <code><a href="../minecraft/UserApiService.html#OFFLINE">OFFLINE</a>, <a href="../minecraft/UserApiService.html#OFFLINE_PROPERTIES">OFFLINE_PROPERTIES</a></code></div>
@@ -191,31 +137,17 @@ implements <a href="../minecraft/UserApiService.html" title="interface in com.mo
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addFlagIfUserHasPrivilege(boolean,com.mojang.authlib.minecraft.UserApiService.UserFlag,com.google.common.collect.ImmutableSet.Builder)" class="member-name-link">addFlagIfUserHasPrivilege</a><wbr>(boolean&nbsp;privilege,
- <a href="../minecraft/UserApiService.UserFlag.html" title="enum class in com.mojang.authlib.minecraft">UserApiService.UserFlag</a>&nbsp;value,
- com.google.common.collect.ImmutableSet.Builder&lt;<a href="../minecraft/UserApiService.UserFlag.html" title="enum class in com.mojang.authlib.minecraft">UserApiService.UserFlag</a>&gt;&nbsp;output)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canMakeBlockListRequest()" class="member-name-link">canMakeBlockListRequest</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canSendReports()" class="member-name-link">canSendReports</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fetchBlockList()" class="member-name-link">fetchBlockList</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../minecraft/UserApiService.UserProperties.html" title="class in com.mojang.authlib.minecraft">UserApiService.UserProperties</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fetchProperties()" class="member-name-link">fetchProperties</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#forceFetchBlockList()" class="member-name-link">forceFetchBlockList</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../minecraft/UserApiService.UserProperties.html" title="class in com.mojang.authlib.minecraft">UserApiService.UserProperties</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fetchProperties()" class="member-name-link">fetchProperties</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../minecraft/report/AbuseReportLimits.html" title="class in com.mojang.authlib.minecraft.report">AbuseReportLimits</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAbuseReportLimits()" class="member-name-link">getAbuseReportLimits</a>()</code></div>
@@ -225,10 +157,14 @@ implements <a href="../minecraft/UserApiService.html" title="interface in com.mo
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlockedPlayer(java.util.UUID)" class="member-name-link">isBlockedPlayer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;playerID)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Check if a player is on the block list.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../minecraft/TelemetrySession.html" title="interface in com.mojang.authlib.minecraft">TelemetrySession</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newTelemetrySession(java.util.concurrent.Executor)" class="member-name-link">newTelemetrySession</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;executor)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create fresh telemetry session.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshBlockList()" class="member-name-link">refreshBlockList</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -240,111 +176,13 @@ implements <a href="../minecraft/UserApiService.html" title="interface in com.mo
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="BLOCKLIST_REQUEST_COOLDOWN_SECONDS">
-<h3>BLOCKLIST_REQUEST_COOLDOWN_SECONDS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">BLOCKLIST_REQUEST_COOLDOWN_SECONDS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#com.mojang.authlib.yggdrasil.YggdrasilUserApiService.BLOCKLIST_REQUEST_COOLDOWN_SECONDS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ZERO_UUID">
-<h3>ZERO_UUID</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></span>&nbsp;<span class="element-name">ZERO_UUID</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="routePrivileges">
-<h3>routePrivileges</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></span>&nbsp;<span class="element-name">routePrivileges</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="routeBlocklist">
-<h3>routeBlocklist</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></span>&nbsp;<span class="element-name">routeBlocklist</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="routeKeyPair">
-<h3>routeKeyPair</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></span>&nbsp;<span class="element-name">routeKeyPair</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="routeAbuseReport">
-<h3>routeAbuseReport</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></span>&nbsp;<span class="element-name">routeAbuseReport</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="minecraftClient">
-<h3>minecraftClient</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../minecraft/client/MinecraftClient.html" title="class in com.mojang.authlib.minecraft.client">MinecraftClient</a></span>&nbsp;<span class="element-name">minecraftClient</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="environment">
-<h3>environment</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../Environment.html" title="class in com.mojang.authlib">Environment</a></span>&nbsp;<span class="element-name">environment</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nextAcceptableBlockRequest">
-<h3>nextAcceptableBlockRequest</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations">@Nullable
-</span><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Instant.html" title="class or interface in java.time" class="external-link">Instant</a></span>&nbsp;<span class="element-name">nextAcceptableBlockRequest</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="blockList">
-<h3>blockList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations">@Nullable
-</span><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</span>&nbsp;<span class="element-name">blockList</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -373,9 +211,13 @@ implements <a href="../minecraft/UserApiService.html" title="interface in com.mo
 <h3>newTelemetrySession</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../minecraft/TelemetrySession.html" title="interface in com.mojang.authlib.minecraft">TelemetrySession</a></span>&nbsp;<span class="element-name">newTelemetrySession</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;executor)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../minecraft/UserApiService.html#newTelemetrySession(java.util.concurrent.Executor)">UserApiService</a></code></span></div>
+<div class="block">Create fresh telemetry session.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../minecraft/UserApiService.html#newTelemetrySession(java.util.concurrent.Executor)">newTelemetrySession</a></code>&nbsp;in interface&nbsp;<code><a href="../minecraft/UserApiService.html" title="interface in com.mojang.authlib.minecraft">UserApiService</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>executor</code> - - executor used for sending operations</dd>
 </dl>
 </div>
 </section>
@@ -397,9 +239,16 @@ implements <a href="../minecraft/UserApiService.html" title="interface in com.mo
 <h3>isBlockedPlayer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBlockedPlayer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;playerID)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../minecraft/UserApiService.html#isBlockedPlayer(java.util.UUID)">UserApiService</a></code></span></div>
+<div class="block">Check if a player is on the block list.
+Note: might block</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../minecraft/UserApiService.html#isBlockedPlayer(java.util.UUID)">isBlockedPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../minecraft/UserApiService.html" title="interface in com.mojang.authlib.minecraft">UserApiService</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>playerID</code> - A valid player UUID</dd>
+<dt>Returns:</dt>
+<dd>True if communications from the player should be blocked</dd>
 </dl>
 </div>
 </section>
@@ -417,31 +266,6 @@ implements <a href="../minecraft/UserApiService.html" title="interface in com.mo
 </section>
 </li>
 <li>
-<section class="detail" id="fetchBlockList()">
-<h3>fetchBlockList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations">@Nullable
-</span><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</span>&nbsp;<span class="element-name">fetchBlockList</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="canMakeBlockListRequest()">
-<h3>canMakeBlockListRequest</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canMakeBlockListRequest</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="forceFetchBlockList()">
-<h3>forceFetchBlockList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</span>&nbsp;<span class="element-name">forceFetchBlockList</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="fetchProperties()">
 <h3>fetchProperties</h3>
 <div class="horizontal-scroll">
@@ -453,16 +277,6 @@ implements <a href="../minecraft/UserApiService.html" title="interface in com.mo
 <dt>Throws:</dt>
 <dd><code><a href="../exceptions/AuthenticationException.html" title="class in com.mojang.authlib.exceptions">AuthenticationException</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addFlagIfUserHasPrivilege(boolean,com.mojang.authlib.minecraft.UserApiService.UserFlag,com.google.common.collect.ImmutableSet.Builder)">
-<h3>addFlagIfUserHasPrivilege</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addFlagIfUserHasPrivilege</span><wbr><span class="parameters">(boolean&nbsp;privilege,
- <a href="../minecraft/UserApiService.UserFlag.html" title="enum class in com.mojang.authlib.minecraft">UserApiService.UserFlag</a>&nbsp;value,
- com.google.common.collect.ImmutableSet.Builder&lt;<a href="../minecraft/UserApiService.UserFlag.html" title="enum class in com.mojang.authlib.minecraft">UserApiService.UserFlag</a>&gt;&nbsp;output)</span></div>
 </div>
 </section>
 </li>

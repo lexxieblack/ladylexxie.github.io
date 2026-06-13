@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>MouseHandler (NeoForge 26.1)</title>
+<title>MouseHandler (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client, class: MouseHandler">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/MouseHandler.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,34 +54,12 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
 <li><a href="#DOUBLE_CLICK_THRESHOLD_MS" tabindex="0">DOUBLE_CLICK_THRESHOLD_MS</a></li>
-<li><a href="#minecraft" tabindex="0">minecraft</a></li>
-<li><a href="#isLeftPressed" tabindex="0">isLeftPressed</a></li>
-<li><a href="#isMiddlePressed" tabindex="0">isMiddlePressed</a></li>
-<li><a href="#isRightPressed" tabindex="0">isRightPressed</a></li>
-<li><a href="#xpos" tabindex="0">xpos</a></li>
-<li><a href="#ypos" tabindex="0">ypos</a></li>
-<li><a href="#lastClick" tabindex="0">lastClick</a></li>
-<li><a href="#lastClickButton" tabindex="0">lastClickButton</a></li>
-<li><a href="#fakeRightMouse" tabindex="0">fakeRightMouse</a></li>
-<li><a href="#activeButton" tabindex="0">activeButton</a></li>
-<li><a href="#ignoreFirstMove" tabindex="0">ignoreFirstMove</a></li>
-<li><a href="#clickDepth" tabindex="0">clickDepth</a></li>
-<li><a href="#mousePressedTime" tabindex="0">mousePressedTime</a></li>
-<li><a href="#smoothTurnX" tabindex="0">smoothTurnX</a></li>
-<li><a href="#smoothTurnY" tabindex="0">smoothTurnY</a></li>
-<li><a href="#accumulatedDX" tabindex="0">accumulatedDX</a></li>
-<li><a href="#accumulatedDY" tabindex="0">accumulatedDY</a></li>
-<li><a href="#scrollWheelHandler" tabindex="0">scrollWheelHandler</a></li>
-<li><a href="#lastHandleMovementTime" tabindex="0">lastHandleMovementTime</a></li>
-<li><a href="#mouseGrabbed" tabindex="0">mouseGrabbed</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -91,19 +69,13 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#onButton(long,net.minecraft.client.input.MouseButtonInfo,int)" tabindex="0">onButton(long, MouseButtonInfo, int)</a></li>
-<li><a href="#simulateRightClick(net.minecraft.client.input.MouseButtonInfo,boolean)" tabindex="0">simulateRightClick(MouseButtonInfo, boolean)</a></li>
 <li><a href="#fillMousePositionDetails(net.minecraft.CrashReportCategory,com.mojang.blaze3d.platform.Window)" tabindex="0">fillMousePositionDetails(CrashReportCategory, Window)</a></li>
-<li><a href="#onScroll(long,double,double)" tabindex="0">onScroll(long, double, double)</a></li>
-<li><a href="#onDrop(long,java.util.List,int)" tabindex="0">onDrop(long, List, int)</a></li>
 <li><a href="#setup(com.mojang.blaze3d.platform.Window)" tabindex="0">setup(Window)</a></li>
-<li><a href="#onMove(long,double,double)" tabindex="0">onMove(long, double, double)</a></li>
 <li><a href="#handleAccumulatedMovement()" tabindex="0">handleAccumulatedMovement()</a></li>
 <li><a href="#getScaledXPos(com.mojang.blaze3d.platform.Window,double)" tabindex="0">getScaledXPos(Window, double)</a></li>
 <li><a href="#getScaledXPos(com.mojang.blaze3d.platform.Window)" tabindex="0">getScaledXPos(Window)</a></li>
 <li><a href="#getScaledYPos(com.mojang.blaze3d.platform.Window,double)" tabindex="0">getScaledYPos(Window, double)</a></li>
 <li><a href="#getScaledYPos(com.mojang.blaze3d.platform.Window)" tabindex="0">getScaledYPos(Window)</a></li>
-<li><a href="#turnPlayer(double)" tabindex="0">turnPlayer(double)</a></li>
 <li><a href="#isLeftPressed()" tabindex="0">isLeftPressed()</a></li>
 <li><a href="#isMiddlePressed()" tabindex="0">isMiddlePressed()</a></li>
 <li><a href="#isRightPressed()" tabindex="0">isRightPressed()</a></li>
@@ -138,21 +110,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="MouseHandler.LastClick.html" class="type-name-link" title="class in net.minecraft.client">MouseHandler.LastClick</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
@@ -162,72 +119,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#accumulatedDX" class="member-name-link">accumulatedDX</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private double</code></div>
-<div class="col-second odd-row-color"><code><a href="#accumulatedDY" class="member-name-link">accumulatedDY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a></code></div>
-<div class="col-second even-row-color"><code><a href="#activeButton" class="member-name-link">activeButton</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#clickDepth" class="member-name-link">clickDepth</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final long</code></div>
 <div class="col-second even-row-color"><code><a href="#DOUBLE_CLICK_THRESHOLD_MS" class="member-name-link">DOUBLE_CLICK_THRESHOLD_MS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#fakeRightMouse" class="member-name-link">fakeRightMouse</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#ignoreFirstMove" class="member-name-link">ignoreFirstMove</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#isLeftPressed" class="member-name-link">isLeftPressed</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#isMiddlePressed" class="member-name-link">isMiddlePressed</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#isRightPressed" class="member-name-link">isRightPressed</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="MouseHandler.LastClick.html" title="class in net.minecraft.client">MouseHandler.LastClick</a></code></div>
-<div class="col-second even-row-color"><code><a href="#lastClick" class="member-name-link">lastClick</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected int</code></div>
-<div class="col-second odd-row-color"><code><a href="#lastClickButton" class="member-name-link">lastClickButton</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#lastHandleMovementTime" class="member-name-link">lastHandleMovementTime</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="Minecraft.html" title="class in net.minecraft.client">Minecraft</a></code></div>
-<div class="col-second even-row-color"><code><a href="#minecraft" class="member-name-link">minecraft</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#mouseGrabbed" class="member-name-link">mouseGrabbed</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#mousePressedTime" class="member-name-link">mousePressedTime</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="ScrollWheelHandler.html" title="class in net.minecraft.client">ScrollWheelHandler</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#scrollWheelHandler" class="member-name-link">scrollWheelHandler</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../util/SmoothDouble.html" title="class in net.minecraft.util">SmoothDouble</a></code></div>
-<div class="col-second even-row-color"><code><a href="#smoothTurnX" class="member-name-link">smoothTurnX</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../util/SmoothDouble.html" title="class in net.minecraft.util">SmoothDouble</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#smoothTurnY" class="member-name-link">smoothTurnY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#xpos" class="member-name-link">xpos</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private double</code></div>
-<div class="col-second odd-row-color"><code><a href="#ypos" class="member-name-link">ypos</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -304,26 +198,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRightPressed()" class="member-name-link">isRightPressed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onButton(long,net.minecraft.client.input.MouseButtonInfo,int)" class="member-name-link">onButton</a><wbr>(long&nbsp;handle,
- <a href="input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a>&nbsp;rawButtonInfo,
- int&nbsp;action)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDrop(long,java.util.List,int)" class="member-name-link">onDrop</a><wbr>(long&nbsp;handle,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&gt;&nbsp;files,
- int&nbsp;failedCount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onMove(long,double,double)" class="member-name-link">onMove</a><wbr>(long&nbsp;handle,
- double&nbsp;xpos,
- double&nbsp;ypos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onScroll(long,double,double)" class="member-name-link">onScroll</a><wbr>(long&nbsp;handle,
- double&nbsp;xoffset,
- double&nbsp;yoffset)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseMouse()" class="member-name-link">releaseMouse</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -332,13 +206,6 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setup(com.mojang.blaze3d.platform.Window)" class="member-name-link">setup</a><wbr>(<a href="../../../com/mojang/blaze3d/platform/Window.html" title="class in com.mojang.blaze3d.platform">Window</a>&nbsp;window)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#simulateRightClick(net.minecraft.client.input.MouseButtonInfo,boolean)" class="member-name-link">simulateRightClick</a><wbr>(<a href="input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a>&nbsp;info,
- boolean&nbsp;pressed)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#turnPlayer(double)" class="member-name-link">turnPlayer</a><wbr>(double&nbsp;mousea)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#xpos()" class="member-name-link">xpos</a>()</code></div>
@@ -351,7 +218,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -363,14 +230,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="DOUBLE_CLICK_THRESHOLD_MS">
 <h3>DOUBLE_CLICK_THRESHOLD_MS</h3>
@@ -384,166 +243,6 @@ loadScripts(document, 'script');</script>
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="minecraft">
-<h3>minecraft</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="Minecraft.html" title="class in net.minecraft.client">Minecraft</a></span>&nbsp;<span class="element-name">minecraft</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isLeftPressed">
-<h3>isLeftPressed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isLeftPressed</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isMiddlePressed">
-<h3>isMiddlePressed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isMiddlePressed</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isRightPressed">
-<h3>isRightPressed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRightPressed</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="xpos">
-<h3>xpos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">xpos</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ypos">
-<h3>ypos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">ypos</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastClick">
-<h3>lastClick</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="MouseHandler.LastClick.html" title="class in net.minecraft.client">MouseHandler.LastClick</a></span>&nbsp;<span class="element-name">lastClick</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastClickButton">
-<h3>lastClickButton</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">lastClickButton</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fakeRightMouse">
-<h3>fakeRightMouse</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">fakeRightMouse</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="activeButton">
-<h3>activeButton</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a></span>&nbsp;<span class="element-name">activeButton</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ignoreFirstMove">
-<h3>ignoreFirstMove</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">ignoreFirstMove</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="clickDepth">
-<h3>clickDepth</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">clickDepth</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="mousePressedTime">
-<h3>mousePressedTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">mousePressedTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="smoothTurnX">
-<h3>smoothTurnX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../util/SmoothDouble.html" title="class in net.minecraft.util">SmoothDouble</a></span>&nbsp;<span class="element-name">smoothTurnX</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="smoothTurnY">
-<h3>smoothTurnY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../util/SmoothDouble.html" title="class in net.minecraft.util">SmoothDouble</a></span>&nbsp;<span class="element-name">smoothTurnY</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="accumulatedDX">
-<h3>accumulatedDX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">accumulatedDX</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="accumulatedDY">
-<h3>accumulatedDY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">accumulatedDY</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="scrollWheelHandler">
-<h3>scrollWheelHandler</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="ScrollWheelHandler.html" title="class in net.minecraft.client">ScrollWheelHandler</a></span>&nbsp;<span class="element-name">scrollWheelHandler</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastHandleMovementTime">
-<h3>lastHandleMovementTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">lastHandleMovementTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="mouseGrabbed">
-<h3>mouseGrabbed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">mouseGrabbed</span></div>
 </div>
 </section>
 </li>
@@ -572,25 +271,6 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="onButton(long,net.minecraft.client.input.MouseButtonInfo,int)">
-<h3>onButton</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onButton</span><wbr><span class="parameters">(long&nbsp;handle,
- <a href="input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a>&nbsp;rawButtonInfo,
- int&nbsp;action)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="simulateRightClick(net.minecraft.client.input.MouseButtonInfo,boolean)">
-<h3>simulateRightClick</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a></span>&nbsp;<span class="element-name">simulateRightClick</span><wbr><span class="parameters">(<a href="input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a>&nbsp;info,
- boolean&nbsp;pressed)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="fillMousePositionDetails(net.minecraft.CrashReportCategory,com.mojang.blaze3d.platform.Window)">
 <h3>fillMousePositionDetails</h3>
 <div class="horizontal-scroll">
@@ -600,40 +280,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="onScroll(long,double,double)">
-<h3>onScroll</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onScroll</span><wbr><span class="parameters">(long&nbsp;handle,
- double&nbsp;xoffset,
- double&nbsp;yoffset)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onDrop(long,java.util.List,int)">
-<h3>onDrop</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onDrop</span><wbr><span class="parameters">(long&nbsp;handle,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&gt;&nbsp;files,
- int&nbsp;failedCount)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="setup(com.mojang.blaze3d.platform.Window)">
 <h3>setup</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setup</span><wbr><span class="parameters">(<a href="../../../com/mojang/blaze3d/platform/Window.html" title="class in com.mojang.blaze3d.platform">Window</a>&nbsp;window)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onMove(long,double,double)">
-<h3>onMove</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onMove</span><wbr><span class="parameters">(long&nbsp;handle,
- double&nbsp;xpos,
- double&nbsp;ypos)</span></div>
 </div>
 </section>
 </li>
@@ -676,14 +326,6 @@ loadScripts(document, 'script');</script>
 <h3>getScaledYPos</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getScaledYPos</span><wbr><span class="parameters">(<a href="../../../com/mojang/blaze3d/platform/Window.html" title="class in com.mojang.blaze3d.platform">Window</a>&nbsp;window)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="turnPlayer(double)">
-<h3>turnPlayer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">turnPlayer</span><wbr><span class="parameters">(double&nbsp;mousea)</span></div>
 </div>
 </section>
 </li>

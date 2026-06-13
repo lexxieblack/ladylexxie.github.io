@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>SoundManager (NeoForge 26.1)</title>
+<title>SoundManager (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.sounds, class: SoundManager">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/SoundManager.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -65,13 +65,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#INTENTIONALLY_EMPTY_SOUND_LOCATION" tabindex="0">INTENTIONALLY_EMPTY_SOUND_LOCATION</a></li>
 <li><a href="#INTENTIONALLY_EMPTY_SOUND_EVENT" tabindex="0">INTENTIONALLY_EMPTY_SOUND_EVENT</a></li>
 <li><a href="#INTENTIONALLY_EMPTY_SOUND" tabindex="0">INTENTIONALLY_EMPTY_SOUND</a></li>
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#SOUNDS_PATH" tabindex="0">SOUNDS_PATH</a></li>
-<li><a href="#GSON" tabindex="0">GSON</a></li>
-<li><a href="#SOUND_EVENT_REGISTRATION_TYPE" tabindex="0">SOUND_EVENT_REGISTRATION_TYPE</a></li>
-<li><a href="#registry" tabindex="0">registry</a></li>
-<li><a href="#soundEngine" tabindex="0">soundEngine</a></li>
-<li><a href="#soundCache" tabindex="0">soundCache</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -81,11 +74,8 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">prepare(ResourceManager, ProfilerFiller)</a></li>
-<li><a href="#apply(net.minecraft.client.sounds.SoundManager.Preparations,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">apply(SoundManager.Preparations, ResourceManager, ProfilerFiller)</a></li>
 <li><a href="#getAvailableSoundDevices()" tabindex="0">getAvailableSoundDevices()</a></li>
 <li><a href="#getListenerTransform()" tabindex="0">getListenerTransform()</a></li>
-<li><a href="#validateSoundResource(net.minecraft.client.resources.sounds.Sound,net.minecraft.resources.Identifier,net.minecraft.server.packs.resources.ResourceProvider)" tabindex="0">validateSoundResource(Sound, Identifier, ResourceProvider)</a></li>
 <li><a href="#getSoundEvent(net.minecraft.resources.Identifier)" tabindex="0">getSoundEvent(Identifier)</a></li>
 <li><a href="#getAvailableSounds()" tabindex="0">getAvailableSounds()</a></li>
 <li><a href="#queueTickingSound(net.minecraft.client.resources.sounds.TickableSoundInstance)" tabindex="0">queueTickingSound(TickableSoundInstance)</a></li>
@@ -119,7 +109,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance"><a href="../../../neoforged/neoforge/resource/ContextAwareReloadListener.html" title="class in net.neoforged.neoforge.resource">net.neoforged.neoforge.resource.ContextAwareReloadListener</a>
-<div class="inheritance"><a href="../../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">net.minecraft.server.packs.resources.SimplePreparableReloadListener</a>&lt;<a href="SoundManager.Preparations.html" title="class in net.minecraft.client.sounds">SoundManager.Preparations</a>&gt;
+<div class="inheritance"><a href="../../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">net.minecraft.server.packs.resources.SimplePreparableReloadListener</a>&lt;net.minecraft.client.sounds.SoundManager.Preparations&gt;
 <div class="inheritance">net.minecraft.client.sounds.SoundManager</div>
 </div>
 </div>
@@ -132,7 +122,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SoundManager</span>
-<span class="extends-implements">extends <a href="../../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;<a href="SoundManager.Preparations.html" title="class in net.minecraft.client.sounds">SoundManager.Preparations</a>&gt;</span></div>
+<span class="extends-implements">extends <a href="../../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;net.minecraft.client.sounds.SoundManager.Preparations&gt;</span></div>
 </div>
 </section>
 <section class="summary">
@@ -141,15 +131,6 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="SoundManager.Preparations.html" class="type-name-link" title="class in net.minecraft.client.sounds">SoundManager.Preparations</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.minecraft.server.packs.resources.PreparableReloadListener">Nested classes/interfaces inherited from interface&nbsp;<a href="../../server/packs/resources/PreparableReloadListener.html#nested-class-summary" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a></h3>
 <code><a href="../../server/packs/resources/PreparableReloadListener.PreparationBarrier.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener.PreparationBarrier</a>, <a href="../../server/packs/resources/PreparableReloadListener.SharedState.html" title="class in net.minecraft.server.packs.resources">PreparableReloadListener.SharedState</a>, <a href="../../server/packs/resources/PreparableReloadListener.StateKey.html" title="class in net.minecraft.server.packs.resources">PreparableReloadListener.StateKey</a>&lt;T&gt;</code></div>
@@ -170,36 +151,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static final <a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#EMPTY_SOUND_LOCATION" class="member-name-link">EMPTY_SOUND_LOCATION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final com.google.gson.Gson</code></div>
-<div class="col-second even-row-color"><code><a href="#GSON" class="member-name-link">GSON</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../resources/sounds/Sound.html" title="class in net.minecraft.client.resources.sounds">Sound</a></code></div>
+<div class="col-second even-row-color"><code><a href="#INTENTIONALLY_EMPTY_SOUND" class="member-name-link">INTENTIONALLY_EMPTY_SOUND</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../resources/sounds/Sound.html" title="class in net.minecraft.client.resources.sounds">Sound</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#INTENTIONALLY_EMPTY_SOUND" class="member-name-link">INTENTIONALLY_EMPTY_SOUND</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="WeighedSoundEvents.html" title="class in net.minecraft.client.sounds">WeighedSoundEvents</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#INTENTIONALLY_EMPTY_SOUND_EVENT" class="member-name-link">INTENTIONALLY_EMPTY_SOUND_EVENT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="WeighedSoundEvents.html" title="class in net.minecraft.client.sounds">WeighedSoundEvents</a></code></div>
-<div class="col-second even-row-color"><code><a href="#INTENTIONALLY_EMPTY_SOUND_EVENT" class="member-name-link">INTENTIONALLY_EMPTY_SOUND_EVENT</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
+<div class="col-second even-row-color"><code><a href="#INTENTIONALLY_EMPTY_SOUND_LOCATION" class="member-name-link">INTENTIONALLY_EMPTY_SOUND_LOCATION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#INTENTIONALLY_EMPTY_SOUND_LOCATION" class="member-name-link">INTENTIONALLY_EMPTY_SOUND_LOCATION</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="WeighedSoundEvents.html" title="class in net.minecraft.client.sounds">WeighedSoundEvents</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#registry" class="member-name-link">registry</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final com.google.gson.reflect.TypeToken<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="../resources/sounds/SoundEventRegistration.html" title="class in net.minecraft.client.resources.sounds">SoundEventRegistration</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#SOUND_EVENT_REGISTRATION_TYPE" class="member-name-link">SOUND_EVENT_REGISTRATION_TYPE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../../server/packs/resources/Resource.html" title="class in net.minecraft.server.packs.resources">Resource</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#soundCache" class="member-name-link">soundCache</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="SoundEngine.html" title="class in net.minecraft.client.sounds">SoundEngine</a></code></div>
-<div class="col-second even-row-color"><code><a href="#soundEngine" class="member-name-link">soundEngine</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SOUNDS_PATH" class="member-name-link">SOUNDS_PATH</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -221,7 +181,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -230,51 +190,42 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addListener(net.minecraft.client.sounds.SoundEventListener)" class="member-name-link">addListener</a><wbr>(<a href="SoundEventListener.html" title="interface in net.minecraft.client.sounds">SoundEventListener</a>&nbsp;listener)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apply(net.minecraft.client.sounds.SoundManager.Preparations,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">apply</a><wbr>(<a href="SoundManager.Preparations.html" title="class in net.minecraft.client.sounds">SoundManager.Preparations</a>&nbsp;preparations,
- <a href="../../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#destroy()" class="member-name-link">destroy</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#destroy()" class="member-name-link">destroy</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#emergencyShutdown()" class="member-name-link">emergencyShutdown</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAvailableSoundDevices()" class="member-name-link">getAvailableSoundDevices</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAvailableSounds()" class="member-name-link">getAvailableSounds</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChannelDebugString()" class="member-name-link">getChannelDebugString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../com/mojang/blaze3d/audio/ListenerTransform.html" title="class in com.mojang.blaze3d.audio">ListenerTransform</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getListenerTransform()" class="member-name-link">getListenerTransform</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#emergencyShutdown()" class="member-name-link">emergencyShutdown</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSoundCacheDebugStats(net.minecraft.client.sounds.SoundBufferLibrary.DebugOutput)" class="member-name-link">getSoundCacheDebugStats</a><wbr>(<a href="SoundBufferLibrary.DebugOutput.html" title="interface in net.minecraft.client.sounds">SoundBufferLibrary.DebugOutput</a>&nbsp;output)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAvailableSoundDevices()" class="member-name-link">getAvailableSoundDevices</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="WeighedSoundEvents.html" title="class in net.minecraft.client.sounds">WeighedSoundEvents</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSoundEvent(net.minecraft.resources.Identifier)" class="member-name-link">getSoundEvent</a><wbr>(<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;location)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAvailableSounds()" class="member-name-link">getAvailableSounds</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChannelDebugString()" class="member-name-link">getChannelDebugString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../com/mojang/blaze3d/audio/ListenerTransform.html" title="class in com.mojang.blaze3d.audio">ListenerTransform</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getListenerTransform()" class="member-name-link">getListenerTransform</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isActive(net.minecraft.client.resources.sounds.SoundInstance)" class="member-name-link">isActive</a><wbr>(<a href="../resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a>&nbsp;instance)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSoundCacheDebugStats(net.minecraft.client.sounds.SoundBufferLibrary.DebugOutput)" class="member-name-link">getSoundCacheDebugStats</a><wbr>(<a href="SoundBufferLibrary.DebugOutput.html" title="interface in net.minecraft.client.sounds">SoundBufferLibrary.DebugOutput</a>&nbsp;output)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pauseAllExcept(net.minecraft.sounds.SoundSource...)" class="member-name-link">pauseAllExcept</a><wbr>(<a href="../../sounds/SoundSource.html" title="enum class in net.minecraft.sounds">SoundSource</a>...&nbsp;ignoredSources)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="WeighedSoundEvents.html" title="class in net.minecraft.client.sounds">WeighedSoundEvents</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSoundEvent(net.minecraft.resources.Identifier)" class="member-name-link">getSoundEvent</a><wbr>(<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;location)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SoundEngine.PlayResult.html" title="enum class in net.minecraft.client.sounds">SoundEngine.PlayResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#play(net.minecraft.client.resources.sounds.SoundInstance)" class="member-name-link">play</a><wbr>(<a href="../resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a>&nbsp;instance)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isActive(net.minecraft.client.resources.sounds.SoundInstance)" class="member-name-link">isActive</a><wbr>(<a href="../resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a>&nbsp;instance)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pauseAllExcept(net.minecraft.sounds.SoundSource...)" class="member-name-link">pauseAllExcept</a><wbr>(<a href="../../sounds/SoundSource.html" title="enum class in net.minecraft.sounds">SoundSource</a>...&nbsp;ignoredSources)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SoundEngine.PlayResult.html" title="enum class in net.minecraft.client.sounds">SoundEngine.PlayResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#play(net.minecraft.client.resources.sounds.SoundInstance)" class="member-name-link">play</a><wbr>(<a href="../resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a>&nbsp;instance)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playDelayed(net.minecraft.client.resources.sounds.SoundInstance,int)" class="member-name-link">playDelayed</a><wbr>(<a href="../resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a>&nbsp;instance,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playDelayed(net.minecraft.client.resources.sounds.SoundInstance,int)" class="member-name-link">playDelayed</a><wbr>(<a href="../resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a>&nbsp;instance,
  int&nbsp;delay)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="SoundManager.Preparations.html" title="class in net.minecraft.client.sounds">SoundManager.Preparations</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">prepare</a><wbr>(<a href="../../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#queueTickingSound(net.minecraft.client.resources.sounds.TickableSoundInstance)" class="member-name-link">queueTickingSound</a><wbr>(<a href="../resources/sounds/TickableSoundInstance.html" title="interface in net.minecraft.client.resources.sounds">TickableSoundInstance</a>&nbsp;instance)</code></div>
@@ -311,11 +262,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSource(net.minecraft.client.Camera)" class="member-name-link">updateSource</a><wbr>(<a href="../Camera.html" title="class in net.minecraft.client">Camera</a>&nbsp;camera)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#validateSoundResource(net.minecraft.client.resources.sounds.Sound,net.minecraft.resources.Identifier,net.minecraft.server.packs.resources.ResourceProvider)" class="member-name-link">validateSoundResource</a><wbr>(<a href="../resources/sounds/Sound.html" title="class in net.minecraft.client.resources.sounds">Sound</a>&nbsp;sound,
- <a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;eventLocation,
- <a href="../../server/packs/resources/ResourceProvider.html" title="interface in net.minecraft.server.packs.resources">ResourceProvider</a>&nbsp;resourceProvider)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -324,10 +270,10 @@ loadScripts(document, 'script');</script>
 <code><a href="../../server/packs/resources/SimplePreparableReloadListener.html#reload(net.minecraft.server.packs.resources.PreparableReloadListener.SharedState,java.util.concurrent.Executor,net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier,java.util.concurrent.Executor)" title="reload(PreparableReloadListener.SharedState, Executor, PreparableReloadListener.PreparationBarrier, Executor)">reload</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.resource.ContextAwareReloadListener">Methods inherited from class&nbsp;<a href="../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#method-summary" title="class in net.neoforged.neoforge.resource">ContextAwareReloadListener</a></h3>
-<code><a href="../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#getContext()" title="getContext()">getContext</a>, <a href="../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#getRegistryLookup()" title="getRegistryLookup()">getRegistryLookup</a>, <a href="../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#injectContext(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.HolderLookup.Provider)" title="injectContext(ICondition.IContext, HolderLookup.Provider)">injectContext</a>, <a href="../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#makeConditionalOps()" title="makeConditionalOps()">makeConditionalOps</a>, <a href="../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#makeConditionalOps(com.mojang.serialization.DynamicOps)" title="makeConditionalOps(DynamicOps)">makeConditionalOps</a></code></div>
+<code><a href="../../../neoforged/neoforge/resource/ContextAwareReloadListener.html#injectContext(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.HolderLookup.Provider)" title="injectContext(ICondition.IContext, HolderLookup.Provider)">injectContext</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.packs.resources.PreparableReloadListener">Methods inherited from interface&nbsp;<a href="../../server/packs/resources/PreparableReloadListener.html#method-summary" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a></h3>
 <code><a href="../../server/packs/resources/PreparableReloadListener.html#getName()" title="getName()">getName</a>, <a href="../../server/packs/resources/PreparableReloadListener.html#prepareSharedState(net.minecraft.server.packs.resources.PreparableReloadListener.SharedState)" title="prepareSharedState(PreparableReloadListener.SharedState)">prepareSharedState</a></code></div>
@@ -382,70 +328,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SOUNDS_PATH">
-<h3>SOUNDS_PATH</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SOUNDS_PATH</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.client.sounds.SoundManager.SOUNDS_PATH">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="GSON">
-<h3>GSON</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">com.google.gson.Gson</span>&nbsp;<span class="element-name">GSON</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SOUND_EVENT_REGISTRATION_TYPE">
-<h3>SOUND_EVENT_REGISTRATION_TYPE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">com.google.gson.reflect.TypeToken&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="../resources/sounds/SoundEventRegistration.html" title="class in net.minecraft.client.resources.sounds">SoundEventRegistration</a>&gt;&gt;</span>&nbsp;<span class="element-name">SOUND_EVENT_REGISTRATION_TYPE</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="registry">
-<h3>registry</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="WeighedSoundEvents.html" title="class in net.minecraft.client.sounds">WeighedSoundEvents</a>&gt;</span>&nbsp;<span class="element-name">registry</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="soundEngine">
-<h3>soundEngine</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="SoundEngine.html" title="class in net.minecraft.client.sounds">SoundEngine</a></span>&nbsp;<span class="element-name">soundEngine</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="soundCache">
-<h3>soundCache</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../../server/packs/resources/Resource.html" title="class in net.minecraft.server.packs.resources">Resource</a>&gt;</span>&nbsp;<span class="element-name">soundCache</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -471,33 +353,6 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">
-<h3>prepare</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="SoundManager.Preparations.html" title="class in net.minecraft.client.sounds">SoundManager.Preparations</a></span>&nbsp;<span class="element-name">prepare</span><wbr><span class="parameters">(<a href="../../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../server/packs/resources/SimplePreparableReloadListener.html#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">prepare</a></code>&nbsp;in class&nbsp;<code><a href="../../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;<a href="SoundManager.Preparations.html" title="class in net.minecraft.client.sounds">SoundManager.Preparations</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="apply(net.minecraft.client.sounds.SoundManager.Preparations,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">
-<h3>apply</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">apply</span><wbr><span class="parameters">(<a href="SoundManager.Preparations.html" title="class in net.minecraft.client.sounds">SoundManager.Preparations</a>&nbsp;preparations,
- <a href="../../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../server/packs/resources/SimplePreparableReloadListener.html#apply(T,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">apply</a></code>&nbsp;in class&nbsp;<code><a href="../../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;<a href="SoundManager.Preparations.html" title="class in net.minecraft.client.sounds">SoundManager.Preparations</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getAvailableSoundDevices()">
 <h3>getAvailableSoundDevices</h3>
 <div class="horizontal-scroll">
@@ -510,16 +365,6 @@ loadScripts(document, 'script');</script>
 <h3>getListenerTransform</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/blaze3d/audio/ListenerTransform.html" title="class in com.mojang.blaze3d.audio">ListenerTransform</a></span>&nbsp;<span class="element-name">getListenerTransform</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="validateSoundResource(net.minecraft.client.resources.sounds.Sound,net.minecraft.resources.Identifier,net.minecraft.server.packs.resources.ResourceProvider)">
-<h3>validateSoundResource</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">validateSoundResource</span><wbr><span class="parameters">(<a href="../resources/sounds/Sound.html" title="class in net.minecraft.client.resources.sounds">Sound</a>&nbsp;sound,
- <a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;eventLocation,
- <a href="../../server/packs/resources/ResourceProvider.html" title="interface in net.minecraft.server.packs.resources">ResourceProvider</a>&nbsp;resourceProvider)</span></div>
 </div>
 </section>
 </li>

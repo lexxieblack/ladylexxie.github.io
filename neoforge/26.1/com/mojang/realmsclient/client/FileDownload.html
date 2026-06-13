@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>FileDownload (NeoForge 26.1)</title>
+<title>FileDownload (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: com.mojang.realmsclient.client, class: FileDownload">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/FileDownload.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,24 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#cancelled" tabindex="0">cancelled</a></li>
-<li><a href="#finished" tabindex="0">finished</a></li>
-<li><a href="#error" tabindex="0">error</a></li>
-<li><a href="#extracting" tabindex="0">extracting</a></li>
-<li><a href="#tempFile" tabindex="0">tempFile</a></li>
-<li><a href="#resourcePackPath" tabindex="0">resourcePackPath</a></li>
-<li><a href="#pendingRequest" tabindex="0">pendingRequest</a></li>
-<li><a href="#currentThread" tabindex="0">currentThread</a></li>
-<li><a href="#INVALID_FILE_NAMES" tabindex="0">INVALID_FILE_NAMES</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">FileDownload()</a></li>
@@ -79,20 +63,13 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#joinCancellableRequest(java.util.concurrent.CompletableFuture)" tabindex="0">joinCancellableRequest(CompletableFuture)</a></li>
-<li><a href="#createClient()" tabindex="0">createClient()</a></li>
-<li><a href="#createRequest(java.lang.String)" tabindex="0">createRequest(String)</a></li>
 <li><a href="#contentLength(java.lang.String)" tabindex="0">contentLength(String)</a></li>
 <li><a href="#download(com.mojang.realmsclient.dto.WorldDownload,java.lang.String,com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus,net.minecraft.world.level.storage.LevelStorageSource)" tabindex="0">download(WorldDownload, String, RealmsDownloadLatestWorldScreen.DownloadStatus, LevelStorageSource)</a></li>
-<li><a href="#download(com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus,java.net.http.HttpClient,java.lang.String,java.io.File)" tabindex="0">download(RealmsDownloadLatestWorldScreen.DownloadStatus, HttpClient, String, File)</a></li>
 <li><a href="#cancel()" tabindex="0">cancel()</a></li>
 <li><a href="#isFinished()" tabindex="0">isFinished()</a></li>
 <li><a href="#isError()" tabindex="0">isError()</a></li>
 <li><a href="#isExtracting()" tabindex="0">isExtracting()</a></li>
 <li><a href="#findAvailableFolderName(java.lang.String)" tabindex="0">findAvailableFolderName(String)</a></li>
-<li><a href="#untarGzipArchive(java.lang.String,java.io.File,net.minecraft.world.level.storage.LevelStorageSource)" tabindex="0">untarGzipArchive(String, File, LevelStorageSource)</a></li>
-<li><a href="#finishWorldDownload(java.lang.String,java.io.File,net.minecraft.world.level.storage.LevelStorageSource,com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus)" tabindex="0">finishWorldDownload(String, File, LevelStorageSource, RealmsDownloadLatestWorldScreen.DownloadStatus)</a></li>
-<li><a href="#finishResourcePackDownload(com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus,java.io.File,com.mojang.realmsclient.dto.WorldDownload)" tabindex="0">finishResourcePackDownload(RealmsDownloadLatestWorldScreen.DownloadStatus, File, WorldDownload)</a></li>
 </ol>
 </li>
 </ol>
@@ -114,63 +91,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="FileDownload.DownloadCountingOutputStream.html" class="type-name-link" title="class in com.mojang.realmsclient.client">FileDownload.DownloadCountingOutputStream</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#cancelled" class="member-name-link">cancelled</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#currentThread" class="member-name-link">currentThread</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#error" class="member-name-link">error</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#extracting" class="member-name-link">extracting</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#finished" class="member-name-link">finished</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#INVALID_FILE_NAMES" class="member-name-link">INVALID_FILE_NAMES</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#pendingRequest" class="member-name-link">pendingRequest</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></code></div>
-<div class="col-second even-row-color"><code><a href="#resourcePackPath" class="member-name-link">resourcePackPath</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#tempFile" class="member-name-link">tempFile</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -201,155 +121,36 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/OptionalLong.html" title="class or interface in java.util" class="external-link">OptionalLong</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#contentLength(java.lang.String)" class="member-name-link">contentLength</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;downloadLink)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html" title="class or interface in java.net.http" class="external-link">HttpClient</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createClient()" class="member-name-link">createClient</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpRequest.Builder.html" title="class or interface in java.net.http" class="external-link">HttpRequest.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createRequest(java.lang.String)" class="member-name-link">createRequest</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;downloadLink)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#download(com.mojang.realmsclient.dto.WorldDownload,java.lang.String,com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus,net.minecraft.world.level.storage.LevelStorageSource)" class="member-name-link">download</a><wbr>(<a href="../dto/WorldDownload.html" title="class in com.mojang.realmsclient.dto">WorldDownload</a>&nbsp;worldDownload,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
  <a href="../gui/screens/RealmsDownloadLatestWorldScreen.DownloadStatus.html" title="class in com.mojang.realmsclient.gui.screens">RealmsDownloadLatestWorldScreen.DownloadStatus</a>&nbsp;downloadStatus,
  <a href="../../../../net/minecraft/world/level/storage/LevelStorageSource.html" title="class in net.minecraft.world.level.storage">LevelStorageSource</a>&nbsp;levelStorageSource)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#download(com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus,java.net.http.HttpClient,java.lang.String,java.io.File)" class="member-name-link">download</a><wbr>(<a href="../gui/screens/RealmsDownloadLatestWorldScreen.DownloadStatus.html" title="class in com.mojang.realmsclient.gui.screens">RealmsDownloadLatestWorldScreen.DownloadStatus</a>&nbsp;downloadStatus,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html" title="class or interface in java.net.http" class="external-link">HttpClient</a>&nbsp;client,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;url,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;target)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findAvailableFolderName(java.lang.String)" class="member-name-link">findAvailableFolderName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;folder)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#finishResourcePackDownload(com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus,java.io.File,com.mojang.realmsclient.dto.WorldDownload)" class="member-name-link">finishResourcePackDownload</a><wbr>(<a href="../gui/screens/RealmsDownloadLatestWorldScreen.DownloadStatus.html" title="class in com.mojang.realmsclient.gui.screens">RealmsDownloadLatestWorldScreen.DownloadStatus</a>&nbsp;downloadStatus,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;tempFile,
- <a href="../dto/WorldDownload.html" title="class in com.mojang.realmsclient.dto">WorldDownload</a>&nbsp;worldDownload)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#finishWorldDownload(java.lang.String,java.io.File,net.minecraft.world.level.storage.LevelStorageSource,com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus)" class="member-name-link">finishWorldDownload</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;tempFile,
- <a href="../../../../net/minecraft/world/level/storage/LevelStorageSource.html" title="class in net.minecraft.world.level.storage">LevelStorageSource</a>&nbsp;levelStorageSource,
- <a href="../gui/screens/RealmsDownloadLatestWorldScreen.DownloadStatus.html" title="class in com.mojang.realmsclient.gui.screens">RealmsDownloadLatestWorldScreen.DownloadStatus</a>&nbsp;downloadStatus)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findAvailableFolderName(java.lang.String)" class="member-name-link">findAvailableFolderName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;folder)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isError()" class="member-name-link">isError</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isError()" class="member-name-link">isError</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isExtracting()" class="member-name-link">isExtracting</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isExtracting()" class="member-name-link">isExtracting</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFinished()" class="member-name-link">isFinished</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFinished()" class="member-name-link">isFinished</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private &lt;T&gt;&nbsp;@Nullable T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#joinCancellableRequest(java.util.concurrent.CompletableFuture)" class="member-name-link">joinCancellableRequest</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;T&gt;&nbsp;pendingRequest)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#untarGzipArchive(java.lang.String,java.io.File,net.minecraft.world.level.storage.LevelStorageSource)" class="member-name-link">untarGzipArchive</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;file,
- <a href="../../../../net/minecraft/world/level/storage/LevelStorageSource.html" title="class in net.minecraft.world.level.storage">LevelStorageSource</a>&nbsp;levelStorageSource)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cancelled">
-<h3>cancelled</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">cancelled</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="finished">
-<h3>finished</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">finished</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="error">
-<h3>error</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">error</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="extracting">
-<h3>extracting</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">extracting</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="tempFile">
-<h3>tempFile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></span>&nbsp;<span class="element-name">tempFile</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resourcePackPath">
-<h3>resourcePackPath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></span>&nbsp;<span class="element-name">resourcePackPath</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pendingRequest">
-<h3>pendingRequest</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;?&gt;</span>&nbsp;<span class="element-name">pendingRequest</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="currentThread">
-<h3>currentThread</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></span>&nbsp;<span class="element-name">currentThread</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="INVALID_FILE_NAMES">
-<h3>INVALID_FILE_NAMES</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">INVALID_FILE_NAMES</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -372,35 +173,6 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="joinCancellableRequest(java.util.concurrent.CompletableFuture)">
-<h3>joinCancellableRequest</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">@Nullable T</span>&nbsp;<span class="element-name">joinCancellableRequest</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;T&gt;&nbsp;pendingRequest)</span>
-                                        throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createClient()">
-<h3>createClient</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html" title="class or interface in java.net.http" class="external-link">HttpClient</a></span>&nbsp;<span class="element-name">createClient</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createRequest(java.lang.String)">
-<h3>createRequest</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpRequest.Builder.html" title="class or interface in java.net.http" class="external-link">HttpRequest.Builder</a></span>&nbsp;<span class="element-name">createRequest</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;downloadLink)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="contentLength(java.lang.String)">
 <h3>contentLength</h3>
 <div class="horizontal-scroll">
@@ -417,22 +189,6 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
  <a href="../gui/screens/RealmsDownloadLatestWorldScreen.DownloadStatus.html" title="class in com.mojang.realmsclient.gui.screens">RealmsDownloadLatestWorldScreen.DownloadStatus</a>&nbsp;downloadStatus,
  <a href="../../../../net/minecraft/world/level/storage/LevelStorageSource.html" title="class in net.minecraft.world.level.storage">LevelStorageSource</a>&nbsp;levelStorageSource)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="download(com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus,java.net.http.HttpClient,java.lang.String,java.io.File)">
-<h3>download</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">download</span><wbr><span class="parameters">(<a href="../gui/screens/RealmsDownloadLatestWorldScreen.DownloadStatus.html" title="class in com.mojang.realmsclient.gui.screens">RealmsDownloadLatestWorldScreen.DownloadStatus</a>&nbsp;downloadStatus,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html" title="class or interface in java.net.http" class="external-link">HttpClient</a>&nbsp;client,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;url,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;target)</span>
-               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
 </div>
 </section>
 </li>
@@ -473,42 +229,6 @@ loadScripts(document, 'script');</script>
 <h3>findAvailableFolderName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">findAvailableFolderName</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;folder)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="untarGzipArchive(java.lang.String,java.io.File,net.minecraft.world.level.storage.LevelStorageSource)">
-<h3>untarGzipArchive</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">untarGzipArchive</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;file,
- <a href="../../../../net/minecraft/world/level/storage/LevelStorageSource.html" title="class in net.minecraft.world.level.storage">LevelStorageSource</a>&nbsp;levelStorageSource)</span>
-                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="finishWorldDownload(java.lang.String,java.io.File,net.minecraft.world.level.storage.LevelStorageSource,com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus)">
-<h3>finishWorldDownload</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">finishWorldDownload</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;worldName,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;tempFile,
- <a href="../../../../net/minecraft/world/level/storage/LevelStorageSource.html" title="class in net.minecraft.world.level.storage">LevelStorageSource</a>&nbsp;levelStorageSource,
- <a href="../gui/screens/RealmsDownloadLatestWorldScreen.DownloadStatus.html" title="class in com.mojang.realmsclient.gui.screens">RealmsDownloadLatestWorldScreen.DownloadStatus</a>&nbsp;downloadStatus)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="finishResourcePackDownload(com.mojang.realmsclient.gui.screens.RealmsDownloadLatestWorldScreen.DownloadStatus,java.io.File,com.mojang.realmsclient.dto.WorldDownload)">
-<h3>finishResourcePackDownload</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">finishResourcePackDownload</span><wbr><span class="parameters">(<a href="../gui/screens/RealmsDownloadLatestWorldScreen.DownloadStatus.html" title="class in com.mojang.realmsclient.gui.screens">RealmsDownloadLatestWorldScreen.DownloadStatus</a>&nbsp;downloadStatus,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;tempFile,
- <a href="../dto/WorldDownload.html" title="class in com.mojang.realmsclient.dto">WorldDownload</a>&nbsp;worldDownload)</span></div>
 </div>
 </section>
 </li>
