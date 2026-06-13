@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>StructureTemplate (NeoForge 26.1)</title>
+<title>StructureTemplate (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.levelgen.structure.templatesystem, class: StructureTemplate">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/StructureTemplate.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,7 +60,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
 <li><a href="#PALETTE_TAG" tabindex="0">PALETTE_TAG</a></li>
 <li><a href="#PALETTE_LIST_TAG" tabindex="0">PALETTE_LIST_TAG</a></li>
 <li><a href="#ENTITIES_TAG" tabindex="0">ENTITIES_TAG</a></li>
@@ -72,10 +71,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#ENTITY_TAG_BLOCKPOS" tabindex="0">ENTITY_TAG_BLOCKPOS</a></li>
 <li><a href="#ENTITY_TAG_NBT" tabindex="0">ENTITY_TAG_NBT</a></li>
 <li><a href="#SIZE_TAG" tabindex="0">SIZE_TAG</a></li>
-<li><a href="#palettes" tabindex="0">palettes</a></li>
-<li><a href="#entityInfoList" tabindex="0">entityInfoList</a></li>
-<li><a href="#size" tabindex="0">size</a></li>
-<li><a href="#author" tabindex="0">author</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -89,9 +84,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#setAuthor(java.lang.String)" tabindex="0">setAuthor(String)</a></li>
 <li><a href="#getAuthor()" tabindex="0">getAuthor()</a></li>
 <li><a href="#fillFromWorld(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Vec3i,boolean,java.util.List)" tabindex="0">fillFromWorld(Level, BlockPos, Vec3i, boolean, List)</a></li>
-<li><a href="#addToLists(net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.StructureBlockInfo,java.util.List,java.util.List,java.util.List)" tabindex="0">addToLists(StructureTemplate.StructureBlockInfo, List, List, List)</a></li>
-<li><a href="#buildInfoList(java.util.List,java.util.List,java.util.List)" tabindex="0">buildInfoList(List, List, List)</a></li>
-<li><a href="#fillEntityList(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.util.ProblemReporter)" tabindex="0">fillEntityList(Level, BlockPos, BlockPos, ProblemReporter)</a></li>
 <li><a href="#filterBlocks(net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.level.block.Block)" tabindex="0">filterBlocks(BlockPos, StructurePlaceSettings, Block)</a></li>
 <li><a href="#getJigsaws(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Rotation)" tabindex="0">getJigsaws(BlockPos, Rotation)</a></li>
 <li><a href="#filterBlocks(net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.level.block.Block,boolean)" tabindex="0">filterBlocks(BlockPos, StructurePlaceSettings, Block, boolean)</a></li>
@@ -104,8 +96,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#processBlockInfos(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List)" tabindex="0">processBlockInfos(ServerLevelAccessor, BlockPos, BlockPos, StructurePlaceSettings, List)</a></li>
 <li><a href="#processBlockInfos(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List,net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate)" tabindex="0">processBlockInfos(ServerLevelAccessor, BlockPos, BlockPos, StructurePlaceSettings, List, StructureTemplate)</a></li>
 <li><a href="#processEntityInfos(net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate,net.minecraft.world.level.LevelAccessor,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List)" tabindex="0">processEntityInfos(StructureTemplate, LevelAccessor, BlockPos, StructurePlaceSettings, List)</a></li>
-<li><a href="#addEntitiesToWorld(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.util.ProblemReporter)" tabindex="0">addEntitiesToWorld(ServerLevelAccessor, BlockPos, StructurePlaceSettings, ProblemReporter)</a></li>
-<li><a href="#createEntityIgnoreException(net.minecraft.util.ProblemReporter,net.minecraft.world.level.ServerLevelAccessor,net.minecraft.nbt.CompoundTag)" tabindex="0">createEntityIgnoreException(ProblemReporter, ServerLevelAccessor, CompoundTag)</a></li>
 <li><a href="#getSize(net.minecraft.world.level.block.Rotation)" tabindex="0">getSize(Rotation)</a></li>
 <li><a href="#transform(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos)" tabindex="0">transform(BlockPos, Mirror, Rotation, BlockPos)</a></li>
 <li><a href="#transform(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos)" tabindex="0">transform(Vec3, Mirror, Rotation, BlockPos)</a></li>
@@ -113,12 +103,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#getZeroPositionWithTransform(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation,int,int)" tabindex="0">getZeroPositionWithTransform(BlockPos, Mirror, Rotation, int, int)</a></li>
 <li><a href="#getBoundingBox(net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.core.BlockPos)" tabindex="0">getBoundingBox(StructurePlaceSettings, BlockPos)</a></li>
 <li><a href="#getBoundingBox(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror)" tabindex="0">getBoundingBox(BlockPos, Rotation, BlockPos, Mirror)</a></li>
-<li><a href="#getBoundingBox(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror,net.minecraft.core.Vec3i)" tabindex="0">getBoundingBox(BlockPos, Rotation, BlockPos, Mirror, Vec3i)</a></li>
 <li><a href="#save(net.minecraft.nbt.CompoundTag)" tabindex="0">save(CompoundTag)</a></li>
 <li><a href="#load(net.minecraft.core.HolderGetter,net.minecraft.nbt.CompoundTag)" tabindex="0">load(HolderGetter, CompoundTag)</a></li>
-<li><a href="#loadPalette(net.minecraft.core.HolderGetter,net.minecraft.nbt.ListTag,net.minecraft.nbt.ListTag)" tabindex="0">loadPalette(HolderGetter, ListTag, ListTag)</a></li>
-<li><a href="#newIntegerList(int...)" tabindex="0">newIntegerList(int...)</a></li>
-<li><a href="#newDoubleList(double...)" tabindex="0">newDoubleList(double...)</a></li>
 <li><a href="#getJointType(net.minecraft.nbt.CompoundTag,net.minecraft.world.level.block.state.BlockState)" tabindex="0">getJointType(CompoundTag, BlockState)</a></li>
 <li><a href="#getDefaultJointType(net.minecraft.world.level.block.state.BlockState)" tabindex="0">getDefaultJointType(BlockState)</a></li>
 </ol>
@@ -157,15 +143,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static final class&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="StructureTemplate.Palette.html" class="type-name-link" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.Palette</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="StructureTemplate.SimplePalette.html" class="type-name-link" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.SimplePalette</a></code></div>
+<div class="col-first even-row-color"><code>static final record&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="StructureTemplate.StructureBlockInfo.html" class="type-name-link" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final record&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="StructureTemplate.StructureBlockInfo.html" class="type-name-link" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a></code></div>
+<div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="StructureTemplate.StructureEntityInfo.html" class="type-name-link" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureEntityInfo</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="StructureTemplate.StructureEntityInfo.html" class="type-name-link" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureEntityInfo</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -178,54 +161,39 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#author" class="member-name-link">author</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#BLOCK_TAG_NBT" class="member-name-link">BLOCK_TAG_NBT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#BLOCK_TAG_NBT" class="member-name-link">BLOCK_TAG_NBT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#BLOCK_TAG_POS" class="member-name-link">BLOCK_TAG_POS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#BLOCK_TAG_POS" class="member-name-link">BLOCK_TAG_POS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#BLOCK_TAG_STATE" class="member-name-link">BLOCK_TAG_STATE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#BLOCK_TAG_STATE" class="member-name-link">BLOCK_TAG_STATE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#BLOCKS_TAG" class="member-name-link">BLOCKS_TAG</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#BLOCKS_TAG" class="member-name-link">BLOCKS_TAG</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ENTITIES_TAG" class="member-name-link">ENTITIES_TAG</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ENTITIES_TAG" class="member-name-link">ENTITIES_TAG</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ENTITY_TAG_BLOCKPOS" class="member-name-link">ENTITY_TAG_BLOCKPOS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#ENTITY_TAG_BLOCKPOS" class="member-name-link">ENTITY_TAG_BLOCKPOS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ENTITY_TAG_NBT" class="member-name-link">ENTITY_TAG_NBT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ENTITY_TAG_NBT" class="member-name-link">ENTITY_TAG_NBT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ENTITY_TAG_POS" class="member-name-link">ENTITY_TAG_POS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#ENTITY_TAG_POS" class="member-name-link">ENTITY_TAG_POS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureEntityInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureEntityInfo</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#entityInfoList" class="member-name-link">entityInfoList</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#PALETTE_LIST_TAG" class="member-name-link">PALETTE_LIST_TAG</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#PALETTE_LIST_TAG" class="member-name-link">PALETTE_LIST_TAG</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#PALETTE_TAG" class="member-name-link">PALETTE_TAG</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#PALETTE_TAG" class="member-name-link">PALETTE_TAG</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SIZE_TAG" class="member-name-link">SIZE_TAG</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.Palette.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.Palette</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#palettes" class="member-name-link">palettes</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="../../../../../core/Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second even-row-color"><code><a href="#size" class="member-name-link">size</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SIZE_TAG" class="member-name-link">SIZE_TAG</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -253,78 +221,43 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEntitiesToWorld(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.util.ProblemReporter)" class="member-name-link">addEntitiesToWorld</a><wbr>(<a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
- <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;placementIn,
- <a href="../../../../../util/ProblemReporter.html" title="interface in net.minecraft.util">ProblemReporter</a>&nbsp;problemReporter)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addToLists(net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.StructureBlockInfo,java.util.List,java.util.List,java.util.List)" class="member-name-link">addToLists</a><wbr>(<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&nbsp;info,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;fullBlockList,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;blockEntitiesList,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;otherBlocksList)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#buildInfoList(java.util.List,java.util.List,java.util.List)" class="member-name-link">buildInfoList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;fullBlockList,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;blockEntitiesList,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;otherBlocksList)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateConnectedPosition(net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.core.BlockPos)" class="member-name-link">calculateConnectedPosition</a><wbr>(<a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings1,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateConnectedPosition(net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.core.BlockPos)" class="member-name-link">calculateConnectedPosition</a><wbr>(<a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings1,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;connection1,
  <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings2,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;connection2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#calculateRelativePosition(net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.core.BlockPos)" class="member-name-link">calculateRelativePosition</a><wbr>(<a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createEntityIgnoreException(net.minecraft.util.ProblemReporter,net.minecraft.world.level.ServerLevelAccessor,net.minecraft.nbt.CompoundTag)" class="member-name-link">createEntityIgnoreException</a><wbr>(<a href="../../../../../util/ProblemReporter.html" title="interface in net.minecraft.util">ProblemReporter</a>&nbsp;reporter,
- <a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
- <a href="../../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fillEntityList(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.util.ProblemReporter)" class="member-name-link">fillEntityList</a><wbr>(<a href="../../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;minCorner,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;maxCorner,
- <a href="../../../../../util/ProblemReporter.html" title="interface in net.minecraft.util">ProblemReporter</a>&nbsp;reporter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fillFromWorld(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Vec3i,boolean,java.util.List)" class="member-name-link">fillFromWorld</a><wbr>(<a href="../../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#calculateRelativePosition(net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.core.BlockPos)" class="member-name-link">calculateRelativePosition</a><wbr>(<a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings,
+ <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fillFromWorld(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Vec3i,boolean,java.util.List)" class="member-name-link">fillFromWorld</a><wbr>(<a href="../../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
  <a href="../../../../../core/Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&nbsp;size,
  boolean&nbsp;inludeEntities,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&gt;&nbsp;ignoreBlocks)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterBlocks(net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.level.block.Block)" class="member-name-link">filterBlocks</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterBlocks(net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.level.block.Block)" class="member-name-link">filterBlocks</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
  <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings,
  <a href="../../../block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;block)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>it.unimi.dsi.fastutil.objects.ObjectArrayList<wbr>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterBlocks(net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.level.block.Block,boolean)" class="member-name-link">filterBlocks</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/objects/ObjectArrayList.html" title="class or interface in it.unimi.dsi.fastutil.objects" class="external-link">ObjectArrayList</a><wbr>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterBlocks(net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.level.block.Block,boolean)" class="member-name-link">filterBlocks</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
  <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings,
  <a href="../../../block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;block,
  boolean&nbsp;absolute)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAuthor()" class="member-name-link">getAuthor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../BoundingBox.html" title="class in net.minecraft.world.level.levelgen.structure">BoundingBox</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundingBox(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror)" class="member-name-link">getBoundingBox</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAuthor()" class="member-name-link">getAuthor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../BoundingBox.html" title="class in net.minecraft.world.level.levelgen.structure">BoundingBox</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundingBox(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror)" class="member-name-link">getBoundingBox</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
  <a href="../../../block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pivot,
  <a href="../../../block/Mirror.html" title="enum class in net.minecraft.world.level.block">Mirror</a>&nbsp;mirror)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static <a href="../BoundingBox.html" title="class in net.minecraft.world.level.levelgen.structure">BoundingBox</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBoundingBox(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror,net.minecraft.core.Vec3i)" class="member-name-link">getBoundingBox</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
- <a href="../../../block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pivot,
- <a href="../../../block/Mirror.html" title="enum class in net.minecraft.world.level.block">Mirror</a>&nbsp;mirror,
- <a href="../../../../../core/Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&nbsp;size)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../BoundingBox.html" title="class in net.minecraft.world.level.levelgen.structure">BoundingBox</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundingBox(net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.core.BlockPos)" class="member-name-link">getBoundingBox</a><wbr>(<a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position)</code></div>
@@ -362,93 +295,82 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(net.minecraft.core.HolderGetter,net.minecraft.nbt.CompoundTag)" class="member-name-link">load</a><wbr>(<a href="../../../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&gt;&nbsp;blockLookup,
  <a href="../../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadPalette(net.minecraft.core.HolderGetter,net.minecraft.nbt.ListTag,net.minecraft.nbt.ListTag)" class="member-name-link">loadPalette</a><wbr>(<a href="../../../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&gt;&nbsp;blockLookup,
- <a href="../../../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a>&nbsp;paletteList,
- <a href="../../../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a>&nbsp;blockList)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newDoubleList(double...)" class="member-name-link">newDoubleList</a><wbr>(double...&nbsp;values)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newIntegerList(int...)" class="member-name-link">newIntegerList</a><wbr>(int...&nbsp;values)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#placeInWorld(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.util.RandomSource,int)" class="member-name-link">placeInWorld</a><wbr>(<a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#placeInWorld(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.util.RandomSource,int)" class="member-name-link">placeInWorld</a><wbr>(<a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;referencePos,
  <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings,
  <a href="../../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
  int&nbsp;updateMode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#processBlockInfos(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List)" class="member-name-link">processBlockInfos</a><wbr>(<a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#processBlockInfos(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List)" class="member-name-link">processBlockInfos</a><wbr>(<a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;referencePos,
  <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;blockInfoList)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">Forge: Use <a href="#processBlockInfos(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List,net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate)"><code>processBlockInfos(ServerLevelAccessor, BlockPos, BlockPos, StructurePlaceSettings, List, StructureTemplate)</code></a> instead.</div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#processBlockInfos(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List,net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate)" class="member-name-link">processBlockInfos</a><wbr>(<a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#processBlockInfos(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List,net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate)" class="member-name-link">processBlockInfos</a><wbr>(<a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;referencePos,
  <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;blockInfoList,
  @Nullable <a href="StructureTemplate.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate</a>&nbsp;template)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureEntityInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureEntityInfo</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#processEntityInfos(net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate,net.minecraft.world.level.LevelAccessor,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List)" class="member-name-link">processEntityInfos</a><wbr>(@Nullable <a href="StructureTemplate.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate</a>&nbsp;template,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="StructureTemplate.StructureEntityInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureEntityInfo</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#processEntityInfos(net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate,net.minecraft.world.level.LevelAccessor,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,java.util.List)" class="member-name-link">processEntityInfos</a><wbr>(@Nullable <a href="StructureTemplate.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate</a>&nbsp;template,
  <a href="../../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;p_215387_0_,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;p_215387_1_,
  <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;p_215387_2_,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureEntityInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureEntityInfo</a>&gt;&nbsp;p_215387_3_)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save(net.minecraft.nbt.CompoundTag)" class="member-name-link">save</a><wbr>(<a href="../../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAuthor(java.lang.String)" class="member-name-link">setAuthor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;author)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transform(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos)" class="member-name-link">transform</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../../block/Mirror.html" title="enum class in net.minecraft.world.level.block">Mirror</a>&nbsp;mirror,
- <a href="../../../block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pivot)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transform(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos)" class="member-name-link">transform</a><wbr>(<a href="../../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save(net.minecraft.nbt.CompoundTag)" class="member-name-link">save</a><wbr>(<a href="../../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAuthor(java.lang.String)" class="member-name-link">setAuthor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;author)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transform(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos)" class="member-name-link">transform</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../../../block/Mirror.html" title="enum class in net.minecraft.world.level.block">Mirror</a>&nbsp;mirror,
  <a href="../../../block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pivot)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transformedVec3d(net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.phys.Vec3)" class="member-name-link">transformedVec3d</a><wbr>(<a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;placementIn,
- <a href="../../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transform(net.minecraft.world.phys.Vec3,net.minecraft.world.level.block.Mirror,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos)" class="member-name-link">transform</a><wbr>(<a href="../../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos,
+ <a href="../../../block/Mirror.html" title="enum class in net.minecraft.world.level.block">Mirror</a>&nbsp;mirror,
+ <a href="../../../block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation,
+ <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pivot)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateShapeAtEdge(net.minecraft.world.level.LevelAccessor,int,net.minecraft.world.phys.shapes.DiscreteVoxelShape,int,int,int)" class="member-name-link">updateShapeAtEdge</a><wbr>(<a href="../../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transformedVec3d(net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.phys.Vec3)" class="member-name-link">transformedVec3d</a><wbr>(<a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;placementIn,
+ <a href="../../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateShapeAtEdge(net.minecraft.world.level.LevelAccessor,int,net.minecraft.world.phys.shapes.DiscreteVoxelShape,int,int,int)" class="member-name-link">updateShapeAtEdge</a><wbr>(<a href="../../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
  int&nbsp;updateMode,
  <a href="../../../../phys/shapes/DiscreteVoxelShape.html" title="class in net.minecraft.world.phys.shapes">DiscreteVoxelShape</a>&nbsp;shape,
  int&nbsp;startX,
  int&nbsp;startY,
  int&nbsp;startZ)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateShapeAtEdge(net.minecraft.world.level.LevelAccessor,int,net.minecraft.world.phys.shapes.DiscreteVoxelShape,net.minecraft.core.BlockPos)" class="member-name-link">updateShapeAtEdge</a><wbr>(<a href="../../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateShapeAtEdge(net.minecraft.world.level.LevelAccessor,int,net.minecraft.world.phys.shapes.DiscreteVoxelShape,net.minecraft.core.BlockPos)" class="member-name-link">updateShapeAtEdge</a><wbr>(<a href="../../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
  int&nbsp;updateMode,
  <a href="../../../../phys/shapes/DiscreteVoxelShape.html" title="class in net.minecraft.world.phys.shapes">DiscreteVoxelShape</a>&nbsp;shape,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -460,14 +382,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="PALETTE_TAG">
 <h3>PALETTE_TAG</h3>
@@ -644,38 +558,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="palettes">
-<h3>palettes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.Palette.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.Palette</a>&gt;</span>&nbsp;<span class="element-name">palettes</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="entityInfoList">
-<h3>entityInfoList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureEntityInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureEntityInfo</a>&gt;</span>&nbsp;<span class="element-name">entityInfoList</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="size">
-<h3>size</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../../core/Vec3i.html" title="class in net.minecraft.core">Vec3i</a></span>&nbsp;<span class="element-name">size</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="author">
-<h3>author</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">author</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -737,38 +619,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="addToLists(net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.StructureBlockInfo,java.util.List,java.util.List,java.util.List)">
-<h3>addToLists</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addToLists</span><wbr><span class="parameters">(<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&nbsp;info,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;fullBlockList,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;blockEntitiesList,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;otherBlocksList)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="buildInfoList(java.util.List,java.util.List,java.util.List)">
-<h3>buildInfoList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</span>&nbsp;<span class="element-name">buildInfoList</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;fullBlockList,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;blockEntitiesList,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;&nbsp;otherBlocksList)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fillEntityList(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.BlockPos,net.minecraft.util.ProblemReporter)">
-<h3>fillEntityList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fillEntityList</span><wbr><span class="parameters">(<a href="../../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;minCorner,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;maxCorner,
- <a href="../../../../../util/ProblemReporter.html" title="interface in net.minecraft.util">ProblemReporter</a>&nbsp;reporter)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="filterBlocks(net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.level.block.Block)">
 <h3>filterBlocks</h3>
 <div class="horizontal-scroll">
@@ -791,7 +641,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="filterBlocks(net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.world.level.block.Block,boolean)">
 <h3>filterBlocks</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.ObjectArrayList&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</span>&nbsp;<span class="element-name">filterBlocks</span><wbr><span class="parameters">(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/objects/ObjectArrayList.html" title="class or interface in it.unimi.dsi.fastutil.objects" class="external-link">ObjectArrayList</a>&lt;<a href="StructureTemplate.StructureBlockInfo.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructureTemplate.StructureBlockInfo</a>&gt;</span>&nbsp;<span class="element-name">filterBlocks</span><wbr><span class="parameters">(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
  <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;settings,
  <a href="../../../block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;block,
  boolean&nbsp;absolute)</span></div>
@@ -906,27 +756,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="addEntitiesToWorld(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings,net.minecraft.util.ProblemReporter)">
-<h3>addEntitiesToWorld</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEntitiesToWorld</span><wbr><span class="parameters">(<a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
- <a href="StructurePlaceSettings.html" title="class in net.minecraft.world.level.levelgen.structure.templatesystem">StructurePlaceSettings</a>&nbsp;placementIn,
- <a href="../../../../../util/ProblemReporter.html" title="interface in net.minecraft.util">ProblemReporter</a>&nbsp;problemReporter)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createEntityIgnoreException(net.minecraft.util.ProblemReporter,net.minecraft.world.level.ServerLevelAccessor,net.minecraft.nbt.CompoundTag)">
-<h3>createEntityIgnoreException</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</span>&nbsp;<span class="element-name">createEntityIgnoreException</span><wbr><span class="parameters">(<a href="../../../../../util/ProblemReporter.html" title="interface in net.minecraft.util">ProblemReporter</a>&nbsp;reporter,
- <a href="../../../ServerLevelAccessor.html" title="interface in net.minecraft.world.level">ServerLevelAccessor</a>&nbsp;level,
- <a href="../../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getSize(net.minecraft.world.level.block.Rotation)">
 <h3>getSize</h3>
 <div class="horizontal-scroll">
@@ -999,18 +828,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getBoundingBox(net.minecraft.core.BlockPos,net.minecraft.world.level.block.Rotation,net.minecraft.core.BlockPos,net.minecraft.world.level.block.Mirror,net.minecraft.core.Vec3i)">
-<h3>getBoundingBox</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type"><a href="../BoundingBox.html" title="class in net.minecraft.world.level.levelgen.structure">BoundingBox</a></span>&nbsp;<span class="element-name">getBoundingBox</span><wbr><span class="parameters">(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;position,
- <a href="../../../block/Rotation.html" title="enum class in net.minecraft.world.level.block">Rotation</a>&nbsp;rotation,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pivot,
- <a href="../../../block/Mirror.html" title="enum class in net.minecraft.world.level.block">Mirror</a>&nbsp;mirror,
- <a href="../../../../../core/Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&nbsp;size)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="save(net.minecraft.nbt.CompoundTag)">
 <h3>save</h3>
 <div class="horizontal-scroll">
@@ -1024,32 +841,6 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../../../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&gt;&nbsp;blockLookup,
  <a href="../../../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="loadPalette(net.minecraft.core.HolderGetter,net.minecraft.nbt.ListTag,net.minecraft.nbt.ListTag)">
-<h3>loadPalette</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadPalette</span><wbr><span class="parameters">(<a href="../../../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&gt;&nbsp;blockLookup,
- <a href="../../../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a>&nbsp;paletteList,
- <a href="../../../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a>&nbsp;blockList)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="newIntegerList(int...)">
-<h3>newIntegerList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a></span>&nbsp;<span class="element-name">newIntegerList</span><wbr><span class="parameters">(int...&nbsp;values)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="newDoubleList(double...)">
-<h3>newDoubleList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a></span>&nbsp;<span class="element-name">newDoubleList</span><wbr><span class="parameters">(double...&nbsp;values)</span></div>
 </div>
 </section>
 </li>

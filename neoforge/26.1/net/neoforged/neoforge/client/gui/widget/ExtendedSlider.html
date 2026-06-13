@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ExtendedSlider (NeoForge 26.1)</title>
+<title>ExtendedSlider (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.client.gui.widget, class: ExtendedSlider">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ExtendedSlider.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -58,17 +58,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#prefix" tabindex="0">prefix</a></li>
-<li><a href="#suffix" tabindex="0">suffix</a></li>
-<li><a href="#minValue" tabindex="0">minValue</a></li>
-<li><a href="#maxValue" tabindex="0">maxValue</a></li>
-<li><a href="#stepSize" tabindex="0">stepSize</a></li>
-<li><a href="#drawString" tabindex="0">drawString</a></li>
-<li><a href="#format" tabindex="0">format</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(int,int,int,int,net.minecraft.network.chat.Component,net.minecraft.network.chat.Component,double,double,double,double,int,boolean)" tabindex="0">ExtendedSlider(int, int, int, int, Component, Component, double, double, double, double, int, boolean)</a></li>
@@ -83,13 +72,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#setValue(double)" tabindex="0">setValue(double)</a></li>
 <li><a href="#getValueString()" tabindex="0">getValueString()</a></li>
 <li><a href="#onClick(net.minecraft.client.input.MouseButtonEvent,boolean)" tabindex="0">onClick(MouseButtonEvent, boolean)</a></li>
-<li><a href="#onDrag(net.minecraft.client.input.MouseButtonEvent,double,double)" tabindex="0">onDrag(MouseButtonEvent, double, double)</a></li>
 <li><a href="#keyPressed(net.minecraft.client.input.KeyEvent)" tabindex="0">keyPressed(KeyEvent)</a></li>
-<li><a href="#setValueFromMouse(double)" tabindex="0">setValueFromMouse(double)</a></li>
-<li><a href="#setFractionalValue(double)" tabindex="0">setFractionalValue(double)</a></li>
-<li><a href="#snapToNearest(double)" tabindex="0">snapToNearest(double)</a></li>
-<li><a href="#updateMessage()" tabindex="0">updateMessage()</a></li>
-<li><a href="#applyValue()" tabindex="0">applyValue()</a></li>
 <li><a href="#extractWidgetRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" tabindex="0">extractWidgetRenderState(GuiGraphicsExtractor, int, int, float)</a></li>
 </ol>
 </li>
@@ -119,6 +102,11 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ExtendedSlider</span>
 <span class="extends-implements">extends <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html" title="class in net.minecraft.client.gui.components">AbstractSliderButton</a></span></div>
 <div class="block">Slider widget implementation which allows inputting values in a certain range with optional step size.</div>
+<dl class="notes">
+<dt><em>Implementation Note:</em></dt>
+<dd>Note that <code>AbstractSliderButton.value</code> is the fractional progress of the slider from 0 to 1,
+          whereas <a href="#getValue()"><code>getValue()</code></a> is the actual value from <code>minValue</code> to <code>maxValue</code>.</dd>
+</dl>
 </div>
 </section>
 <section class="summary">
@@ -139,41 +127,12 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#drawString" class="member-name-link">drawString</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/DecimalFormat.html" title="class or interface in java.text" class="external-link">DecimalFormat</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#format" class="member-name-link">format</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected double</code></div>
-<div class="col-second even-row-color"><code><a href="#maxValue" class="member-name-link">maxValue</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected double</code></div>
-<div class="col-second odd-row-color"><code><a href="#minValue" class="member-name-link">minValue</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected <a href="../../../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second even-row-color"><code><a href="#prefix" class="member-name-link">prefix</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected double</code></div>
-<div class="col-second odd-row-color"><code><a href="#stepSize" class="member-name-link">stepSize</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Allows input of discontinuous values with a certain step</div>
-</div>
-<div class="col-first even-row-color"><code>protected <a href="../../../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second even-row-color"><code><a href="#suffix" class="member-name-link">suffix</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.gui.components.AbstractSliderButton">Fields inherited from class&nbsp;<a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#field-summary" title="class in net.minecraft.client.gui.components">AbstractSliderButton</a></h3>
-<code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#canChangeValue">canChangeValue</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#DEFAULT_HEIGHT">DEFAULT_HEIGHT</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#dragging">dragging</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#HANDLE_WIDTH">HANDLE_WIDTH</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#TEXT_MARGIN">TEXT_MARGIN</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#value">value</a></code></div>
+<code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#DEFAULT_HEIGHT">DEFAULT_HEIGHT</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.gui.components.AbstractWidget">Fields inherited from class&nbsp;<a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#field-summary" title="class in net.minecraft.client.gui.components">AbstractWidget</a></h3>
-<code><a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#active">active</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#alpha">alpha</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#height">height</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isHovered">isHovered</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#message">message</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#packedFGColor">packedFGColor</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#UNSET_FG_COLOR">UNSET_FG_COLOR</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#visible">visible</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#width">width</a></code></div>
+<code><a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#active">active</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#UNSET_FG_COLOR">UNSET_FG_COLOR</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#visible">visible</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -224,71 +183,49 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyValue()" class="member-name-link">applyValue</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extractWidgetRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">extractWidgetRenderState</a><wbr>(<a href="../../../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extractWidgetRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">extractWidgetRenderState</a><wbr>(<a href="../../../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
  int&nbsp;mouseX,
  int&nbsp;mouseY,
  float&nbsp;partialTick)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValue()" class="member-name-link">getValue</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueInt()" class="member-name-link">getValueInt</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValue()" class="member-name-link">getValue</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueLong()" class="member-name-link">getValueLong</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueInt()" class="member-name-link">getValueInt</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueString()" class="member-name-link">getValueString</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueLong()" class="member-name-link">getValueLong</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keyPressed(net.minecraft.client.input.KeyEvent)" class="member-name-link">keyPressed</a><wbr>(<a href="../../../../../minecraft/client/input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;keyEvent)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getValueString()" class="member-name-link">getValueString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onClick(net.minecraft.client.input.MouseButtonEvent,boolean)" class="member-name-link">onClick</a><wbr>(<a href="../../../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;event,
- boolean&nbsp;doubleClick)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDrag(net.minecraft.client.input.MouseButtonEvent,double,double)" class="member-name-link">onDrag</a><wbr>(<a href="../../../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;event,
- double&nbsp;dragX,
- double&nbsp;dragY)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFractionalValue(double)" class="member-name-link">setFractionalValue</a><wbr>(double&nbsp;fractionalValue)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keyPressed(net.minecraft.client.input.KeyEvent)" class="member-name-link">keyPressed</a><wbr>(<a href="../../../../../minecraft/client/input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;keyEvent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setValue(double)" class="member-name-link">setValue</a><wbr>(double&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onClick(net.minecraft.client.input.MouseButtonEvent,boolean)" class="member-name-link">onClick</a><wbr>(<a href="../../../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;event,
+ boolean&nbsp;doubleClick)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setValueFromMouse(double)" class="member-name-link">setValueFromMouse</a><wbr>(double&nbsp;mouseX)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#snapToNearest(double)" class="member-name-link">snapToNearest</a><wbr>(double&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Snaps the value, so that the displayed value is the nearest multiple of <code>stepSize</code>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateMessage()" class="member-name-link">updateMessage</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setValue(double)" class="member-name-link">setValue</a><wbr>(double&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.gui.components.AbstractSliderButton">Methods inherited from class&nbsp;<a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#method-summary" title="class in net.minecraft.client.gui.components">AbstractSliderButton</a></h3>
-<code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#createNarrationMessage()" title="createNarrationMessage()">createNarrationMessage</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#getHandleSprite()" title="getHandleSprite()">getHandleSprite</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#getSprite()" title="getSprite()">getSprite</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#handleCursor(net.minecraft.client.gui.GuiGraphicsExtractor)" title="handleCursor(GuiGraphicsExtractor)">handleCursor</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#onRelease(net.minecraft.client.input.MouseButtonEvent)" title="onRelease(MouseButtonEvent)">onRelease</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#playDownSound(net.minecraft.client.sounds.SoundManager)" title="playDownSound(SoundManager)">playDownSound</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#setFocused(boolean)" title="setFocused(boolean)">setFocused</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#updateWidgetNarration(net.minecraft.client.gui.narration.NarrationElementOutput)" title="updateWidgetNarration(NarrationElementOutput)">updateWidgetNarration</a></code></div>
+<code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#onRelease(net.minecraft.client.input.MouseButtonEvent)" title="onRelease(MouseButtonEvent)">onRelease</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#playDownSound(net.minecraft.client.sounds.SoundManager)" title="playDownSound(SoundManager)">playDownSound</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#setFocused(boolean)" title="setFocused(boolean)">setFocused</a>, <a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#updateWidgetNarration(net.minecraft.client.gui.narration.NarrationElementOutput)" title="updateWidgetNarration(NarrationElementOutput)">updateWidgetNarration</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.gui.components.AbstractWidget.WithInactiveMessage">Methods inherited from class&nbsp;<a href="../../../../../minecraft/client/gui/components/AbstractWidget.WithInactiveMessage.html#method-summary" title="class in net.minecraft.client.gui.components">AbstractWidget.WithInactiveMessage</a></h3>
 <code><a href="../../../../../minecraft/client/gui/components/AbstractWidget.WithInactiveMessage.html#defaultInactiveMessage(net.minecraft.network.chat.Component)" title="defaultInactiveMessage(Component)">defaultInactiveMessage</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.WithInactiveMessage.html#getMessage()" title="getMessage()">getMessage</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.WithInactiveMessage.html#setMessage(net.minecraft.network.chat.Component)" title="setMessage(Component)">setMessage</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.gui.components.AbstractWidget">Methods inherited from class&nbsp;<a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#method-summary" title="class in net.minecraft.client.gui.components">AbstractWidget</a></h3>
-<code><a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#clearFGColor()" title="clearFGColor()">clearFGColor</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#defaultButtonNarrationText(net.minecraft.client.gui.narration.NarrationElementOutput)" title="defaultButtonNarrationText(NarrationElementOutput)">defaultButtonNarrationText</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#extractRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" title="extractRenderState(GuiGraphicsExtractor, int, int, float)">extractRenderState</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#extractScrollingStringOverContents(net.minecraft.client.gui.ActiveTextCollector,net.minecraft.network.chat.Component,int)" title="extractScrollingStringOverContents(ActiveTextCollector, Component, int)">extractScrollingStringOverContents</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getAlpha()" title="getAlpha()">getAlpha</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getBottom()" title="getBottom()">getBottom</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getFGColor()" title="getFGColor()">getFGColor</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getHeight()" title="getHeight()">getHeight</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getRectangle()" title="getRectangle()">getRectangle</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getRight()" title="getRight()">getRight</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getTabOrderGroup()" title="getTabOrderGroup()">getTabOrderGroup</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getWidth()" title="getWidth()">getWidth</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getX()" title="getX()">getX</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getY()" title="getY()">getY</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isActive()" title="isActive()">isActive</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isFocused()" title="isFocused()">isFocused</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isHovered()" title="isHovered()">isHovered</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isHoveredOrFocused()" title="isHoveredOrFocused()">isHoveredOrFocused</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isMouseOver(double,double)" title="isMouseOver(double, double)">isMouseOver</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isValidClickButton(net.minecraft.client.input.MouseButtonInfo)" title="isValidClickButton(MouseButtonInfo)">isValidClickButton</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#mouseClicked(net.minecraft.client.input.MouseButtonEvent,boolean)" title="mouseClicked(MouseButtonEvent, boolean)">mouseClicked</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#mouseDragged(net.minecraft.client.input.MouseButtonEvent,double,double)" title="mouseDragged(MouseButtonEvent, double, double)">mouseDragged</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#mouseReleased(net.minecraft.client.input.MouseButtonEvent)" title="mouseReleased(MouseButtonEvent)">mouseReleased</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#narrationPriority()" title="narrationPriority()">narrationPriority</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#nextFocusPath(net.minecraft.client.gui.navigation.FocusNavigationEvent)" title="nextFocusPath(FocusNavigationEvent)">nextFocusPath</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#playButtonClickSound(net.minecraft.client.sounds.SoundManager)" title="playButtonClickSound(SoundManager)">playButtonClickSound</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setAlpha(float)" title="setAlpha(float)">setAlpha</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setFGColor(int)" title="setFGColor(int)">setFGColor</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setHeight(int)" title="setHeight(int)">setHeight</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setRectangle(int,int,int,int)" title="setRectangle(int, int, int, int)">setRectangle</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setSize(int,int)" title="setSize(int, int)">setSize</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setTabOrderGroup(int)" title="setTabOrderGroup(int)">setTabOrderGroup</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setTooltip(net.minecraft.client.gui.components.Tooltip)" title="setTooltip(Tooltip)">setTooltip</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setTooltipDelay(java.time.Duration)" title="setTooltipDelay(Duration)">setTooltipDelay</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setWidth(int)" title="setWidth(int)">setWidth</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setX(int)" title="setX(int)">setX</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setY(int)" title="setY(int)">setY</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#updateNarration(net.minecraft.client.gui.narration.NarrationElementOutput)" title="updateNarration(NarrationElementOutput)">updateNarration</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#visitWidgets(java.util.function.Consumer)" title="visitWidgets(Consumer)">visitWidgets</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#wrapDefaultNarrationMessage(net.minecraft.network.chat.Component)" title="wrapDefaultNarrationMessage(Component)">wrapDefaultNarrationMessage</a></code></div>
+<code><a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#clearFGColor()" title="clearFGColor()">clearFGColor</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#extractRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" title="extractRenderState(GuiGraphicsExtractor, int, int, float)">extractRenderState</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#extractScrollingStringOverContents(net.minecraft.client.gui.ActiveTextCollector,net.minecraft.network.chat.Component,int)" title="extractScrollingStringOverContents(ActiveTextCollector, Component, int)">extractScrollingStringOverContents</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getAlpha()" title="getAlpha()">getAlpha</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getBottom()" title="getBottom()">getBottom</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getFGColor()" title="getFGColor()">getFGColor</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getHeight()" title="getHeight()">getHeight</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getRectangle()" title="getRectangle()">getRectangle</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getRight()" title="getRight()">getRight</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getTabOrderGroup()" title="getTabOrderGroup()">getTabOrderGroup</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getWidth()" title="getWidth()">getWidth</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getX()" title="getX()">getX</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#getY()" title="getY()">getY</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isActive()" title="isActive()">isActive</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isFocused()" title="isFocused()">isFocused</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isHovered()" title="isHovered()">isHovered</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isHoveredOrFocused()" title="isHoveredOrFocused()">isHoveredOrFocused</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#isMouseOver(double,double)" title="isMouseOver(double, double)">isMouseOver</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#mouseClicked(net.minecraft.client.input.MouseButtonEvent,boolean)" title="mouseClicked(MouseButtonEvent, boolean)">mouseClicked</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#mouseDragged(net.minecraft.client.input.MouseButtonEvent,double,double)" title="mouseDragged(MouseButtonEvent, double, double)">mouseDragged</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#mouseReleased(net.minecraft.client.input.MouseButtonEvent)" title="mouseReleased(MouseButtonEvent)">mouseReleased</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#narrationPriority()" title="narrationPriority()">narrationPriority</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#nextFocusPath(net.minecraft.client.gui.navigation.FocusNavigationEvent)" title="nextFocusPath(FocusNavigationEvent)">nextFocusPath</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#playButtonClickSound(net.minecraft.client.sounds.SoundManager)" title="playButtonClickSound(SoundManager)">playButtonClickSound</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setAlpha(float)" title="setAlpha(float)">setAlpha</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setFGColor(int)" title="setFGColor(int)">setFGColor</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setHeight(int)" title="setHeight(int)">setHeight</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setRectangle(int,int,int,int)" title="setRectangle(int, int, int, int)">setRectangle</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setSize(int,int)" title="setSize(int, int)">setSize</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setTabOrderGroup(int)" title="setTabOrderGroup(int)">setTabOrderGroup</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setTooltip(net.minecraft.client.gui.components.Tooltip)" title="setTooltip(Tooltip)">setTooltip</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setTooltipDelay(java.time.Duration)" title="setTooltipDelay(Duration)">setTooltipDelay</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setWidth(int)" title="setWidth(int)">setWidth</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setX(int)" title="setX(int)">setX</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#setY(int)" title="setY(int)">setY</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#updateNarration(net.minecraft.client.gui.narration.NarrationElementOutput)" title="updateNarration(NarrationElementOutput)">updateNarration</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#visitWidgets(java.util.function.Consumer)" title="visitWidgets(Consumer)">visitWidgets</a>, <a href="../../../../../minecraft/client/gui/components/AbstractWidget.html#wrapDefaultNarrationMessage(net.minecraft.network.chat.Component)" title="wrapDefaultNarrationMessage(Component)">wrapDefaultNarrationMessage</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.gui.components.events.GuiEventListener">Methods inherited from interface&nbsp;<a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#method-summary" title="interface in net.minecraft.client.gui.components.events">GuiEventListener</a></h3>
 <code><a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#charTyped(net.minecraft.client.input.CharacterEvent)" title="charTyped(CharacterEvent)">charTyped</a>, <a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#getBorderForArrowNavigation(net.minecraft.client.gui.navigation.ScreenDirection)" title="getBorderForArrowNavigation(ScreenDirection)">getBorderForArrowNavigation</a>, <a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#getCurrentFocusPath()" title="getCurrentFocusPath()">getCurrentFocusPath</a>, <a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#keyReleased(net.minecraft.client.input.KeyEvent)" title="keyReleased(KeyEvent)">keyReleased</a>, <a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#mouseMoved(double,double)" title="mouseMoved(double, double)">mouseMoved</a>, <a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#mouseScrolled(double,double,double,double)" title="mouseScrolled(double, double, double, double)">mouseScrolled</a>, <a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#preeditUpdated(net.minecraft.client.input.PreeditEvent)" title="preeditUpdated(PreeditEvent)">preeditUpdated</a>, <a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#shouldTakeFocusAfterInteraction()" title="shouldTakeFocusAfterInteraction()">shouldTakeFocusAfterInteraction</a></code></div>
@@ -304,71 +241,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="prefix">
-<h3>prefix</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></span>&nbsp;<span class="element-name">prefix</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="suffix">
-<h3>suffix</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></span>&nbsp;<span class="element-name">suffix</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="minValue">
-<h3>minValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">minValue</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="maxValue">
-<h3>maxValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">maxValue</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stepSize">
-<h3>stepSize</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">stepSize</span></div>
-<div class="block">Allows input of discontinuous values with a certain step</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="drawString">
-<h3>drawString</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">drawString</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="format">
-<h3>format</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/DecimalFormat.html" title="class or interface in java.text" class="external-link">DecimalFormat</a></span>&nbsp;<span class="element-name">format</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -476,8 +348,6 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setValue</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#setValue(double)">setValue</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html" title="class in net.minecraft.client.gui.components">AbstractSliderButton</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>value</code> - The new slider value</dd>
 </dl>
@@ -506,20 +376,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="onDrag(net.minecraft.client.input.MouseButtonEvent,double,double)">
-<h3>onDrag</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onDrag</span><wbr><span class="parameters">(<a href="../../../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;event,
- double&nbsp;dragX,
- double&nbsp;dragY)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#onDrag(net.minecraft.client.input.MouseButtonEvent,double,double)">onDrag</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html" title="class in net.minecraft.client.gui.components">AbstractSliderButton</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="keyPressed(net.minecraft.client.input.KeyEvent)">
 <h3>keyPressed</h3>
 <div class="horizontal-scroll">
@@ -529,66 +385,6 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html#keyPressed(net.minecraft.client.input.KeyEvent)">keyPressed</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../minecraft/client/gui/components/events/GuiEventListener.html" title="interface in net.minecraft.client.gui.components.events">GuiEventListener</a></code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#keyPressed(net.minecraft.client.input.KeyEvent)">keyPressed</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html" title="class in net.minecraft.client.gui.components">AbstractSliderButton</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setValueFromMouse(double)">
-<h3>setValueFromMouse</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setValueFromMouse</span><wbr><span class="parameters">(double&nbsp;mouseX)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setFractionalValue(double)">
-<h3>setFractionalValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setFractionalValue</span><wbr><span class="parameters">(double&nbsp;fractionalValue)</span></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>fractionalValue</code> - fractional progress between 0 and 1</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="snapToNearest(double)">
-<h3>snapToNearest</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">snapToNearest</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
-<div class="block">Snaps the value, so that the displayed value is the nearest multiple of <code>stepSize</code>.
-If <code>stepSize</code> is 0, no snapping occurs.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>value</code> - fractional progress between 0 and 1</dd>
-<dt>Returns:</dt>
-<dd>fractional progress between 0 and 1, snapped to the nearest allowed value</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updateMessage()">
-<h3>updateMessage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateMessage</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#updateMessage()">updateMessage</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html" title="class in net.minecraft.client.gui.components">AbstractSliderButton</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="applyValue()">
-<h3>applyValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyValue</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html#applyValue()">applyValue</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../minecraft/client/gui/components/AbstractSliderButton.html" title="class in net.minecraft.client.gui.components">AbstractSliderButton</a></code></dd>
 </dl>
 </div>
 </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>CheckFeatureFlags (NeoForge 26.1)</title>
+<title>CheckFeatureFlags (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.network.configuration, record: CheckFeatureFlags">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/CheckFeatureFlags.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,10 +60,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#listener" tabindex="0">listener</a></li>
 <li><a href="#TYPE" tabindex="0">TYPE</a></li>
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#moddedFlags" tabindex="0">moddedFlags</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -77,7 +74,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#handleClientboundPayload(net.neoforged.neoforge.network.payload.FeatureFlagDataPayload,net.neoforged.neoforge.network.handling.IPayloadContext)" tabindex="0">handleClientboundPayload(FeatureFlagDataPayload, IPayloadContext)</a></li>
 <li><a href="#handleServerboundPayload(net.neoforged.neoforge.network.payload.FeatureFlagAcknowledgePayload,net.neoforged.neoforge.network.handling.IPayloadContext)" tabindex="0">handleServerboundPayload(FeatureFlagAcknowledgePayload, IPayloadContext)</a></li>
 <li><a href="#handleVanillaServerConnection(net.minecraft.network.protocol.configuration.ClientConfigurationPacketListener)" tabindex="0">handleVanillaServerConnection(ClientConfigurationPacketListener)</a></li>
-<li><a href="#getModdedFeatureFlags()" tabindex="0">getModdedFeatureFlags()</a></li>
 <li><a href="#type()" tabindex="0">type()</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
@@ -130,20 +126,9 @@ implements <a href="../../../../minecraft/server/network/ConfigurationTask.html"
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../minecraft/network/protocol/configuration/ServerConfigurationPacketListener.html" title="interface in net.minecraft.network.protocol.configuration">ServerConfigurationPacketListener</a></code></div>
-<div class="col-second even-row-color"><code><a href="#listener" class="member-name-link">listener</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">The field for the <code>listener</code> record component.</div>
-</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#moddedFlags" class="member-name-link">moddedFlags</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../minecraft/server/network/ConfigurationTask.Type.html" title="class in net.minecraft.server.network">ConfigurationTask.Type</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TYPE" class="member-name-link">TYPE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../minecraft/server/network/ConfigurationTask.Type.html" title="class in net.minecraft.server.network">ConfigurationTask.Type</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#TYPE" class="member-name-link">TYPE</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -178,47 +163,44 @@ implements <a href="../../../../minecraft/server/network/ConfigurationTask.html"
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getModdedFeatureFlags()" class="member-name-link">getModdedFeatureFlags</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#handleClientboundPayload(net.neoforged.neoforge.network.payload.FeatureFlagDataPayload,net.neoforged.neoforge.network.handling.IPayloadContext)" class="member-name-link">handleClientboundPayload</a><wbr>(<a href="../payload/FeatureFlagDataPayload.html" title="class in net.neoforged.neoforge.network.payload">FeatureFlagDataPayload</a>&nbsp;payload,
+ <a href="../handling/IPayloadContext.html" title="interface in net.neoforged.neoforge.network.handling">IPayloadContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#handleClientboundPayload(net.neoforged.neoforge.network.payload.FeatureFlagDataPayload,net.neoforged.neoforge.network.handling.IPayloadContext)" class="member-name-link">handleClientboundPayload</a><wbr>(<a href="../payload/FeatureFlagDataPayload.html" title="class in net.neoforged.neoforge.network.payload">FeatureFlagDataPayload</a>&nbsp;payload,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#handleServerboundPayload(net.neoforged.neoforge.network.payload.FeatureFlagAcknowledgePayload,net.neoforged.neoforge.network.handling.IPayloadContext)" class="member-name-link">handleServerboundPayload</a><wbr>(<a href="../payload/FeatureFlagAcknowledgePayload.html" title="class in net.neoforged.neoforge.network.payload">FeatureFlagAcknowledgePayload</a>&nbsp;payload,
  <a href="../handling/IPayloadContext.html" title="interface in net.neoforged.neoforge.network.handling">IPayloadContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#handleServerboundPayload(net.neoforged.neoforge.network.payload.FeatureFlagAcknowledgePayload,net.neoforged.neoforge.network.handling.IPayloadContext)" class="member-name-link">handleServerboundPayload</a><wbr>(<a href="../payload/FeatureFlagAcknowledgePayload.html" title="class in net.neoforged.neoforge.network.payload">FeatureFlagAcknowledgePayload</a>&nbsp;payload,
- <a href="../handling/IPayloadContext.html" title="interface in net.neoforged.neoforge.network.handling">IPayloadContext</a>&nbsp;context)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#handleVanillaServerConnection(net.minecraft.network.protocol.configuration.ClientConfigurationPacketListener)" class="member-name-link">handleVanillaServerConnection</a><wbr>(<a href="../../../../minecraft/network/protocol/configuration/ClientConfigurationPacketListener.html" title="interface in net.minecraft.network.protocol.configuration">ClientConfigurationPacketListener</a>&nbsp;listener)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#handleVanillaServerConnection(net.minecraft.network.protocol.configuration.ClientConfigurationPacketListener)" class="member-name-link">handleVanillaServerConnection</a><wbr>(<a href="../../../../minecraft/network/protocol/configuration/ClientConfigurationPacketListener.html" title="interface in net.minecraft.network.protocol.configuration">ClientConfigurationPacketListener</a>&nbsp;listener)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../minecraft/network/protocol/configuration/ServerConfigurationPacketListener.html" title="interface in net.minecraft.network.protocol.configuration">ServerConfigurationPacketListener</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#listener()" class="member-name-link">listener</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../minecraft/network/protocol/configuration/ServerConfigurationPacketListener.html" title="interface in net.minecraft.network.protocol.configuration">ServerConfigurationPacketListener</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#listener()" class="member-name-link">listener</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>listener</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#start(java.util.function.Consumer)" class="member-name-link">start</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../../minecraft/network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&gt;&nbsp;packetSender)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#start(java.util.function.Consumer)" class="member-name-link">start</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../../minecraft/network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;&gt;&nbsp;packetSender)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this record class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../minecraft/server/network/ConfigurationTask.Type.html" title="class in net.minecraft.server.network">ConfigurationTask.Type</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type()" class="member-name-link">type</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../minecraft/server/network/ConfigurationTask.Type.html" title="class in net.minecraft.server.network">ConfigurationTask.Type</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type()" class="member-name-link">type</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.network.ConfigurationTask">Methods inherited from interface&nbsp;<a href="../../../../minecraft/server/network/ConfigurationTask.html#method-summary" title="interface in net.minecraft.server.network">ConfigurationTask</a></h3>
 <code><a href="../../../../minecraft/server/network/ConfigurationTask.html#tick()" title="tick()">tick</a></code></div>
@@ -234,35 +216,10 @@ implements <a href="../../../../minecraft/server/network/ConfigurationTask.html"
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="listener">
-<h3>listener</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/network/protocol/configuration/ServerConfigurationPacketListener.html" title="interface in net.minecraft.network.protocol.configuration">ServerConfigurationPacketListener</a></span>&nbsp;<span class="element-name">listener</span></div>
-<div class="block">The field for the <code>listener</code> record component.</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="TYPE">
 <h3>TYPE</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/server/network/ConfigurationTask.Type.html" title="class in net.minecraft.server.network">ConfigurationTask.Type</a></span>&nbsp;<span class="element-name">TYPE</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="moddedFlags">
-<h3>moddedFlags</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</span>&nbsp;<span class="element-name">moddedFlags</span></div>
 </div>
 </section>
 </li>
@@ -330,14 +287,6 @@ implements <a href="../../../../minecraft/server/network/ConfigurationTask.html"
 <h3>handleVanillaServerConnection</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">handleVanillaServerConnection</span><wbr><span class="parameters">(<a href="../../../../minecraft/network/protocol/configuration/ClientConfigurationPacketListener.html" title="interface in net.minecraft.network.protocol.configuration">ClientConfigurationPacketListener</a>&nbsp;listener)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getModdedFeatureFlags()">
-<h3>getModdedFeatureFlags</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</span>&nbsp;<span class="element-name">getModdedFeatureFlags</span>()</div>
 </div>
 </section>
 </li>

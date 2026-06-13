@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ClientHooks (NeoForge 26.1)</title>
+<title>ClientHooks (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.client, class: ClientHooks">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ClientHooks.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,23 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#CLIENTHOOKS" tabindex="0">CLIENTHOOKS</a></li>
-<li><a href="#guiLayers" tabindex="0">guiLayers</a></li>
-<li><a href="#slotMainHand" tabindex="0">slotMainHand</a></li>
-<li><a href="#layerDefinitions" tabindex="0">layerDefinitions</a></li>
-<li><a href="#skullModelsByType" tabindex="0">skullModelsByType</a></li>
-<li><a href="#ICON_SHEET" tabindex="0">ICON_SHEET</a></li>
-<li><a href="#initializedClientHooks" tabindex="0">initializedClientHooks</a></li>
-<li><a href="#initializedClientRegistries" tabindex="0">initializedClientRegistries</a></li>
-<li><a href="#DEFAULT_METADATA_SECTION_TYPES" tabindex="0">DEFAULT_METADATA_SECTION_TYPES</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">ClientHooks()</a></li>
@@ -80,7 +65,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#resizeGuiLayers(int,int)" tabindex="0">resizeGuiLayers(int, int)</a></li>
 <li><a href="#clearGuiLayers(net.minecraft.client.Minecraft)" tabindex="0">clearGuiLayers(Minecraft)</a></li>
-<li><a href="#popGuiLayerInternal(net.minecraft.client.Minecraft)" tabindex="0">popGuiLayerInternal(Minecraft)</a></li>
 <li><a href="#pushGuiLayer(net.minecraft.client.Minecraft,net.minecraft.client.gui.screens.Screen)" tabindex="0">pushGuiLayer(Minecraft, Screen)</a></li>
 <li><a href="#popGuiLayer(net.minecraft.client.Minecraft)" tabindex="0">popGuiLayer(Minecraft)</a></li>
 <li><a href="#firePlayerHeartTypeEvent(net.minecraft.world.entity.player.Player,net.minecraft.client.gui.Gui.HeartType)" tabindex="0">firePlayerHeartTypeEvent(Player, Gui.HeartType)</a></li>
@@ -91,7 +75,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#renderSpecificFirstPersonArm(com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,int,net.minecraft.client.player.AbstractClientPlayer,net.minecraft.world.entity.HumanoidArm)" tabindex="0">renderSpecificFirstPersonArm(PoseStack, SubmitNodeCollector, int, AbstractClientPlayer, HumanoidArm)</a></li>
 <li><a href="#onTextureAtlasStitched(net.minecraft.client.renderer.texture.TextureAtlas)" tabindex="0">onTextureAtlasStitched(TextureAtlas)</a></li>
 <li><a href="#copyModelProperties(net.minecraft.client.model.HumanoidModel,net.minecraft.client.model.HumanoidModel)" tabindex="0">copyModelProperties(HumanoidModel, HumanoidModel)</a></li>
-<li><a href="#copyModelPartProperties(net.minecraft.client.model.geom.ModelPart,net.minecraft.client.model.geom.ModelPart)" tabindex="0">copyModelPartProperties(ModelPart, ModelPart)</a></li>
 <li><a href="#fixDomain(java.lang.String,java.lang.String)" tabindex="0">fixDomain(String, String)</a></li>
 <li><a href="#getFieldOfViewModifier(net.minecraft.world.entity.player.Player,float,float)" tabindex="0">getFieldOfViewModifier(Player, float, float)</a></li>
 <li><a href="#getFieldOfView(net.minecraft.client.renderer.GameRenderer,net.minecraft.client.Camera,float,float,boolean)" tabindex="0">getFieldOfView(GameRenderer, Camera, float, float, boolean)</a></li>
@@ -101,7 +84,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#playSound(net.minecraft.client.sounds.SoundEngine,net.minecraft.client.resources.sounds.SoundInstance)" tabindex="0">playSound(SoundEngine, SoundInstance)</a></li>
 <li><a href="#selectMusic(net.minecraft.sounds.Music,net.minecraft.client.resources.sounds.SoundInstance)" tabindex="0">selectMusic(Music, SoundInstance)</a></li>
 <li><a href="#drawScreen(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" tabindex="0">drawScreen(Screen, GuiGraphicsExtractor, int, int, float)</a></li>
-<li><a href="#drawScreenInternal(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" tabindex="0">drawScreenInternal(Screen, GuiGraphicsExtractor, int, int, float)</a></li>
 <li><a href="#getFogColor(net.minecraft.client.Camera,float,net.minecraft.client.multiplayer.ClientLevel,int,float,float,float,float,org.joml.Vector4f)" tabindex="0">getFogColor(Camera, float, ClientLevel, int, float, float, float, float, Vector4f)</a></li>
 <li><a href="#onSetupFog(net.minecraft.client.renderer.fog.environment.FogEnvironment,net.minecraft.world.level.material.FogType,net.minecraft.client.Camera,float,float,net.minecraft.client.renderer.fog.FogData)" tabindex="0">onSetupFog(FogEnvironment, FogType, Camera, float, float, FogData)</a></li>
 <li><a href="#onModifyBakingResult(net.minecraft.client.resources.model.ModelBakery.BakingResult,net.minecraft.client.renderer.texture.SpriteLoader.Preparations,net.minecraft.client.resources.model.ModelBakery)" tabindex="0">onModifyBakingResult(ModelBakery.BakingResult, SpriteLoader.Preparations, ModelBakery)</a></li>
@@ -152,7 +134,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#gatherTooltipComponents(net.minecraft.world.item.ItemStack,java.util.List,int,int,int,net.minecraft.client.gui.Font)" tabindex="0">gatherTooltipComponents(ItemStack, List, int, int, int, Font)</a></li>
 <li><a href="#gatherTooltipComponents(net.minecraft.world.item.ItemStack,java.util.List,java.util.Optional,int,int,int,net.minecraft.client.gui.Font)" tabindex="0">gatherTooltipComponents(ItemStack, List, Optional, int, int, int, Font)</a></li>
 <li><a href="#gatherTooltipComponentsFromElements(net.minecraft.world.item.ItemStack,java.util.List,int,int,int,net.minecraft.client.gui.Font)" tabindex="0">gatherTooltipComponentsFromElements(ItemStack, List, int, int, int, Font)</a></li>
-<li><a href="#splitLine(net.minecraft.network.chat.FormattedText,net.minecraft.client.gui.Font,int)" tabindex="0">splitLine(FormattedText, Font, int)</a></li>
 <li><a href="#onScreenPotionSize(net.minecraft.client.gui.screens.Screen,int,boolean,int)" tabindex="0">onScreenPotionSize(Screen, int, boolean, int)</a></li>
 <li><a href="#onToastAdd(net.minecraft.client.gui.components.toasts.Toast)" tabindex="0">onToastAdd(Toast)</a></li>
 <li><a href="#renderFireOverlay(net.minecraft.world.entity.player.Player,com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.resources.model.sprite.SpriteGetter,net.minecraft.client.renderer.MultiBufferSource)" tabindex="0">renderFireOverlay(Player, PoseStack, SpriteGetter, MultiBufferSource)</a></li>
@@ -179,7 +160,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#convertUsername()" tabindex="0">convertUsername()</a></li>
 <li><a href="#optionalInDev(joptsimple.ArgumentAcceptingOptionSpec,T)" tabindex="0">optionalInDev(ArgumentAcceptingOptionSpec, T)</a></li>
 <li><a href="#updateDebugScreenEntriesForSearch(java.lang.String,java.util.function.Consumer,java.util.function.Consumer)" tabindex="0">updateDebugScreenEntriesForSearch(String, Consumer, Consumer)</a></li>
-<li><a href="#isValidDebugEntryForSearch(java.lang.String,net.minecraft.resources.Identifier)" tabindex="0">isValidDebugEntryForSearch(String, Identifier)</a></li>
 <li><a href="#gatherFluidModels(java.util.Map,net.minecraft.client.resources.model.sprite.MaterialBaker)" tabindex="0">gatherFluidModels(Map, MaterialBaker)</a></li>
 </ol>
 </li>
@@ -203,50 +183,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final org.apache.logging.log4j.Marker</code></div>
-<div class="col-second even-row-color"><code><a href="#CLIENTHOOKS" class="member-name-link">CLIENTHOOKS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashSet.html" title="class or interface in java.util" class="external-link">HashSet</a><wbr>&lt;<a href="../../../minecraft/server/packs/metadata/MetadataSectionType.html" title="class in net.minecraft.server.packs.metadata">MetadataSectionType</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#DEFAULT_METADATA_SECTION_TYPES" class="member-name-link">DEFAULT_METADATA_SECTION_TYPES</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Stack.html" title="class or interface in java.util" class="external-link">Stack</a><wbr>&lt;<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#guiLayers" class="member-name-link">guiLayers</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Contains the *extra* GUI layers.</div>
-</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ICON_SHEET" class="member-name-link">ICON_SHEET</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#initializedClientHooks" class="member-name-link">initializedClientHooks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#initializedClientRegistries" class="member-name-link">initializedClientRegistries</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/client/model/geom/ModelLayerLocation.html" title="class in net.minecraft.client.model.geom">ModelLayerLocation</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="../../../minecraft/client/model/geom/builders/LayerDefinition.html" title="class in net.minecraft.client.model.geom.builders">LayerDefinition</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#layerDefinitions" class="member-name-link">layerDefinitions</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.apache.logging.log4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/world/level/block/SkullBlock.Type.html" title="interface in net.minecraft.world.level.block">SkullBlock.Type</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../minecraft/client/model/geom/EntityModelSet.html" title="class in net.minecraft.client.model.geom">EntityModelSet</a>, <a href="../../../minecraft/client/model/object/skull/SkullModelBase.html" title="class in net.minecraft.client.model.object.skull">SkullModelBase</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#skullModelsByType" class="member-name-link">skullModelsByType</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static int</code></div>
-<div class="col-second odd-row-color"><code><a href="#slotMainHand" class="member-name-link">slotMainHand</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -283,25 +219,14 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static joptsimple.ValueConverter<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertUsername()" class="member-name-link">convertUsername</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#copyModelPartProperties(net.minecraft.client.model.geom.ModelPart,net.minecraft.client.model.geom.ModelPart)" class="member-name-link">copyModelPartProperties</a><wbr>(<a href="../../../minecraft/client/model/geom/ModelPart.html" title="class in net.minecraft.client.model.geom">ModelPart</a>&nbsp;original,
- <a href="../../../minecraft/client/model/geom/ModelPart.html" title="class in net.minecraft.client.model.geom">ModelPart</a>&nbsp;replacement)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#copyModelProperties(net.minecraft.client.model.HumanoidModel,net.minecraft.client.model.HumanoidModel)" class="member-name-link">copyModelProperties</a><wbr>(<a href="../../../minecraft/client/model/HumanoidModel.html" title="class in net.minecraft.client.model">HumanoidModel</a>&lt;?&gt;&nbsp;original,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#copyModelProperties(net.minecraft.client.model.HumanoidModel,net.minecraft.client.model.HumanoidModel)" class="member-name-link">copyModelProperties</a><wbr>(<a href="../../../minecraft/client/model/HumanoidModel.html" title="class in net.minecraft.client.model">HumanoidModel</a>&lt;?&gt;&nbsp;original,
  <a href="../../../minecraft/client/model/HumanoidModel.html" title="class in net.minecraft.client.model">HumanoidModel</a>&lt;?&gt;&nbsp;replacement)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Copies humanoid model properties from the original model to another, used for armor models</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#drawScreen(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">drawScreen</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
- <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
- int&nbsp;mouseX,
- int&nbsp;mouseY,
- float&nbsp;partialTick)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#drawScreenInternal(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">drawScreenInternal</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#drawScreen(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">drawScreen</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
  <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
  int&nbsp;mouseX,
  int&nbsp;mouseY,
@@ -322,7 +247,7 @@ loadScripts(document, 'script');</script>
  <a href="../../../minecraft/client/renderer/LevelTargetBundle.html" title="class in net.minecraft.client.renderer">LevelTargetBundle</a>&nbsp;targets,
  <a href="../../../../com/mojang/blaze3d/resource/RenderTargetDescriptor.html" title="class in com.mojang.blaze3d.resource">RenderTargetDescriptor</a>&nbsp;renderTargetDescriptor,
  <a href="../../../minecraft/client/renderer/state/level/CameraRenderState.html" title="class in net.minecraft.client.renderer.state.level">CameraRenderState</a>&nbsp;cameraState,
- org.joml.Matrix4fc&nbsp;modelViewMatrix,
+ <a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Matrix4fc.html" title="class or interface in org.joml" class="external-link">Matrix4fc</a>&nbsp;modelViewMatrix,
  <a href="../../../minecraft/client/DeltaTracker.html" title="interface in net.minecraft.client">DeltaTracker</a>&nbsp;deltaTracker,
  <a href="../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -330,7 +255,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#firePlayerHeartTypeEvent(net.minecraft.world.entity.player.Player,net.minecraft.client.gui.Gui.HeartType)" class="member-name-link">firePlayerHeartTypeEvent</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/client/gui/Gui.HeartType.html" title="enum class in net.minecraft.client.gui">Gui.HeartType</a>&nbsp;heartType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Called by <a href="../../../minecraft/client/gui/Gui.HeartType.html#forPlayer(net.minecraft.world.entity.player.Player)"><code>Gui.HeartType.forPlayer(Player)</code></a> to allow for modification of the displayed heart type in the
+<div class="block">Called by <code>Gui.HeartType.forPlayer(Player)</code> to allow for modification of the displayed heart type in the
 health bar.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -451,7 +376,7 @@ health bar.</div>
  float&nbsp;fogRed,
  float&nbsp;fogGreen,
  float&nbsp;fogBlue,
- org.joml.Vector4f&nbsp;dest)</code></div>
+ <a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Vector4f.html" title="class or interface in org.joml" class="external-link">Vector4f</a>&nbsp;dest)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/client/model/object/skull/SkullModelBase.html" title="class in net.minecraft.client.model.object.skull">SkullModelBase</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getModdedSkullModel(net.minecraft.client.model.geom.EntityModelSet,net.minecraft.world.level.block.SkullBlock.Type)" class="member-name-link">getModdedSkullModel</a><wbr>(<a href="../../../minecraft/client/model/geom/EntityModelSet.html" title="class in net.minecraft.client.model.geom">EntityModelSet</a>&nbsp;modelSet,
@@ -490,99 +415,95 @@ health bar.</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isNameplateInRenderDistance(net.minecraft.world.entity.LivingEntity,double)" class="member-name-link">isNameplateInRenderDistance</a><wbr>(<a href="../../../minecraft/world/entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity,
  double&nbsp;squareDistance)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isValidDebugEntryForSearch(java.lang.String,net.minecraft.resources.Identifier)" class="member-name-link">isValidDebugEntryForSearch</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;searchText,
- <a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadEntityShader(net.minecraft.world.entity.Entity,net.minecraft.client.renderer.GameRenderer)" class="member-name-link">loadEntityShader</a><wbr>(@Nullable <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadEntityShader(net.minecraft.world.entity.Entity,net.minecraft.client.renderer.GameRenderer)" class="member-name-link">loadEntityShader</a><wbr>(@Nullable <a href="../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
  <a href="../../../minecraft/client/renderer/GameRenderer.html" title="class in net.minecraft.client.renderer">GameRenderer</a>&nbsp;gameRenderer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadLayerDefinitions(com.google.common.collect.ImmutableMap.Builder)" class="member-name-link">loadLayerDefinitions</a><wbr>(com.google.common.collect.ImmutableMap.Builder&lt;<a href="../../../minecraft/client/model/geom/ModelLayerLocation.html" title="class in net.minecraft.client.model.geom">ModelLayerLocation</a>, <a href="../../../minecraft/client/model/geom/builders/LayerDefinition.html" title="class in net.minecraft.client.model.geom.builders">LayerDefinition</a>&gt;&nbsp;builder)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/InputEvent.InteractionKeyMappingTriggered.html" title="class in net.neoforged.neoforge.client.event">InputEvent.InteractionKeyMappingTriggered</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClickInput(int,net.minecraft.client.KeyMapping,net.minecraft.world.InteractionHand)" class="member-name-link">onClickInput</a><wbr>(int&nbsp;button,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadLayerDefinitions(com.google.common.collect.ImmutableMap.Builder)" class="member-name-link">loadLayerDefinitions</a><wbr>(com.google.common.collect.ImmutableMap.Builder&lt;<a href="../../../minecraft/client/model/geom/ModelLayerLocation.html" title="class in net.minecraft.client.model.geom">ModelLayerLocation</a>, <a href="../../../minecraft/client/model/geom/builders/LayerDefinition.html" title="class in net.minecraft.client.model.geom.builders">LayerDefinition</a>&gt;&nbsp;builder)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/InputEvent.InteractionKeyMappingTriggered.html" title="class in net.neoforged.neoforge.client.event">InputEvent.InteractionKeyMappingTriggered</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClickInput(int,net.minecraft.client.KeyMapping,net.minecraft.world.InteractionHand)" class="member-name-link">onClickInput</a><wbr>(int&nbsp;button,
  <a href="../../../minecraft/client/KeyMapping.html" title="class in net.minecraft.client">KeyMapping</a>&nbsp;keyBinding,
  <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientChangeGameType(net.minecraft.client.multiplayer.PlayerInfo,net.minecraft.world.level.GameType,net.minecraft.world.level.GameType)" class="member-name-link">onClientChangeGameType</a><wbr>(<a href="../../../minecraft/client/multiplayer/PlayerInfo.html" title="class in net.minecraft.client.multiplayer">PlayerInfo</a>&nbsp;info,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientChangeGameType(net.minecraft.client.multiplayer.PlayerInfo,net.minecraft.world.level.GameType,net.minecraft.world.level.GameType)" class="member-name-link">onClientChangeGameType</a><wbr>(<a href="../../../minecraft/client/multiplayer/PlayerInfo.html" title="class in net.minecraft.client.multiplayer">PlayerInfo</a>&nbsp;info,
  <a href="../../../minecraft/world/level/GameType.html" title="enum class in net.minecraft.world.level">GameType</a>&nbsp;currentGameMode,
  <a href="../../../minecraft/world/level/GameType.html" title="enum class in net.minecraft.world.level">GameType</a>&nbsp;newGameMode)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientChat(net.minecraft.network.chat.ChatType.Bound,net.minecraft.network.chat.Component,java.util.UUID)" class="member-name-link">onClientChat</a><wbr>(<a href="../../../minecraft/network/chat/ChatType.Bound.html" title="class in net.minecraft.network.chat">ChatType.Bound</a>&nbsp;boundChatType,
- <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;sender)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientPauseChangePost(boolean)" class="member-name-link">onClientPauseChangePost</a><wbr>(boolean&nbsp;pause)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientPauseChangePre(boolean)" class="member-name-link">onClientPauseChangePre</a><wbr>(boolean&nbsp;pause)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientPlayerChat(net.minecraft.network.chat.ChatType.Bound,net.minecraft.network.chat.Component,net.minecraft.network.chat.PlayerChatMessage,java.util.UUID)" class="member-name-link">onClientPlayerChat</a><wbr>(<a href="../../../minecraft/network/chat/ChatType.Bound.html" title="class in net.minecraft.network.chat">ChatType.Bound</a>&nbsp;boundChatType,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientChat(net.minecraft.network.chat.ChatType.Bound,net.minecraft.network.chat.Component,java.util.UUID)" class="member-name-link">onClientChat</a><wbr>(<a href="../../../minecraft/network/chat/ChatType.Bound.html" title="class in net.minecraft.network.chat">ChatType.Bound</a>&nbsp;boundChatType,
+ <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;sender)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientPauseChangePost(boolean)" class="member-name-link">onClientPauseChangePost</a><wbr>(boolean&nbsp;pause)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientPauseChangePre(boolean)" class="member-name-link">onClientPauseChangePre</a><wbr>(boolean&nbsp;pause)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientPlayerChat(net.minecraft.network.chat.ChatType.Bound,net.minecraft.network.chat.Component,net.minecraft.network.chat.PlayerChatMessage,java.util.UUID)" class="member-name-link">onClientPlayerChat</a><wbr>(<a href="../../../minecraft/network/chat/ChatType.Bound.html" title="class in net.minecraft.network.chat">ChatType.Bound</a>&nbsp;boundChatType,
  <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message,
  <a href="../../../minecraft/network/chat/PlayerChatMessage.html" title="class in net.minecraft.network.chat">PlayerChatMessage</a>&nbsp;playerChatMessage,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;sender)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientSendMessage(java.lang.String)" class="member-name-link">onClientSendMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientSystemChat(net.minecraft.network.chat.Component,boolean)" class="member-name-link">onClientSystemChat</a><wbr>(<a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message,
- boolean&nbsp;overlay)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientSendMessage(java.lang.String)" class="member-name-link">onClientSendMessage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/CustomizeGuiOverlayEvent.BossEventProgress.html" title="class in net.neoforged.neoforge.client.event">CustomizeGuiOverlayEvent.BossEventProgress</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onCustomizeBossEventProgress(net.minecraft.client.gui.GuiGraphicsExtractor,com.mojang.blaze3d.platform.Window,net.minecraft.client.gui.components.LerpingBossEvent,int,int,int)" class="member-name-link">onCustomizeBossEventProgress</a><wbr>(<a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onClientSystemChat(net.minecraft.network.chat.Component,boolean)" class="member-name-link">onClientSystemChat</a><wbr>(<a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message,
+ boolean&nbsp;overlay)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/CustomizeGuiOverlayEvent.BossEventProgress.html" title="class in net.neoforged.neoforge.client.event">CustomizeGuiOverlayEvent.BossEventProgress</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onCustomizeBossEventProgress(net.minecraft.client.gui.GuiGraphicsExtractor,com.mojang.blaze3d.platform.Window,net.minecraft.client.gui.components.LerpingBossEvent,int,int,int)" class="member-name-link">onCustomizeBossEventProgress</a><wbr>(<a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
  <a href="../../../../com/mojang/blaze3d/platform/Window.html" title="class in com.mojang.blaze3d.platform">Window</a>&nbsp;window,
  <a href="../../../minecraft/client/gui/components/LerpingBossEvent.html" title="class in net.minecraft.client.gui.components">LerpingBossEvent</a>&nbsp;bossInfo,
  int&nbsp;x,
  int&nbsp;y,
  int&nbsp;increment)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onKeyInput(net.minecraft.client.input.KeyEvent,int)" class="member-name-link">onKeyInput</a><wbr>(<a href="../../../minecraft/client/input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;keyEvent,
- int&nbsp;action)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onModelBake(net.minecraft.client.resources.model.ModelManager,net.minecraft.client.resources.model.ModelBakery.BakingResult,net.minecraft.client.resources.model.ModelBakery)" class="member-name-link">onModelBake</a><wbr>(<a href="../../../minecraft/client/resources/model/ModelManager.html" title="class in net.minecraft.client.resources.model">ModelManager</a>&nbsp;modelManager,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onKeyInput(net.minecraft.client.input.KeyEvent,int)" class="member-name-link">onKeyInput</a><wbr>(<a href="../../../minecraft/client/input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;keyEvent,
+ int&nbsp;action)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onModelBake(net.minecraft.client.resources.model.ModelManager,net.minecraft.client.resources.model.ModelBakery.BakingResult,net.minecraft.client.resources.model.ModelBakery)" class="member-name-link">onModelBake</a><wbr>(<a href="../../../minecraft/client/resources/model/ModelManager.html" title="class in net.minecraft.client.resources.model">ModelManager</a>&nbsp;modelManager,
  <a href="../../../minecraft/client/resources/model/ModelBakery.BakingResult.html" title="class in net.minecraft.client.resources.model">ModelBakery.BakingResult</a>&nbsp;bakingResult,
  <a href="../../../minecraft/client/resources/model/ModelBakery.html" title="class in net.minecraft.client.resources.model">ModelBakery</a>&nbsp;modelBakery)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onModifyBakingResult(net.minecraft.client.resources.model.ModelBakery.BakingResult,net.minecraft.client.renderer.texture.SpriteLoader.Preparations,net.minecraft.client.resources.model.ModelBakery)" class="member-name-link">onModifyBakingResult</a><wbr>(<a href="../../../minecraft/client/resources/model/ModelBakery.BakingResult.html" title="class in net.minecraft.client.resources.model">ModelBakery.BakingResult</a>&nbsp;bakingResult,
- <a href="../../../minecraft/client/renderer/texture/SpriteLoader.Preparations.html" title="class in net.minecraft.client.renderer.texture">SpriteLoader.Preparations</a>&nbsp;spriteLoaderPreparations,
- <a href="../../../minecraft/client/resources/model/ModelBakery.html" title="class in net.minecraft.client.resources.model">ModelBakery</a>&nbsp;modelBakery)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onMouseButtonPost(net.minecraft.client.input.MouseButtonInfo,int)" class="member-name-link">onMouseButtonPost</a><wbr>(<a href="../../../minecraft/client/input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a>&nbsp;mouseButtonInfo,
- int&nbsp;action)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onModifyBakingResult(net.minecraft.client.resources.model.ModelBakery.BakingResult,net.minecraft.client.renderer.texture.SpriteLoader.Preparations,net.minecraft.client.resources.model.ModelBakery)" class="member-name-link">onModifyBakingResult</a><wbr>(<a href="../../../minecraft/client/resources/model/ModelBakery.BakingResult.html" title="class in net.minecraft.client.resources.model">ModelBakery.BakingResult</a>&nbsp;bakingResult,
+ <a href="../../../minecraft/client/renderer/texture/SpriteLoader.Preparations.html" title="class in net.minecraft.client.renderer.texture">SpriteLoader.Preparations</a>&nbsp;spriteLoaderPreparations,
+ <a href="../../../minecraft/client/resources/model/ModelBakery.html" title="class in net.minecraft.client.resources.model">ModelBakery</a>&nbsp;modelBakery)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onMouseButtonPre(net.minecraft.client.input.MouseButtonInfo,int)" class="member-name-link">onMouseButtonPre</a><wbr>(<a href="../../../minecraft/client/input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a>&nbsp;mouseButtonInfo,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onMouseButtonPost(net.minecraft.client.input.MouseButtonInfo,int)" class="member-name-link">onMouseButtonPost</a><wbr>(<a href="../../../minecraft/client/input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a>&nbsp;mouseButtonInfo,
  int&nbsp;action)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onMouseScroll(net.minecraft.client.MouseHandler,double,double)" class="member-name-link">onMouseScroll</a><wbr>(<a href="../../../minecraft/client/MouseHandler.html" title="class in net.minecraft.client">MouseHandler</a>&nbsp;mouseHelper,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onMouseButtonPre(net.minecraft.client.input.MouseButtonInfo,int)" class="member-name-link">onMouseButtonPre</a><wbr>(<a href="../../../minecraft/client/input/MouseButtonInfo.html" title="class in net.minecraft.client.input">MouseButtonInfo</a>&nbsp;mouseButtonInfo,
+ int&nbsp;action)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onMouseScroll(net.minecraft.client.MouseHandler,double,double)" class="member-name-link">onMouseScroll</a><wbr>(<a href="../../../minecraft/client/MouseHandler.html" title="class in net.minecraft.client">MouseHandler</a>&nbsp;mouseHelper,
  double&nbsp;scrollDeltaX,
  double&nbsp;scrollDeltaY)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onMovementInputUpdate(net.minecraft.world.entity.player.Player,net.minecraft.client.player.ClientInput)" class="member-name-link">onMovementInputUpdate</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- <a href="../../../minecraft/client/player/ClientInput.html" title="class in net.minecraft.client.player">ClientInput</a>&nbsp;movementInput)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRegisterKeyMappings(net.minecraft.client.Options,java.util.List)" class="member-name-link">onRegisterKeyMappings</a><wbr>(<a href="../../../minecraft/client/Options.html" title="class in net.minecraft.client">Options</a>&nbsp;options,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../minecraft/client/KeyMapping.Category.html" title="class in net.minecraft.client">KeyMapping.Category</a>&gt;&nbsp;categories)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onMovementInputUpdate(net.minecraft.world.entity.player.Player,net.minecraft.client.player.ClientInput)" class="member-name-link">onMovementInputUpdate</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+ <a href="../../../minecraft/client/player/ClientInput.html" title="class in net.minecraft.client.player">ClientInput</a>&nbsp;movementInput)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRegisterParticleProviders(net.minecraft.client.particle.ParticleResources)" class="member-name-link">onRegisterParticleProviders</a><wbr>(<a href="../../../minecraft/client/particle/ParticleResources.html" title="class in net.minecraft.client.particle">ParticleResources</a>&nbsp;particleResources)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRegisterKeyMappings(net.minecraft.client.Options,java.util.List)" class="member-name-link">onRegisterKeyMappings</a><wbr>(<a href="../../../minecraft/client/Options.html" title="class in net.minecraft.client">Options</a>&nbsp;options,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../minecraft/client/KeyMapping.Category.html" title="class in net.minecraft.client">KeyMapping.Category</a>&gt;&nbsp;categories)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/RenderTooltipEvent.Pre.html" title="class in net.neoforged.neoforge.client.event">RenderTooltipEvent.Pre</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRenderTooltipPre(net.minecraft.world.item.ItemStack,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,int,int,java.util.List,net.minecraft.client.gui.Font,net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner)" class="member-name-link">onRenderTooltipPre</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRegisterParticleProviders(net.minecraft.client.particle.ParticleResources)" class="member-name-link">onRegisterParticleProviders</a><wbr>(<a href="../../../minecraft/client/particle/ParticleResources.html" title="class in net.minecraft.client.particle">ParticleResources</a>&nbsp;particleResources)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/RenderTooltipEvent.Pre.html" title="class in net.neoforged.neoforge.client.event">RenderTooltipEvent.Pre</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRenderTooltipPre(net.minecraft.world.item.ItemStack,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,int,int,java.util.List,net.minecraft.client.gui.Font,net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner)" class="member-name-link">onRenderTooltipPre</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack,
  <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;graphics,
  int&nbsp;x,
  int&nbsp;y,
@@ -591,121 +512,118 @@ health bar.</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent.html" title="interface in net.minecraft.client.gui.screens.inventory.tooltip">ClientTooltipComponent</a>&gt;&nbsp;components,
  <a href="../../../minecraft/client/gui/Font.html" title="class in net.minecraft.client.gui">Font</a>&nbsp;fallbackFont,
  <a href="../../../minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner.html" title="interface in net.minecraft.client.gui.screens.inventory.tooltip">ClientTooltipPositioner</a>&nbsp;positioner)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/RenderTooltipEvent.Texture.html" title="class in net.neoforged.neoforge.client.event">RenderTooltipEvent.Texture</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRenderTooltipTexture(net.minecraft.world.item.ItemStack,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,net.minecraft.client.gui.Font,java.util.List,net.minecraft.resources.Identifier)" class="member-name-link">onRenderTooltipTexture</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/RenderTooltipEvent.Texture.html" title="class in net.neoforged.neoforge.client.event">RenderTooltipEvent.Texture</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onRenderTooltipTexture(net.minecraft.world.item.ItemStack,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,net.minecraft.client.gui.Font,java.util.List,net.minecraft.resources.Identifier)" class="member-name-link">onRenderTooltipTexture</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack,
  <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;graphics,
  int&nbsp;x,
  int&nbsp;y,
  <a href="../../../minecraft/client/gui/Font.html" title="class in net.minecraft.client.gui">Font</a>&nbsp;font,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent.html" title="interface in net.minecraft.client.gui.screens.inventory.tooltip">ClientTooltipComponent</a>&gt;&nbsp;components,
  @Nullable <a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;texture)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenCharTypedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.CharacterEvent)" class="member-name-link">onScreenCharTypedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
- <a href="../../../minecraft/client/input/CharacterEvent.html" title="class in net.minecraft.client.input">CharacterEvent</a>&nbsp;charEvent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenCharTypedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.CharacterEvent)" class="member-name-link">onScreenCharTypedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenCharTypedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.CharacterEvent)" class="member-name-link">onScreenCharTypedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  <a href="../../../minecraft/client/input/CharacterEvent.html" title="class in net.minecraft.client.input">CharacterEvent</a>&nbsp;charEvent)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenKeyPressedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.KeyEvent)" class="member-name-link">onScreenKeyPressedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
- <a href="../../../minecraft/client/input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;keyEvent)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenCharTypedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.CharacterEvent)" class="member-name-link">onScreenCharTypedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+ <a href="../../../minecraft/client/input/CharacterEvent.html" title="class in net.minecraft.client.input">CharacterEvent</a>&nbsp;charEvent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenKeyPressedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.KeyEvent)" class="member-name-link">onScreenKeyPressedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenKeyPressedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.KeyEvent)" class="member-name-link">onScreenKeyPressedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  <a href="../../../minecraft/client/input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;keyEvent)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenKeyReleasedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.KeyEvent)" class="member-name-link">onScreenKeyReleasedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenKeyPressedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.KeyEvent)" class="member-name-link">onScreenKeyPressedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  <a href="../../../minecraft/client/input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;keyEvent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenKeyReleasedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.KeyEvent)" class="member-name-link">onScreenKeyReleasedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenKeyReleasedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.KeyEvent)" class="member-name-link">onScreenKeyReleasedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  <a href="../../../minecraft/client/input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;keyEvent)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseClickedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,boolean,boolean)" class="member-name-link">onScreenMouseClickedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenKeyReleasedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.KeyEvent)" class="member-name-link">onScreenKeyReleasedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+ <a href="../../../minecraft/client/input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;keyEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseClickedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,boolean,boolean)" class="member-name-link">onScreenMouseClickedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  <a href="../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;mouseEvent,
  boolean&nbsp;doubleClick,
  boolean&nbsp;handled)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseClickedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,boolean)" class="member-name-link">onScreenMouseClickedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseClickedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,boolean)" class="member-name-link">onScreenMouseClickedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  <a href="../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;mouseEvent,
  boolean&nbsp;doubleClick)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseDragPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,double,double)" class="member-name-link">onScreenMouseDragPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
- <a href="../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;mouseEvent,
- double&nbsp;dragX,
- double&nbsp;dragY)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseDragPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,double,double)" class="member-name-link">onScreenMouseDragPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseDragPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,double,double)" class="member-name-link">onScreenMouseDragPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  <a href="../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;mouseEvent,
  double&nbsp;dragX,
  double&nbsp;dragY)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseReleasedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,boolean)" class="member-name-link">onScreenMouseReleasedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseDragPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,double,double)" class="member-name-link">onScreenMouseDragPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+ <a href="../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;mouseEvent,
+ double&nbsp;dragX,
+ double&nbsp;dragY)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseReleasedPost(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent,boolean)" class="member-name-link">onScreenMouseReleasedPost</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  <a href="../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;mouseEvent,
  boolean&nbsp;handled)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseReleasedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent)" class="member-name-link">onScreenMouseReleasedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseReleasedPre(net.minecraft.client.gui.screens.Screen,net.minecraft.client.input.MouseButtonEvent)" class="member-name-link">onScreenMouseReleasedPre</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  <a href="../../../minecraft/client/input/MouseButtonEvent.html" title="class in net.minecraft.client.input">MouseButtonEvent</a>&nbsp;mouseEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseScrollPost(net.minecraft.client.MouseHandler,net.minecraft.client.gui.screens.Screen,double,double)" class="member-name-link">onScreenMouseScrollPost</a><wbr>(<a href="../../../minecraft/client/MouseHandler.html" title="class in net.minecraft.client">MouseHandler</a>&nbsp;mouseHelper,
+ <a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
+ double&nbsp;scrollDeltaX,
+ double&nbsp;scrollDeltaY)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseScrollPost(net.minecraft.client.MouseHandler,net.minecraft.client.gui.screens.Screen,double,double)" class="member-name-link">onScreenMouseScrollPost</a><wbr>(<a href="../../../minecraft/client/MouseHandler.html" title="class in net.minecraft.client">MouseHandler</a>&nbsp;mouseHelper,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseScrollPre(net.minecraft.client.MouseHandler,net.minecraft.client.gui.screens.Screen,double,double)" class="member-name-link">onScreenMouseScrollPre</a><wbr>(<a href="../../../minecraft/client/MouseHandler.html" title="class in net.minecraft.client">MouseHandler</a>&nbsp;mouseHelper,
  <a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
  double&nbsp;scrollDeltaX,
  double&nbsp;scrollDeltaY)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenMouseScrollPre(net.minecraft.client.MouseHandler,net.minecraft.client.gui.screens.Screen,double,double)" class="member-name-link">onScreenMouseScrollPre</a><wbr>(<a href="../../../minecraft/client/MouseHandler.html" title="class in net.minecraft.client">MouseHandler</a>&nbsp;mouseHelper,
- <a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;guiScreen,
- double&nbsp;scrollDeltaX,
- double&nbsp;scrollDeltaY)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/ScreenEvent.RenderInventoryMobEffects.html" title="class in net.neoforged.neoforge.client.event">ScreenEvent.RenderInventoryMobEffects</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenPotionSize(net.minecraft.client.gui.screens.Screen,int,boolean,int)" class="member-name-link">onScreenPotionSize</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/ScreenEvent.RenderInventoryMobEffects.html" title="class in net.neoforged.neoforge.client.event">ScreenEvent.RenderInventoryMobEffects</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenPotionSize(net.minecraft.client.gui.screens.Screen,int,boolean,int)" class="member-name-link">onScreenPotionSize</a><wbr>(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
  int&nbsp;availableSpace,
  boolean&nbsp;compact,
  int&nbsp;horizontalOffset)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/ScreenshotEvent.html" title="class in net.neoforged.neoforge.client.event">ScreenshotEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenshot(com.mojang.blaze3d.platform.NativeImage,java.io.File)" class="member-name-link">onScreenshot</a><wbr>(<a href="../../../../com/mojang/blaze3d/platform/NativeImage.html" title="class in com.mojang.blaze3d.platform">NativeImage</a>&nbsp;image,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;screenshotFile)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onSetupFog(net.minecraft.client.renderer.fog.environment.FogEnvironment,net.minecraft.world.level.material.FogType,net.minecraft.client.Camera,float,float,net.minecraft.client.renderer.fog.FogData)" class="member-name-link">onSetupFog</a><wbr>(@Nullable <a href="../../../minecraft/client/renderer/fog/environment/FogEnvironment.html" title="class in net.minecraft.client.renderer.fog.environment">FogEnvironment</a>&nbsp;environment,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="event/ScreenshotEvent.html" title="class in net.neoforged.neoforge.client.event">ScreenshotEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onScreenshot(com.mojang.blaze3d.platform.NativeImage,java.io.File)" class="member-name-link">onScreenshot</a><wbr>(<a href="../../../../com/mojang/blaze3d/platform/NativeImage.html" title="class in com.mojang.blaze3d.platform">NativeImage</a>&nbsp;image,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;screenshotFile)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onSetupFog(net.minecraft.client.renderer.fog.environment.FogEnvironment,net.minecraft.world.level.material.FogType,net.minecraft.client.Camera,float,float,net.minecraft.client.renderer.fog.FogData)" class="member-name-link">onSetupFog</a><wbr>(@Nullable <a href="../../../minecraft/client/renderer/fog/environment/FogEnvironment.html" title="class in net.minecraft.client.renderer.fog.environment">FogEnvironment</a>&nbsp;environment,
  <a href="../../../minecraft/world/level/material/FogType.html" title="enum class in net.minecraft.world.level.material">FogType</a>&nbsp;type,
  <a href="../../../minecraft/client/Camera.html" title="class in net.minecraft.client">Camera</a>&nbsp;camera,
  float&nbsp;partialTick,
  float&nbsp;renderDistance,
  <a href="../../../minecraft/client/renderer/fog/FogData.html" title="class in net.minecraft.client.renderer.fog">FogData</a>&nbsp;fogData)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onTextureAtlasStitched(net.minecraft.client.renderer.texture.TextureAtlas)" class="member-name-link">onTextureAtlasStitched</a><wbr>(<a href="../../../minecraft/client/renderer/texture/TextureAtlas.html" title="class in net.minecraft.client.renderer.texture">TextureAtlas</a>&nbsp;atlas)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onToastAdd(net.minecraft.client.gui.components.toasts.Toast)" class="member-name-link">onToastAdd</a><wbr>(<a href="../../../minecraft/client/gui/components/toasts/Toast.html" title="interface in net.minecraft.client.gui.components.toasts">Toast</a>&nbsp;toast)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onTextureAtlasStitched(net.minecraft.client.renderer.texture.TextureAtlas)" class="member-name-link">onTextureAtlasStitched</a><wbr>(<a href="../../../minecraft/client/renderer/texture/TextureAtlas.html" title="class in net.minecraft.client.renderer.texture">TextureAtlas</a>&nbsp;atlas)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;joptsimple.ArgumentAcceptingOptionSpec<wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#optionalInDev(joptsimple.ArgumentAcceptingOptionSpec,T)" class="member-name-link">optionalInDev</a><wbr>(joptsimple.ArgumentAcceptingOptionSpec&lt;T&gt;&nbsp;option,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onToastAdd(net.minecraft.client.gui.components.toasts.Toast)" class="member-name-link">onToastAdd</a><wbr>(<a href="../../../minecraft/client/gui/components/toasts/Toast.html" title="interface in net.minecraft.client.gui.components.toasts">Toast</a>&nbsp;toast)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;joptsimple.ArgumentAcceptingOptionSpec<wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#optionalInDev(joptsimple.ArgumentAcceptingOptionSpec,T)" class="member-name-link">optionalInDev</a><wbr>(joptsimple.ArgumentAcceptingOptionSpec&lt;T&gt;&nbsp;option,
  T&nbsp;defaultValue)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/client/resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#playSound(net.minecraft.client.sounds.SoundEngine,net.minecraft.client.resources.sounds.SoundInstance)" class="member-name-link">playSound</a><wbr>(<a href="../../../minecraft/client/sounds/SoundEngine.html" title="class in net.minecraft.client.sounds">SoundEngine</a>&nbsp;manager,
- <a href="../../../minecraft/client/resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a>&nbsp;sound)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#popGuiLayer(net.minecraft.client.Minecraft)" class="member-name-link">popGuiLayer</a><wbr>(<a href="../../../minecraft/client/Minecraft.html" title="class in net.minecraft.client">Minecraft</a>&nbsp;minecraft)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../../minecraft/client/resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#playSound(net.minecraft.client.sounds.SoundEngine,net.minecraft.client.resources.sounds.SoundInstance)" class="member-name-link">playSound</a><wbr>(<a href="../../../minecraft/client/sounds/SoundEngine.html" title="class in net.minecraft.client.sounds">SoundEngine</a>&nbsp;manager,
+ <a href="../../../minecraft/client/resources/sounds/SoundInstance.html" title="interface in net.minecraft.client.resources.sounds">SoundInstance</a>&nbsp;sound)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#popGuiLayerInternal(net.minecraft.client.Minecraft)" class="member-name-link">popGuiLayerInternal</a><wbr>(<a href="../../../minecraft/client/Minecraft.html" title="class in net.minecraft.client">Minecraft</a>&nbsp;minecraft)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#popGuiLayer(net.minecraft.client.Minecraft)" class="member-name-link">popGuiLayer</a><wbr>(<a href="../../../minecraft/client/Minecraft.html" title="class in net.minecraft.client">Minecraft</a>&nbsp;minecraft)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#pushGuiLayer(net.minecraft.client.Minecraft,net.minecraft.client.gui.screens.Screen)" class="member-name-link">pushGuiLayer</a><wbr>(<a href="../../../minecraft/client/Minecraft.html" title="class in net.minecraft.client">Minecraft</a>&nbsp;minecraft,
@@ -781,118 +699,23 @@ health bar.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#shouldRenderEffect(net.minecraft.world.effect.MobEffectInstance)" class="member-name-link">shouldRenderEffect</a><wbr>(<a href="../../../minecraft/world/effect/MobEffectInstance.html" title="class in net.minecraft.world.effect">MobEffectInstance</a>&nbsp;effectInstance)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="../../../minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent.html" title="interface in net.minecraft.client.gui.screens.inventory.tooltip">ClientTooltipComponent</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#splitLine(net.minecraft.network.chat.FormattedText,net.minecraft.client.gui.Font,int)" class="member-name-link">splitLine</a><wbr>(<a href="../../../minecraft/network/chat/FormattedText.html" title="interface in net.minecraft.network.chat">FormattedText</a>&nbsp;text,
- <a href="../../../minecraft/client/gui/Font.html" title="class in net.minecraft.client.gui">Font</a>&nbsp;font,
- int&nbsp;maxWidth)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateDebugScreenEntriesForSearch(java.lang.String,java.util.function.Consumer,java.util.function.Consumer)" class="member-name-link">updateDebugScreenEntriesForSearch</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;searchText,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateDebugScreenEntriesForSearch(java.lang.String,java.util.function.Consumer,java.util.function.Consumer)" class="member-name-link">updateDebugScreenEntriesForSearch</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;searchText,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/client/gui/components/debug/DebugEntryCategory.html" title="class in net.minecraft.client.gui.components.debug">DebugEntryCategory</a>&gt;&nbsp;addCategory,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;&nbsp;addEntry)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.apache.logging.log4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="CLIENTHOOKS">
-<h3>CLIENTHOOKS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.apache.logging.log4j.Marker</span>&nbsp;<span class="element-name">CLIENTHOOKS</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="guiLayers">
-<h3>guiLayers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Stack.html" title="class or interface in java.util" class="external-link">Stack</a>&lt;<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&gt;</span>&nbsp;<span class="element-name">guiLayers</span></div>
-<div class="block">Contains the *extra* GUI layers.
-The current top layer stays in Minecraft#currentScreen, and the rest serve as a background for it.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="slotMainHand">
-<h3>slotMainHand</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">slotMainHand</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="layerDefinitions">
-<h3>layerDefinitions</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/client/model/geom/ModelLayerLocation.html" title="class in net.minecraft.client.model.geom">ModelLayerLocation</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="../../../minecraft/client/model/geom/builders/LayerDefinition.html" title="class in net.minecraft.client.model.geom.builders">LayerDefinition</a>&gt;&gt;</span>&nbsp;<span class="element-name">layerDefinitions</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="skullModelsByType">
-<h3>skullModelsByType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/world/level/block/SkullBlock.Type.html" title="interface in net.minecraft.world.level.block">SkullBlock.Type</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../minecraft/client/model/geom/EntityModelSet.html" title="class in net.minecraft.client.model.geom">EntityModelSet</a>, <a href="../../../minecraft/client/model/object/skull/SkullModelBase.html" title="class in net.minecraft.client.model.object.skull">SkullModelBase</a>&gt;&gt;</span>&nbsp;<span class="element-name">skullModelsByType</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ICON_SHEET">
-<h3>ICON_SHEET</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></span>&nbsp;<span class="element-name">ICON_SHEET</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="initializedClientHooks">
-<h3>initializedClientHooks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">initializedClientHooks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="initializedClientRegistries">
-<h3>initializedClientRegistries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">initializedClientRegistries</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_METADATA_SECTION_TYPES">
-<h3>DEFAULT_METADATA_SECTION_TYPES</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashSet.html" title="class or interface in java.util" class="external-link">HashSet</a>&lt;<a href="../../../minecraft/server/packs/metadata/MetadataSectionType.html" title="class in net.minecraft.server.packs.metadata">MetadataSectionType</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">DEFAULT_METADATA_SECTION_TYPES</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -932,14 +755,6 @@ The current top layer stays in Minecraft#currentScreen, and the rest serve as a 
 </section>
 </li>
 <li>
-<section class="detail" id="popGuiLayerInternal(net.minecraft.client.Minecraft)">
-<h3>popGuiLayerInternal</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">popGuiLayerInternal</span><wbr><span class="parameters">(<a href="../../../minecraft/client/Minecraft.html" title="class in net.minecraft.client">Minecraft</a>&nbsp;minecraft)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="pushGuiLayer(net.minecraft.client.Minecraft,net.minecraft.client.gui.screens.Screen)">
 <h3>pushGuiLayer</h3>
 <div class="horizontal-scroll">
@@ -962,7 +777,7 @@ The current top layer stays in Minecraft#currentScreen, and the rest serve as a 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/client/gui/Gui.HeartType.html" title="enum class in net.minecraft.client.gui">Gui.HeartType</a></span>&nbsp;<span class="element-name">firePlayerHeartTypeEvent</span><wbr><span class="parameters">(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/client/gui/Gui.HeartType.html" title="enum class in net.minecraft.client.gui">Gui.HeartType</a>&nbsp;heartType)</span></div>
-<div class="block">Called by <a href="../../../minecraft/client/gui/Gui.HeartType.html#forPlayer(net.minecraft.world.entity.player.Player)"><code>Gui.HeartType.forPlayer(Player)</code></a> to allow for modification of the displayed heart type in the
+<div class="block">Called by <code>Gui.HeartType.forPlayer(Player)</code> to allow for modification of the displayed heart type in the
 health bar.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -1044,15 +859,6 @@ health bar.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">copyModelProperties</span><wbr><span class="parameters">(<a href="../../../minecraft/client/model/HumanoidModel.html" title="class in net.minecraft.client.model">HumanoidModel</a>&lt;?&gt;&nbsp;original,
  <a href="../../../minecraft/client/model/HumanoidModel.html" title="class in net.minecraft.client.model">HumanoidModel</a>&lt;?&gt;&nbsp;replacement)</span></div>
 <div class="block">Copies humanoid model properties from the original model to another, used for armor models</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="copyModelPartProperties(net.minecraft.client.model.geom.ModelPart,net.minecraft.client.model.geom.ModelPart)">
-<h3>copyModelPartProperties</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">copyModelPartProperties</span><wbr><span class="parameters">(<a href="../../../minecraft/client/model/geom/ModelPart.html" title="class in net.minecraft.client.model.geom">ModelPart</a>&nbsp;original,
- <a href="../../../minecraft/client/model/geom/ModelPart.html" title="class in net.minecraft.client.model.geom">ModelPart</a>&nbsp;replacement)</span></div>
 </div>
 </section>
 </li>
@@ -1153,18 +959,6 @@ health bar.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="drawScreenInternal(net.minecraft.client.gui.screens.Screen,net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)">
-<h3>drawScreenInternal</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawScreenInternal</span><wbr><span class="parameters">(<a href="../../../minecraft/client/gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a>&nbsp;screen,
- <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;guiGraphics,
- int&nbsp;mouseX,
- int&nbsp;mouseY,
- float&nbsp;partialTick)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getFogColor(net.minecraft.client.Camera,float,net.minecraft.client.multiplayer.ClientLevel,int,float,float,float,float,org.joml.Vector4f)">
 <h3>getFogColor</h3>
 <div class="horizontal-scroll">
@@ -1176,7 +970,7 @@ health bar.</div>
  float&nbsp;fogRed,
  float&nbsp;fogGreen,
  float&nbsp;fogBlue,
- org.joml.Vector4f&nbsp;dest)</span></div>
+ <a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Vector4f.html" title="class or interface in org.joml" class="external-link">Vector4f</a>&nbsp;dest)</span></div>
 </div>
 </section>
 </li>
@@ -1677,16 +1471,6 @@ health bar.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="splitLine(net.minecraft.network.chat.FormattedText,net.minecraft.client.gui.Font,int)">
-<h3>splitLine</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="../../../minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent.html" title="interface in net.minecraft.client.gui.screens.inventory.tooltip">ClientTooltipComponent</a>&gt;</span>&nbsp;<span class="element-name">splitLine</span><wbr><span class="parameters">(<a href="../../../minecraft/network/chat/FormattedText.html" title="interface in net.minecraft.network.chat">FormattedText</a>&nbsp;text,
- <a href="../../../minecraft/client/gui/Font.html" title="class in net.minecraft.client.gui">Font</a>&nbsp;font,
- int&nbsp;maxWidth)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="onScreenPotionSize(net.minecraft.client.gui.screens.Screen,int,boolean,int)">
 <h3>onScreenPotionSize</h3>
 <div class="horizontal-scroll">
@@ -1784,7 +1568,7 @@ health bar.</div>
 <h3>fireRenderFramePre</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fireRenderFramePre</span><wbr><span class="parameters">(<a href="../../../minecraft/client/DeltaTracker.html" title="interface in net.minecraft.client">DeltaTracker</a>&nbsp;partialTick)</span></div>
-<div class="block">Fires <a href="event/RenderFrameEvent.Pre.html" title="class in net.neoforged.neoforge.client.event"><code>RenderFrameEvent.Pre</code></a>. Called just before <a href="../../../minecraft/client/renderer/GameRenderer.html#render(net.minecraft.client.DeltaTracker,boolean)"><code>GameRenderer.render(DeltaTracker, boolean)</code></a> in <a href="../../../minecraft/client/Minecraft.html#runTick(boolean)"><code>Minecraft.runTick(boolean)</code></a>.
+<div class="block">Fires <a href="event/RenderFrameEvent.Pre.html" title="class in net.neoforged.neoforge.client.event"><code>RenderFrameEvent.Pre</code></a>. Called just before <a href="../../../minecraft/client/renderer/GameRenderer.html#render(net.minecraft.client.DeltaTracker,boolean)"><code>GameRenderer.render(DeltaTracker, boolean)</code></a> in <code>Minecraft.runTick(boolean)</code>.
 <p>
 Fired before the profiler section for "gameRenderer" is started.</div>
 <dl class="notes">
@@ -1799,7 +1583,7 @@ Fired before the profiler section for "gameRenderer" is started.</div>
 <h3>fireRenderFramePost</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fireRenderFramePost</span><wbr><span class="parameters">(<a href="../../../minecraft/client/DeltaTracker.html" title="interface in net.minecraft.client">DeltaTracker</a>&nbsp;partialTick)</span></div>
-<div class="block">Fires <a href="event/RenderFrameEvent.Post.html" title="class in net.neoforged.neoforge.client.event"><code>RenderFrameEvent.Post</code></a>. Called just after <a href="../../../minecraft/client/renderer/GameRenderer.html#render(net.minecraft.client.DeltaTracker,boolean)"><code>GameRenderer.render(DeltaTracker, boolean)</code></a> in <a href="../../../minecraft/client/Minecraft.html#runTick(boolean)"><code>Minecraft.runTick(boolean)</code></a>.
+<div class="block">Fires <a href="event/RenderFrameEvent.Post.html" title="class in net.neoforged.neoforge.client.event"><code>RenderFrameEvent.Post</code></a>. Called just after <a href="../../../minecraft/client/renderer/GameRenderer.html#render(net.minecraft.client.DeltaTracker,boolean)"><code>GameRenderer.render(DeltaTracker, boolean)</code></a> in <code>Minecraft.runTick(boolean)</code>.
 <p>
 Fired after the profiler section for "gameRenderer" is ended.</div>
 <dl class="notes">
@@ -1853,7 +1637,7 @@ Fired after the profiler section for "gameRenderer" is ended.</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../minecraft/network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&gt;&nbsp;tooltip)</span></div>
 <div class="block">Fires the <a href="event/GatherEffectScreenTooltipsEvent.html" title="class in net.neoforged.neoforge.client.event"><code>GatherEffectScreenTooltipsEvent</code></a> and returns the resulting tooltip lines.
 <p>
-Called from <a href="../../../minecraft/client/gui/screens/inventory/EffectsInInventory.html#renderText(net.minecraft.client.gui.GuiGraphicsExtractor,net.minecraft.network.chat.Component,net.minecraft.network.chat.Component,net.minecraft.client.gui.Font,int,int,int,int,int,int,net.minecraft.world.effect.MobEffectInstance)"><code>EffectsInInventory.renderText(GuiGraphicsExtractor, Component, Component, Font, int, int, int, int, int, int, MobEffectInstance)</code></a> just before <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html#setTooltipForNextFrame(net.minecraft.client.gui.Font,java.util.List,java.util.Optional,int,int)"><code>GuiGraphicsExtractor.setTooltipForNextFrame(Font, List, Optional, int, int)</code></a> is called.</div>
+Called from <code>EffectsInInventory.renderText(GuiGraphicsExtractor, Component, Component, Font, int, int, int, int, int, int, MobEffectInstance)</code> just before <a href="../../../minecraft/client/gui/GuiGraphicsExtractor.html#setTooltipForNextFrame(net.minecraft.client.gui.Font,java.util.List,java.util.Optional,int,int)"><code>GuiGraphicsExtractor.setTooltipForNextFrame(Font, List, Optional, int, int)</code></a> is called.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>screen</code> - The screen rendering the tooltip.</dd>
@@ -1890,7 +1674,7 @@ Called from <a href="../../../minecraft/client/gui/screens/inventory/EffectsInIn
  <a href="../../../minecraft/client/renderer/LevelTargetBundle.html" title="class in net.minecraft.client.renderer">LevelTargetBundle</a>&nbsp;targets,
  <a href="../../../../com/mojang/blaze3d/resource/RenderTargetDescriptor.html" title="class in com.mojang.blaze3d.resource">RenderTargetDescriptor</a>&nbsp;renderTargetDescriptor,
  <a href="../../../minecraft/client/renderer/state/level/CameraRenderState.html" title="class in net.minecraft.client.renderer.state.level">CameraRenderState</a>&nbsp;cameraState,
- org.joml.Matrix4fc&nbsp;modelViewMatrix,
+ <a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Matrix4fc.html" title="class or interface in org.joml" class="external-link">Matrix4fc</a>&nbsp;modelViewMatrix,
  <a href="../../../minecraft/client/DeltaTracker.html" title="interface in net.minecraft.client">DeltaTracker</a>&nbsp;deltaTracker,
  <a href="../../../minecraft/util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</span></div>
 </div>
@@ -1960,15 +1744,6 @@ Called from <a href="../../../minecraft/client/gui/screens/inventory/EffectsInIn
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateDebugScreenEntriesForSearch</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;searchText,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/client/gui/components/debug/DebugEntryCategory.html" title="class in net.minecraft.client.gui.components.debug">DebugEntryCategory</a>&gt;&nbsp;addCategory,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;&nbsp;addEntry)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isValidDebugEntryForSearch(java.lang.String,net.minecraft.resources.Identifier)">
-<h3>isValidDebugEntryForSearch</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isValidDebugEntryForSearch</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;searchText,
- <a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id)</span></div>
 </div>
 </section>
 </li>

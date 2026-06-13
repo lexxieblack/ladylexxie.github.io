@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ResourcePackLoader (NeoForge 26.1)</title>
+<title>ResourcePackLoader (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.resource, class: ResourcePackLoader">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ResourcePackLoader.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,12 +61,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#MOD_DATA_ID" tabindex="0">MOD_DATA_ID</a></li>
 <li><a href="#MOD_RESOURCES_ID" tabindex="0">MOD_RESOURCES_ID</a></li>
-<li><a href="#modResourcePacks" tabindex="0">modResourcePacks</a></li>
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#MOD_PACK_SELECTION_CONFIG" tabindex="0">MOD_PACK_SELECTION_CONFIG</a></li>
-<li><a href="#UNLIMITED_SUPPORT" tabindex="0">UNLIMITED_SUPPORT</a></li>
-<li><a href="#OPTIONAL_CLIENT_FORMAT" tabindex="0">OPTIONAL_CLIENT_FORMAT</a></li>
-<li><a href="#OPTIONAL_SERVER_FORMAT" tabindex="0">OPTIONAL_SERVER_FORMAT</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -78,18 +72,11 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#getPackFor(java.lang.String)" tabindex="0">getPackFor(String)</a></li>
 <li><a href="#populatePackRepository(net.minecraft.server.packs.repository.PackRepository,net.minecraft.server.packs.PackType,boolean)" tabindex="0">populatePackRepository(PackRepository, PackType, boolean)</a></li>
-<li><a href="#findResourcePacks()" tabindex="0">findResourcePacks()</a></li>
 <li><a href="#buildPackFinder(java.util.Map,net.minecraft.server.packs.PackType)" tabindex="0">buildPackFinder(Map, PackType)</a></li>
-<li><a href="#packFinder(java.util.Map,java.util.function.Consumer,net.minecraft.server.packs.PackType)" tabindex="0">packFinder(Map, Consumer, PackType)</a></li>
-<li><a href="#metadataCodecForPackType(net.minecraft.server.packs.PackType)" tabindex="0">metadataCodecForPackType(PackType)</a></li>
-<li><a href="#metadataTypeForPackType(net.minecraft.server.packs.PackType)" tabindex="0">metadataTypeForPackType(PackType)</a></li>
 <li><a href="#readWithOptionalMeta(net.minecraft.server.packs.PackLocationInfo,net.minecraft.server.packs.repository.Pack.ResourcesSupplier,net.minecraft.server.packs.PackType,net.minecraft.server.packs.PackSelectionConfig)" tabindex="0">readWithOptionalMeta(PackLocationInfo, Pack.ResourcesSupplier, PackType, PackSelectionConfig)</a></li>
-<li><a href="#readMeta(net.minecraft.server.packs.PackType,net.minecraft.server.packs.PackLocationInfo,net.minecraft.server.packs.repository.Pack.ResourcesSupplier)" tabindex="0">readMeta(PackType, PackLocationInfo, Pack.ResourcesSupplier)</a></li>
-<li><a href="#makePack(net.minecraft.server.packs.PackType,java.util.ArrayList)" tabindex="0">makePack(PackType, ArrayList)</a></li>
 <li><a href="#createPackForMod(net.neoforged.neoforgespi.language.IModFileInfo)" tabindex="0">createPackForMod(IModFileInfo)</a></li>
 <li><a href="#createPackForJarContents(net.neoforged.fml.jarcontents.JarContents)" tabindex="0">createPackForJarContents(JarContents)</a></li>
 <li><a href="#getPackNames(net.minecraft.server.packs.PackType)" tabindex="0">getPackNames(PackType)</a></li>
-<li><a href="#hasResourcePack(net.neoforged.neoforgespi.locating.IModFile)" tabindex="0">hasResourcePack(IModFile)</a></li>
 <li><a href="#expandAndRemoveRootChildren(java.util.stream.Stream,java.util.Collection)" tabindex="0">expandAndRemoveRootChildren(Stream, Collection)</a></li>
 <li><a href="#reorderNewlyDiscoveredPacks(java.util.Collection,java.util.Collection,net.minecraft.server.packs.repository.PackRepository)" tabindex="0">reorderNewlyDiscoveredPacks(Collection, Collection, PackRepository)</a></li>
 </ol>
@@ -122,29 +109,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final org.apache.logging.log4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#MOD_DATA_ID" class="member-name-link">MOD_DATA_ID</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../minecraft/server/packs/PackSelectionConfig.html" title="class in net.minecraft.server.packs">PackSelectionConfig</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MOD_PACK_SELECTION_CONFIG" class="member-name-link">MOD_PACK_SELECTION_CONFIG</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MOD_DATA_ID" class="member-name-link">MOD_DATA_ID</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#MOD_RESOURCES_ID" class="member-name-link">MOD_RESOURCES_ID</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;net.neoforged.neoforgespi.locating.IModFile, <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#modResourcePacks" class="member-name-link">modResourcePacks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../minecraft/server/packs/metadata/MetadataSectionType.html" title="class in net.minecraft.server.packs.metadata">MetadataSectionType</a><wbr>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackMetadataSection.html" title="class in net.minecraft.server.packs.metadata.pack">PackMetadataSection</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#OPTIONAL_CLIENT_FORMAT" class="member-name-link">OPTIONAL_CLIENT_FORMAT</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../minecraft/server/packs/metadata/MetadataSectionType.html" title="class in net.minecraft.server.packs.metadata">MetadataSectionType</a><wbr>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackMetadataSection.html" title="class in net.minecraft.server.packs.metadata.pack">PackMetadataSection</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#OPTIONAL_SERVER_FORMAT" class="member-name-link">OPTIONAL_SERVER_FORMAT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../minecraft/util/InclusiveRange.html" title="class in net.minecraft.util">InclusiveRange</a><wbr>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackFormat.html" title="class in net.minecraft.server.packs.metadata.pack">PackFormat</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#UNLIMITED_SUPPORT" class="member-name-link">UNLIMITED_SUPPORT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -174,73 +143,47 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/server/packs/repository/RepositorySource.html" title="interface in net.minecraft.server.packs.repository">RepositorySource</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#buildPackFinder(java.util.Map,net.minecraft.server.packs.PackType)" class="member-name-link">buildPackFinder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;net.neoforged.neoforgespi.locating.IModFile, <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;&nbsp;modResourcePacks,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#buildPackFinder(java.util.Map,net.minecraft.server.packs.PackType)" class="member-name-link">buildPackFinder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../neoforgespi/locating/IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a>, <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;&nbsp;modResourcePacks,
  <a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createPackForJarContents(net.neoforged.fml.jarcontents.JarContents)" class="member-name-link">createPackForJarContents</a><wbr>(net.neoforged.fml.jarcontents.JarContents&nbsp;contents)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createPackForJarContents(net.neoforged.fml.jarcontents.JarContents)" class="member-name-link">createPackForJarContents</a><wbr>(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createPackForMod(net.neoforged.neoforgespi.language.IModFileInfo)" class="member-name-link">createPackForMod</a><wbr>(net.neoforged.neoforgespi.language.IModFileInfo&nbsp;mf)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createPackForMod(net.neoforged.neoforgespi.language.IModFileInfo)" class="member-name-link">createPackForMod</a><wbr>(<a href="../../neoforgespi/language/IModFileInfo.html" title="interface in net.neoforged.neoforgespi.language">IModFileInfo</a>&nbsp;mf)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#expandAndRemoveRootChildren(java.util.stream.Stream,java.util.Collection)" class="member-name-link">expandAndRemoveRootChildren</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a>&gt;&nbsp;packs,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a>&gt;&nbsp;availablePacks)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findResourcePacks()" class="member-name-link">findResourcePacks</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPackFor(java.lang.String)" class="member-name-link">getPackFor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPackFor(java.lang.String)" class="member-name-link">getPackFor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modId)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPackNames(net.minecraft.server.packs.PackType)" class="member-name-link">getPackNames</a><wbr>(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasResourcePack(net.neoforged.neoforgespi.locating.IModFile)" class="member-name-link">hasResourcePack</a><wbr>(net.neoforged.neoforgespi.locating.IModFile&nbsp;mf)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#makePack(net.minecraft.server.packs.PackType,java.util.ArrayList)" class="member-name-link">makePack</a><wbr>(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a>&gt;&nbsp;hiddenPacks)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackMetadataSection.html" title="class in net.minecraft.server.packs.metadata.pack">PackMetadataSection</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#metadataCodecForPackType(net.minecraft.server.packs.PackType)" class="member-name-link">metadataCodecForPackType</a><wbr>(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;type)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../minecraft/server/packs/metadata/MetadataSectionType.html" title="class in net.minecraft.server.packs.metadata">MetadataSectionType</a><wbr>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackMetadataSection.html" title="class in net.minecraft.server.packs.metadata.pack">PackMetadataSection</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#metadataTypeForPackType(net.minecraft.server.packs.PackType)" class="member-name-link">metadataTypeForPackType</a><wbr>(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#packFinder(java.util.Map,java.util.function.Consumer,net.minecraft.server.packs.PackType)" class="member-name-link">packFinder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;net.neoforged.neoforgespi.locating.IModFile, <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;&nbsp;modResourcePacks,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a>&gt;&nbsp;packAcceptor,
- <a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPackNames(net.minecraft.server.packs.PackType)" class="member-name-link">getPackNames</a><wbr>(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#populatePackRepository(net.minecraft.server.packs.repository.PackRepository,net.minecraft.server.packs.PackType,boolean)" class="member-name-link">populatePackRepository</a><wbr>(<a href="../../../minecraft/server/packs/repository/PackRepository.html" title="class in net.minecraft.server.packs.repository">PackRepository</a>&nbsp;resourcePacks,
  <a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType,
  boolean&nbsp;trusted)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../minecraft/server/packs/repository/Pack.Metadata.html" title="class in net.minecraft.server.packs.repository">Pack.Metadata</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readMeta(net.minecraft.server.packs.PackType,net.minecraft.server.packs.PackLocationInfo,net.minecraft.server.packs.repository.Pack.ResourcesSupplier)" class="member-name-link">readMeta</a><wbr>(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;type,
- <a href="../../../minecraft/server/packs/PackLocationInfo.html" title="class in net.minecraft.server.packs">PackLocationInfo</a>&nbsp;location,
- <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&nbsp;resources)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readWithOptionalMeta(net.minecraft.server.packs.PackLocationInfo,net.minecraft.server.packs.repository.Pack.ResourcesSupplier,net.minecraft.server.packs.PackType,net.minecraft.server.packs.PackSelectionConfig)" class="member-name-link">readWithOptionalMeta</a><wbr>(<a href="../../../minecraft/server/packs/PackLocationInfo.html" title="class in net.minecraft.server.packs">PackLocationInfo</a>&nbsp;location,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readWithOptionalMeta(net.minecraft.server.packs.PackLocationInfo,net.minecraft.server.packs.repository.Pack.ResourcesSupplier,net.minecraft.server.packs.PackType,net.minecraft.server.packs.PackSelectionConfig)" class="member-name-link">readWithOptionalMeta</a><wbr>(<a href="../../../minecraft/server/packs/PackLocationInfo.html" title="class in net.minecraft.server.packs">PackLocationInfo</a>&nbsp;location,
  <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&nbsp;resources,
  <a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;type,
  <a href="../../../minecraft/server/packs/PackSelectionConfig.html" title="class in net.minecraft.server.packs">PackSelectionConfig</a>&nbsp;selectionConfig)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#reorderNewlyDiscoveredPacks(java.util.Collection,java.util.Collection,net.minecraft.server.packs.repository.PackRepository)" class="member-name-link">reorderNewlyDiscoveredPacks</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;set,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#reorderNewlyDiscoveredPacks(java.util.Collection,java.util.Collection,net.minecraft.server.packs.repository.PackRepository)" class="member-name-link">reorderNewlyDiscoveredPacks</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;set,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;old,
  <a href="../../../minecraft/server/packs/repository/PackRepository.html" title="class in net.minecraft.server.packs.repository">PackRepository</a>&nbsp;packRepository)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -281,54 +224,6 @@ loadScripts(document, 'script');</script>
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="modResourcePacks">
-<h3>modResourcePacks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;net.neoforged.neoforgespi.locating.IModFile, <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;</span>&nbsp;<span class="element-name">modResourcePacks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.apache.logging.log4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="MOD_PACK_SELECTION_CONFIG">
-<h3>MOD_PACK_SELECTION_CONFIG</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/PackSelectionConfig.html" title="class in net.minecraft.server.packs">PackSelectionConfig</a></span>&nbsp;<span class="element-name">MOD_PACK_SELECTION_CONFIG</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="UNLIMITED_SUPPORT">
-<h3>UNLIMITED_SUPPORT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../minecraft/util/InclusiveRange.html" title="class in net.minecraft.util">InclusiveRange</a>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackFormat.html" title="class in net.minecraft.server.packs.metadata.pack">PackFormat</a>&gt;</span>&nbsp;<span class="element-name">UNLIMITED_SUPPORT</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="OPTIONAL_CLIENT_FORMAT">
-<h3>OPTIONAL_CLIENT_FORMAT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/metadata/MetadataSectionType.html" title="class in net.minecraft.server.packs.metadata">MetadataSectionType</a>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackMetadataSection.html" title="class in net.minecraft.server.packs.metadata.pack">PackMetadataSection</a>&gt;</span>&nbsp;<span class="element-name">OPTIONAL_CLIENT_FORMAT</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="OPTIONAL_SERVER_FORMAT">
-<h3>OPTIONAL_SERVER_FORMAT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/metadata/MetadataSectionType.html" title="class in net.minecraft.server.packs.metadata">MetadataSectionType</a>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackMetadataSection.html" title="class in net.minecraft.server.packs.metadata.pack">PackMetadataSection</a>&gt;</span>&nbsp;<span class="element-name">OPTIONAL_SERVER_FORMAT</span></div>
 </div>
 </section>
 </li>
@@ -375,45 +270,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="findResourcePacks()">
-<h3>findResourcePacks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">findResourcePacks</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="buildPackFinder(java.util.Map,net.minecraft.server.packs.PackType)">
 <h3>buildPackFinder</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/repository/RepositorySource.html" title="interface in net.minecraft.server.packs.repository">RepositorySource</a></span>&nbsp;<span class="element-name">buildPackFinder</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;net.neoforged.neoforgespi.locating.IModFile, <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;&nbsp;modResourcePacks,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/repository/RepositorySource.html" title="interface in net.minecraft.server.packs.repository">RepositorySource</a></span>&nbsp;<span class="element-name">buildPackFinder</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../neoforgespi/locating/IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a>, <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;&nbsp;modResourcePacks,
  <a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="packFinder(java.util.Map,java.util.function.Consumer,net.minecraft.server.packs.PackType)">
-<h3>packFinder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">packFinder</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;net.neoforged.neoforgespi.locating.IModFile, <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&gt;&nbsp;modResourcePacks,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a>&gt;&nbsp;packAcceptor,
- <a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="metadataCodecForPackType(net.minecraft.server.packs.PackType)">
-<h3>metadataCodecForPackType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackMetadataSection.html" title="class in net.minecraft.server.packs.metadata.pack">PackMetadataSection</a>&gt;</span>&nbsp;<span class="element-name">metadataCodecForPackType</span><wbr><span class="parameters">(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;type)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="metadataTypeForPackType(net.minecraft.server.packs.PackType)">
-<h3>metadataTypeForPackType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/metadata/MetadataSectionType.html" title="class in net.minecraft.server.packs.metadata">MetadataSectionType</a>&lt;<a href="../../../minecraft/server/packs/metadata/pack/PackMetadataSection.html" title="class in net.minecraft.server.packs.metadata.pack">PackMetadataSection</a>&gt;</span>&nbsp;<span class="element-name">metadataTypeForPackType</span><wbr><span class="parameters">(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;type)</span></div>
 </div>
 </section>
 </li>
@@ -434,34 +295,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="readMeta(net.minecraft.server.packs.PackType,net.minecraft.server.packs.PackLocationInfo,net.minecraft.server.packs.repository.Pack.ResourcesSupplier)">
-<h3>readMeta</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/repository/Pack.Metadata.html" title="class in net.minecraft.server.packs.repository">Pack.Metadata</a></span>&nbsp;<span class="element-name">readMeta</span><wbr><span class="parameters">(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;type,
- <a href="../../../minecraft/server/packs/PackLocationInfo.html" title="class in net.minecraft.server.packs">PackLocationInfo</a>&nbsp;location,
- <a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a>&nbsp;resources)</span>
-                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="makePack(net.minecraft.server.packs.PackType,java.util.ArrayList)">
-<h3>makePack</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a></span>&nbsp;<span class="element-name">makePack</span><wbr><span class="parameters">(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../../minecraft/server/packs/repository/Pack.html" title="class in net.minecraft.server.packs.repository">Pack</a>&gt;&nbsp;hiddenPacks)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="createPackForMod(net.neoforged.neoforgespi.language.IModFileInfo)">
 <h3>createPackForMod</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a></span>&nbsp;<span class="element-name">createPackForMod</span><wbr><span class="parameters">(net.neoforged.neoforgespi.language.IModFileInfo&nbsp;mf)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a></span>&nbsp;<span class="element-name">createPackForMod</span><wbr><span class="parameters">(<a href="../../neoforgespi/language/IModFileInfo.html" title="interface in net.neoforged.neoforgespi.language">IModFileInfo</a>&nbsp;mf)</span></div>
 </div>
 </section>
 </li>
@@ -469,7 +306,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="createPackForJarContents(net.neoforged.fml.jarcontents.JarContents)">
 <h3>createPackForJarContents</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a></span>&nbsp;<span class="element-name">createPackForJarContents</span><wbr><span class="parameters">(net.neoforged.fml.jarcontents.JarContents&nbsp;contents)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../minecraft/server/packs/repository/Pack.ResourcesSupplier.html" title="interface in net.minecraft.server.packs.repository">Pack.ResourcesSupplier</a></span>&nbsp;<span class="element-name">createPackForJarContents</span><wbr><span class="parameters">(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents)</span></div>
 </div>
 </section>
 </li>
@@ -478,14 +315,6 @@ loadScripts(document, 'script');</script>
 <h3>getPackNames</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getPackNames</span><wbr><span class="parameters">(<a href="../../../minecraft/server/packs/PackType.html" title="enum class in net.minecraft.server.packs">PackType</a>&nbsp;packType)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hasResourcePack(net.neoforged.neoforgespi.locating.IModFile)">
-<h3>hasResourcePack</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasResourcePack</span><wbr><span class="parameters">(net.neoforged.neoforgespi.locating.IModFile&nbsp;mf)</span></div>
 </div>
 </section>
 </li>

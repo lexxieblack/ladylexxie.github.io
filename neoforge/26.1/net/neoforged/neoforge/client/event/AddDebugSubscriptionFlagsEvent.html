@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>AddDebugSubscriptionFlagsEvent (NeoForge 26.1)</title>
+<title>AddDebugSubscriptionFlagsEvent (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.client.event, class: AddDebugSubscriptionFlagsEvent">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/AddDebugSubscriptionFlagsEvent.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,14 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#registrar" tabindex="0">registrar</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(it.unimi.dsi.fastutil.objects.ObjectBooleanBiConsumer)" tabindex="0">AddDebugSubscriptionFlagsEvent(ObjectBooleanBiConsumer)</a></li>
@@ -83,7 +77,7 @@ loadScripts(document, 'script');</script>
 <h1 title="Class AddDebugSubscriptionFlagsEvent" class="title">Class AddDebugSubscriptionFlagsEvent</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.neoforged.bus.api.Event
+<div class="inheritance"><a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">net.neoforged.bus.api.Event</a>
 <div class="inheritance">net.neoforged.neoforge.client.event.AddDebugSubscriptionFlagsEvent</div>
 </div>
 </div>
@@ -91,34 +85,23 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">AddDebugSubscriptionFlagsEvent</span>
-<span class="extends-implements">extends net.neoforged.bus.api.Event</span></div>
+<span class="extends-implements">extends <a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">Event</a></span></div>
 <div class="block">This event allows mods to register client-side <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">debug subscription</a> flags.
 <p>
 These flags are used to determine when subscriptions are allowed to register and store debug renderer values.
 If no flag is registered for a given debug subscription then it will be treated as a <code>always-disabled</code> flag and no debug values will be stored for it.
 <p>
-This event is fired once per tick during <a href="../../../../minecraft/client/multiplayer/ClientDebugSubscriber.html#requestedSubscriptions()">ClientDebugSubscriber.requestedSubscriptions()</a>.
+This event is fired once per tick during ClientDebugSubscriber.requestedSubscriptions().
 <p>
-This event is fired on the logical client.</div>
+This event is fired on the <a href="../../../fml/LogicalSide.html#CLIENT">logical client</a>.</div>
+<dl class="notes">
+<dt><em>API Note:</em></dt>
+<dd>Each <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">debug subscription</a> should only be registered once.</dd>
+</dl>
 </div>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final it.unimi.dsi.fastutil.objects.ObjectBooleanBiConsumer<wbr>&lt;<a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#registrar" class="member-name-link">registrar</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -127,7 +110,7 @@ This event is fired on the logical client.</div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(it.unimi.dsi.fastutil.objects.ObjectBooleanBiConsumer)" class="member-name-link">AddDebugSubscriptionFlagsEvent</a><wbr>(it.unimi.dsi.fastutil.objects.ObjectBooleanBiConsumer&lt;<a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&gt;&nbsp;registrar)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(it.unimi.dsi.fastutil.objects.ObjectBooleanBiConsumer)" class="member-name-link">AddDebugSubscriptionFlagsEvent</a><wbr>(<a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/objects/ObjectBooleanBiConsumer.html" title="class or interface in it.unimi.dsi.fastutil.objects" class="external-link">ObjectBooleanBiConsumer</a>&lt;<a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&gt;&nbsp;registrar)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -170,29 +153,13 @@ This event is fired on the logical client.</div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="registrar">
-<h3>registrar</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.ObjectBooleanBiConsumer&lt;<a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">registrar</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -203,7 +170,7 @@ This event is fired on the logical client.</div>
 <h3>AddDebugSubscriptionFlagsEvent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@Internal
-</span><span class="modifiers">public</span>&nbsp;<span class="element-name">AddDebugSubscriptionFlagsEvent</span><wbr><span class="parameters">(it.unimi.dsi.fastutil.objects.ObjectBooleanBiConsumer&lt;<a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&gt;&nbsp;registrar)</span></div>
+</span><span class="modifiers">public</span>&nbsp;<span class="element-name">AddDebugSubscriptionFlagsEvent</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/objects/ObjectBooleanBiConsumer.html" title="class or interface in it.unimi.dsi.fastutil.objects" class="external-link">ObjectBooleanBiConsumer</a>&lt;<a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&gt;&nbsp;registrar)</span></div>
 </div>
 </section>
 </li>
@@ -252,7 +219,7 @@ This event is fired on the logical client.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addActiveInDev</span><wbr><span class="parameters">(<a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&nbsp;subscription)</span></div>
 <div class="block">Mark the given <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">debug subscription</a> as only active in dev.
 <p>
-Using this method will mark your <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">debug subscription</a> as only being enabled in dev a.k.a when FMLEnvironment.isProduction() == <code>false</code>.</div>
+Using this method will mark your <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">debug subscription</a> as only being enabled in dev a.k.a when <a href="../../../fml/loading/FMLEnvironment.html#isProduction()">FMLEnvironment.isProduction()</a> == <code>false</code>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>subscription</code> - <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">debug subscription</a> to register flag for.</dd>
@@ -267,7 +234,7 @@ Using this method will mark your <a href="../../../../minecraft/util/debug/Debug
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addActiveInDev</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&gt;&nbsp;subscription)</span></div>
 <div class="block">Mark the given <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">debug subscription</a> as only active in dev.
 <p>
-Using this method will mark your <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">debug subscription</a> as only being enabled in dev a.k.a when FMLEnvironment.isProduction() == <code>false</code>.</div>
+Using this method will mark your <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">debug subscription</a> as only being enabled in dev a.k.a when <a href="../../../fml/loading/FMLEnvironment.html#isProduction()">FMLEnvironment.isProduction()</a> == <code>false</code>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>subscription</code> - <a href="../../../../minecraft/util/debug/DebugSubscription.html" title="class in net.minecraft.util.debug">Debug subscription</a> to register flag for.</dd>

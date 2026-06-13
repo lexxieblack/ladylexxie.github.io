@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>RegistryManager (NeoForge 26.1)</title>
+<title>RegistryManager (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.registries, class: RegistryManager">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/RegistryManager.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,13 +60,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#REGISTRIES" tabindex="0">REGISTRIES</a></li>
-<li><a href="#pendingModdedRegistries" tabindex="0">pendingModdedRegistries</a></li>
-<li><a href="#vanillaRegistryKeys" tabindex="0">vanillaRegistryKeys</a></li>
-<li><a href="#vanillaSnapshot" tabindex="0">vanillaSnapshot</a></li>
-<li><a href="#frozenSnapshot" tabindex="0">frozenSnapshot</a></li>
-<li><a href="#dataMaps" tabindex="0">dataMaps</a></li>
 <li><a href="#ATTRIBUTE_KNOWN_DATA_MAPS" tabindex="0">ATTRIBUTE_KNOWN_DATA_MAPS</a></li>
 </ol>
 </li>
@@ -77,17 +70,13 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#trackModdedRegistry(net.minecraft.resources.Identifier)" tabindex="0">trackModdedRegistry(Identifier)</a></li>
 <li><a href="#getDataMap(net.minecraft.resources.ResourceKey,net.minecraft.resources.Identifier)" tabindex="0">getDataMap(ResourceKey, Identifier)</a></li>
 <li><a href="#getDataMaps()" tabindex="0">getDataMaps()</a></li>
 <li><a href="#postNewRegistryEvent()" tabindex="0">postNewRegistryEvent()</a></li>
 <li><a href="#initDataMaps()" tabindex="0">initDataMaps()</a></li>
-<li><a href="#takeVanillaSnapshot()" tabindex="0">takeVanillaSnapshot()</a></li>
-<li><a href="#takeFrozenSnapshot()" tabindex="0">takeFrozenSnapshot()</a></li>
 <li><a href="#revertToVanilla()" tabindex="0">revertToVanilla()</a></li>
 <li><a href="#revertToFrozen()" tabindex="0">revertToFrozen()</a></li>
 <li><a href="#applySnapshot(java.util.Map,boolean)" tabindex="0">applySnapshot(Map, boolean)</a></li>
-<li><a href="#applySnapshot(net.minecraft.core.MappedRegistry,net.neoforged.neoforge.registries.RegistrySnapshot,java.util.Set)" tabindex="0">applySnapshot(MappedRegistry, RegistrySnapshot, Set)</a></li>
 <li><a href="#takeSnapshot(net.neoforged.neoforge.registries.RegistryManager.SnapshotType)" tabindex="0">takeSnapshot(RegistryManager.SnapshotType)</a></li>
 <li><a href="#generateRegistryPackets(boolean)" tabindex="0">generateRegistryPackets(boolean)</a></li>
 <li><a href="#getRegistryNamesForSyncToClient()" tabindex="0">getRegistryNamesForSyncToClient()</a></li>
@@ -143,27 +132,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final io.netty.util.AttributeKey<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;&gt;&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#ATTRIBUTE_KNOWN_DATA_MAPS" class="member-name-link">ATTRIBUTE_KNOWN_DATA_MAPS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="datamaps/DataMapType.html" title="class in net.neoforged.neoforge.registries.datamaps">DataMapType</a>&lt;?,<wbr>?&gt;&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#dataMaps" class="member-name-link">dataMaps</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="RegistrySnapshot.html" title="class in net.neoforged.neoforge.registries">RegistrySnapshot</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#frozenSnapshot" class="member-name-link">frozenSnapshot</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#pendingModdedRegistries" class="member-name-link">pendingModdedRegistries</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Marker</code></div>
-<div class="col-second odd-row-color"><code><a href="#REGISTRIES" class="member-name-link">REGISTRIES</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#vanillaRegistryKeys" class="member-name-link">vanillaRegistryKeys</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="RegistrySnapshot.html" title="class in net.neoforged.neoforge.registries">RegistrySnapshot</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#vanillaSnapshot" class="member-name-link">vanillaSnapshot</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -197,70 +165,54 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Applies the snapshot to the current state of the <a href="../../../minecraft/core/registries/BuiltInRegistries.html" title="class in net.minecraft.core.registries"><code>BuiltInRegistries</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;T&gt;&nbsp;void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#applySnapshot(net.minecraft.core.MappedRegistry,net.neoforged.neoforge.registries.RegistrySnapshot,java.util.Set)" class="member-name-link">applySnapshot</a><wbr>(<a href="../../../minecraft/core/MappedRegistry.html" title="class in net.minecraft.core">MappedRegistry</a>&lt;T&gt;&nbsp;registry,
- <a href="RegistrySnapshot.html" title="class in net.neoforged.neoforge.registries">RegistrySnapshot</a>&nbsp;snapshot,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;?&gt;&gt;&nbsp;missing)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../network/payload/FrozenRegistryPayload.html" title="class in net.neoforged.neoforge.network.payload">FrozenRegistryPayload</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#generateRegistryPackets(boolean)" class="member-name-link">generateRegistryPackets</a><wbr>(boolean&nbsp;isLocal)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../network/payload/FrozenRegistryPayload.html" title="class in net.neoforged.neoforge.network.payload">FrozenRegistryPayload</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#generateRegistryPackets(boolean)" class="member-name-link">generateRegistryPackets</a><wbr>(boolean&nbsp;isLocal)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;R&gt;&nbsp;@Nullable <a href="datamaps/DataMapType.html" title="class in net.neoforged.neoforge.registries.datamaps">DataMapType</a><wbr>&lt;R,<wbr>?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDataMap(net.minecraft.resources.ResourceKey,net.minecraft.resources.Identifier)" class="member-name-link">getDataMap</a><wbr>(<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;R&gt;&gt;&nbsp;registry,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;R&gt;&nbsp;@Nullable <a href="datamaps/DataMapType.html" title="class in net.neoforged.neoforge.registries.datamaps">DataMapType</a><wbr>&lt;R,<wbr>?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDataMap(net.minecraft.resources.ResourceKey,net.minecraft.resources.Identifier)" class="member-name-link">getDataMap</a><wbr>(<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;R&gt;&gt;&nbsp;registry,
  <a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;key)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="datamaps/DataMapType.html" title="class in net.neoforged.neoforge.registries.datamaps">DataMapType</a>&lt;?,<wbr>?&gt;&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDataMaps()" class="member-name-link">getDataMaps</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="datamaps/DataMapType.html" title="class in net.neoforged.neoforge.registries.datamaps">DataMapType</a>&lt;?,<wbr>?&gt;&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDataMaps()" class="member-name-link">getDataMaps</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a view of all registered data maps.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getRegistryNamesForSyncToClient()" class="member-name-link">getRegistryNamesForSyncToClient</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVanillaRegistryKeys()" class="member-name-link">getVanillaRegistryKeys</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getRegistryNamesForSyncToClient()" class="member-name-link">getRegistryNamesForSyncToClient</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#handleKnownDataMapsReply(net.neoforged.neoforge.network.payload.KnownRegistryDataMapsReplyPayload,net.neoforged.neoforge.network.handling.IPayloadContext)" class="member-name-link">handleKnownDataMapsReply</a><wbr>(<a href="../network/payload/KnownRegistryDataMapsReplyPayload.html" title="class in net.neoforged.neoforge.network.payload">KnownRegistryDataMapsReplyPayload</a>&nbsp;payload,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVanillaRegistryKeys()" class="member-name-link">getVanillaRegistryKeys</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#handleKnownDataMapsReply(net.neoforged.neoforge.network.payload.KnownRegistryDataMapsReplyPayload,net.neoforged.neoforge.network.handling.IPayloadContext)" class="member-name-link">handleKnownDataMapsReply</a><wbr>(<a href="../network/payload/KnownRegistryDataMapsReplyPayload.html" title="class in net.neoforged.neoforge.network.payload">KnownRegistryDataMapsReplyPayload</a>&nbsp;payload,
  <a href="../network/handling/IPayloadContext.html" title="interface in net.neoforged.neoforge.network.handling">IPayloadContext</a>&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initDataMaps()" class="member-name-link">initDataMaps</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isNonSyncedBuiltInRegistry(net.minecraft.core.Registry)" class="member-name-link">isNonSyncedBuiltInRegistry</a><wbr>(<a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&nbsp;registry)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#postNewRegistryEvent()" class="member-name-link">postNewRegistryEvent</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#revertToFrozen()" class="member-name-link">revertToFrozen</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#initDataMaps()" class="member-name-link">initDataMaps</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isNonSyncedBuiltInRegistry(net.minecraft.core.Registry)" class="member-name-link">isNonSyncedBuiltInRegistry</a><wbr>(<a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&nbsp;registry)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#postNewRegistryEvent()" class="member-name-link">postNewRegistryEvent</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#revertToVanilla()" class="member-name-link">revertToVanilla</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#revertToFrozen()" class="member-name-link">revertToFrozen</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#takeFrozenSnapshot()" class="member-name-link">takeFrozenSnapshot</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#revertToVanilla()" class="member-name-link">revertToVanilla</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="RegistrySnapshot.html" title="class in net.neoforged.neoforge.registries">RegistrySnapshot</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#takeSnapshot(net.neoforged.neoforge.registries.RegistryManager.SnapshotType)" class="member-name-link">takeSnapshot</a><wbr>(<a href="RegistryManager.SnapshotType.html" title="enum class in net.neoforged.neoforge.registries">RegistryManager.SnapshotType</a>&nbsp;snapshotType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Takes a snapshot of the current registries registered to <a href="../../../minecraft/core/registries/BuiltInRegistries.html#REGISTRY"><code>BuiltInRegistries.REGISTRY</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#takeVanillaSnapshot()" class="member-name-link">takeVanillaSnapshot</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#trackModdedRegistry(net.minecraft.resources.Identifier)" class="member-name-link">trackModdedRegistry</a><wbr>(<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;registry)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Called by <a href="RegistryBuilder.html" title="class in net.neoforged.neoforge.registries"><code>RegistryBuilder</code></a> to make sure that modders don't forget to register their registries.</div>
-</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -272,62 +224,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="REGISTRIES">
-<h3>REGISTRIES</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Marker</span>&nbsp;<span class="element-name">REGISTRIES</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pendingModdedRegistries">
-<h3>pendingModdedRegistries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</span>&nbsp;<span class="element-name">pendingModdedRegistries</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="vanillaRegistryKeys">
-<h3>vanillaRegistryKeys</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</span>&nbsp;<span class="element-name">vanillaRegistryKeys</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="vanillaSnapshot">
-<h3>vanillaSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="RegistrySnapshot.html" title="class in net.neoforged.neoforge.registries">RegistrySnapshot</a>&gt;</span>&nbsp;<span class="element-name">vanillaSnapshot</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="frozenSnapshot">
-<h3>frozenSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="RegistrySnapshot.html" title="class in net.neoforged.neoforge.registries">RegistrySnapshot</a>&gt;</span>&nbsp;<span class="element-name">frozenSnapshot</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dataMaps">
-<h3>dataMaps</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="datamaps/DataMapType.html" title="class in net.neoforged.neoforge.registries.datamaps">DataMapType</a>&lt;?,<wbr>?&gt;&gt;&gt;</span>&nbsp;<span class="element-name">dataMaps</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="ATTRIBUTE_KNOWN_DATA_MAPS">
 <h3>ATTRIBUTE_KNOWN_DATA_MAPS</h3>
@@ -360,15 +256,6 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="trackModdedRegistry(net.minecraft.resources.Identifier)">
-<h3>trackModdedRegistry</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">trackModdedRegistry</span><wbr><span class="parameters">(<a href="../../../minecraft/resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;registry)</span></div>
-<div class="block">Called by <a href="RegistryBuilder.html" title="class in net.neoforged.neoforge.registries"><code>RegistryBuilder</code></a> to make sure that modders don't forget to register their registries.</div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="getDataMap(net.minecraft.resources.ResourceKey,net.minecraft.resources.Identifier)">
 <h3>getDataMap</h3>
@@ -408,22 +295,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="takeVanillaSnapshot()">
-<h3>takeVanillaSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">takeVanillaSnapshot</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="takeFrozenSnapshot()">
-<h3>takeFrozenSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">takeFrozenSnapshot</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="revertToVanilla()">
 <h3>revertToVanilla</h3>
 <div class="horizontal-scroll">
@@ -453,16 +324,6 @@ loadScripts(document, 'script');</script>
 <dt>Returns:</dt>
 <dd>the set of unhandled missing registry entries after firing remapping events for mods</dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="applySnapshot(net.minecraft.core.MappedRegistry,net.neoforged.neoforge.registries.RegistrySnapshot,java.util.Set)">
-<h3>applySnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applySnapshot</span><wbr><span class="parameters">(<a href="../../../minecraft/core/MappedRegistry.html" title="class in net.minecraft.core">MappedRegistry</a>&lt;T&gt;&nbsp;registry,
- <a href="RegistrySnapshot.html" title="class in net.neoforged.neoforge.registries">RegistrySnapshot</a>&nbsp;snapshot,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;?&gt;&gt;&nbsp;missing)</span></div>
 </div>
 </section>
 </li>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ConfigurationScreen.ConfigurationListScreen (NeoForge 26.1)</title>
+<title>ConfigurationScreen.ConfigurationListScreen (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.client.gui, class: ConfigurationScreen, class: ConfigurationListScreen">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ConfigurationScreen.ConfigurationListScreen.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,14 +59,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#key" tabindex="0">key</a></li>
-<li><a href="#spec" tabindex="0">spec</a></li>
-<li><a href="#valueList" tabindex="0">valueList</a></li>
-<li><a href="#cfgList" tabindex="0">cfgList</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.neoforged.neoforge.client.gui.ConfigurationScreen.ConfigurationSectionScreen.Context,java.lang.String,net.minecraft.network.chat.Component,net.neoforged.neoforge.common.ModConfigSpec.ListValueSpec,net.neoforged.neoforge.common.ModConfigSpec.ConfigValue)" tabindex="0">ConfigurationListScreen(ConfigurationScreen.ConfigurationSectionScreen.Context, String, Component, ModConfigSpec.ListValueSpec, ModConfigSpec.ConfigValue)</a></li>
@@ -74,23 +66,8 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#rebuild()" tabindex="0">rebuild()</a></li>
-<li><a href="#isAnyNondefault()" tabindex="0">isAnyNondefault()</a></li>
-<li><a href="#createAddElementButton()" tabindex="0">createAddElementButton()</a></li>
-<li><a href="#createListLabel(int)" tabindex="0">createListLabel(int)</a></li>
-<li><a href="#createOtherValue(int,T)" tabindex="0">createOtherValue(int, T)</a></li>
-<li><a href="#createStringListValue(int,java.lang.String)" tabindex="0">createStringListValue(int, String)</a></li>
-<li><a href="#createDoubleListValue(int,java.lang.Double)" tabindex="0">createDoubleListValue(int, Double)</a></li>
-<li><a href="#createLongListValue(int,java.lang.Long)" tabindex="0">createLongListValue(int, Long)</a></li>
-<li><a href="#createIntegerListValue(int,java.lang.Integer)" tabindex="0">createIntegerListValue(int, Integer)</a></li>
-<li><a href="#createBooleanListValue(int,java.lang.Boolean)" tabindex="0">createBooleanListValue(int, Boolean)</a></li>
-<li><a href="#swap(int,boolean)" tabindex="0">swap(int, boolean)</a></li>
-<li><a href="#del(int,boolean)" tabindex="0">del(int, boolean)</a></li>
-<li><a href="#addUndoListener(boolean,java.util.List)" tabindex="0">addUndoListener(boolean, List)</a></li>
 <li><a href="#onClose()" tabindex="0">onClose()</a></li>
 <li><a href="#extractRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" tabindex="0">extractRenderState(GuiGraphicsExtractor, int, int, float)</a></li>
-<li><a href="#onChanged(java.lang.String)" tabindex="0">onChanged(String)</a></li>
-<li><a href="#createResetButton()" tabindex="0">createResetButton()</a></li>
 </ol>
 </li>
 </ol>
@@ -130,10 +107,10 @@ This class is automatically used if you use NeoForge's generic configuration UI,
 
 If you have special needs, you can subclass this class to achieve the desired behaviour. For example:<ul>
 
-<li>To change how the label and buttons for the individual elements look, override <a href="#createListLabel(int)"><code>createListLabel(int)</code></a>.
+<li>To change how the label and buttons for the individual elements look, override <code>createListLabel(int)</code>.
 <li>To use another UI element, override the matching <code>create*Value()</code> method and return your new UI element wrapped in a <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui"><code>ConfigurationScreen.ConfigurationSectionScreen.Element</code></a>.
-<li>To add additional (synthetic) config values, override <a href="#rebuild()"><code>rebuild()</code></a> and add them to <code>list</code>. (<a href="ConfigurationScreen.ConfigurationSectionScreen.html#createSyntheticValues()"><code>ConfigurationScreen.ConfigurationSectionScreen.createSyntheticValues()</code></a> is not used for lists).
-<li>To be notified on each changed value instead of getting one <code>ModConfigEvent</code> at the end, override <a href="#onChanged(java.lang.String)"><code>onChanged(String)</code></a> on the <a href="ConfigurationScreen.html" title="class in net.neoforged.neoforge.client.gui"><code>ConfigurationScreen</code></a>,
+<li>To add additional (synthetic) config values, override <code>rebuild()</code> and add them to <code>list</code>. (<code>ConfigurationScreen.ConfigurationSectionScreen.createSyntheticValues()</code> is not used for lists).
+<li>To be notified on each changed value instead of getting one <a href="../../../fml/event/config/ModConfigEvent.html" title="class in net.neoforged.fml.event.config"><code>ModConfigEvent</code></a> at the end, override <code>onChanged(String)</code> on the <a href="ConfigurationScreen.html" title="class in net.neoforged.neoforge.client.gui"><code>ConfigurationScreen</code></a>,
 not here. The list will only be updated in the <a href="../../common/ModConfigSpec.ConfigValue.html" title="class in net.neoforged.neoforge.common"><code>ModConfigSpec.ConfigValue</code></a> when this screen is closed.
 <li>To limit the number of elements in a list, pass a <a href="../../common/ModConfigSpec.Range.html" title="class in net.neoforged.neoforge.common"><code>ModConfigSpec.Range</code></a> to <a href="../../common/ModConfigSpec.Builder.html#defineList(java.util.List,java.util.function.Supplier,java.util.function.Supplier,java.util.function.Predicate,net.neoforged.neoforge.common.ModConfigSpec.Range)"><code>ModConfigSpec.Builder.defineList(List, Supplier, Supplier, Predicate, Range)</code></a>.
 </ul></div>
@@ -168,33 +145,12 @@ not here. The list will only be updated in the <a href="../../common/ModConfigSp
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="#type-param-T" title="type parameter in ConfigurationScreen.ConfigurationListScreen">T</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#cfgList" class="member-name-link">cfgList</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#key" class="member-name-link">key</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected final <a href="../../common/ModConfigSpec.ListValueSpec.html" title="class in net.neoforged.neoforge.common">ModConfigSpec.ListValueSpec</a></code></div>
-<div class="col-second even-row-color"><code><a href="#spec" class="member-name-link">spec</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="../../common/ModConfigSpec.ConfigValue.html" title="class in net.neoforged.neoforge.common">ModConfigSpec.ConfigValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="#type-param-T" title="type parameter in ConfigurationScreen.ConfigurationListScreen">T</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#valueList" class="member-name-link">valueList</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.neoforged.neoforge.client.gui.ConfigurationScreen.ConfigurationSectionScreen">Fields inherited from class&nbsp;<a href="ConfigurationScreen.ConfigurationSectionScreen.html#field-summary" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen</a></h3>
-<code><a href="ConfigurationScreen.ConfigurationSectionScreen.html#changed">changed</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#context">context</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#doneButton">doneButton</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#MAX_SLIDER_SIZE">MAX_SLIDER_SIZE</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#needsRestart">needsRestart</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#resetButton">resetButton</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#sectionCache">sectionCache</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#undoButton">undoButton</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#undoManager">undoManager</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.gui.screens.options.OptionsSubScreen">Fields inherited from class&nbsp;<a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#field-summary" title="class in net.minecraft.client.gui.screens.options">OptionsSubScreen</a></h3>
-<code><a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#lastScreen">lastScreen</a>, <a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#layout">layout</a>, <a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#list">list</a>, <a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#options">options</a></code></div>
+<code><a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#layout">layout</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.gui.screens.Screen">Fields inherited from class&nbsp;<a href="../../../../minecraft/client/gui/screens/Screen.html#field-summary" title="class in net.minecraft.client.gui.screens">Screen</a></h3>
-<code><a href="../../../../minecraft/client/gui/screens/Screen.html#FADE_IN_TIME">FADE_IN_TIME</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#font">font</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#FOOTER_SEPARATOR">FOOTER_SEPARATOR</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#HEADER_SEPARATOR">HEADER_SEPARATOR</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#height">height</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#INWORLD_FOOTER_SEPARATOR">INWORLD_FOOTER_SEPARATOR</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#INWORLD_HEADER_SEPARATOR">INWORLD_HEADER_SEPARATOR</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#MENU_BACKGROUND">MENU_BACKGROUND</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#minecraft">minecraft</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#narratorButton">narratorButton</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#renderables">renderables</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#screenExecutor">screenExecutor</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#title">title</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#width">width</a></code></div>
+<code><a href="../../../../minecraft/client/gui/screens/Screen.html#FOOTER_SEPARATOR">FOOTER_SEPARATOR</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#HEADER_SEPARATOR">HEADER_SEPARATOR</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#height">height</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#INWORLD_FOOTER_SEPARATOR">INWORLD_FOOTER_SEPARATOR</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#INWORLD_HEADER_SEPARATOR">INWORLD_HEADER_SEPARATOR</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#MENU_BACKGROUND">MENU_BACKGROUND</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#renderables">renderables</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#width">width</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -225,99 +181,30 @@ not here. The list will only be updated in the <a href="../../common/ModConfigSp
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addUndoListener(boolean,java.util.List)" class="member-name-link">addUndoListener</a><wbr>(boolean&nbsp;simulate,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="#type-param-T" title="type parameter in ConfigurationScreen.ConfigurationListScreen">T</a>&gt;&nbsp;values)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createAddElementButton()" class="member-name-link">createAddElementButton</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Creates a button to add a new element to the end of the list and adds it to the UI.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createBooleanListValue(int,java.lang.Boolean)" class="member-name-link">createBooleanListValue</a><wbr>(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createDoubleListValue(int,java.lang.Double)" class="member-name-link">createDoubleListValue</a><wbr>(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createIntegerListValue(int,java.lang.Integer)" class="member-name-link">createIntegerListValue</a><wbr>(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../../../minecraft/client/gui/components/AbstractWidget.html" title="class in net.minecraft.client.gui.components">AbstractWidget</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createListLabel(int)" class="member-name-link">createListLabel</a><wbr>(int&nbsp;idx)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Creates a new widget to label a list value and provide manipulation buttons for it.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createLongListValue(int,java.lang.Long)" class="member-name-link">createLongListValue</a><wbr>(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createOtherValue(int,T)" class="member-name-link">createOtherValue</a><wbr>(int&nbsp;idx,
- <a href="#type-param-T" title="type parameter in ConfigurationScreen.ConfigurationListScreen">T</a>&nbsp;entry)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Called when a list element is found that has an unknown or unsupported data type.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createResetButton()" class="member-name-link">createResetButton</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createStringListValue(int,java.lang.String)" class="member-name-link">createStringListValue</a><wbr>(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#del(int,boolean)" class="member-name-link">del</a><wbr>(int&nbsp;idx,
- boolean&nbsp;simulate)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Remove the given element.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extractRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">extractRenderState</a><wbr>(<a href="../../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;graphics,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extractRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" class="member-name-link">extractRenderState</a><wbr>(<a href="../../../../minecraft/client/gui/GuiGraphicsExtractor.html" title="class in net.minecraft.client.gui">GuiGraphicsExtractor</a>&nbsp;graphics,
  int&nbsp;mouseX,
  int&nbsp;mouseY,
  float&nbsp;a)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAnyNondefault()" class="member-name-link">isAnyNondefault</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onChanged(java.lang.String)" class="member-name-link">onChanged</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">This is called whenever a value is changed and the change is submitted to the appropriate <code>ConfigSpec</code>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onClose()" class="member-name-link">onClose</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="ConfigurationScreen.ConfigurationSectionScreen.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rebuild()" class="member-name-link">rebuild</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onClose()" class="member-name-link">onClose</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#swap(int,boolean)" class="member-name-link">swap</a><wbr>(int&nbsp;idx,
- boolean&nbsp;simulate)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Swap the given element with the next one.</div>
 </div>
 </div>
 </div>
-</div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.neoforged.neoforge.client.gui.ConfigurationScreen.ConfigurationSectionScreen">Methods inherited from class&nbsp;<a href="ConfigurationScreen.ConfigurationSectionScreen.html#method-summary" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen</a></h3>
-<code><a href="ConfigurationScreen.ConfigurationSectionScreen.html#addFooter()" title="addFooter()">addFooter</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#addOptions()" title="addOptions()">addOptions</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createBooleanValue(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.ValueSpec,java.util.function.Supplier,java.util.function.Consumer)" title="createBooleanValue(String, ModConfigSpec.ValueSpec, Supplier, Consumer)">createBooleanValue</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createDoubleValue(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.ValueSpec,java.util.function.Supplier,java.util.function.Consumer)" title="createDoubleValue(String, ModConfigSpec.ValueSpec, Supplier, Consumer)">createDoubleValue</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createEnumValue(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.ValueSpec,java.util.function.Supplier,java.util.function.Consumer)" title="createEnumValue(String, ModConfigSpec.ValueSpec, Supplier, Consumer)">createEnumValue</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createIntegerValue(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.ValueSpec,java.util.function.Supplier,java.util.function.Consumer)" title="createIntegerValue(String, ModConfigSpec.ValueSpec, Supplier, Consumer)">createIntegerValue</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createList(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.ListValueSpec,net.neoforged.neoforge.common.ModConfigSpec.ConfigValue)" title="createList(String, ModConfigSpec.ListValueSpec, ModConfigSpec.ConfigValue)">createList</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createLongValue(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.ValueSpec,java.util.function.Supplier,java.util.function.Consumer)" title="createLongValue(String, ModConfigSpec.ValueSpec, Supplier, Consumer)">createLongValue</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createNumberBox(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.ValueSpec,java.util.function.Supplier,java.util.function.Consumer,java.util.function.Predicate,java.util.function.Function,T)" title="createNumberBox(String, ModConfigSpec.ValueSpec, Supplier, Consumer, Predicate, Function, T)">createNumberBox</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createOtherSection(java.lang.String,java.lang.Object)" title="createOtherSection(String, Object)">createOtherSection</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createOtherValue(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.ConfigValue)" title="createOtherValue(String, ModConfigSpec.ConfigValue)">createOtherValue</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createSection(java.lang.String,com.electronwill.nightconfig.core.UnmodifiableConfig,com.electronwill.nightconfig.core.UnmodifiableConfig)" title="createSection(String, UnmodifiableConfig, UnmodifiableConfig)">createSection</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createSlider(java.lang.String,java.util.function.Supplier,java.util.function.Consumer,net.neoforged.neoforge.common.ModConfigSpec.Range)" title="createSlider(String, Supplier, Consumer, ModConfigSpec.Range)">createSlider</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createStringValue(java.lang.String,java.util.function.Predicate,java.util.function.Supplier,java.util.function.Consumer)" title="createStringValue(String, Predicate, Supplier, Consumer)">createStringValue</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createSyntheticValues()" title="createSyntheticValues()">createSyntheticValues</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#createUndoButton()" title="createUndoButton()">createUndoButton</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#getComment(java.lang.String)" title="getComment(String)">getComment</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#getTooltip(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.Range)" title="getTooltip(String, ModConfigSpec.Range)">getTooltip</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#getTooltipComponent(java.lang.String,net.neoforged.neoforge.common.ModConfigSpec.Range)" title="getTooltipComponent(String, ModConfigSpec.Range)">getTooltipComponent</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#getTranslationComponent(java.lang.String)" title="getTranslationComponent(String)">getTranslationComponent</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#getTranslationKey(java.lang.String)" title="getTranslationKey(String)">getTranslationKey</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#getValueSpec(java.lang.String)" title="getValueSpec(String)">getValueSpec</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#isNonDefault(net.neoforged.neoforge.common.ModConfigSpec.ConfigValue)" title="isNonDefault(ModConfigSpec.ConfigValue)">isNonDefault</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#isPartialNumber(java.lang.String,boolean)" title="isPartialNumber(String, boolean)">isPartialNumber</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#setResetButtonstate(boolean)" title="setResetButtonstate(boolean)">setResetButtonstate</a>, <a href="ConfigurationScreen.ConfigurationSectionScreen.html#setUndoButtonstate(boolean)" title="setUndoButtonstate(boolean)">setUndoButtonstate</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.gui.screens.options.OptionsSubScreen">Methods inherited from class&nbsp;<a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#method-summary" title="class in net.minecraft.client.gui.screens.options">OptionsSubScreen</a></h3>
-<code><a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#addContents()" title="addContents()">addContents</a>, <a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#addTitle()" title="addTitle()">addTitle</a>, <a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#init()" title="init()">init</a>, <a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#removed()" title="removed()">removed</a>, <a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#repositionElements()" title="repositionElements()">repositionElements</a>, <a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#resetOption(net.minecraft.client.OptionInstance)" title="resetOption(OptionInstance)">resetOption</a></code></div>
+<code><a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#removed()" title="removed()">removed</a>, <a href="../../../../minecraft/client/gui/screens/options/OptionsSubScreen.html#resetOption(net.minecraft.client.OptionInstance)" title="resetOption(OptionInstance)">resetOption</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.gui.screens.Screen">Methods inherited from class&nbsp;<a href="../../../../minecraft/client/gui/screens/Screen.html#method-summary" title="class in net.minecraft.client.gui.screens">Screen</a></h3>
-<code><a href="../../../../minecraft/client/gui/screens/Screen.html#added()" title="added()">added</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#addRenderableOnly(T)" title="addRenderableOnly(T)">addRenderableOnly</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#addRenderableWidget(T)" title="addRenderableWidget(T)">addRenderableWidget</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#addWidget(T)" title="addWidget(T)">addWidget</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#afterKeyboardAction()" title="afterKeyboardAction()">afterKeyboardAction</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#afterMouseAction()" title="afterMouseAction()">afterMouseAction</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#afterMouseMove()" title="afterMouseMove()">afterMouseMove</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#canInterruptWithAnotherScreen()" title="canInterruptWithAnotherScreen()">canInterruptWithAnotherScreen</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#changeFocus(net.minecraft.client.gui.ComponentPath)" title="changeFocus(ComponentPath)">changeFocus</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#children()" title="children()">children</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#clearFocus()" title="clearFocus()">clearFocus</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#clearWidgets()" title="clearWidgets()">clearWidgets</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#clickCommandAction(net.minecraft.client.player.LocalPlayer,java.lang.String,net.minecraft.client.gui.screens.Screen)" title="clickCommandAction(LocalPlayer, String, Screen)">clickCommandAction</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#clickUrlAction(net.minecraft.client.Minecraft,net.minecraft.client.gui.screens.Screen,java.net.URI)" title="clickUrlAction(Minecraft, Screen, URI)">clickUrlAction</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#defaultHandleClickEvent(net.minecraft.network.chat.ClickEvent,net.minecraft.client.Minecraft,net.minecraft.client.gui.screens.Screen)" title="defaultHandleClickEvent(ClickEvent, Minecraft, Screen)">defaultHandleClickEvent</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#defaultHandleGameClickEvent(net.minecraft.network.chat.ClickEvent,net.minecraft.client.Minecraft,net.minecraft.client.gui.screens.Screen)" title="defaultHandleGameClickEvent(ClickEvent, Minecraft, Screen)">defaultHandleGameClickEvent</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractBackground(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" title="extractBackground(GuiGraphicsExtractor, int, int, float)">extractBackground</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractBlurredBackground(net.minecraft.client.gui.GuiGraphicsExtractor)" title="extractBlurredBackground(GuiGraphicsExtractor)">extractBlurredBackground</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractMenuBackground(net.minecraft.client.gui.GuiGraphicsExtractor)" title="extractMenuBackground(GuiGraphicsExtractor)">extractMenuBackground</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractMenuBackground(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,int,int)" title="extractMenuBackground(GuiGraphicsExtractor, int, int, int, int)">extractMenuBackground</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractMenuBackgroundTexture(net.minecraft.client.gui.GuiGraphicsExtractor,net.minecraft.resources.Identifier,int,int,float,float,int,int)" title="extractMenuBackgroundTexture(GuiGraphicsExtractor, Identifier, int, int, float, float, int, int)">extractMenuBackgroundTexture</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractPanorama(net.minecraft.client.gui.GuiGraphicsExtractor,float)" title="extractPanorama(GuiGraphicsExtractor, float)">extractPanorama</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractRenderStateWithTooltipAndSubtitles(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" title="extractRenderStateWithTooltipAndSubtitles(GuiGraphicsExtractor, int, int, float)">extractRenderStateWithTooltipAndSubtitles</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractTransparentBackground(net.minecraft.client.gui.GuiGraphicsExtractor)" title="extractTransparentBackground(GuiGraphicsExtractor)">extractTransparentBackground</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#fadeWidgets(float)" title="fadeWidgets(float)">fadeWidgets</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#fillCrashDetails(net.minecraft.CrashReport)" title="fillCrashDetails(CrashReport)">fillCrashDetails</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#findNarratableWidget(java.util.List,net.minecraft.client.gui.narration.NarratableEntry)" title="findNarratableWidget(List, NarratableEntry)">findNarratableWidget</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getBackgroundMusic()" title="getBackgroundMusic()">getBackgroundMusic</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getFont()" title="getFont()">getFont</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getMinecraft()" title="getMinecraft()">getMinecraft</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getNarrationMessage()" title="getNarrationMessage()">getNarrationMessage</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getRectangle()" title="getRectangle()">getRectangle</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getTitle()" title="getTitle()">getTitle</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getTooltipFromItem(net.minecraft.client.Minecraft,net.minecraft.world.item.ItemStack)" title="getTooltipFromItem(Minecraft, ItemStack)">getTooltipFromItem</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getUsageNarration()" title="getUsageNarration()">getUsageNarration</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#handleDelayedNarration()" title="handleDelayedNarration()">handleDelayedNarration</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#init(int,int)" title="init(int, int)">init</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#insertText(java.lang.String,boolean)" title="insertText(String, boolean)">insertText</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#isAllowedInPortal()" title="isAllowedInPortal()">isAllowedInPortal</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#isInGameUi()" title="isInGameUi()">isInGameUi</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#isMouseOver(double,double)" title="isMouseOver(double, double)">isMouseOver</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#isPauseScreen()" title="isPauseScreen()">isPauseScreen</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#isValidCharacterForName(java.lang.String,int,int)" title="isValidCharacterForName(String, int, int)">isValidCharacterForName</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#keyPressed(net.minecraft.client.input.KeyEvent)" title="keyPressed(KeyEvent)">keyPressed</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#onFilesDrop(java.util.List)" title="onFilesDrop(List)">onFilesDrop</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#panoramaShouldSpin()" title="panoramaShouldSpin()">panoramaShouldSpin</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#rebuildWidgets()" title="rebuildWidgets()">rebuildWidgets</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#removeWidget(net.minecraft.client.gui.components.events.GuiEventListener)" title="removeWidget(GuiEventListener)">removeWidget</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#resize(int,int)" title="resize(int, int)">resize</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#setInitialFocus()" title="setInitialFocus()">setInitialFocus</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#setInitialFocus(net.minecraft.client.gui.components.events.GuiEventListener)" title="setInitialFocus(GuiEventListener)">setInitialFocus</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#shouldCloseOnEsc()" title="shouldCloseOnEsc()">shouldCloseOnEsc</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#shouldNarrateNavigation()" title="shouldNarrateNavigation()">shouldNarrateNavigation</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#showsActiveEffects()" title="showsActiveEffects()">showsActiveEffects</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#tick()" title="tick()">tick</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#triggerImmediateNarration(boolean)" title="triggerImmediateNarration(boolean)">triggerImmediateNarration</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#updateNarratedWidget(net.minecraft.client.gui.narration.NarrationElementOutput)" title="updateNarratedWidget(NarrationElementOutput)">updateNarratedWidget</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#updateNarrationState(net.minecraft.client.gui.narration.NarrationElementOutput)" title="updateNarrationState(NarrationElementOutput)">updateNarrationState</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#updateNarratorStatus(boolean)" title="updateNarratorStatus(boolean)">updateNarratorStatus</a></code></div>
+<code><a href="../../../../minecraft/client/gui/screens/Screen.html#added()" title="added()">added</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#afterKeyboardAction()" title="afterKeyboardAction()">afterKeyboardAction</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#afterMouseAction()" title="afterMouseAction()">afterMouseAction</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#afterMouseMove()" title="afterMouseMove()">afterMouseMove</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#canInterruptWithAnotherScreen()" title="canInterruptWithAnotherScreen()">canInterruptWithAnotherScreen</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#children()" title="children()">children</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#clearFocus()" title="clearFocus()">clearFocus</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractBackground(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" title="extractBackground(GuiGraphicsExtractor, int, int, float)">extractBackground</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractMenuBackgroundTexture(net.minecraft.client.gui.GuiGraphicsExtractor,net.minecraft.resources.Identifier,int,int,float,float,int,int)" title="extractMenuBackgroundTexture(GuiGraphicsExtractor, Identifier, int, int, float, float, int, int)">extractMenuBackgroundTexture</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractRenderStateWithTooltipAndSubtitles(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)" title="extractRenderStateWithTooltipAndSubtitles(GuiGraphicsExtractor, int, int, float)">extractRenderStateWithTooltipAndSubtitles</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#extractTransparentBackground(net.minecraft.client.gui.GuiGraphicsExtractor)" title="extractTransparentBackground(GuiGraphicsExtractor)">extractTransparentBackground</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#fillCrashDetails(net.minecraft.CrashReport)" title="fillCrashDetails(CrashReport)">fillCrashDetails</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#findNarratableWidget(java.util.List,net.minecraft.client.gui.narration.NarratableEntry)" title="findNarratableWidget(List, NarratableEntry)">findNarratableWidget</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getBackgroundMusic()" title="getBackgroundMusic()">getBackgroundMusic</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getFont()" title="getFont()">getFont</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getMinecraft()" title="getMinecraft()">getMinecraft</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getNarrationMessage()" title="getNarrationMessage()">getNarrationMessage</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getRectangle()" title="getRectangle()">getRectangle</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getTitle()" title="getTitle()">getTitle</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#getTooltipFromItem(net.minecraft.client.Minecraft,net.minecraft.world.item.ItemStack)" title="getTooltipFromItem(Minecraft, ItemStack)">getTooltipFromItem</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#handleDelayedNarration()" title="handleDelayedNarration()">handleDelayedNarration</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#init(int,int)" title="init(int, int)">init</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#isAllowedInPortal()" title="isAllowedInPortal()">isAllowedInPortal</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#isInGameUi()" title="isInGameUi()">isInGameUi</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#isMouseOver(double,double)" title="isMouseOver(double, double)">isMouseOver</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#isPauseScreen()" title="isPauseScreen()">isPauseScreen</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#keyPressed(net.minecraft.client.input.KeyEvent)" title="keyPressed(KeyEvent)">keyPressed</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#onFilesDrop(java.util.List)" title="onFilesDrop(List)">onFilesDrop</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#resize(int,int)" title="resize(int, int)">resize</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#shouldCloseOnEsc()" title="shouldCloseOnEsc()">shouldCloseOnEsc</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#showsActiveEffects()" title="showsActiveEffects()">showsActiveEffects</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#tick()" title="tick()">tick</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#triggerImmediateNarration(boolean)" title="triggerImmediateNarration(boolean)">triggerImmediateNarration</a>, <a href="../../../../minecraft/client/gui/screens/Screen.html#updateNarratorStatus(boolean)" title="updateNarratorStatus(boolean)">updateNarratorStatus</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.gui.components.events.AbstractContainerEventHandler">Methods inherited from class&nbsp;<a href="../../../../minecraft/client/gui/components/events/AbstractContainerEventHandler.html#method-summary" title="class in net.minecraft.client.gui.components.events">AbstractContainerEventHandler</a></h3>
 <code><a href="../../../../minecraft/client/gui/components/events/AbstractContainerEventHandler.html#getFocused()" title="getFocused()">getFocused</a>, <a href="../../../../minecraft/client/gui/components/events/AbstractContainerEventHandler.html#isDragging()" title="isDragging()">isDragging</a>, <a href="../../../../minecraft/client/gui/components/events/AbstractContainerEventHandler.html#setDragging(boolean)" title="setDragging(boolean)">setDragging</a>, <a href="../../../../minecraft/client/gui/components/events/AbstractContainerEventHandler.html#setFocused(net.minecraft.client.gui.components.events.GuiEventListener)" title="setFocused(GuiEventListener)">setFocused</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.gui.components.events.ContainerEventHandler">Methods inherited from interface&nbsp;<a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#method-summary" title="interface in net.minecraft.client.gui.components.events">ContainerEventHandler</a></h3>
 <code><a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#charTyped(net.minecraft.client.input.CharacterEvent)" title="charTyped(CharacterEvent)">charTyped</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#getBorderForArrowNavigation(net.minecraft.client.gui.navigation.ScreenDirection)" title="getBorderForArrowNavigation(ScreenDirection)">getBorderForArrowNavigation</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#getChildAt(double,double)" title="getChildAt(double, double)">getChildAt</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#getCurrentFocusPath()" title="getCurrentFocusPath()">getCurrentFocusPath</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#isFocused()" title="isFocused()">isFocused</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#keyReleased(net.minecraft.client.input.KeyEvent)" title="keyReleased(KeyEvent)">keyReleased</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#mouseClicked(net.minecraft.client.input.MouseButtonEvent,boolean)" title="mouseClicked(MouseButtonEvent, boolean)">mouseClicked</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#mouseDragged(net.minecraft.client.input.MouseButtonEvent,double,double)" title="mouseDragged(MouseButtonEvent, double, double)">mouseDragged</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#mouseReleased(net.minecraft.client.input.MouseButtonEvent)" title="mouseReleased(MouseButtonEvent)">mouseReleased</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#mouseScrolled(double,double,double,double)" title="mouseScrolled(double, double, double, double)">mouseScrolled</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#nextFocusPath(net.minecraft.client.gui.navigation.FocusNavigationEvent)" title="nextFocusPath(FocusNavigationEvent)">nextFocusPath</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#preeditUpdated(net.minecraft.client.input.PreeditEvent)" title="preeditUpdated(PreeditEvent)">preeditUpdated</a>, <a href="../../../../minecraft/client/gui/components/events/ContainerEventHandler.html#setFocused(boolean)" title="setFocused(boolean)">setFocused</a></code></div>
@@ -333,46 +220,6 @@ not here. The list will only be updated in the <a href="../../common/ModConfigSp
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="key">
-<h3>key</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">key</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spec">
-<h3>spec</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../common/ModConfigSpec.ListValueSpec.html" title="class in net.neoforged.neoforge.common">ModConfigSpec.ListValueSpec</a></span>&nbsp;<span class="element-name">spec</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="valueList">
-<h3>valueList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../common/ModConfigSpec.ConfigValue.html" title="class in net.neoforged.neoforge.common">ModConfigSpec.ConfigValue</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="#type-param-T" title="type parameter in ConfigurationScreen.ConfigurationListScreen">T</a>&gt;&gt;</span>&nbsp;<span class="element-name">valueList</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cfgList">
-<h3>cfgList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="#type-param-T" title="type parameter in ConfigurationScreen.ConfigurationListScreen">T</a>&gt;</span>&nbsp;<span class="element-name">cfgList</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -399,160 +246,6 @@ not here. The list will only be updated in the <a href="../../common/ModConfigSp
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="rebuild()">
-<h3>rebuild</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ConfigurationScreen.ConfigurationSectionScreen.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen</a></span>&nbsp;<span class="element-name">rebuild</span>()</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="ConfigurationScreen.ConfigurationSectionScreen.html#rebuild()">rebuild</a></code>&nbsp;in class&nbsp;<code><a href="ConfigurationScreen.ConfigurationSectionScreen.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isAnyNondefault()">
-<h3>isAnyNondefault</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAnyNondefault</span>()</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="ConfigurationScreen.ConfigurationSectionScreen.html#isAnyNondefault()">isAnyNondefault</a></code>&nbsp;in class&nbsp;<code><a href="ConfigurationScreen.ConfigurationSectionScreen.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createAddElementButton()">
-<h3>createAddElementButton</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createAddElementButton</span>()</div>
-<div class="block">Creates a button to add a new element to the end of the list and adds it to the UI.<p>
-
-Override this if you want a different button or want to add more elements.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createListLabel(int)">
-<h3>createListLabel</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/client/gui/components/AbstractWidget.html" title="class in net.minecraft.client.gui.components">AbstractWidget</a></span>&nbsp;<span class="element-name">createListLabel</span><wbr><span class="parameters">(int&nbsp;idx)</span></div>
-<div class="block">Creates a new widget to label a list value and provide manipulation buttons for it.<p>
-
-Override this if you want different labels/buttons.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>idx</code> - The index into the list.</dd>
-<dt>Returns:</dt>
-<dd>An <a href="../../../../minecraft/client/gui/components/AbstractWidget.html" title="class in net.minecraft.client.gui.components"><code>AbstractWidget</code></a> to be rendered in the left column of the options screen</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createOtherValue(int,T)">
-<h3 id="createOtherValue(int,java.lang.Object)">createOtherValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></span>&nbsp;<span class="element-name">createOtherValue</span><wbr><span class="parameters">(int&nbsp;idx,
- <a href="#type-param-T" title="type parameter in ConfigurationScreen.ConfigurationListScreen">T</a>&nbsp;entry)</span></div>
-<div class="block">Called when a list element is found that has an unknown or unsupported data type. Override this to produce whatever
-UI elements are appropriate for this object.<p>
-
-Note that all types of elements that can be read from the config file as part of a list are already supported. You
-only need this if you manipulate the contents of the list after it has been loaded.<p>
-
-If this returns null, no row will be shown on the screen, but the up/down buttons will still see your element.
-Which means that the user will see no change when moving another element over the hidden line. Consider returning
-a <a href="../../../../minecraft/client/gui/components/StringWidget.html" title="class in net.minecraft.client.gui.components"><code>StringWidget</code></a> as a placeholder instead.<p>
-
-Do <em>not</em> capture <a href="#cfgList"><code>cfgList</code></a> here or in another create*Value() method. The undo/reset system will
-replace the list, so you need to always access the field. You can (and should) capture the index.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>idx</code> - The index into the list.</dd>
-<dd><code>entry</code> - The entry itself.</dd>
-<dt>Returns:</dt>
-<dd>null if this element should be skipped or an <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui"><code>ConfigurationScreen.ConfigurationSectionScreen.Element</code></a> to be added to the UI.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createStringListValue(int,java.lang.String)">
-<h3>createStringListValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></span>&nbsp;<span class="element-name">createStringListValue</span><wbr><span class="parameters">(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createDoubleListValue(int,java.lang.Double)">
-<h3>createDoubleListValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></span>&nbsp;<span class="element-name">createDoubleListValue</span><wbr><span class="parameters">(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createLongListValue(int,java.lang.Long)">
-<h3>createLongListValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></span>&nbsp;<span class="element-name">createLongListValue</span><wbr><span class="parameters">(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createIntegerListValue(int,java.lang.Integer)">
-<h3>createIntegerListValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></span>&nbsp;<span class="element-name">createIntegerListValue</span><wbr><span class="parameters">(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createBooleanListValue(int,java.lang.Boolean)">
-<h3>createBooleanListValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="ConfigurationScreen.ConfigurationSectionScreen.Element.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen.Element</a></span>&nbsp;<span class="element-name">createBooleanListValue</span><wbr><span class="parameters">(int&nbsp;idx,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;value)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="swap(int,boolean)">
-<h3>swap</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">swap</span><wbr><span class="parameters">(int&nbsp;idx,
- boolean&nbsp;simulate)</span></div>
-<div class="block">Swap the given element with the next one. Should be called by the list label widget to manipulate the list.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="del(int,boolean)">
-<h3>del</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">del</span><wbr><span class="parameters">(int&nbsp;idx,
- boolean&nbsp;simulate)</span></div>
-<div class="block">Remove the given element. Should be called by the list label widget to manipulate the list.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addUndoListener(boolean,java.util.List)">
-<h3>addUndoListener</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">addUndoListener</span><wbr><span class="parameters">(boolean&nbsp;simulate,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="#type-param-T" title="type parameter in ConfigurationScreen.ConfigurationListScreen">T</a>&gt;&nbsp;values)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="onClose()">
 <h3>onClose</h3>
 <div class="horizontal-scroll">
@@ -577,34 +270,6 @@ replace the list, so you need to always access the field. You can (and should) c
 <dd><code><a href="../../../../minecraft/client/gui/components/Renderable.html#extractRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)">extractRenderState</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../minecraft/client/gui/components/Renderable.html" title="interface in net.minecraft.client.gui.components">Renderable</a></code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="ConfigurationScreen.ConfigurationSectionScreen.html#extractRenderState(net.minecraft.client.gui.GuiGraphicsExtractor,int,int,float)">extractRenderState</a></code>&nbsp;in class&nbsp;<code><a href="ConfigurationScreen.ConfigurationSectionScreen.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onChanged(java.lang.String)">
-<h3>onChanged</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onChanged</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="ConfigurationScreen.ConfigurationSectionScreen.html#onChanged(java.lang.String)">ConfigurationScreen.ConfigurationSectionScreen</a></code></span></div>
-<div class="block">This is called whenever a value is changed and the change is submitted to the appropriate <code>ConfigSpec</code>.</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="ConfigurationScreen.ConfigurationSectionScreen.html#onChanged(java.lang.String)">onChanged</a></code>&nbsp;in class&nbsp;<code><a href="ConfigurationScreen.ConfigurationSectionScreen.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen</a></code></dd>
-<dt>Parameters:</dt>
-<dd><code>key</code> - The key of the changed configuration. To get an absolute key, use <a href="ConfigurationScreen.ConfigurationSectionScreen.Context.html#makeKeyList(java.lang.String)"><code>ConfigurationScreen.ConfigurationSectionScreen.Context.makeKeyList(String)</code></a>.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createResetButton()">
-<h3>createResetButton</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createResetButton</span>()</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="ConfigurationScreen.ConfigurationSectionScreen.html#createResetButton()">createResetButton</a></code>&nbsp;in class&nbsp;<code><a href="ConfigurationScreen.ConfigurationSectionScreen.html" title="class in net.neoforged.neoforge.client.gui">ConfigurationScreen.ConfigurationSectionScreen</a></code></dd>
 </dl>
 </div>
 </section>

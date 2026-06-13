@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>EntityHasScoreCondition (NeoForge 26.1)</title>
+<title>EntityHasScoreCondition (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.storage.loot.predicates, record: EntityHasScoreCondition">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/EntityHasScoreCondition.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,8 +60,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#scores" tabindex="0">scores</a></li>
-<li><a href="#entityTarget" tabindex="0">entityTarget</a></li>
 <li><a href="#MAP_CODEC" tabindex="0">MAP_CODEC</a></li>
 </ol>
 </li>
@@ -76,7 +74,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getReferencedContextParams()" tabindex="0">getReferencedContextParams()</a></li>
 <li><a href="#validate(net.minecraft.world.level.storage.loot.ValidationContext)" tabindex="0">validate(ValidationContext)</a></li>
 <li><a href="#test(net.minecraft.world.level.storage.loot.LootContext)" tabindex="0">test(LootContext)</a></li>
-<li><a href="#hasScore(net.minecraft.world.level.storage.loot.LootContext,net.minecraft.world.entity.Entity,net.minecraft.world.scores.Scoreboard,java.lang.String,net.minecraft.world.level.storage.loot.IntRange)" tabindex="0">hasScore(LootContext, Entity, Scoreboard, String, IntRange)</a></li>
 <li><a href="#hasScores(net.minecraft.world.level.storage.loot.LootContext.EntityTarget)" tabindex="0">hasScores(LootContext.EntityTarget)</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
@@ -135,19 +132,9 @@ implements <a href="LootItemCondition.html" title="interface in net.minecraft.wo
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../LootContext.EntityTarget.html" title="enum class in net.minecraft.world.level.storage.loot">LootContext.EntityTarget</a></code></div>
-<div class="col-second even-row-color"><code><a href="#entityTarget" class="member-name-link">entityTarget</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">The field for the <code>entityTarget</code> record component.</div>
-</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a><wbr>&lt;<a href="EntityHasScoreCondition.html" title="class in net.minecraft.world.level.storage.loot.predicates">EntityHasScoreCondition</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#MAP_CODEC" class="member-name-link">MAP_CODEC</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="../IntRange.html" title="class in net.minecraft.world.level.storage.loot">IntRange</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#scores" class="member-name-link">scores</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">The field for the <code>scores</code> record component.</div>
-</div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a><wbr>&lt;<a href="EntityHasScoreCondition.html" title="class in net.minecraft.world.level.storage.loot.predicates">EntityHasScoreCondition</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#MAP_CODEC" class="member-name-link">MAP_CODEC</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.level.storage.loot.predicates.LootItemCondition">Fields inherited from interface&nbsp;<a href="LootItemCondition.html#field-summary" title="interface in net.minecraft.world.level.storage.loot.predicates">LootItemCondition</a></h3>
@@ -202,38 +189,31 @@ implements <a href="LootItemCondition.html" title="interface in net.minecraft.wo
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasScore(net.minecraft.world.level.storage.loot.LootContext,net.minecraft.world.entity.Entity,net.minecraft.world.scores.Scoreboard,java.lang.String,net.minecraft.world.level.storage.loot.IntRange)" class="member-name-link">hasScore</a><wbr>(<a href="../LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&nbsp;context,
- <a href="../../../../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
- <a href="../../../../scores/Scoreboard.html" title="class in net.minecraft.world.scores">Scoreboard</a>&nbsp;scoreboard,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;objectiveName,
- <a href="../IntRange.html" title="class in net.minecraft.world.level.storage.loot">IntRange</a>&nbsp;range)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EntityHasScoreCondition.Builder.html" title="class in net.minecraft.world.level.storage.loot.predicates">EntityHasScoreCondition.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasScores(net.minecraft.world.level.storage.loot.LootContext.EntityTarget)" class="member-name-link">hasScores</a><wbr>(<a href="../LootContext.EntityTarget.html" title="enum class in net.minecraft.world.level.storage.loot">LootContext.EntityTarget</a>&nbsp;target)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="../IntRange.html" title="class in net.minecraft.world.level.storage.loot">IntRange</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scores()" class="member-name-link">scores</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EntityHasScoreCondition.Builder.html" title="class in net.minecraft.world.level.storage.loot.predicates">EntityHasScoreCondition.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasScores(net.minecraft.world.level.storage.loot.LootContext.EntityTarget)" class="member-name-link">hasScores</a><wbr>(<a href="../LootContext.EntityTarget.html" title="enum class in net.minecraft.world.level.storage.loot">LootContext.EntityTarget</a>&nbsp;target)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="../IntRange.html" title="class in net.minecraft.world.level.storage.loot">IntRange</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scores()" class="member-name-link">scores</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>scores</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#test(net.minecraft.world.level.storage.loot.LootContext)" class="member-name-link">test</a><wbr>(<a href="../LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&nbsp;context)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#test(net.minecraft.world.level.storage.loot.LootContext)" class="member-name-link">test</a><wbr>(<a href="../LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&nbsp;context)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this record class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(net.minecraft.world.level.storage.loot.ValidationContext)" class="member-name-link">validate</a><wbr>(<a href="../ValidationContext.html" title="class in net.minecraft.world.level.storage.loot">ValidationContext</a>&nbsp;context)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(net.minecraft.world.level.storage.loot.ValidationContext)" class="member-name-link">validate</a><wbr>(<a href="../ValidationContext.html" title="class in net.minecraft.world.level.storage.loot">ValidationContext</a>&nbsp;context)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.util.function.Predicate">Methods inherited from interface&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#method-summary" title="class or interface in java.util.function" class="external-link">Predicate</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#and(java.util.function.Predicate)" title="class or interface in java.util.function" class="external-link">and</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#negate()" title="class or interface in java.util.function" class="external-link">negate</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#or(java.util.function.Predicate)" title="class or interface in java.util.function" class="external-link">or</a></code></div>
@@ -248,24 +228,6 @@ implements <a href="LootItemCondition.html" title="interface in net.minecraft.wo
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="scores">
-<h3>scores</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="../IntRange.html" title="class in net.minecraft.world.level.storage.loot">IntRange</a>&gt;</span>&nbsp;<span class="element-name">scores</span></div>
-<div class="block">The field for the <code>scores</code> record component.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="entityTarget">
-<h3>entityTarget</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../LootContext.EntityTarget.html" title="enum class in net.minecraft.world.level.storage.loot">LootContext.EntityTarget</a></span>&nbsp;<span class="element-name">entityTarget</span></div>
-<div class="block">The field for the <code>entityTarget</code> record component.</div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="MAP_CODEC">
 <h3>MAP_CODEC</h3>
@@ -352,18 +314,6 @@ implements <a href="LootItemCondition.html" title="interface in net.minecraft.wo
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#test(T)" title="class or interface in java.util.function" class="external-link">test</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&gt;</code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hasScore(net.minecraft.world.level.storage.loot.LootContext,net.minecraft.world.entity.Entity,net.minecraft.world.scores.Scoreboard,java.lang.String,net.minecraft.world.level.storage.loot.IntRange)">
-<h3>hasScore</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasScore</span><wbr><span class="parameters">(<a href="../LootContext.html" title="class in net.minecraft.world.level.storage.loot">LootContext</a>&nbsp;context,
- <a href="../../../../entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
- <a href="../../../../scores/Scoreboard.html" title="class in net.minecraft.world.scores">Scoreboard</a>&nbsp;scoreboard,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;objectiveName,
- <a href="../IntRange.html" title="class in net.minecraft.world.level.storage.loot">IntRange</a>&nbsp;range)</span></div>
 </div>
 </section>
 </li>

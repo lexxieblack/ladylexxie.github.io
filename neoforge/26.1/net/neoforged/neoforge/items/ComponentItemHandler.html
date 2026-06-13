@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ComponentItemHandler (NeoForge 26.1)</title>
+<title>ComponentItemHandler (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.items, class: ComponentItemHandler">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ComponentItemHandler.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,16 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#parent" tabindex="0">parent</a></li>
-<li><a href="#component" tabindex="0">component</a></li>
-<li><a href="#size" tabindex="0">size</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.neoforged.neoforge.common.MutableDataComponentHolder,net.minecraft.core.component.DataComponentType,int)" tabindex="0">ComponentItemHandler(MutableDataComponentHolder, DataComponentType, int)</a></li>
@@ -78,11 +70,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#extractItem(int,int,boolean)" tabindex="0">extractItem(int, int, boolean)</a></li>
 <li><a href="#getSlotLimit(int)" tabindex="0">getSlotLimit(int)</a></li>
 <li><a href="#isItemValid(int,net.minecraft.world.item.ItemStack)" tabindex="0">isItemValid(int, ItemStack)</a></li>
-<li><a href="#onContentsChanged(int,net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack)" tabindex="0">onContentsChanged(int, ItemStack, ItemStack)</a></li>
-<li><a href="#getContents()" tabindex="0">getContents()</a></li>
-<li><a href="#getStackFromContents(net.minecraft.world.item.component.ItemContainerContents,int)" tabindex="0">getStackFromContents(ItemContainerContents, int)</a></li>
-<li><a href="#updateContents(net.minecraft.world.item.component.ItemContainerContents,net.minecraft.world.item.ItemStack,int)" tabindex="0">updateContents(ItemContainerContents, ItemStack, int)</a></li>
-<li><a href="#validateSlotIndex(int)" tabindex="0">validateSlotIndex(int)</a></li>
 </ol>
 </li>
 </ol>
@@ -119,37 +106,14 @@ Then reference that component from your <a href="../capabilities/ICapabilityProv
 <p>
 Since data components are immutable, this will not work nicely with vanilla's container methods which expect the stack to be mutable.
 Use <a href="ItemHandlerCopySlot.html" title="class in net.neoforged.neoforge.items"><code>ItemHandlerCopySlot</code></a> to get around this issue.</div>
+<dl class="notes">
+<dt><em>Implementation Note:</em></dt>
+<dd>All functions in this class should attempt to minimize component read/writes to avoid unnecessary churn, noting that the component can never be cached.</dd>
+</dl>
 </div>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected final <a href="../../../minecraft/core/component/DataComponentType.html" title="interface in net.minecraft.core.component">DataComponentType</a><wbr>&lt;<a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component">ItemContainerContents</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#component" class="member-name-link">component</a></code></div>
-<div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="../common/MutableDataComponentHolder.html" title="interface in net.neoforged.neoforge.common">MutableDataComponentHolder</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#parent" class="member-name-link">parent</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-&nbsp;</div>
-<div class="col-first even-row-color"><code>protected final int</code></div>
-<div class="col-second even-row-color"><code><a href="#size" class="member-name-link">size</a></code></div>
-<div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -187,30 +151,17 @@ Use <a href="ItemHandlerCopySlot.html" title="class in net.neoforged.neoforge.it
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 <div class="block">Extracts an ItemStack from the given slot.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected <a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component">ItemContainerContents</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getContents()" class="member-name-link">getContents</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getSlotLimit(int)" class="member-name-link">getSlotLimit</a><wbr>(int&nbsp;slot)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Retrieves the <a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component"><code>ItemContainerContents</code></a> from the parent object's data component map.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getSlotLimit(int)" class="member-name-link">getSlotLimit</a><wbr>(int&nbsp;slot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 <div class="block">Retrieves the maximum stack size allowed to exist in the given slot.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getSlots()" class="member-name-link">getSlots</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Returns the number of slots available</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getStackFromContents(net.minecraft.world.item.component.ItemContainerContents,int)" class="member-name-link">getStackFromContents</a><wbr>(<a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component">ItemContainerContents</a>&nbsp;contents,
- int&nbsp;slot)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getSlots()" class="member-name-link">getSlots</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Retrieves a copy of a single stack from the underlying data component, returning <a href="../../../minecraft/world/item/ItemStack.html#EMPTY"><code>ItemStack.EMPTY</code></a> if the component does not have a slot present.</div>
+<div class="block">Returns the number of slots available</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getStackInSlot(int)" class="member-name-link">getStackInSlot</a><wbr>(int&nbsp;slot)</code></div>
@@ -235,82 +186,25 @@ Inserts an ItemStack into the given slot and return the remainder.</div>
 <div class="block">
 This function re-implements the vanilla function <a href="../../../minecraft/world/Container.html#canPlaceItem(int,net.minecraft.world.item.ItemStack)"><code>Container.canPlaceItem(int, ItemStack)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#onContentsChanged(int,net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack)" class="member-name-link">onContentsChanged</a><wbr>(int&nbsp;slot,
- <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;oldStack,
- <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;newStack)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Called from <a href="#updateContents(net.minecraft.world.item.component.ItemContainerContents,net.minecraft.world.item.ItemStack,int)"><code>updateContents(ItemContainerContents, ItemStack, int)</code></a> after the stack stored in a slot has been updated.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setStackInSlot(int,net.minecraft.world.item.ItemStack)" class="member-name-link">setStackInSlot</a><wbr>(int&nbsp;slot,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setStackInSlot(int,net.minecraft.world.item.ItemStack)" class="member-name-link">setStackInSlot</a><wbr>(int&nbsp;slot,
  <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 <div class="block">Overrides the stack in the given slot.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#updateContents(net.minecraft.world.item.component.ItemContainerContents,net.minecraft.world.item.ItemStack,int)" class="member-name-link">updateContents</a><wbr>(<a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component">ItemContainerContents</a>&nbsp;contents,
- <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack,
- int&nbsp;slot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Performs a copy and write operation on the underlying data component, changing the stack in the target slot.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#validateSlotIndex(int)" class="member-name-link">validateSlotIndex</a><wbr>(int&nbsp;slot)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Throws <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link"><code>UnsupportedOperationException</code></a> if the provided slot index is invalid.</div>
 </div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="parent">
-<h3>parent</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../common/MutableDataComponentHolder.html" title="interface in net.neoforged.neoforge.common">MutableDataComponentHolder</a></span>&nbsp;<span class="element-name">parent</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="component">
-<h3>component</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../../minecraft/core/component/DataComponentType.html" title="interface in net.minecraft.core.component">DataComponentType</a>&lt;<a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component">ItemContainerContents</a>&gt;</span>&nbsp;<span class="element-name">component</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="size">
-<h3>size</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">size</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -519,86 +413,6 @@ inventory and should move on).
 <dd>true if the slot can insert the ItemStack, not considering the current state of the inventory.
         false if the slot can never insert the ItemStack in any situation.</dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onContentsChanged(int,net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack)">
-<h3>onContentsChanged</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onContentsChanged</span><wbr><span class="parameters">(int&nbsp;slot,
- <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;oldStack,
- <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;newStack)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Called from <a href="#updateContents(net.minecraft.world.item.component.ItemContainerContents,net.minecraft.world.item.ItemStack,int)"><code>updateContents(ItemContainerContents, ItemStack, int)</code></a> after the stack stored in a slot has been updated.
-<p>
-Modifications to the stacks used as parameters here will not write-back to the stored data.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>slot</code> - The slot that changed</dd>
-<dd><code>oldStack</code> - The old stack that was present in the slot</dd>
-<dd><code>newStack</code> - The new stack that is now present in the slot</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getContents()">
-<h3>getContents</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component">ItemContainerContents</a></span>&nbsp;<span class="element-name">getContents</span>()</div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Retrieves the <a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component"><code>ItemContainerContents</code></a> from the parent object's data component map.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getStackFromContents(net.minecraft.world.item.component.ItemContainerContents,int)">
-<h3>getStackFromContents</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">getStackFromContents</span><wbr><span class="parameters">(<a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component">ItemContainerContents</a>&nbsp;contents,
- int&nbsp;slot)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Retrieves a copy of a single stack from the underlying data component, returning <a href="../../../minecraft/world/item/ItemStack.html#EMPTY"><code>ItemStack.EMPTY</code></a> if the component does not have a slot present.
-<p>
-Throws an exception if the slot is out-of-bounds for this capability.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>contents</code> - The existing contents from <a href="#getContents()"><code>getContents()</code></a></dd>
-<dd><code>slot</code> - The target slot</dd>
-<dt>Returns:</dt>
-<dd>A copy of the stack in the target slot</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updateContents(net.minecraft.world.item.component.ItemContainerContents,net.minecraft.world.item.ItemStack,int)">
-<h3>updateContents</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateContents</span><wbr><span class="parameters">(<a href="../../../minecraft/world/item/component/ItemContainerContents.html" title="class in net.minecraft.world.item.component">ItemContainerContents</a>&nbsp;contents,
- <a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack,
- int&nbsp;slot)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Performs a copy and write operation on the underlying data component, changing the stack in the target slot.
-<p>
-If the existing component is larger than <a href="#getSlots()"><code>getSlots()</code></a>, additional slots will <b>not</b> be truncated.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>contents</code> - The existing contents from <a href="#getContents()"><code>getContents()</code></a></dd>
-<dd><code>stack</code> - The new stack to set to the slot</dd>
-<dd><code>slot</code> - The target slot</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="validateSlotIndex(int)">
-<h3>validateSlotIndex</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">validateSlotIndex</span><wbr><span class="parameters">(int&nbsp;slot)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Throws <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link"><code>UnsupportedOperationException</code></a> if the provided slot index is invalid.</div>
 </div>
 </section>
 </li>

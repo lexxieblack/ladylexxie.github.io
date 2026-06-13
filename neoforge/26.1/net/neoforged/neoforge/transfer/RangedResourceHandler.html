@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>RangedResourceHandler (NeoForge 26.1)</title>
+<title>RangedResourceHandler (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.transfer, class: RangedResourceHandler">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/RangedResourceHandler.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,21 +54,7 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#start" tabindex="0">start</a></li>
-<li><a href="#end" tabindex="0">end</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(net.neoforged.neoforge.transfer.ResourceHandler,int,int)" tabindex="0">RangedResourceHandler(ResourceHandler, int, int)</a></li>
-<li><a href="#%3Cinit%3E(java.util.function.Supplier,int,int)" tabindex="0">RangedResourceHandler(Supplier, int, int)</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#of(net.neoforged.neoforge.transfer.ResourceHandler,int,int)" tabindex="0">of(ResourceHandler, int, int)</a></li>
@@ -76,7 +62,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#ofSingleIndex(net.neoforged.neoforge.transfer.ResourceHandler,int)" tabindex="0">ofSingleIndex(ResourceHandler, int)</a></li>
 <li><a href="#ofSingleIndex(java.util.function.Supplier,int)" tabindex="0">ofSingleIndex(Supplier, int)</a></li>
 <li><a href="#size()" tabindex="0">size()</a></li>
-<li><a href="#convertIndex(int)" tabindex="0">convertIndex(int)</a></li>
 <li><a href="#extract(T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" tabindex="0">extract(T, int, TransactionContext)</a></li>
 <li><a href="#insert(T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" tabindex="0">insert(T, int, TransactionContext)</a></li>
 </ol>
@@ -107,49 +92,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected int</code></div>
-<div class="col-second even-row-color"><code><a href="#end" class="member-name-link">end</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected int</code></div>
-<div class="col-second odd-row-color"><code><a href="#start" class="member-name-link">start</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.neoforged.neoforge.transfer.DelegatingResourceHandler">Fields inherited from class&nbsp;<a href="DelegatingResourceHandler.html#field-summary" title="class in net.neoforged.neoforge.transfer">DelegatingResourceHandler</a></h3>
-<code><a href="DelegatingResourceHandler.html#delegate">delegate</a></code></div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.function.Supplier,int,int)" class="member-name-link">RangedResourceHandler</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a>&gt;&gt;&nbsp;delegate,
- int&nbsp;start,
- int&nbsp;end)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.neoforged.neoforge.transfer.ResourceHandler,int,int)" class="member-name-link">RangedResourceHandler</a><wbr>(<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a>&gt;&nbsp;delegate,
- int&nbsp;start,
- int&nbsp;end)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -161,54 +103,49 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#convertIndex(int)" class="member-name-link">convertIndex</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Converts the external index to the internal index to use for the delegated-to handler.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extract(T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" class="member-name-link">extract</a><wbr>(<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a>&nbsp;resource,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extract(T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" class="member-name-link">extract</a><wbr>(<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a>&nbsp;resource,
  int&nbsp;amount,
  <a href="transaction/TransactionContext.html" title="interface in net.neoforged.neoforge.transfer.transaction">TransactionContext</a>&nbsp;transaction)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Tries to extract up to the given amount of a resource from the handler.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insert(T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" class="member-name-link">insert</a><wbr>(<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a>&nbsp;resource,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insert(T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" class="member-name-link">insert</a><wbr>(<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a>&nbsp;resource,
  int&nbsp;amount,
  <a href="transaction/TransactionContext.html" title="interface in net.neoforged.neoforge.transfer.transaction">TransactionContext</a>&nbsp;transaction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Inserts up to the given amount of a resource into the handler.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="resource/Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>&gt;<br><a href="RangedResourceHandler.html" title="class in net.neoforged.neoforge.transfer">RangedResourceHandler</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.util.function.Supplier,int,int)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;T&gt;&gt;&nbsp;delegate,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="resource/Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>&gt;<br><a href="RangedResourceHandler.html" title="class in net.neoforged.neoforge.transfer">RangedResourceHandler</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.util.function.Supplier,int,int)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;T&gt;&gt;&nbsp;delegate,
  int&nbsp;start,
  int&nbsp;end)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a wrapper for a range of indices, with the passed supplier being queried every time the handler is accessed.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="resource/Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>&gt;<br><a href="RangedResourceHandler.html" title="class in net.neoforged.neoforge.transfer">RangedResourceHandler</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.neoforged.neoforge.transfer.ResourceHandler,int,int)" class="member-name-link">of</a><wbr>(<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;T&gt;&nbsp;delegate,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="resource/Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>&gt;<br><a href="RangedResourceHandler.html" title="class in net.neoforged.neoforge.transfer">RangedResourceHandler</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.neoforged.neoforge.transfer.ResourceHandler,int,int)" class="member-name-link">of</a><wbr>(<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;T&gt;&nbsp;delegate,
  int&nbsp;start,
  int&nbsp;end)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a wrapper for a range of indices.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="resource/Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>&gt;<br><a href="RangedResourceHandler.html" title="class in net.neoforged.neoforge.transfer">RangedResourceHandler</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofSingleIndex(java.util.function.Supplier,int)" class="member-name-link">ofSingleIndex</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;T&gt;&gt;&nbsp;delegate,
- int&nbsp;index)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a wrapper for a single index, with the passed supplier being queried every time the handler is accessed.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="resource/Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>&gt;<br><a href="RangedResourceHandler.html" title="class in net.neoforged.neoforge.transfer">RangedResourceHandler</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofSingleIndex(net.neoforged.neoforge.transfer.ResourceHandler,int)" class="member-name-link">ofSingleIndex</a><wbr>(<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;T&gt;&nbsp;delegate,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofSingleIndex(java.util.function.Supplier,int)" class="member-name-link">ofSingleIndex</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;T&gt;&gt;&nbsp;delegate,
  int&nbsp;index)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a wrapper for a single index, with the passed supplier being queried every time the handler is accessed.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="resource/Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>&gt;<br><a href="RangedResourceHandler.html" title="class in net.neoforged.neoforge.transfer">RangedResourceHandler</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofSingleIndex(net.neoforged.neoforge.transfer.ResourceHandler,int)" class="member-name-link">ofSingleIndex</a><wbr>(<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;T&gt;&nbsp;delegate,
+ int&nbsp;index)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a wrapper for a single index.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the <i>current</i> number of indices in this resource handler.</div>
 </div>
 </div>
@@ -219,7 +156,7 @@ loadScripts(document, 'script');</script>
 <code><a href="DelegatingResourceHandler.html#extract(int,T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" title="extract(int, T, int, TransactionContext)">extract</a>, <a href="DelegatingResourceHandler.html#getAmountAsLong(int)" title="getAmountAsLong(int)">getAmountAsLong</a>, <a href="DelegatingResourceHandler.html#getCapacityAsLong(int,T)" title="getCapacityAsLong(int, T)">getCapacityAsLong</a>, <a href="DelegatingResourceHandler.html#getDelegate()" title="getDelegate()">getDelegate</a>, <a href="DelegatingResourceHandler.html#getResource(int)" title="getResource(int)">getResource</a>, <a href="DelegatingResourceHandler.html#insert(int,T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" title="insert(int, T, int, TransactionContext)">insert</a>, <a href="DelegatingResourceHandler.html#isValid(int,T)" title="isValid(int, T)">isValid</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.transfer.ResourceHandler">Methods inherited from interface&nbsp;<a href="ResourceHandler.html#method-summary" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a></h3>
 <code><a href="ResourceHandler.html#getAmountAsInt(int)" title="getAmountAsInt(int)">getAmountAsInt</a>, <a href="ResourceHandler.html#getCapacityAsInt(int,T)" title="getCapacityAsInt(int, T)">getCapacityAsInt</a></code></div>
@@ -229,58 +166,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="start">
-<h3>start</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">start</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="end">
-<h3>end</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">end</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(net.neoforged.neoforge.transfer.ResourceHandler,int,int)">
-<h3>RangedResourceHandler</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">RangedResourceHandler</span><wbr><span class="parameters">(<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a>&gt;&nbsp;delegate,
- int&nbsp;start,
- int&nbsp;end)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(java.util.function.Supplier,int,int)">
-<h3>RangedResourceHandler</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">RangedResourceHandler</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a>&gt;&gt;&nbsp;delegate,
- int&nbsp;start,
- int&nbsp;end)</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -359,20 +244,6 @@ see the documentation of <a href="ResourceHandler.html" title="interface in net.
 <dd><code><a href="DelegatingResourceHandler.html#size()">size</a></code>&nbsp;in class&nbsp;<code><a href="DelegatingResourceHandler.html" title="class in net.neoforged.neoforge.transfer">DelegatingResourceHandler</a>&lt;<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a> extends <a href="resource/Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd>The size of the resource handler. Can be <code>0</code> if the handler currently has no indices.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="convertIndex(int)">
-<h3>convertIndex</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">convertIndex</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="DelegatingResourceHandler.html#convertIndex(int)">DelegatingResourceHandler</a></code></span></div>
-<div class="block">Converts the external index to the internal index to use for the delegated-to handler.</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="DelegatingResourceHandler.html#convertIndex(int)">convertIndex</a></code>&nbsp;in class&nbsp;<code><a href="DelegatingResourceHandler.html" title="class in net.neoforged.neoforge.transfer">DelegatingResourceHandler</a>&lt;<a href="#type-param-T" title="type parameter in RangedResourceHandler">T</a> extends <a href="resource/Resource.html" title="interface in net.neoforged.neoforge.transfer.resource">Resource</a>&gt;</code></dd>
 </dl>
 </div>
 </section>

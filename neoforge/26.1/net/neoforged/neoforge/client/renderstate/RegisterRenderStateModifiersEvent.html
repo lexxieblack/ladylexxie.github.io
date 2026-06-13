@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>RegisterRenderStateModifiersEvent (NeoForge 26.1)</title>
+<title>RegisterRenderStateModifiersEvent (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.client.renderstate, class: RegisterRenderStateModifiersEvent">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/RegisterRenderStateModifiersEvent.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,7 +54,6 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -67,10 +66,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#registerEntityModifier(com.google.common.reflect.TypeToken,java.util.function.BiConsumer)" tabindex="0">registerEntityModifier(TypeToken, BiConsumer)</a></li>
 <li><a href="#registerEntityModifier(java.lang.Class,java.util.function.BiConsumer)" tabindex="0">registerEntityModifier(Class, BiConsumer)</a></li>
 <li><a href="#registerAvatarEntityModifier(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)" tabindex="0">registerAvatarEntityModifier(AvatarRenderStateModifier)</a></li>
-<li><a href="#coerce(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)" tabindex="0">coerce(AvatarRenderStateModifier)</a></li>
 <li><a href="#registerMapModifier(java.util.function.BiConsumer)" tabindex="0">registerMapModifier(BiConsumer)</a></li>
 <li><a href="#registerMapDecorationModifier(net.minecraft.resources.ResourceKey,net.neoforged.neoforge.client.renderstate.MapDecorationRenderStateModifier)" tabindex="0">registerMapDecorationModifier(ResourceKey, MapDecorationRenderStateModifier)</a></li>
-<li><a href="#ensureParametersMatchBounds(com.google.common.reflect.TypeToken)" tabindex="0">ensureParametersMatchBounds(TypeToken)</a></li>
 </ol>
 </li>
 </ol>
@@ -81,43 +78,28 @@ loadScripts(document, 'script');</script>
 <h1 title="Class RegisterRenderStateModifiersEvent" class="title">Class RegisterRenderStateModifiersEvent</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.neoforged.bus.api.Event
+<div class="inheritance"><a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">net.neoforged.bus.api.Event</a>
 <div class="inheritance">net.neoforged.neoforge.client.renderstate.RegisterRenderStateModifiersEvent</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.neoforged.fml.event.IModBusEvent</code></dd>
+<dd><code><a href="../../../fml/event/IModBusEvent.html" title="interface in net.neoforged.fml.event">IModBusEvent</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">RegisterRenderStateModifiersEvent</span>
-<span class="extends-implements">extends net.neoforged.bus.api.Event
-implements net.neoforged.fml.event.IModBusEvent</span></div>
+<span class="extends-implements">extends <a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">Event</a>
+implements <a href="../../../fml/event/IModBusEvent.html" title="interface in net.neoforged.fml.event">IModBusEvent</a></span></div>
 <div class="block">Fired for registering modifier functions for various render state objects. Useful for gathering context for
 custom rendering with objects that are not your own.
 
-<p>This event is fired on the mod-specific event bus, only on the logical client.</p></div>
+<p>This event is fired on the mod-specific event bus, only on the <a href="../../../fml/LogicalSide.html#CLIENT">logical client</a>.</p></div>
 </div>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="RegisterRenderStateModifiersEvent.Container.html" class="type-name-link" title="class in net.neoforged.neoforge.client.renderstate">RegisterRenderStateModifiersEvent.Container</a>&lt;<a href="RegisterRenderStateModifiersEvent.Container.html#type-param-X" title="type parameter in RegisterRenderStateModifiersEvent.Container">X</a>&gt;</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -136,18 +118,12 @@ custom rendering with objects that are not your own.
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;T extends <a href="../../../../minecraft/world/entity/Avatar.html" title="class in net.minecraft.world.entity">Avatar</a> &amp; <a href="../../../../minecraft/client/entity/ClientAvatarEntity.html" title="interface in net.minecraft.client.entity">ClientAvatarEntity</a>&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a><wbr>&lt;?,<wbr>?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#coerce(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)" class="member-name-link">coerce</a><wbr>(<a href="AvatarRenderStateModifier.html" title="class in net.neoforged.neoforge.client.renderstate">AvatarRenderStateModifier</a>&nbsp;modifier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ensureParametersMatchBounds(com.google.common.reflect.TypeToken)" class="member-name-link">ensureParametersMatchBounds</a><wbr>(com.google.common.reflect.TypeToken&lt;? extends <a href="../../../../minecraft/client/renderer/entity/EntityRenderer.html" title="class in net.minecraft.client.renderer.entity">EntityRenderer</a>&lt;? extends <a href="../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>, ? extends <a href="../../../../minecraft/client/renderer/entity/state/EntityRenderState.html" title="class in net.minecraft.client.renderer.entity.state">EntityRenderState</a>&gt;&gt;&nbsp;baseRenderer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAvatarEntityModifier(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)" class="member-name-link">registerAvatarEntityModifier</a><wbr>(<a href="AvatarRenderStateModifier.html" title="class in net.neoforged.neoforge.client.renderstate">AvatarRenderStateModifier</a>&nbsp;modifier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -184,7 +160,7 @@ and before decorations have been added.</div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -293,15 +269,6 @@ Any subclasses of the passed renderer class will also have this modifier applied
 </section>
 </li>
 <li>
-<section class="detail" id="coerce(net.neoforged.neoforge.client.renderstate.AvatarRenderStateModifier)">
-<h3>coerce</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="../../../../minecraft/world/entity/Avatar.html" title="class in net.minecraft.world.entity">Avatar</a> &amp; <a href="../../../../minecraft/client/entity/ClientAvatarEntity.html" title="interface in net.minecraft.client.entity">ClientAvatarEntity</a>&gt;</span>
-<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;?,<wbr>?&gt;</span>&nbsp;<span class="element-name">coerce</span><wbr><span class="parameters">(<a href="AvatarRenderStateModifier.html" title="class in net.neoforged.neoforge.client.renderstate">AvatarRenderStateModifier</a>&nbsp;modifier)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="registerMapModifier(java.util.function.BiConsumer)">
 <h3>registerMapModifier</h3>
 <div class="horizontal-scroll">
@@ -330,14 +297,6 @@ vanilla map decoration data has been set. Can add custom data to the map using
 <dd><code>mapDecorationTypeKey</code> - Key for the registered <a href="../../../../minecraft/world/level/saveddata/maps/MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps"><code>MapDecorationType</code></a></dd>
 <dd><code>modifier</code> - The function for modifying the <a href="../../../../minecraft/client/renderer/state/MapRenderState.MapDecorationRenderState.html" title="class in net.minecraft.client.renderer.state"><code>MapRenderState.MapDecorationRenderState</code></a> and adding custom render data.</dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ensureParametersMatchBounds(com.google.common.reflect.TypeToken)">
-<h3>ensureParametersMatchBounds</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ensureParametersMatchBounds</span><wbr><span class="parameters">(com.google.common.reflect.TypeToken&lt;? extends <a href="../../../../minecraft/client/renderer/entity/EntityRenderer.html" title="class in net.minecraft.client.renderer.entity">EntityRenderer</a>&lt;? extends <a href="../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>, ? extends <a href="../../../../minecraft/client/renderer/entity/state/EntityRenderState.html" title="class in net.minecraft.client.renderer.entity.state">EntityRenderState</a>&gt;&gt;&nbsp;baseRenderer)</span></div>
 </div>
 </section>
 </li>

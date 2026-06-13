@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>FluidIngredient (NeoForge 26.1)</title>
+<title>FluidIngredient (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.fluids.crafting, class: FluidIngredient">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/FluidIngredient.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -62,7 +62,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#CODEC" tabindex="0">CODEC</a></li>
 <li><a href="#STREAM_CODEC" tabindex="0">STREAM_CODEC</a></li>
 <li><a href="#OPTIONAL_STREAM_CODEC" tabindex="0">OPTIONAL_STREAM_CODEC</a></li>
-<li><a href="#fluids" tabindex="0">fluids</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -74,7 +73,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#fluids()" tabindex="0">fluids()</a></li>
 <li><a href="#test(net.neoforged.neoforge.fluids.FluidStack)" tabindex="0">test(FluidStack)</a></li>
-<li><a href="#generateFluids()" tabindex="0">generateFluids()</a></li>
 <li><a href="#display()" tabindex="0">display()</a></li>
 <li><a href="#isSimple()" tabindex="0">isSimple()</a></li>
 <li><a href="#getType()" tabindex="0">getType()</a></li>
@@ -113,7 +111,7 @@ loadScripts(document, 'script');</script>
 implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>&gt;</span></div>
 <div class="block">This class serves as the fluid analogue of an item <a href="../../../../minecraft/world/item/crafting/Ingredient.html" title="class in net.minecraft.world.item.crafting"><code>Ingredient</code></a>,
 that is, a representation of both a <a href="#test(net.neoforged.neoforge.fluids.FluidStack)">predicate</a> to test
-<a href="../FluidStack.html" title="class in net.neoforged.neoforge.fluids"><code>FluidStack</code></a>s against, and a <a href="#fluids">list</a> of matching stacks
+<a href="../FluidStack.html" title="class in net.neoforged.neoforge.fluids"><code>FluidStack</code></a>s against, and a list of matching stacks
 for e.g. display purposes.
 <p>
 The most common use for fluid ingredients is found in modded recipe inputs,
@@ -137,15 +135,12 @@ you may also want to take a look at <a href="SizedFluidIngredient.html" title="c
 <div class="col-first even-row-color"><code>static final <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#CODEC" class="member-name-link">CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#fluids" class="member-name-link">fluids</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../../../../minecraft/network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="../../../../minecraft/network/RegistryFriendlyByteBuf.html" title="class in net.minecraft.network">RegistryFriendlyByteBuf</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a>&gt;&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#OPTIONAL_STREAM_CODEC" class="member-name-link">OPTIONAL_STREAM_CODEC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../../../../minecraft/network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="../../../../minecraft/network/RegistryFriendlyByteBuf.html" title="class in net.minecraft.network">RegistryFriendlyByteBuf</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#OPTIONAL_STREAM_CODEC" class="member-name-link">OPTIONAL_STREAM_CODEC</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../minecraft/network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="../../../../minecraft/network/RegistryFriendlyByteBuf.html" title="class in net.minecraft.network">RegistryFriendlyByteBuf</a>, <a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#STREAM_CODEC" class="member-name-link">STREAM_CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../minecraft/network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="../../../../minecraft/network/RegistryFriendlyByteBuf.html" title="class in net.minecraft.network">RegistryFriendlyByteBuf</a>, <a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#STREAM_CODEC" class="member-name-link">STREAM_CODEC</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -189,39 +184,34 @@ you may also want to take a look at <a href="SizedFluidIngredient.html" title="c
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a cached list of all Fluid holders that this ingredient accepts.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="../../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#generateFluids()" class="member-name-link">generateFluids</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="FluidIngredientType.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredientType</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getType()" class="member-name-link">getType</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns a stream of fluids accepted by this ingredient.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="FluidIngredientType.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredientType</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getType()" class="member-name-link">getType</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns The type of this fluid ingredient..</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isSimple()" class="member-name-link">isSimple</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isSimple()" class="member-name-link">isSimple</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns whether this fluid ingredient always requires <a href="#test(net.neoforged.neoforge.fluids.FluidStack)">direct stack testing</a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.util.stream.Stream)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&gt;&nbsp;fluids)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.core.HolderSet)" class="member-name-link">of</a><wbr>(<a href="../../../../minecraft/core/HolderSet.html" title="interface in net.minecraft.core">HolderSet</a>&lt;<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&gt;&nbsp;fluids)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.util.stream.Stream)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&gt;&nbsp;fluids)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.world.level.material.Fluid...)" class="member-name-link">of</a><wbr>(<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>...&nbsp;fluids)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.core.HolderSet)" class="member-name-link">of</a><wbr>(<a href="../../../../minecraft/core/HolderSet.html" title="interface in net.minecraft.core">HolderSet</a>&lt;<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&gt;&nbsp;fluids)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.neoforged.neoforge.fluids.FluidStack...)" class="member-name-link">of</a><wbr>(<a href="../FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>...&nbsp;fluids)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.world.level.material.Fluid...)" class="member-name-link">of</a><wbr>(<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>...&nbsp;fluids)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#test(net.neoforged.neoforge.fluids.FluidStack)" class="member-name-link">test</a><wbr>(<a href="../FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>&nbsp;fluidStack)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.neoforged.neoforge.fluids.FluidStack...)" class="member-name-link">of</a><wbr>(<a href="../FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>...&nbsp;fluids)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#test(net.neoforged.neoforge.fluids.FluidStack)" class="member-name-link">test</a><wbr>(<a href="../FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>&nbsp;fluidStack)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Checks if a given fluid stack matches this ingredient.</div>
 </div>
 </div>
@@ -229,7 +219,7 @@ you may also want to take a look at <a href="SizedFluidIngredient.html" title="c
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.util.function.Predicate">Methods inherited from interface&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#method-summary" title="class or interface in java.util.function" class="external-link">Predicate</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#and(java.util.function.Predicate)" title="class or interface in java.util.function" class="external-link">and</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#negate()" title="class or interface in java.util.function" class="external-link">negate</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#or(java.util.function.Predicate)" title="class or interface in java.util.function" class="external-link">or</a></code></div>
@@ -265,14 +255,6 @@ you may also want to take a look at <a href="SizedFluidIngredient.html" title="c
 <h3>OPTIONAL_STREAM_CODEC</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a>&lt;<a href="../../../../minecraft/network/RegistryFriendlyByteBuf.html" title="class in net.minecraft.network">RegistryFriendlyByteBuf</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="FluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting">FluidIngredient</a>&gt;&gt;</span>&nbsp;<span class="element-name">OPTIONAL_STREAM_CODEC</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fluids">
-<h3>fluids</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&gt;&gt;</span>&nbsp;<span class="element-name">fluids</span></div>
 </div>
 </section>
 </li>
@@ -313,7 +295,7 @@ This list is immutable and thus <b>can and should not</b> be modified by the cal
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="#generateFluids()"><code>generateFluids()</code></a></li>
+<li><code>generateFluids()</code></li>
 </ul>
 </dd>
 </dl>
@@ -339,43 +321,6 @@ The stack <b>must not</b> be modified in any way.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="generateFluids()">
-<h3>generateFluids</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations">@OverrideOnly
-</span><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="../../../../minecraft/core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&gt;&gt;</span>&nbsp;<span class="element-name">generateFluids</span>()</div>
-<div class="block">Returns a stream of fluids accepted by this ingredient.
-<p>
-For compatibility reasons, implementations should follow the same guidelines
-as for custom item ingredients, i.e.:
-<ul>
-<li>Returned fluids are generally used for display purposes, and need not be exhaustive or perfectly accurate,
-as ingredients may additionally filter by e.g. data component values.</li>
-<li>An exception is ingredients that <a href="#isSimple()">are simple</a>,
-for which it is important that this stream corresponds exactly all fluids accepted by <a href="#test(net.neoforged.neoforge.fluids.FluidStack)"><code>test(FluidStack)</code></a>!</li>
-<li>At least one stack should always be returned, so that the ingredient is not considered empty. <b>Empty ingredients may invalidate recipes!</b></li>
-</ul>
-
-<p>Note: no caching needs to be done by the implementation, this is already handled by <a href="#fluids"><code>fluids</code></a>!</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>a stream of all fluid stacks this ingredient accepts.
-        <p>
-        Note: No guarantees are made as to the amount of the fluid,
-        as FluidIngredients are generally not meant to match by amount
-        and these stacks are mostly used for display.
-        <p></dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../common/crafting/ICustomIngredient.html#items()"><code>ICustomIngredient.items()</code></a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="display()">
 <h3>display</h3>
 <div class="horizontal-scroll">
@@ -391,6 +336,11 @@ for which it is important that this stream corresponds exactly all fluids accept
 <li><a href="display/FluidSlotDisplay.html" title="class in net.neoforged.neoforge.fluids.crafting.display"><code>FluidSlotDisplay</code></a></li>
 </ul>
 </dd>
+<dt><em>Implementation Note:</em></dt>
+<dd>The default implementation just constructs a list of stacks from <a href="#fluids()"><code>fluids()</code></a>.
+          This is generally suitable for <a href="#isSimple()"><code>simple</code></a> ingredients.
+          Non-simple ingredients can either override this method to provide a more customized display,
+          or let data pack writers use <a href="CustomDisplayFluidIngredient.html" title="class in net.neoforged.neoforge.fluids.crafting"><code>CustomDisplayFluidIngredient</code></a> to override the display of an ingredient.</dd>
 </dl>
 </div>
 </section>

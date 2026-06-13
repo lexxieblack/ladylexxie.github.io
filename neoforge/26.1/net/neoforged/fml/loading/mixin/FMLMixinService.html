@@ -1,0 +1,606 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>FMLMixinService (NeoForge 26.1.2.76)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="declaration: package: net.neoforged.fml.loading.mixin, class: FMLMixinService">
+<meta name="generator" content="javadoc/ClassWriter">
+<link rel="stylesheet" type="text/css" href="../../../../../resource-files/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="../../../../../resource-files/stylesheet.css">
+<script type="text/javascript" src="../../../../../script-files/script.js"></script>
+<script type="text/javascript" src="../../../../../script-files/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../../../../../script-files/jquery-ui.min.js"></script>
+</head>
+<body class="class-declaration-page">
+<script type="text/javascript">const pathtoroot = "../../../../../";
+loadScripts(document, 'script');</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<header role="banner">
+<nav role="navigation">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="top-nav" id="navbar-top">
+<div class="nav-content">
+<div class="nav-menu-button"><button id="navbar-toggle-button" aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation links"><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span></button></div>
+<div class="skip-nav"><a href="#skip-navbar-top" title="Skip navigation links">Skip navigation links</a></div>
+<ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
+<li><a href="../../../../../index.html">Overview</a></li>
+<li class="nav-bar-cell1-rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../search.html">Search</a></li>
+<li><a href="../../../../../help-doc.html#class">Help</a></li>
+</ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
+</div>
+</div>
+<div class="sub-nav">
+<div class="nav-content">
+<ol class="sub-nav-list">
+<li><a href="package-summary.html">net.neoforged.fml.loading.mixin</a></li>
+<li><a href="FMLMixinService.html" class="current-selection">FMLMixinService</a></li>
+</ol>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="Search documentation (type /)" aria-label="Search in documentation" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="Reset"></div>
+</div>
+</div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<span class="skip-nav" id="skip-navbar-top"></span></nav>
+</header>
+<div class="main-grid">
+<nav role="navigation" class="toc" aria-label="Table of contents">
+<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<ol class="toc-list" tabindex="-1">
+<li><a href="#" tabindex="0">Description</a></li>
+<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
+<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
+<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<ol class="toc-list">
+<li><a href="#%3Cinit%3E()" tabindex="0">FMLMixinService()</a></li>
+</ol>
+</li>
+<li><a href="#method-detail" tabindex="0">Method Details</a>
+<ol class="toc-list">
+<li><a href="#prepare()" tabindex="0">prepare()</a></li>
+<li><a href="#getInitialPhase()" tabindex="0">getInitialPhase()</a></li>
+<li><a href="#init()" tabindex="0">init()</a></li>
+<li><a href="#beginPhase()" tabindex="0">beginPhase()</a></li>
+<li><a href="#checkEnv(java.lang.Object)" tabindex="0">checkEnv(Object)</a></li>
+<li><a href="#getReEntranceLock()" tabindex="0">getReEntranceLock()</a></li>
+<li><a href="#getSideName()" tabindex="0">getSideName()</a></li>
+<li><a href="#setBytecodeProvider(org.spongepowered.asm.service.IClassBytecodeProvider)" tabindex="0">setBytecodeProvider(IClassBytecodeProvider)</a></li>
+<li><a href="#offer(org.spongepowered.asm.service.IMixinInternal)" tabindex="0">offer(IMixinInternal)</a></li>
+<li><a href="#getName()" tabindex="0">getName()</a></li>
+<li><a href="#getMinCompatibilityLevel()" tabindex="0">getMinCompatibilityLevel()</a></li>
+<li><a href="#getMaxCompatibilityLevel()" tabindex="0">getMaxCompatibilityLevel()</a></li>
+<li><a href="#getLogger(java.lang.String)" tabindex="0">getLogger(String)</a></li>
+<li><a href="#isValid()" tabindex="0">isValid()</a></li>
+<li><a href="#getClassProvider()" tabindex="0">getClassProvider()</a></li>
+<li><a href="#getBytecodeProvider()" tabindex="0">getBytecodeProvider()</a></li>
+<li><a href="#getTransformerProvider()" tabindex="0">getTransformerProvider()</a></li>
+<li><a href="#getClassTracker()" tabindex="0">getClassTracker()</a></li>
+<li><a href="#getAuditTrail()" tabindex="0">getAuditTrail()</a></li>
+<li><a href="#getFeatureValidator()" tabindex="0">getFeatureValidator()</a></li>
+<li><a href="#getAdviceProvider()" tabindex="0">getAdviceProvider()</a></li>
+<li><a href="#getMixinTransformer()" tabindex="0">getMixinTransformer()</a></li>
+<li><a href="#getPlatformAgents()" tabindex="0">getPlatformAgents()</a></li>
+<li><a href="#getPrimaryContainer()" tabindex="0">getPrimaryContainer()</a></li>
+<li><a href="#getMixinContainers()" tabindex="0">getMixinContainers()</a></li>
+<li><a href="#getResourceAsStream(java.lang.String)" tabindex="0">getResourceAsStream(String)</a></li>
+<li><a href="#addMixinConfigContent(java.lang.String,byte%5B%5D)" tabindex="0">addMixinConfigContent(String, byte[])</a></li>
+<li><a href="#addMixinContainer(org.spongepowered.asm.launch.platform.container.IContainerHandle)" tabindex="0">addMixinContainer(IContainerHandle)</a></li>
+<li><a href="#clearMixinContainers()" tabindex="0">clearMixinContainers()</a></li>
+</ol>
+</li>
+</ol>
+<button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
+<main role="main">
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<h1 title="Class FMLMixinService" class="title">Class FMLMixinService</h1>
+</div>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance">net.neoforged.fml.loading.mixin.FMLMixinService</div>
+</div>
+<section class="class-description" id="class-description">
+<dl class="notes">
+<dt>All Implemented Interfaces:</dt>
+<dd><code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+<hr>
+<div class="horizontal-scroll">
+<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">FMLMixinService</span>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+implements org.spongepowered.asm.service.IMixinService</span></div>
+</div>
+</section>
+<section class="summary">
+<ul class="summary-list">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<li>
+<section class="constructor-summary" id="constructor-summary">
+<h2>Constructor Summary</h2>
+<div class="caption"><span>Constructors</span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">FMLMixinService</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<!-- ========== METHOD SUMMARY =========== -->
+<li>
+<section class="method-summary" id="method-summary">
+<h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addMixinConfigContent(java.lang.String,byte%5B%5D)" class="member-name-link">addMixinConfigContent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;config,
+ byte[]&nbsp;resource)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addMixinContainer(org.spongepowered.asm.launch.platform.container.IContainerHandle)" class="member-name-link">addMixinContainer</a><wbr>(org.spongepowered.asm.launch.platform.container.IContainerHandle&nbsp;handle)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#beginPhase()" class="member-name-link">beginPhase</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkEnv(java.lang.Object)" class="member-name-link">checkEnv</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;bootSource)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearMixinContainers()" class="member-name-link">clearMixinContainers</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.service.IAdviceProvider</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAdviceProvider()" class="member-name-link">getAdviceProvider</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.service.IMixinAuditTrail</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAuditTrail()" class="member-name-link">getAuditTrail</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.service.IClassBytecodeProvider</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBytecodeProvider()" class="member-name-link">getBytecodeProvider</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.service.IClassProvider</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClassProvider()" class="member-name-link">getClassProvider</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.service.IClassTracker</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClassTracker()" class="member-name-link">getClassTracker</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.service.IFeatureValidator</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFeatureValidator()" class="member-name-link">getFeatureValidator</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.mixin.MixinEnvironment.Phase</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInitialPhase()" class="member-name-link">getInitialPhase</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.logging.ILogger</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLogger(java.lang.String)" class="member-name-link">getLogger</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.mixin.MixinEnvironment.CompatibilityLevel</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMaxCompatibilityLevel()" class="member-name-link">getMaxCompatibilityLevel</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.mixin.MixinEnvironment.CompatibilityLevel</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMinCompatibilityLevel()" class="member-name-link">getMinCompatibilityLevel</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;org.spongepowered.asm.launch.platform.container.IContainerHandle&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMixinContainers()" class="member-name-link">getMixinContainers</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.mixin.transformer.IMixinTransformer</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMixinTransformer()" class="member-name-link">getMixinTransformer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlatformAgents()" class="member-name-link">getPlatformAgents</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.launch.platform.container.IContainerHandle</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPrimaryContainer()" class="member-name-link">getPrimaryContainer</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.util.ReEntranceLock</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getReEntranceLock()" class="member-name-link">getReEntranceLock</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/InputStream.html" title="class or interface in java.io" class="external-link">InputStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResourceAsStream(java.lang.String)" class="member-name-link">getResourceAsStream</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSideName()" class="member-name-link">getSideName</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.spongepowered.asm.service.ITransformerProvider</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransformerProvider()" class="member-name-link">getTransformerProvider</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#init()" class="member-name-link">init</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValid()" class="member-name-link">isValid</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#offer(org.spongepowered.asm.service.IMixinInternal)" class="member-name-link">offer</a><wbr>(org.spongepowered.asm.service.IMixinInternal&nbsp;internal)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepare()" class="member-name-link">prepare</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBytecodeProvider(org.spongepowered.asm.service.IClassBytecodeProvider)" class="member-name-link">setBytecodeProvider</a><wbr>(@Nullable org.spongepowered.asm.service.IClassBytecodeProvider&nbsp;bytecodeProvider)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<li>
+<section class="constructor-details" id="constructor-detail">
+<h2>Constructor Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="&lt;init&gt;()">
+<h3>FMLMixinService</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">FMLMixinService</span>()</div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="prepare()">
+<h3>prepare</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">prepare</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>prepare</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getInitialPhase()">
+<h3>getInitialPhase</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.mixin.MixinEnvironment.Phase</span>&nbsp;<span class="element-name">getInitialPhase</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getInitialPhase</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="init()">
+<h3>init</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">init</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>init</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="beginPhase()">
+<h3>beginPhase</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">beginPhase</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>beginPhase</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="checkEnv(java.lang.Object)">
+<h3>checkEnv</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">checkEnv</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;bootSource)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>checkEnv</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getReEntranceLock()">
+<h3>getReEntranceLock</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.util.ReEntranceLock</span>&nbsp;<span class="element-name">getReEntranceLock</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getReEntranceLock</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getSideName()">
+<h3>getSideName</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getSideName</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getSideName</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setBytecodeProvider(org.spongepowered.asm.service.IClassBytecodeProvider)">
+<h3>setBytecodeProvider</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBytecodeProvider</span><wbr><span class="parameters">(@Nullable
+ @Nullable org.spongepowered.asm.service.IClassBytecodeProvider&nbsp;bytecodeProvider)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="offer(org.spongepowered.asm.service.IMixinInternal)">
+<h3>offer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">offer</span><wbr><span class="parameters">(org.spongepowered.asm.service.IMixinInternal&nbsp;internal)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>offer</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getName()">
+<h3>getName</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getName</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMinCompatibilityLevel()">
+<h3>getMinCompatibilityLevel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.mixin.MixinEnvironment.CompatibilityLevel</span>&nbsp;<span class="element-name">getMinCompatibilityLevel</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getMinCompatibilityLevel</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMaxCompatibilityLevel()">
+<h3>getMaxCompatibilityLevel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.mixin.MixinEnvironment.CompatibilityLevel</span>&nbsp;<span class="element-name">getMaxCompatibilityLevel</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getMaxCompatibilityLevel</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLogger(java.lang.String)">
+<h3>getLogger</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.logging.ILogger</span>&nbsp;<span class="element-name">getLogger</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getLogger</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isValid()">
+<h3>isValid</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isValid</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>isValid</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getClassProvider()">
+<h3>getClassProvider</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.service.IClassProvider</span>&nbsp;<span class="element-name">getClassProvider</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getClassProvider</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getBytecodeProvider()">
+<h3>getBytecodeProvider</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.service.IClassBytecodeProvider</span>&nbsp;<span class="element-name">getBytecodeProvider</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getBytecodeProvider</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTransformerProvider()">
+<h3>getTransformerProvider</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.service.ITransformerProvider</span>&nbsp;<span class="element-name">getTransformerProvider</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getTransformerProvider</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getClassTracker()">
+<h3>getClassTracker</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.service.IClassTracker</span>&nbsp;<span class="element-name">getClassTracker</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getClassTracker</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAuditTrail()">
+<h3>getAuditTrail</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.service.IMixinAuditTrail</span>&nbsp;<span class="element-name">getAuditTrail</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getAuditTrail</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getFeatureValidator()">
+<h3>getFeatureValidator</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.service.IFeatureValidator</span>&nbsp;<span class="element-name">getFeatureValidator</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getFeatureValidator</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getAdviceProvider()">
+<h3>getAdviceProvider</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.service.IAdviceProvider</span>&nbsp;<span class="element-name">getAdviceProvider</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getAdviceProvider</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMixinTransformer()">
+<h3>getMixinTransformer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.mixin.transformer.IMixinTransformer</span>&nbsp;<span class="element-name">getMixinTransformer</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPlatformAgents()">
+<h3>getPlatformAgents</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getPlatformAgents</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getPlatformAgents</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPrimaryContainer()">
+<h3>getPrimaryContainer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.spongepowered.asm.launch.platform.container.IContainerHandle</span>&nbsp;<span class="element-name">getPrimaryContainer</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getPrimaryContainer</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getMixinContainers()">
+<h3>getMixinContainers</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;org.spongepowered.asm.launch.platform.container.IContainerHandle&gt;</span>&nbsp;<span class="element-name">getMixinContainers</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getMixinContainers</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getResourceAsStream(java.lang.String)">
+<h3>getResourceAsStream</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/InputStream.html" title="class or interface in java.io" class="external-link">InputStream</a></span>&nbsp;<span class="element-name">getResourceAsStream</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code>getResourceAsStream</code>&nbsp;in interface&nbsp;<code>org.spongepowered.asm.service.IMixinService</code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addMixinConfigContent(java.lang.String,byte[])">
+<h3>addMixinConfigContent</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addMixinConfigContent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;config,
+ byte[]&nbsp;resource)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addMixinContainer(org.spongepowered.asm.launch.platform.container.IContainerHandle)">
+<h3>addMixinContainer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addMixinContainer</span><wbr><span class="parameters">(org.spongepowered.asm.launch.platform.container.IContainerHandle&nbsp;handle)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clearMixinContainers()">
+<h3>clearMixinContainers</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations">@VisibleForTesting
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearMixinContainers</span>()</div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+<!-- ========= END OF CLASS DATA ========= -->
+</main>
+</div>
+</body>
+</html>

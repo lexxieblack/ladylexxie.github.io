@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>FinalizeSpawnEvent (NeoForge 26.1)</title>
+<title>FinalizeSpawnEvent (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.event.entity.living, class: FinalizeSpawnEvent">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/FinalizeSpawnEvent.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,17 +55,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#spawnType" tabindex="0">spawnType</a></li>
-<li><a href="#spawner" tabindex="0">spawner</a></li>
-<li><a href="#difficulty" tabindex="0">difficulty</a></li>
-<li><a href="#spawnData" tabindex="0">spawnData</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.world.entity.Mob,net.minecraft.world.level.ServerLevelAccessor,double,double,double,net.minecraft.world.DifficultyInstance,net.minecraft.world.entity.EntitySpawnReason,net.minecraft.world.entity.SpawnGroupData,com.mojang.datafixers.util.Either)" tabindex="0">FinalizeSpawnEvent(Mob, ServerLevelAccessor, double, double, double, DifficultyInstance, EntitySpawnReason, SpawnGroupData, Either)</a></li>
@@ -91,7 +82,7 @@ loadScripts(document, 'script');</script>
 <h1 title="Class FinalizeSpawnEvent" class="title">Class FinalizeSpawnEvent</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.neoforged.bus.api.Event
+<div class="inheritance"><a href="../../../../bus/api/Event.html" title="class in net.neoforged.bus.api">net.neoforged.bus.api.Event</a>
 <div class="inheritance"><a href="../EntityEvent.html" title="class in net.neoforged.neoforge.event.entity">net.neoforged.neoforge.event.entity.EntityEvent</a>
 <div class="inheritance"><a href="MobSpawnEvent.html" title="class in net.neoforged.neoforge.event.entity.living">net.neoforged.neoforge.event.entity.living.MobSpawnEvent</a>
 <div class="inheritance">net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent</div>
@@ -102,13 +93,13 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.neoforged.bus.api.ICancellableEvent</code></dd>
+<dd><code><a href="../../../../bus/api/ICancellableEvent.html" title="interface in net.neoforged.bus.api">ICancellableEvent</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">FinalizeSpawnEvent</span>
 <span class="extends-implements">extends <a href="MobSpawnEvent.html" title="class in net.neoforged.neoforge.event.entity.living">MobSpawnEvent</a>
-implements net.neoforged.bus.api.ICancellableEvent</span></div>
+implements <a href="../../../../bus/api/ICancellableEvent.html" title="interface in net.neoforged.bus.api">ICancellableEvent</a></span></div>
 <div class="block">This event is fired before <a href="../../../../../minecraft/world/entity/Mob.html#finalizeSpawn(net.minecraft.world.level.ServerLevelAccessor,net.minecraft.world.DifficultyInstance,net.minecraft.world.entity.EntitySpawnReason,net.minecraft.world.entity.SpawnGroupData)"><code>Mob.finalizeSpawn(ServerLevelAccessor, DifficultyInstance, EntitySpawnReason, SpawnGroupData)</code></a> is called.<br>
 This allows mods to control mob initialization.<br>
 In vanilla code, this event is injected by a transformer and not via patch, so calls cannot be traced via call hierarchy (it is not source-visible).
@@ -129,6 +120,8 @@ This event is fired on <a href="../../../common/NeoForge.html#EVENT_BUS"><code>N
 </li>
 </ul>
 </dd>
+<dt><em>API Note:</em></dt>
+<dd>Callers do not need to check if the entity's spawn was cancelled, as the spawn will be blocked by Forge.</dd>
 </dl>
 </div>
 </section>
@@ -144,30 +137,6 @@ This event is fired on <a href="../../../common/NeoForge.html#EVENT_BUS"><code>N
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.neoforged.neoforge.event.entity.EntityEvent">Nested classes/interfaces inherited from class&nbsp;<a href="../EntityEvent.html#nested-class-summary" title="class in net.neoforged.neoforge.event.entity">EntityEvent</a></h3>
 <code><a href="../EntityEvent.EnteringSection.html" title="class in net.neoforged.neoforge.event.entity">EntityEvent.EnteringSection</a>, <a href="../EntityEvent.EntityConstructing.html" title="class in net.neoforged.neoforge.event.entity">EntityEvent.EntityConstructing</a>, <a href="../EntityEvent.Size.html" title="class in net.neoforged.neoforge.event.entity">EntityEvent.Size</a></code></div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private <a href="../../../../../minecraft/world/DifficultyInstance.html" title="class in net.minecraft.world">DifficultyInstance</a></code></div>
-<div class="col-second even-row-color"><code><a href="#difficulty" class="member-name-link">difficulty</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="../../../../../minecraft/world/entity/SpawnGroupData.html" title="interface in net.minecraft.world.entity">SpawnGroupData</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#spawnData" class="member-name-link">spawnData</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final @Nullable <a href="../../../../../../com/mojang/datafixers/util/Either.html" title="class in com.mojang.datafixers.util">Either</a><wbr>&lt;<a href="../../../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>, <a href="../../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#spawner" class="member-name-link">spawner</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../../minecraft/world/entity/EntitySpawnReason.html" title="enum class in net.minecraft.world.entity">EntitySpawnReason</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#spawnType" class="member-name-link">spawnType</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -250,56 +219,16 @@ This event is fired on <a href="../../../common/NeoForge.html#EVENT_BUS"><code>N
 <code><a href="MobSpawnEvent.html#getEntity()" title="getEntity()">getEntity</a>, <a href="MobSpawnEvent.html#getLevel()" title="getLevel()">getLevel</a>, <a href="MobSpawnEvent.html#getX()" title="getX()">getX</a>, <a href="MobSpawnEvent.html#getY()" title="getY()">getY</a>, <a href="MobSpawnEvent.html#getZ()" title="getZ()">getZ</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.neoforged.bus.api.ICancellableEvent">Methods inherited from interface&nbsp;net.neoforged.bus.api.ICancellableEvent</h3>
-<code>isCanceled, setCanceled</code></div>
+<h3 id="methods-inherited-from-class-net.neoforged.bus.api.ICancellableEvent">Methods inherited from interface&nbsp;<a href="../../../../bus/api/ICancellableEvent.html#method-summary" title="interface in net.neoforged.bus.api">ICancellableEvent</a></h3>
+<code><a href="../../../../bus/api/ICancellableEvent.html#isCanceled()" title="isCanceled()">isCanceled</a>, <a href="../../../../bus/api/ICancellableEvent.html#setCanceled(boolean)" title="setCanceled(boolean)">setCanceled</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="spawnType">
-<h3>spawnType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/world/entity/EntitySpawnReason.html" title="enum class in net.minecraft.world.entity">EntitySpawnReason</a></span>&nbsp;<span class="element-name">spawnType</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spawner">
-<h3>spawner</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../../../com/mojang/datafixers/util/Either.html" title="class in com.mojang.datafixers.util">Either</a>&lt;<a href="../../../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>, <a href="../../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</span>&nbsp;<span class="element-name">spawner</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="difficulty">
-<h3>difficulty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/world/DifficultyInstance.html" title="class in net.minecraft.world">DifficultyInstance</a></span>&nbsp;<span class="element-name">difficulty</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spawnData">
-<h3>spawnData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../../minecraft/world/entity/SpawnGroupData.html" title="interface in net.minecraft.world.entity">SpawnGroupData</a></span>&nbsp;<span class="element-name">spawnData</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -319,6 +248,20 @@ This event is fired on <a href="../../../common/NeoForge.html#EVENT_BUS"><code>N
  <a href="../../../../../minecraft/world/entity/EntitySpawnReason.html" title="enum class in net.minecraft.world.entity">EntitySpawnReason</a>&nbsp;spawnType,
  @Nullable <a href="../../../../../minecraft/world/entity/SpawnGroupData.html" title="interface in net.minecraft.world.entity">SpawnGroupData</a>&nbsp;spawnData,
  @Nullable <a href="../../../../../../com/mojang/datafixers/util/Either.html" title="class in com.mojang.datafixers.util">Either</a>&lt;<a href="../../../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>, <a href="../../../../../minecraft/world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;&nbsp;spawner)</span></div>
+<dl class="notes">
+<dt><em>API Note:</em></dt>
+<dd>Fire via 
+<details class="invalid-tag">
+<summary>invalid reference</summary>
+<pre><code>EventHooks#onFinalizeSpawn</code></pre>
+</details>
+ / 
+<details class="invalid-tag">
+<summary>invalid reference</summary>
+<pre><code>EventHooks#onFinalizeSpawnSpawner</code></pre>
+</details>
+.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -455,6 +398,13 @@ Usually that has no side effects, but callers should be aware.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>If this mob's spawn is cancelled or not.</dd>
+<dt><em>Implementation Note:</em></dt>
+<dd>This is enforced in <a href="../../../common/NeoForgeEventHandler.html#builtinMobSpawnBlocker(net.neoforged.neoforge.event.entity.EntityJoinLevelEvent)"><code>NeoForgeEventHandler.builtinMobSpawnBlocker(EntityJoinLevelEvent)</code></a> and a patch in 
+<details class="invalid-tag">
+<summary>invalid reference</summary>
+<pre><code>WorldGenRegion#addEntity</code></pre>
+</details>
+</dd>
 </dl>
 </div>
 </section>

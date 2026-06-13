@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>EnhancedBlockModelLighter (NeoForge 26.1)</title>
+<title>EnhancedBlockModelLighter (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.client.model.ao, class: EnhancedBlockModelLighter">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/EnhancedBlockModelLighter.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -58,18 +58,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#COMPARE_WITH_VANILLA" tabindex="0">COMPARE_WITH_VANILLA</a></li>
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#AO_OBJECT_CACHE" tabindex="0">AO_OBJECT_CACHE</a></li>
-<li><a href="#calculator" tabindex="0">calculator</a></li>
-<li><a href="#weights" tabindex="0">weights</a></li>
-<li><a href="#AO_EPS" tabindex="0">AO_EPS</a></li>
-<li><a href="#AVERAGE_WEIGHT" tabindex="0">AVERAGE_WEIGHT</a></li>
-<li><a href="#MAX_WEIGHT" tabindex="0">MAX_WEIGHT</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">EnhancedBlockModelLighter()</a></li>
@@ -80,13 +68,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#newInstance()" tabindex="0">newInstance()</a></li>
 <li><a href="#reset()" tabindex="0">reset()</a></li>
 <li><a href="#prepareQuadAmbientOcclusion(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)" tabindex="0">prepareQuadAmbientOcclusion(BlockAndTintGetter, BlockState, BlockPos, BakedQuad, QuadInstance)</a></li>
-<li><a href="#calculateAxisAligned(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.core.Direction,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)" tabindex="0">calculateAxisAligned(BlockAndTintGetter, BlockState, BlockPos, Direction, BakedQuad, QuadInstance)</a></li>
-<li><a href="#calculateIrregular(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)" tabindex="0">calculateIrregular(BlockAndTintGetter, BlockState, BlockPos, BakedQuad, QuadInstance)</a></li>
 <li><a href="#prepareQuadFlat(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,int,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)" tabindex="0">prepareQuadFlat(BlockAndTintGetter, BlockState, BlockPos, int, BakedQuad, QuadInstance)</a></li>
-<li><a href="#interpolateBrightness(net.neoforged.neoforge.client.model.ao.AoCalculatedFace,float%5B%5D)" tabindex="0">interpolateBrightness(AoCalculatedFace, float[])</a></li>
-<li><a href="#interpolateLightmap(net.neoforged.neoforge.client.model.ao.AoCalculatedFace,float%5B%5D)" tabindex="0">interpolateLightmap(AoCalculatedFace, float[])</a></li>
-<li><a href="#lerpLightmap(int,float,int,float)" tabindex="0">lerpLightmap(int, float, int, float)</a></li>
-<li><a href="#maxLightmap(int,int)" tabindex="0">maxLightmap(int, int)</a></li>
 </ol>
 </li>
 </ol>
@@ -109,7 +91,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Entrypoint and main class of our enhanced AO pipeline.
 
 <p>Vanilla's AO logic works well for faces that are axis-aligned.
-That computation is replicated in <a href="FullFaceCalculator.html" title="class in net.neoforged.neoforge.client.model.ao"><code>FullFaceCalculator</code></a>, with some bug fixes.
+That computation is replicated in <code>FullFaceCalculator</code>, with some bug fixes.
 The job of the enhanced pipeline is to handle faces that are more complicated,
 by combining multiple full faces as needed using interpolation.
 
@@ -122,17 +104,6 @@ by combining multiple full faces as needed using interpolation.
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="EnhancedBlockModelLighter.AoObjectCache.html" class="type-name-link" title="class in net.neoforged.neoforge.client.model.ao">EnhancedBlockModelLighter.AoObjectCache</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Cache these objects so that they don't need to be reallocated for every <a href="EnhancedBlockModelLighter.html" title="class in net.neoforged.neoforge.client.model.ao"><code>EnhancedBlockModelLighter</code></a>.</div>
-</div>
-</div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.minecraft.client.renderer.block.BlockModelLighter">Nested classes/interfaces inherited from class&nbsp;<a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#nested-class-summary" title="class in net.minecraft.client.renderer.block">BlockModelLighter</a></h3>
 <code><a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.AdjacencyInfo.html" title="enum class in net.minecraft.client.renderer.block">BlockModelLighter.AdjacencyInfo</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.Cache.html" title="class in net.minecraft.client.renderer.block">BlockModelLighter.Cache</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.SizeInfo.html" title="enum class in net.minecraft.client.renderer.block">BlockModelLighter.SizeInfo</a></code></div>
@@ -142,43 +113,9 @@ by combining multiple full faces as needed using interpolation.
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#AO_EPS" class="member-name-link">AO_EPS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html" title="class or interface in java.lang" class="external-link">ThreadLocal</a><wbr>&lt;<a href="EnhancedBlockModelLighter.AoObjectCache.html" title="class in net.neoforged.neoforge.client.model.ao">EnhancedBlockModelLighter.AoObjectCache</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#AO_OBJECT_CACHE" class="member-name-link">AO_OBJECT_CACHE</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#AVERAGE_WEIGHT" class="member-name-link">AVERAGE_WEIGHT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="FullFaceCalculator.html" title="class in net.neoforged.neoforge.client.model.ao">FullFaceCalculator</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#calculator" class="member-name-link">calculator</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Calculator for full faces.</div>
-</div>
-<div class="col-first even-row-color"><code>private static final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#COMPARE_WITH_VANILLA" class="member-name-link">COMPARE_WITH_VANILLA</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Debug option to compare the emulated vanilla AO with the actual vanilla AO.</div>
-</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#MAX_WEIGHT" class="member-name-link">MAX_WEIGHT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final float[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#weights" class="member-name-link">weights</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.client.renderer.block.BlockModelLighter">Fields inherited from class&nbsp;<a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#field-summary" title="class in net.minecraft.client.renderer.block">BlockModelLighter</a></h3>
-<code><a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#cache">cache</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#CACHE">CACHE</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#CHECK_LIGHT">CHECK_LIGHT</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#faceCubic">faceCubic</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#faceShape">faceShape</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#scratchPos">scratchPos</a></code></div>
+<code><a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#CHECK_LIGHT">CHECK_LIGHT</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -205,49 +142,6 @@ by combining multiple full faces as needed using interpolation.
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateAxisAligned(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.core.Direction,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)" class="member-name-link">calculateAxisAligned</a><wbr>(<a href="../../../../../minecraft/client/renderer/block/BlockAndTintGetter.html" title="interface in net.minecraft.client.renderer.block">BlockAndTintGetter</a>&nbsp;level,
- <a href="../../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="../../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;direction,
- <a href="../../../../../minecraft/client/resources/model/geometry/BakedQuad.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad</a>&nbsp;quad,
- <a href="../../../../../../com/mojang/blaze3d/vertex/QuadInstance.html" title="class in com.mojang.blaze3d.vertex">QuadInstance</a>&nbsp;outputInstance)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Computes AO for an axis-aligned quad.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateIrregular(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)" class="member-name-link">calculateIrregular</a><wbr>(<a href="../../../../../minecraft/client/renderer/block/BlockAndTintGetter.html" title="interface in net.minecraft.client.renderer.block">BlockAndTintGetter</a>&nbsp;level,
- <a href="../../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="../../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../../../../minecraft/client/resources/model/geometry/BakedQuad.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad</a>&nbsp;quad,
- <a href="../../../../../../com/mojang/blaze3d/vertex/QuadInstance.html" title="class in com.mojang.blaze3d.vertex">QuadInstance</a>&nbsp;outputInstance)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Computes AO for a general quad.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#interpolateBrightness(net.neoforged.neoforge.client.model.ao.AoCalculatedFace,float%5B%5D)" class="member-name-link">interpolateBrightness</a><wbr>(<a href="AoCalculatedFace.html" title="class in net.neoforged.neoforge.client.model.ao">AoCalculatedFace</a>&nbsp;in,
- float[]&nbsp;weights)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Interpolates brightness from the 4 corners of a face.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#interpolateLightmap(net.neoforged.neoforge.client.model.ao.AoCalculatedFace,float%5B%5D)" class="member-name-link">interpolateLightmap</a><wbr>(<a href="AoCalculatedFace.html" title="class in net.neoforged.neoforge.client.model.ao">AoCalculatedFace</a>&nbsp;in,
- float[]&nbsp;weights)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Interpolates lightmap from the 4 corners of a face.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerpLightmap(int,float,int,float)" class="member-name-link">lerpLightmap</a><wbr>(int&nbsp;lightmap1,
- float&nbsp;w1,
- int&nbsp;lightmap2,
- float&nbsp;w2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Interpolates two lightmaps linearly.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>(package private) static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#maxLightmap(int,int)" class="member-name-link">maxLightmap</a><wbr>(int&nbsp;lightmap1,
- int&nbsp;lightmap2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html" title="class in net.minecraft.client.renderer.block">BlockModelLighter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newInstance()" class="member-name-link">newInstance</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -274,115 +168,16 @@ by combining multiple full faces as needed using interpolation.
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.renderer.block.BlockModelLighter">Methods inherited from class&nbsp;<a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#method-summary" title="class in net.minecraft.client.renderer.block">BlockModelLighter</a></h3>
-<code><a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#clearCache()" title="clearCache()">clearCache</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#enableCaching()" title="enableCaching()">enableCaching</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#getLightCoords(net.minecraft.world.level.block.state.BlockState,net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.core.BlockPos)" title="getLightCoords(BlockState, BlockAndTintGetter, BlockPos)">getLightCoords</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#prepareQuadShape(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.client.resources.model.geometry.BakedQuad,boolean)" title="prepareQuadShape(BlockAndTintGetter, BlockState, BlockPos, BakedQuad, boolean)">prepareQuadShape</a></code></div>
+<code><a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#clearCache()" title="clearCache()">clearCache</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#enableCaching()" title="enableCaching()">enableCaching</a>, <a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#getLightCoords(net.minecraft.world.level.block.state.BlockState,net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.core.BlockPos)" title="getLightCoords(BlockState, BlockAndTintGetter, BlockPos)">getLightCoords</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="COMPARE_WITH_VANILLA">
-<h3>COMPARE_WITH_VANILLA</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">COMPARE_WITH_VANILLA</span></div>
-<div class="block">Debug option to compare the emulated vanilla AO with the actual vanilla AO.
-Only does something if emulated AO is enabled.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="AO_OBJECT_CACHE">
-<h3>AO_OBJECT_CACHE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html" title="class or interface in java.lang" class="external-link">ThreadLocal</a>&lt;<a href="EnhancedBlockModelLighter.AoObjectCache.html" title="class in net.neoforged.neoforge.client.model.ao">EnhancedBlockModelLighter.AoObjectCache</a>&gt;</span>&nbsp;<span class="element-name">AO_OBJECT_CACHE</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculator">
-<h3>calculator</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="FullFaceCalculator.html" title="class in net.neoforged.neoforge.client.model.ao">FullFaceCalculator</a></span>&nbsp;<span class="element-name">calculator</span></div>
-<div class="block">Calculator for full faces.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="weights">
-<h3>weights</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float[]</span>&nbsp;<span class="element-name">weights</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="AO_EPS">
-<h3>AO_EPS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">AO_EPS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.neoforged.neoforge.client.model.ao.EnhancedBlockModelLighter.AO_EPS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="AVERAGE_WEIGHT">
-<h3>AVERAGE_WEIGHT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">AVERAGE_WEIGHT</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.neoforged.neoforge.client.model.ao.EnhancedBlockModelLighter.AVERAGE_WEIGHT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="MAX_WEIGHT">
-<h3>MAX_WEIGHT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">MAX_WEIGHT</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.neoforged.neoforge.client.model.ao.EnhancedBlockModelLighter.MAX_WEIGHT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -441,37 +236,6 @@ Only does something if emulated AO is enabled.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="calculateAxisAligned(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.core.Direction,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)">
-<h3>calculateAxisAligned</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">calculateAxisAligned</span><wbr><span class="parameters">(<a href="../../../../../minecraft/client/renderer/block/BlockAndTintGetter.html" title="interface in net.minecraft.client.renderer.block">BlockAndTintGetter</a>&nbsp;level,
- <a href="../../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="../../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;direction,
- <a href="../../../../../minecraft/client/resources/model/geometry/BakedQuad.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad</a>&nbsp;quad,
- <a href="../../../../../../com/mojang/blaze3d/vertex/QuadInstance.html" title="class in com.mojang.blaze3d.vertex">QuadInstance</a>&nbsp;outputInstance)</span></div>
-<div class="block">Computes AO for an axis-aligned quad.
-
-<p>This is similar to vanilla in how we select whether to use the inside or outside light.
-However, we still use our own interpolation logic which does not make any assumption about vertex winding order.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateIrregular(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)">
-<h3>calculateIrregular</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">calculateIrregular</span><wbr><span class="parameters">(<a href="../../../../../minecraft/client/renderer/block/BlockAndTintGetter.html" title="interface in net.minecraft.client.renderer.block">BlockAndTintGetter</a>&nbsp;level,
- <a href="../../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="../../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../../../../../minecraft/client/resources/model/geometry/BakedQuad.html" title="class in net.minecraft.client.resources.model.geometry">BakedQuad</a>&nbsp;quad,
- <a href="../../../../../../com/mojang/blaze3d/vertex/QuadInstance.html" title="class in com.mojang.blaze3d.vertex">QuadInstance</a>&nbsp;outputInstance)</span></div>
-<div class="block">Computes AO for a general quad.
-Projects onto each axis, computes the AO, then combines proportionally to the square of each normal component.</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="prepareQuadFlat(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,int,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)">
 <h3>prepareQuadFlat</h3>
 <div class="horizontal-scroll">
@@ -485,47 +249,6 @@ Projects onto each axis, computes the AO, then combines proportionally to the sq
 <dt>Overrides:</dt>
 <dd><code><a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html#prepareQuadFlat(net.minecraft.client.renderer.block.BlockAndTintGetter,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,int,net.minecraft.client.resources.model.geometry.BakedQuad,com.mojang.blaze3d.vertex.QuadInstance)">prepareQuadFlat</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../minecraft/client/renderer/block/BlockModelLighter.html" title="class in net.minecraft.client.renderer.block">BlockModelLighter</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="interpolateBrightness(net.neoforged.neoforge.client.model.ao.AoCalculatedFace,float[])">
-<h3>interpolateBrightness</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">interpolateBrightness</span><wbr><span class="parameters">(<a href="AoCalculatedFace.html" title="class in net.neoforged.neoforge.client.model.ao">AoCalculatedFace</a>&nbsp;in,
- float[]&nbsp;weights)</span></div>
-<div class="block">Interpolates brightness from the 4 corners of a face.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="interpolateLightmap(net.neoforged.neoforge.client.model.ao.AoCalculatedFace,float[])">
-<h3>interpolateLightmap</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">interpolateLightmap</span><wbr><span class="parameters">(<a href="AoCalculatedFace.html" title="class in net.neoforged.neoforge.client.model.ao">AoCalculatedFace</a>&nbsp;in,
- float[]&nbsp;weights)</span></div>
-<div class="block">Interpolates lightmap from the 4 corners of a face.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lerpLightmap(int,float,int,float)">
-<h3>lerpLightmap</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">lerpLightmap</span><wbr><span class="parameters">(int&nbsp;lightmap1,
- float&nbsp;w1,
- int&nbsp;lightmap2,
- float&nbsp;w2)</span></div>
-<div class="block">Interpolates two lightmaps linearly.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="maxLightmap(int,int)">
-<h3>maxLightmap</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxLightmap</span><wbr><span class="parameters">(int&nbsp;lightmap1,
- int&nbsp;lightmap2)</span></div>
 </div>
 </section>
 </li>

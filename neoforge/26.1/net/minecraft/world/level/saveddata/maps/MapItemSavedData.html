@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>MapItemSavedData (NeoForge 26.1)</title>
+<title>MapItemSavedData (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.saveddata.maps, class: MapItemSavedData">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/MapItemSavedData.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -56,36 +56,18 @@ loadScripts(document, 'script');</script>
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#MAP_SIZE" tabindex="0">MAP_SIZE</a></li>
-<li><a href="#HALF_MAP_SIZE" tabindex="0">HALF_MAP_SIZE</a></li>
 <li><a href="#MAX_SCALE" tabindex="0">MAX_SCALE</a></li>
 <li><a href="#TRACKED_DECORATION_LIMIT" tabindex="0">TRACKED_DECORATION_LIMIT</a></li>
-<li><a href="#FRAME_PREFIX" tabindex="0">FRAME_PREFIX</a></li>
 <li><a href="#CODEC" tabindex="0">CODEC</a></li>
 <li><a href="#centerX" tabindex="0">centerX</a></li>
 <li><a href="#centerZ" tabindex="0">centerZ</a></li>
 <li><a href="#dimension" tabindex="0">dimension</a></li>
-<li><a href="#trackingPosition" tabindex="0">trackingPosition</a></li>
-<li><a href="#unlimitedTracking" tabindex="0">unlimitedTracking</a></li>
 <li><a href="#scale" tabindex="0">scale</a></li>
 <li><a href="#colors" tabindex="0">colors</a></li>
 <li><a href="#locked" tabindex="0">locked</a></li>
-<li><a href="#carriedBy" tabindex="0">carriedBy</a></li>
-<li><a href="#carriedByPlayers" tabindex="0">carriedByPlayers</a></li>
-<li><a href="#bannerMarkers" tabindex="0">bannerMarkers</a></li>
-<li><a href="#decorations" tabindex="0">decorations</a></li>
-<li><a href="#frameMarkers" tabindex="0">frameMarkers</a></li>
-<li><a href="#trackedDecorationCount" tabindex="0">trackedDecorationCount</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(int,int,byte,boolean,boolean,boolean,net.minecraft.resources.ResourceKey)" tabindex="0">MapItemSavedData(int, int, byte, boolean, boolean, boolean, ResourceKey)</a></li>
-<li><a href="#%3Cinit%3E(net.minecraft.resources.ResourceKey,int,int,byte,java.nio.ByteBuffer,boolean,boolean,boolean,java.util.List,java.util.List)" tabindex="0">MapItemSavedData(ResourceKey, int, int, byte, ByteBuffer, boolean, boolean, boolean, List, List)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -95,21 +77,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#createForClient(byte,boolean,net.minecraft.resources.ResourceKey)" tabindex="0">createForClient(byte, boolean, ResourceKey)</a></li>
 <li><a href="#locked()" tabindex="0">locked()</a></li>
 <li><a href="#scaled()" tabindex="0">scaled()</a></li>
-<li><a href="#mapMatcher(net.minecraft.world.item.ItemStack)" tabindex="0">mapMatcher(ItemStack)</a></li>
 <li><a href="#tickCarriedBy(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack,net.minecraft.world.entity.decoration.ItemFrame)" tabindex="0">tickCarriedBy(Player, ItemStack, ItemFrame)</a></li>
-<li><a href="#hasMapInvisibilityItemEquipped(net.minecraft.world.entity.player.Player)" tabindex="0">hasMapInvisibilityItemEquipped(Player)</a></li>
 <li><a href="#removeDecoration(java.lang.String)" tabindex="0">removeDecoration(String)</a></li>
 <li><a href="#addTargetDecoration(net.minecraft.world.item.ItemStack,net.minecraft.core.BlockPos,java.lang.String,net.minecraft.core.Holder)" tabindex="0">addTargetDecoration(ItemStack, BlockPos, String, Holder)</a></li>
 <li><a href="#addDecoration(net.minecraft.core.Holder,net.minecraft.world.level.LevelAccessor,java.lang.String,double,double,double,net.minecraft.network.chat.Component)" tabindex="0">addDecoration(Holder, LevelAccessor, String, double, double, double, Component)</a></li>
-<li><a href="#calculateDecorationLocationAndType(net.minecraft.core.Holder,net.minecraft.world.level.LevelAccessor,double,float,float)" tabindex="0">calculateDecorationLocationAndType(Holder, LevelAccessor, double, float, float)</a></li>
-<li><a href="#playerDecorationTypeAndRotation(net.minecraft.core.Holder,net.minecraft.world.level.LevelAccessor,double,float,float)" tabindex="0">playerDecorationTypeAndRotation(Holder, LevelAccessor, double, float, float)</a></li>
-<li><a href="#calculateRotation(net.minecraft.world.level.LevelAccessor,double)" tabindex="0">calculateRotation(LevelAccessor, double)</a></li>
-<li><a href="#isInsideMap(float,float)" tabindex="0">isInsideMap(float, float)</a></li>
-<li><a href="#decorationTypeForPlayerOutsideMap(float,float)" tabindex="0">decorationTypeForPlayerOutsideMap(float, float)</a></li>
-<li><a href="#clampMapCoordinate(float)" tabindex="0">clampMapCoordinate(float)</a></li>
 <li><a href="#getUpdatePacket(net.minecraft.world.level.saveddata.maps.MapId,net.minecraft.world.entity.player.Player)" tabindex="0">getUpdatePacket(MapId, Player)</a></li>
-<li><a href="#setColorsDirty(int,int)" tabindex="0">setColorsDirty(int, int)</a></li>
-<li><a href="#setDecorationsDirty()" tabindex="0">setDecorationsDirty()</a></li>
 <li><a href="#getHoldingPlayer(net.minecraft.world.entity.player.Player)" tabindex="0">getHoldingPlayer(Player)</a></li>
 <li><a href="#toggleBanner(net.minecraft.world.level.LevelAccessor,net.minecraft.core.BlockPos)" tabindex="0">toggleBanner(LevelAccessor, BlockPos)</a></li>
 <li><a href="#checkBanners(net.minecraft.world.level.BlockGetter,int,int)" tabindex="0">checkBanners(BlockGetter, int, int)</a></li>
@@ -121,7 +93,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#addClientSideDecorations(java.util.List)" tabindex="0">addClientSideDecorations(List)</a></li>
 <li><a href="#getDecorations()" tabindex="0">getDecorations()</a></li>
 <li><a href="#isTrackedCountOverLimit(int)" tabindex="0">isTrackedCountOverLimit(int)</a></li>
-<li><a href="#getFrameKey(int)" tabindex="0">getFrameKey(int)</a></li>
 </ol>
 </li>
 </ol>
@@ -157,12 +128,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="MapItemSavedData.HoldingPlayer.html" class="type-name-link" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.HoldingPlayer</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="MapItemSavedData.MapDecorationLocation.html" class="type-name-link" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.MapDecorationLocation</a></code></div>
+<div class="col-first odd-row-color"><code>static final record&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="MapItemSavedData.MapPatch.html" class="type-name-link" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.MapPatch</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="MapItemSavedData.MapPatch.html" class="type-name-link" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.MapPatch</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -175,47 +143,23 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="MapBanner.html" title="class in net.minecraft.world.level.saveddata.maps">MapBanner</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#bannerMarkers" class="member-name-link">bannerMarkers</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="MapItemSavedData.HoldingPlayer.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.HoldingPlayer</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#carriedBy" class="member-name-link">carriedBy</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>, <a href="MapItemSavedData.HoldingPlayer.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.HoldingPlayer</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#carriedByPlayers" class="member-name-link">carriedByPlayers</a></code></div>
+<div class="col-first even-row-color"><code>final int</code></div>
+<div class="col-second even-row-color"><code><a href="#centerX" class="member-name-link">centerX</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#centerX" class="member-name-link">centerX</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#centerZ" class="member-name-link">centerZ</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final int</code></div>
-<div class="col-second even-row-color"><code><a href="#centerZ" class="member-name-link">centerZ</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#CODEC" class="member-name-link">CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#CODEC" class="member-name-link">CODEC</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>byte[]</code></div>
-<div class="col-second even-row-color"><code><a href="#colors" class="member-name-link">colors</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="MapDecoration.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecoration</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#decorations" class="member-name-link">decorations</a></code></div>
+<div class="col-first odd-row-color"><code>byte[]</code></div>
+<div class="col-second odd-row-color"><code><a href="#colors" class="member-name-link">colors</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a><wbr>&lt;<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#dimension" class="member-name-link">dimension</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#FRAME_PREFIX" class="member-name-link">FRAME_PREFIX</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="MapFrame.html" title="class in net.minecraft.world.level.saveddata.maps">MapFrame</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#frameMarkers" class="member-name-link">frameMarkers</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#HALF_MAP_SIZE" class="member-name-link">HALF_MAP_SIZE</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#locked" class="member-name-link">locked</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#MAP_SIZE" class="member-name-link">MAP_SIZE</a></code></div>
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#locked" class="member-name-link">locked</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#MAX_SCALE" class="member-name-link">MAX_SCALE</a></code></div>
@@ -226,48 +170,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#TRACKED_DECORATION_LIMIT" class="member-name-link">TRACKED_DECORATION_LIMIT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#trackedDecorationCount" class="member-name-link">trackedDecorationCount</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#trackingPosition" class="member-name-link">trackingPosition</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#unlimitedTracking" class="member-name-link">unlimitedTracking</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int,byte,boolean,boolean,boolean,net.minecraft.resources.ResourceKey)" class="member-name-link">MapItemSavedData</a><wbr>(int&nbsp;centerX,
- int&nbsp;centerZ,
- byte&nbsp;scale,
- boolean&nbsp;trackingPosition,
- boolean&nbsp;unlimitedTracking,
- boolean&nbsp;locked,
- <a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&nbsp;dimension)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.minecraft.resources.ResourceKey,int,int,byte,java.nio.ByteBuffer,boolean,boolean,boolean,java.util.List,java.util.List)" class="member-name-link">MapItemSavedData</a><wbr>(<a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&nbsp;dimension,
- int&nbsp;centerX,
- int&nbsp;centerZ,
- byte&nbsp;scale,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;colors,
- boolean&nbsp;trackingPosition,
- boolean&nbsp;unlimitedTracking,
- boolean&nbsp;locked,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="MapBanner.html" title="class in net.minecraft.world.level.saveddata.maps">MapBanner</a>&gt;&nbsp;banners,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="MapFrame.html" title="class in net.minecraft.world.level.saveddata.maps">MapFrame</a>&gt;&nbsp;frames)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -300,123 +202,78 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  <a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecorationType</a>&gt;&nbsp;decorationType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private @Nullable <a href="MapItemSavedData.MapDecorationLocation.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.MapDecorationLocation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateDecorationLocationAndType(net.minecraft.core.Holder,net.minecraft.world.level.LevelAccessor,double,float,float)" class="member-name-link">calculateDecorationLocationAndType</a><wbr>(<a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecorationType</a>&gt;&nbsp;type,
- @Nullable <a href="../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
- double&nbsp;yRot,
- float&nbsp;xDeltaFromCenter,
- float&nbsp;yDeltaFromCenter)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private byte</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateRotation(net.minecraft.world.level.LevelAccessor,double)" class="member-name-link">calculateRotation</a><wbr>(@Nullable <a href="../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
- double&nbsp;yRot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkBanners(net.minecraft.world.level.BlockGetter,int,int)" class="member-name-link">checkBanners</a><wbr>(<a href="../../BlockGetter.html" title="interface in net.minecraft.world.level">BlockGetter</a>&nbsp;level,
  int&nbsp;x,
  int&nbsp;z)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static byte</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clampMapCoordinate(float)" class="member-name-link">clampMapCoordinate</a><wbr>(float&nbsp;deltaFromCenter)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createForClient(byte,boolean,net.minecraft.resources.ResourceKey)" class="member-name-link">createForClient</a><wbr>(byte&nbsp;scale,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createForClient(byte,boolean,net.minecraft.resources.ResourceKey)" class="member-name-link">createForClient</a><wbr>(byte&nbsp;scale,
  boolean&nbsp;isLocked,
  <a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&nbsp;dimension)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFresh(double,double,byte,boolean,boolean,net.minecraft.resources.ResourceKey)" class="member-name-link">createFresh</a><wbr>(double&nbsp;originX,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFresh(double,double,byte,boolean,boolean,net.minecraft.resources.ResourceKey)" class="member-name-link">createFresh</a><wbr>(double&nbsp;originX,
  double&nbsp;originY,
  byte&nbsp;scale,
  boolean&nbsp;trackingPosition,
  boolean&nbsp;unlimitedTracking,
  <a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&nbsp;dimension)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private @Nullable <a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a><wbr>&lt;<a href="MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecorationType</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decorationTypeForPlayerOutsideMap(float,float)" class="member-name-link">decorationTypeForPlayerOutsideMap</a><wbr>(float&nbsp;xDeltaFromCenter,
- float&nbsp;yDeltaFromCenter)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="MapBanner.html" title="class in net.minecraft.world.level.saveddata.maps">MapBanner</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBanners()" class="member-name-link">getBanners</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a><wbr>&lt;<a href="MapDecoration.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecoration</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDecorations()" class="member-name-link">getDecorations</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getFrameKey(int)" class="member-name-link">getFrameKey</a><wbr>(int&nbsp;id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MapItemSavedData.HoldingPlayer.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.HoldingPlayer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHoldingPlayer(net.minecraft.world.entity.player.Player)" class="member-name-link">getHoldingPlayer</a><wbr>(<a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUpdatePacket(net.minecraft.world.level.saveddata.maps.MapId,net.minecraft.world.entity.player.Player)" class="member-name-link">getUpdatePacket</a><wbr>(<a href="MapId.html" title="class in net.minecraft.world.level.saveddata.maps">MapId</a>&nbsp;id,
- <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MapItemSavedData.HoldingPlayer.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.HoldingPlayer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHoldingPlayer(net.minecraft.world.entity.player.Player)" class="member-name-link">getHoldingPlayer</a><wbr>(<a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasMapInvisibilityItemEquipped(net.minecraft.world.entity.player.Player)" class="member-name-link">hasMapInvisibilityItemEquipped</a><wbr>(<a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../../../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUpdatePacket(net.minecraft.world.level.saveddata.maps.MapId,net.minecraft.world.entity.player.Player)" class="member-name-link">getUpdatePacket</a><wbr>(<a href="MapId.html" title="class in net.minecraft.world.level.saveddata.maps">MapId</a>&nbsp;id,
+ <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isExplorationMap()" class="member-name-link">isExplorationMap</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isInsideMap(float,float)" class="member-name-link">isInsideMap</a><wbr>(float&nbsp;xd,
- float&nbsp;yd)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTrackedCountOverLimit(int)" class="member-name-link">isTrackedCountOverLimit</a><wbr>(int&nbsp;limit)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#locked()" class="member-name-link">locked</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a><wbr>&lt;<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#mapMatcher(net.minecraft.world.item.ItemStack)" class="member-name-link">mapMatcher</a><wbr>(<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;mapStack)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private @Nullable <a href="../../../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a><wbr>&lt;<a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecorationType</a>&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Byte.html" title="class or interface in java.lang" class="external-link">Byte</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playerDecorationTypeAndRotation(net.minecraft.core.Holder,net.minecraft.world.level.LevelAccessor,double,float,float)" class="member-name-link">playerDecorationTypeAndRotation</a><wbr>(<a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecorationType</a>&gt;&nbsp;type,
- @Nullable <a href="../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
- double&nbsp;yRot,
- float&nbsp;xDeltaFromCenter,
- float&nbsp;yDeltaFromCenter)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeDecoration(java.lang.String)" class="member-name-link">removeDecoration</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;string)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removedFromFrame(net.minecraft.core.BlockPos,int)" class="member-name-link">removedFromFrame</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- int&nbsp;entityID)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTrackedCountOverLimit(int)" class="member-name-link">isTrackedCountOverLimit</a><wbr>(int&nbsp;limit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scaled()" class="member-name-link">scaled</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#locked()" class="member-name-link">locked</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setColor(int,int,byte)" class="member-name-link">setColor</a><wbr>(int&nbsp;x,
- int&nbsp;y,
- byte&nbsp;newColor)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setColorsDirty(int,int)" class="member-name-link">setColorsDirty</a><wbr>(int&nbsp;x,
- int&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDecorationsDirty()" class="member-name-link">setDecorationsDirty</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeDecoration(java.lang.String)" class="member-name-link">removeDecoration</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;string)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickCarriedBy(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack,net.minecraft.world.entity.decoration.ItemFrame)" class="member-name-link">tickCarriedBy</a><wbr>(<a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;tickingPlayer,
- <a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
- @Nullable <a href="../../../entity/decoration/ItemFrame.html" title="class in net.minecraft.world.entity.decoration">ItemFrame</a>&nbsp;placedInFrame)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removedFromFrame(net.minecraft.core.BlockPos,int)" class="member-name-link">removedFromFrame</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ int&nbsp;entityID)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toggleBanner(net.minecraft.world.level.LevelAccessor,net.minecraft.core.BlockPos)" class="member-name-link">toggleBanner</a><wbr>(<a href="../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scaled()" class="member-name-link">scaled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../SavedDataType.html" title="class in net.minecraft.world.level.saveddata">SavedDataType</a><wbr>&lt;<a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#type(net.minecraft.world.level.saveddata.maps.MapId)" class="member-name-link">type</a><wbr>(<a href="MapId.html" title="class in net.minecraft.world.level.saveddata.maps">MapId</a>&nbsp;id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateColor(int,int,byte)" class="member-name-link">updateColor</a><wbr>(int&nbsp;x,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setColor(int,int,byte)" class="member-name-link">setColor</a><wbr>(int&nbsp;x,
  int&nbsp;y,
  byte&nbsp;newColor)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickCarriedBy(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack,net.minecraft.world.entity.decoration.ItemFrame)" class="member-name-link">tickCarriedBy</a><wbr>(<a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;tickingPlayer,
+ <a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
+ @Nullable <a href="../../../entity/decoration/ItemFrame.html" title="class in net.minecraft.world.entity.decoration">ItemFrame</a>&nbsp;placedInFrame)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toggleBanner(net.minecraft.world.level.LevelAccessor,net.minecraft.core.BlockPos)" class="member-name-link">toggleBanner</a><wbr>(<a href="../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
+ <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../SavedDataType.html" title="class in net.minecraft.world.level.saveddata">SavedDataType</a><wbr>&lt;<a href="MapItemSavedData.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#type(net.minecraft.world.level.saveddata.maps.MapId)" class="member-name-link">type</a><wbr>(<a href="MapId.html" title="class in net.minecraft.world.level.saveddata.maps">MapId</a>&nbsp;id)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateColor(int,int,byte)" class="member-name-link">updateColor</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ byte&nbsp;newColor)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -425,7 +282,7 @@ loadScripts(document, 'script');</script>
 <code><a href="../SavedData.html#isDirty()" title="isDirty()">isDirty</a>, <a href="../SavedData.html#setDirty()" title="setDirty()">setDirty</a>, <a href="../SavedData.html#setDirty(boolean)" title="setDirty(boolean)">setDirty</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -437,38 +294,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="MAP_SIZE">
-<h3>MAP_SIZE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAP_SIZE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.saveddata.maps.MapItemSavedData.MAP_SIZE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="HALF_MAP_SIZE">
-<h3>HALF_MAP_SIZE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">HALF_MAP_SIZE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.saveddata.maps.MapItemSavedData.HALF_MAP_SIZE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="MAX_SCALE">
 <h3>MAX_SCALE</h3>
@@ -495,22 +320,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../../constant-values.html#net.minecraft.world.level.saveddata.maps.MapItemSavedData.TRACKED_DECORATION_LIMIT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="FRAME_PREFIX">
-<h3>FRAME_PREFIX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">FRAME_PREFIX</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.saveddata.maps.MapItemSavedData.FRAME_PREFIX">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -550,22 +359,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="trackingPosition">
-<h3>trackingPosition</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">trackingPosition</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="unlimitedTracking">
-<h3>unlimitedTracking</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">unlimitedTracking</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="scale">
 <h3>scale</h3>
 <div class="horizontal-scroll">
@@ -586,93 +379,6 @@ loadScripts(document, 'script');</script>
 <h3>locked</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">locked</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="carriedBy">
-<h3>carriedBy</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="MapItemSavedData.HoldingPlayer.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.HoldingPlayer</a>&gt;</span>&nbsp;<span class="element-name">carriedBy</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="carriedByPlayers">
-<h3>carriedByPlayers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>, <a href="MapItemSavedData.HoldingPlayer.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.HoldingPlayer</a>&gt;</span>&nbsp;<span class="element-name">carriedByPlayers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="bannerMarkers">
-<h3>bannerMarkers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="MapBanner.html" title="class in net.minecraft.world.level.saveddata.maps">MapBanner</a>&gt;</span>&nbsp;<span class="element-name">bannerMarkers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="decorations">
-<h3>decorations</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="MapDecoration.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecoration</a>&gt;</span>&nbsp;<span class="element-name">decorations</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="frameMarkers">
-<h3>frameMarkers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="MapFrame.html" title="class in net.minecraft.world.level.saveddata.maps">MapFrame</a>&gt;</span>&nbsp;<span class="element-name">frameMarkers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="trackedDecorationCount">
-<h3>trackedDecorationCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">trackedDecorationCount</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(int,int,byte,boolean,boolean,boolean,net.minecraft.resources.ResourceKey)">
-<h3>MapItemSavedData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">MapItemSavedData</span><wbr><span class="parameters">(int&nbsp;centerX,
- int&nbsp;centerZ,
- byte&nbsp;scale,
- boolean&nbsp;trackingPosition,
- boolean&nbsp;unlimitedTracking,
- boolean&nbsp;locked,
- <a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&nbsp;dimension)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.resources.ResourceKey,int,int,byte,java.nio.ByteBuffer,boolean,boolean,boolean,java.util.List,java.util.List)">
-<h3>MapItemSavedData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">MapItemSavedData</span><wbr><span class="parameters">(<a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&gt;&nbsp;dimension,
- int&nbsp;centerX,
- int&nbsp;centerZ,
- byte&nbsp;scale,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;colors,
- boolean&nbsp;trackingPosition,
- boolean&nbsp;unlimitedTracking,
- boolean&nbsp;locked,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="MapBanner.html" title="class in net.minecraft.world.level.saveddata.maps">MapBanner</a>&gt;&nbsp;banners,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="MapFrame.html" title="class in net.minecraft.world.level.saveddata.maps">MapFrame</a>&gt;&nbsp;frames)</span></div>
 </div>
 </section>
 </li>
@@ -732,28 +438,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="mapMatcher(net.minecraft.world.item.ItemStack)">
-<h3>mapMatcher</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;</span>&nbsp;<span class="element-name">mapMatcher</span><wbr><span class="parameters">(<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;mapStack)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="tickCarriedBy(net.minecraft.world.entity.player.Player,net.minecraft.world.item.ItemStack,net.minecraft.world.entity.decoration.ItemFrame)">
 <h3>tickCarriedBy</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">tickCarriedBy</span><wbr><span class="parameters">(<a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;tickingPlayer,
  <a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
  @Nullable <a href="../../../entity/decoration/ItemFrame.html" title="class in net.minecraft.world.entity.decoration">ItemFrame</a>&nbsp;placedInFrame)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hasMapInvisibilityItemEquipped(net.minecraft.world.entity.player.Player)">
-<h3>hasMapInvisibilityItemEquipped</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasMapInvisibilityItemEquipped</span><wbr><span class="parameters">(<a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</span></div>
 </div>
 </section>
 </li>
@@ -791,87 +481,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="calculateDecorationLocationAndType(net.minecraft.core.Holder,net.minecraft.world.level.LevelAccessor,double,float,float)">
-<h3>calculateDecorationLocationAndType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="MapItemSavedData.MapDecorationLocation.html" title="class in net.minecraft.world.level.saveddata.maps">MapItemSavedData.MapDecorationLocation</a></span>&nbsp;<span class="element-name">calculateDecorationLocationAndType</span><wbr><span class="parameters">(<a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecorationType</a>&gt;&nbsp;type,
- @Nullable <a href="../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
- double&nbsp;yRot,
- float&nbsp;xDeltaFromCenter,
- float&nbsp;yDeltaFromCenter)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="playerDecorationTypeAndRotation(net.minecraft.core.Holder,net.minecraft.world.level.LevelAccessor,double,float,float)">
-<h3>playerDecorationTypeAndRotation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecorationType</a>&gt;, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Byte.html" title="class or interface in java.lang" class="external-link">Byte</a>&gt;</span>&nbsp;<span class="element-name">playerDecorationTypeAndRotation</span><wbr><span class="parameters">(<a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecorationType</a>&gt;&nbsp;type,
- @Nullable <a href="../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
- double&nbsp;yRot,
- float&nbsp;xDeltaFromCenter,
- float&nbsp;yDeltaFromCenter)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateRotation(net.minecraft.world.level.LevelAccessor,double)">
-<h3>calculateRotation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">calculateRotation</span><wbr><span class="parameters">(@Nullable <a href="../../LevelAccessor.html" title="interface in net.minecraft.world.level">LevelAccessor</a>&nbsp;level,
- double&nbsp;yRot)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isInsideMap(float,float)">
-<h3>isInsideMap</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isInsideMap</span><wbr><span class="parameters">(float&nbsp;xd,
- float&nbsp;yd)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="decorationTypeForPlayerOutsideMap(float,float)">
-<h3>decorationTypeForPlayerOutsideMap</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="MapDecorationType.html" title="class in net.minecraft.world.level.saveddata.maps">MapDecorationType</a>&gt;</span>&nbsp;<span class="element-name">decorationTypeForPlayerOutsideMap</span><wbr><span class="parameters">(float&nbsp;xDeltaFromCenter,
- float&nbsp;yDeltaFromCenter)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="clampMapCoordinate(float)">
-<h3>clampMapCoordinate</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">clampMapCoordinate</span><wbr><span class="parameters">(float&nbsp;deltaFromCenter)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getUpdatePacket(net.minecraft.world.level.saveddata.maps.MapId,net.minecraft.world.entity.player.Player)">
 <h3>getUpdatePacket</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getUpdatePacket</span><wbr><span class="parameters">(<a href="MapId.html" title="class in net.minecraft.world.level.saveddata.maps">MapId</a>&nbsp;id,
  <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setColorsDirty(int,int)">
-<h3>setColorsDirty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setColorsDirty</span><wbr><span class="parameters">(int&nbsp;x,
- int&nbsp;y)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setDecorationsDirty()">
-<h3>setDecorationsDirty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDecorationsDirty</span>()</div>
 </div>
 </section>
 </li>
@@ -968,14 +582,6 @@ loadScripts(document, 'script');</script>
 <h3>isTrackedCountOverLimit</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isTrackedCountOverLimit</span><wbr><span class="parameters">(int&nbsp;limit)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getFrameKey(int)">
-<h3>getFrameKey</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getFrameKey</span><wbr><span class="parameters">(int&nbsp;id)</span></div>
 </div>
 </section>
 </li>

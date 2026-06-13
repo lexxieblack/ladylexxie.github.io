@@ -1,0 +1,503 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>GlState (NeoForge 26.1.2.76)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="declaration: package: net.neoforged.fml.earlydisplay.render, class: GlState">
+<meta name="generator" content="javadoc/ClassWriter">
+<link rel="stylesheet" type="text/css" href="../../../../../resource-files/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="../../../../../resource-files/stylesheet.css">
+<script type="text/javascript" src="../../../../../script-files/script.js"></script>
+<script type="text/javascript" src="../../../../../script-files/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../../../../../script-files/jquery-ui.min.js"></script>
+</head>
+<body class="class-declaration-page">
+<script type="text/javascript">const pathtoroot = "../../../../../";
+loadScripts(document, 'script');</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<header role="banner">
+<nav role="navigation">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="top-nav" id="navbar-top">
+<div class="nav-content">
+<div class="nav-menu-button"><button id="navbar-toggle-button" aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation links"><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span></button></div>
+<div class="skip-nav"><a href="#skip-navbar-top" title="Skip navigation links">Skip navigation links</a></div>
+<ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
+<li><a href="../../../../../index.html">Overview</a></li>
+<li class="nav-bar-cell1-rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../search.html">Search</a></li>
+<li><a href="../../../../../help-doc.html#class">Help</a></li>
+</ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
+</div>
+</div>
+<div class="sub-nav">
+<div class="nav-content">
+<ol class="sub-nav-list">
+<li><a href="package-summary.html">net.neoforged.fml.earlydisplay.render</a></li>
+<li><a href="GlState.html" class="current-selection">GlState</a></li>
+</ol>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="Search documentation (type /)" aria-label="Search in documentation" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="Reset"></div>
+</div>
+</div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<span class="skip-nav" id="skip-navbar-top"></span></nav>
+</header>
+<div class="main-grid">
+<nav role="navigation" class="toc" aria-label="Table of contents">
+<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<ol class="toc-list" tabindex="-1">
+<li><a href="#" tabindex="0">Description</a></li>
+<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
+<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
+<li><a href="#method-detail" tabindex="0">Method Details</a>
+<ol class="toc-list">
+<li><a href="#readFromOpenGL()" tabindex="0">readFromOpenGL()</a></li>
+<li><a href="#viewport(int,int,int,int)" tabindex="0">viewport(int, int, int, int)</a></li>
+<li><a href="#clearColor(float,float,float,float)" tabindex="0">clearColor(float, float, float, float)</a></li>
+<li><a href="#enableBlend(boolean)" tabindex="0">enableBlend(boolean)</a></li>
+<li><a href="#blendFuncSeparate(int,int,int,int)" tabindex="0">blendFuncSeparate(int, int, int, int)</a></li>
+<li><a href="#useProgram(int)" tabindex="0">useProgram(int)</a></li>
+<li><a href="#bindTexture2D(int)" tabindex="0">bindTexture2D(int)</a></li>
+<li><a href="#bindSampler(int)" tabindex="0">bindSampler(int)</a></li>
+<li><a href="#bindVertexArray(int)" tabindex="0">bindVertexArray(int)</a></li>
+<li><a href="#bindFramebuffer(int)" tabindex="0">bindFramebuffer(int)</a></li>
+<li><a href="#bindDrawFramebuffer(int)" tabindex="0">bindDrawFramebuffer(int)</a></li>
+<li><a href="#bindReadFramebuffer(int)" tabindex="0">bindReadFramebuffer(int)</a></li>
+<li><a href="#bindElementArrayBuffer(int)" tabindex="0">bindElementArrayBuffer(int)</a></li>
+<li><a href="#bindArrayBuffer(int)" tabindex="0">bindArrayBuffer(int)</a></li>
+<li><a href="#scissorBox(int,int,int,int)" tabindex="0">scissorBox(int, int, int, int)</a></li>
+<li><a href="#scissorTest(boolean)" tabindex="0">scissorTest(boolean)</a></li>
+<li><a href="#createSnapshot()" tabindex="0">createSnapshot()</a></li>
+<li><a href="#applySnapshot(net.neoforged.fml.earlydisplay.render.GlState.StateSnapshot)" tabindex="0">applySnapshot(GlState.StateSnapshot)</a></li>
+</ol>
+</li>
+</ol>
+<button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
+<main role="main">
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<h1 title="Class GlState" class="title">Class GlState</h1>
+</div>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance">net.neoforged.fml.earlydisplay.render.GlState</div>
+</div>
+<section class="class-description" id="class-description">
+<hr>
+<div class="horizontal-scroll">
+<div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">GlState</span>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">A static state manager for a subset of OpenGL states to minimize redundant state changes.
+<p>
+This class tracks the current state of various OpenGL state elements and only applies changes
+when necessary, reducing overhead from redundant state changes.</div>
+</div>
+</section>
+<section class="summary">
+<ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static final record&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="GlState.StateSnapshot.html" class="type-name-link" title="class in net.neoforged.fml.earlydisplay.render">GlState.StateSnapshot</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">A snapshot of the OpenGL state.</div>
+</div>
+</div>
+</section>
+</li>
+<!-- ========== METHOD SUMMARY =========== -->
+<li>
+<section class="method-summary" id="method-summary">
+<h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#applySnapshot(net.neoforged.fml.earlydisplay.render.GlState.StateSnapshot)" class="member-name-link">applySnapshot</a><wbr>(<a href="GlState.StateSnapshot.html" title="class in net.neoforged.fml.earlydisplay.render">GlState.StateSnapshot</a>&nbsp;snapshot)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Applies the state from a snapshot to both this state manager and OpenGL.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bindArrayBuffer(int)" class="member-name-link">bindArrayBuffer</a><wbr>(int&nbsp;bufferId)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Binds a buffer to the array buffer target.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bindDrawFramebuffer(int)" class="member-name-link">bindDrawFramebuffer</a><wbr>(int&nbsp;framebufferId)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Binds a framebuffer to the draw target.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bindElementArrayBuffer(int)" class="member-name-link">bindElementArrayBuffer</a><wbr>(int&nbsp;bufferId)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Binds a buffer to the element array buffer target.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bindFramebuffer(int)" class="member-name-link">bindFramebuffer</a><wbr>(int&nbsp;framebufferId)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Binds a framebuffer to both draw and read targets.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bindReadFramebuffer(int)" class="member-name-link">bindReadFramebuffer</a><wbr>(int&nbsp;framebufferId)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Binds a framebuffer to the read target.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bindSampler(int)" class="member-name-link">bindSampler</a><wbr>(int&nbsp;sampler)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Binds a sampler to texture unit 0.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bindTexture2D(int)" class="member-name-link">bindTexture2D</a><wbr>(int&nbsp;textureId)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Binds a 2D texture to unit 0.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bindVertexArray(int)" class="member-name-link">bindVertexArray</a><wbr>(int&nbsp;vaoId)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Binds a vertex array object.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#blendFuncSeparate(int,int,int,int)" class="member-name-link">blendFuncSeparate</a><wbr>(int&nbsp;srcRGB,
+ int&nbsp;dstRGB,
+ int&nbsp;srcAlpha,
+ int&nbsp;dstAlpha)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Sets the blend function parameters.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clearColor(float,float,float,float)" class="member-name-link">clearColor</a><wbr>(float&nbsp;red,
+ float&nbsp;green,
+ float&nbsp;blue,
+ float&nbsp;alpha)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Sets the clear color state.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="GlState.StateSnapshot.html" title="class in net.neoforged.fml.earlydisplay.render">GlState.StateSnapshot</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createSnapshot()" class="member-name-link">createSnapshot</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a snapshot of the current OpenGL state.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#enableBlend(boolean)" class="member-name-link">enableBlend</a><wbr>(boolean&nbsp;enabled)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Enables or disables blending.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readFromOpenGL()" class="member-name-link">readFromOpenGL</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Reads the current OpenGL state into this state manager.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scissorBox(int,int,int,int)" class="member-name-link">scissorBox</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;width,
+ int&nbsp;height)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Configures the rectangle for the scissor test, which can be enabled or disabled by <a href="#scissorTest(boolean)"><code>scissorTest(boolean)</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scissorTest(boolean)" class="member-name-link">scissorTest</a><wbr>(boolean&nbsp;enabled)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Enables or disables the scissor test against the box defined by <code>scissorBox</code>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#useProgram(int)" class="member-name-link">useProgram</a><wbr>(int&nbsp;program)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Sets the current shader program.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#viewport(int,int,int,int)" class="member-name-link">viewport</a><wbr>(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;width,
+ int&nbsp;height)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Sets the viewport state.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="readFromOpenGL()">
+<h3>readFromOpenGL</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readFromOpenGL</span>()</div>
+<div class="block">Reads the current OpenGL state into this state manager.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="viewport(int,int,int,int)">
+<h3>viewport</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">viewport</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;width,
+ int&nbsp;height)</span></div>
+<div class="block">Sets the viewport state.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>x</code> - The lower left corner x-coordinate</dd>
+<dd><code>y</code> - The lower left corner y-coordinate</dd>
+<dd><code>width</code> - The viewport width</dd>
+<dd><code>height</code> - The viewport height</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clearColor(float,float,float,float)">
+<h3>clearColor</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearColor</span><wbr><span class="parameters">(float&nbsp;red,
+ float&nbsp;green,
+ float&nbsp;blue,
+ float&nbsp;alpha)</span></div>
+<div class="block">Sets the clear color state.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>red</code> - The red component [0.0, 1.0]</dd>
+<dd><code>green</code> - The green component [0.0, 1.0]</dd>
+<dd><code>blue</code> - The blue component [0.0, 1.0]</dd>
+<dd><code>alpha</code> - The alpha component [0.0, 1.0]</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="enableBlend(boolean)">
+<h3>enableBlend</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">enableBlend</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
+<div class="block">Enables or disables blending.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>enabled</code> - Whether blending should be enabled</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="blendFuncSeparate(int,int,int,int)">
+<h3>blendFuncSeparate</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">blendFuncSeparate</span><wbr><span class="parameters">(int&nbsp;srcRGB,
+ int&nbsp;dstRGB,
+ int&nbsp;srcAlpha,
+ int&nbsp;dstAlpha)</span></div>
+<div class="block">Sets the blend function parameters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>srcRGB</code> - The source RGB factor</dd>
+<dd><code>dstRGB</code> - The destination RGB factor</dd>
+<dd><code>srcAlpha</code> - The source alpha factor</dd>
+<dd><code>dstAlpha</code> - The destination alpha factor</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="useProgram(int)">
+<h3>useProgram</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">useProgram</span><wbr><span class="parameters">(int&nbsp;program)</span></div>
+<div class="block">Sets the current shader program.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>program</code> - The program ID to use</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindTexture2D(int)">
+<h3>bindTexture2D</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bindTexture2D</span><wbr><span class="parameters">(int&nbsp;textureId)</span></div>
+<div class="block">Binds a 2D texture to unit 0.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>textureId</code> - The texture ID to bind</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindSampler(int)">
+<h3>bindSampler</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bindSampler</span><wbr><span class="parameters">(int&nbsp;sampler)</span></div>
+<div class="block">Binds a sampler to texture unit 0.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sampler</code> - The sampler ID to bind</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindVertexArray(int)">
+<h3>bindVertexArray</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bindVertexArray</span><wbr><span class="parameters">(int&nbsp;vaoId)</span></div>
+<div class="block">Binds a vertex array object.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vaoId</code> - The vertex array object ID to bind</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindFramebuffer(int)">
+<h3>bindFramebuffer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bindFramebuffer</span><wbr><span class="parameters">(int&nbsp;framebufferId)</span></div>
+<div class="block">Binds a framebuffer to both draw and read targets.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>framebufferId</code> - The framebuffer ID to bind to both GL_FRAMEBUFFER targets</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindDrawFramebuffer(int)">
+<h3>bindDrawFramebuffer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bindDrawFramebuffer</span><wbr><span class="parameters">(int&nbsp;framebufferId)</span></div>
+<div class="block">Binds a framebuffer to the draw target.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>framebufferId</code> - The framebuffer ID to bind to GL_DRAW_FRAMEBUFFER</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindReadFramebuffer(int)">
+<h3>bindReadFramebuffer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bindReadFramebuffer</span><wbr><span class="parameters">(int&nbsp;framebufferId)</span></div>
+<div class="block">Binds a framebuffer to the read target.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>framebufferId</code> - The framebuffer ID to bind to GL_READ_FRAMEBUFFER</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindElementArrayBuffer(int)">
+<h3>bindElementArrayBuffer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bindElementArrayBuffer</span><wbr><span class="parameters">(int&nbsp;bufferId)</span></div>
+<div class="block">Binds a buffer to the element array buffer target.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>bufferId</code> - The buffer ID to bind</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindArrayBuffer(int)">
+<h3>bindArrayBuffer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bindArrayBuffer</span><wbr><span class="parameters">(int&nbsp;bufferId)</span></div>
+<div class="block">Binds a buffer to the array buffer target.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>bufferId</code> - The buffer ID to bind</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="scissorBox(int,int,int,int)">
+<h3>scissorBox</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scissorBox</span><wbr><span class="parameters">(int&nbsp;x,
+ int&nbsp;y,
+ int&nbsp;width,
+ int&nbsp;height)</span></div>
+<div class="block">Configures the rectangle for the scissor test, which can be enabled or disabled by <a href="#scissorTest(boolean)"><code>scissorTest(boolean)</code></a>.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="scissorTest(boolean)">
+<h3>scissorTest</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scissorTest</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
+<div class="block">Enables or disables the scissor test against the box defined by <code>scissorBox</code>.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="createSnapshot()">
+<h3>createSnapshot</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="GlState.StateSnapshot.html" title="class in net.neoforged.fml.earlydisplay.render">GlState.StateSnapshot</a></span>&nbsp;<span class="element-name">createSnapshot</span>()</div>
+<div class="block">Creates a snapshot of the current OpenGL state.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>A StateSnapshot object containing the current state</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="applySnapshot(net.neoforged.fml.earlydisplay.render.GlState.StateSnapshot)">
+<h3>applySnapshot</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applySnapshot</span><wbr><span class="parameters">(<a href="GlState.StateSnapshot.html" title="class in net.neoforged.fml.earlydisplay.render">GlState.StateSnapshot</a>&nbsp;snapshot)</span></div>
+<div class="block">Applies the state from a snapshot to both this state manager and OpenGL.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>snapshot</code> - The snapshot to apply</dd>
+</dl>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+<!-- ========= END OF CLASS DATA ========= -->
+</main>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ModelDataManager (NeoForge 26.1)</title>
+<title>ModelDataManager (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.model.data, class: ModelDataManager">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ModelDataManager.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,10 +59,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#owningThread" tabindex="0">owningThread</a></li>
-<li><a href="#level" tabindex="0">level</a></li>
-<li><a href="#needModelDataRefresh" tabindex="0">needModelDataRefresh</a></li>
-<li><a href="#modelDataCache" tabindex="0">modelDataCache</a></li>
 <li><a href="#EMPTY_SNAPSHOT" tabindex="0">EMPTY_SNAPSHOT</a></li>
 </ol>
 </li>
@@ -77,8 +73,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getAt(net.minecraft.core.SectionPos)" tabindex="0">getAt(SectionPos)</a></li>
 <li><a href="#getAt(net.minecraft.core.BlockPos)" tabindex="0">getAt(BlockPos)</a></li>
 <li><a href="#snapshotSectionRegion(int,int,int,int,int,int)" tabindex="0">snapshotSectionRegion(int, int, int, int, int, int)</a></li>
-<li><a href="#refreshAt(long)" tabindex="0">refreshAt(long)</a></li>
-<li><a href="#isOtherThread()" tabindex="0">isOtherThread()</a></li>
 <li><a href="#onChunkUnload(net.neoforged.neoforge.event.level.ChunkEvent.Unload)" tabindex="0">onChunkUnload(ChunkEvent.Unload)</a></li>
 </ol>
 </li>
@@ -114,20 +108,8 @@ it should only be interacted with on the main client thread.</div>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final it.unimi.dsi.fastutil.longs.Long2ObjectFunction<wbr>&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>static final <a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/Long2ObjectFunction.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">Long2ObjectFunction</a><wbr>&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#EMPTY_SNAPSHOT" class="member-name-link">EMPTY_SNAPSHOT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#level" class="member-name-link">level</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final it.unimi.dsi.fastutil.longs.Long2ObjectMap<wbr>&lt;it.unimi.dsi.fastutil.longs.Long2ObjectMap&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#modelDataCache" class="member-name-link">modelDataCache</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final it.unimi.dsi.fastutil.longs.Long2ObjectMap<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#needModelDataRefresh" class="member-name-link">needModelDataRefresh</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></code></div>
-<div class="col-second even-row-color"><code><a href="#owningThread" class="member-name-link">owningThread</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -161,26 +143,20 @@ it should only be interacted with on the main client thread.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieves model data for a block at the given position.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@UnmodifiableView it.unimi.dsi.fastutil.longs.Long2ObjectMap<wbr>&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@UnmodifiableView <a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/Long2ObjectMap.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">Long2ObjectMap</a><wbr>&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAt(net.minecraft.core.SectionPos)" class="member-name-link">getAt</a><wbr>(<a href="../../../../minecraft/core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Provides all the model data for a given chunk section.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOtherThread()" class="member-name-link">isOtherThread</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onChunkUnload(net.neoforged.neoforge.event.level.ChunkEvent.Unload)" class="member-name-link">onChunkUnload</a><wbr>(<a href="../../event/level/ChunkEvent.Unload.html" title="class in net.neoforged.neoforge.event.level">ChunkEvent.Unload</a>&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshAt(long)" class="member-name-link">refreshAt</a><wbr>(long&nbsp;section)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#onChunkUnload(net.neoforged.neoforge.event.level.ChunkEvent.Unload)" class="member-name-link">onChunkUnload</a><wbr>(<a href="../../event/level/ChunkEvent.Unload.html" title="class in net.neoforged.neoforge.event.level">ChunkEvent.Unload</a>&nbsp;event)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requestRefresh(net.minecraft.world.level.block.entity.BlockEntity)" class="member-name-link">requestRefresh</a><wbr>(<a href="../../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>&nbsp;blockEntity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Request a refresh of the stored data for the given <a href="../../../../minecraft/world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity"><code>BlockEntity</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>it.unimi.dsi.fastutil.longs.Long2ObjectFunction<wbr>&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/Long2ObjectFunction.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">Long2ObjectFunction</a><wbr>&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#snapshotSectionRegion(int,int,int,int,int,int)" class="member-name-link">snapshotSectionRegion</a><wbr>(int&nbsp;sectionMinX,
  int&nbsp;sectionMinY,
  int&nbsp;sectionMinZ,
@@ -195,7 +171,7 @@ it should only be interacted with on the main client thread.</div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -208,42 +184,10 @@ it should only be interacted with on the main client thread.</div>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="owningThread">
-<h3>owningThread</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></span>&nbsp;<span class="element-name">owningThread</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="level">
-<h3>level</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a></span>&nbsp;<span class="element-name">level</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="needModelDataRefresh">
-<h3>needModelDataRefresh</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.Long2ObjectMap&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;&gt;</span>&nbsp;<span class="element-name">needModelDataRefresh</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="modelDataCache">
-<h3>modelDataCache</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.Long2ObjectMap&lt;it.unimi.dsi.fastutil.longs.Long2ObjectMap&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;&gt;</span>&nbsp;<span class="element-name">modelDataCache</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="EMPTY_SNAPSHOT">
 <h3>EMPTY_SNAPSHOT</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.Long2ObjectFunction&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</span>&nbsp;<span class="element-name">EMPTY_SNAPSHOT</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/Long2ObjectFunction.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">Long2ObjectFunction</a>&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</span>&nbsp;<span class="element-name">EMPTY_SNAPSHOT</span></div>
 </div>
 </section>
 </li>
@@ -285,7 +229,7 @@ must be in the level owning this manager</div>
 <section class="detail" id="getAt(net.minecraft.core.SectionPos)">
 <h3>getAt</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@UnmodifiableView it.unimi.dsi.fastutil.longs.Long2ObjectMap&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</span>&nbsp;<span class="element-name">getAt</span><wbr><span class="parameters">(<a href="../../../../minecraft/core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;pos)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@UnmodifiableView <a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/Long2ObjectMap.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">Long2ObjectMap</a>&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</span>&nbsp;<span class="element-name">getAt</span><wbr><span class="parameters">(<a href="../../../../minecraft/core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;pos)</span></div>
 <div class="block">Provides all the model data for a given chunk section. This is useful for mods which wish to retrieve
 a fast view of the model data for a single section in a level.
 
@@ -319,7 +263,7 @@ by this data manager.</div>
 <section class="detail" id="snapshotSectionRegion(int,int,int,int,int,int)">
 <h3>snapshotSectionRegion</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.Long2ObjectFunction&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</span>&nbsp;<span class="element-name">snapshotSectionRegion</span><wbr><span class="parameters">(int&nbsp;sectionMinX,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/Long2ObjectFunction.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">Long2ObjectFunction</a>&lt;<a href="ModelData.html" title="class in net.neoforged.neoforge.model.data">ModelData</a>&gt;</span>&nbsp;<span class="element-name">snapshotSectionRegion</span><wbr><span class="parameters">(int&nbsp;sectionMinX,
  int&nbsp;sectionMinY,
  int&nbsp;sectionMinZ,
  int&nbsp;sectionMaxX,
@@ -327,22 +271,6 @@ by this data manager.</div>
  int&nbsp;sectionMaxZ)</span></div>
 <div class="block">Snapshot the state of this manager for all sections in the volume specified by the given section coordinates.
 The snapshot will return <a href="ModelData.html#EMPTY"><code>ModelData.EMPTY</code></a> for nonexistent keys.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="refreshAt(long)">
-<h3>refreshAt</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">refreshAt</span><wbr><span class="parameters">(long&nbsp;section)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isOtherThread()">
-<h3>isOtherThread</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isOtherThread</span>()</div>
 </div>
 </section>
 </li>

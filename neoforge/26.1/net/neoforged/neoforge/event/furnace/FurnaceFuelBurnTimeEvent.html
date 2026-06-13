@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>FurnaceFuelBurnTimeEvent (NeoForge 26.1)</title>
+<title>FurnaceFuelBurnTimeEvent (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.event.furnace, class: FurnaceFuelBurnTimeEvent">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/FurnaceFuelBurnTimeEvent.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,17 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#itemStack" tabindex="0">itemStack</a></li>
-<li><a href="#recipeType" tabindex="0">recipeType</a></li>
-<li><a href="#fuelValues" tabindex="0">fuelValues</a></li>
-<li><a href="#burnTime" tabindex="0">burnTime</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.world.item.ItemStack,int,net.minecraft.world.item.crafting.RecipeType,net.minecraft.world.level.block.entity.FuelValues)" tabindex="0">FurnaceFuelBurnTimeEvent(ItemStack, int, RecipeType, FuelValues)</a></li>
@@ -87,57 +78,33 @@ loadScripts(document, 'script');</script>
 <h1 title="Class FurnaceFuelBurnTimeEvent" class="title">Class FurnaceFuelBurnTimeEvent</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.neoforged.bus.api.Event
+<div class="inheritance"><a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">net.neoforged.bus.api.Event</a>
 <div class="inheritance">net.neoforged.neoforge.event.furnace.FurnaceFuelBurnTimeEvent</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.neoforged.bus.api.ICancellableEvent</code></dd>
+<dd><code><a href="../../../bus/api/ICancellableEvent.html" title="interface in net.neoforged.bus.api">ICancellableEvent</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">FurnaceFuelBurnTimeEvent</span>
-<span class="extends-implements">extends net.neoforged.bus.api.Event
-implements net.neoforged.bus.api.ICancellableEvent</span></div>
+<span class="extends-implements">extends <a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">Event</a>
+implements <a href="../../../bus/api/ICancellableEvent.html" title="interface in net.neoforged.bus.api">ICancellableEvent</a></span></div>
 <div class="block"><a href="FurnaceFuelBurnTimeEvent.html" title="class in net.neoforged.neoforge.event.furnace"><code>FurnaceFuelBurnTimeEvent</code></a> is fired when determining the fuel value for an ItemStack. <br>
 <br>
 To set the burn time of your own item, use <a href="../../common/extensions/IItemExtension.html#getBurnTime(net.minecraft.world.item.ItemStack,net.minecraft.world.item.crafting.RecipeType,net.minecraft.world.level.block.entity.FuelValues)"><code>IItemExtension.getBurnTime(ItemStack, RecipeType, FuelValues)</code></a> instead.<br>
 <br>
 This event is fired from <a href="../EventHooks.html#getItemBurnTime(net.minecraft.world.item.ItemStack,int,net.minecraft.world.item.crafting.RecipeType,net.minecraft.world.level.block.entity.FuelValues)"><code>EventHooks.getItemBurnTime(ItemStack, int, RecipeType, FuelValues)</code></a>.<br>
 <br>
-This event is <code>ICancellableEvent</code> to prevent later handlers from changing the value.<br>
+This event is <a href="../../../bus/api/ICancellableEvent.html" title="interface in net.neoforged.bus.api"><code>ICancellableEvent</code></a> to prevent later handlers from changing the value.<br>
 <br>
 This event is fired on the <a href="../../common/NeoForge.html#EVENT_BUS"><code>NeoForge.EVENT_BUS</code></a>.</div>
 </div>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#burnTime" class="member-name-link">burnTime</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../minecraft/world/level/block/entity/FuelValues.html" title="class in net.minecraft.world.level.block.entity">FuelValues</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#fuelValues" class="member-name-link">fuelValues</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second even-row-color"><code><a href="#itemStack" class="member-name-link">itemStack</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final @Nullable <a href="../../../../minecraft/world/item/crafting/RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#recipeType" class="member-name-link">recipeType</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -195,56 +162,16 @@ This event is fired on the <a href="../../common/NeoForge.html#EVENT_BUS"><code>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.neoforged.bus.api.ICancellableEvent">Methods inherited from interface&nbsp;net.neoforged.bus.api.ICancellableEvent</h3>
-<code>isCanceled, setCanceled</code></div>
+<h3 id="methods-inherited-from-class-net.neoforged.bus.api.ICancellableEvent">Methods inherited from interface&nbsp;<a href="../../../bus/api/ICancellableEvent.html#method-summary" title="interface in net.neoforged.bus.api">ICancellableEvent</a></h3>
+<code><a href="../../../bus/api/ICancellableEvent.html#isCanceled()" title="isCanceled()">isCanceled</a>, <a href="../../../bus/api/ICancellableEvent.html#setCanceled(boolean)" title="setCanceled(boolean)">setCanceled</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="itemStack">
-<h3>itemStack</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">itemStack</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="recipeType">
-<h3>recipeType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../minecraft/world/item/crafting/RecipeType.html" title="interface in net.minecraft.world.item.crafting">RecipeType</a>&lt;?&gt;</span>&nbsp;<span class="element-name">recipeType</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fuelValues">
-<h3>fuelValues</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/world/level/block/entity/FuelValues.html" title="class in net.minecraft.world.level.block.entity">FuelValues</a></span>&nbsp;<span class="element-name">fuelValues</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="burnTime">
-<h3>burnTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">burnTime</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
