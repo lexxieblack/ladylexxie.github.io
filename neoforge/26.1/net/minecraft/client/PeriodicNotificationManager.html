@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>PeriodicNotificationManager (NeoForge 26.1)</title>
+<title>PeriodicNotificationManager (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client, class: PeriodicNotificationManager">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/PeriodicNotificationManager.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,19 +55,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#CODEC" tabindex="0">CODEC</a></li>
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#notifications" tabindex="0">notifications</a></li>
-<li><a href="#selector" tabindex="0">selector</a></li>
-<li><a href="#timer" tabindex="0">timer</a></li>
-<li><a href="#notificationTask" tabindex="0">notificationTask</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.resources.Identifier,it.unimi.dsi.fastutil.objects.Object2BooleanFunction)" tabindex="0">PeriodicNotificationManager(Identifier, Object2BooleanFunction)</a></li>
@@ -75,12 +64,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">prepare(ResourceManager, ProfilerFiller)</a></li>
-<li><a href="#apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" tabindex="0">apply(Map, ResourceManager, ProfilerFiller)</a></li>
 <li><a href="#close()" tabindex="0">close()</a></li>
-<li><a href="#stopTimer()" tabindex="0">stopTimer()</a></li>
-<li><a href="#calculateOptimalPeriod(java.util.List,long)" tabindex="0">calculateOptimalPeriod(List, long)</a></li>
-<li><a href="#calculateInitialDelay(java.util.List)" tabindex="0">calculateInitialDelay(List)</a></li>
 </ol>
 </li>
 </ol>
@@ -123,43 +107,10 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-first even-row-color"><code>static final record&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="PeriodicNotificationManager.Notification.html" class="type-name-link" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="PeriodicNotificationManager.NotificationTask.html" class="type-name-link" title="class in net.minecraft.client">PeriodicNotificationManager.NotificationTask</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.minecraft.server.packs.resources.PreparableReloadListener">Nested classes/interfaces inherited from interface&nbsp;<a href="../server/packs/resources/PreparableReloadListener.html#nested-class-summary" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a></h3>
 <code><a href="../server/packs/resources/PreparableReloadListener.PreparationBarrier.html" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener.PreparationBarrier</a>, <a href="../server/packs/resources/PreparableReloadListener.SharedState.html" title="class in net.minecraft.server.packs.resources">PreparableReloadListener.SharedState</a>, <a href="../server/packs/resources/PreparableReloadListener.StateKey.html" title="class in net.minecraft.server.packs.resources">PreparableReloadListener.StateKey</a>&lt;T&gt;</code></div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#CODEC" class="member-name-link">CODEC</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second even-row-color"><code><a href="#notifications" class="member-name-link">notifications</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="PeriodicNotificationManager.NotificationTask.html" title="class in net.minecraft.client">PeriodicNotificationManager.NotificationTask</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#notificationTask" class="member-name-link">notificationTask</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final it.unimi.dsi.fastutil.objects.Object2BooleanFunction<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#selector" class="member-name-link">selector</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Timer.html" title="class or interface in java.util" class="external-link">Timer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#timer" class="member-name-link">timer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -171,7 +122,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.resources.Identifier,it.unimi.dsi.fastutil.objects.Object2BooleanFunction)" class="member-name-link">PeriodicNotificationManager</a><wbr>(<a href="../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;notifications,
- it.unimi.dsi.fastutil.objects.Object2BooleanFunction&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;selector)</code></div>
+ <a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/objects/Object2BooleanFunction.html" title="class or interface in it.unimi.dsi.fastutil.objects" class="external-link">Object2BooleanFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;selector)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -187,28 +138,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">apply</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&gt;&nbsp;preparations,
- <a href="../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateInitialDelay(java.util.List)" class="member-name-link">calculateInitialDelay</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&nbsp;notifications)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateOptimalPeriod(java.util.List,long)" class="member-name-link">calculateOptimalPeriod</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&nbsp;notifications,
- long&nbsp;initialDelay)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)" class="member-name-link">prepare</a><wbr>(<a href="../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopTimer()" class="member-name-link">stopTimer</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -217,10 +149,10 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <code><a href="../server/packs/resources/SimplePreparableReloadListener.html#reload(net.minecraft.server.packs.resources.PreparableReloadListener.SharedState,java.util.concurrent.Executor,net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier,java.util.concurrent.Executor)" title="reload(PreparableReloadListener.SharedState, Executor, PreparableReloadListener.PreparationBarrier, Executor)">reload</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.resource.ContextAwareReloadListener">Methods inherited from class&nbsp;<a href="../../neoforged/neoforge/resource/ContextAwareReloadListener.html#method-summary" title="class in net.neoforged.neoforge.resource">ContextAwareReloadListener</a></h3>
-<code><a href="../../neoforged/neoforge/resource/ContextAwareReloadListener.html#getContext()" title="getContext()">getContext</a>, <a href="../../neoforged/neoforge/resource/ContextAwareReloadListener.html#getRegistryLookup()" title="getRegistryLookup()">getRegistryLookup</a>, <a href="../../neoforged/neoforge/resource/ContextAwareReloadListener.html#injectContext(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.HolderLookup.Provider)" title="injectContext(ICondition.IContext, HolderLookup.Provider)">injectContext</a>, <a href="../../neoforged/neoforge/resource/ContextAwareReloadListener.html#makeConditionalOps()" title="makeConditionalOps()">makeConditionalOps</a>, <a href="../../neoforged/neoforge/resource/ContextAwareReloadListener.html#makeConditionalOps(com.mojang.serialization.DynamicOps)" title="makeConditionalOps(DynamicOps)">makeConditionalOps</a></code></div>
+<code><a href="../../neoforged/neoforge/resource/ContextAwareReloadListener.html#injectContext(net.neoforged.neoforge.common.conditions.ICondition.IContext,net.minecraft.core.HolderLookup.Provider)" title="injectContext(ICondition.IContext, HolderLookup.Provider)">injectContext</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.packs.resources.PreparableReloadListener">Methods inherited from interface&nbsp;<a href="../server/packs/resources/PreparableReloadListener.html#method-summary" title="interface in net.minecraft.server.packs.resources">PreparableReloadListener</a></h3>
 <code><a href="../server/packs/resources/PreparableReloadListener.html#getName()" title="getName()">getName</a>, <a href="../server/packs/resources/PreparableReloadListener.html#prepareSharedState(net.minecraft.server.packs.resources.PreparableReloadListener.SharedState)" title="prepareSharedState(PreparableReloadListener.SharedState)">prepareSharedState</a></code></div>
@@ -230,62 +162,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="CODEC">
-<h3>CODEC</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&gt;&gt;</span>&nbsp;<span class="element-name">CODEC</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="notifications">
-<h3>notifications</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></span>&nbsp;<span class="element-name">notifications</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="selector">
-<h3>selector</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.Object2BooleanFunction&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">selector</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="timer">
-<h3>timer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Timer.html" title="class or interface in java.util" class="external-link">Timer</a></span>&nbsp;<span class="element-name">timer</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="notificationTask">
-<h3>notificationTask</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="PeriodicNotificationManager.NotificationTask.html" title="class in net.minecraft.client">PeriodicNotificationManager.NotificationTask</a></span>&nbsp;<span class="element-name">notificationTask</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -296,7 +172,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <h3>PeriodicNotificationManager</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">PeriodicNotificationManager</span><wbr><span class="parameters">(<a href="../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;notifications,
- it.unimi.dsi.fastutil.objects.Object2BooleanFunction&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;selector)</span></div>
+ <a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/objects/Object2BooleanFunction.html" title="class or interface in it.unimi.dsi.fastutil.objects" class="external-link">Object2BooleanFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;selector)</span></div>
 </div>
 </section>
 </li>
@@ -309,33 +185,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">
-<h3>prepare</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&gt;</span>&nbsp;<span class="element-name">prepare</span><wbr><span class="parameters">(<a href="../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../server/packs/resources/SimplePreparableReloadListener.html#prepare(net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">prepare</a></code>&nbsp;in class&nbsp;<code><a href="../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&gt;&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="apply(java.util.Map,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">
-<h3>apply</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">apply</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&gt;&nbsp;preparations,
- <a href="../server/packs/resources/ResourceManager.html" title="interface in net.minecraft.server.packs.resources">ResourceManager</a>&nbsp;manager,
- <a href="../util/profiling/ProfilerFiller.html" title="interface in net.minecraft.util.profiling">ProfilerFiller</a>&nbsp;profiler)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../server/packs/resources/SimplePreparableReloadListener.html#apply(T,net.minecraft.server.packs.resources.ResourceManager,net.minecraft.util.profiling.ProfilerFiller)">apply</a></code>&nbsp;in class&nbsp;<code><a href="../server/packs/resources/SimplePreparableReloadListener.html" title="class in net.minecraft.server.packs.resources">SimplePreparableReloadListener</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&gt;&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="close()">
 <h3>close</h3>
 <div class="horizontal-scroll">
@@ -344,31 +193,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stopTimer()">
-<h3>stopTimer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stopTimer</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateOptimalPeriod(java.util.List,long)">
-<h3>calculateOptimalPeriod</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">calculateOptimalPeriod</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&nbsp;notifications,
- long&nbsp;initialDelay)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateInitialDelay(java.util.List)">
-<h3>calculateInitialDelay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">calculateInitialDelay</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PeriodicNotificationManager.Notification.html" title="class in net.minecraft.client">PeriodicNotificationManager.Notification</a>&gt;&nbsp;notifications)</span></div>
 </div>
 </section>
 </li>

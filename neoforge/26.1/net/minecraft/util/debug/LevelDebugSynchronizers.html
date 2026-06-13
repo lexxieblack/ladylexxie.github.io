@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>LevelDebugSynchronizers (NeoForge 26.1)</title>
+<title>LevelDebugSynchronizers (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.util.debug, class: LevelDebugSynchronizers">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/LevelDebugSynchronizers.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,20 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#level" tabindex="0">level</a></li>
-<li><a href="#allSynchronizers" tabindex="0">allSynchronizers</a></li>
-<li><a href="#sourceSynchronizers" tabindex="0">sourceSynchronizers</a></li>
-<li><a href="#poiSynchronizer" tabindex="0">poiSynchronizer</a></li>
-<li><a href="#villageSectionSynchronizer" tabindex="0">villageSectionSynchronizer</a></li>
-<li><a href="#sleeping" tabindex="0">sleeping</a></li>
-<li><a href="#enabledSubscriptions" tabindex="0">enabledSubscriptions</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.server.level.ServerLevel)" tabindex="0">LevelDebugSynchronizers(ServerLevel)</a></li>
@@ -76,8 +64,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#tick(net.minecraft.util.debug.ServerDebugSubscribers)" tabindex="0">tick(ServerDebugSubscribers)</a></li>
-<li><a href="#wakeUp()" tabindex="0">wakeUp()</a></li>
-<li><a href="#getSourceSynchronizer(net.minecraft.util.debug.DebugSubscription)" tabindex="0">getSourceSynchronizer(DebugSubscription)</a></li>
 <li><a href="#registerChunk(net.minecraft.world.level.chunk.LevelChunk)" tabindex="0">registerChunk(LevelChunk)</a></li>
 <li><a href="#dropChunk(net.minecraft.world.level.ChunkPos)" tabindex="0">dropChunk(ChunkPos)</a></li>
 <li><a href="#registerBlockEntity(net.minecraft.world.level.block.entity.BlockEntity)" tabindex="0">registerBlockEntity(BlockEntity)</a></li>
@@ -95,8 +81,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#sendEntityValue(net.minecraft.world.entity.Entity,net.minecraft.util.debug.DebugSubscription,T)" tabindex="0">sendEntityValue(Entity, DebugSubscription, T)</a></li>
 <li><a href="#clearEntityValue(net.minecraft.world.entity.Entity,net.minecraft.util.debug.DebugSubscription)" tabindex="0">clearEntityValue(Entity, DebugSubscription)</a></li>
 <li><a href="#broadcastEventToTracking(net.minecraft.core.BlockPos,net.minecraft.util.debug.DebugSubscription,T)" tabindex="0">broadcastEventToTracking(BlockPos, DebugSubscription, T)</a></li>
-<li><a href="#broadcastToTracking(net.minecraft.world.level.ChunkPos,net.minecraft.util.debug.DebugSubscription,net.minecraft.network.protocol.Packet)" tabindex="0">broadcastToTracking(ChunkPos, DebugSubscription, Packet)</a></li>
-<li><a href="#broadcastToTracking(net.minecraft.world.entity.Entity,net.minecraft.util.debug.DebugSubscription,net.minecraft.network.protocol.Packet)" tabindex="0">broadcastToTracking(Entity, DebugSubscription, Packet)</a></li>
 </ol>
 </li>
 </ol>
@@ -118,39 +102,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="TrackingDebugSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#allSynchronizers" class="member-name-link">allSynchronizers</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#enabledSubscriptions" class="member-name-link">enabledSubscriptions</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a></code></div>
-<div class="col-second even-row-color"><code><a href="#level" class="member-name-link">level</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="TrackingDebugSynchronizer.PoiSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer.PoiSynchronizer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#poiSynchronizer" class="member-name-link">poiSynchronizer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#sleeping" class="member-name-link">sleeping</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;, <a href="TrackingDebugSynchronizer.SourceSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer.SourceSynchronizer</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#sourceSynchronizers" class="member-name-link">sourceSynchronizers</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="TrackingDebugSynchronizer.VillageSectionSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer.VillageSectionSynchronizer</a></code></div>
-<div class="col-second even-row-color"><code><a href="#villageSectionSynchronizer" class="member-name-link">villageSectionSynchronizer</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -180,16 +131,6 @@ loadScripts(document, 'script');</script>
  <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;T&gt;&nbsp;subscription,
  T&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcastToTracking(net.minecraft.world.entity.Entity,net.minecraft.util.debug.DebugSubscription,net.minecraft.network.protocol.Packet)" class="member-name-link">broadcastToTracking</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;trackedEntity,
- <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&nbsp;subscription,
- <a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;? super <a href="../../network/protocol/game/ClientGamePacketListener.html" title="interface in net.minecraft.network.protocol.game">ClientGamePacketListener</a>&gt;&nbsp;packet)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcastToTracking(net.minecraft.world.level.ChunkPos,net.minecraft.util.debug.DebugSubscription,net.minecraft.network.protocol.Packet)" class="member-name-link">broadcastToTracking</a><wbr>(<a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;trackedChunk,
- <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&nbsp;subscription,
- <a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;? super <a href="../../network/protocol/game/ClientGamePacketListener.html" title="interface in net.minecraft.network.protocol.game">ClientGamePacketListener</a>&gt;&nbsp;packet)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearBlockValue(net.minecraft.core.BlockPos,net.minecraft.util.debug.DebugSubscription)" class="member-name-link">clearBlockValue</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
  <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;T&gt;&nbsp;subscription)</code></div>
@@ -210,127 +151,57 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dropPoi(net.minecraft.core.BlockPos)" class="member-name-link">dropPoi</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private &lt;T&gt;&nbsp;<a href="TrackingDebugSynchronizer.SourceSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer.SourceSynchronizer</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSourceSynchronizer(net.minecraft.util.debug.DebugSubscription)" class="member-name-link">getSourceSynchronizer</a><wbr>(<a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;T&gt;&nbsp;subscription)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasAnySubscriberFor(net.minecraft.util.debug.DebugSubscription)" class="member-name-link">hasAnySubscriberFor</a><wbr>(<a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&nbsp;subscription)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerBlockEntity(net.minecraft.world.level.block.entity.BlockEntity)" class="member-name-link">registerBlockEntity</a><wbr>(<a href="../../world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>&nbsp;blockEntity)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasAnySubscriberFor(net.minecraft.util.debug.DebugSubscription)" class="member-name-link">hasAnySubscriberFor</a><wbr>(<a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&nbsp;subscription)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerChunk(net.minecraft.world.level.chunk.LevelChunk)" class="member-name-link">registerChunk</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;chunk)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerBlockEntity(net.minecraft.world.level.block.entity.BlockEntity)" class="member-name-link">registerBlockEntity</a><wbr>(<a href="../../world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a>&nbsp;blockEntity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerEntity(net.minecraft.world.entity.Entity)" class="member-name-link">registerEntity</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerChunk(net.minecraft.world.level.chunk.LevelChunk)" class="member-name-link">registerChunk</a><wbr>(<a href="../../world/level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;chunk)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerPoi(net.minecraft.world.entity.ai.village.poi.PoiRecord)" class="member-name-link">registerPoi</a><wbr>(<a href="../../world/entity/ai/village/poi/PoiRecord.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiRecord</a>&nbsp;poi)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerEntity(net.minecraft.world.entity.Entity)" class="member-name-link">registerEntity</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendBlockValue(net.minecraft.core.BlockPos,net.minecraft.util.debug.DebugSubscription,T)" class="member-name-link">sendBlockValue</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
- <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;T&gt;&nbsp;subscription,
- T&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerPoi(net.minecraft.world.entity.ai.village.poi.PoiRecord)" class="member-name-link">registerPoi</a><wbr>(<a href="../../world/entity/ai/village/poi/PoiRecord.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiRecord</a>&nbsp;poi)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendEntityValue(net.minecraft.world.entity.Entity,net.minecraft.util.debug.DebugSubscription,T)" class="member-name-link">sendEntityValue</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendBlockValue(net.minecraft.core.BlockPos,net.minecraft.util.debug.DebugSubscription,T)" class="member-name-link">sendBlockValue</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
  <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;T&gt;&nbsp;subscription,
  T&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTrackingChunk(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.ChunkPos)" class="member-name-link">startTrackingChunk</a><wbr>(<a href="../../server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendEntityValue(net.minecraft.world.entity.Entity,net.minecraft.util.debug.DebugSubscription,T)" class="member-name-link">sendEntityValue</a><wbr>(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;T&gt;&nbsp;subscription,
+ T&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTrackingChunk(net.minecraft.server.level.ServerPlayer,net.minecraft.world.level.ChunkPos)" class="member-name-link">startTrackingChunk</a><wbr>(<a href="../../server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
  <a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;chunkPos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTrackingEntity(net.minecraft.server.level.ServerPlayer,net.minecraft.world.entity.Entity)" class="member-name-link">startTrackingEntity</a><wbr>(<a href="../../server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
- <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick(net.minecraft.util.debug.ServerDebugSubscribers)" class="member-name-link">tick</a><wbr>(<a href="ServerDebugSubscribers.html" title="class in net.minecraft.util.debug">ServerDebugSubscribers</a>&nbsp;serverSubscribers)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTrackingEntity(net.minecraft.server.level.ServerPlayer,net.minecraft.world.entity.Entity)" class="member-name-link">startTrackingEntity</a><wbr>(<a href="../../server/level/ServerPlayer.html" title="class in net.minecraft.server.level">ServerPlayer</a>&nbsp;player,
+ <a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePoi(net.minecraft.core.BlockPos)" class="member-name-link">updatePoi</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick(net.minecraft.util.debug.ServerDebugSubscribers)" class="member-name-link">tick</a><wbr>(<a href="ServerDebugSubscribers.html" title="class in net.minecraft.util.debug">ServerDebugSubscribers</a>&nbsp;serverSubscribers)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wakeUp()" class="member-name-link">wakeUp</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePoi(net.minecraft.core.BlockPos)" class="member-name-link">updatePoi</a><wbr>(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="level">
-<h3>level</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a></span>&nbsp;<span class="element-name">level</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="allSynchronizers">
-<h3>allSynchronizers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="TrackingDebugSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">allSynchronizers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="sourceSynchronizers">
-<h3>sourceSynchronizers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;, <a href="TrackingDebugSynchronizer.SourceSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer.SourceSynchronizer</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">sourceSynchronizers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="poiSynchronizer">
-<h3>poiSynchronizer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="TrackingDebugSynchronizer.PoiSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer.PoiSynchronizer</a></span>&nbsp;<span class="element-name">poiSynchronizer</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="villageSectionSynchronizer">
-<h3>villageSectionSynchronizer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="TrackingDebugSynchronizer.VillageSectionSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer.VillageSectionSynchronizer</a></span>&nbsp;<span class="element-name">villageSectionSynchronizer</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="sleeping">
-<h3>sleeping</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">sleeping</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="enabledSubscriptions">
-<h3>enabledSubscriptions</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">enabledSubscriptions</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -357,23 +228,6 @@ loadScripts(document, 'script');</script>
 <h3>tick</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">tick</span><wbr><span class="parameters">(<a href="ServerDebugSubscribers.html" title="class in net.minecraft.util.debug">ServerDebugSubscribers</a>&nbsp;serverSubscribers)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="wakeUp()">
-<h3>wakeUp</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">wakeUp</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getSourceSynchronizer(net.minecraft.util.debug.DebugSubscription)">
-<h3>getSourceSynchronizer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>
-<span class="return-type"><a href="TrackingDebugSynchronizer.SourceSynchronizer.html" title="class in net.minecraft.util.debug">TrackingDebugSynchronizer.SourceSynchronizer</a>&lt;T&gt;</span>&nbsp;<span class="element-name">getSourceSynchronizer</span><wbr><span class="parameters">(<a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;T&gt;&nbsp;subscription)</span></div>
 </div>
 </section>
 </li>
@@ -520,26 +374,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">broadcastEventToTracking</span><wbr><span class="parameters">(<a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
  <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;T&gt;&nbsp;subscription,
  T&nbsp;value)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="broadcastToTracking(net.minecraft.world.level.ChunkPos,net.minecraft.util.debug.DebugSubscription,net.minecraft.network.protocol.Packet)">
-<h3>broadcastToTracking</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">broadcastToTracking</span><wbr><span class="parameters">(<a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;trackedChunk,
- <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&nbsp;subscription,
- <a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;? super <a href="../../network/protocol/game/ClientGamePacketListener.html" title="interface in net.minecraft.network.protocol.game">ClientGamePacketListener</a>&gt;&nbsp;packet)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="broadcastToTracking(net.minecraft.world.entity.Entity,net.minecraft.util.debug.DebugSubscription,net.minecraft.network.protocol.Packet)">
-<h3>broadcastToTracking</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">broadcastToTracking</span><wbr><span class="parameters">(<a href="../../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;trackedEntity,
- <a href="DebugSubscription.html" title="class in net.minecraft.util.debug">DebugSubscription</a>&lt;?&gt;&nbsp;subscription,
- <a href="../../network/protocol/Packet.html" title="interface in net.minecraft.network.protocol">Packet</a>&lt;? super <a href="../../network/protocol/game/ClientGamePacketListener.html" title="interface in net.minecraft.network.protocol.game">ClientGamePacketListener</a>&gt;&nbsp;packet)</span></div>
 </div>
 </section>
 </li>

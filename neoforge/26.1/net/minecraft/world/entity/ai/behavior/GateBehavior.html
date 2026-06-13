@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>GateBehavior (NeoForge 26.1)</title>
+<title>GateBehavior (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity.ai.behavior, class: GateBehavior">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/GateBehavior.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,19 +55,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#entryCondition" tabindex="0">entryCondition</a></li>
-<li><a href="#exitErasedMemories" tabindex="0">exitErasedMemories</a></li>
-<li><a href="#orderPolicy" tabindex="0">orderPolicy</a></li>
-<li><a href="#runningPolicy" tabindex="0">runningPolicy</a></li>
-<li><a href="#behaviors" tabindex="0">behaviors</a></li>
-<li><a href="#status" tabindex="0">status</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.util.Map,java.util.Set,net.minecraft.world.entity.ai.behavior.GateBehavior.OrderPolicy,net.minecraft.world.entity.ai.behavior.GateBehavior.RunningPolicy,java.util.List)" tabindex="0">GateBehavior(Map, Set, GateBehavior.OrderPolicy, GateBehavior.RunningPolicy, List)</a></li>
@@ -77,7 +66,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#getStatus()" tabindex="0">getStatus()</a></li>
 <li><a href="#getRequiredMemories()" tabindex="0">getRequiredMemories()</a></li>
-<li><a href="#hasRequiredMemories(E)" tabindex="0">hasRequiredMemories(E)</a></li>
 <li><a href="#tryStart(net.minecraft.server.level.ServerLevel,E,long)" tabindex="0">tryStart(ServerLevel, E, long)</a></li>
 <li><a href="#tickOrStop(net.minecraft.server.level.ServerLevel,E,long)" tabindex="0">tickOrStop(ServerLevel, E, long)</a></li>
 <li><a href="#doStop(net.minecraft.server.level.ServerLevel,E,long)" tabindex="0">doStop(ServerLevel, E, long)</a></li>
@@ -130,36 +118,6 @@ implements <a href="BehaviorControl.html" title="interface in net.minecraft.worl
 </div>
 </section>
 </li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="ShufflingList.html" title="class in net.minecraft.world.entity.ai.behavior">ShufflingList</a><wbr>&lt;<a href="BehaviorControl.html" title="interface in net.minecraft.world.entity.ai.behavior">BehaviorControl</a>&lt;? super <a href="#type-param-E" title="type parameter in GateBehavior">E</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#behaviors" class="member-name-link">behaviors</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../memory/MemoryModuleType.html" title="class in net.minecraft.world.entity.ai.memory">MemoryModuleType</a>&lt;?&gt;, <a href="../memory/MemoryStatus.html" title="enum class in net.minecraft.world.entity.ai.memory">MemoryStatus</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#entryCondition" class="member-name-link">entryCondition</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../memory/MemoryModuleType.html" title="class in net.minecraft.world.entity.ai.memory">MemoryModuleType</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#exitErasedMemories" class="member-name-link">exitErasedMemories</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="GateBehavior.OrderPolicy.html" title="enum class in net.minecraft.world.entity.ai.behavior">GateBehavior.OrderPolicy</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#orderPolicy" class="member-name-link">orderPolicy</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="GateBehavior.RunningPolicy.html" title="enum class in net.minecraft.world.entity.ai.behavior">GateBehavior.RunningPolicy</a></code></div>
-<div class="col-second even-row-color"><code><a href="#runningPolicy" class="member-name-link">runningPolicy</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="Behavior.Status.html" title="enum class in net.minecraft.world.entity.ai.behavior">Behavior.Status</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#status" class="member-name-link">status</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -202,87 +160,28 @@ implements <a href="BehaviorControl.html" title="interface in net.minecraft.worl
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Behavior.Status.html" title="enum class in net.minecraft.world.entity.ai.behavior">Behavior.Status</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStatus()" class="member-name-link">getStatus</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasRequiredMemories(E)" class="member-name-link">hasRequiredMemories</a><wbr>(<a href="#type-param-E" title="type parameter in GateBehavior">E</a>&nbsp;body)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickOrStop(net.minecraft.server.level.ServerLevel,E,long)" class="member-name-link">tickOrStop</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
+ <a href="#type-param-E" title="type parameter in GateBehavior">E</a>&nbsp;body,
+ long&nbsp;timestamp)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickOrStop(net.minecraft.server.level.ServerLevel,E,long)" class="member-name-link">tickOrStop</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryStart(net.minecraft.server.level.ServerLevel,E,long)" class="member-name-link">tryStart</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
  <a href="#type-param-E" title="type parameter in GateBehavior">E</a>&nbsp;body,
  long&nbsp;timestamp)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryStart(net.minecraft.server.level.ServerLevel,E,long)" class="member-name-link">tryStart</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="#type-param-E" title="type parameter in GateBehavior">E</a>&nbsp;body,
- long&nbsp;timestamp)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="entryCondition">
-<h3>entryCondition</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../memory/MemoryModuleType.html" title="class in net.minecraft.world.entity.ai.memory">MemoryModuleType</a>&lt;?&gt;, <a href="../memory/MemoryStatus.html" title="enum class in net.minecraft.world.entity.ai.memory">MemoryStatus</a>&gt;</span>&nbsp;<span class="element-name">entryCondition</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="exitErasedMemories">
-<h3>exitErasedMemories</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../memory/MemoryModuleType.html" title="class in net.minecraft.world.entity.ai.memory">MemoryModuleType</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">exitErasedMemories</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="orderPolicy">
-<h3>orderPolicy</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="GateBehavior.OrderPolicy.html" title="enum class in net.minecraft.world.entity.ai.behavior">GateBehavior.OrderPolicy</a></span>&nbsp;<span class="element-name">orderPolicy</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="runningPolicy">
-<h3>runningPolicy</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="GateBehavior.RunningPolicy.html" title="enum class in net.minecraft.world.entity.ai.behavior">GateBehavior.RunningPolicy</a></span>&nbsp;<span class="element-name">runningPolicy</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="behaviors">
-<h3>behaviors</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="ShufflingList.html" title="class in net.minecraft.world.entity.ai.behavior">ShufflingList</a>&lt;<a href="BehaviorControl.html" title="interface in net.minecraft.world.entity.ai.behavior">BehaviorControl</a>&lt;? super <a href="#type-param-E" title="type parameter in GateBehavior">E</a> extends <a href="../../LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;&gt;</span>&nbsp;<span class="element-name">behaviors</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="status">
-<h3>status</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="Behavior.Status.html" title="enum class in net.minecraft.world.entity.ai.behavior">Behavior.Status</a></span>&nbsp;<span class="element-name">status</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -329,14 +228,6 @@ implements <a href="BehaviorControl.html" title="interface in net.minecraft.worl
 <dt>Specified by:</dt>
 <dd><code><a href="BehaviorControl.html#getRequiredMemories()">getRequiredMemories</a></code>&nbsp;in interface&nbsp;<code><a href="BehaviorControl.html" title="interface in net.minecraft.world.entity.ai.behavior">BehaviorControl</a>&lt;<a href="#type-param-E" title="type parameter in GateBehavior">E</a> extends <a href="../../LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;</code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hasRequiredMemories(E)">
-<h3 id="hasRequiredMemories(net.minecraft.world.entity.LivingEntity)">hasRequiredMemories</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasRequiredMemories</span><wbr><span class="parameters">(<a href="#type-param-E" title="type parameter in GateBehavior">E</a>&nbsp;body)</span></div>
 </div>
 </section>
 </li>

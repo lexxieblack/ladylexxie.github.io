@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>AngerManagement (NeoForge 26.1)</title>
+<title>AngerManagement (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity.monster.warden, class: AngerManagement">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/AngerManagement.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,25 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#CONVERSION_DELAY" tabindex="0">CONVERSION_DELAY</a></li>
-<li><a href="#MAX_ANGER" tabindex="0">MAX_ANGER</a></li>
-<li><a href="#DEFAULT_ANGER_DECREASE" tabindex="0">DEFAULT_ANGER_DECREASE</a></li>
-<li><a href="#conversionDelay" tabindex="0">conversionDelay</a></li>
-<li><a href="#highestAnger" tabindex="0">highestAnger</a></li>
-<li><a href="#SUSPECT_ANGER_PAIR" tabindex="0">SUSPECT_ANGER_PAIR</a></li>
-<li><a href="#filter" tabindex="0">filter</a></li>
-<li><a href="#suspects" tabindex="0">suspects</a></li>
-<li><a href="#suspectSorter" tabindex="0">suspectSorter</a></li>
-<li><a href="#angerBySuspect" tabindex="0">angerBySuspect</a></li>
-<li><a href="#angerByUuid" tabindex="0">angerByUuid</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.util.function.Predicate,java.util.List)" tabindex="0">AngerManagement(Predicate, List)</a></li>
@@ -81,13 +64,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#codec(java.util.function.Predicate)" tabindex="0">codec(Predicate)</a></li>
-<li><a href="#createUuidAngerPairs()" tabindex="0">createUuidAngerPairs()</a></li>
 <li><a href="#tick(net.minecraft.server.level.ServerLevel,java.util.function.Predicate)" tabindex="0">tick(ServerLevel, Predicate)</a></li>
-<li><a href="#sortAndUpdateHighestAnger()" tabindex="0">sortAndUpdateHighestAnger()</a></li>
-<li><a href="#convertFromUuids(net.minecraft.server.level.ServerLevel)" tabindex="0">convertFromUuids(ServerLevel)</a></li>
 <li><a href="#increaseAnger(net.minecraft.world.entity.Entity,int)" tabindex="0">increaseAnger(Entity, int)</a></li>
 <li><a href="#clearAnger(net.minecraft.world.entity.Entity)" tabindex="0">clearAnger(Entity)</a></li>
-<li><a href="#getTopSuspect()" tabindex="0">getTopSuspect()</a></li>
 <li><a href="#getActiveAnger(net.minecraft.world.entity.Entity)" tabindex="0">getActiveAnger(Entity)</a></li>
 <li><a href="#getActiveEntity()" tabindex="0">getActiveEntity()</a></li>
 </ol>
@@ -111,66 +90,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="AngerManagement.Sorter.html" class="type-name-link" title="class in net.minecraft.world.entity.monster.warden">AngerManagement.Sorter</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected final it.unimi.dsi.fastutil.objects.Object2IntMap<wbr>&lt;<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#angerBySuspect" class="member-name-link">angerBySuspect</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final it.unimi.dsi.fastutil.objects.Object2IntMap<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#angerByUuid" class="member-name-link">angerByUuid</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#CONVERSION_DELAY" class="member-name-link">CONVERSION_DELAY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#conversionDelay" class="member-name-link">conversionDelay</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#DEFAULT_ANGER_DECREASE" class="member-name-link">DEFAULT_ANGER_DECREASE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a><wbr>&lt;<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#filter" class="member-name-link">filter</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#highestAnger" class="member-name-link">highestAnger</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#MAX_ANGER" class="member-name-link">MAX_ANGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="../../../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#SUSPECT_ANGER_PAIR" class="member-name-link">SUSPECT_ANGER_PAIR</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#suspects" class="member-name-link">suspects</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="AngerManagement.Sorter.html" title="class in net.minecraft.world.entity.monster.warden">AngerManagement.Sorter</a></code></div>
-<div class="col-second even-row-color"><code><a href="#suspectSorter" class="member-name-link">suspectSorter</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -202,27 +121,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="AngerManagement.html" title="class in net.minecraft.world.entity.monster.warden">AngerManagement</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#codec(java.util.function.Predicate)" class="member-name-link">codec</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;&nbsp;filter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#convertFromUuids(net.minecraft.server.level.ServerLevel)" class="member-name-link">convertFromUuids</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createUuidAngerPairs()" class="member-name-link">createUuidAngerPairs</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getActiveAnger(net.minecraft.world.entity.Entity)" class="member-name-link">getActiveAnger</a><wbr>(@Nullable <a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;currentTarget)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getActiveEntity()" class="member-name-link">getActiveEntity</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private @Nullable <a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTopSuspect()" class="member-name-link">getTopSuspect</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#increaseAnger(net.minecraft.world.entity.Entity,int)" class="member-name-link">increaseAnger</a><wbr>(<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#increaseAnger(net.minecraft.world.entity.Entity,int)" class="member-name-link">increaseAnger</a><wbr>(<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
  int&nbsp;increment)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sortAndUpdateHighestAnger()" class="member-name-link">sortAndUpdateHighestAnger</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick(net.minecraft.server.level.ServerLevel,java.util.function.Predicate)" class="member-name-link">tick</a><wbr>(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
@@ -233,133 +140,13 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="CONVERSION_DELAY">
-<h3>CONVERSION_DELAY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">CONVERSION_DELAY</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.monster.warden.AngerManagement.CONVERSION_DELAY">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="MAX_ANGER">
-<h3>MAX_ANGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAX_ANGER</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.monster.warden.AngerManagement.MAX_ANGER">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DEFAULT_ANGER_DECREASE">
-<h3>DEFAULT_ANGER_DECREASE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_ANGER_DECREASE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.entity.monster.warden.AngerManagement.DEFAULT_ANGER_DECREASE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="conversionDelay">
-<h3>conversionDelay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">conversionDelay</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="highestAnger">
-<h3>highestAnger</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">highestAnger</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SUSPECT_ANGER_PAIR">
-<h3>SUSPECT_ANGER_PAIR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="../../../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&gt;</span>&nbsp;<span class="element-name">SUSPECT_ANGER_PAIR</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="filter">
-<h3>filter</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</span>&nbsp;<span class="element-name">filter</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="suspects">
-<h3>suspects</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</span>&nbsp;<span class="element-name">suspects</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="suspectSorter">
-<h3>suspectSorter</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="AngerManagement.Sorter.html" title="class in net.minecraft.world.entity.monster.warden">AngerManagement.Sorter</a></span>&nbsp;<span class="element-name">suspectSorter</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="angerBySuspect">
-<h3>angerBySuspect</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;</span>&nbsp;<span class="element-name">angerBySuspect</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="angerByUuid">
-<h3>angerByUuid</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&gt;</span>&nbsp;<span class="element-name">angerByUuid</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -391,35 +178,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="createUuidAngerPairs()">
-<h3>createUuidAngerPairs</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../../../../com/mojang/datafixers/util/Pair.html" title="class in com.mojang.datafixers.util">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&gt;</span>&nbsp;<span class="element-name">createUuidAngerPairs</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="tick(net.minecraft.server.level.ServerLevel,java.util.function.Predicate)">
 <h3>tick</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">tick</span><wbr><span class="parameters">(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&gt;&nbsp;validEntity)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="sortAndUpdateHighestAnger()">
-<h3>sortAndUpdateHighestAnger</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sortAndUpdateHighestAnger</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="convertFromUuids(net.minecraft.server.level.ServerLevel)">
-<h3>convertFromUuids</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">convertFromUuids</span><wbr><span class="parameters">(<a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</span></div>
 </div>
 </section>
 </li>
@@ -437,14 +200,6 @@ loadScripts(document, 'script');</script>
 <h3>clearAnger</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearAnger</span><wbr><span class="parameters">(<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getTopSuspect()">
-<h3>getTopSuspect</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a></span>&nbsp;<span class="element-name">getTopSuspect</span>()</div>
 </div>
 </section>
 </li>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>GuiRenderer (NeoForge 26.1)</title>
+<title>GuiRenderer (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.gui.render, class: GuiRenderer">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/GuiRenderer.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,44 +54,16 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#MAX_GUI_Z" tabindex="0">MAX_GUI_Z</a></li>
 <li><a href="#MIN_GUI_Z" tabindex="0">MIN_GUI_Z</a></li>
-<li><a href="#GUI_Z_NEAR" tabindex="0">GUI_Z_NEAR</a></li>
 <li><a href="#GUI_3D_Z_FAR" tabindex="0">GUI_3D_Z_FAR</a></li>
 <li><a href="#GUI_3D_Z_NEAR" tabindex="0">GUI_3D_Z_NEAR</a></li>
 <li><a href="#DEFAULT_ITEM_SIZE" tabindex="0">DEFAULT_ITEM_SIZE</a></li>
 <li><a href="#CLEAR_COLOR" tabindex="0">CLEAR_COLOR</a></li>
-<li><a href="#SCISSOR_COMPARATOR" tabindex="0">SCISSOR_COMPARATOR</a></li>
-<li><a href="#TEXTURE_COMPARATOR" tabindex="0">TEXTURE_COMPARATOR</a></li>
-<li><a href="#ELEMENT_SORT_COMPARATOR" tabindex="0">ELEMENT_SORT_COMPARATOR</a></li>
-<li><a href="#oversizedItemRenderers" tabindex="0">oversizedItemRenderers</a></li>
-<li><a href="#renderState" tabindex="0">renderState</a></li>
-<li><a href="#draws" tabindex="0">draws</a></li>
-<li><a href="#meshesToDraw" tabindex="0">meshesToDraw</a></li>
-<li><a href="#byteBufferBuilder" tabindex="0">byteBufferBuilder</a></li>
-<li><a href="#vertexBuffers" tabindex="0">vertexBuffers</a></li>
-<li><a href="#firstDrawIndexAfterBlur" tabindex="0">firstDrawIndexAfterBlur</a></li>
-<li><a href="#guiProjection" tabindex="0">guiProjection</a></li>
-<li><a href="#guiProjectionMatrixBuffer" tabindex="0">guiProjectionMatrixBuffer</a></li>
-<li><a href="#bufferSource" tabindex="0">bufferSource</a></li>
-<li><a href="#submitNodeCollector" tabindex="0">submitNodeCollector</a></li>
-<li><a href="#featureRenderDispatcher" tabindex="0">featureRenderDispatcher</a></li>
-<li><a href="#pictureInPictureRendererPools" tabindex="0">pictureInPictureRendererPools</a></li>
-<li><a href="#pictureInPictureRenderStatesScratch" tabindex="0">pictureInPictureRenderStatesScratch</a></li>
-<li><a href="#itemAtlas" tabindex="0">itemAtlas</a></li>
-<li><a href="#cachedGuiScale" tabindex="0">cachedGuiScale</a></li>
-<li><a href="#cubeMap" tabindex="0">cubeMap</a></li>
-<li><a href="#previousScissorArea" tabindex="0">previousScissorArea</a></li>
-<li><a href="#previousPipeline" tabindex="0">previousPipeline</a></li>
-<li><a href="#previousTextureSetup" tabindex="0">previousTextureSetup</a></li>
-<li><a href="#bufferBuilder" tabindex="0">bufferBuilder</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -103,28 +75,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#endFrame()" tabindex="0">endFrame()</a></li>
 <li><a href="#render(com.mojang.blaze3d.buffers.GpuBufferSlice)" tabindex="0">render(GpuBufferSlice)</a></li>
-<li><a href="#clearUnusedOversizedItemRenderers()" tabindex="0">clearUnusedOversizedItemRenderers()</a></li>
-<li><a href="#prepare()" tabindex="0">prepare()</a></li>
-<li><a href="#addElementsToMeshes(net.minecraft.client.renderer.state.gui.GuiRenderState.TraverseRange)" tabindex="0">addElementsToMeshes(GuiRenderState.TraverseRange)</a></li>
-<li><a href="#draw(com.mojang.blaze3d.buffers.GpuBufferSlice)" tabindex="0">draw(GpuBufferSlice)</a></li>
-<li><a href="#executeDrawRange(java.util.function.Supplier,com.mojang.blaze3d.pipeline.RenderTarget,com.mojang.blaze3d.buffers.GpuBufferSlice,com.mojang.blaze3d.buffers.GpuBufferSlice,com.mojang.blaze3d.buffers.GpuBuffer,com.mojang.blaze3d.vertex.VertexFormat.IndexType,int,int)" tabindex="0">executeDrawRange(Supplier, RenderTarget, GpuBufferSlice, GpuBufferSlice, GpuBuffer, VertexFormat.IndexType, int, int)</a></li>
-<li><a href="#addElementToMesh(net.minecraft.client.renderer.state.gui.GuiElementRenderState)" tabindex="0">addElementToMesh(GuiElementRenderState)</a></li>
-<li><a href="#prepareText()" tabindex="0">prepareText()</a></li>
-<li><a href="#prepareItemElements()" tabindex="0">prepareItemElements()</a></li>
-<li><a href="#preparePictureInPicture()" tabindex="0">preparePictureInPicture()</a></li>
-<li><a href="#preparePictureInPictureState(T,int,boolean)" tabindex="0">preparePictureInPictureState(T, int, boolean)</a></li>
-<li><a href="#submitBlitFromItemAtlas(net.minecraft.client.renderer.state.gui.GuiItemRenderState,net.minecraft.client.gui.render.GuiItemAtlas.SlotView)" tabindex="0">submitBlitFromItemAtlas(GuiItemRenderState, GuiItemAtlas.SlotView)</a></li>
-<li><a href="#prepareItemAtlas(java.util.Set,int)" tabindex="0">prepareItemAtlas(Set, int)</a></li>
-<li><a href="#getGuiScaleInvalidatingItemAtlasIfChanged()" tabindex="0">getGuiScaleInvalidatingItemAtlasIfChanged()</a></li>
-<li><a href="#invalidateItemAtlas()" tabindex="0">invalidateItemAtlas()</a></li>
-<li><a href="#recordMesh(com.mojang.blaze3d.vertex.BufferBuilder,com.mojang.blaze3d.pipeline.RenderPipeline,net.minecraft.client.gui.render.TextureSetup,net.minecraft.client.gui.navigation.ScreenRectangle)" tabindex="0">recordMesh(BufferBuilder, RenderPipeline, TextureSetup, ScreenRectangle)</a></li>
-<li><a href="#recordDraws()" tabindex="0">recordDraws()</a></li>
-<li><a href="#ensureVertexBufferSizes()" tabindex="0">ensureVertexBufferSizes()</a></li>
-<li><a href="#calculatedRequiredVertexBufferSizes()" tabindex="0">calculatedRequiredVertexBufferSizes()</a></li>
-<li><a href="#executeDraw(net.minecraft.client.gui.render.GuiRenderer.Draw,com.mojang.blaze3d.systems.RenderPass,com.mojang.blaze3d.buffers.GpuBuffer,com.mojang.blaze3d.vertex.VertexFormat.IndexType)" tabindex="0">executeDraw(GuiRenderer.Draw, RenderPass, GpuBuffer, VertexFormat.IndexType)</a></li>
-<li><a href="#getBufferBuilder(com.mojang.blaze3d.pipeline.RenderPipeline)" tabindex="0">getBufferBuilder(RenderPipeline)</a></li>
-<li><a href="#scissorChanged(net.minecraft.client.gui.navigation.ScreenRectangle,net.minecraft.client.gui.navigation.ScreenRectangle)" tabindex="0">scissorChanged(ScreenRectangle, ScreenRectangle)</a></li>
-<li><a href="#enableScissor(net.minecraft.client.gui.navigation.ScreenRectangle,com.mojang.blaze3d.systems.RenderPass)" tabindex="0">enableScissor(ScreenRectangle, RenderPass)</a></li>
 <li><a href="#registerPanoramaTextures(net.minecraft.client.renderer.texture.TextureManager)" tabindex="0">registerPanoramaTextures(TextureManager)</a></li>
 <li><a href="#close()" tabindex="0">close()</a></li>
 </ol>
@@ -153,24 +103,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="GuiRenderer.Draw.html" class="type-name-link" title="class in net.minecraft.client.gui.render">GuiRenderer.Draw</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="GuiRenderer.MeshToDraw.html" class="type-name-link" title="class in net.minecraft.client.gui.render">GuiRenderer.MeshToDraw</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
@@ -180,102 +112,21 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="../../../../../com/mojang/blaze3d/vertex/BufferBuilder.html" title="class in com.mojang.blaze3d.vertex">BufferBuilder</a></code></div>
-<div class="col-second even-row-color"><code><a href="#bufferBuilder" class="member-name-link">bufferBuilder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../renderer/MultiBufferSource.BufferSource.html" title="class in net.minecraft.client.renderer">MultiBufferSource.BufferSource</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#bufferSource" class="member-name-link">bufferSource</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../../com/mojang/blaze3d/vertex/ByteBufferBuilder.html" title="class in com.mojang.blaze3d.vertex">ByteBufferBuilder</a></code></div>
-<div class="col-second even-row-color"><code><a href="#byteBufferBuilder" class="member-name-link">byteBufferBuilder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#cachedGuiScale" class="member-name-link">cachedGuiScale</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#CLEAR_COLOR" class="member-name-link">CLEAR_COLOR</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../renderer/CubeMap.html" title="class in net.minecraft.client.renderer">CubeMap</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#cubeMap" class="member-name-link">cubeMap</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#DEFAULT_ITEM_SIZE" class="member-name-link">DEFAULT_ITEM_SIZE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#DEFAULT_ITEM_SIZE" class="member-name-link">DEFAULT_ITEM_SIZE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="GuiRenderer.Draw.html" title="class in net.minecraft.client.gui.render">GuiRenderer.Draw</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#draws" class="member-name-link">draws</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a><wbr>&lt;<a href="../../renderer/state/gui/GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#ELEMENT_SORT_COMPARATOR" class="member-name-link">ELEMENT_SORT_COMPARATOR</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../renderer/feature/FeatureRenderDispatcher.html" title="class in net.minecraft.client.renderer.feature">FeatureRenderDispatcher</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#featureRenderDispatcher" class="member-name-link">featureRenderDispatcher</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#firstDrawIndexAfterBlur" class="member-name-link">firstDrawIndexAfterBlur</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GUI_3D_Z_FAR" class="member-name-link">GUI_3D_Z_FAR</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#GUI_3D_Z_FAR" class="member-name-link">GUI_3D_Z_FAR</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#GUI_3D_Z_NEAR" class="member-name-link">GUI_3D_Z_NEAR</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#GUI_Z_NEAR" class="member-name-link">GUI_Z_NEAR</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../renderer/Projection.html" title="class in net.minecraft.client.renderer">Projection</a></code></div>
-<div class="col-second even-row-color"><code><a href="#guiProjection" class="member-name-link">guiProjection</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../renderer/ProjectionMatrixBuffer.html" title="class in net.minecraft.client.renderer">ProjectionMatrixBuffer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#guiProjectionMatrixBuffer" class="member-name-link">guiProjectionMatrixBuffer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="GuiItemAtlas.html" title="class in net.minecraft.client.gui.render">GuiItemAtlas</a></code></div>
-<div class="col-second even-row-color"><code><a href="#itemAtlas" class="member-name-link">itemAtlas</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#MAX_GUI_Z" class="member-name-link">MAX_GUI_Z</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="GuiRenderer.MeshToDraw.html" title="class in net.minecraft.client.gui.render">GuiRenderer.MeshToDraw</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#meshesToDraw" class="member-name-link">meshesToDraw</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GUI_3D_Z_NEAR" class="member-name-link">GUI_3D_Z_NEAR</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final float</code></div>
 <div class="col-second even-row-color"><code><a href="#MIN_GUI_Z" class="member-name-link">MIN_GUI_Z</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>, <a href="pip/OversizedItemRenderer.html" title="class in net.minecraft.client.gui.render.pip">OversizedItemRenderer</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#oversizedItemRenderers" class="member-name-link">oversizedItemRenderers</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="../../renderer/state/gui/pip/PictureInPictureRenderState.html" title="interface in net.minecraft.client.renderer.state.gui.pip">PictureInPictureRenderState</a>&gt;, <a href="../../../../neoforged/neoforge/client/gui/PictureInPictureRendererPool.html" title="class in net.neoforged.neoforge.client.gui">PictureInPictureRendererPool</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#pictureInPictureRendererPools" class="member-name-link">pictureInPictureRendererPools</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../renderer/state/gui/pip/PictureInPictureRenderState.html" title="interface in net.minecraft.client.renderer.state.gui.pip">PictureInPictureRenderState</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#pictureInPictureRenderStatesScratch" class="member-name-link">pictureInPictureRenderStatesScratch</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="../../../../../com/mojang/blaze3d/pipeline/RenderPipeline.html" title="class in com.mojang.blaze3d.pipeline">RenderPipeline</a></code></div>
-<div class="col-second even-row-color"><code><a href="#previousPipeline" class="member-name-link">previousPipeline</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#previousScissorArea" class="member-name-link">previousScissorArea</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="TextureSetup.html" title="class in net.minecraft.client.gui.render">TextureSetup</a></code></div>
-<div class="col-second even-row-color"><code><a href="#previousTextureSetup" class="member-name-link">previousTextureSetup</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../renderer/state/gui/GuiRenderState.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#renderState" class="member-name-link">renderState</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a><wbr>&lt;<a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#SCISSOR_COMPARATOR" class="member-name-link">SCISSOR_COMPARATOR</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../renderer/SubmitNodeCollector.html" title="interface in net.minecraft.client.renderer">SubmitNodeCollector</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#submitNodeCollector" class="member-name-link">submitNodeCollector</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a><wbr>&lt;<a href="TextureSetup.html" title="class in net.minecraft.client.gui.render">TextureSetup</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#TEXTURE_COMPARATOR" class="member-name-link">TEXTURE_COMPARATOR</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../../../../com/mojang/blaze3d/vertex/VertexFormat.html" title="class in com.mojang.blaze3d.vertex">VertexFormat</a>, <a href="../../renderer/MappableRingBuffer.html" title="class in net.minecraft.client.renderer">MappableRingBuffer</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#vertexBuffers" class="member-name-link">vertexBuffers</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -307,88 +158,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addElementsToMeshes(net.minecraft.client.renderer.state.gui.GuiRenderState.TraverseRange)" class="member-name-link">addElementsToMeshes</a><wbr>(<a href="../../renderer/state/gui/GuiRenderState.TraverseRange.html" title="enum class in net.minecraft.client.renderer.state.gui">GuiRenderState.TraverseRange</a>&nbsp;range)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addElementToMesh(net.minecraft.client.renderer.state.gui.GuiElementRenderState)" class="member-name-link">addElementToMesh</a><wbr>(<a href="../../renderer/state/gui/GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&nbsp;elementState)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private it.unimi.dsi.fastutil.objects.Object2IntMap<wbr>&lt;<a href="../../../../../com/mojang/blaze3d/vertex/VertexFormat.html" title="class in com.mojang.blaze3d.vertex">VertexFormat</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculatedRequiredVertexBufferSizes()" class="member-name-link">calculatedRequiredVertexBufferSizes</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearUnusedOversizedItemRenderers()" class="member-name-link">clearUnusedOversizedItemRenderers</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(com.mojang.blaze3d.buffers.GpuBufferSlice)" class="member-name-link">draw</a><wbr>(<a href="../../../../../com/mojang/blaze3d/buffers/GpuBufferSlice.html" title="class in com.mojang.blaze3d.buffers">GpuBufferSlice</a>&nbsp;fogBuffer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableScissor(net.minecraft.client.gui.navigation.ScreenRectangle,com.mojang.blaze3d.systems.RenderPass)" class="member-name-link">enableScissor</a><wbr>(<a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;rectangle,
- <a href="../../../../../com/mojang/blaze3d/systems/RenderPass.html" title="class in com.mojang.blaze3d.systems">RenderPass</a>&nbsp;renderPass)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endFrame()" class="member-name-link">endFrame</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ensureVertexBufferSizes()" class="member-name-link">ensureVertexBufferSizes</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#executeDraw(net.minecraft.client.gui.render.GuiRenderer.Draw,com.mojang.blaze3d.systems.RenderPass,com.mojang.blaze3d.buffers.GpuBuffer,com.mojang.blaze3d.vertex.VertexFormat.IndexType)" class="member-name-link">executeDraw</a><wbr>(<a href="GuiRenderer.Draw.html" title="class in net.minecraft.client.gui.render">GuiRenderer.Draw</a>&nbsp;draw,
- <a href="../../../../../com/mojang/blaze3d/systems/RenderPass.html" title="class in com.mojang.blaze3d.systems">RenderPass</a>&nbsp;renderPass,
- <a href="../../../../../com/mojang/blaze3d/buffers/GpuBuffer.html" title="class in com.mojang.blaze3d.buffers">GpuBuffer</a>&nbsp;indexBuffer,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexFormat.IndexType.html" title="enum class in com.mojang.blaze3d.vertex">VertexFormat.IndexType</a>&nbsp;indexType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#executeDrawRange(java.util.function.Supplier,com.mojang.blaze3d.pipeline.RenderTarget,com.mojang.blaze3d.buffers.GpuBufferSlice,com.mojang.blaze3d.buffers.GpuBufferSlice,com.mojang.blaze3d.buffers.GpuBuffer,com.mojang.blaze3d.vertex.VertexFormat.IndexType,int,int)" class="member-name-link">executeDrawRange</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;label,
- <a href="../../../../../com/mojang/blaze3d/pipeline/RenderTarget.html" title="class in com.mojang.blaze3d.pipeline">RenderTarget</a>&nbsp;mainRenderTarget,
- <a href="../../../../../com/mojang/blaze3d/buffers/GpuBufferSlice.html" title="class in com.mojang.blaze3d.buffers">GpuBufferSlice</a>&nbsp;fogBuffer,
- <a href="../../../../../com/mojang/blaze3d/buffers/GpuBufferSlice.html" title="class in com.mojang.blaze3d.buffers">GpuBufferSlice</a>&nbsp;dynamicTransforms,
- <a href="../../../../../com/mojang/blaze3d/buffers/GpuBuffer.html" title="class in com.mojang.blaze3d.buffers">GpuBuffer</a>&nbsp;indexBuffer,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexFormat.IndexType.html" title="enum class in com.mojang.blaze3d.vertex">VertexFormat.IndexType</a>&nbsp;indexType,
- int&nbsp;startIndex,
- int&nbsp;endIndex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../../../com/mojang/blaze3d/vertex/BufferBuilder.html" title="class in com.mojang.blaze3d.vertex">BufferBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBufferBuilder(com.mojang.blaze3d.pipeline.RenderPipeline)" class="member-name-link">getBufferBuilder</a><wbr>(<a href="../../../../../com/mojang/blaze3d/pipeline/RenderPipeline.html" title="class in com.mojang.blaze3d.pipeline">RenderPipeline</a>&nbsp;pipeline)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGuiScaleInvalidatingItemAtlasIfChanged()" class="member-name-link">getGuiScaleInvalidatingItemAtlasIfChanged</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invalidateItemAtlas()" class="member-name-link">invalidateItemAtlas</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepare()" class="member-name-link">prepare</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="GuiItemAtlas.html" title="class in net.minecraft.client.gui.render">GuiItemAtlas</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareItemAtlas(java.util.Set,int)" class="member-name-link">prepareItemAtlas</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;itemsInFrame,
- int&nbsp;slotTextureSize)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareItemElements()" class="member-name-link">prepareItemElements</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preparePictureInPicture()" class="member-name-link">preparePictureInPicture</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private &lt;T extends <a href="../../renderer/state/gui/pip/PictureInPictureRenderState.html" title="interface in net.minecraft.client.renderer.state.gui.pip">PictureInPictureRenderState</a>&gt;<br>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preparePictureInPictureState(T,int,boolean)" class="member-name-link">preparePictureInPictureState</a><wbr>(T&nbsp;picturesInPictureState,
- int&nbsp;guiScale,
- boolean&nbsp;firstPass)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareText()" class="member-name-link">prepareText</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordDraws()" class="member-name-link">recordDraws</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#recordMesh(com.mojang.blaze3d.vertex.BufferBuilder,com.mojang.blaze3d.pipeline.RenderPipeline,net.minecraft.client.gui.render.TextureSetup,net.minecraft.client.gui.navigation.ScreenRectangle)" class="member-name-link">recordMesh</a><wbr>(<a href="../../../../../com/mojang/blaze3d/vertex/BufferBuilder.html" title="class in com.mojang.blaze3d.vertex">BufferBuilder</a>&nbsp;bufferBuilder,
- <a href="../../../../../com/mojang/blaze3d/pipeline/RenderPipeline.html" title="class in com.mojang.blaze3d.pipeline">RenderPipeline</a>&nbsp;pipeline,
- <a href="TextureSetup.html" title="class in net.minecraft.client.gui.render">TextureSetup</a>&nbsp;textureSetup,
- @Nullable <a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;scissorArea)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerPanoramaTextures(net.minecraft.client.renderer.texture.TextureManager)" class="member-name-link">registerPanoramaTextures</a><wbr>(<a href="../../renderer/texture/TextureManager.html" title="class in net.minecraft.client.renderer.texture">TextureManager</a>&nbsp;textureManager)</code></div>
@@ -396,20 +170,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(com.mojang.blaze3d.buffers.GpuBufferSlice)" class="member-name-link">render</a><wbr>(<a href="../../../../../com/mojang/blaze3d/buffers/GpuBufferSlice.html" title="class in com.mojang.blaze3d.buffers">GpuBufferSlice</a>&nbsp;fogBuffer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scissorChanged(net.minecraft.client.gui.navigation.ScreenRectangle,net.minecraft.client.gui.navigation.ScreenRectangle)" class="member-name-link">scissorChanged</a><wbr>(@Nullable <a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;newScissor,
- @Nullable <a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;oldScissor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#submitBlitFromItemAtlas(net.minecraft.client.renderer.state.gui.GuiItemRenderState,net.minecraft.client.gui.render.GuiItemAtlas.SlotView)" class="member-name-link">submitBlitFromItemAtlas</a><wbr>(<a href="../../renderer/state/gui/GuiItemRenderState.html" title="class in net.minecraft.client.renderer.state.gui">GuiItemRenderState</a>&nbsp;itemState,
- <a href="GuiItemAtlas.SlotView.html" title="class in net.minecraft.client.gui.render">GuiItemAtlas.SlotView</a>&nbsp;slotView)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -422,30 +188,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="MAX_GUI_Z">
-<h3>MAX_GUI_Z</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">MAX_GUI_Z</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.client.gui.render.GuiRenderer.MAX_GUI_Z">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="MIN_GUI_Z">
 <h3>MIN_GUI_Z</h3>
 <div class="horizontal-scroll">
@@ -455,22 +197,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../constant-values.html#net.minecraft.client.gui.render.GuiRenderer.MIN_GUI_Z">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="GUI_Z_NEAR">
-<h3>GUI_Z_NEAR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">GUI_Z_NEAR</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.client.gui.render.GuiRenderer.GUI_Z_NEAR">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -541,198 +267,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="SCISSOR_COMPARATOR">
-<h3>SCISSOR_COMPARATOR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a>&lt;<a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&gt;</span>&nbsp;<span class="element-name">SCISSOR_COMPARATOR</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="TEXTURE_COMPARATOR">
-<h3>TEXTURE_COMPARATOR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a>&lt;<a href="TextureSetup.html" title="class in net.minecraft.client.gui.render">TextureSetup</a>&gt;</span>&nbsp;<span class="element-name">TEXTURE_COMPARATOR</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ELEMENT_SORT_COMPARATOR">
-<h3>ELEMENT_SORT_COMPARATOR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a>&lt;<a href="../../renderer/state/gui/GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&gt;</span>&nbsp;<span class="element-name">ELEMENT_SORT_COMPARATOR</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="oversizedItemRenderers">
-<h3>oversizedItemRenderers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>, <a href="pip/OversizedItemRenderer.html" title="class in net.minecraft.client.gui.render.pip">OversizedItemRenderer</a>&gt;</span>&nbsp;<span class="element-name">oversizedItemRenderers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="renderState">
-<h3>renderState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../renderer/state/gui/GuiRenderState.html" title="class in net.minecraft.client.renderer.state.gui">GuiRenderState</a></span>&nbsp;<span class="element-name">renderState</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="draws">
-<h3>draws</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="GuiRenderer.Draw.html" title="class in net.minecraft.client.gui.render">GuiRenderer.Draw</a>&gt;</span>&nbsp;<span class="element-name">draws</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="meshesToDraw">
-<h3>meshesToDraw</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="GuiRenderer.MeshToDraw.html" title="class in net.minecraft.client.gui.render">GuiRenderer.MeshToDraw</a>&gt;</span>&nbsp;<span class="element-name">meshesToDraw</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="byteBufferBuilder">
-<h3>byteBufferBuilder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/blaze3d/vertex/ByteBufferBuilder.html" title="class in com.mojang.blaze3d.vertex">ByteBufferBuilder</a></span>&nbsp;<span class="element-name">byteBufferBuilder</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="vertexBuffers">
-<h3>vertexBuffers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../../../../com/mojang/blaze3d/vertex/VertexFormat.html" title="class in com.mojang.blaze3d.vertex">VertexFormat</a>, <a href="../../renderer/MappableRingBuffer.html" title="class in net.minecraft.client.renderer">MappableRingBuffer</a>&gt;</span>&nbsp;<span class="element-name">vertexBuffers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="firstDrawIndexAfterBlur">
-<h3>firstDrawIndexAfterBlur</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">firstDrawIndexAfterBlur</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="guiProjection">
-<h3>guiProjection</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../renderer/Projection.html" title="class in net.minecraft.client.renderer">Projection</a></span>&nbsp;<span class="element-name">guiProjection</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="guiProjectionMatrixBuffer">
-<h3>guiProjectionMatrixBuffer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../renderer/ProjectionMatrixBuffer.html" title="class in net.minecraft.client.renderer">ProjectionMatrixBuffer</a></span>&nbsp;<span class="element-name">guiProjectionMatrixBuffer</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="bufferSource">
-<h3>bufferSource</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../renderer/MultiBufferSource.BufferSource.html" title="class in net.minecraft.client.renderer">MultiBufferSource.BufferSource</a></span>&nbsp;<span class="element-name">bufferSource</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="submitNodeCollector">
-<h3>submitNodeCollector</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../renderer/SubmitNodeCollector.html" title="interface in net.minecraft.client.renderer">SubmitNodeCollector</a></span>&nbsp;<span class="element-name">submitNodeCollector</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="featureRenderDispatcher">
-<h3>featureRenderDispatcher</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../renderer/feature/FeatureRenderDispatcher.html" title="class in net.minecraft.client.renderer.feature">FeatureRenderDispatcher</a></span>&nbsp;<span class="element-name">featureRenderDispatcher</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pictureInPictureRendererPools">
-<h3>pictureInPictureRendererPools</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="../../renderer/state/gui/pip/PictureInPictureRenderState.html" title="interface in net.minecraft.client.renderer.state.gui.pip">PictureInPictureRenderState</a>&gt;, <a href="../../../../neoforged/neoforge/client/gui/PictureInPictureRendererPool.html" title="class in net.neoforged.neoforge.client.gui">PictureInPictureRendererPool</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">pictureInPictureRendererPools</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pictureInPictureRenderStatesScratch">
-<h3>pictureInPictureRenderStatesScratch</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../renderer/state/gui/pip/PictureInPictureRenderState.html" title="interface in net.minecraft.client.renderer.state.gui.pip">PictureInPictureRenderState</a>&gt;</span>&nbsp;<span class="element-name">pictureInPictureRenderStatesScratch</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="itemAtlas">
-<h3>itemAtlas</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="GuiItemAtlas.html" title="class in net.minecraft.client.gui.render">GuiItemAtlas</a></span>&nbsp;<span class="element-name">itemAtlas</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cachedGuiScale">
-<h3>cachedGuiScale</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">cachedGuiScale</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cubeMap">
-<h3>cubeMap</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../renderer/CubeMap.html" title="class in net.minecraft.client.renderer">CubeMap</a></span>&nbsp;<span class="element-name">cubeMap</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="previousScissorArea">
-<h3>previousScissorArea</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a></span>&nbsp;<span class="element-name">previousScissorArea</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="previousPipeline">
-<h3>previousPipeline</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../../com/mojang/blaze3d/pipeline/RenderPipeline.html" title="class in com.mojang.blaze3d.pipeline">RenderPipeline</a></span>&nbsp;<span class="element-name">previousPipeline</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="previousTextureSetup">
-<h3>previousTextureSetup</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="TextureSetup.html" title="class in net.minecraft.client.gui.render">TextureSetup</a></span>&nbsp;<span class="element-name">previousTextureSetup</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="bufferBuilder">
-<h3>bufferBuilder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../../com/mojang/blaze3d/vertex/BufferBuilder.html" title="class in com.mojang.blaze3d.vertex">BufferBuilder</a></span>&nbsp;<span class="element-name">bufferBuilder</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -774,202 +308,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <h3>render</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/blaze3d/buffers/GpuBufferSlice.html" title="class in com.mojang.blaze3d.buffers">GpuBufferSlice</a>&nbsp;fogBuffer)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="clearUnusedOversizedItemRenderers()">
-<h3>clearUnusedOversizedItemRenderers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearUnusedOversizedItemRenderers</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="prepare()">
-<h3>prepare</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">prepare</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addElementsToMeshes(net.minecraft.client.renderer.state.gui.GuiRenderState.TraverseRange)">
-<h3>addElementsToMeshes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addElementsToMeshes</span><wbr><span class="parameters">(<a href="../../renderer/state/gui/GuiRenderState.TraverseRange.html" title="enum class in net.minecraft.client.renderer.state.gui">GuiRenderState.TraverseRange</a>&nbsp;range)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="draw(com.mojang.blaze3d.buffers.GpuBufferSlice)">
-<h3>draw</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/blaze3d/buffers/GpuBufferSlice.html" title="class in com.mojang.blaze3d.buffers">GpuBufferSlice</a>&nbsp;fogBuffer)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="executeDrawRange(java.util.function.Supplier,com.mojang.blaze3d.pipeline.RenderTarget,com.mojang.blaze3d.buffers.GpuBufferSlice,com.mojang.blaze3d.buffers.GpuBufferSlice,com.mojang.blaze3d.buffers.GpuBuffer,com.mojang.blaze3d.vertex.VertexFormat.IndexType,int,int)">
-<h3>executeDrawRange</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">executeDrawRange</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;label,
- <a href="../../../../../com/mojang/blaze3d/pipeline/RenderTarget.html" title="class in com.mojang.blaze3d.pipeline">RenderTarget</a>&nbsp;mainRenderTarget,
- <a href="../../../../../com/mojang/blaze3d/buffers/GpuBufferSlice.html" title="class in com.mojang.blaze3d.buffers">GpuBufferSlice</a>&nbsp;fogBuffer,
- <a href="../../../../../com/mojang/blaze3d/buffers/GpuBufferSlice.html" title="class in com.mojang.blaze3d.buffers">GpuBufferSlice</a>&nbsp;dynamicTransforms,
- <a href="../../../../../com/mojang/blaze3d/buffers/GpuBuffer.html" title="class in com.mojang.blaze3d.buffers">GpuBuffer</a>&nbsp;indexBuffer,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexFormat.IndexType.html" title="enum class in com.mojang.blaze3d.vertex">VertexFormat.IndexType</a>&nbsp;indexType,
- int&nbsp;startIndex,
- int&nbsp;endIndex)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addElementToMesh(net.minecraft.client.renderer.state.gui.GuiElementRenderState)">
-<h3>addElementToMesh</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addElementToMesh</span><wbr><span class="parameters">(<a href="../../renderer/state/gui/GuiElementRenderState.html" title="interface in net.minecraft.client.renderer.state.gui">GuiElementRenderState</a>&nbsp;elementState)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="prepareText()">
-<h3>prepareText</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">prepareText</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="prepareItemElements()">
-<h3>prepareItemElements</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">prepareItemElements</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="preparePictureInPicture()">
-<h3>preparePictureInPicture</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">preparePictureInPicture</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="preparePictureInPictureState(T,int,boolean)">
-<h3 id="preparePictureInPictureState(net.minecraft.client.renderer.state.gui.pip.PictureInPictureRenderState,int,boolean)">preparePictureInPictureState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="../../renderer/state/gui/pip/PictureInPictureRenderState.html" title="interface in net.minecraft.client.renderer.state.gui.pip">PictureInPictureRenderState</a>&gt;</span>
-<span class="return-type">boolean</span>&nbsp;<span class="element-name">preparePictureInPictureState</span><wbr><span class="parameters">(T&nbsp;picturesInPictureState,
- int&nbsp;guiScale,
- boolean&nbsp;firstPass)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="submitBlitFromItemAtlas(net.minecraft.client.renderer.state.gui.GuiItemRenderState,net.minecraft.client.gui.render.GuiItemAtlas.SlotView)">
-<h3>submitBlitFromItemAtlas</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">submitBlitFromItemAtlas</span><wbr><span class="parameters">(<a href="../../renderer/state/gui/GuiItemRenderState.html" title="class in net.minecraft.client.renderer.state.gui">GuiItemRenderState</a>&nbsp;itemState,
- <a href="GuiItemAtlas.SlotView.html" title="class in net.minecraft.client.gui.render">GuiItemAtlas.SlotView</a>&nbsp;slotView)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="prepareItemAtlas(java.util.Set,int)">
-<h3>prepareItemAtlas</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="GuiItemAtlas.html" title="class in net.minecraft.client.gui.render">GuiItemAtlas</a></span>&nbsp;<span class="element-name">prepareItemAtlas</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;itemsInFrame,
- int&nbsp;slotTextureSize)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getGuiScaleInvalidatingItemAtlasIfChanged()">
-<h3>getGuiScaleInvalidatingItemAtlasIfChanged</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getGuiScaleInvalidatingItemAtlasIfChanged</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="invalidateItemAtlas()">
-<h3>invalidateItemAtlas</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">invalidateItemAtlas</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="recordMesh(com.mojang.blaze3d.vertex.BufferBuilder,com.mojang.blaze3d.pipeline.RenderPipeline,net.minecraft.client.gui.render.TextureSetup,net.minecraft.client.gui.navigation.ScreenRectangle)">
-<h3>recordMesh</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">recordMesh</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/blaze3d/vertex/BufferBuilder.html" title="class in com.mojang.blaze3d.vertex">BufferBuilder</a>&nbsp;bufferBuilder,
- <a href="../../../../../com/mojang/blaze3d/pipeline/RenderPipeline.html" title="class in com.mojang.blaze3d.pipeline">RenderPipeline</a>&nbsp;pipeline,
- <a href="TextureSetup.html" title="class in net.minecraft.client.gui.render">TextureSetup</a>&nbsp;textureSetup,
- @Nullable <a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;scissorArea)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="recordDraws()">
-<h3>recordDraws</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">recordDraws</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ensureVertexBufferSizes()">
-<h3>ensureVertexBufferSizes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ensureVertexBufferSizes</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculatedRequiredVertexBufferSizes()">
-<h3>calculatedRequiredVertexBufferSizes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.objects.Object2IntMap&lt;<a href="../../../../../com/mojang/blaze3d/vertex/VertexFormat.html" title="class in com.mojang.blaze3d.vertex">VertexFormat</a>&gt;</span>&nbsp;<span class="element-name">calculatedRequiredVertexBufferSizes</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="executeDraw(net.minecraft.client.gui.render.GuiRenderer.Draw,com.mojang.blaze3d.systems.RenderPass,com.mojang.blaze3d.buffers.GpuBuffer,com.mojang.blaze3d.vertex.VertexFormat.IndexType)">
-<h3>executeDraw</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">executeDraw</span><wbr><span class="parameters">(<a href="GuiRenderer.Draw.html" title="class in net.minecraft.client.gui.render">GuiRenderer.Draw</a>&nbsp;draw,
- <a href="../../../../../com/mojang/blaze3d/systems/RenderPass.html" title="class in com.mojang.blaze3d.systems">RenderPass</a>&nbsp;renderPass,
- <a href="../../../../../com/mojang/blaze3d/buffers/GpuBuffer.html" title="class in com.mojang.blaze3d.buffers">GpuBuffer</a>&nbsp;indexBuffer,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexFormat.IndexType.html" title="enum class in com.mojang.blaze3d.vertex">VertexFormat.IndexType</a>&nbsp;indexType)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getBufferBuilder(com.mojang.blaze3d.pipeline.RenderPipeline)">
-<h3>getBufferBuilder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/blaze3d/vertex/BufferBuilder.html" title="class in com.mojang.blaze3d.vertex">BufferBuilder</a></span>&nbsp;<span class="element-name">getBufferBuilder</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/blaze3d/pipeline/RenderPipeline.html" title="class in com.mojang.blaze3d.pipeline">RenderPipeline</a>&nbsp;pipeline)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="scissorChanged(net.minecraft.client.gui.navigation.ScreenRectangle,net.minecraft.client.gui.navigation.ScreenRectangle)">
-<h3>scissorChanged</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">scissorChanged</span><wbr><span class="parameters">(@Nullable <a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;newScissor,
- @Nullable <a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;oldScissor)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="enableScissor(net.minecraft.client.gui.navigation.ScreenRectangle,com.mojang.blaze3d.systems.RenderPass)">
-<h3>enableScissor</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">enableScissor</span><wbr><span class="parameters">(<a href="../navigation/ScreenRectangle.html" title="class in net.minecraft.client.gui.navigation">ScreenRectangle</a>&nbsp;rectangle,
- <a href="../../../../../com/mojang/blaze3d/systems/RenderPass.html" title="class in com.mojang.blaze3d.systems">RenderPass</a>&nbsp;renderPass)</span></div>
 </div>
 </section>
 </li>

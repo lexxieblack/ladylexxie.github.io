@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>OverworldBiomes (NeoForge 26.1)</title>
+<title>OverworldBiomes (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.data.worldgen.biome, class: OverworldBiomes">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/OverworldBiomes.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,8 +59,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#NORMAL_WATER_COLOR" tabindex="0">NORMAL_WATER_COLOR</a></li>
-<li><a href="#DARK_DRY_FOLIAGE_COLOR" tabindex="0">DARK_DRY_FOLIAGE_COLOR</a></li>
 <li><a href="#SWAMP_SKELETON_WEIGHT" tabindex="0">SWAMP_SKELETON_WEIGHT</a></li>
 </ol>
 </li>
@@ -72,21 +70,16 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#calculateSkyColor(float)" tabindex="0">calculateSkyColor(float)</a></li>
-<li><a href="#baseBiome(float,float)" tabindex="0">baseBiome(float, float)</a></li>
-<li><a href="#globalOverworldGeneration(net.minecraft.world.level.biome.BiomeGenerationSettings.Builder)" tabindex="0">globalOverworldGeneration(BiomeGenerationSettings.Builder)</a></li>
 <li><a href="#oldGrowthTaiga(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" tabindex="0">oldGrowthTaiga(HolderGetter, HolderGetter, boolean)</a></li>
 <li><a href="#sparseJungle(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">sparseJungle(HolderGetter, HolderGetter)</a></li>
 <li><a href="#jungle(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">jungle(HolderGetter, HolderGetter)</a></li>
 <li><a href="#bambooJungle(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">bambooJungle(HolderGetter, HolderGetter)</a></li>
-<li><a href="#baseJungle(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,float,boolean,boolean,boolean)" tabindex="0">baseJungle(HolderGetter, HolderGetter, float, boolean, boolean, boolean)</a></li>
 <li><a href="#windsweptHills(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" tabindex="0">windsweptHills(HolderGetter, HolderGetter, boolean)</a></li>
 <li><a href="#desert(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">desert(HolderGetter, HolderGetter)</a></li>
 <li><a href="#plains(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean,boolean,boolean)" tabindex="0">plains(HolderGetter, HolderGetter, boolean, boolean, boolean)</a></li>
 <li><a href="#mushroomFields(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">mushroomFields(HolderGetter, HolderGetter)</a></li>
 <li><a href="#savanna(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean,boolean)" tabindex="0">savanna(HolderGetter, HolderGetter, boolean, boolean)</a></li>
 <li><a href="#badlands(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" tabindex="0">badlands(HolderGetter, HolderGetter, boolean)</a></li>
-<li><a href="#baseOcean()" tabindex="0">baseOcean()</a></li>
-<li><a href="#baseOceanGeneration(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">baseOceanGeneration(HolderGetter, HolderGetter)</a></li>
 <li><a href="#coldOcean(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" tabindex="0">coldOcean(HolderGetter, HolderGetter, boolean)</a></li>
 <li><a href="#ocean(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" tabindex="0">ocean(HolderGetter, HolderGetter, boolean)</a></li>
 <li><a href="#lukeWarmOcean(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" tabindex="0">lukeWarmOcean(HolderGetter, HolderGetter, boolean)</a></li>
@@ -101,7 +94,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#beach(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean,boolean)" tabindex="0">beach(HolderGetter, HolderGetter, boolean, boolean)</a></li>
 <li><a href="#theVoid(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">theVoid(HolderGetter, HolderGetter)</a></li>
 <li><a href="#meadowOrCherryGrove(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" tabindex="0">meadowOrCherryGrove(HolderGetter, HolderGetter, boolean)</a></li>
-<li><a href="#basePeaks(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">basePeaks(HolderGetter, HolderGetter)</a></li>
 <li><a href="#frozenPeaks(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">frozenPeaks(HolderGetter, HolderGetter)</a></li>
 <li><a href="#jaggedPeaks(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">jaggedPeaks(HolderGetter, HolderGetter)</a></li>
 <li><a href="#stonyPeaks(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" tabindex="0">stonyPeaks(HolderGetter, HolderGetter)</a></li>
@@ -140,12 +132,6 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#DARK_DRY_FOLIAGE_COLOR" class="member-name-link">DARK_DRY_FOLIAGE_COLOR</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#NORMAL_WATER_COLOR" class="member-name-link">NORMAL_WATER_COLOR</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#SWAMP_SKELETON_WEIGHT" class="member-name-link">SWAMP_SKELETON_WEIGHT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -185,78 +171,52 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bambooJungle(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">bambooJungle</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../world/level/biome/Biome.BiomeBuilder.html" title="class in net.minecraft.world.level.biome">Biome.BiomeBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#baseBiome(float,float)" class="member-name-link">baseBiome</a><wbr>(float&nbsp;temperature,
- float&nbsp;downfall)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../world/level/biome/Biome.BiomeBuilder.html" title="class in net.minecraft.world.level.biome">Biome.BiomeBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#baseJungle(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,float,boolean,boolean,boolean)" class="member-name-link">baseJungle</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
- <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
- float&nbsp;downfall,
- boolean&nbsp;bamboo,
- boolean&nbsp;sparse,
- boolean&nbsp;core)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../world/level/biome/Biome.BiomeBuilder.html" title="class in net.minecraft.world.level.biome">Biome.BiomeBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#baseOcean()" class="member-name-link">baseOcean</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../world/level/biome/BiomeGenerationSettings.Builder.html" title="class in net.minecraft.world.level.biome">BiomeGenerationSettings.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#baseOceanGeneration(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">baseOceanGeneration</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
- <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../world/level/biome/Biome.BiomeBuilder.html" title="class in net.minecraft.world.level.biome">Biome.BiomeBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#basePeaks(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">basePeaks</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
- <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#beach(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean,boolean)" class="member-name-link">beach</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#beach(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean,boolean)" class="member-name-link">beach</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
  boolean&nbsp;snowy,
  boolean&nbsp;stony)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#calculateSkyColor(float)" class="member-name-link">calculateSkyColor</a><wbr>(float&nbsp;temperature)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#coldOcean(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" class="member-name-link">coldOcean</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#calculateSkyColor(float)" class="member-name-link">calculateSkyColor</a><wbr>(float&nbsp;temperature)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#coldOcean(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" class="member-name-link">coldOcean</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
  boolean&nbsp;deep)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#darkForest(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" class="member-name-link">darkForest</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#darkForest(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" class="member-name-link">darkForest</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
  boolean&nbsp;isPaleGarden)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deepDark(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">deepDark</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
- <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#desert(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">desert</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deepDark(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">deepDark</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dripstoneCaves(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">dripstoneCaves</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#desert(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">desert</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#forest(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean,boolean,boolean)" class="member-name-link">forest</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dripstoneCaves(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">dripstoneCaves</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
+ <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#forest(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean,boolean,boolean)" class="member-name-link">forest</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
  boolean&nbsp;birch,
  boolean&nbsp;tall,
  boolean&nbsp;flower)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#frozenOcean(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" class="member-name-link">frozenOcean</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
- <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
- boolean&nbsp;deep)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#frozenPeaks(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">frozenPeaks</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
- <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#frozenOcean(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)" class="member-name-link">frozenOcean</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
+ <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
+ boolean&nbsp;deep)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#globalOverworldGeneration(net.minecraft.world.level.biome.BiomeGenerationSettings.Builder)" class="member-name-link">globalOverworldGeneration</a><wbr>(<a href="../../../world/level/biome/BiomeGenerationSettings.Builder.html" title="class in net.minecraft.world.level.biome">BiomeGenerationSettings.Builder</a>&nbsp;generation)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#frozenPeaks(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">frozenPeaks</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
+ <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#grove(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)" class="member-name-link">grove</a><wbr>(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
@@ -359,7 +319,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -371,38 +331,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="NORMAL_WATER_COLOR">
-<h3>NORMAL_WATER_COLOR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">NORMAL_WATER_COLOR</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.data.worldgen.biome.OverworldBiomes.NORMAL_WATER_COLOR">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="DARK_DRY_FOLIAGE_COLOR">
-<h3>DARK_DRY_FOLIAGE_COLOR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DARK_DRY_FOLIAGE_COLOR</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.data.worldgen.biome.OverworldBiomes.DARK_DRY_FOLIAGE_COLOR">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="SWAMP_SKELETON_WEIGHT">
 <h3>SWAMP_SKELETON_WEIGHT</h3>
@@ -452,23 +380,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="baseBiome(float,float)">
-<h3>baseBiome</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../world/level/biome/Biome.BiomeBuilder.html" title="class in net.minecraft.world.level.biome">Biome.BiomeBuilder</a></span>&nbsp;<span class="element-name">baseBiome</span><wbr><span class="parameters">(float&nbsp;temperature,
- float&nbsp;downfall)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="globalOverworldGeneration(net.minecraft.world.level.biome.BiomeGenerationSettings.Builder)">
-<h3>globalOverworldGeneration</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">globalOverworldGeneration</span><wbr><span class="parameters">(<a href="../../../world/level/biome/BiomeGenerationSettings.Builder.html" title="class in net.minecraft.world.level.biome">BiomeGenerationSettings.Builder</a>&nbsp;generation)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="oldGrowthTaiga(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,boolean)">
 <h3>oldGrowthTaiga</h3>
 <div class="horizontal-scroll">
@@ -502,19 +413,6 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></span>&nbsp;<span class="element-name">bambooJungle</span><wbr><span class="parameters">(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="baseJungle(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter,float,boolean,boolean,boolean)">
-<h3>baseJungle</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../world/level/biome/Biome.BiomeBuilder.html" title="class in net.minecraft.world.level.biome">Biome.BiomeBuilder</a></span>&nbsp;<span class="element-name">baseJungle</span><wbr><span class="parameters">(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
- <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
- float&nbsp;downfall,
- boolean&nbsp;bamboo,
- boolean&nbsp;sparse,
- boolean&nbsp;core)</span></div>
 </div>
 </section>
 </li>
@@ -576,23 +474,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></span>&nbsp;<span class="element-name">badlands</span><wbr><span class="parameters">(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
  boolean&nbsp;wooded)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="baseOcean()">
-<h3>baseOcean</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../world/level/biome/Biome.BiomeBuilder.html" title="class in net.minecraft.world.level.biome">Biome.BiomeBuilder</a></span>&nbsp;<span class="element-name">baseOcean</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="baseOceanGeneration(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)">
-<h3>baseOceanGeneration</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../world/level/biome/BiomeGenerationSettings.Builder.html" title="class in net.minecraft.world.level.biome">BiomeGenerationSettings.Builder</a></span>&nbsp;<span class="element-name">baseOceanGeneration</span><wbr><span class="parameters">(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
- <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</span></div>
 </div>
 </section>
 </li>
@@ -732,15 +613,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../world/level/biome/Biome.html" title="class in net.minecraft.world.level.biome">Biome</a></span>&nbsp;<span class="element-name">meadowOrCherryGrove</span><wbr><span class="parameters">(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
  <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers,
  boolean&nbsp;cherryGrove)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="basePeaks(net.minecraft.core.HolderGetter,net.minecraft.core.HolderGetter)">
-<h3>basePeaks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../world/level/biome/Biome.BiomeBuilder.html" title="class in net.minecraft.world.level.biome">Biome.BiomeBuilder</a></span>&nbsp;<span class="element-name">basePeaks</span><wbr><span class="parameters">(<a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/placement/PlacedFeature.html" title="class in net.minecraft.world.level.levelgen.placement">PlacedFeature</a>&gt;&nbsp;placedFeatures,
- <a href="../../../core/HolderGetter.html" title="interface in net.minecraft.core">HolderGetter</a>&lt;<a href="../../../world/level/levelgen/carver/ConfiguredWorldCarver.html" title="class in net.minecraft.world.level.levelgen.carver">ConfiguredWorldCarver</a>&lt;?&gt;&gt;&nbsp;carvers)</span></div>
 </div>
 </section>
 </li>

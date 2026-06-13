@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>DedicatedServerProperties (NeoForge 26.1)</title>
+<title>DedicatedServerProperties (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server.dedicated, class: DedicatedServerProperties">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/DedicatedServerProperties.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,9 +60,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#SHA1" tabindex="0">SHA1</a></li>
-<li><a href="#COMMA_SPLITTER" tabindex="0">COMMA_SPLITTER</a></li>
 <li><a href="#MANAGEMENT_SERVER_TLS_ENABLED_KEY" tabindex="0">MANAGEMENT_SERVER_TLS_ENABLED_KEY</a></li>
 <li><a href="#MANAGEMENT_SERVER_TLS_KEYSTORE_KEY" tabindex="0">MANAGEMENT_SERVER_TLS_KEYSTORE_KEY</a></li>
 <li><a href="#MANAGEMENT_SERVER_TLS_KEYSTORE_PASSWORD_KEY" tabindex="0">MANAGEMENT_SERVER_TLS_KEYSTORE_PASSWORD_KEY</a></li>
@@ -124,7 +121,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#enforceSecureProfile" tabindex="0">enforceSecureProfile</a></li>
 <li><a href="#logIPs" tabindex="0">logIPs</a></li>
 <li><a href="#pauseWhenEmptySeconds" tabindex="0">pauseWhenEmptySeconds</a></li>
-<li><a href="#worldDimensionData" tabindex="0">worldDimensionData</a></li>
 <li><a href="#worldOptions" tabindex="0">worldOptions</a></li>
 <li><a href="#acceptsTransfers" tabindex="0">acceptsTransfers</a></li>
 </ol>
@@ -137,10 +133,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#fromFile(java.nio.file.Path)" tabindex="0">fromFile(Path)</a></li>
-<li><a href="#reload(net.minecraft.core.RegistryAccess,java.util.Properties)" tabindex="0">reload(RegistryAccess, Properties)</a></li>
-<li><a href="#parseResourcePackPrompt(java.lang.String)" tabindex="0">parseResourcePackPrompt(String)</a></li>
-<li><a href="#getServerPackInfo(java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String)" tabindex="0">getServerPackInfo(String, String, String, String, boolean, String)</a></li>
-<li><a href="#getDatapackConfig(java.lang.String,java.lang.String)" tabindex="0">getDatapackConfig(String, String)</a></li>
 <li><a href="#deserializePermission(java.lang.String)" tabindex="0">deserializePermission(String)</a></li>
 <li><a href="#serializePermission(net.minecraft.server.permissions.LevelBasedPermissionSet)" tabindex="0">serializePermission(LevelBasedPermissionSet)</a></li>
 <li><a href="#createDimensions(net.minecraft.core.HolderLookup.Provider)" tabindex="0">createDimensions(HolderLookup.Provider)</a></li>
@@ -171,15 +163,6 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="DedicatedServerProperties.WorldDimensionData.html" class="type-name-link" title="class in net.minecraft.server.dedicated">DedicatedServerProperties.WorldDimensionData</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.minecraft.server.dedicated.Settings">Nested classes/interfaces inherited from class&nbsp;<a href="Settings.html#nested-class-summary" title="class in net.minecraft.server.dedicated">Settings</a></h3>
 <code><a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">Settings.MutableValue</a>&lt;V&gt;</code></div>
@@ -215,56 +198,50 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>final boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#codeOfConduct" class="member-name-link">codeOfConduct</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final com.google.common.base.Splitter</code></div>
-<div class="col-second odd-row-color"><code><a href="#COMMA_SPLITTER" class="member-name-link">COMMA_SPLITTER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="../../world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#difficulty" class="member-name-link">difficulty</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#enableJmxMonitoring" class="member-name-link">enableJmxMonitoring</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="../../world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#difficulty" class="member-name-link">difficulty</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#enableQuery" class="member-name-link">enableQuery</a></code></div>
+<div class="col-second even-row-color"><code><a href="#enableJmxMonitoring" class="member-name-link">enableJmxMonitoring</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#enableRcon" class="member-name-link">enableRcon</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#enableQuery" class="member-name-link">enableQuery</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#enableStatus" class="member-name-link">enableStatus</a></code></div>
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#enableRcon" class="member-name-link">enableRcon</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#enforceSecureProfile" class="member-name-link">enforceSecureProfile</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#enableStatus" class="member-name-link">enableStatus</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#enforceWhitelist" class="member-name-link">enforceWhitelist</a></code></div>
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#enforceSecureProfile" class="member-name-link">enforceSecureProfile</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#entityBroadcastRangePercentage" class="member-name-link">entityBroadcastRangePercentage</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#enforceWhitelist" class="member-name-link">enforceWhitelist</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#forceGameMode" class="member-name-link">forceGameMode</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#entityBroadcastRangePercentage" class="member-name-link">entityBroadcastRangePercentage</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="../permissions/LevelBasedPermissionSet.html" title="interface in net.minecraft.server.permissions">LevelBasedPermissionSet</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#functionPermissions" class="member-name-link">functionPermissions</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#forceGameMode" class="member-name-link">forceGameMode</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="../../world/level/GameType.html" title="enum class in net.minecraft.world.level">GameType</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#gameMode" class="member-name-link">gameMode</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="../permissions/LevelBasedPermissionSet.html" title="interface in net.minecraft.server.permissions">LevelBasedPermissionSet</a></code></div>
+<div class="col-second even-row-color"><code><a href="#functionPermissions" class="member-name-link">functionPermissions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#hardcore" class="member-name-link">hardcore</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="../../world/level/GameType.html" title="enum class in net.minecraft.world.level">GameType</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#gameMode" class="member-name-link">gameMode</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#hideOnlinePlayers" class="member-name-link">hideOnlinePlayers</a></code></div>
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#hardcore" class="member-name-link">hardcore</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="../../world/level/DataPackConfig.html" title="class in net.minecraft.world.level">DataPackConfig</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#initialDataPackConfiguration" class="member-name-link">initialDataPackConfiguration</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#hideOnlinePlayers" class="member-name-link">hideOnlinePlayers</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#levelName" class="member-name-link">levelName</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="../../world/level/DataPackConfig.html" title="class in net.minecraft.world.level">DataPackConfig</a></code></div>
+<div class="col-second even-row-color"><code><a href="#initialDataPackConfiguration" class="member-name-link">initialDataPackConfiguration</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#levelName" class="member-name-link">levelName</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#logIPs" class="member-name-link">logIPs</a></code></div>
@@ -359,46 +336,37 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../MinecraftServer.ServerResourcePackInfo.html" title="class in net.minecraft.server">MinecraftServer.ServerResourcePackInfo</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#serverResourcePackInfo" class="member-name-link">serverResourcePackInfo</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/regex/Pattern.html" title="class or interface in java.util.regex" class="external-link">Pattern</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SHA1" class="member-name-link">SHA1</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#simulationDistance" class="member-name-link">simulationDistance</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#simulationDistance" class="member-name-link">simulationDistance</a></code></div>
+<div class="col-second even-row-color"><code><a href="#spawnProtection" class="member-name-link">spawnProtection</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#spawnProtection" class="member-name-link">spawnProtection</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#statusHeartbeatInterval" class="member-name-link">statusHeartbeatInterval</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#syncChunkWrites" class="member-name-link">syncChunkWrites</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#textFilteringConfig" class="member-name-link">textFilteringConfig</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#textFilteringVersion" class="member-name-link">textFilteringVersion</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#statusHeartbeatInterval" class="member-name-link">statusHeartbeatInterval</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#useNativeTransport" class="member-name-link">useNativeTransport</a></code></div>
+<div class="col-second even-row-color"><code><a href="#syncChunkWrites" class="member-name-link">syncChunkWrites</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#viewDistance" class="member-name-link">viewDistance</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#textFilteringConfig" class="member-name-link">textFilteringConfig</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#whiteList" class="member-name-link">whiteList</a></code></div>
+<div class="col-first even-row-color"><code>final int</code></div>
+<div class="col-second even-row-color"><code><a href="#textFilteringVersion" class="member-name-link">textFilteringVersion</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="DedicatedServerProperties.WorldDimensionData.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties.WorldDimensionData</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#worldDimensionData" class="member-name-link">worldDimensionData</a></code></div>
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#useNativeTransport" class="member-name-link">useNativeTransport</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#viewDistance" class="member-name-link">viewDistance</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final <a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;.<a href="Settings.MutableValue.html" title="class in net.minecraft.server.dedicated">MutableValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#whiteList" class="member-name-link">whiteList</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final <a href="../../world/level/levelgen/WorldOptions.html" title="class in net.minecraft.world.level.levelgen">WorldOptions</a></code></div>
 <div class="col-second even-row-color"><code><a href="#worldOptions" class="member-name-link">worldOptions</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.server.dedicated.Settings">Fields inherited from class&nbsp;<a href="Settings.html#field-summary" title="class in net.minecraft.server.dedicated">Settings</a></h3>
-<code><a href="Settings.html#properties">properties</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -434,25 +402,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fromFile(java.nio.file.Path)" class="member-name-link">fromFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;file)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../world/level/DataPackConfig.html" title="class in net.minecraft.world.level">DataPackConfig</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDatapackConfig(java.lang.String,java.lang.String)" class="member-name-link">getDatapackConfig</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;enabledPacks,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;disabledPacks)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../MinecraftServer.ServerResourcePackInfo.html" title="class in net.minecraft.server">MinecraftServer.ServerResourcePackInfo</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getServerPackInfo(java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String)" class="member-name-link">getServerPackInfo</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;url,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;resourcePackSha1,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;resourcePackHash,
- boolean&nbsp;requireResourcePack,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;resourcePackPrompt)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static @Nullable <a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parseResourcePackPrompt(java.lang.String)" class="member-name-link">parseResourcePackPrompt</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prompt)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reload(net.minecraft.core.RegistryAccess,java.util.Properties)" class="member-name-link">reload</a><wbr>(<a href="../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;properties)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#serializePermission(net.minecraft.server.permissions.LevelBasedPermissionSet)" class="member-name-link">serializePermission</a><wbr>(<a href="../permissions/LevelBasedPermissionSet.html" title="interface in net.minecraft.server.permissions">LevelBasedPermissionSet</a>&nbsp;permission)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -461,10 +410,10 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.server.dedicated.Settings">Methods inherited from class&nbsp;<a href="Settings.html#method-summary" title="class in net.minecraft.server.dedicated">Settings</a></h3>
-<code><a href="Settings.html#cloneProperties()" title="cloneProperties()">cloneProperties</a>, <a href="Settings.html#dispatchNumberOrString(java.util.function.IntFunction,java.util.function.Function)" title="dispatchNumberOrString(IntFunction, Function)">dispatchNumberOrString</a>, <a href="Settings.html#get(java.lang.String,boolean)" title="get(String, boolean)">get</a>, <a href="Settings.html#get(java.lang.String,int)" title="get(String, int)">get</a>, <a href="Settings.html#get(java.lang.String,long)" title="get(String, long)">get</a>, <a href="Settings.html#get(java.lang.String,java.lang.String)" title="get(String, String)">get</a>, <a href="Settings.html#get(java.lang.String,java.util.function.Function,java.util.function.Function,V)" title="get(String, Function, Function, V)">get</a>, <a href="Settings.html#get(java.lang.String,java.util.function.Function,java.util.function.UnaryOperator,java.util.function.Function,V)" title="get(String, Function, UnaryOperator, Function, V)">get</a>, <a href="Settings.html#get(java.lang.String,java.util.function.Function,V)" title="get(String, Function, V)">get</a>, <a href="Settings.html#get(java.lang.String,java.util.function.UnaryOperator,int)" title="get(String, UnaryOperator, int)">get</a>, <a href="Settings.html#getLegacy(java.lang.String,java.util.function.Function)" title="getLegacy(String, Function)">getLegacy</a>, <a href="Settings.html#getLegacyBoolean(java.lang.String)" title="getLegacyBoolean(String)">getLegacyBoolean</a>, <a href="Settings.html#getLegacyString(java.lang.String)" title="getLegacyString(String)">getLegacyString</a>, <a href="Settings.html#getMutable(java.lang.String,boolean)" title="getMutable(String, boolean)">getMutable</a>, <a href="Settings.html#getMutable(java.lang.String,int)" title="getMutable(String, int)">getMutable</a>, <a href="Settings.html#getMutable(java.lang.String,java.lang.String)" title="getMutable(String, String)">getMutable</a>, <a href="Settings.html#getMutable(java.lang.String,java.util.function.Function,java.util.function.Function,V)" title="getMutable(String, Function, Function, V)">getMutable</a>, <a href="Settings.html#getMutable(java.lang.String,java.util.function.Function,V)" title="getMutable(String, Function, V)">getMutable</a>, <a href="Settings.html#loadFromFile(java.nio.file.Path)" title="loadFromFile(Path)">loadFromFile</a>, <a href="Settings.html#store(java.nio.file.Path)" title="store(Path)">store</a></code></div>
+<code><a href="Settings.html#loadFromFile(java.nio.file.Path)" title="loadFromFile(Path)">loadFromFile</a>, <a href="Settings.html#store(java.nio.file.Path)" title="store(Path)">store</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -476,30 +425,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SHA1">
-<h3>SHA1</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/regex/Pattern.html" title="class or interface in java.util.regex" class="external-link">Pattern</a></span>&nbsp;<span class="element-name">SHA1</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="COMMA_SPLITTER">
-<h3>COMMA_SPLITTER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">com.google.common.base.Splitter</span>&nbsp;<span class="element-name">COMMA_SPLITTER</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="MANAGEMENT_SERVER_TLS_ENABLED_KEY">
 <h3>MANAGEMENT_SERVER_TLS_ENABLED_KEY</h3>
@@ -1013,14 +938,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="worldDimensionData">
-<h3>worldDimensionData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="DedicatedServerProperties.WorldDimensionData.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties.WorldDimensionData</a></span>&nbsp;<span class="element-name">worldDimensionData</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="worldOptions">
 <h3>worldOptions</h3>
 <div class="horizontal-scroll">
@@ -1065,49 +982,6 @@ loadScripts(document, 'script');</script>
 <h3>fromFile</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a></span>&nbsp;<span class="element-name">fromFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;file)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="reload(net.minecraft.core.RegistryAccess,java.util.Properties)">
-<h3>reload</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a></span>&nbsp;<span class="element-name">reload</span><wbr><span class="parameters">(<a href="../../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;properties)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Settings.html#reload(net.minecraft.core.RegistryAccess,java.util.Properties)">reload</a></code>&nbsp;in class&nbsp;<code><a href="Settings.html" title="class in net.minecraft.server.dedicated">Settings</a>&lt;<a href="DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="parseResourcePackPrompt(java.lang.String)">
-<h3>parseResourcePackPrompt</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">@Nullable <a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></span>&nbsp;<span class="element-name">parseResourcePackPrompt</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prompt)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getServerPackInfo(java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String)">
-<h3>getServerPackInfo</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../MinecraftServer.ServerResourcePackInfo.html" title="class in net.minecraft.server">MinecraftServer.ServerResourcePackInfo</a>&gt;</span>&nbsp;<span class="element-name">getServerPackInfo</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;url,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;resourcePackSha1,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;resourcePackHash,
- boolean&nbsp;requireResourcePack,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;resourcePackPrompt)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getDatapackConfig(java.lang.String,java.lang.String)">
-<h3>getDatapackConfig</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../world/level/DataPackConfig.html" title="class in net.minecraft.world.level">DataPackConfig</a></span>&nbsp;<span class="element-name">getDatapackConfig</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;enabledPacks,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;disabledPacks)</span></div>
 </div>
 </section>
 </li>

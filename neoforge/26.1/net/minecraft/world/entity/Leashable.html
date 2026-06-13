@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>Leashable (NeoForge 26.1)</title>
+<title>Leashable (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity, interface: Leashable">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/Leashable.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -84,11 +84,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#setDelayedLeashHolderId(int)" tabindex="0">setDelayedLeashHolderId(int)</a></li>
 <li><a href="#readLeashData(net.minecraft.world.level.storage.ValueInput)" tabindex="0">readLeashData(ValueInput)</a></li>
 <li><a href="#writeLeashData(net.minecraft.world.level.storage.ValueOutput,net.minecraft.world.entity.Leashable.LeashData)" tabindex="0">writeLeashData(ValueOutput, Leashable.LeashData)</a></li>
-<li><a href="#restoreLeashFromSave(E,net.minecraft.world.entity.Leashable.LeashData)" tabindex="0">restoreLeashFromSave(E, Leashable.LeashData)</a></li>
 <li><a href="#dropLeash()" tabindex="0">dropLeash()</a></li>
 <li><a href="#removeLeash()" tabindex="0">removeLeash()</a></li>
 <li><a href="#onLeashRemoved()" tabindex="0">onLeashRemoved()</a></li>
-<li><a href="#dropLeash(E,boolean,boolean)" tabindex="0">dropLeash(E, boolean, boolean)</a></li>
 <li><a href="#tickLeash(net.minecraft.server.level.ServerLevel,E)" tabindex="0">tickLeash(ServerLevel, E)</a></li>
 <li><a href="#onElasticLeashPull()" tabindex="0">onElasticLeashPull()</a></li>
 <li><a href="#leashSnapDistance()" tabindex="0">leashSnapDistance()</a></li>
@@ -98,18 +96,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#leashTooFarBehaviour()" tabindex="0">leashTooFarBehaviour()</a></li>
 <li><a href="#closeRangeLeashBehaviour(net.minecraft.world.entity.Entity)" tabindex="0">closeRangeLeashBehaviour(Entity)</a></li>
 <li><a href="#checkElasticInteractions(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Leashable.LeashData)" tabindex="0">checkElasticInteractions(Entity, Leashable.LeashData)</a></li>
-<li><a href="#getHolderMovement(net.minecraft.world.entity.Entity)" tabindex="0">getHolderMovement(Entity)</a></li>
-<li><a href="#computeElasticInteraction(E,net.minecraft.world.entity.Entity,java.util.List,java.util.List)" tabindex="0">computeElasticInteraction(E, Entity, List, List)</a></li>
-<li><a href="#computeDampenedSpringInteraction(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,double,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3)" tabindex="0">computeDampenedSpringInteraction(Vec3, Vec3, double, Vec3, Vec3)</a></li>
 <li><a href="#supportQuadLeash()" tabindex="0">supportQuadLeash()</a></li>
 <li><a href="#getQuadLeashOffsets()" tabindex="0">getQuadLeashOffsets()</a></li>
 <li><a href="#createQuadLeashOffsets(net.minecraft.world.entity.Entity,double,double,double,double)" tabindex="0">createQuadLeashOffsets(Entity, double, double, double, double)</a></li>
 <li><a href="#getLeashOffset(float)" tabindex="0">getLeashOffset(float)</a></li>
 <li><a href="#getLeashOffset()" tabindex="0">getLeashOffset()</a></li>
 <li><a href="#setLeashedTo(net.minecraft.world.entity.Entity,boolean)" tabindex="0">setLeashedTo(Entity, boolean)</a></li>
-<li><a href="#setLeashedTo(E,net.minecraft.world.entity.Entity,boolean)" tabindex="0">setLeashedTo(E, Entity, boolean)</a></li>
 <li><a href="#getLeashHolder()" tabindex="0">getLeashHolder()</a></li>
-<li><a href="#getLeashHolder(E)" tabindex="0">getLeashHolder(E)</a></li>
 <li><a href="#leashableLeashedTo(net.minecraft.world.entity.Entity)" tabindex="0">leashableLeashedTo(Entity)</a></li>
 <li><a href="#leashableInArea(net.minecraft.world.entity.Entity,java.util.function.Predicate)" tabindex="0">leashableInArea(Entity, Predicate)</a></li>
 <li><a href="#leashableInArea(net.minecraft.world.level.Level,net.minecraft.world.phys.Vec3,java.util.function.Predicate)" tabindex="0">leashableInArea(Level, Vec3, Predicate)</a></li>
@@ -224,19 +217,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#closeRangeLeashBehaviour(net.minecraft.world.entity.Entity)" class="member-name-link">closeRangeLeashBehaviour</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;leashHolder)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="Leashable.Wrench.html" title="class in net.minecraft.world.entity">Leashable.Wrench</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#computeDampenedSpringInteraction(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,double,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3)" class="member-name-link">computeDampenedSpringInteraction</a><wbr>(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pivotPoint,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;objectPosition,
- double&nbsp;springSlack,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;objectMotion,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;leverArm)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>private static &lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;<br><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Leashable.Wrench.html" title="class in net.minecraft.world.entity">Leashable.Wrench</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#computeElasticInteraction(E,net.minecraft.world.entity.Entity,java.util.List,java.util.List)" class="member-name-link">computeElasticInteraction</a><wbr>(E&nbsp;entity,
- <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;leashHolder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;&nbsp;entityAttachmentPoints,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;&nbsp;leasherAttachmentPoints)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#createQuadLeashOffsets(net.minecraft.world.entity.Entity,double,double,double,double)" class="member-name-link">createQuadLeashOffsets</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
  double&nbsp;frontOffset,
@@ -247,107 +227,87 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#dropLeash()" class="member-name-link">dropLeash</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>private static &lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;<br>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#dropLeash(E,boolean,boolean)" class="member-name-link">dropLeash</a><wbr>(E&nbsp;entity,
- boolean&nbsp;sendPacket,
- boolean&nbsp;dropLead)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>private static <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#getHolderMovement(net.minecraft.world.entity.Entity)" class="member-name-link">getHolderMovement</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;leashHolder)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@Nullable <a href="Leashable.LeashData.html" title="class in net.minecraft.world.entity">Leashable.LeashData</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLeashData()" class="member-name-link">getLeashData</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default @Nullable <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getLeashHolder()" class="member-name-link">getLeashHolder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>private static &lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;<br>@Nullable <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#getLeashHolder(E)" class="member-name-link">getLeashHolder</a><wbr>(E&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getLeashOffset()" class="member-name-link">getLeashOffset</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getLeashOffset(float)" class="member-name-link">getLeashOffset</a><wbr>(float&nbsp;partialTicks)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getLeashOffset()" class="member-name-link">getLeashOffset</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getQuadLeashOffsets()" class="member-name-link">getQuadLeashOffsets</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getLeashOffset(float)" class="member-name-link">getLeashOffset</a><wbr>(float&nbsp;partialTicks)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isLeashed()" class="member-name-link">isLeashed</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getQuadLeashOffsets()" class="member-name-link">getQuadLeashOffsets</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isLeashed()" class="member-name-link">isLeashed</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#leashableInArea(net.minecraft.world.entity.Entity,java.util.function.Predicate)" class="member-name-link">leashableInArea</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;&nbsp;test)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#leashableInArea(net.minecraft.world.entity.Entity,java.util.function.Predicate)" class="member-name-link">leashableInArea</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#leashableInArea(net.minecraft.world.level.Level,net.minecraft.world.phys.Vec3,java.util.function.Predicate)" class="member-name-link">leashableInArea</a><wbr>(<a href="../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+ <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;&nbsp;test)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#leashableInArea(net.minecraft.world.level.Level,net.minecraft.world.phys.Vec3,java.util.function.Predicate)" class="member-name-link">leashableInArea</a><wbr>(<a href="../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;&nbsp;test)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#leashableLeashedTo(net.minecraft.world.entity.Entity)" class="member-name-link">leashableLeashedTo</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#leashableLeashedTo(net.minecraft.world.entity.Entity)" class="member-name-link">leashableLeashedTo</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#leashDistanceTo(net.minecraft.world.entity.Entity)" class="member-name-link">leashDistanceTo</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#leashDistanceTo(net.minecraft.world.entity.Entity)" class="member-name-link">leashDistanceTo</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#leashElasticDistance()" class="member-name-link">leashElasticDistance</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#leashElasticDistance()" class="member-name-link">leashElasticDistance</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#leashSnapDistance()" class="member-name-link">leashSnapDistance</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#leashTooFarBehaviour()" class="member-name-link">leashTooFarBehaviour</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mayBeLeashed()" class="member-name-link">mayBeLeashed</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onElasticLeashPull()" class="member-name-link">onElasticLeashPull</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#leashSnapDistance()" class="member-name-link">leashSnapDistance</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onLeashRemoved()" class="member-name-link">onLeashRemoved</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#leashTooFarBehaviour()" class="member-name-link">leashTooFarBehaviour</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#readLeashData(net.minecraft.world.level.storage.ValueInput)" class="member-name-link">readLeashData</a><wbr>(<a href="../level/storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mayBeLeashed()" class="member-name-link">mayBeLeashed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#removeLeash()" class="member-name-link">removeLeash</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onElasticLeashPull()" class="member-name-link">onElasticLeashPull</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>private static &lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;<br>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#restoreLeashFromSave(E,net.minecraft.world.entity.Leashable.LeashData)" class="member-name-link">restoreLeashFromSave</a><wbr>(E&nbsp;entity,
- <a href="Leashable.LeashData.html" title="class in net.minecraft.world.entity">Leashable.LeashData</a>&nbsp;leashData)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#onLeashRemoved()" class="member-name-link">onLeashRemoved</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#readLeashData(net.minecraft.world.level.storage.ValueInput)" class="member-name-link">readLeashData</a><wbr>(<a href="../level/storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#removeLeash()" class="member-name-link">removeLeash</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setDelayedLeashHolderId(int)" class="member-name-link">setDelayedLeashHolderId</a><wbr>(int&nbsp;entityId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setLeashData(net.minecraft.world.entity.Leashable.LeashData)" class="member-name-link">setLeashData</a><wbr>(@Nullable <a href="Leashable.LeashData.html" title="class in net.minecraft.world.entity">Leashable.LeashData</a>&nbsp;leashData)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>private static &lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;<br>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#setLeashedTo(E,net.minecraft.world.entity.Entity,boolean)" class="member-name-link">setLeashedTo</a><wbr>(E&nbsp;entity,
- <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;holder,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setLeashedTo(net.minecraft.world.entity.Entity,boolean)" class="member-name-link">setLeashedTo</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;holder,
  boolean&nbsp;synch)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#supportQuadLeash()" class="member-name-link">supportQuadLeash</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;<br>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#tickLeash(net.minecraft.server.level.ServerLevel,E)" class="member-name-link">tickLeash</a><wbr>(<a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
+ E&nbsp;entity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setLeashedTo(net.minecraft.world.entity.Entity,boolean)" class="member-name-link">setLeashedTo</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;holder,
- boolean&nbsp;synch)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#whenLeashedTo(net.minecraft.world.entity.Entity)" class="member-name-link">whenLeashedTo</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;leashHolder)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#supportQuadLeash()" class="member-name-link">supportQuadLeash</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;<br>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#tickLeash(net.minecraft.server.level.ServerLevel,E)" class="member-name-link">tickLeash</a><wbr>(<a href="../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- E&nbsp;entity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#whenLeashedTo(net.minecraft.world.entity.Entity)" class="member-name-link">whenLeashedTo</a><wbr>(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;leashHolder)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#writeLeashData(net.minecraft.world.level.storage.ValueOutput,net.minecraft.world.entity.Leashable.LeashData)" class="member-name-link">writeLeashData</a><wbr>(<a href="../level/storage/ValueOutput.html" title="interface in net.minecraft.world.level.storage">ValueOutput</a>&nbsp;output,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#writeLeashData(net.minecraft.world.level.storage.ValueOutput,net.minecraft.world.entity.Leashable.LeashData)" class="member-name-link">writeLeashData</a><wbr>(<a href="../level/storage/ValueOutput.html" title="interface in net.minecraft.world.level.storage">ValueOutput</a>&nbsp;output,
  @Nullable <a href="Leashable.LeashData.html" title="class in net.minecraft.world.entity">Leashable.LeashData</a>&nbsp;leashData)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -596,15 +556,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="restoreLeashFromSave(E,net.minecraft.world.entity.Leashable.LeashData)">
-<h3 id="restoreLeashFromSave(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Leashable.LeashData)">restoreLeashFromSave</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">restoreLeashFromSave</span><wbr><span class="parameters">(E&nbsp;entity,
- <a href="Leashable.LeashData.html" title="class in net.minecraft.world.entity">Leashable.LeashData</a>&nbsp;leashData)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="dropLeash()">
 <h3>dropLeash</h3>
 <div class="horizontal-scroll">
@@ -625,16 +576,6 @@ loadScripts(document, 'script');</script>
 <h3>onLeashRemoved</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onLeashRemoved</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dropLeash(E,boolean,boolean)">
-<h3 id="dropLeash(net.minecraft.world.entity.Entity,boolean,boolean)">dropLeash</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dropLeash</span><wbr><span class="parameters">(E&nbsp;entity,
- boolean&nbsp;sendPacket,
- boolean&nbsp;dropLead)</span></div>
 </div>
 </section>
 </li>
@@ -713,38 +654,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getHolderMovement(net.minecraft.world.entity.Entity)">
-<h3>getHolderMovement</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">getHolderMovement</span><wbr><span class="parameters">(<a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;leashHolder)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="computeElasticInteraction(E,net.minecraft.world.entity.Entity,java.util.List,java.util.List)">
-<h3 id="computeElasticInteraction(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Entity,java.util.List,java.util.List)">computeElasticInteraction</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;</span>
-<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Leashable.Wrench.html" title="class in net.minecraft.world.entity">Leashable.Wrench</a>&gt;</span>&nbsp;<span class="element-name">computeElasticInteraction</span><wbr><span class="parameters">(E&nbsp;entity,
- <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;leashHolder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;&nbsp;entityAttachmentPoints,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;&nbsp;leasherAttachmentPoints)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="computeDampenedSpringInteraction(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,double,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3)">
-<h3>computeDampenedSpringInteraction</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Leashable.Wrench.html" title="class in net.minecraft.world.entity">Leashable.Wrench</a>&gt;</span>&nbsp;<span class="element-name">computeDampenedSpringInteraction</span><wbr><span class="parameters">(<a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pivotPoint,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;objectPosition,
- double&nbsp;springSlack,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;objectMotion,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;leverArm)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="supportQuadLeash()">
 <h3>supportQuadLeash</h3>
 <div class="horizontal-scroll">
@@ -798,29 +707,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="setLeashedTo(E,net.minecraft.world.entity.Entity,boolean)">
-<h3 id="setLeashedTo(net.minecraft.world.entity.Entity,net.minecraft.world.entity.Entity,boolean)">setLeashedTo</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLeashedTo</span><wbr><span class="parameters">(E&nbsp;entity,
- <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;holder,
- boolean&nbsp;synch)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getLeashHolder()">
 <h3>getLeashHolder</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">@Nullable <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a></span>&nbsp;<span class="element-name">getLeashHolder</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getLeashHolder(E)">
-<h3 id="getLeashHolder(net.minecraft.world.entity.Entity)">getLeashHolder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a> &amp; <a href="Leashable.html" title="interface in net.minecraft.world.entity">Leashable</a>&gt;</span>
-<span class="return-type">@Nullable <a href="Entity.html" title="class in net.minecraft.world.entity">Entity</a></span>&nbsp;<span class="element-name">getLeashHolder</span><wbr><span class="parameters">(E&nbsp;entity)</span></div>
 </div>
 </section>
 </li>

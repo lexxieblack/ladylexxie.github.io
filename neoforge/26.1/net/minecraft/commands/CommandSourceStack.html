@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>CommandSourceStack (NeoForge 26.1)</title>
+<title>CommandSourceStack (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.commands, class: CommandSourceStack">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/CommandSourceStack.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -63,25 +63,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#ERROR_NOT_PLAYER" tabindex="0">ERROR_NOT_PLAYER</a></li>
 <li><a href="#ERROR_NOT_ENTITY" tabindex="0">ERROR_NOT_ENTITY</a></li>
 <li><a href="#source" tabindex="0">source</a></li>
-<li><a href="#worldPosition" tabindex="0">worldPosition</a></li>
-<li><a href="#level" tabindex="0">level</a></li>
-<li><a href="#permissions" tabindex="0">permissions</a></li>
-<li><a href="#textName" tabindex="0">textName</a></li>
-<li><a href="#displayName" tabindex="0">displayName</a></li>
-<li><a href="#server" tabindex="0">server</a></li>
-<li><a href="#silent" tabindex="0">silent</a></li>
-<li><a href="#entity" tabindex="0">entity</a></li>
-<li><a href="#resultCallback" tabindex="0">resultCallback</a></li>
-<li><a href="#anchor" tabindex="0">anchor</a></li>
-<li><a href="#rotation" tabindex="0">rotation</a></li>
-<li><a href="#signingContext" tabindex="0">signingContext</a></li>
-<li><a href="#chatMessageChainer" tabindex="0">chatMessageChainer</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.commands.CommandSource,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec2,net.minecraft.server.level.ServerLevel,net.minecraft.server.permissions.PermissionSet,java.lang.String,net.minecraft.network.chat.Component,net.minecraft.server.MinecraftServer,net.minecraft.world.entity.Entity)" tabindex="0">CommandSourceStack(CommandSource, Vec3, Vec2, ServerLevel, PermissionSet, String, Component, MinecraftServer, Entity)</a></li>
-<li><a href="#%3Cinit%3E(net.minecraft.commands.CommandSource,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec2,net.minecraft.server.level.ServerLevel,net.minecraft.server.permissions.PermissionSet,java.lang.String,net.minecraft.network.chat.Component,net.minecraft.server.MinecraftServer,net.minecraft.world.entity.Entity,boolean,net.minecraft.commands.CommandResultCallback,net.minecraft.commands.arguments.EntityAnchorArgument.Anchor,net.minecraft.commands.CommandSigningContext,net.minecraft.util.TaskChainer)" tabindex="0">CommandSourceStack(CommandSource, Vec3, Vec2, ServerLevel, PermissionSet, String, Component, MinecraftServer, Entity, boolean, CommandResultCallback, EntityAnchorArgument.Anchor, CommandSigningContext, TaskChainer)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -119,7 +105,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#sendChatMessage(net.minecraft.network.chat.OutgoingChatMessage,boolean,net.minecraft.network.chat.ChatType.Bound)" tabindex="0">sendChatMessage(OutgoingChatMessage, boolean, ChatType.Bound)</a></li>
 <li><a href="#sendSystemMessage(net.minecraft.network.chat.Component)" tabindex="0">sendSystemMessage(Component)</a></li>
 <li><a href="#sendSuccess(java.util.function.Supplier,boolean)" tabindex="0">sendSuccess(Supplier, boolean)</a></li>
-<li><a href="#broadcastToAdmins(net.minecraft.network.chat.Component)" tabindex="0">broadcastToAdmins(Component)</a></li>
 <li><a href="#sendFailure(net.minecraft.network.chat.Component)" tabindex="0">sendFailure(Component)</a></li>
 <li><a href="#callback()" tabindex="0">callback()</a></li>
 <li><a href="#getOnlinePlayerNames()" tabindex="0">getOnlinePlayerNames()</a></li>
@@ -127,7 +112,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getAvailableSounds()" tabindex="0">getAvailableSounds()</a></li>
 <li><a href="#customSuggestion(com.mojang.brigadier.context.CommandContext)" tabindex="0">customSuggestion(CommandContext)</a></li>
 <li><a href="#suggestRegistryElements(net.minecraft.resources.ResourceKey,net.minecraft.commands.SharedSuggestionProvider.ElementSuggestionType,com.mojang.brigadier.suggestion.SuggestionsBuilder,com.mojang.brigadier.context.CommandContext)" tabindex="0">suggestRegistryElements(ResourceKey, SharedSuggestionProvider.ElementSuggestionType, SuggestionsBuilder, CommandContext)</a></li>
-<li><a href="#getLookup(net.minecraft.resources.ResourceKey)" tabindex="0">getLookup(ResourceKey)</a></li>
 <li><a href="#levels()" tabindex="0">levels()</a></li>
 <li><a href="#registryAccess()" tabindex="0">registryAccess()</a></li>
 <li><a href="#enabledFeatures()" tabindex="0">enabledFeatures()</a></li>
@@ -182,54 +166,15 @@ implements <a href="SharedSuggestionProvider.html" title="interface in net.minec
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="arguments/EntityAnchorArgument.Anchor.html" title="enum class in net.minecraft.commands.arguments">EntityAnchorArgument.Anchor</a></code></div>
-<div class="col-second even-row-color"><code><a href="#anchor" class="member-name-link">anchor</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../util/TaskChainer.html" title="interface in net.minecraft.util">TaskChainer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#chatMessageChainer" class="member-name-link">chatMessageChainer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second even-row-color"><code><a href="#displayName" class="member-name-link">displayName</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final @Nullable <a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#entity" class="member-name-link">entity</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../../com/mojang/brigadier/exceptions/SimpleCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">SimpleCommandExceptionType</a></code></div>
 <div class="col-second even-row-color"><code><a href="#ERROR_NOT_ENTITY" class="member-name-link">ERROR_NOT_ENTITY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="../../../com/mojang/brigadier/exceptions/SimpleCommandExceptionType.html" title="class in com.mojang.brigadier.exceptions">SimpleCommandExceptionType</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#ERROR_NOT_PLAYER" class="member-name-link">ERROR_NOT_PLAYER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a></code></div>
-<div class="col-second even-row-color"><code><a href="#level" class="member-name-link">level</a></code></div>
+<div class="col-first even-row-color"><code>final <a href="CommandSource.html" title="interface in net.minecraft.commands">CommandSource</a></code></div>
+<div class="col-second even-row-color"><code><a href="#source" class="member-name-link">source</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../server/permissions/PermissionSet.html" title="interface in net.minecraft.server.permissions">PermissionSet</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#permissions" class="member-name-link">permissions</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="CommandResultCallback.html" title="interface in net.minecraft.commands">CommandResultCallback</a></code></div>
-<div class="col-second even-row-color"><code><a href="#resultCallback" class="member-name-link">resultCallback</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#rotation" class="member-name-link">rotation</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../server/MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></code></div>
-<div class="col-second even-row-color"><code><a href="#server" class="member-name-link">server</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="CommandSigningContext.html" title="interface in net.minecraft.commands">CommandSigningContext</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#signingContext" class="member-name-link">signingContext</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#silent" class="member-name-link">silent</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="CommandSource.html" title="interface in net.minecraft.commands">CommandSource</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#source" class="member-name-link">source</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#textName" class="member-name-link">textName</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#worldPosition" class="member-name-link">worldPosition</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.commands.SharedSuggestionProvider">Fields inherited from interface&nbsp;<a href="SharedSuggestionProvider.html#field-summary" title="interface in net.minecraft.commands">SharedSuggestionProvider</a></h3>
@@ -241,11 +186,9 @@ implements <a href="SharedSuggestionProvider.html" title="interface in net.minec
 <section class="constructor-summary" id="constructor-summary">
 <h2>Constructor Summary</h2>
 <div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>&nbsp;</code></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.commands.CommandSource,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec2,net.minecraft.server.level.ServerLevel,net.minecraft.server.permissions.PermissionSet,java.lang.String,net.minecraft.network.chat.Component,net.minecraft.server.MinecraftServer,net.minecraft.world.entity.Entity)" class="member-name-link">CommandSourceStack</a><wbr>(<a href="CommandSource.html" title="interface in net.minecraft.commands">CommandSource</a>&nbsp;source,
  <a href="../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;position,
  <a href="../world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a>&nbsp;rotation,
@@ -256,22 +199,6 @@ implements <a href="SharedSuggestionProvider.html" title="interface in net.minec
  <a href="../server/MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a>&nbsp;server,
  @Nullable <a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.minecraft.commands.CommandSource,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec2,net.minecraft.server.level.ServerLevel,net.minecraft.server.permissions.PermissionSet,java.lang.String,net.minecraft.network.chat.Component,net.minecraft.server.MinecraftServer,net.minecraft.world.entity.Entity,boolean,net.minecraft.commands.CommandResultCallback,net.minecraft.commands.arguments.EntityAnchorArgument.Anchor,net.minecraft.commands.CommandSigningContext,net.minecraft.util.TaskChainer)" class="member-name-link">CommandSourceStack</a><wbr>(<a href="CommandSource.html" title="interface in net.minecraft.commands">CommandSource</a>&nbsp;source,
- <a href="../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;position,
- <a href="../world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a>&nbsp;rotation,
- <a href="../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../server/permissions/PermissionSet.html" title="interface in net.minecraft.server.permissions">PermissionSet</a>&nbsp;permissions,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;textName,
- <a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;displayName,
- <a href="../server/MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a>&nbsp;server,
- @Nullable <a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
- boolean&nbsp;silent,
- <a href="CommandResultCallback.html" title="interface in net.minecraft.commands">CommandResultCallback</a>&nbsp;resultCallback,
- <a href="arguments/EntityAnchorArgument.Anchor.html" title="enum class in net.minecraft.commands.arguments">EntityAnchorArgument.Anchor</a>&nbsp;anchor,
- <a href="CommandSigningContext.html" title="interface in net.minecraft.commands">CommandSigningContext</a>&nbsp;signingContext,
- <a href="../util/TaskChainer.html" title="interface in net.minecraft.util">TaskChainer</a>&nbsp;chatMessageChainer)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -286,54 +213,48 @@ implements <a href="SharedSuggestionProvider.html" title="interface in net.minec
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#broadcastToAdmins(net.minecraft.network.chat.Component)" class="member-name-link">broadcastToAdmins</a><wbr>(<a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CommandResultCallback.html" title="interface in net.minecraft.commands">CommandResultCallback</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#callback()" class="member-name-link">callback</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CommandResultCallback.html" title="interface in net.minecraft.commands">CommandResultCallback</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#callback()" class="member-name-link">callback</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="../../../com/mojang/brigadier/suggestion/Suggestions.html" title="class in com.mojang.brigadier.suggestion">Suggestions</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#customSuggestion(com.mojang.brigadier.context.CommandContext)" class="member-name-link">customSuggestion</a><wbr>(<a href="../../../com/mojang/brigadier/context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;?&gt;&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="../../../com/mojang/brigadier/suggestion/Suggestions.html" title="class in com.mojang.brigadier.suggestion">Suggestions</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#customSuggestion(com.mojang.brigadier.context.CommandContext)" class="member-name-link">customSuggestion</a><wbr>(<a href="../../../com/mojang/brigadier/context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;?&gt;&nbsp;context)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../com/mojang/brigadier/CommandDispatcher.html" title="class in com.mojang.brigadier">CommandDispatcher</a><wbr>&lt;<a href="CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dispatcher()" class="member-name-link">dispatcher</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../com/mojang/brigadier/CommandDispatcher.html" title="class in com.mojang.brigadier">CommandDispatcher</a><wbr>&lt;<a href="CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dispatcher()" class="member-name-link">dispatcher</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../world/flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enabledFeatures()" class="member-name-link">enabledFeatures</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#facing(net.minecraft.world.entity.Entity,net.minecraft.commands.arguments.EntityAnchorArgument.Anchor)" class="member-name-link">facing</a><wbr>(<a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
- <a href="arguments/EntityAnchorArgument.Anchor.html" title="enum class in net.minecraft.commands.arguments">EntityAnchorArgument.Anchor</a>&nbsp;anchor)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../world/flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enabledFeatures()" class="member-name-link">enabledFeatures</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#facing(net.minecraft.world.phys.Vec3)" class="member-name-link">facing</a><wbr>(<a href="../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#facing(net.minecraft.world.entity.Entity,net.minecraft.commands.arguments.EntityAnchorArgument.Anchor)" class="member-name-link">facing</a><wbr>(<a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
+ <a href="arguments/EntityAnchorArgument.Anchor.html" title="enum class in net.minecraft.commands.arguments">EntityAnchorArgument.Anchor</a>&nbsp;anchor)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllTeams()" class="member-name-link">getAllTeams</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#facing(net.minecraft.world.phys.Vec3)" class="member-name-link">facing</a><wbr>(<a href="../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="arguments/EntityAnchorArgument.Anchor.html" title="enum class in net.minecraft.commands.arguments">EntityAnchorArgument.Anchor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAnchor()" class="member-name-link">getAnchor</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllTeams()" class="member-name-link">getAllTeams</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAvailableSounds()" class="member-name-link">getAvailableSounds</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="arguments/EntityAnchorArgument.Anchor.html" title="enum class in net.minecraft.commands.arguments">EntityAnchorArgument.Anchor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAnchor()" class="member-name-link">getAnchor</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/TaskChainer.html" title="interface in net.minecraft.util">TaskChainer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChatMessageChainer()" class="member-name-link">getChatMessageChainer</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAvailableSounds()" class="member-name-link">getAvailableSounds</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDisplayName()" class="member-name-link">getDisplayName</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/TaskChainer.html" title="interface in net.minecraft.util">TaskChainer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChatMessageChainer()" class="member-name-link">getChatMessageChainer</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntity()" class="member-name-link">getEntity</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDisplayName()" class="member-name-link">getDisplayName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityOrException()" class="member-name-link">getEntityOrException</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntity()" class="member-name-link">getEntity</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLevel()" class="member-name-link">getLevel</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityOrException()" class="member-name-link">getEntityOrException</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;? extends <a href="../core/HolderLookup.html" title="interface in net.minecraft.core">HolderLookup</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLookup(net.minecraft.resources.ResourceKey)" class="member-name-link">getLookup</a><wbr>(<a href="../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;&nbsp;key)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLevel()" class="member-name-link">getLevel</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOnlinePlayerNames()" class="member-name-link">getOnlinePlayerNames</a>()</code></div>
@@ -447,7 +368,7 @@ implements <a href="SharedSuggestionProvider.html" title="interface in net.minec
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.commands.ExecutionCommandSource">Methods inherited from interface&nbsp;<a href="ExecutionCommandSource.html#method-summary" title="interface in net.minecraft.commands">ExecutionCommandSource</a></h3>
 <code><a href="ExecutionCommandSource.html#clearCallbacks()" title="clearCallbacks()">clearCallbacks</a>, <a href="ExecutionCommandSource.html#handleError(com.mojang.brigadier.exceptions.CommandSyntaxException,boolean,net.minecraft.commands.execution.TraceCallbacks)" title="handleError(CommandSyntaxException, boolean, TraceCallbacks)">handleError</a></code></div>
@@ -492,110 +413,6 @@ implements <a href="SharedSuggestionProvider.html" title="interface in net.minec
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="worldPosition">
-<h3>worldPosition</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">worldPosition</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="level">
-<h3>level</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a></span>&nbsp;<span class="element-name">level</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="permissions">
-<h3>permissions</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../server/permissions/PermissionSet.html" title="interface in net.minecraft.server.permissions">PermissionSet</a></span>&nbsp;<span class="element-name">permissions</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="textName">
-<h3>textName</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">textName</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="displayName">
-<h3>displayName</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></span>&nbsp;<span class="element-name">displayName</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="server">
-<h3>server</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../server/MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a></span>&nbsp;<span class="element-name">server</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="silent">
-<h3>silent</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">silent</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="entity">
-<h3>entity</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">@Nullable <a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a></span>&nbsp;<span class="element-name">entity</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resultCallback">
-<h3>resultCallback</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="CommandResultCallback.html" title="interface in net.minecraft.commands">CommandResultCallback</a></span>&nbsp;<span class="element-name">resultCallback</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="anchor">
-<h3>anchor</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="arguments/EntityAnchorArgument.Anchor.html" title="enum class in net.minecraft.commands.arguments">EntityAnchorArgument.Anchor</a></span>&nbsp;<span class="element-name">anchor</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="rotation">
-<h3>rotation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a></span>&nbsp;<span class="element-name">rotation</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="signingContext">
-<h3>signingContext</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="CommandSigningContext.html" title="interface in net.minecraft.commands">CommandSigningContext</a></span>&nbsp;<span class="element-name">signingContext</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="chatMessageChainer">
-<h3>chatMessageChainer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../util/TaskChainer.html" title="interface in net.minecraft.util">TaskChainer</a></span>&nbsp;<span class="element-name">chatMessageChainer</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -617,27 +434,6 @@ implements <a href="SharedSuggestionProvider.html" title="interface in net.minec
  <a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;displayName,
  <a href="../server/MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a>&nbsp;server,
  @Nullable <a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.commands.CommandSource,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec2,net.minecraft.server.level.ServerLevel,net.minecraft.server.permissions.PermissionSet,java.lang.String,net.minecraft.network.chat.Component,net.minecraft.server.MinecraftServer,net.minecraft.world.entity.Entity,boolean,net.minecraft.commands.CommandResultCallback,net.minecraft.commands.arguments.EntityAnchorArgument.Anchor,net.minecraft.commands.CommandSigningContext,net.minecraft.util.TaskChainer)">
-<h3>CommandSourceStack</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">CommandSourceStack</span><wbr><span class="parameters">(<a href="CommandSource.html" title="interface in net.minecraft.commands">CommandSource</a>&nbsp;source,
- <a href="../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;position,
- <a href="../world/phys/Vec2.html" title="class in net.minecraft.world.phys">Vec2</a>&nbsp;rotation,
- <a href="../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../server/permissions/PermissionSet.html" title="interface in net.minecraft.server.permissions">PermissionSet</a>&nbsp;permissions,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;textName,
- <a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;displayName,
- <a href="../server/MinecraftServer.html" title="class in net.minecraft.server">MinecraftServer</a>&nbsp;server,
- @Nullable <a href="../world/entity/Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;entity,
- boolean&nbsp;silent,
- <a href="CommandResultCallback.html" title="interface in net.minecraft.commands">CommandResultCallback</a>&nbsp;resultCallback,
- <a href="arguments/EntityAnchorArgument.Anchor.html" title="enum class in net.minecraft.commands.arguments">EntityAnchorArgument.Anchor</a>&nbsp;anchor,
- <a href="CommandSigningContext.html" title="interface in net.minecraft.commands">CommandSigningContext</a>&nbsp;signingContext,
- <a href="../util/TaskChainer.html" title="interface in net.minecraft.util">TaskChainer</a>&nbsp;chatMessageChainer)</span></div>
 </div>
 </section>
 </li>
@@ -938,14 +734,6 @@ implements <a href="SharedSuggestionProvider.html" title="interface in net.minec
 </section>
 </li>
 <li>
-<section class="detail" id="broadcastToAdmins(net.minecraft.network.chat.Component)">
-<h3>broadcastToAdmins</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">broadcastToAdmins</span><wbr><span class="parameters">(<a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="sendFailure(net.minecraft.network.chat.Component)">
 <h3>sendFailure</h3>
 <div class="horizontal-scroll">
@@ -1025,14 +813,6 @@ implements <a href="SharedSuggestionProvider.html" title="interface in net.minec
 <dt>Specified by:</dt>
 <dd><code><a href="SharedSuggestionProvider.html#suggestRegistryElements(net.minecraft.resources.ResourceKey,net.minecraft.commands.SharedSuggestionProvider.ElementSuggestionType,com.mojang.brigadier.suggestion.SuggestionsBuilder,com.mojang.brigadier.context.CommandContext)">suggestRegistryElements</a></code>&nbsp;in interface&nbsp;<code><a href="SharedSuggestionProvider.html" title="interface in net.minecraft.commands">SharedSuggestionProvider</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getLookup(net.minecraft.resources.ResourceKey)">
-<h3>getLookup</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;? extends <a href="../core/HolderLookup.html" title="interface in net.minecraft.core">HolderLookup</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">getLookup</span><wbr><span class="parameters">(<a href="../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;&nbsp;key)</span></div>
 </div>
 </section>
 </li>

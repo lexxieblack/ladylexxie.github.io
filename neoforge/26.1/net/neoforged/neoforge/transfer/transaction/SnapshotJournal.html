@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>SnapshotJournal (NeoForge 26.1)</title>
+<title>SnapshotJournal (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.transfer.transaction, class: SnapshotJournal">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/SnapshotJournal.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,16 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#NO_SNAPSHOT" tabindex="0">NO_SNAPSHOT</a></li>
-<li><a href="#snapshots" tabindex="0">snapshots</a></li>
-<li><a href="#originalState" tabindex="0">originalState</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">SnapshotJournal()</a></li>
@@ -71,13 +63,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#createSnapshot()" tabindex="0">createSnapshot()</a></li>
-<li><a href="#revertToSnapshot(T)" tabindex="0">revertToSnapshot(T)</a></li>
-<li><a href="#releaseSnapshot(T)" tabindex="0">releaseSnapshot(T)</a></li>
-<li><a href="#onRootCommit(T)" tabindex="0">onRootCommit(T)</a></li>
 <li><a href="#updateSnapshots(net.neoforged.neoforge.transfer.transaction.TransactionContext)" tabindex="0">updateSnapshots(TransactionContext)</a></li>
-<li><a href="#onClose(net.neoforged.neoforge.transfer.transaction.Transaction,boolean)" tabindex="0">onClose(Transaction, boolean)</a></li>
-<li><a href="#callOnRootCommit()" tabindex="0">callOnRootCommit()</a></li>
 </ol>
 </li>
 </ol>
@@ -97,7 +83,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="../fluid/CauldronWrapper.html" title="class in net.neoforged.neoforge.transfer.fluid">CauldronWrapper</a>, <a href="../item/ComposterWrapper.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper</a>, <a href="../item/ItemStackResourceHandler.html" title="class in net.neoforged.neoforge.transfer.item">ItemStackResourceHandler</a>, <a href="../item/PlayerInventoryWrapper.DroppedItems.html" title="class in net.neoforged.neoforge.transfer.item">PlayerInventoryWrapper.DroppedItems</a>, <a href="RootCommitJournal.html" title="class in net.neoforged.neoforge.transfer.transaction">RootCommitJournal</a>, <a href="../energy/SimpleEnergyHandler.EnergyJournal.html" title="class in net.neoforged.neoforge.transfer.energy">SimpleEnergyHandler.EnergyJournal</a>, <a href="../StacksResourceHandler.StackJournal.html" title="class in net.neoforged.neoforge.transfer">StacksResourceHandler.StackJournal</a>, <a href="../item/TransactionalRandom.html" title="class in net.neoforged.neoforge.transfer.item">TransactionalRandom</a></code></dd>
+<dd><code><a href="../fluid/CauldronWrapper.html" title="class in net.neoforged.neoforge.transfer.fluid">CauldronWrapper</a>, <a href="../item/ComposterWrapper.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper</a>, <a href="../item/ItemStackResourceHandler.html" title="class in net.neoforged.neoforge.transfer.item">ItemStackResourceHandler</a>, <a href="RootCommitJournal.html" title="class in net.neoforged.neoforge.transfer.transaction">RootCommitJournal</a>, <a href="../item/TransactionalRandom.html" title="class in net.neoforged.neoforge.transfer.item">TransactionalRandom</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -109,52 +95,29 @@ saving snapshots of its state in objects of type <code>T</code> in case it needs
 <h3 id="how-to-use-from-subclasses-heading">How to use from subclasses</h3>
 <ul>
 <li>Call <a href="#updateSnapshots(net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>updateSnapshots(TransactionContext)</code></a> right before the state of your subclass is modified in a transaction.</li>
-<li>Override <a href="#createSnapshot()"><code>createSnapshot()</code></a>: it is called when necessary to create an object representing the state of your subclass.</li>
-<li>Override <a href="#revertToSnapshot(T)"><code>revertToSnapshot(T)</code></a>: it is called when necessary to revert to a previous state of your subclass.</li>
-<li>You may optionally override <a href="#onRootCommit(T)"><code>onRootCommit(T)</code></a>: it is called at the end of a transaction that modified the state.
+<li>Override <code>createSnapshot()</code>: it is called when necessary to create an object representing the state of your subclass.</li>
+<li>Override <code>revertToSnapshot(T)</code>: it is called when necessary to revert to a previous state of your subclass.</li>
+<li>You may optionally override <code>onRootCommit(T)</code>: it is called at the end of a transaction that modified the state.
 For example, it could contain a call to <code>setChanged()</code>.</li>
-<li>(Advanced!) You may optionally override <a href="#releaseSnapshot(T)"><code>releaseSnapshot(T)</code></a>: it is called once a snapshot object will not be used,
+<li>(Advanced!) You may optionally override <code>releaseSnapshot(T)</code>: it is called once a snapshot object will not be used,
 for example you may wish to pool expensive state objects.</li>
 </ul>
 
 <h3 id="more-technical-explanation-heading">More technical explanation</h3>
 
 <p><a href="#updateSnapshots(net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>updateSnapshots(TransactionContext)</code></a> should be called before any modification.
-This will record the state in the journal using <a href="#createSnapshot()"><code>createSnapshot()</code></a> if no state was already saved for that transaction.
-When the transaction is aborted and changes need to be rolled back, <a href="#revertToSnapshot(T)"><code>revertToSnapshot(T)</code></a> will be called
+This will record the state in the journal using <code>createSnapshot()</code> if no state was already saved for that transaction.
+When the transaction is aborted and changes need to be rolled back, <code>revertToSnapshot(T)</code> will be called
 to signal that the current state should revert to that of the snapshot.
-The snapshot object is then <a href="#releaseSnapshot(T)">released</a>, and can be cached for subsequent use, or discarded.
+The snapshot object is then released, and can be cached for subsequent use, or discarded.
 
-<p>When the root transaction is committed, <a href="#revertToSnapshot(T)"><code>revertToSnapshot(T)</code></a> will not be called so that the current state of the journal
-is retained. <a href="#onRootCommit(T)"><code>onRootCommit(T)</code></a> will be called after the transaction is closed
-and then <a href="#releaseSnapshot(T)"><code>releaseSnapshot(T)</code></a> will be called because the snapshot is not necessary anymore.</div>
+<p>When the root transaction is committed, <code>revertToSnapshot(T)</code> will not be called so that the current state of the journal
+is retained. <code>onRootCommit(T)</code> will be called after the transaction is closed
+and then <code>releaseSnapshot(T)</code> will be called because the snapshot is not necessary anymore.</div>
 </div>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color"><code><a href="#NO_SNAPSHOT" class="member-name-link">NO_SNAPSHOT</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Used for entries of <a href="#snapshots"><code>snapshots</code></a> that do not correspond to a snapshot.</div>
-</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="#type-param-T" title="type parameter in SnapshotJournal">T</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#originalState" class="member-name-link">originalState</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="#type-param-T" title="type parameter in SnapshotJournal">T</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#snapshots" class="member-name-link">snapshots</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -173,43 +136,12 @@ and then <a href="#releaseSnapshot(T)"><code>releaseSnapshot(T)</code></a> will 
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>(package private) void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#callOnRootCommit()" class="member-name-link">callOnRootCommit</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="#type-param-T" title="type parameter in SnapshotJournal">T</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createSnapshot()" class="member-name-link">createSnapshot</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Return a new <b>nonnull</b> object containing the current state of this journal.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>(package private) void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onClose(net.neoforged.neoforge.transfer.transaction.Transaction,boolean)" class="member-name-link">onClose</a><wbr>(<a href="Transaction.html" title="class in net.neoforged.neoforge.transfer.transaction">Transaction</a>&nbsp;transaction,
- boolean&nbsp;wasAborted)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Perform the required state management when a transaction is closed.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onRootCommit(T)" class="member-name-link">onRootCommit</a><wbr>(<a href="#type-param-T" title="type parameter in SnapshotJournal">T</a>&nbsp;originalState)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Called after the root transaction was successfully committed,
-to perform irreversible actions such as <code>setChanged()</code> or neighbor updates.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseSnapshot(T)" class="member-name-link">releaseSnapshot</a><wbr>(<a href="#type-param-T" title="type parameter in SnapshotJournal">T</a>&nbsp;snapshot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Signals that the snapshot will not be used anymore, and is safe to cache for future calls to <a href="#createSnapshot()"><code>createSnapshot()</code></a>,
-or discard entirely.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#revertToSnapshot(T)" class="member-name-link">revertToSnapshot</a><wbr>(<a href="#type-param-T" title="type parameter in SnapshotJournal">T</a>&nbsp;snapshot)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Roll back to a state previously created by <a href="#createSnapshot()"><code>createSnapshot()</code></a>.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateSnapshots(net.neoforged.neoforge.transfer.transaction.TransactionContext)" class="member-name-link">updateSnapshots</a><wbr>(<a href="TransactionContext.html" title="interface in net.neoforged.neoforge.transfer.transaction">TransactionContext</a>&nbsp;transaction)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -221,47 +153,13 @@ committed or rolled back.</div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="NO_SNAPSHOT">
-<h3>NO_SNAPSHOT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">NO_SNAPSHOT</span></div>
-<div class="block">Used for entries of <a href="#snapshots"><code>snapshots</code></a> that do not correspond to a snapshot.
-<code>null</code> corresponds to a snapshot that happens to be <code>null</code>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="snapshots">
-<h3>snapshots</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="#type-param-T" title="type parameter in SnapshotJournal">T</a> extends @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">snapshots</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="originalState">
-<h3>originalState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="#type-param-T" title="type parameter in SnapshotJournal">T</a> extends @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">originalState</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -284,74 +182,6 @@ committed or rolled back.</div>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="createSnapshot()">
-<h3>createSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="#type-param-T" title="type parameter in SnapshotJournal">T</a></span>&nbsp;<span class="element-name">createSnapshot</span>()</div>
-<div class="block">Return a new <b>nonnull</b> object containing the current state of this journal.
-<b><code>null</code> may not be returned, or an exception will be thrown!</b></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="revertToSnapshot(T)">
-<h3 id="revertToSnapshot(java.lang.Object)">revertToSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">revertToSnapshot</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in SnapshotJournal">T</a>&nbsp;snapshot)</span></div>
-<div class="block">Roll back to a state previously created by <a href="#createSnapshot()"><code>createSnapshot()</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="releaseSnapshot(T)">
-<h3 id="releaseSnapshot(java.lang.Object)">releaseSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">releaseSnapshot</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in SnapshotJournal">T</a>&nbsp;snapshot)</span></div>
-<div class="block">Signals that the snapshot will not be used anymore, and is safe to cache for future calls to <a href="#createSnapshot()"><code>createSnapshot()</code></a>,
-or discard entirely.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onRootCommit(T)">
-<h3 id="onRootCommit(java.lang.Object)">onRootCommit</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onRootCommit</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in SnapshotJournal">T</a>&nbsp;originalState)</span></div>
-<div class="block">Called after the root transaction was successfully committed,
-to perform irreversible actions such as <code>setChanged()</code> or neighbor updates.
-
-<p>When a root transaction is being closed,
-all journals for which <code>onRootCommit</code> will be called are stored in a global thread-local queue.
-The processing of this queue starts <strong>immediately after</strong> the root transaction is closed.
-As such, new root transactions can safely be opened from this method.
-
-<p>When a root transaction is opened from <code>onRootCommit</code>,
-any journal might be modified, leading to more <code>onRootCommit</code> callbacks being enqueued:
-<ul>
-<li>A journal that is already enqueued for <code>onRootCommit</code> will not be enqueued a second time.
-It will thus be notified a single time for changes that spanned multiple transactions.
-The <code>originalState</code> will be the state at the beginning of the first of these transactions.</li>
-<li>A journal whose <code>onRootCommit</code> was already processed will be enqueued again.
-The journal will be notified a second time, with <code>originalState</code> the state at the beginning of the <strong>second</strong> transaction.</li>
-<li>In particular, a journal is removed from the queue immediately before <code>onRootCommit</code> is called.
-Should the journal be modified again from its own <code>onRootCommit</code>, it will be added to the queue,
-and <code>onRootCommit</code> will be called again later.</li>
-</ul>
-
-<p>Given the large amount of actions that can happen between the last modification and the call to <code>onRootCommit</code>,
-journals should not depend on <code>onRootCommit</code> being called immediately for correctness,
-and implementations of this method should be careful (e.g. in case the journal got removed from the level).
-For example, skipping block change notifications because the block was removed from the level
-is preferable than crashing or silently overwriting the block.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>originalState</code> - state of this journal before the transactional operations.
-                     This corresponds to the first <a href="#createSnapshot()"><code>snapshot</code></a> that was created in the transactional operations.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="updateSnapshots(net.neoforged.neoforge.transfer.transaction.TransactionContext)">
 <h3>updateSnapshots</h3>
 <div class="horizontal-scroll">
@@ -360,24 +190,6 @@ is preferable than crashing or silently overwriting the block.</div>
 committed or rolled back.
 This function should be called every time the journal is about to change its internal state as part of a transaction.
 However, only the first snapshot taken of that depth will be taken.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onClose(net.neoforged.neoforge.transfer.transaction.Transaction,boolean)">
-<h3>onClose</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">onClose</span><wbr><span class="parameters">(<a href="Transaction.html" title="class in net.neoforged.neoforge.transfer.transaction">Transaction</a>&nbsp;transaction,
- boolean&nbsp;wasAborted)</span></div>
-<div class="block">Perform the required state management when a transaction is closed.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="callOnRootCommit()">
-<h3>callOnRootCommit</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">callOnRootCommit</span>()</div>
 </div>
 </section>
 </li>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>WorldBorderRenderer (NeoForge 26.1)</title>
+<title>WorldBorderRenderer (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.renderer, class: WorldBorderRenderer">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/WorldBorderRenderer.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,15 +60,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#FORCEFIELD_LOCATION" tabindex="0">FORCEFIELD_LOCATION</a></li>
-<li><a href="#needsRebuild" tabindex="0">needsRebuild</a></li>
-<li><a href="#lastMinX" tabindex="0">lastMinX</a></li>
-<li><a href="#lastMinZ" tabindex="0">lastMinZ</a></li>
-<li><a href="#lastBorderMinX" tabindex="0">lastBorderMinX</a></li>
-<li><a href="#lastBorderMaxX" tabindex="0">lastBorderMaxX</a></li>
-<li><a href="#lastBorderMinZ" tabindex="0">lastBorderMinZ</a></li>
-<li><a href="#lastBorderMaxZ" tabindex="0">lastBorderMaxZ</a></li>
-<li><a href="#worldBorderBuffer" tabindex="0">worldBorderBuffer</a></li>
-<li><a href="#indices" tabindex="0">indices</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -78,11 +69,9 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#rebuildWorldBorderBuffer(net.minecraft.client.renderer.state.level.WorldBorderRenderState,double,double,double,float,float,float)" tabindex="0">rebuildWorldBorderBuffer(WorldBorderRenderState, double, double, double, float, float, float)</a></li>
 <li><a href="#extract(net.minecraft.world.level.border.WorldBorder,float,net.minecraft.world.phys.Vec3,double,net.minecraft.client.renderer.state.level.WorldBorderRenderState)" tabindex="0">extract(WorldBorder, float, Vec3, double, WorldBorderRenderState)</a></li>
 <li><a href="#render(net.minecraft.client.renderer.state.level.WorldBorderRenderState,net.minecraft.world.phys.Vec3,double,double)" tabindex="0">render(WorldBorderRenderState, Vec3, double, double)</a></li>
 <li><a href="#invalidate()" tabindex="0">invalidate()</a></li>
-<li><a href="#shouldRebuildWorldBorderBuffer(net.minecraft.client.renderer.state.level.WorldBorderRenderState)" tabindex="0">shouldRebuildWorldBorderBuffer(WorldBorderRenderState)</a></li>
 </ol>
 </li>
 </ol>
@@ -116,33 +105,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final <a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
 <div class="col-second even-row-color"><code><a href="#FORCEFIELD_LOCATION" class="member-name-link">FORCEFIELD_LOCATION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../com/mojang/blaze3d/systems/RenderSystem.AutoStorageIndexBuffer.html" title="class in com.mojang.blaze3d.systems">RenderSystem.AutoStorageIndexBuffer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#indices" class="member-name-link">indices</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#lastBorderMaxX" class="member-name-link">lastBorderMaxX</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private double</code></div>
-<div class="col-second odd-row-color"><code><a href="#lastBorderMaxZ" class="member-name-link">lastBorderMaxZ</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#lastBorderMinX" class="member-name-link">lastBorderMinX</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private double</code></div>
-<div class="col-second odd-row-color"><code><a href="#lastBorderMinZ" class="member-name-link">lastBorderMinZ</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#lastMinX" class="member-name-link">lastMinX</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private double</code></div>
-<div class="col-second odd-row-color"><code><a href="#lastMinZ" class="member-name-link">lastMinZ</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#needsRebuild" class="member-name-link">needsRebuild</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../com/mojang/blaze3d/buffers/GpuBuffer.html" title="class in com.mojang.blaze3d.buffers">GpuBuffer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#worldBorderBuffer" class="member-name-link">worldBorderBuffer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -180,30 +142,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invalidate()" class="member-name-link">invalidate</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rebuildWorldBorderBuffer(net.minecraft.client.renderer.state.level.WorldBorderRenderState,double,double,double,float,float,float)" class="member-name-link">rebuildWorldBorderBuffer</a><wbr>(<a href="state/level/WorldBorderRenderState.html" title="class in net.minecraft.client.renderer.state.level">WorldBorderRenderState</a>&nbsp;state,
- double&nbsp;renderDistance,
- double&nbsp;cameraZ,
- double&nbsp;cameraX,
- float&nbsp;halfHeightY,
- float&nbsp;v1,
- float&nbsp;v0)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(net.minecraft.client.renderer.state.level.WorldBorderRenderState,net.minecraft.world.phys.Vec3,double,double)" class="member-name-link">render</a><wbr>(<a href="state/level/WorldBorderRenderState.html" title="class in net.minecraft.client.renderer.state.level">WorldBorderRenderState</a>&nbsp;state,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(net.minecraft.client.renderer.state.level.WorldBorderRenderState,net.minecraft.world.phys.Vec3,double,double)" class="member-name-link">render</a><wbr>(<a href="state/level/WorldBorderRenderState.html" title="class in net.minecraft.client.renderer.state.level">WorldBorderRenderState</a>&nbsp;state,
  <a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos,
  double&nbsp;renderDistance,
  double&nbsp;depthFar)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldRebuildWorldBorderBuffer(net.minecraft.client.renderer.state.level.WorldBorderRenderState)" class="member-name-link">shouldRebuildWorldBorderBuffer</a><wbr>(<a href="state/level/WorldBorderRenderState.html" title="class in net.minecraft.client.renderer.state.level">WorldBorderRenderState</a>&nbsp;state)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -220,78 +170,6 @@ loadScripts(document, 'script');</script>
 <h3>FORCEFIELD_LOCATION</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></span>&nbsp;<span class="element-name">FORCEFIELD_LOCATION</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="needsRebuild">
-<h3>needsRebuild</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">needsRebuild</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastMinX">
-<h3>lastMinX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">lastMinX</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastMinZ">
-<h3>lastMinZ</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">lastMinZ</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastBorderMinX">
-<h3>lastBorderMinX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">lastBorderMinX</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastBorderMaxX">
-<h3>lastBorderMaxX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">lastBorderMaxX</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastBorderMinZ">
-<h3>lastBorderMinZ</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">lastBorderMinZ</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastBorderMaxZ">
-<h3>lastBorderMaxZ</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">lastBorderMaxZ</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="worldBorderBuffer">
-<h3>worldBorderBuffer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/blaze3d/buffers/GpuBuffer.html" title="class in com.mojang.blaze3d.buffers">GpuBuffer</a></span>&nbsp;<span class="element-name">worldBorderBuffer</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="indices">
-<h3>indices</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/blaze3d/systems/RenderSystem.AutoStorageIndexBuffer.html" title="class in com.mojang.blaze3d.systems">RenderSystem.AutoStorageIndexBuffer</a></span>&nbsp;<span class="element-name">indices</span></div>
 </div>
 </section>
 </li>
@@ -320,20 +198,6 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="rebuildWorldBorderBuffer(net.minecraft.client.renderer.state.level.WorldBorderRenderState,double,double,double,float,float,float)">
-<h3>rebuildWorldBorderBuffer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">rebuildWorldBorderBuffer</span><wbr><span class="parameters">(<a href="state/level/WorldBorderRenderState.html" title="class in net.minecraft.client.renderer.state.level">WorldBorderRenderState</a>&nbsp;state,
- double&nbsp;renderDistance,
- double&nbsp;cameraZ,
- double&nbsp;cameraX,
- float&nbsp;halfHeightY,
- float&nbsp;v1,
- float&nbsp;v0)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="extract(net.minecraft.world.level.border.WorldBorder,float,net.minecraft.world.phys.Vec3,double,net.minecraft.client.renderer.state.level.WorldBorderRenderState)">
 <h3>extract</h3>
 <div class="horizontal-scroll">
@@ -361,14 +225,6 @@ loadScripts(document, 'script');</script>
 <h3>invalidate</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">invalidate</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="shouldRebuildWorldBorderBuffer(net.minecraft.client.renderer.state.level.WorldBorderRenderState)">
-<h3>shouldRebuildWorldBorderBuffer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shouldRebuildWorldBorderBuffer</span><wbr><span class="parameters">(<a href="state/level/WorldBorderRenderState.html" title="class in net.minecraft.client.renderer.state.level">WorldBorderRenderState</a>&nbsp;state)</span></div>
 </div>
 </section>
 </li>

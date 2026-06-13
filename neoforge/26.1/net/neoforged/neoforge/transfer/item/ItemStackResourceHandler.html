@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ItemStackResourceHandler (NeoForge 26.1)</title>
+<title>ItemStackResourceHandler (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.transfer.item, class: ItemStackResourceHandler">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ItemStackResourceHandler.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -69,10 +69,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#getStack()" tabindex="0">getStack()</a></li>
-<li><a href="#setStack(net.minecraft.world.item.ItemStack)" tabindex="0">setStack(ItemStack)</a></li>
-<li><a href="#isValid(net.neoforged.neoforge.transfer.item.ItemResource)" tabindex="0">isValid(ItemResource)</a></li>
-<li><a href="#getCapacity(net.neoforged.neoforge.transfer.item.ItemResource)" tabindex="0">getCapacity(ItemResource)</a></li>
 <li><a href="#size()" tabindex="0">size()</a></li>
 <li><a href="#insert(int,net.neoforged.neoforge.transfer.item.ItemResource,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" tabindex="0">insert(int, ItemResource, int, TransactionContext)</a></li>
 <li><a href="#extract(int,net.neoforged.neoforge.transfer.item.ItemResource,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" tabindex="0">extract(int, ItemResource, int, TransactionContext)</a></li>
@@ -80,8 +76,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getAmountAsLong(int)" tabindex="0">getAmountAsLong(int)</a></li>
 <li><a href="#getCapacityAsLong(int,net.neoforged.neoforge.transfer.item.ItemResource)" tabindex="0">getCapacityAsLong(int, ItemResource)</a></li>
 <li><a href="#isValid(int,net.neoforged.neoforge.transfer.item.ItemResource)" tabindex="0">isValid(int, ItemResource)</a></li>
-<li><a href="#createSnapshot()" tabindex="0">createSnapshot()</a></li>
-<li><a href="#revertToSnapshot(net.minecraft.world.item.ItemStack)" tabindex="0">revertToSnapshot(ItemStack)</a></li>
 <li><a href="#serialize(net.minecraft.world.level.storage.ValueOutput)" tabindex="0">serialize(ValueOutput)</a></li>
 <li><a href="#deserialize(net.minecraft.world.level.storage.ValueInput)" tabindex="0">deserialize(ValueInput)</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
@@ -106,7 +100,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="CarriedSlotWrapper.html" title="class in net.neoforged.neoforge.transfer.item">CarriedSlotWrapper</a>, <a href="LivingEntityEquipmentWrapper.SlotWrapper.html" title="class in net.neoforged.neoforge.transfer.item">LivingEntityEquipmentWrapper.SlotWrapper</a>, <a href="VanillaContainerWrapper.SlotWrapper.html" title="class in net.neoforged.neoforge.transfer.item">VanillaContainerWrapper.SlotWrapper</a></code></dd>
+<dd><code><a href="CarriedSlotWrapper.html" title="class in net.neoforged.neoforge.transfer.item">CarriedSlotWrapper</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -114,11 +108,11 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction">SnapshotJournal</a>&lt;<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;
 implements <a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;, <a href="../../common/util/ValueIOSerializable.html" title="interface in net.neoforged.neoforge.common.util">ValueIOSerializable</a></span></div>
 <div class="block">A <strong>single-index</strong> item resource handler, backed by an <a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item"><code>ItemStack</code></a>.
-Implementors should at least override <a href="#getStack()"><code>getStack()</code></a> and <a href="#setStack(net.minecraft.world.item.ItemStack)"><code>setStack(ItemStack)</code></a>,
-and probably <a href="../transaction/SnapshotJournal.html#onRootCommit(T)"><code>SnapshotJournal.onRootCommit(T)</code></a> as well for <code>setChanged()</code> and similar calls.
+Implementors should at least override <code>getStack()</code> and <code>setStack(ItemStack)</code>,
+and probably <code>SnapshotJournal.onRootCommit(T)</code> as well for <code>setChanged()</code> and similar calls.
 
-<p><a href="#isValid(net.neoforged.neoforge.transfer.item.ItemResource)"><code>isValid(ItemResource)</code></a> can be used for more precise control over which items may be stored.
-<a href="#getCapacity(net.neoforged.neoforge.transfer.item.ItemResource)"><code>getCapacity(ItemResource)</code></a> can be overridden to change the maximum capacity depending on the item resource.</div>
+<p><code>isValid(ItemResource)</code> can be used for more precise control over which items may be stored.
+<code>getCapacity(ItemResource)</code> can be overridden to change the maximum capacity depending on the item resource.</div>
 </div>
 </section>
 <section class="summary">
@@ -156,37 +150,27 @@ and probably <a href="../transaction/SnapshotJournal.html#onRootCommit(T)"><code
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSnapshot()" class="member-name-link">createSnapshot</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return a new <b>nonnull</b> object containing the current state of this journal.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deserialize(net.minecraft.world.level.storage.ValueInput)" class="member-name-link">deserialize</a><wbr>(<a href="../../../../minecraft/world/level/storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extract(int,net.neoforged.neoforge.transfer.item.ItemResource,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" class="member-name-link">extract</a><wbr>(int&nbsp;index,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deserialize(net.minecraft.world.level.storage.ValueInput)" class="member-name-link">deserialize</a><wbr>(<a href="../../../../minecraft/world/level/storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extract(int,net.neoforged.neoforge.transfer.item.ItemResource,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" class="member-name-link">extract</a><wbr>(int&nbsp;index,
  <a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;resource,
  int&nbsp;amount,
  <a href="../transaction/TransactionContext.html" title="interface in net.neoforged.neoforge.transfer.transaction">TransactionContext</a>&nbsp;transaction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Extracts up to the given amount of a resource from the handler at the given index.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAmountAsLong(int)" class="member-name-link">getAmountAsLong</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the amount of the <a href="../ResourceHandler.html#getResource(int)">currently stored resource</a> at the given index, as a <code>long</code>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCapacity(net.neoforged.neoforge.transfer.item.ItemResource)" class="member-name-link">getCapacity</a><wbr>(<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;resource)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAmountAsLong(int)" class="member-name-link">getAmountAsLong</a><wbr>(int&nbsp;index)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return the maximum capacity of this handler for the passed item resource.</div>
+<div class="block">Returns the amount of the <a href="../ResourceHandler.html#getResource(int)">currently stored resource</a> at the given index, as a <code>long</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCapacityAsLong(int,net.neoforged.neoforge.transfer.item.ItemResource)" class="member-name-link">getCapacityAsLong</a><wbr>(int&nbsp;index,
@@ -200,44 +184,24 @@ irrespective of the current amount or resource currently at that index, as a <co
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the resource at the given index, which may be empty.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStack()" class="member-name-link">getStack</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Return the stack of this handler.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insert(int,net.neoforged.neoforge.transfer.item.ItemResource,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" class="member-name-link">insert</a><wbr>(int&nbsp;index,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insert(int,net.neoforged.neoforge.transfer.item.ItemResource,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" class="member-name-link">insert</a><wbr>(int&nbsp;index,
  <a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;resource,
  int&nbsp;amount,
  <a href="../transaction/TransactionContext.html" title="interface in net.neoforged.neoforge.transfer.transaction">TransactionContext</a>&nbsp;transaction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Inserts up to the given amount of a resource into the handler at the given index.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValid(int,net.neoforged.neoforge.transfer.item.ItemResource)" class="member-name-link">isValid</a><wbr>(int&nbsp;index,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValid(int,net.neoforged.neoforge.transfer.item.ItemResource)" class="member-name-link">isValid</a><wbr>(int&nbsp;index,
  <a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;resource)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns whether the given resource is generally allowed to be contained at the given index,
 irrespective of the current amount or resource currently at that index.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValid(net.neoforged.neoforge.transfer.item.ItemResource)" class="member-name-link">isValid</a><wbr>(<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;resource)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return <code>true</code> if the passed non-empty item resource can fit in this handler, <code>false</code> otherwise.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#revertToSnapshot(net.minecraft.world.item.ItemStack)" class="member-name-link">revertToSnapshot</a><wbr>(<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;snapshot)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Roll back to a state previously created by <a href="../transaction/SnapshotJournal.html#createSnapshot()"><code>SnapshotJournal.createSnapshot()</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#serialize(net.minecraft.world.level.storage.ValueOutput)" class="member-name-link">serialize</a><wbr>(<a href="../../../../minecraft/world/level/storage/ValueOutput.html" title="interface in net.minecraft.world.level.storage">ValueOutput</a>&nbsp;output)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setStack(net.minecraft.world.item.ItemStack)" class="member-name-link">setStack</a><wbr>(<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Set the stack of this handler.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#serialize(net.minecraft.world.level.storage.ValueOutput)" class="member-name-link">serialize</a><wbr>(<a href="../../../../minecraft/world/level/storage/ValueOutput.html" title="interface in net.minecraft.world.level.storage">ValueOutput</a>&nbsp;output)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -251,10 +215,10 @@ irrespective of the current amount or resource currently at that index.</div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.transfer.transaction.SnapshotJournal">Methods inherited from class&nbsp;<a href="../transaction/SnapshotJournal.html#method-summary" title="class in net.neoforged.neoforge.transfer.transaction">SnapshotJournal</a></h3>
-<code><a href="../transaction/SnapshotJournal.html#onRootCommit(T)" title="onRootCommit(ItemStack)">onRootCommit</a>, <a href="../transaction/SnapshotJournal.html#releaseSnapshot(T)" title="releaseSnapshot(ItemStack)">releaseSnapshot</a>, <a href="../transaction/SnapshotJournal.html#updateSnapshots(net.neoforged.neoforge.transfer.transaction.TransactionContext)" title="updateSnapshots(TransactionContext)">updateSnapshots</a></code></div>
+<code><a href="../transaction/SnapshotJournal.html#updateSnapshots(net.neoforged.neoforge.transfer.transaction.TransactionContext)" title="updateSnapshots(TransactionContext)">updateSnapshots</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.transfer.ResourceHandler">Methods inherited from interface&nbsp;<a href="../ResourceHandler.html#method-summary" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a></h3>
 <code><a href="../ResourceHandler.html#extract(T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" title="extract(ItemResource, int, TransactionContext)">extract</a>, <a href="../ResourceHandler.html#getAmountAsInt(int)" title="getAmountAsInt(int)">getAmountAsInt</a>, <a href="../ResourceHandler.html#getCapacityAsInt(int,T)" title="getCapacityAsInt(int, ItemResource)">getCapacityAsInt</a>, <a href="../ResourceHandler.html#insert(T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)" title="insert(ItemResource, int, TransactionContext)">insert</a></code></div>
@@ -309,67 +273,6 @@ irrespective of the current amount or resource currently at that index.</div>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="getStack()">
-<h3>getStack</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">getStack</span>()</div>
-<div class="block">Return the stack of this handler. It will be modified directly sometimes to avoid needless copies.
-However, any mutation of the stack will directly be followed by a call to <a href="#setStack(net.minecraft.world.item.ItemStack)"><code>setStack(ItemStack)</code></a>.
-This means that either returning the backing stack directly or a copy is safe.
-If returning a copy, consider overriding <a href="#getAmountAsLong(int)"><code>getAmountAsLong(int)</code></a> and <a href="#getResource(int)"><code>getResource(int)</code></a> to avoid unnecessary copies.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>The current stack.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setStack(net.minecraft.world.item.ItemStack)">
-<h3>setStack</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setStack</span><wbr><span class="parameters">(<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;stack)</span></div>
-<div class="block">Set the stack of this handler.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isValid(net.neoforged.neoforge.transfer.item.ItemResource)">
-<h3>isValid</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isValid</span><wbr><span class="parameters">(<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;resource)</span></div>
-<div class="block">Return <code>true</code> if the passed non-empty item resource can fit in this handler, <code>false</code> otherwise.
-
-<p>The result of this function is used in the provided implementations of:
-<ul>
-<li><a href="#isValid(int,net.neoforged.neoforge.transfer.item.ItemResource)"><code>isValid(int, ItemResource)</code></a>, to report which items are valid;</li>
-<li><a href="#getCapacityAsLong(int,net.neoforged.neoforge.transfer.item.ItemResource)"><code>getCapacityAsLong(int, ItemResource)</code></a>, to report a capacity of <code>0</code> for invalid items;</li>
-<li><a href="#insert(int,net.neoforged.neoforge.transfer.item.ItemResource,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>insert(int, ItemResource, int, TransactionContext)</code></a>, to reject items that cannot fit in this handler.</li>
-</ul></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getCapacity(net.neoforged.neoforge.transfer.item.ItemResource)">
-<h3>getCapacity</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCapacity</span><wbr><span class="parameters">(<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;resource)</span></div>
-<div class="block">Return the maximum capacity of this handler for the passed item resource.
-If the passed item resource is empty, an estimate should be returned.
-
-<p>If the capacity should be limited by the max stack size of the item, this function must take it into account.
-Additionally, the empty resource should be special-cased to return the intended maximum capacity of the handler,
-as it will otherwise report a <a href="ItemResource.html#getMaxStackSize()">max stack size</a> of 1.
-For example, a handler with a maximum count of 4, or less for items that have a smaller max stack size,
-should override this to return <code>resource.isEmpty() ? 4 : Math.min(resource.getMaxStackSize(), 4)</code>.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>The maximum capacity of this handler for the passed item resource.</dd>
-</dl>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="size()">
 <h3>size</h3>
@@ -563,35 +466,6 @@ The only way to know if a handler will accept a resource, is to try to <a href="
 <dt>Returns:</dt>
 <dd>whether the given resource is generally allowed to be contained at the given index,
 irrespective of the current amount or resource currently at that index</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createSnapshot()">
-<h3>createSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">createSnapshot</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../transaction/SnapshotJournal.html#createSnapshot()">SnapshotJournal</a></code></span></div>
-<div class="block">Return a new <b>nonnull</b> object containing the current state of this journal.
-<b><code>null</code> may not be returned, or an exception will be thrown!</b></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../transaction/SnapshotJournal.html#createSnapshot()">createSnapshot</a></code>&nbsp;in class&nbsp;<code><a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction">SnapshotJournal</a>&lt;<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="revertToSnapshot(net.minecraft.world.item.ItemStack)">
-<h3>revertToSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">revertToSnapshot</span><wbr><span class="parameters">(<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;snapshot)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../transaction/SnapshotJournal.html#revertToSnapshot(T)">SnapshotJournal</a></code></span></div>
-<div class="block">Roll back to a state previously created by <a href="../transaction/SnapshotJournal.html#createSnapshot()"><code>SnapshotJournal.createSnapshot()</code></a>.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../transaction/SnapshotJournal.html#revertToSnapshot(T)">revertToSnapshot</a></code>&nbsp;in class&nbsp;<code><a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction">SnapshotJournal</a>&lt;<a href="../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&gt;</code></dd>
 </dl>
 </div>
 </section>

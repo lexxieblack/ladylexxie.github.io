@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>CherryTrunkPlacer (NeoForge 26.1)</title>
+<title>CherryTrunkPlacer (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.levelgen.feature.trunkplacers, class: CherryTrunkPlacer">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/CherryTrunkPlacer.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,13 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#BRANCH_START_CODEC" tabindex="0">BRANCH_START_CODEC</a></li>
 <li><a href="#CODEC" tabindex="0">CODEC</a></li>
-<li><a href="#branchCount" tabindex="0">branchCount</a></li>
-<li><a href="#branchHorizontalLength" tabindex="0">branchHorizontalLength</a></li>
-<li><a href="#branchStartOffsetFromTop" tabindex="0">branchStartOffsetFromTop</a></li>
-<li><a href="#secondBranchStartOffsetFromTop" tabindex="0">secondBranchStartOffsetFromTop</a></li>
-<li><a href="#branchEndOffsetFromTop" tabindex="0">branchEndOffsetFromTop</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -75,9 +69,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#type()" tabindex="0">type()</a></li>
 <li><a href="#placeTrunk(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,int,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration)" tabindex="0">placeTrunk(WorldGenLevel, BiConsumer, RandomSource, int, BlockPos, TreeConfiguration)</a></li>
-<li><a href="#generateBranch(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,int,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration,java.util.function.Function,net.minecraft.core.Direction,int,boolean,net.minecraft.core.BlockPos.MutableBlockPos)" tabindex="0">generateBranch(WorldGenLevel, BiConsumer, RandomSource, int, BlockPos, TreeConfiguration, Function, Direction, int, boolean, BlockPos.MutableBlockPos)</a></li>
 </ol>
 </li>
 </ol>
@@ -110,31 +102,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="../../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#BRANCH_START_CODEC" class="member-name-link">BRANCH_START_CODEC</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#branchCount" class="member-name-link">branchCount</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></code></div>
-<div class="col-second even-row-color"><code><a href="#branchEndOffsetFromTop" class="member-name-link">branchEndOffsetFromTop</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#branchHorizontalLength" class="member-name-link">branchHorizontalLength</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></code></div>
-<div class="col-second even-row-color"><code><a href="#branchStartOffsetFromTop" class="member-name-link">branchStartOffsetFromTop</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a><wbr>&lt;<a href="CherryTrunkPlacer.html" title="class in net.minecraft.world.level.levelgen.feature.trunkplacers">CherryTrunkPlacer</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#CODEC" class="member-name-link">CODEC</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></code></div>
-<div class="col-second even-row-color"><code><a href="#secondBranchStartOffsetFromTop" class="member-name-link">secondBranchStartOffsetFromTop</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a><wbr>&lt;<a href="CherryTrunkPlacer.html" title="class in net.minecraft.world.level.levelgen.feature.trunkplacers">CherryTrunkPlacer</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#CODEC" class="member-name-link">CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer">Fields inherited from class&nbsp;<a href="TrunkPlacer.html#field-summary" title="class in net.minecraft.world.level.levelgen.feature.trunkplacers">TrunkPlacer</a></h3>
-<code><a href="TrunkPlacer.html#baseHeight">baseHeight</a>, <a href="TrunkPlacer.html#heightRandA">heightRandA</a>, <a href="TrunkPlacer.html#heightRandB">heightRandB</a>, <a href="TrunkPlacer.html#MAX_HEIGHT">MAX_HEIGHT</a></code></div>
+<code><a href="TrunkPlacer.html#MAX_HEIGHT">MAX_HEIGHT</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -167,39 +141,23 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../foliageplacers/FoliagePlacer.FoliageAttachment.html" title="class in net.minecraft.world.level.levelgen.feature.foliageplacers">FoliagePlacer.FoliageAttachment</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generateBranch(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,int,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration,java.util.function.Function,net.minecraft.core.Direction,int,boolean,net.minecraft.core.BlockPos.MutableBlockPos)" class="member-name-link">generateBranch</a><wbr>(<a href="../../../WorldGenLevel.html" title="interface in net.minecraft.world.level">WorldGenLevel</a>&nbsp;level,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>, <a href="../../../block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;&nbsp;trunkSetter,
- <a href="../../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
- int&nbsp;treeHeight,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;origin,
- <a href="../configurations/TreeConfiguration.html" title="class in net.minecraft.world.level.levelgen.feature.configurations">TreeConfiguration</a>&nbsp;config,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>, <a href="../../../block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;&nbsp;sidewaysStateModifier,
- <a href="../../../../../core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;branchDirection,
- int&nbsp;offsetFromOrigin,
- boolean&nbsp;middleContinuesUpwards,
- <a href="../../../../../core/BlockPos.MutableBlockPos.html" title="class in net.minecraft.core">BlockPos.MutableBlockPos</a>&nbsp;logPos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../foliageplacers/FoliagePlacer.FoliageAttachment.html" title="class in net.minecraft.world.level.levelgen.feature.foliageplacers">FoliagePlacer.FoliageAttachment</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#placeTrunk(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,int,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration)" class="member-name-link">placeTrunk</a><wbr>(<a href="../../../WorldGenLevel.html" title="interface in net.minecraft.world.level">WorldGenLevel</a>&nbsp;level,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../foliageplacers/FoliagePlacer.FoliageAttachment.html" title="class in net.minecraft.world.level.levelgen.feature.foliageplacers">FoliagePlacer.FoliageAttachment</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#placeTrunk(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,int,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration)" class="member-name-link">placeTrunk</a><wbr>(<a href="../../../WorldGenLevel.html" title="interface in net.minecraft.world.level">WorldGenLevel</a>&nbsp;level,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>, <a href="../../../block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;&nbsp;trunkSetter,
  <a href="../../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
  int&nbsp;treeHeight,
  <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;origin,
  <a href="../configurations/TreeConfiguration.html" title="class in net.minecraft.world.level.levelgen.feature.configurations">TreeConfiguration</a>&nbsp;config)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="TrunkPlacerType.html" title="class in net.minecraft.world.level.levelgen.feature.trunkplacers">TrunkPlacerType</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type()" class="member-name-link">type</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer">Methods inherited from class&nbsp;<a href="TrunkPlacer.html#method-summary" title="class in net.minecraft.world.level.levelgen.feature.trunkplacers">TrunkPlacer</a></h3>
-<code><a href="TrunkPlacer.html#getBaseHeight()" title="getBaseHeight()">getBaseHeight</a>, <a href="TrunkPlacer.html#getTreeHeight(net.minecraft.util.RandomSource)" title="getTreeHeight(RandomSource)">getTreeHeight</a>, <a href="TrunkPlacer.html#isFree(net.minecraft.world.level.WorldGenLevel,net.minecraft.core.BlockPos)" title="isFree(WorldGenLevel, BlockPos)">isFree</a>, <a href="TrunkPlacer.html#placeBelowTrunkBlock(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration)" title="placeBelowTrunkBlock(WorldGenLevel, BiConsumer, RandomSource, BlockPos, TreeConfiguration)">placeBelowTrunkBlock</a>, <a href="TrunkPlacer.html#placeLog(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration)" title="placeLog(WorldGenLevel, BiConsumer, RandomSource, BlockPos, TreeConfiguration)">placeLog</a>, <a href="TrunkPlacer.html#placeLog(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration,java.util.function.Function)" title="placeLog(WorldGenLevel, BiConsumer, RandomSource, BlockPos, TreeConfiguration, Function)">placeLog</a>, <a href="TrunkPlacer.html#placeLogIfFree(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,net.minecraft.core.BlockPos.MutableBlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration)" title="placeLogIfFree(WorldGenLevel, BiConsumer, RandomSource, BlockPos.MutableBlockPos, TreeConfiguration)">placeLogIfFree</a>, <a href="TrunkPlacer.html#trunkPlacerParts(com.mojang.serialization.codecs.RecordCodecBuilder.Instance)" title="trunkPlacerParts(RecordCodecBuilder.Instance)">trunkPlacerParts</a>, <a href="TrunkPlacer.html#validTreePos(net.minecraft.world.level.WorldGenLevel,net.minecraft.core.BlockPos)" title="validTreePos(WorldGenLevel, BlockPos)">validTreePos</a></code></div>
+<code><a href="TrunkPlacer.html#getBaseHeight()" title="getBaseHeight()">getBaseHeight</a>, <a href="TrunkPlacer.html#getTreeHeight(net.minecraft.util.RandomSource)" title="getTreeHeight(RandomSource)">getTreeHeight</a>, <a href="TrunkPlacer.html#isFree(net.minecraft.world.level.WorldGenLevel,net.minecraft.core.BlockPos)" title="isFree(WorldGenLevel, BlockPos)">isFree</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -212,58 +170,10 @@ loadScripts(document, 'script');</script>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="BRANCH_START_CODEC">
-<h3>BRANCH_START_CODEC</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="../../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a>&gt;</span>&nbsp;<span class="element-name">BRANCH_START_CODEC</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="CODEC">
 <h3>CODEC</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a>&lt;<a href="CherryTrunkPlacer.html" title="class in net.minecraft.world.level.levelgen.feature.trunkplacers">CherryTrunkPlacer</a>&gt;</span>&nbsp;<span class="element-name">CODEC</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="branchCount">
-<h3>branchCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></span>&nbsp;<span class="element-name">branchCount</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="branchHorizontalLength">
-<h3>branchHorizontalLength</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></span>&nbsp;<span class="element-name">branchHorizontalLength</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="branchStartOffsetFromTop">
-<h3>branchStartOffsetFromTop</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></span>&nbsp;<span class="element-name">branchStartOffsetFromTop</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="secondBranchStartOffsetFromTop">
-<h3>secondBranchStartOffsetFromTop</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></span>&nbsp;<span class="element-name">secondBranchStartOffsetFromTop</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="branchEndOffsetFromTop">
-<h3>branchEndOffsetFromTop</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../util/valueproviders/IntProvider.html" title="interface in net.minecraft.util.valueproviders">IntProvider</a></span>&nbsp;<span class="element-name">branchEndOffsetFromTop</span></div>
 </div>
 </section>
 </li>
@@ -298,18 +208,6 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="type()">
-<h3>type</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="TrunkPlacerType.html" title="class in net.minecraft.world.level.levelgen.feature.trunkplacers">TrunkPlacerType</a>&lt;?&gt;</span>&nbsp;<span class="element-name">type</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TrunkPlacer.html#type()">type</a></code>&nbsp;in class&nbsp;<code><a href="TrunkPlacer.html" title="class in net.minecraft.world.level.levelgen.feature.trunkplacers">TrunkPlacer</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="placeTrunk(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,int,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration)">
 <h3>placeTrunk</h3>
 <div class="horizontal-scroll">
@@ -323,24 +221,6 @@ loadScripts(document, 'script');</script>
 <dt>Specified by:</dt>
 <dd><code><a href="TrunkPlacer.html#placeTrunk(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,int,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration)">placeTrunk</a></code>&nbsp;in class&nbsp;<code><a href="TrunkPlacer.html" title="class in net.minecraft.world.level.levelgen.feature.trunkplacers">TrunkPlacer</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="generateBranch(net.minecraft.world.level.WorldGenLevel,java.util.function.BiConsumer,net.minecraft.util.RandomSource,int,net.minecraft.core.BlockPos,net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration,java.util.function.Function,net.minecraft.core.Direction,int,boolean,net.minecraft.core.BlockPos.MutableBlockPos)">
-<h3>generateBranch</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../foliageplacers/FoliagePlacer.FoliageAttachment.html" title="class in net.minecraft.world.level.levelgen.feature.foliageplacers">FoliagePlacer.FoliageAttachment</a></span>&nbsp;<span class="element-name">generateBranch</span><wbr><span class="parameters">(<a href="../../../WorldGenLevel.html" title="interface in net.minecraft.world.level">WorldGenLevel</a>&nbsp;level,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>, <a href="../../../block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;&nbsp;trunkSetter,
- <a href="../../../../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
- int&nbsp;treeHeight,
- <a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;origin,
- <a href="../configurations/TreeConfiguration.html" title="class in net.minecraft.world.level.levelgen.feature.configurations">TreeConfiguration</a>&nbsp;config,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>, <a href="../../../block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;&nbsp;sidewaysStateModifier,
- <a href="../../../../../core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;branchDirection,
- int&nbsp;offsetFromOrigin,
- boolean&nbsp;middleContinuesUpwards,
- <a href="../../../../../core/BlockPos.MutableBlockPos.html" title="class in net.minecraft.core">BlockPos.MutableBlockPos</a>&nbsp;logPos)</span></div>
 </div>
 </section>
 </li>

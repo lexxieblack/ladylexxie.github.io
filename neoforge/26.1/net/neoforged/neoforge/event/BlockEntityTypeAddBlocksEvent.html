@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>BlockEntityTypeAddBlocksEvent (NeoForge 26.1)</title>
+<title>BlockEntityTypeAddBlocksEvent (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.event, class: BlockEntityTypeAddBlocksEvent">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/BlockEntityTypeAddBlocksEvent.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,14 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#memoizedCommonSuperClass" tabindex="0">memoizedCommonSuperClass</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">BlockEntityTypeAddBlocksEvent()</a></li>
@@ -72,9 +66,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#modify(net.minecraft.world.level.block.entity.BlockEntityType,net.minecraft.world.level.block.Block...)" tabindex="0">modify(BlockEntityType, Block...)</a></li>
 <li><a href="#modify(net.minecraft.resources.ResourceKey,net.minecraft.world.level.block.Block...)" tabindex="0">modify(ResourceKey, Block...)</a></li>
 <li><a href="#modify(java.util.function.BiPredicate,net.minecraft.world.level.block.Block...)" tabindex="0">modify(BiPredicate, Block...)</a></li>
-<li><a href="#addValidBlock(net.minecraft.world.level.block.Block,java.lang.Class,java.util.Set)" tabindex="0">addValidBlock(Block, Class, Set)</a></li>
-<li><a href="#getCommonSuperClassForExistingValidBlocks(java.util.Set)" tabindex="0">getCommonSuperClassForExistingValidBlocks(Set)</a></li>
-<li><a href="#findClosestCommonSuper(java.lang.Class,java.lang.Class)" tabindex="0">findClosestCommonSuper(Class, Class)</a></li>
 </ol>
 </li>
 </ol>
@@ -85,21 +76,21 @@ loadScripts(document, 'script');</script>
 <h1 title="Class BlockEntityTypeAddBlocksEvent" class="title">Class BlockEntityTypeAddBlocksEvent</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.neoforged.bus.api.Event
+<div class="inheritance"><a href="../../bus/api/Event.html" title="class in net.neoforged.bus.api">net.neoforged.bus.api.Event</a>
 <div class="inheritance">net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.neoforged.fml.event.IModBusEvent</code></dd>
+<dd><code><a href="../../fml/event/IModBusEvent.html" title="interface in net.neoforged.fml.event">IModBusEvent</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BlockEntityTypeAddBlocksEvent</span>
-<span class="extends-implements">extends net.neoforged.bus.api.Event
-implements net.neoforged.fml.event.IModBusEvent</span></div>
-<div class="block">Allows injecting new blocks into a block entity's <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html#validBlocks"><code>BlockEntityType.validBlocks</code></a> field in a safe manner.
+<span class="extends-implements">extends <a href="../../bus/api/Event.html" title="class in net.neoforged.bus.api">Event</a>
+implements <a href="../../fml/event/IModBusEvent.html" title="interface in net.neoforged.fml.event">IModBusEvent</a></span></div>
+<div class="block">Allows injecting new blocks into a block entity's <code>BlockEntityType.validBlocks</code> field in a safe manner.
 The class of the newly injected block should share the highest common class that all existing blocks in the targeted validBlocks has.
 Please use this event instead of manipulating <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity"><code>BlockEntityType</code></a> directly.
 <p>
@@ -116,21 +107,6 @@ the given block must be a <a href="../../../minecraft/world/level/block/SignBloc
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a><wbr>&lt;<a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;, ? extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#memoizedCommonSuperClass" class="member-name-link">memoizedCommonSuperClass</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -149,40 +125,28 @@ the given block must be a <a href="../../../minecraft/world/level/block/SignBloc
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addValidBlock(net.minecraft.world.level.block.Block,java.lang.Class,java.util.Set)" class="member-name-link">addValidBlock</a><wbr>(<a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;block,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;baseClass,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&gt;&nbsp;currentValidBlocks)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findClosestCommonSuper(java.lang.Class,java.lang.Class)" class="member-name-link">findClosestCommonSuper</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;superClass,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;childClass)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCommonSuperClassForExistingValidBlocks(java.util.Set)" class="member-name-link">getCommonSuperClassForExistingValidBlocks</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&gt;&nbsp;validBlocks)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modify(java.util.function.BiPredicate,net.minecraft.world.level.block.Block...)" class="member-name-link">modify</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&gt;, <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&gt;&nbsp;blockEntityTypeToMatch,
- <a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>...&nbsp;blocksToAdd)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Will add the given blocks to the matching <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity"><code>BlockEntityType</code></a>'s set of valid blocks.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modify(net.minecraft.resources.ResourceKey,net.minecraft.world.level.block.Block...)" class="member-name-link">modify</a><wbr>(<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&gt;&nbsp;blockEntityTypeKey,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modify(java.util.function.BiPredicate,net.minecraft.world.level.block.Block...)" class="member-name-link">modify</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&gt;, <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&gt;&nbsp;blockEntityTypeToMatch,
  <a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>...&nbsp;blocksToAdd)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Will add the given blocks to the <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity"><code>BlockEntityType</code></a>'s set of valid blocks.</div>
+<div class="block">Will add the given blocks to the matching <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity"><code>BlockEntityType</code></a>'s set of valid blocks.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modify(net.minecraft.world.level.block.entity.BlockEntityType,net.minecraft.world.level.block.Block...)" class="member-name-link">modify</a><wbr>(<a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&nbsp;blockEntityType,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modify(net.minecraft.resources.ResourceKey,net.minecraft.world.level.block.Block...)" class="member-name-link">modify</a><wbr>(<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&gt;&nbsp;blockEntityTypeKey,
  <a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>...&nbsp;blocksToAdd)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Will add the given blocks to the <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity"><code>BlockEntityType</code></a>'s set of valid blocks.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modify(net.minecraft.world.level.block.entity.BlockEntityType,net.minecraft.world.level.block.Block...)" class="member-name-link">modify</a><wbr>(<a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&nbsp;blockEntityType,
+ <a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>...&nbsp;blocksToAdd)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Will add the given blocks to the provided <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity"><code>BlockEntityType</code></a>'s set of valid blocks.</div>
 </div>
 </div>
@@ -190,29 +154,13 @@ the given block must be a <a href="../../../minecraft/world/level/block/SignBloc
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="memoizedCommonSuperClass">
-<h3>memoizedCommonSuperClass</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;, ? extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">memoizedCommonSuperClass</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -261,33 +209,6 @@ the given block must be a <a href="../../../minecraft/world/level/block/SignBloc
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modify</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="../../../minecraft/resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&gt;, <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity">BlockEntityType</a>&lt;?&gt;&gt;&nbsp;blockEntityTypeToMatch,
  <a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>...&nbsp;blocksToAdd)</span></div>
 <div class="block">Will add the given blocks to the matching <a href="../../../minecraft/world/level/block/entity/BlockEntityType.html" title="class in net.minecraft.world.level.block.entity"><code>BlockEntityType</code></a>'s set of valid blocks.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addValidBlock(net.minecraft.world.level.block.Block,java.lang.Class,java.util.Set)">
-<h3>addValidBlock</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addValidBlock</span><wbr><span class="parameters">(<a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&nbsp;block,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;baseClass,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&gt;&nbsp;currentValidBlocks)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getCommonSuperClassForExistingValidBlocks(java.util.Set)">
-<h3>getCommonSuperClassForExistingValidBlocks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getCommonSuperClassForExistingValidBlocks</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../minecraft/world/level/block/Block.html" title="class in net.minecraft.world.level.block">Block</a>&gt;&nbsp;validBlocks)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="findClosestCommonSuper(java.lang.Class,java.lang.Class)">
-<h3>findClosestCommonSuper</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findClosestCommonSuper</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;superClass,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;childClass)</span></div>
 </div>
 </section>
 </li>

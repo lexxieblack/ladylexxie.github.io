@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>KeyboardHandler (NeoForge 26.1)</title>
+<title>KeyboardHandler (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client, class: KeyboardHandler">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/KeyboardHandler.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -59,15 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
 <li><a href="#DEBUG_CRASH_TIME" tabindex="0">DEBUG_CRASH_TIME</a></li>
-<li><a href="#minecraft" tabindex="0">minecraft</a></li>
-<li><a href="#clipboardManager" tabindex="0">clipboardManager</a></li>
-<li><a href="#debugCrashKeyTime" tabindex="0">debugCrashKeyTime</a></li>
-<li><a href="#debugCrashKeyReportedTime" tabindex="0">debugCrashKeyReportedTime</a></li>
-<li><a href="#debugCrashKeyReportedCount" tabindex="0">debugCrashKeyReportedCount</a></li>
-<li><a href="#usedDebugKeyAsModifier" tabindex="0">usedDebugKeyAsModifier</a></li>
-<li><a href="#lastPreeditEvent" tabindex="0">lastPreeditEvent</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -77,21 +69,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#handleChunkDebugKeys(net.minecraft.client.input.KeyEvent)" tabindex="0">handleChunkDebugKeys(KeyEvent)</a></li>
-<li><a href="#debugFeedbackEnabledStatus(java.lang.String,boolean)" tabindex="0">debugFeedbackEnabledStatus(String, boolean)</a></li>
-<li><a href="#showDebugChat(net.minecraft.network.chat.Component)" tabindex="0">showDebugChat(Component)</a></li>
-<li><a href="#decorateDebugComponent(net.minecraft.ChatFormatting,net.minecraft.network.chat.Component)" tabindex="0">decorateDebugComponent(ChatFormatting, Component)</a></li>
-<li><a href="#debugWarningComponent(net.minecraft.network.chat.Component)" tabindex="0">debugWarningComponent(Component)</a></li>
-<li><a href="#debugFeedbackComponent(net.minecraft.network.chat.Component)" tabindex="0">debugFeedbackComponent(Component)</a></li>
-<li><a href="#debugFeedbackTranslated(java.lang.String,java.lang.Object...)" tabindex="0">debugFeedbackTranslated(String, Object...)</a></li>
-<li><a href="#debugFeedback(java.lang.String)" tabindex="0">debugFeedback(String)</a></li>
-<li><a href="#handleDebugKeys(net.minecraft.client.input.KeyEvent)" tabindex="0">handleDebugKeys(KeyEvent)</a></li>
-<li><a href="#copyRecreateCommand(boolean,boolean)" tabindex="0">copyRecreateCommand(boolean, boolean)</a></li>
-<li><a href="#copyCreateBlockCommand(net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.nbt.CompoundTag)" tabindex="0">copyCreateBlockCommand(BlockState, BlockPos, CompoundTag)</a></li>
-<li><a href="#copyCreateEntityCommand(net.minecraft.resources.Identifier,net.minecraft.world.phys.Vec3,net.minecraft.nbt.CompoundTag)" tabindex="0">copyCreateEntityCommand(Identifier, Vec3, CompoundTag)</a></li>
-<li><a href="#keyPress(long,int,net.minecraft.client.input.KeyEvent)" tabindex="0">keyPress(long, int, KeyEvent)</a></li>
-<li><a href="#charTyped(long,net.minecraft.client.input.CharacterEvent)" tabindex="0">charTyped(long, CharacterEvent)</a></li>
-<li><a href="#preeditCallback(long,net.minecraft.client.input.PreeditEvent)" tabindex="0">preeditCallback(long, PreeditEvent)</a></li>
 <li><a href="#resubmitLastPreeditEvent(net.minecraft.client.gui.components.events.GuiEventListener)" tabindex="0">resubmitLastPreeditEvent(GuiEventListener)</a></li>
 <li><a href="#submitPreeditEvent(net.minecraft.client.gui.components.events.GuiEventListener,net.minecraft.client.input.PreeditEvent)" tabindex="0">submitPreeditEvent(GuiEventListener, PreeditEvent)</a></li>
 <li><a href="#setup(com.mojang.blaze3d.platform.Window)" tabindex="0">setup(Window)</a></li>
@@ -128,32 +105,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../com/mojang/blaze3d/platform/ClipboardManager.html" title="class in com.mojang.blaze3d.platform">ClipboardManager</a></code></div>
-<div class="col-second even-row-color"><code><a href="#clipboardManager" class="member-name-link">clipboardManager</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#DEBUG_CRASH_TIME" class="member-name-link">DEBUG_CRASH_TIME</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private long</code></div>
-<div class="col-second even-row-color"><code><a href="#debugCrashKeyReportedCount" class="member-name-link">debugCrashKeyReportedCount</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private long</code></div>
-<div class="col-second odd-row-color"><code><a href="#debugCrashKeyReportedTime" class="member-name-link">debugCrashKeyReportedTime</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private long</code></div>
-<div class="col-second even-row-color"><code><a href="#debugCrashKeyTime" class="member-name-link">debugCrashKeyTime</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="input/PreeditEvent.html" title="class in net.minecraft.client.input">PreeditEvent</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#lastPreeditEvent" class="member-name-link">lastPreeditEvent</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="Minecraft.html" title="class in net.minecraft.client">Minecraft</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#minecraft" class="member-name-link">minecraft</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#usedDebugKeyAsModifier" class="member-name-link">usedDebugKeyAsModifier</a></code></div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#DEBUG_CRASH_TIME" class="member-name-link">DEBUG_CRASH_TIME</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -182,62 +135,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#charTyped(long,net.minecraft.client.input.CharacterEvent)" class="member-name-link">charTyped</a><wbr>(long&nbsp;handle,
- <a href="input/CharacterEvent.html" title="class in net.minecraft.client.input">CharacterEvent</a>&nbsp;event)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copyCreateBlockCommand(net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.nbt.CompoundTag)" class="member-name-link">copyCreateBlockCommand</a><wbr>(<a href="../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
- @Nullable <a href="../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;entityTag)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copyCreateEntityCommand(net.minecraft.resources.Identifier,net.minecraft.world.phys.Vec3,net.minecraft.nbt.CompoundTag)" class="member-name-link">copyCreateEntityCommand</a><wbr>(<a href="../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id,
- <a href="../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos,
- @Nullable <a href="../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;entityTag)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copyRecreateCommand(boolean,boolean)" class="member-name-link">copyRecreateCommand</a><wbr>(boolean&nbsp;addNbt,
- boolean&nbsp;pullFromServer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#debugFeedback(java.lang.String)" class="member-name-link">debugFeedback</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#debugFeedbackComponent(net.minecraft.network.chat.Component)" class="member-name-link">debugFeedbackComponent</a><wbr>(<a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;component)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#debugFeedbackEnabledStatus(java.lang.String,boolean)" class="member-name-link">debugFeedbackEnabledStatus</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prefix,
- boolean&nbsp;isEnabled)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#debugFeedbackTranslated(java.lang.String,java.lang.Object...)" class="member-name-link">debugFeedbackTranslated</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;pattern,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#debugWarningComponent(net.minecraft.network.chat.Component)" class="member-name-link">debugWarningComponent</a><wbr>(<a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;component)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decorateDebugComponent(net.minecraft.ChatFormatting,net.minecraft.network.chat.Component)" class="member-name-link">decorateDebugComponent</a><wbr>(<a href="../ChatFormatting.html" title="enum class in net.minecraft">ChatFormatting</a>&nbsp;formatting,
- <a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;component)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClipboard()" class="member-name-link">getClipboard</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleChunkDebugKeys(net.minecraft.client.input.KeyEvent)" class="member-name-link">handleChunkDebugKeys</a><wbr>(<a href="input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleDebugKeys(net.minecraft.client.input.KeyEvent)" class="member-name-link">handleDebugKeys</a><wbr>(<a href="input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;event)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keyPress(long,int,net.minecraft.client.input.KeyEvent)" class="member-name-link">keyPress</a><wbr>(long&nbsp;handle,
- int&nbsp;action,
- <a href="input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preeditCallback(long,net.minecraft.client.input.PreeditEvent)" class="member-name-link">preeditCallback</a><wbr>(long&nbsp;handle,
- @Nullable <a href="input/PreeditEvent.html" title="class in net.minecraft.client.input">PreeditEvent</a>&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resubmitLastPreeditEvent(net.minecraft.client.gui.components.events.GuiEventListener)" class="member-name-link">resubmitLastPreeditEvent</a><wbr>(<a href="gui/components/events/GuiEventListener.html" title="interface in net.minecraft.client.gui.components.events">GuiEventListener</a>&nbsp;screen)</code></div>
@@ -248,22 +147,19 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setup(com.mojang.blaze3d.platform.Window)" class="member-name-link">setup</a><wbr>(<a href="../../../com/mojang/blaze3d/platform/Window.html" title="class in com.mojang.blaze3d.platform">Window</a>&nbsp;window)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showDebugChat(net.minecraft.network.chat.Component)" class="member-name-link">showDebugChat</a><wbr>(<a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#submitPreeditEvent(net.minecraft.client.gui.components.events.GuiEventListener,net.minecraft.client.input.PreeditEvent)" class="member-name-link">submitPreeditEvent</a><wbr>(<a href="gui/components/events/GuiEventListener.html" title="interface in net.minecraft.client.gui.components.events">GuiEventListener</a>&nbsp;element,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#submitPreeditEvent(net.minecraft.client.gui.components.events.GuiEventListener,net.minecraft.client.input.PreeditEvent)" class="member-name-link">submitPreeditEvent</a><wbr>(<a href="gui/components/events/GuiEventListener.html" title="interface in net.minecraft.client.gui.components.events">GuiEventListener</a>&nbsp;element,
  @Nullable <a href="input/PreeditEvent.html" title="class in net.minecraft.client.input">PreeditEvent</a>&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -275,14 +171,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="DEBUG_CRASH_TIME">
 <h3>DEBUG_CRASH_TIME</h3>
@@ -296,62 +184,6 @@ loadScripts(document, 'script');</script>
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="minecraft">
-<h3>minecraft</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="Minecraft.html" title="class in net.minecraft.client">Minecraft</a></span>&nbsp;<span class="element-name">minecraft</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="clipboardManager">
-<h3>clipboardManager</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../com/mojang/blaze3d/platform/ClipboardManager.html" title="class in com.mojang.blaze3d.platform">ClipboardManager</a></span>&nbsp;<span class="element-name">clipboardManager</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="debugCrashKeyTime">
-<h3>debugCrashKeyTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">debugCrashKeyTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="debugCrashKeyReportedTime">
-<h3>debugCrashKeyReportedTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">debugCrashKeyReportedTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="debugCrashKeyReportedCount">
-<h3>debugCrashKeyReportedCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">debugCrashKeyReportedCount</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="usedDebugKeyAsModifier">
-<h3>usedDebugKeyAsModifier</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">usedDebugKeyAsModifier</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastPreeditEvent">
-<h3>lastPreeditEvent</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="input/PreeditEvent.html" title="class in net.minecraft.client.input">PreeditEvent</a></span>&nbsp;<span class="element-name">lastPreeditEvent</span></div>
 </div>
 </section>
 </li>
@@ -379,138 +211,6 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="handleChunkDebugKeys(net.minecraft.client.input.KeyEvent)">
-<h3>handleChunkDebugKeys</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">handleChunkDebugKeys</span><wbr><span class="parameters">(<a href="input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;event)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="debugFeedbackEnabledStatus(java.lang.String,boolean)">
-<h3>debugFeedbackEnabledStatus</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">debugFeedbackEnabledStatus</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prefix,
- boolean&nbsp;isEnabled)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="showDebugChat(net.minecraft.network.chat.Component)">
-<h3>showDebugChat</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">showDebugChat</span><wbr><span class="parameters">(<a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;message)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="decorateDebugComponent(net.minecraft.ChatFormatting,net.minecraft.network.chat.Component)">
-<h3>decorateDebugComponent</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></span>&nbsp;<span class="element-name">decorateDebugComponent</span><wbr><span class="parameters">(<a href="../ChatFormatting.html" title="enum class in net.minecraft">ChatFormatting</a>&nbsp;formatting,
- <a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;component)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="debugWarningComponent(net.minecraft.network.chat.Component)">
-<h3>debugWarningComponent</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">debugWarningComponent</span><wbr><span class="parameters">(<a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;component)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="debugFeedbackComponent(net.minecraft.network.chat.Component)">
-<h3>debugFeedbackComponent</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">debugFeedbackComponent</span><wbr><span class="parameters">(<a href="../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&nbsp;component)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="debugFeedbackTranslated(java.lang.String,java.lang.Object...)">
-<h3>debugFeedbackTranslated</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">debugFeedbackTranslated</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;pattern,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;args)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="debugFeedback(java.lang.String)">
-<h3>debugFeedback</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">debugFeedback</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="handleDebugKeys(net.minecraft.client.input.KeyEvent)">
-<h3>handleDebugKeys</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">handleDebugKeys</span><wbr><span class="parameters">(<a href="input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;event)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="copyRecreateCommand(boolean,boolean)">
-<h3>copyRecreateCommand</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">copyRecreateCommand</span><wbr><span class="parameters">(boolean&nbsp;addNbt,
- boolean&nbsp;pullFromServer)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="copyCreateBlockCommand(net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.nbt.CompoundTag)">
-<h3>copyCreateBlockCommand</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">copyCreateBlockCommand</span><wbr><span class="parameters">(<a href="../world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
- @Nullable <a href="../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;entityTag)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="copyCreateEntityCommand(net.minecraft.resources.Identifier,net.minecraft.world.phys.Vec3,net.minecraft.nbt.CompoundTag)">
-<h3>copyCreateEntityCommand</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">copyCreateEntityCommand</span><wbr><span class="parameters">(<a href="../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id,
- <a href="../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;pos,
- @Nullable <a href="../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;entityTag)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="keyPress(long,int,net.minecraft.client.input.KeyEvent)">
-<h3>keyPress</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">keyPress</span><wbr><span class="parameters">(long&nbsp;handle,
- int&nbsp;action,
- <a href="input/KeyEvent.html" title="class in net.minecraft.client.input">KeyEvent</a>&nbsp;event)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="charTyped(long,net.minecraft.client.input.CharacterEvent)">
-<h3>charTyped</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">charTyped</span><wbr><span class="parameters">(long&nbsp;handle,
- <a href="input/CharacterEvent.html" title="class in net.minecraft.client.input">CharacterEvent</a>&nbsp;event)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="preeditCallback(long,net.minecraft.client.input.PreeditEvent)">
-<h3>preeditCallback</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">preeditCallback</span><wbr><span class="parameters">(long&nbsp;handle,
- @Nullable <a href="input/PreeditEvent.html" title="class in net.minecraft.client.input">PreeditEvent</a>&nbsp;event)</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="resubmitLastPreeditEvent(net.minecraft.client.gui.components.events.GuiEventListener)">
 <h3>resubmitLastPreeditEvent</h3>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>BellBlockEntity (NeoForge 26.1)</title>
+<title>BellBlockEntity (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.block.entity, class: BellBlockEntity">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/BellBlockEntity.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,21 +60,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#DURATION" tabindex="0">DURATION</a></li>
-<li><a href="#GLOW_DURATION" tabindex="0">GLOW_DURATION</a></li>
-<li><a href="#MIN_TICKS_BETWEEN_SEARCHES" tabindex="0">MIN_TICKS_BETWEEN_SEARCHES</a></li>
-<li><a href="#MAX_RESONATION_TICKS" tabindex="0">MAX_RESONATION_TICKS</a></li>
-<li><a href="#TICKS_BEFORE_RESONATION" tabindex="0">TICKS_BEFORE_RESONATION</a></li>
-<li><a href="#SEARCH_RADIUS" tabindex="0">SEARCH_RADIUS</a></li>
-<li><a href="#HEAR_BELL_RADIUS" tabindex="0">HEAR_BELL_RADIUS</a></li>
-<li><a href="#HIGHLIGHT_RAIDERS_RADIUS" tabindex="0">HIGHLIGHT_RAIDERS_RADIUS</a></li>
-<li><a href="#lastRingTimestamp" tabindex="0">lastRingTimestamp</a></li>
 <li><a href="#ticks" tabindex="0">ticks</a></li>
 <li><a href="#shaking" tabindex="0">shaking</a></li>
 <li><a href="#clickDirection" tabindex="0">clickDirection</a></li>
-<li><a href="#nearbyEntities" tabindex="0">nearbyEntities</a></li>
-<li><a href="#resonating" tabindex="0">resonating</a></li>
-<li><a href="#resonationTicks" tabindex="0">resonationTicks</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -85,16 +73,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#triggerEvent(int,int)" tabindex="0">triggerEvent(int, int)</a></li>
-<li><a href="#tick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.entity.BellBlockEntity,net.minecraft.world.level.block.entity.BellBlockEntity.ResonationEndAction)" tabindex="0">tick(Level, BlockPos, BlockState, BellBlockEntity, BellBlockEntity.ResonationEndAction)</a></li>
 <li><a href="#clientTick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.entity.BellBlockEntity)" tabindex="0">clientTick(Level, BlockPos, BlockState, BellBlockEntity)</a></li>
 <li><a href="#serverTick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.entity.BellBlockEntity)" tabindex="0">serverTick(Level, BlockPos, BlockState, BellBlockEntity)</a></li>
 <li><a href="#onHit(net.minecraft.core.Direction)" tabindex="0">onHit(Direction)</a></li>
-<li><a href="#updateEntities()" tabindex="0">updateEntities()</a></li>
-<li><a href="#areRaidersNearby(net.minecraft.core.BlockPos,java.util.List)" tabindex="0">areRaidersNearby(BlockPos, List)</a></li>
-<li><a href="#makeRaidersGlow(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,java.util.List)" tabindex="0">makeRaidersGlow(Level, BlockPos, List)</a></li>
-<li><a href="#showBellParticles(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,java.util.List)" tabindex="0">showBellParticles(Level, BlockPos, List)</a></li>
-<li><a href="#isRaiderWithinRange(net.minecraft.core.BlockPos,net.minecraft.world.entity.LivingEntity)" tabindex="0">isRaiderWithinRange(BlockPos, LivingEntity)</a></li>
-<li><a href="#glow(net.minecraft.world.entity.LivingEntity)" tabindex="0">glow(LivingEntity)</a></li>
 </ol>
 </li>
 </ol>
@@ -128,15 +109,6 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="BellBlockEntity.ResonationEndAction.html" class="type-name-link" title="interface in net.minecraft.world.level.block.entity">BellBlockEntity.ResonationEndAction</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.neoforged.neoforge.attachment.AttachmentHolder">Nested classes/interfaces inherited from class&nbsp;<a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#nested-class-summary" title="class in net.neoforged.neoforge.attachment">AttachmentHolder</a></h3>
 <code><a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.AsField.html" title="class in net.neoforged.neoforge.attachment">AttachmentHolder.AsField</a></code></div>
@@ -157,52 +129,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="../../../../core/Direction.html" title="enum class in net.minecraft.core">Direction</a></code></div>
 <div class="col-second even-row-color"><code><a href="#clickDirection" class="member-name-link">clickDirection</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#DURATION" class="member-name-link">DURATION</a></code></div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#shaking" class="member-name-link">shaking</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#GLOW_DURATION" class="member-name-link">GLOW_DURATION</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#HEAR_BELL_RADIUS" class="member-name-link">HEAR_BELL_RADIUS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#HIGHLIGHT_RAIDERS_RADIUS" class="member-name-link">HIGHLIGHT_RAIDERS_RADIUS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private long</code></div>
-<div class="col-second odd-row-color"><code><a href="#lastRingTimestamp" class="member-name-link">lastRingTimestamp</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#MAX_RESONATION_TICKS" class="member-name-link">MAX_RESONATION_TICKS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#MIN_TICKS_BETWEEN_SEARCHES" class="member-name-link">MIN_TICKS_BETWEEN_SEARCHES</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#nearbyEntities" class="member-name-link">nearbyEntities</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#resonating" class="member-name-link">resonating</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#resonationTicks" class="member-name-link">resonationTicks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SEARCH_RADIUS" class="member-name-link">SEARCH_RADIUS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#shaking" class="member-name-link">shaking</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#ticks" class="member-name-link">ticks</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#TICKS_BEFORE_RESONATION" class="member-name-link">TICKS_BEFORE_RESONATION</a></code></div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#ticks" class="member-name-link">ticks</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.world.level.block.entity.BlockEntity">Fields inherited from class&nbsp;<a href="BlockEntity.html#field-summary" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></h3>
-<code><a href="BlockEntity.html#level">level</a>, <a href="BlockEntity.html#remove">remove</a>, <a href="BlockEntity.html#worldPosition">worldPosition</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.neoforged.neoforge.attachment.AttachmentHolder">Fields inherited from class&nbsp;<a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#field-summary" title="class in net.neoforged.neoforge.attachment">AttachmentHolder</a></h3>
 <code><a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#ATTACHMENTS_NBT_KEY">ATTACHMENTS_NBT_KEY</a></code></div>
@@ -233,27 +166,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#areRaidersNearby(net.minecraft.core.BlockPos,java.util.List)" class="member-name-link">areRaidersNearby</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bellPos,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;&nbsp;nearbyEntities)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clientTick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.entity.BellBlockEntity)" class="member-name-link">clientTick</a><wbr>(<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clientTick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.entity.BellBlockEntity)" class="member-name-link">clientTick</a><wbr>(<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="BellBlockEntity.html" title="class in net.minecraft.world.level.block.entity">BellBlockEntity</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#glow(net.minecraft.world.entity.LivingEntity)" class="member-name-link">glow</a><wbr>(<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;raider)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isRaiderWithinRange(net.minecraft.core.BlockPos,net.minecraft.world.entity.LivingEntity)" class="member-name-link">isRaiderWithinRange</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
- <a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#makeRaidersGlow(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,java.util.List)" class="member-name-link">makeRaidersGlow</a><wbr>(<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;&nbsp;nearbyEntities)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onHit(net.minecraft.core.Direction)" class="member-name-link">onHit</a><wbr>(<a href="../../../../core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;clickDirection)</code></div>
@@ -264,37 +181,22 @@ loadScripts(document, 'script');</script>
  <a href="../state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
  <a href="BellBlockEntity.html" title="class in net.minecraft.world.level.block.entity">BellBlockEntity</a>&nbsp;entity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#showBellParticles(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,java.util.List)" class="member-name-link">showBellParticles</a><wbr>(<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bellPos,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;&nbsp;nearbyEntities)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.entity.BellBlockEntity,net.minecraft.world.level.block.entity.BellBlockEntity.ResonationEndAction)" class="member-name-link">tick</a><wbr>(<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="BellBlockEntity.html" title="class in net.minecraft.world.level.block.entity">BellBlockEntity</a>&nbsp;entity,
- <a href="BellBlockEntity.ResonationEndAction.html" title="interface in net.minecraft.world.level.block.entity">BellBlockEntity.ResonationEndAction</a>&nbsp;onResonationEnd)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#triggerEvent(int,int)" class="member-name-link">triggerEvent</a><wbr>(int&nbsp;b0,
  int&nbsp;b1)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateEntities()" class="member-name-link">updateEntities</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.level.block.entity.BlockEntity">Methods inherited from class&nbsp;<a href="BlockEntity.html#method-summary" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></h3>
-<code><a href="BlockEntity.html#addEntityType(net.minecraft.world.level.storage.ValueOutput,net.minecraft.world.level.block.entity.BlockEntityType)" title="addEntityType(ValueOutput, BlockEntityType)">addEntityType</a>, <a href="BlockEntity.html#applyComponents(net.minecraft.core.component.DataComponentMap,net.minecraft.core.component.DataComponentPatch)" title="applyComponents(DataComponentMap, DataComponentPatch)">applyComponents</a>, <a href="BlockEntity.html#applyComponentsFromItemStack(net.minecraft.world.item.ItemStack)" title="applyComponentsFromItemStack(ItemStack)">applyComponentsFromItemStack</a>, <a href="BlockEntity.html#applyImplicitComponents(net.minecraft.core.component.DataComponentGetter)" title="applyImplicitComponents(DataComponentGetter)">applyImplicitComponents</a>, <a href="BlockEntity.html#clearRemoved()" title="clearRemoved()">clearRemoved</a>, <a href="BlockEntity.html#collectComponents()" title="collectComponents()">collectComponents</a>, <a href="BlockEntity.html#collectImplicitComponents(net.minecraft.core.component.DataComponentMap.Builder)" title="collectImplicitComponents(DataComponentMap.Builder)">collectImplicitComponents</a>, <a href="BlockEntity.html#components()" title="components()">components</a>, <a href="BlockEntity.html#fillCrashReportCategory(net.minecraft.CrashReportCategory)" title="fillCrashReportCategory(CrashReportCategory)">fillCrashReportCategory</a>, <a href="BlockEntity.html#getAndClearAttachmentTypesToSync()" title="getAndClearAttachmentTypesToSync()">getAndClearAttachmentTypesToSync</a>, <a href="BlockEntity.html#getBlockPos()" title="getBlockPos()">getBlockPos</a>, <a href="BlockEntity.html#getBlockState()" title="getBlockState()">getBlockState</a>, <a href="BlockEntity.html#getLevel()" title="getLevel()">getLevel</a>, <a href="BlockEntity.html#getNameForReporting()" title="getNameForReporting()">getNameForReporting</a>, <a href="BlockEntity.html#getPersistentData()" title="getPersistentData()">getPersistentData</a>, <a href="BlockEntity.html#getPosFromTag(net.minecraft.world.level.ChunkPos,net.minecraft.nbt.CompoundTag)" title="getPosFromTag(ChunkPos, CompoundTag)">getPosFromTag</a>, <a href="BlockEntity.html#getType()" title="getType()">getType</a>, <a href="BlockEntity.html#getUpdatePacket()" title="getUpdatePacket()">getUpdatePacket</a>, <a href="BlockEntity.html#getUpdateTag(net.minecraft.core.HolderLookup.Provider)" title="getUpdateTag(HolderLookup.Provider)">getUpdateTag</a>, <a href="BlockEntity.html#hasLevel()" title="hasLevel()">hasLevel</a>, <a href="BlockEntity.html#isRemoved()" title="isRemoved()">isRemoved</a>, <a href="BlockEntity.html#isValidBlockState(net.minecraft.world.level.block.state.BlockState)" title="isValidBlockState(BlockState)">isValidBlockState</a>, <a href="BlockEntity.html#loadAdditional(net.minecraft.world.level.storage.ValueInput)" title="loadAdditional(ValueInput)">loadAdditional</a>, <a href="BlockEntity.html#loadCustomOnly(net.minecraft.world.level.storage.ValueInput)" title="loadCustomOnly(ValueInput)">loadCustomOnly</a>, <a href="BlockEntity.html#loadStatic(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.nbt.CompoundTag,net.minecraft.core.HolderLookup.Provider)" title="loadStatic(BlockPos, BlockState, CompoundTag, HolderLookup.Provider)">loadStatic</a>, <a href="BlockEntity.html#loadWithComponents(net.minecraft.world.level.storage.ValueInput)" title="loadWithComponents(ValueInput)">loadWithComponents</a>, <a href="BlockEntity.html#parseCustomNameSafe(net.minecraft.world.level.storage.ValueInput,java.lang.String)" title="parseCustomNameSafe(ValueInput, String)">parseCustomNameSafe</a>, <a href="BlockEntity.html#preRemoveSideEffects(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" title="preRemoveSideEffects(BlockPos, BlockState)">preRemoveSideEffects</a>, <a href="BlockEntity.html#problemPath()" title="problemPath()">problemPath</a>, <a href="BlockEntity.html#registerDebugValues(net.minecraft.server.level.ServerLevel,net.minecraft.util.debug.DebugValueSource.Registration)" title="registerDebugValues(ServerLevel, DebugValueSource.Registration)">registerDebugValues</a>, <a href="BlockEntity.html#removeComponentsFromTag(net.minecraft.world.level.storage.ValueOutput)" title="removeComponentsFromTag(ValueOutput)">removeComponentsFromTag</a>, <a href="BlockEntity.html#removeData(net.neoforged.neoforge.attachment.AttachmentType)" title="removeData(AttachmentType)">removeData</a>, <a href="BlockEntity.html#saveAdditional(net.minecraft.world.level.storage.ValueOutput)" title="saveAdditional(ValueOutput)">saveAdditional</a>, <a href="BlockEntity.html#saveCustomOnly(net.minecraft.core.HolderLookup.Provider)" title="saveCustomOnly(HolderLookup.Provider)">saveCustomOnly</a>, <a href="BlockEntity.html#saveCustomOnly(net.minecraft.world.level.storage.ValueOutput)" title="saveCustomOnly(ValueOutput)">saveCustomOnly</a>, <a href="BlockEntity.html#saveWithFullMetadata(net.minecraft.core.HolderLookup.Provider)" title="saveWithFullMetadata(HolderLookup.Provider)">saveWithFullMetadata</a>, <a href="BlockEntity.html#saveWithFullMetadata(net.minecraft.world.level.storage.ValueOutput)" title="saveWithFullMetadata(ValueOutput)">saveWithFullMetadata</a>, <a href="BlockEntity.html#saveWithId(net.minecraft.world.level.storage.ValueOutput)" title="saveWithId(ValueOutput)">saveWithId</a>, <a href="BlockEntity.html#saveWithoutMetadata(net.minecraft.core.HolderLookup.Provider)" title="saveWithoutMetadata(HolderLookup.Provider)">saveWithoutMetadata</a>, <a href="BlockEntity.html#saveWithoutMetadata(net.minecraft.world.level.storage.ValueOutput)" title="saveWithoutMetadata(ValueOutput)">saveWithoutMetadata</a>, <a href="BlockEntity.html#setBlockState(net.minecraft.world.level.block.state.BlockState)" title="setBlockState(BlockState)">setBlockState</a>, <a href="BlockEntity.html#setChanged()" title="setChanged()">setChanged</a>, <a href="BlockEntity.html#setChanged(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" title="setChanged(Level, BlockPos, BlockState)">setChanged</a>, <a href="BlockEntity.html#setComponents(net.minecraft.core.component.DataComponentMap)" title="setComponents(DataComponentMap)">setComponents</a>, <a href="BlockEntity.html#setData(net.neoforged.neoforge.attachment.AttachmentType,T)" title="setData(AttachmentType, T)">setData</a>, <a href="BlockEntity.html#setLevel(net.minecraft.world.level.Level)" title="setLevel(Level)">setLevel</a>, <a href="BlockEntity.html#setRemoved()" title="setRemoved()">setRemoved</a>, <a href="BlockEntity.html#syncData(net.neoforged.neoforge.attachment.AttachmentType)" title="syncData(AttachmentType)">syncData</a>, <a href="BlockEntity.html#typeHolder()" title="typeHolder()">typeHolder</a></code></div>
+<code><a href="BlockEntity.html#addEntityType(net.minecraft.world.level.storage.ValueOutput,net.minecraft.world.level.block.entity.BlockEntityType)" title="addEntityType(ValueOutput, BlockEntityType)">addEntityType</a>, <a href="BlockEntity.html#applyComponents(net.minecraft.core.component.DataComponentMap,net.minecraft.core.component.DataComponentPatch)" title="applyComponents(DataComponentMap, DataComponentPatch)">applyComponents</a>, <a href="BlockEntity.html#applyComponentsFromItemStack(net.minecraft.world.item.ItemStack)" title="applyComponentsFromItemStack(ItemStack)">applyComponentsFromItemStack</a>, <a href="BlockEntity.html#clearRemoved()" title="clearRemoved()">clearRemoved</a>, <a href="BlockEntity.html#collectComponents()" title="collectComponents()">collectComponents</a>, <a href="BlockEntity.html#components()" title="components()">components</a>, <a href="BlockEntity.html#fillCrashReportCategory(net.minecraft.CrashReportCategory)" title="fillCrashReportCategory(CrashReportCategory)">fillCrashReportCategory</a>, <a href="BlockEntity.html#getAndClearAttachmentTypesToSync()" title="getAndClearAttachmentTypesToSync()">getAndClearAttachmentTypesToSync</a>, <a href="BlockEntity.html#getBlockPos()" title="getBlockPos()">getBlockPos</a>, <a href="BlockEntity.html#getBlockState()" title="getBlockState()">getBlockState</a>, <a href="BlockEntity.html#getLevel()" title="getLevel()">getLevel</a>, <a href="BlockEntity.html#getNameForReporting()" title="getNameForReporting()">getNameForReporting</a>, <a href="BlockEntity.html#getPersistentData()" title="getPersistentData()">getPersistentData</a>, <a href="BlockEntity.html#getPosFromTag(net.minecraft.world.level.ChunkPos,net.minecraft.nbt.CompoundTag)" title="getPosFromTag(ChunkPos, CompoundTag)">getPosFromTag</a>, <a href="BlockEntity.html#getType()" title="getType()">getType</a>, <a href="BlockEntity.html#getUpdatePacket()" title="getUpdatePacket()">getUpdatePacket</a>, <a href="BlockEntity.html#getUpdateTag(net.minecraft.core.HolderLookup.Provider)" title="getUpdateTag(HolderLookup.Provider)">getUpdateTag</a>, <a href="BlockEntity.html#hasLevel()" title="hasLevel()">hasLevel</a>, <a href="BlockEntity.html#isRemoved()" title="isRemoved()">isRemoved</a>, <a href="BlockEntity.html#isValidBlockState(net.minecraft.world.level.block.state.BlockState)" title="isValidBlockState(BlockState)">isValidBlockState</a>, <a href="BlockEntity.html#loadCustomOnly(net.minecraft.world.level.storage.ValueInput)" title="loadCustomOnly(ValueInput)">loadCustomOnly</a>, <a href="BlockEntity.html#loadStatic(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.nbt.CompoundTag,net.minecraft.core.HolderLookup.Provider)" title="loadStatic(BlockPos, BlockState, CompoundTag, HolderLookup.Provider)">loadStatic</a>, <a href="BlockEntity.html#loadWithComponents(net.minecraft.world.level.storage.ValueInput)" title="loadWithComponents(ValueInput)">loadWithComponents</a>, <a href="BlockEntity.html#parseCustomNameSafe(net.minecraft.world.level.storage.ValueInput,java.lang.String)" title="parseCustomNameSafe(ValueInput, String)">parseCustomNameSafe</a>, <a href="BlockEntity.html#preRemoveSideEffects(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" title="preRemoveSideEffects(BlockPos, BlockState)">preRemoveSideEffects</a>, <a href="BlockEntity.html#problemPath()" title="problemPath()">problemPath</a>, <a href="BlockEntity.html#registerDebugValues(net.minecraft.server.level.ServerLevel,net.minecraft.util.debug.DebugValueSource.Registration)" title="registerDebugValues(ServerLevel, DebugValueSource.Registration)">registerDebugValues</a>, <a href="BlockEntity.html#removeComponentsFromTag(net.minecraft.world.level.storage.ValueOutput)" title="removeComponentsFromTag(ValueOutput)">removeComponentsFromTag</a>, <a href="BlockEntity.html#removeData(net.neoforged.neoforge.attachment.AttachmentType)" title="removeData(AttachmentType)">removeData</a>, <a href="BlockEntity.html#saveCustomOnly(net.minecraft.core.HolderLookup.Provider)" title="saveCustomOnly(HolderLookup.Provider)">saveCustomOnly</a>, <a href="BlockEntity.html#saveCustomOnly(net.minecraft.world.level.storage.ValueOutput)" title="saveCustomOnly(ValueOutput)">saveCustomOnly</a>, <a href="BlockEntity.html#saveWithFullMetadata(net.minecraft.core.HolderLookup.Provider)" title="saveWithFullMetadata(HolderLookup.Provider)">saveWithFullMetadata</a>, <a href="BlockEntity.html#saveWithFullMetadata(net.minecraft.world.level.storage.ValueOutput)" title="saveWithFullMetadata(ValueOutput)">saveWithFullMetadata</a>, <a href="BlockEntity.html#saveWithId(net.minecraft.world.level.storage.ValueOutput)" title="saveWithId(ValueOutput)">saveWithId</a>, <a href="BlockEntity.html#saveWithoutMetadata(net.minecraft.core.HolderLookup.Provider)" title="saveWithoutMetadata(HolderLookup.Provider)">saveWithoutMetadata</a>, <a href="BlockEntity.html#saveWithoutMetadata(net.minecraft.world.level.storage.ValueOutput)" title="saveWithoutMetadata(ValueOutput)">saveWithoutMetadata</a>, <a href="BlockEntity.html#setBlockState(net.minecraft.world.level.block.state.BlockState)" title="setBlockState(BlockState)">setBlockState</a>, <a href="BlockEntity.html#setChanged()" title="setChanged()">setChanged</a>, <a href="BlockEntity.html#setComponents(net.minecraft.core.component.DataComponentMap)" title="setComponents(DataComponentMap)">setComponents</a>, <a href="BlockEntity.html#setData(net.neoforged.neoforge.attachment.AttachmentType,T)" title="setData(AttachmentType, T)">setData</a>, <a href="BlockEntity.html#setLevel(net.minecraft.world.level.Level)" title="setLevel(Level)">setLevel</a>, <a href="BlockEntity.html#setRemoved()" title="setRemoved()">setRemoved</a>, <a href="BlockEntity.html#syncData(net.neoforged.neoforge.attachment.AttachmentType)" title="syncData(AttachmentType)">syncData</a>, <a href="BlockEntity.html#typeHolder()" title="typeHolder()">typeHolder</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.attachment.AttachmentHolder">Methods inherited from class&nbsp;<a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#method-summary" title="class in net.neoforged.neoforge.attachment">AttachmentHolder</a></h3>
-<code><a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#deserializeAttachments(net.minecraft.world.level.storage.ValueInput)" title="deserializeAttachments(ValueInput)">deserializeAttachments</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#getData(net.neoforged.neoforge.attachment.AttachmentType)" title="getData(AttachmentType)">getData</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#getExistingDataOrNull(net.neoforged.neoforge.attachment.AttachmentType)" title="getExistingDataOrNull(AttachmentType)">getExistingDataOrNull</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#hasAttachments()" title="hasAttachments()">hasAttachments</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#hasData(net.neoforged.neoforge.attachment.AttachmentType)" title="hasData(AttachmentType)">hasData</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#serializeAttachments(net.minecraft.world.level.storage.ValueOutput)" title="serializeAttachments(ValueOutput)">serializeAttachments</a></code></div>
+<code><a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#getData(net.neoforged.neoforge.attachment.AttachmentType)" title="getData(AttachmentType)">getData</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#getExistingDataOrNull(net.neoforged.neoforge.attachment.AttachmentType)" title="getExistingDataOrNull(AttachmentType)">getExistingDataOrNull</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#hasAttachments()" title="hasAttachments()">hasAttachments</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#hasData(net.neoforged.neoforge.attachment.AttachmentType)" title="hasData(AttachmentType)">hasData</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#serializeAttachments(net.minecraft.world.level.storage.ValueOutput)" title="serializeAttachments(ValueOutput)">serializeAttachments</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.attachment.IAttachmentHolder">Methods inherited from interface&nbsp;<a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#method-summary" title="interface in net.neoforged.neoforge.attachment">IAttachmentHolder</a></h3>
 <code><a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#getData(java.util.function.Supplier)" title="getData(Supplier)">getData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#getExistingData(java.util.function.Supplier)" title="getExistingData(Supplier)">getExistingData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#getExistingData(net.neoforged.neoforge.attachment.AttachmentType)" title="getExistingData(AttachmentType)">getExistingData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#getExistingDataOrNull(java.util.function.Supplier)" title="getExistingDataOrNull(Supplier)">getExistingDataOrNull</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#hasData(java.util.function.Supplier)" title="hasData(Supplier)">hasData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#removeData(java.util.function.Supplier)" title="removeData(Supplier)">removeData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#setData(java.util.function.Supplier,T)" title="setData(Supplier, T)">setData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#syncData(java.util.function.Supplier)" title="syncData(Supplier)">syncData</a></code></div>
@@ -319,142 +221,6 @@ loadScripts(document, 'script');</script>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="DURATION">
-<h3>DURATION</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DURATION</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.block.entity.BellBlockEntity.DURATION">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="GLOW_DURATION">
-<h3>GLOW_DURATION</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">GLOW_DURATION</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.block.entity.BellBlockEntity.GLOW_DURATION">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="MIN_TICKS_BETWEEN_SEARCHES">
-<h3>MIN_TICKS_BETWEEN_SEARCHES</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MIN_TICKS_BETWEEN_SEARCHES</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.block.entity.BellBlockEntity.MIN_TICKS_BETWEEN_SEARCHES">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="MAX_RESONATION_TICKS">
-<h3>MAX_RESONATION_TICKS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAX_RESONATION_TICKS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.block.entity.BellBlockEntity.MAX_RESONATION_TICKS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="TICKS_BEFORE_RESONATION">
-<h3>TICKS_BEFORE_RESONATION</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TICKS_BEFORE_RESONATION</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.block.entity.BellBlockEntity.TICKS_BEFORE_RESONATION">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SEARCH_RADIUS">
-<h3>SEARCH_RADIUS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SEARCH_RADIUS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.block.entity.BellBlockEntity.SEARCH_RADIUS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="HEAR_BELL_RADIUS">
-<h3>HEAR_BELL_RADIUS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">HEAR_BELL_RADIUS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.block.entity.BellBlockEntity.HEAR_BELL_RADIUS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="HIGHLIGHT_RAIDERS_RADIUS">
-<h3>HIGHLIGHT_RAIDERS_RADIUS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">HIGHLIGHT_RAIDERS_RADIUS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#net.minecraft.world.level.block.entity.BellBlockEntity.HIGHLIGHT_RAIDERS_RADIUS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastRingTimestamp">
-<h3>lastRingTimestamp</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">lastRingTimestamp</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="ticks">
 <h3>ticks</h3>
 <div class="horizontal-scroll">
@@ -475,30 +241,6 @@ loadScripts(document, 'script');</script>
 <h3>clickDirection</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../core/Direction.html" title="enum class in net.minecraft.core">Direction</a></span>&nbsp;<span class="element-name">clickDirection</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nearbyEntities">
-<h3>nearbyEntities</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;</span>&nbsp;<span class="element-name">nearbyEntities</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resonating">
-<h3>resonating</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">resonating</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resonationTicks">
-<h3>resonationTicks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">resonationTicks</span></div>
 </div>
 </section>
 </li>
@@ -541,18 +283,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="tick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.entity.BellBlockEntity,net.minecraft.world.level.block.entity.BellBlockEntity.ResonationEndAction)">
-<h3>tick</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">tick</span><wbr><span class="parameters">(<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- <a href="../state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="BellBlockEntity.html" title="class in net.minecraft.world.level.block.entity">BellBlockEntity</a>&nbsp;entity,
- <a href="BellBlockEntity.ResonationEndAction.html" title="interface in net.minecraft.world.level.block.entity">BellBlockEntity.ResonationEndAction</a>&nbsp;onResonationEnd)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="clientTick(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.block.entity.BellBlockEntity)">
 <h3>clientTick</h3>
 <div class="horizontal-scroll">
@@ -579,60 +309,6 @@ loadScripts(document, 'script');</script>
 <h3>onHit</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onHit</span><wbr><span class="parameters">(<a href="../../../../core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;clickDirection)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updateEntities()">
-<h3>updateEntities</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateEntities</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="areRaidersNearby(net.minecraft.core.BlockPos,java.util.List)">
-<h3>areRaidersNearby</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">areRaidersNearby</span><wbr><span class="parameters">(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bellPos,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;&nbsp;nearbyEntities)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="makeRaidersGlow(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,java.util.List)">
-<h3>makeRaidersGlow</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">makeRaidersGlow</span><wbr><span class="parameters">(<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;&nbsp;nearbyEntities)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="showBellParticles(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,java.util.List)">
-<h3>showBellParticles</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">showBellParticles</span><wbr><span class="parameters">(<a href="../../Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;bellPos,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&gt;&nbsp;nearbyEntities)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isRaiderWithinRange(net.minecraft.core.BlockPos,net.minecraft.world.entity.LivingEntity)">
-<h3>isRaiderWithinRange</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRaiderWithinRange</span><wbr><span class="parameters">(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
- <a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;entity)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="glow(net.minecraft.world.entity.LivingEntity)">
-<h3>glow</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">glow</span><wbr><span class="parameters">(<a href="../../../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;raider)</span></div>
 </div>
 </section>
 </li>

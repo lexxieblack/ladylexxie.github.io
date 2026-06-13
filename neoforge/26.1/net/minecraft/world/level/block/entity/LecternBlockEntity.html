@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>LecternBlockEntity (NeoForge 26.1)</title>
+<title>LecternBlockEntity (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.block.entity, class: LecternBlockEntity">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/LecternBlockEntity.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -64,11 +64,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#NUM_DATA" tabindex="0">NUM_DATA</a></li>
 <li><a href="#SLOT_BOOK" tabindex="0">SLOT_BOOK</a></li>
 <li><a href="#NUM_SLOTS" tabindex="0">NUM_SLOTS</a></li>
-<li><a href="#bookAccess" tabindex="0">bookAccess</a></li>
-<li><a href="#dataAccess" tabindex="0">dataAccess</a></li>
-<li><a href="#book" tabindex="0">book</a></li>
-<li><a href="#page" tabindex="0">page</a></li>
-<li><a href="#pageCount" tabindex="0">pageCount</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -81,20 +76,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#getBook()" tabindex="0">getBook()</a></li>
 <li><a href="#hasBook()" tabindex="0">hasBook()</a></li>
 <li><a href="#setBook(net.minecraft.world.item.ItemStack)" tabindex="0">setBook(ItemStack)</a></li>
-<li><a href="#onBookItemRemove()" tabindex="0">onBookItemRemove()</a></li>
 <li><a href="#setBook(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player)" tabindex="0">setBook(ItemStack, Player)</a></li>
-<li><a href="#setPage(int)" tabindex="0">setPage(int)</a></li>
 <li><a href="#getPage()" tabindex="0">getPage()</a></li>
 <li><a href="#getRedstoneSignal()" tabindex="0">getRedstoneSignal()</a></li>
-<li><a href="#resolveBook(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player)" tabindex="0">resolveBook(ItemStack, Player)</a></li>
-<li><a href="#createCommandSourceStack(net.minecraft.world.entity.player.Player,net.minecraft.server.level.ServerLevel)" tabindex="0">createCommandSourceStack(Player, ServerLevel)</a></li>
-<li><a href="#loadAdditional(net.minecraft.world.level.storage.ValueInput)" tabindex="0">loadAdditional(ValueInput)</a></li>
-<li><a href="#saveAdditional(net.minecraft.world.level.storage.ValueOutput)" tabindex="0">saveAdditional(ValueOutput)</a></li>
 <li><a href="#clearContent()" tabindex="0">clearContent()</a></li>
 <li><a href="#preRemoveSideEffects(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" tabindex="0">preRemoveSideEffects(BlockPos, BlockState)</a></li>
 <li><a href="#createMenu(int,net.minecraft.world.entity.player.Inventory,net.minecraft.world.entity.player.Player)" tabindex="0">createMenu(int, Inventory, Player)</a></li>
 <li><a href="#getDisplayName()" tabindex="0">getDisplayName()</a></li>
-<li><a href="#getPageCount(net.minecraft.world.item.ItemStack)" tabindex="0">getPageCount(ItemStack)</a></li>
 </ol>
 </li>
 </ol>
@@ -146,37 +134,19 @@ implements <a href="../../../Clearable.html" title="interface in net.minecraft.w
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private <a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second even-row-color"><code><a href="#book" class="member-name-link">book</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../Container.html" title="interface in net.minecraft.world">Container</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#bookAccess" class="member-name-link">bookAccess</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#DATA_PAGE" class="member-name-link">DATA_PAGE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../inventory/ContainerData.html" title="interface in net.minecraft.world.inventory">ContainerData</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#dataAccess" class="member-name-link">dataAccess</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#NUM_DATA" class="member-name-link">NUM_DATA</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#NUM_DATA" class="member-name-link">NUM_DATA</a></code></div>
+<div class="col-second even-row-color"><code><a href="#NUM_SLOTS" class="member-name-link">NUM_SLOTS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#NUM_SLOTS" class="member-name-link">NUM_SLOTS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SLOT_BOOK" class="member-name-link">SLOT_BOOK</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#page" class="member-name-link">page</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#pageCount" class="member-name-link">pageCount</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SLOT_BOOK" class="member-name-link">SLOT_BOOK</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.world.level.block.entity.BlockEntity">Fields inherited from class&nbsp;<a href="BlockEntity.html#field-summary" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></h3>
-<code><a href="BlockEntity.html#level">level</a>, <a href="BlockEntity.html#remove">remove</a>, <a href="BlockEntity.html#worldPosition">worldPosition</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.neoforged.neoforge.attachment.AttachmentHolder">Fields inherited from class&nbsp;<a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#field-summary" title="class in net.neoforged.neoforge.attachment">AttachmentHolder</a></h3>
 <code><a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#ATTACHMENTS_NBT_KEY">ATTACHMENTS_NBT_KEY</a></code></div>
@@ -201,7 +171,7 @@ implements <a href="../../../Clearable.html" title="interface in net.minecraft.w
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -210,49 +180,29 @@ implements <a href="../../../Clearable.html" title="interface in net.minecraft.w
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearContent()" class="member-name-link">clearContent</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createCommandSourceStack(net.minecraft.world.entity.player.Player,net.minecraft.server.level.ServerLevel)" class="member-name-link">createCommandSourceStack</a><wbr>(@Nullable <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- <a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../inventory/AbstractContainerMenu.html" title="class in net.minecraft.world.inventory">AbstractContainerMenu</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMenu(int,net.minecraft.world.entity.player.Inventory,net.minecraft.world.entity.player.Player)" class="member-name-link">createMenu</a><wbr>(int&nbsp;containerId,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../inventory/AbstractContainerMenu.html" title="class in net.minecraft.world.inventory">AbstractContainerMenu</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createMenu(int,net.minecraft.world.entity.player.Inventory,net.minecraft.world.entity.player.Player)" class="member-name-link">createMenu</a><wbr>(int&nbsp;containerId,
  <a href="../../../entity/player/Inventory.html" title="class in net.minecraft.world.entity.player">Inventory</a>&nbsp;inventory,
  <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBook()" class="member-name-link">getBook</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDisplayName()" class="member-name-link">getDisplayName</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBook()" class="member-name-link">getBook</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPage()" class="member-name-link">getPage</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDisplayName()" class="member-name-link">getDisplayName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPageCount(net.minecraft.world.item.ItemStack)" class="member-name-link">getPageCount</a><wbr>(<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;book)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPage()" class="member-name-link">getPage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRedstoneSignal()" class="member-name-link">getRedstoneSignal</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasBook()" class="member-name-link">hasBook</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadAdditional(net.minecraft.world.level.storage.ValueInput)" class="member-name-link">loadAdditional</a><wbr>(<a href="../../storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onBookItemRemove()" class="member-name-link">onBookItemRemove</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preRemoveSideEffects(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" class="member-name-link">preRemoveSideEffects</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  <a href="../state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveBook(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player)" class="member-name-link">resolveBook</a><wbr>(<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;book,
- @Nullable <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveAdditional(net.minecraft.world.level.storage.ValueOutput)" class="member-name-link">saveAdditional</a><wbr>(<a href="../../storage/ValueOutput.html" title="interface in net.minecraft.world.level.storage">ValueOutput</a>&nbsp;output)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBook(net.minecraft.world.item.ItemStack)" class="member-name-link">setBook</a><wbr>(<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;book)</code></div>
@@ -261,21 +211,18 @@ implements <a href="../../../Clearable.html" title="interface in net.minecraft.w
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBook(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player)" class="member-name-link">setBook</a><wbr>(<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;book,
  @Nullable <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;resolutionContext)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPage(int)" class="member-name-link">setPage</a><wbr>(int&nbsp;page)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.level.block.entity.BlockEntity">Methods inherited from class&nbsp;<a href="BlockEntity.html#method-summary" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></h3>
-<code><a href="BlockEntity.html#addEntityType(net.minecraft.world.level.storage.ValueOutput,net.minecraft.world.level.block.entity.BlockEntityType)" title="addEntityType(ValueOutput, BlockEntityType)">addEntityType</a>, <a href="BlockEntity.html#applyComponents(net.minecraft.core.component.DataComponentMap,net.minecraft.core.component.DataComponentPatch)" title="applyComponents(DataComponentMap, DataComponentPatch)">applyComponents</a>, <a href="BlockEntity.html#applyComponentsFromItemStack(net.minecraft.world.item.ItemStack)" title="applyComponentsFromItemStack(ItemStack)">applyComponentsFromItemStack</a>, <a href="BlockEntity.html#applyImplicitComponents(net.minecraft.core.component.DataComponentGetter)" title="applyImplicitComponents(DataComponentGetter)">applyImplicitComponents</a>, <a href="BlockEntity.html#clearRemoved()" title="clearRemoved()">clearRemoved</a>, <a href="BlockEntity.html#collectComponents()" title="collectComponents()">collectComponents</a>, <a href="BlockEntity.html#collectImplicitComponents(net.minecraft.core.component.DataComponentMap.Builder)" title="collectImplicitComponents(DataComponentMap.Builder)">collectImplicitComponents</a>, <a href="BlockEntity.html#components()" title="components()">components</a>, <a href="BlockEntity.html#fillCrashReportCategory(net.minecraft.CrashReportCategory)" title="fillCrashReportCategory(CrashReportCategory)">fillCrashReportCategory</a>, <a href="BlockEntity.html#getAndClearAttachmentTypesToSync()" title="getAndClearAttachmentTypesToSync()">getAndClearAttachmentTypesToSync</a>, <a href="BlockEntity.html#getBlockPos()" title="getBlockPos()">getBlockPos</a>, <a href="BlockEntity.html#getBlockState()" title="getBlockState()">getBlockState</a>, <a href="BlockEntity.html#getLevel()" title="getLevel()">getLevel</a>, <a href="BlockEntity.html#getNameForReporting()" title="getNameForReporting()">getNameForReporting</a>, <a href="BlockEntity.html#getPersistentData()" title="getPersistentData()">getPersistentData</a>, <a href="BlockEntity.html#getPosFromTag(net.minecraft.world.level.ChunkPos,net.minecraft.nbt.CompoundTag)" title="getPosFromTag(ChunkPos, CompoundTag)">getPosFromTag</a>, <a href="BlockEntity.html#getType()" title="getType()">getType</a>, <a href="BlockEntity.html#getUpdatePacket()" title="getUpdatePacket()">getUpdatePacket</a>, <a href="BlockEntity.html#getUpdateTag(net.minecraft.core.HolderLookup.Provider)" title="getUpdateTag(HolderLookup.Provider)">getUpdateTag</a>, <a href="BlockEntity.html#hasLevel()" title="hasLevel()">hasLevel</a>, <a href="BlockEntity.html#isRemoved()" title="isRemoved()">isRemoved</a>, <a href="BlockEntity.html#isValidBlockState(net.minecraft.world.level.block.state.BlockState)" title="isValidBlockState(BlockState)">isValidBlockState</a>, <a href="BlockEntity.html#loadCustomOnly(net.minecraft.world.level.storage.ValueInput)" title="loadCustomOnly(ValueInput)">loadCustomOnly</a>, <a href="BlockEntity.html#loadStatic(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.nbt.CompoundTag,net.minecraft.core.HolderLookup.Provider)" title="loadStatic(BlockPos, BlockState, CompoundTag, HolderLookup.Provider)">loadStatic</a>, <a href="BlockEntity.html#loadWithComponents(net.minecraft.world.level.storage.ValueInput)" title="loadWithComponents(ValueInput)">loadWithComponents</a>, <a href="BlockEntity.html#parseCustomNameSafe(net.minecraft.world.level.storage.ValueInput,java.lang.String)" title="parseCustomNameSafe(ValueInput, String)">parseCustomNameSafe</a>, <a href="BlockEntity.html#problemPath()" title="problemPath()">problemPath</a>, <a href="BlockEntity.html#registerDebugValues(net.minecraft.server.level.ServerLevel,net.minecraft.util.debug.DebugValueSource.Registration)" title="registerDebugValues(ServerLevel, DebugValueSource.Registration)">registerDebugValues</a>, <a href="BlockEntity.html#removeComponentsFromTag(net.minecraft.world.level.storage.ValueOutput)" title="removeComponentsFromTag(ValueOutput)">removeComponentsFromTag</a>, <a href="BlockEntity.html#removeData(net.neoforged.neoforge.attachment.AttachmentType)" title="removeData(AttachmentType)">removeData</a>, <a href="BlockEntity.html#saveCustomOnly(net.minecraft.core.HolderLookup.Provider)" title="saveCustomOnly(HolderLookup.Provider)">saveCustomOnly</a>, <a href="BlockEntity.html#saveCustomOnly(net.minecraft.world.level.storage.ValueOutput)" title="saveCustomOnly(ValueOutput)">saveCustomOnly</a>, <a href="BlockEntity.html#saveWithFullMetadata(net.minecraft.core.HolderLookup.Provider)" title="saveWithFullMetadata(HolderLookup.Provider)">saveWithFullMetadata</a>, <a href="BlockEntity.html#saveWithFullMetadata(net.minecraft.world.level.storage.ValueOutput)" title="saveWithFullMetadata(ValueOutput)">saveWithFullMetadata</a>, <a href="BlockEntity.html#saveWithId(net.minecraft.world.level.storage.ValueOutput)" title="saveWithId(ValueOutput)">saveWithId</a>, <a href="BlockEntity.html#saveWithoutMetadata(net.minecraft.core.HolderLookup.Provider)" title="saveWithoutMetadata(HolderLookup.Provider)">saveWithoutMetadata</a>, <a href="BlockEntity.html#saveWithoutMetadata(net.minecraft.world.level.storage.ValueOutput)" title="saveWithoutMetadata(ValueOutput)">saveWithoutMetadata</a>, <a href="BlockEntity.html#setBlockState(net.minecraft.world.level.block.state.BlockState)" title="setBlockState(BlockState)">setBlockState</a>, <a href="BlockEntity.html#setChanged()" title="setChanged()">setChanged</a>, <a href="BlockEntity.html#setChanged(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState)" title="setChanged(Level, BlockPos, BlockState)">setChanged</a>, <a href="BlockEntity.html#setComponents(net.minecraft.core.component.DataComponentMap)" title="setComponents(DataComponentMap)">setComponents</a>, <a href="BlockEntity.html#setData(net.neoforged.neoforge.attachment.AttachmentType,T)" title="setData(AttachmentType, T)">setData</a>, <a href="BlockEntity.html#setLevel(net.minecraft.world.level.Level)" title="setLevel(Level)">setLevel</a>, <a href="BlockEntity.html#setRemoved()" title="setRemoved()">setRemoved</a>, <a href="BlockEntity.html#syncData(net.neoforged.neoforge.attachment.AttachmentType)" title="syncData(AttachmentType)">syncData</a>, <a href="BlockEntity.html#triggerEvent(int,int)" title="triggerEvent(int, int)">triggerEvent</a>, <a href="BlockEntity.html#typeHolder()" title="typeHolder()">typeHolder</a></code></div>
+<code><a href="BlockEntity.html#addEntityType(net.minecraft.world.level.storage.ValueOutput,net.minecraft.world.level.block.entity.BlockEntityType)" title="addEntityType(ValueOutput, BlockEntityType)">addEntityType</a>, <a href="BlockEntity.html#applyComponents(net.minecraft.core.component.DataComponentMap,net.minecraft.core.component.DataComponentPatch)" title="applyComponents(DataComponentMap, DataComponentPatch)">applyComponents</a>, <a href="BlockEntity.html#applyComponentsFromItemStack(net.minecraft.world.item.ItemStack)" title="applyComponentsFromItemStack(ItemStack)">applyComponentsFromItemStack</a>, <a href="BlockEntity.html#clearRemoved()" title="clearRemoved()">clearRemoved</a>, <a href="BlockEntity.html#collectComponents()" title="collectComponents()">collectComponents</a>, <a href="BlockEntity.html#components()" title="components()">components</a>, <a href="BlockEntity.html#fillCrashReportCategory(net.minecraft.CrashReportCategory)" title="fillCrashReportCategory(CrashReportCategory)">fillCrashReportCategory</a>, <a href="BlockEntity.html#getAndClearAttachmentTypesToSync()" title="getAndClearAttachmentTypesToSync()">getAndClearAttachmentTypesToSync</a>, <a href="BlockEntity.html#getBlockPos()" title="getBlockPos()">getBlockPos</a>, <a href="BlockEntity.html#getBlockState()" title="getBlockState()">getBlockState</a>, <a href="BlockEntity.html#getLevel()" title="getLevel()">getLevel</a>, <a href="BlockEntity.html#getNameForReporting()" title="getNameForReporting()">getNameForReporting</a>, <a href="BlockEntity.html#getPersistentData()" title="getPersistentData()">getPersistentData</a>, <a href="BlockEntity.html#getPosFromTag(net.minecraft.world.level.ChunkPos,net.minecraft.nbt.CompoundTag)" title="getPosFromTag(ChunkPos, CompoundTag)">getPosFromTag</a>, <a href="BlockEntity.html#getType()" title="getType()">getType</a>, <a href="BlockEntity.html#getUpdatePacket()" title="getUpdatePacket()">getUpdatePacket</a>, <a href="BlockEntity.html#getUpdateTag(net.minecraft.core.HolderLookup.Provider)" title="getUpdateTag(HolderLookup.Provider)">getUpdateTag</a>, <a href="BlockEntity.html#hasLevel()" title="hasLevel()">hasLevel</a>, <a href="BlockEntity.html#isRemoved()" title="isRemoved()">isRemoved</a>, <a href="BlockEntity.html#isValidBlockState(net.minecraft.world.level.block.state.BlockState)" title="isValidBlockState(BlockState)">isValidBlockState</a>, <a href="BlockEntity.html#loadCustomOnly(net.minecraft.world.level.storage.ValueInput)" title="loadCustomOnly(ValueInput)">loadCustomOnly</a>, <a href="BlockEntity.html#loadStatic(net.minecraft.core.BlockPos,net.minecraft.world.level.block.state.BlockState,net.minecraft.nbt.CompoundTag,net.minecraft.core.HolderLookup.Provider)" title="loadStatic(BlockPos, BlockState, CompoundTag, HolderLookup.Provider)">loadStatic</a>, <a href="BlockEntity.html#loadWithComponents(net.minecraft.world.level.storage.ValueInput)" title="loadWithComponents(ValueInput)">loadWithComponents</a>, <a href="BlockEntity.html#parseCustomNameSafe(net.minecraft.world.level.storage.ValueInput,java.lang.String)" title="parseCustomNameSafe(ValueInput, String)">parseCustomNameSafe</a>, <a href="BlockEntity.html#problemPath()" title="problemPath()">problemPath</a>, <a href="BlockEntity.html#registerDebugValues(net.minecraft.server.level.ServerLevel,net.minecraft.util.debug.DebugValueSource.Registration)" title="registerDebugValues(ServerLevel, DebugValueSource.Registration)">registerDebugValues</a>, <a href="BlockEntity.html#removeComponentsFromTag(net.minecraft.world.level.storage.ValueOutput)" title="removeComponentsFromTag(ValueOutput)">removeComponentsFromTag</a>, <a href="BlockEntity.html#removeData(net.neoforged.neoforge.attachment.AttachmentType)" title="removeData(AttachmentType)">removeData</a>, <a href="BlockEntity.html#saveCustomOnly(net.minecraft.core.HolderLookup.Provider)" title="saveCustomOnly(HolderLookup.Provider)">saveCustomOnly</a>, <a href="BlockEntity.html#saveCustomOnly(net.minecraft.world.level.storage.ValueOutput)" title="saveCustomOnly(ValueOutput)">saveCustomOnly</a>, <a href="BlockEntity.html#saveWithFullMetadata(net.minecraft.core.HolderLookup.Provider)" title="saveWithFullMetadata(HolderLookup.Provider)">saveWithFullMetadata</a>, <a href="BlockEntity.html#saveWithFullMetadata(net.minecraft.world.level.storage.ValueOutput)" title="saveWithFullMetadata(ValueOutput)">saveWithFullMetadata</a>, <a href="BlockEntity.html#saveWithId(net.minecraft.world.level.storage.ValueOutput)" title="saveWithId(ValueOutput)">saveWithId</a>, <a href="BlockEntity.html#saveWithoutMetadata(net.minecraft.core.HolderLookup.Provider)" title="saveWithoutMetadata(HolderLookup.Provider)">saveWithoutMetadata</a>, <a href="BlockEntity.html#saveWithoutMetadata(net.minecraft.world.level.storage.ValueOutput)" title="saveWithoutMetadata(ValueOutput)">saveWithoutMetadata</a>, <a href="BlockEntity.html#setBlockState(net.minecraft.world.level.block.state.BlockState)" title="setBlockState(BlockState)">setBlockState</a>, <a href="BlockEntity.html#setChanged()" title="setChanged()">setChanged</a>, <a href="BlockEntity.html#setComponents(net.minecraft.core.component.DataComponentMap)" title="setComponents(DataComponentMap)">setComponents</a>, <a href="BlockEntity.html#setData(net.neoforged.neoforge.attachment.AttachmentType,T)" title="setData(AttachmentType, T)">setData</a>, <a href="BlockEntity.html#setLevel(net.minecraft.world.level.Level)" title="setLevel(Level)">setLevel</a>, <a href="BlockEntity.html#setRemoved()" title="setRemoved()">setRemoved</a>, <a href="BlockEntity.html#syncData(net.neoforged.neoforge.attachment.AttachmentType)" title="syncData(AttachmentType)">syncData</a>, <a href="BlockEntity.html#triggerEvent(int,int)" title="triggerEvent(int, int)">triggerEvent</a>, <a href="BlockEntity.html#typeHolder()" title="typeHolder()">typeHolder</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.attachment.AttachmentHolder">Methods inherited from class&nbsp;<a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#method-summary" title="class in net.neoforged.neoforge.attachment">AttachmentHolder</a></h3>
-<code><a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#deserializeAttachments(net.minecraft.world.level.storage.ValueInput)" title="deserializeAttachments(ValueInput)">deserializeAttachments</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#getData(net.neoforged.neoforge.attachment.AttachmentType)" title="getData(AttachmentType)">getData</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#getExistingDataOrNull(net.neoforged.neoforge.attachment.AttachmentType)" title="getExistingDataOrNull(AttachmentType)">getExistingDataOrNull</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#hasAttachments()" title="hasAttachments()">hasAttachments</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#hasData(net.neoforged.neoforge.attachment.AttachmentType)" title="hasData(AttachmentType)">hasData</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#serializeAttachments(net.minecraft.world.level.storage.ValueOutput)" title="serializeAttachments(ValueOutput)">serializeAttachments</a></code></div>
+<code><a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#getData(net.neoforged.neoforge.attachment.AttachmentType)" title="getData(AttachmentType)">getData</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#getExistingDataOrNull(net.neoforged.neoforge.attachment.AttachmentType)" title="getExistingDataOrNull(AttachmentType)">getExistingDataOrNull</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#hasAttachments()" title="hasAttachments()">hasAttachments</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#hasData(net.neoforged.neoforge.attachment.AttachmentType)" title="hasData(AttachmentType)">hasData</a>, <a href="../../../../../neoforged/neoforge/attachment/AttachmentHolder.html#serializeAttachments(net.minecraft.world.level.storage.ValueOutput)" title="serializeAttachments(ValueOutput)">serializeAttachments</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.attachment.IAttachmentHolder">Methods inherited from interface&nbsp;<a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#method-summary" title="interface in net.neoforged.neoforge.attachment">IAttachmentHolder</a></h3>
 <code><a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#getData(java.util.function.Supplier)" title="getData(Supplier)">getData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#getExistingData(java.util.function.Supplier)" title="getExistingData(Supplier)">getExistingData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#getExistingData(net.neoforged.neoforge.attachment.AttachmentType)" title="getExistingData(AttachmentType)">getExistingData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#getExistingDataOrNull(java.util.function.Supplier)" title="getExistingDataOrNull(Supplier)">getExistingDataOrNull</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#hasData(java.util.function.Supplier)" title="hasData(Supplier)">hasData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#removeData(java.util.function.Supplier)" title="removeData(Supplier)">removeData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#setData(java.util.function.Supplier,T)" title="setData(Supplier, T)">setData</a>, <a href="../../../../../neoforged/neoforge/attachment/IAttachmentHolder.html#syncData(java.util.function.Supplier)" title="syncData(Supplier)">syncData</a></code></div>
@@ -366,46 +313,6 @@ implements <a href="../../../Clearable.html" title="interface in net.minecraft.w
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="bookAccess">
-<h3>bookAccess</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../Container.html" title="interface in net.minecraft.world">Container</a></span>&nbsp;<span class="element-name">bookAccess</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dataAccess">
-<h3>dataAccess</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../inventory/ContainerData.html" title="interface in net.minecraft.world.inventory">ContainerData</a></span>&nbsp;<span class="element-name">dataAccess</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="book">
-<h3>book</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">book</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="page">
-<h3>page</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">page</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pageCount">
-<h3>pageCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">pageCount</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -456,27 +363,11 @@ implements <a href="../../../Clearable.html" title="interface in net.minecraft.w
 </section>
 </li>
 <li>
-<section class="detail" id="onBookItemRemove()">
-<h3>onBookItemRemove</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onBookItemRemove</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="setBook(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player)">
 <h3>setBook</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBook</span><wbr><span class="parameters">(<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;book,
  @Nullable <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;resolutionContext)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setPage(int)">
-<h3>setPage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPage</span><wbr><span class="parameters">(int&nbsp;page)</span></div>
 </div>
 </section>
 </li>
@@ -493,48 +384,6 @@ implements <a href="../../../Clearable.html" title="interface in net.minecraft.w
 <h3>getRedstoneSignal</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getRedstoneSignal</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resolveBook(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player)">
-<h3>resolveBook</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">resolveBook</span><wbr><span class="parameters">(<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;book,
- @Nullable <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createCommandSourceStack(net.minecraft.world.entity.player.Player,net.minecraft.server.level.ServerLevel)">
-<h3>createCommandSourceStack</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../commands/CommandSourceStack.html" title="class in net.minecraft.commands">CommandSourceStack</a></span>&nbsp;<span class="element-name">createCommandSourceStack</span><wbr><span class="parameters">(@Nullable <a href="../../../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- <a href="../../../../server/level/ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="loadAdditional(net.minecraft.world.level.storage.ValueInput)">
-<h3>loadAdditional</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAdditional</span><wbr><span class="parameters">(<a href="../../storage/ValueInput.html" title="interface in net.minecraft.world.level.storage">ValueInput</a>&nbsp;input)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="BlockEntity.html#loadAdditional(net.minecraft.world.level.storage.ValueInput)">loadAdditional</a></code>&nbsp;in class&nbsp;<code><a href="BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="saveAdditional(net.minecraft.world.level.storage.ValueOutput)">
-<h3>saveAdditional</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">saveAdditional</span><wbr><span class="parameters">(<a href="../../storage/ValueOutput.html" title="interface in net.minecraft.world.level.storage">ValueOutput</a>&nbsp;output)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="BlockEntity.html#saveAdditional(net.minecraft.world.level.storage.ValueOutput)">saveAdditional</a></code>&nbsp;in class&nbsp;<code><a href="BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a></code></dd>
-</dl>
 </div>
 </section>
 </li>
@@ -586,14 +435,6 @@ implements <a href="../../../Clearable.html" title="interface in net.minecraft.w
 <dt>Specified by:</dt>
 <dd><code><a href="../../../MenuProvider.html#getDisplayName()">getDisplayName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../MenuProvider.html" title="interface in net.minecraft.world">MenuProvider</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getPageCount(net.minecraft.world.item.ItemStack)">
-<h3>getPageCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getPageCount</span><wbr><span class="parameters">(<a href="../../../item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;book)</span></div>
 </div>
 </section>
 </li>

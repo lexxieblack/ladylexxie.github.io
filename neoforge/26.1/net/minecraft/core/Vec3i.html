@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>Vec3i (NeoForge 26.1)</title>
+<title>Vec3i (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.core, class: Vec3i">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/Vec3i.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -62,9 +62,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#CODEC" tabindex="0">CODEC</a></li>
 <li><a href="#STREAM_CODEC" tabindex="0">STREAM_CODEC</a></li>
 <li><a href="#ZERO" tabindex="0">ZERO</a></li>
-<li><a href="#x" tabindex="0">x</a></li>
-<li><a href="#y" tabindex="0">y</a></li>
-<li><a href="#z" tabindex="0">z</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -81,9 +78,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getX()" tabindex="0">getX()</a></li>
 <li><a href="#getY()" tabindex="0">getY()</a></li>
 <li><a href="#getZ()" tabindex="0">getZ()</a></li>
-<li><a href="#setX(int)" tabindex="0">setX(int)</a></li>
-<li><a href="#setY(int)" tabindex="0">setY(int)</a></li>
-<li><a href="#setZ(int)" tabindex="0">setZ(int)</a></li>
 <li><a href="#offset(int,int,int)" tabindex="0">offset(int, int, int)</a></li>
 <li><a href="#offset(net.minecraft.core.Vec3i)" tabindex="0">offset(Vec3i)</a></li>
 <li><a href="#subtract(net.minecraft.core.Vec3i)" tabindex="0">subtract(Vec3i)</a></li>
@@ -160,21 +154,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-first even-row-color"><code>static final <a href="../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#CODEC" class="member-name-link">CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;io.netty.buffer.ByteBuf, <a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="https://javadoc.io/doc/io.netty/netty-buffer/4.2.7.Final/io/netty/buffer/ByteBuf.html" title="class or interface in io.netty.buffer" class="external-link">ByteBuf</a>,<wbr><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#STREAM_CODEC" class="member-name-link">STREAM_CODEC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#x" class="member-name-link">x</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ZERO" class="member-name-link">ZERO</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#y" class="member-name-link">y</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#z" class="member-name-link">z</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#ZERO" class="member-name-link">ZERO</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -312,45 +297,36 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#relative(net.minecraft.core.Direction,int)" class="member-name-link">relative</a><wbr>(<a href="Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;direction,
  int&nbsp;steps)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setX(int)" class="member-name-link">setX</a><wbr>(int&nbsp;x)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setY(int)" class="member-name-link">setY</a><wbr>(int&nbsp;y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setZ(int)" class="member-name-link">setZ</a><wbr>(int&nbsp;z)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#south()" class="member-name-link">south</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#south()" class="member-name-link">south</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#south(int)" class="member-name-link">south</a><wbr>(int&nbsp;steps)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#south(int)" class="member-name-link">south</a><wbr>(int&nbsp;steps)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subtract(net.minecraft.core.Vec3i)" class="member-name-link">subtract</a><wbr>(<a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&nbsp;vec)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subtract(net.minecraft.core.Vec3i)" class="member-name-link">subtract</a><wbr>(<a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&nbsp;vec)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.joml.Vector3i</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toMutable()" class="member-name-link">toMutable</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toShortString()" class="member-name-link">toShortString</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Vector3i.html" title="class or interface in org.joml" class="external-link">Vector3i</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toMutable()" class="member-name-link">toMutable</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toShortString()" class="member-name-link">toShortString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#west()" class="member-name-link">west</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#west(int)" class="member-name-link">west</a><wbr>(int&nbsp;steps)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#west()" class="member-name-link">west</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#west(int)" class="member-name-link">west</a><wbr>(int&nbsp;steps)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -374,7 +350,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <section class="detail" id="STREAM_CODEC">
 <h3>STREAM_CODEC</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a>&lt;io.netty.buffer.ByteBuf, <a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&gt;</span>&nbsp;<span class="element-name">STREAM_CODEC</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a>&lt;<a href="https://javadoc.io/doc/io.netty/netty-buffer/4.2.7.Final/io/netty/buffer/ByteBuf.html" title="class or interface in io.netty.buffer" class="external-link">ByteBuf</a>,<wbr><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a>&gt;</span>&nbsp;<span class="element-name">STREAM_CODEC</span></div>
 </div>
 </section>
 </li>
@@ -383,30 +359,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <h3>ZERO</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></span>&nbsp;<span class="element-name">ZERO</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="x">
-<h3>x</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">x</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="y">
-<h3>y</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">y</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="z">
-<h3>z</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">z</span></div>
 </div>
 </section>
 </li>
@@ -501,30 +453,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <h3>getZ</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getZ</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setX(int)">
-<h3>setX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></span>&nbsp;<span class="element-name">setX</span><wbr><span class="parameters">(int&nbsp;x)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setY(int)">
-<h3>setY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></span>&nbsp;<span class="element-name">setY</span><wbr><span class="parameters">(int&nbsp;y)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setZ(int)">
-<h3>setZ</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Vec3i.html" title="class in net.minecraft.core">Vec3i</a></span>&nbsp;<span class="element-name">setZ</span><wbr><span class="parameters">(int&nbsp;z)</span></div>
 </div>
 </section>
 </li>
@@ -784,7 +712,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <section class="detail" id="toMutable()">
 <h3>toMutable</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.joml.Vector3i</span>&nbsp;<span class="element-name">toMutable</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Vector3i.html" title="class or interface in org.joml" class="external-link">Vector3i</a></span>&nbsp;<span class="element-name">toMutable</span>()</div>
 </div>
 </section>
 </li>

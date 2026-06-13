@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>UseItemOnBlockEvent (NeoForge 26.1)</title>
+<title>UseItemOnBlockEvent (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.event.entity.player, class: UseItemOnBlockEvent">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/UseItemOnBlockEvent.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,22 +55,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#level" tabindex="0">level</a></li>
-<li><a href="#player" tabindex="0">player</a></li>
-<li><a href="#hand" tabindex="0">hand</a></li>
-<li><a href="#heldItem" tabindex="0">heldItem</a></li>
-<li><a href="#pos" tabindex="0">pos</a></li>
-<li><a href="#face" tabindex="0">face</a></li>
-<li><a href="#context" tabindex="0">context</a></li>
-<li><a href="#usePhase" tabindex="0">usePhase</a></li>
-<li><a href="#cancellationResult" tabindex="0">cancellationResult</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.world.item.context.UseOnContext,net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent.UsePhase)" tabindex="0">UseItemOnBlockEvent(UseOnContext, UseItemOnBlockEvent.UsePhase)</a></li>
@@ -100,25 +86,25 @@ loadScripts(document, 'script');</script>
 <h1 title="Class UseItemOnBlockEvent" class="title">Class UseItemOnBlockEvent</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.neoforged.bus.api.Event
+<div class="inheritance"><a href="../../../../bus/api/Event.html" title="class in net.neoforged.bus.api">net.neoforged.bus.api.Event</a>
 <div class="inheritance">net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>net.neoforged.bus.api.ICancellableEvent</code></dd>
+<dd><code><a href="../../../../bus/api/ICancellableEvent.html" title="interface in net.neoforged.bus.api">ICancellableEvent</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">UseItemOnBlockEvent</span>
-<span class="extends-implements">extends net.neoforged.bus.api.Event
-implements net.neoforged.bus.api.ICancellableEvent</span></div>
+<span class="extends-implements">extends <a href="../../../../bus/api/Event.html" title="class in net.neoforged.bus.api">Event</a>
+implements <a href="../../../../bus/api/ICancellableEvent.html" title="interface in net.neoforged.bus.api">ICancellableEvent</a></span></div>
 <div class="block">Fires on both the client and server thread when a player interacts with a block.
 
 <p>The event fires in three phases, corresponding with the three interaction behaviors:
 <a href="../../../common/extensions/IItemExtension.html#onItemUseFirst(net.minecraft.world.item.ItemStack,net.minecraft.world.item.context.UseOnContext)"><code>IItemExtension.onItemUseFirst(ItemStack, UseOnContext)</code></a>,
-<a href="../../../../../minecraft/world/level/block/state/BlockBehaviour.html#useItemOn(net.minecraft.world.item.ItemStack,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.phys.BlockHitResult)"><code>BlockBehaviour.useItemOn(ItemStack, BlockState, Level, BlockPos, Player, InteractionHand, BlockHitResult)</code></a>,
+<code>BlockBehaviour.useItemOn(ItemStack, BlockState, Level, BlockPos, Player, InteractionHand, BlockHitResult)</code>,
 and <a href="../../../../../minecraft/world/item/Item.html#useOn(net.minecraft.world.item.context.UseOnContext)"><code>Item.useOn(UseOnContext)</code></a>.</p>
 
 <p>The event fires after the interaction logic decides to run the particular interaction behavior,
@@ -143,45 +129,6 @@ and the specified <a href="../../../../../minecraft/world/InteractionResult.html
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="UseItemOnBlockEvent.UsePhase.html" class="type-name-link" title="enum class in net.neoforged.neoforge.event.entity.player">UseItemOnBlockEvent.UsePhase</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private <a href="../../../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
-<div class="col-second even-row-color"><code><a href="#cancellationResult" class="member-name-link">cancellationResult</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../../minecraft/world/item/context/UseOnContext.html" title="class in net.minecraft.world.item.context">UseOnContext</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#context" class="member-name-link">context</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final @Nullable <a href="../../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a></code></div>
-<div class="col-second even-row-color"><code><a href="#face" class="member-name-link">face</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#hand" class="member-name-link">hand</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second even-row-color"><code><a href="#heldItem" class="member-name-link">heldItem</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#level" class="member-name-link">level</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final @Nullable <a href="../../../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a></code></div>
-<div class="col-second even-row-color"><code><a href="#player" class="member-name-link">player</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#pos" class="member-name-link">pos</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="UseItemOnBlockEvent.UsePhase.html" title="enum class in net.neoforged.neoforge.event.entity.player">UseItemOnBlockEvent.UsePhase</a></code></div>
-<div class="col-second even-row-color"><code><a href="#usePhase" class="member-name-link">usePhase</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -240,7 +187,7 @@ specified result to the interaction logic instead.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">If the interaction was on an entity, will be a BlockPos centered on the entity.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>net.neoforged.fml.LogicalSide</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../fml/LogicalSide.html" title="enum class in net.neoforged.fml">LogicalSide</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSide()" class="member-name-link">getSide</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../minecraft/world/item/context/UseOnContext.html" title="class in net.minecraft.world.item.context">UseOnContext</a></code></div>
@@ -262,96 +209,16 @@ method of the event.</div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-net.neoforged.bus.api.ICancellableEvent">Methods inherited from interface&nbsp;net.neoforged.bus.api.ICancellableEvent</h3>
-<code>isCanceled, setCanceled</code></div>
+<h3 id="methods-inherited-from-class-net.neoforged.bus.api.ICancellableEvent">Methods inherited from interface&nbsp;<a href="../../../../bus/api/ICancellableEvent.html#method-summary" title="interface in net.neoforged.bus.api">ICancellableEvent</a></h3>
+<code><a href="../../../../bus/api/ICancellableEvent.html#isCanceled()" title="isCanceled()">isCanceled</a>, <a href="../../../../bus/api/ICancellableEvent.html#setCanceled(boolean)" title="setCanceled(boolean)">setCanceled</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="level">
-<h3>level</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a></span>&nbsp;<span class="element-name">level</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="player">
-<h3>player</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a></span>&nbsp;<span class="element-name">player</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hand">
-<h3>hand</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a></span>&nbsp;<span class="element-name">hand</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="heldItem">
-<h3>heldItem</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">heldItem</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pos">
-<h3>pos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></span>&nbsp;<span class="element-name">pos</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="face">
-<h3>face</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">@Nullable <a href="../../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a></span>&nbsp;<span class="element-name">face</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="context">
-<h3>context</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/world/item/context/UseOnContext.html" title="class in net.minecraft.world.item.context">UseOnContext</a></span>&nbsp;<span class="element-name">context</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="usePhase">
-<h3>usePhase</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="UseItemOnBlockEvent.UsePhase.html" title="enum class in net.neoforged.neoforge.event.entity.player">UseItemOnBlockEvent.UsePhase</a></span>&nbsp;<span class="element-name">usePhase</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cancellationResult">
-<h3>cancellationResult</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../../minecraft/world/InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></span>&nbsp;<span class="element-name">cancellationResult</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -485,10 +352,10 @@ Will never be null.</div>
 <section class="detail" id="getSide()">
 <h3>getSide</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">net.neoforged.fml.LogicalSide</span>&nbsp;<span class="element-name">getSide</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../fml/LogicalSide.html" title="enum class in net.neoforged.fml">LogicalSide</a></span>&nbsp;<span class="element-name">getSide</span>()</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>The effective, i.e. logical, side of this interaction. This will be <code>LogicalSide.CLIENT</code> on the client thread, and <code>LogicalSide.SERVER</code> on the server thread.</dd>
+<dd>The effective, i.e. logical, side of this interaction. This will be <a href="../../../../fml/LogicalSide.html#CLIENT"><code>LogicalSide.CLIENT</code></a> on the client thread, and <a href="../../../../fml/LogicalSide.html#SERVER"><code>LogicalSide.SERVER</code></a> on the server thread.</dd>
 </dl>
 </div>
 </section>
@@ -512,7 +379,7 @@ specified result to the interaction logic instead.</p>
               and will also prevent the ITEM_AFTER_BLOCK item interaction from occurring if provided during the BLOCK phase.
               <li><a href="../../../../../minecraft/world/InteractionResult.html#SUCCESS"><code>InteractionResult.SUCCESS</code></a> will trigger the arm-swinging mechanic.
               <li><a href="../../../../../minecraft/world/InteractionResult.html#TRY_WITH_EMPTY_HAND"><code>InteractionResult.TRY_WITH_EMPTY_HAND</code></a> will always allow proceeding to the next phase.
-              <li><a href="../../../../../minecraft/world/InteractionResult.html#PASS"><code>InteractionResult.PASS</code></a> will not call the block's <a href="../../../../../minecraft/world/level/block/state/BlockBehaviour.html#useItemOn(net.minecraft.world.item.ItemStack,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.phys.BlockHitResult)"><code>use method</code></a></li>
+              <li><a href="../../../../../minecraft/world/InteractionResult.html#PASS"><code>InteractionResult.PASS</code></a> will not call the block's <code>use method</code></li>
               </ul></dd>
 </dl>
 </div>

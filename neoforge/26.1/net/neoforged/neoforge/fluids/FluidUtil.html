@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>FluidUtil (NeoForge 26.1)</title>
+<title>FluidUtil (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.fluids, class: FluidUtil">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/FluidUtil.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,13 +54,7 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E()" tabindex="0">FluidUtil()</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#interactWithFluidHandler(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" tabindex="0">interactWithFluidHandler(Player, InteractionHand, Level, BlockPos, Direction)</a></li>
@@ -71,14 +65,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#tryEmptyContainerAndStow(net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.items.IItemHandler,int,net.minecraft.world.entity.player.Player,boolean)" tabindex="0">tryEmptyContainerAndStow(ItemStack, IFluidHandler, IItemHandler, int, Player, boolean)</a></li>
 <li><a href="#tryFluidTransfer(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,int,boolean)" tabindex="0">tryFluidTransfer(IFluidHandler, IFluidHandler, int, boolean)</a></li>
 <li><a href="#tryFluidTransfer(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.FluidStack,boolean)" tabindex="0">tryFluidTransfer(IFluidHandler, IFluidHandler, FluidStack, boolean)</a></li>
-<li><a href="#tryFluidTransfer_Internal(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.FluidStack,boolean)" tabindex="0">tryFluidTransfer_Internal(IFluidHandler, IFluidHandler, FluidStack, boolean)</a></li>
 <li><a href="#getFluidHandler(net.minecraft.world.item.ItemStack)" tabindex="0">getFluidHandler(ItemStack)</a></li>
 <li><a href="#getFluidContained(net.minecraft.world.item.ItemStack)" tabindex="0">getFluidContained(ItemStack)</a></li>
 <li><a href="#getFluidHandler(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" tabindex="0">getFluidHandler(Level, BlockPos, Direction)</a></li>
 <li><a href="#tryPickUpFluid(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" tabindex="0">tryPickUpFluid(ItemStack, Player, Level, BlockPos, Direction)</a></li>
 <li><a href="#tryPlaceFluid(net.minecraft.world.entity.player.Player,net.minecraft.world.level.Level,net.minecraft.world.InteractionHand,net.minecraft.core.BlockPos,net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.FluidStack)" tabindex="0">tryPlaceFluid(Player, Level, InteractionHand, BlockPos, ItemStack, FluidStack)</a></li>
 <li><a href="#tryPlaceFluid(net.minecraft.world.entity.player.Player,net.minecraft.world.level.Level,net.minecraft.world.InteractionHand,net.minecraft.core.BlockPos,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.FluidStack)" tabindex="0">tryPlaceFluid(Player, Level, InteractionHand, BlockPos, IFluidHandler, FluidStack)</a></li>
-<li><a href="#getFluidBlockHandler(net.minecraft.world.level.material.Fluid,net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" tabindex="0">getFluidBlockHandler(Fluid, Level, BlockPos)</a></li>
 <li><a href="#destroyBlockOnFluidPlacement(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" tabindex="0">destroyBlockOnFluidPlacement(Level, BlockPos)</a></li>
 <li><a href="#getFilledBucket(net.neoforged.neoforge.fluids.FluidStack)" tabindex="0">getFilledBucket(FluidStack)</a></li>
 </ol>
@@ -108,23 +100,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">FluidUtil</a>()</code></div>
-<div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -151,72 +126,52 @@ loadScripts(document, 'script');</script>
 <div class="deprecation-comment">Use <a href="FluidType.html#getBucket(net.neoforged.neoforge.fluids.FluidStack)"><code>FluidType.getBucket(FluidStack)</code></a> instead.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>private static <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getFluidBlockHandler(net.minecraft.world.level.material.Fluid,net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" class="member-name-link">getFluidBlockHandler</a><wbr>(<a href="../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&nbsp;fluid,
- <a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getFluidContained(net.minecraft.world.item.ItemStack)" class="member-name-link">getFluidContained</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Internal method for getting a fluid block handler for placing a fluid.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getFluidContained(net.minecraft.world.item.ItemStack)" class="member-name-link">getFluidContained</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
 <div class="deprecation-comment">Use <a href="../transfer/fluid/FluidUtil.html#getFirstStackContained(net.minecraft.world.item.ItemStack)"><code>FluidUtil.getFirstStackContained(ItemStack)</code></a> instead.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="capability/IFluidHandlerItem.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandlerItem</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getFluidHandler(net.minecraft.world.item.ItemStack)" class="member-name-link">getFluidHandler</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="capability/IFluidHandlerItem.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandlerItem</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getFluidHandler(net.minecraft.world.item.ItemStack)" class="member-name-link">getFluidHandler</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
 <div class="deprecation-comment">Obtain an <a href="../transfer/access/ItemAccess.html" title="interface in net.neoforged.neoforge.transfer.access"><code>ItemAccess</code></a>, and find a handler by calling <a href="../transfer/access/ItemAccess.html#getCapability(net.neoforged.neoforge.capabilities.ItemCapability)"><code>ItemAccess.getCapability(ItemCapability)</code></a> with <a href="../capabilities/Capabilities.Fluid.html#ITEM"><code>Capabilities.Fluid.ITEM</code></a>.</div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getFluidHandler(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" class="member-name-link">getFluidHandler</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getFluidHandler(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" class="member-name-link">getFluidHandler</a><wbr>(<a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;blockPos,
  @Nullable <a href="../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;side)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
 <div class="deprecation-comment">Use the <a href="../capabilities/Capabilities.Fluid.html#BLOCK"><code>Capabilities.Fluid.BLOCK</code></a> capability directly.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#interactWithFluidHandler(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" class="member-name-link">interactWithFluidHandler</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#interactWithFluidHandler(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" class="member-name-link">interactWithFluidHandler</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
  <a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  @Nullable <a href="../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;side)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
 <div class="deprecation-comment">Use <a href="../transfer/fluid/FluidUtil.html#interactWithFluidHandler(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)"><code>FluidUtil.interactWithFluidHandler(Player, InteractionHand, Level, BlockPos, Direction)</code></a> instead.</div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#interactWithFluidHandler(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.neoforged.neoforge.fluids.capability.IFluidHandler)" class="member-name-link">interactWithFluidHandler</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#interactWithFluidHandler(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.neoforged.neoforge.fluids.capability.IFluidHandler)" class="member-name-link">interactWithFluidHandler</a><wbr>(<a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  <a href="../../../minecraft/world/InteractionHand.html" title="enum class in net.minecraft.world">InteractionHand</a>&nbsp;hand,
  <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;handler)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
 <div class="deprecation-comment">Use <a href="../transfer/fluid/FluidUtil.html#interactWithFluidHandler(net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)"><code>FluidUtil.interactWithFluidHandler(Player, InteractionHand, Level, BlockPos, Direction)</code></a> instead.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="FluidActionResult.html" title="class in net.neoforged.neoforge.fluids">FluidActionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryEmptyContainer(net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.capability.IFluidHandler,int,net.minecraft.world.entity.player.Player,boolean)" class="member-name-link">tryEmptyContainer</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container,
- <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidDestination,
- int&nbsp;maxAmount,
- @Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- boolean&nbsp;doDrain)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
-<div class="deprecation-comment">Use <a href="../transfer/ResourceHandlerUtil.html#move(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.move(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> with an <a href="../transfer/access/ItemAccess.html" title="interface in net.neoforged.neoforge.transfer.access"><code>ItemAccess</code></a>-backed handler as the source.</div>
-</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="FluidActionResult.html" title="class in net.neoforged.neoforge.fluids">FluidActionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryEmptyContainerAndStow(net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.items.IItemHandler,int,net.minecraft.world.entity.player.Player,boolean)" class="member-name-link">tryEmptyContainerAndStow</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryEmptyContainer(net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.capability.IFluidHandler,int,net.minecraft.world.entity.player.Player,boolean)" class="member-name-link">tryEmptyContainer</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container,
  <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidDestination,
- <a href="../items/IItemHandler.html" title="interface in net.neoforged.neoforge.items">IItemHandler</a>&nbsp;inventory,
  int&nbsp;maxAmount,
  @Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  boolean&nbsp;doDrain)</code></div>
@@ -226,20 +181,20 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="FluidActionResult.html" title="class in net.neoforged.neoforge.fluids">FluidActionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryFillContainer(net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.capability.IFluidHandler,int,net.minecraft.world.entity.player.Player,boolean)" class="member-name-link">tryFillContainer</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container,
- <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidSource,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryEmptyContainerAndStow(net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.items.IItemHandler,int,net.minecraft.world.entity.player.Player,boolean)" class="member-name-link">tryEmptyContainerAndStow</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container,
+ <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidDestination,
+ <a href="../items/IItemHandler.html" title="interface in net.neoforged.neoforge.items">IItemHandler</a>&nbsp;inventory,
  int&nbsp;maxAmount,
  @Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
- boolean&nbsp;doFill)</code></div>
+ boolean&nbsp;doDrain)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
-<div class="deprecation-comment">Use <a href="../transfer/ResourceHandlerUtil.html#move(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.move(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> with an <a href="../transfer/access/ItemAccess.html" title="interface in net.neoforged.neoforge.transfer.access"><code>ItemAccess</code></a>-backed handler as the destination.</div>
+<div class="deprecation-comment">Use <a href="../transfer/ResourceHandlerUtil.html#move(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.move(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> with an <a href="../transfer/access/ItemAccess.html" title="interface in net.neoforged.neoforge.transfer.access"><code>ItemAccess</code></a>-backed handler as the source.</div>
 </div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="FluidActionResult.html" title="class in net.neoforged.neoforge.fluids">FluidActionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryFillContainerAndStow(net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.items.IItemHandler,int,net.minecraft.world.entity.player.Player,boolean)" class="member-name-link">tryFillContainerAndStow</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryFillContainer(net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.capability.IFluidHandler,int,net.minecraft.world.entity.player.Player,boolean)" class="member-name-link">tryFillContainer</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container,
  <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidSource,
- <a href="../items/IItemHandler.html" title="interface in net.neoforged.neoforge.items">IItemHandler</a>&nbsp;inventory,
  int&nbsp;maxAmount,
  @Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
  boolean&nbsp;doFill)</code></div>
@@ -248,34 +203,37 @@ loadScripts(document, 'script');</script>
 <div class="deprecation-comment">Use <a href="../transfer/ResourceHandlerUtil.html#move(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.move(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> with an <a href="../transfer/access/ItemAccess.html" title="interface in net.neoforged.neoforge.transfer.access"><code>ItemAccess</code></a>-backed handler as the destination.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryFluidTransfer(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,int,boolean)" class="member-name-link">tryFluidTransfer</a><wbr>(<a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidDestination,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="FluidActionResult.html" title="class in net.neoforged.neoforge.fluids">FluidActionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryFillContainerAndStow(net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.items.IItemHandler,int,net.minecraft.world.entity.player.Player,boolean)" class="member-name-link">tryFillContainerAndStow</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;container,
  <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidSource,
+ <a href="../items/IItemHandler.html" title="interface in net.neoforged.neoforge.items">IItemHandler</a>&nbsp;inventory,
  int&nbsp;maxAmount,
- boolean&nbsp;doTransfer)</code></div>
+ @Nullable <a href="../../../minecraft/world/entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player,
+ boolean&nbsp;doFill)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
-<div class="deprecation-comment">Use <a href="../transfer/ResourceHandlerUtil.html#move(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.move(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> or <a href="../transfer/ResourceHandlerUtil.html#moveFirst(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.moveFirst(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> instead.</div>
+<div class="deprecation-comment">Use <a href="../transfer/ResourceHandlerUtil.html#move(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.move(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> with an <a href="../transfer/access/ItemAccess.html" title="interface in net.neoforged.neoforge.transfer.access"><code>ItemAccess</code></a>-backed handler as the destination.</div>
 </div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryFluidTransfer(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.FluidStack,boolean)" class="member-name-link">tryFluidTransfer</a><wbr>(<a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidDestination,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryFluidTransfer(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,int,boolean)" class="member-name-link">tryFluidTransfer</a><wbr>(<a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidDestination,
  <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidSource,
- <a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>&nbsp;resource,
+ int&nbsp;maxAmount,
  boolean&nbsp;doTransfer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
 <div class="deprecation-comment">Use <a href="../transfer/ResourceHandlerUtil.html#move(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.move(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> or <a href="../transfer/ResourceHandlerUtil.html#moveFirst(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.moveFirst(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> instead.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>private static <a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryFluidTransfer_Internal(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.FluidStack,boolean)" class="member-name-link">tryFluidTransfer_Internal</a><wbr>(<a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidDestination,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryFluidTransfer(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.FluidStack,boolean)" class="member-name-link">tryFluidTransfer</a><wbr>(<a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidDestination,
  <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidSource,
- <a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>&nbsp;drainable,
+ <a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>&nbsp;resource,
  boolean&nbsp;doTransfer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Internal method for filling a destination fluid handler from a source fluid handler using a specific fluid.</div>
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Use <a href="../transfer/ResourceHandlerUtil.html#move(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.move(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> or <a href="../transfer/ResourceHandlerUtil.html#moveFirst(net.neoforged.neoforge.transfer.ResourceHandler,net.neoforged.neoforge.transfer.ResourceHandler,java.util.function.Predicate,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandlerUtil.moveFirst(ResourceHandler, ResourceHandler, Predicate, int, TransactionContext)</code></a> instead.</div>
+</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="FluidActionResult.html" title="class in net.neoforged.neoforge.fluids">FluidActionResult</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#tryPickUpFluid(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" class="member-name-link">tryPickUpFluid</a><wbr>(<a href="../../../minecraft/world/item/ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;emptyContainer,
@@ -317,30 +275,13 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;()">
-<h3>FluidUtil</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">FluidUtil</span>()</div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -597,23 +538,6 @@ To transfer as much as possible, use <a href="https://docs.oracle.com/en/java/ja
 </section>
 </li>
 <li>
-<section class="detail" id="tryFluidTransfer_Internal(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.FluidStack,boolean)">
-<h3>tryFluidTransfer_Internal</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a></span>&nbsp;<span class="element-name">tryFluidTransfer_Internal</span><wbr><span class="parameters">(<a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidDestination,
- <a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a>&nbsp;fluidSource,
- <a href="FluidStack.html" title="class in net.neoforged.neoforge.fluids">FluidStack</a>&nbsp;drainable,
- boolean&nbsp;doTransfer)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Internal method for filling a destination fluid handler from a source fluid handler using a specific fluid.
-Assumes that "drainable" can be drained from "fluidSource".
-
-Modders: Instead of this method, use <a href="#tryFluidTransfer(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.FluidStack,boolean)"><code>tryFluidTransfer(IFluidHandler, IFluidHandler, FluidStack, boolean)</code></a>
-or <a href="#tryFluidTransfer(net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.capability.IFluidHandler,int,boolean)"><code>tryFluidTransfer(IFluidHandler, IFluidHandler, int, boolean)</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getFluidHandler(net.minecraft.world.item.ItemStack)">
 <h3>getFluidHandler</h3>
 <div class="horizontal-scroll">
@@ -760,21 +684,6 @@ Modeled after <a href="../../../minecraft/world/item/BucketItem.html#emptyConten
 <dt>Returns:</dt>
 <dd>true if the placement was successful, false otherwise</dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getFluidBlockHandler(net.minecraft.world.level.material.Fluid,net.minecraft.world.level.Level,net.minecraft.core.BlockPos)">
-<h3>getFluidBlockHandler</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="capability/IFluidHandler.html" title="interface in net.neoforged.neoforge.fluids.capability">IFluidHandler</a></span>&nbsp;<span class="element-name">getFluidBlockHandler</span><wbr><span class="parameters">(<a href="../../../minecraft/world/level/material/Fluid.html" title="class in net.minecraft.world.level.material">Fluid</a>&nbsp;fluid,
- <a href="../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Internal method for getting a fluid block handler for placing a fluid.
-
-Modders: Instead of this method, use <a href="#tryPlaceFluid(net.minecraft.world.entity.player.Player,net.minecraft.world.level.Level,net.minecraft.world.InteractionHand,net.minecraft.core.BlockPos,net.minecraft.world.item.ItemStack,net.neoforged.neoforge.fluids.FluidStack)"><code>tryPlaceFluid(Player, Level, InteractionHand, BlockPos, ItemStack, FluidStack)</code></a>
-or <a href="#tryPlaceFluid(net.minecraft.world.entity.player.Player,net.minecraft.world.level.Level,net.minecraft.world.InteractionHand,net.minecraft.core.BlockPos,net.neoforged.neoforge.fluids.capability.IFluidHandler,net.neoforged.neoforge.fluids.FluidStack)"><code>tryPlaceFluid(Player, Level, InteractionHand, BlockPos, IFluidHandler, FluidStack)</code></a></div>
 </div>
 </section>
 </li>

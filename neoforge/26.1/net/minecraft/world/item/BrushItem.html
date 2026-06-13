@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>BrushItem (NeoForge 26.1)</title>
+<title>BrushItem (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.item, class: BrushItem">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/BrushItem.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,7 +61,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#ANIMATION_DURATION" tabindex="0">ANIMATION_DURATION</a></li>
-<li><a href="#USE_DURATION" tabindex="0">USE_DURATION</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -75,8 +74,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getUseAnimation(net.minecraft.world.item.ItemStack)" tabindex="0">getUseAnimation(ItemStack)</a></li>
 <li><a href="#getUseDuration(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.LivingEntity)" tabindex="0">getUseDuration(ItemStack, LivingEntity)</a></li>
 <li><a href="#onUseTick(net.minecraft.world.level.Level,net.minecraft.world.entity.LivingEntity,net.minecraft.world.item.ItemStack,int)" tabindex="0">onUseTick(Level, LivingEntity, ItemStack, int)</a></li>
-<li><a href="#calculateHitResult(net.minecraft.world.entity.player.Player)" tabindex="0">calculateHitResult(Player)</a></li>
-<li><a href="#spawnDustParticles(net.minecraft.world.level.Level,net.minecraft.world.phys.BlockHitResult,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.phys.Vec3,net.minecraft.world.entity.HumanoidArm)" tabindex="0">spawnDustParticles(Level, BlockHitResult, BlockState, Vec3, HumanoidArm)</a></li>
 <li><a href="#canPerformAction(net.minecraft.world.item.ItemInstance,net.neoforged.neoforge.common.ItemAbility)" tabindex="0">canPerformAction(ItemInstance, ItemAbility)</a></li>
 </ol>
 </li>
@@ -109,15 +106,6 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="BrushItem.DustParticlesDelta.html" class="type-name-link" title="class in net.minecraft.world.item">BrushItem.DustParticlesDelta</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.minecraft.world.item.Item">Nested classes/interfaces inherited from class&nbsp;<a href="Item.html#nested-class-summary" title="class in net.minecraft.world.item">Item</a></h3>
 <code><a href="Item.Properties.html" title="class in net.minecraft.world.item">Item.Properties</a>, <a href="Item.TooltipContext.html" title="interface in net.minecraft.world.item">Item.TooltipContext</a></code></div>
@@ -135,13 +123,10 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#ANIMATION_DURATION" class="member-name-link">ANIMATION_DURATION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#USE_DURATION" class="member-name-link">USE_DURATION</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.item.Item">Fields inherited from class&nbsp;<a href="Item.html#field-summary" title="class in net.minecraft.world.item">Item</a></h3>
-<code><a href="Item.html#ABSOLUTE_MAX_STACK_SIZE">ABSOLUTE_MAX_STACK_SIZE</a>, <a href="Item.html#APPROXIMATELY_INFINITE_USE_DURATION">APPROXIMATELY_INFINITE_USE_DURATION</a>, <a href="Item.html#BASE_ATTACK_DAMAGE_ID">BASE_ATTACK_DAMAGE_ID</a>, <a href="Item.html#BASE_ATTACK_SPEED_ID">BASE_ATTACK_SPEED_ID</a>, <a href="Item.html#BY_BLOCK">BY_BLOCK</a>, <a href="Item.html#canCombineRepair">canCombineRepair</a>, <a href="Item.html#CODEC">CODEC</a>, <a href="Item.html#CODEC_WITH_BOUND_COMPONENTS">CODEC_WITH_BOUND_COMPONENTS</a>, <a href="Item.html#DEFAULT_MAX_STACK_SIZE">DEFAULT_MAX_STACK_SIZE</a>, <a href="Item.html#descriptionId">descriptionId</a>, <a href="Item.html#MAX_BAR_WIDTH">MAX_BAR_WIDTH</a>, <a href="Item.html#STREAM_CODEC">STREAM_CODEC</a></code></div>
+<code><a href="Item.html#ABSOLUTE_MAX_STACK_SIZE">ABSOLUTE_MAX_STACK_SIZE</a>, <a href="Item.html#BASE_ATTACK_DAMAGE_ID">BASE_ATTACK_DAMAGE_ID</a>, <a href="Item.html#BASE_ATTACK_SPEED_ID">BASE_ATTACK_SPEED_ID</a>, <a href="Item.html#BY_BLOCK">BY_BLOCK</a>, <a href="Item.html#CODEC">CODEC</a>, <a href="Item.html#CODEC_WITH_BOUND_COMPONENTS">CODEC_WITH_BOUND_COMPONENTS</a>, <a href="Item.html#DEFAULT_MAX_STACK_SIZE">DEFAULT_MAX_STACK_SIZE</a>, <a href="Item.html#MAX_BAR_WIDTH">MAX_BAR_WIDTH</a>, <a href="Item.html#STREAM_CODEC">STREAM_CODEC</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.flag.FeatureElement">Fields inherited from interface&nbsp;<a href="../flag/FeatureElement.html#field-summary" title="interface in net.minecraft.world.flag">FeatureElement</a></h3>
 <code><a href="../flag/FeatureElement.html#FILTERED_REGISTRIES">FILTERED_REGISTRIES</a></code></div>
@@ -171,34 +156,24 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../phys/HitResult.html" title="class in net.minecraft.world.phys">HitResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateHitResult(net.minecraft.world.entity.player.Player)" class="member-name-link">calculateHitResult</a><wbr>(<a href="../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canPerformAction(net.minecraft.world.item.ItemInstance,net.neoforged.neoforge.common.ItemAbility)" class="member-name-link">canPerformAction</a><wbr>(<a href="ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;stack,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canPerformAction(net.minecraft.world.item.ItemInstance,net.neoforged.neoforge.common.ItemAbility)" class="member-name-link">canPerformAction</a><wbr>(<a href="ItemInstance.html" title="interface in net.minecraft.world.item">ItemInstance</a>&nbsp;stack,
  <a href="../../../neoforged/neoforge/common/ItemAbility.html" title="class in net.neoforged.neoforge.common">ItemAbility</a>&nbsp;itemAbility)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries if an item can perform the given action.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemUseAnimation.html" title="enum class in net.minecraft.world.item">ItemUseAnimation</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUseAnimation(net.minecraft.world.item.ItemStack)" class="member-name-link">getUseAnimation</a><wbr>(<a href="ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUseDuration(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.LivingEntity)" class="member-name-link">getUseDuration</a><wbr>(<a href="ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
- <a href="../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;user)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemUseAnimation.html" title="enum class in net.minecraft.world.item">ItemUseAnimation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUseAnimation(net.minecraft.world.item.ItemStack)" class="member-name-link">getUseAnimation</a><wbr>(<a href="ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onUseTick(net.minecraft.world.level.Level,net.minecraft.world.entity.LivingEntity,net.minecraft.world.item.ItemStack,int)" class="member-name-link">onUseTick</a><wbr>(<a href="../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUseDuration(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.LivingEntity)" class="member-name-link">getUseDuration</a><wbr>(<a href="ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
+ <a href="../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;user)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onUseTick(net.minecraft.world.level.Level,net.minecraft.world.entity.LivingEntity,net.minecraft.world.item.ItemStack,int)" class="member-name-link">onUseTick</a><wbr>(<a href="../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../entity/LivingEntity.html" title="class in net.minecraft.world.entity">LivingEntity</a>&nbsp;livingEntity,
  <a href="ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;itemStack,
  int&nbsp;ticksRemaining)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spawnDustParticles(net.minecraft.world.level.Level,net.minecraft.world.phys.BlockHitResult,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.phys.Vec3,net.minecraft.world.entity.HumanoidArm)" class="member-name-link">spawnDustParticles</a><wbr>(<a href="../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a>&nbsp;hitResult,
- <a href="../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;viewVector,
- <a href="../entity/HumanoidArm.html" title="enum class in net.minecraft.world.entity">HumanoidArm</a>&nbsp;brushingArm)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../InteractionResult.html" title="interface in net.minecraft.world">InteractionResult</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useOn(net.minecraft.world.item.context.UseOnContext)" class="member-name-link">useOn</a><wbr>(<a href="context/UseOnContext.html" title="class in net.minecraft.world.item.context">UseOnContext</a>&nbsp;context)</code></div>
@@ -211,7 +186,7 @@ loadScripts(document, 'script');</script>
 <code><a href="Item.html#appendHoverText(net.minecraft.world.item.ItemStack,net.minecraft.world.item.Item.TooltipContext,net.minecraft.world.item.component.TooltipDisplay,java.util.function.Consumer,net.minecraft.world.item.TooltipFlag)" title="appendHoverText(ItemStack, Item.TooltipContext, TooltipDisplay, Consumer, TooltipFlag)">appendHoverText</a>, <a href="Item.html#asItem()" title="asItem()">asItem</a>, <a href="Item.html#builtInRegistryHolder()" title="builtInRegistryHolder()">builtInRegistryHolder</a>, <a href="Item.html#byBlock(net.minecraft.world.level.block.Block)" title="byBlock(Block)">byBlock</a>, <a href="Item.html#byId(int)" title="byId(int)">byId</a>, <a href="Item.html#canDestroyBlock(net.minecraft.world.item.ItemStack,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.world.entity.LivingEntity)" title="canDestroyBlock(ItemStack, BlockState, Level, BlockPos, LivingEntity)">canDestroyBlock</a>, <a href="Item.html#canFitInsideContainerItems()" title="canFitInsideContainerItems()">canFitInsideContainerItems</a>, <a href="Item.html#components()" title="components()">components</a>, <a href="Item.html#computeDefaultResource(java.util.function.Function)" title="computeDefaultResource(Function)">computeDefaultResource</a>, <a href="Item.html#finishUsingItem(net.minecraft.world.item.ItemStack,net.minecraft.world.level.Level,net.minecraft.world.entity.LivingEntity)" title="finishUsingItem(ItemStack, Level, LivingEntity)">finishUsingItem</a>, <a href="Item.html#getAttackDamageBonus(net.minecraft.world.entity.Entity,float,net.minecraft.world.damagesource.DamageSource)" title="getAttackDamageBonus(Entity, float, DamageSource)">getAttackDamageBonus</a>, <a href="Item.html#getBarColor(net.minecraft.world.item.ItemStack)" title="getBarColor(ItemStack)">getBarColor</a>, <a href="Item.html#getBarWidth(net.minecraft.world.item.ItemStack)" title="getBarWidth(ItemStack)">getBarWidth</a>, <a href="Item.html#getCraftingRemainder()" title="getCraftingRemainder()">getCraftingRemainder</a>, <a href="Item.html#getDefaultInstance()" title="getDefaultInstance()">getDefaultInstance</a>, <a href="Item.html#getDefaultMaxStackSize()" title="getDefaultMaxStackSize()">getDefaultMaxStackSize</a>, <a href="Item.html#getDescriptionId()" title="getDescriptionId()">getDescriptionId</a>, <a href="Item.html#getDestroySpeed(net.minecraft.world.item.ItemStack,net.minecraft.world.level.block.state.BlockState)" title="getDestroySpeed(ItemStack, BlockState)">getDestroySpeed</a>, <a href="Item.html#getId(net.minecraft.world.item.Item)" title="getId(Item)">getId</a>, <a href="Item.html#getItemDamageSource(net.minecraft.world.entity.LivingEntity)" title="getItemDamageSource(LivingEntity)">getItemDamageSource</a>, <a href="Item.html#getName(net.minecraft.world.item.ItemStack)" title="getName(ItemStack)">getName</a>, <a href="Item.html#getPlayerPOVHitResult(net.minecraft.world.level.Level,net.minecraft.world.entity.player.Player,net.minecraft.world.level.ClipContext.Fluid)" title="getPlayerPOVHitResult(Level, Player, ClipContext.Fluid)">getPlayerPOVHitResult</a>, <a href="Item.html#getTooltipImage(net.minecraft.world.item.ItemStack)" title="getTooltipImage(ItemStack)">getTooltipImage</a>, <a href="Item.html#hurtEnemy(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.LivingEntity,net.minecraft.world.entity.LivingEntity)" title="hurtEnemy(ItemStack, LivingEntity, LivingEntity)">hurtEnemy</a>, <a href="Item.html#interactLivingEntity(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player,net.minecraft.world.entity.LivingEntity,net.minecraft.world.InteractionHand)" title="interactLivingEntity(ItemStack, Player, LivingEntity, InteractionHand)">interactLivingEntity</a>, <a href="Item.html#inventoryTick(net.minecraft.world.item.ItemStack,net.minecraft.server.level.ServerLevel,net.minecraft.world.entity.Entity,net.minecraft.world.entity.EquipmentSlot)" title="inventoryTick(ItemStack, ServerLevel, Entity, EquipmentSlot)">inventoryTick</a>, <a href="Item.html#isBarVisible(net.minecraft.world.item.ItemStack)" title="isBarVisible(ItemStack)">isBarVisible</a>, <a href="Item.html#isCombineRepairable(net.minecraft.world.item.ItemStack)" title="isCombineRepairable(ItemStack)">isCombineRepairable</a>, <a href="Item.html#isCorrectToolForDrops(net.minecraft.world.item.ItemStack,net.minecraft.world.level.block.state.BlockState)" title="isCorrectToolForDrops(ItemStack, BlockState)">isCorrectToolForDrops</a>, <a href="Item.html#isFoil(net.minecraft.world.item.ItemStack)" title="isFoil(ItemStack)">isFoil</a>, <a href="Item.html#mineBlock(net.minecraft.world.item.ItemStack,net.minecraft.world.level.Level,net.minecraft.world.level.block.state.BlockState,net.minecraft.core.BlockPos,net.minecraft.world.entity.LivingEntity)" title="mineBlock(ItemStack, Level, BlockState, BlockPos, LivingEntity)">mineBlock</a>, <a href="Item.html#onCraftedBy(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player)" title="onCraftedBy(ItemStack, Player)">onCraftedBy</a>, <a href="Item.html#onCraftedPostProcess(net.minecraft.world.item.ItemStack,net.minecraft.world.level.Level)" title="onCraftedPostProcess(ItemStack, Level)">onCraftedPostProcess</a>, <a href="Item.html#onDestroyed(net.minecraft.world.entity.item.ItemEntity)" title="onDestroyed(ItemEntity)">onDestroyed</a>, <a href="Item.html#overrideOtherStackedOnMe(net.minecraft.world.item.ItemStack,net.minecraft.world.item.ItemStack,net.minecraft.world.inventory.Slot,net.minecraft.world.inventory.ClickAction,net.minecraft.world.entity.player.Player,net.minecraft.world.entity.SlotAccess)" title="overrideOtherStackedOnMe(ItemStack, ItemStack, Slot, ClickAction, Player, SlotAccess)">overrideOtherStackedOnMe</a>, <a href="Item.html#overrideStackedOnOther(net.minecraft.world.item.ItemStack,net.minecraft.world.inventory.Slot,net.minecraft.world.inventory.ClickAction,net.minecraft.world.entity.player.Player)" title="overrideStackedOnOther(ItemStack, Slot, ClickAction, Player)">overrideStackedOnOther</a>, <a href="Item.html#postHurtEnemy(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.LivingEntity,net.minecraft.world.entity.LivingEntity)" title="postHurtEnemy(ItemStack, LivingEntity, LivingEntity)">postHurtEnemy</a>, <a href="Item.html#releaseUsing(net.minecraft.world.item.ItemStack,net.minecraft.world.level.Level,net.minecraft.world.entity.LivingEntity,int)" title="releaseUsing(ItemStack, Level, LivingEntity, int)">releaseUsing</a>, <a href="Item.html#requiredFeatures()" title="requiredFeatures()">requiredFeatures</a>, <a href="Item.html#resetDefaultResource()" title="resetDefaultResource()">resetDefaultResource</a>, <a href="Item.html#shouldPrintOpWarning(net.minecraft.world.item.ItemStack,net.minecraft.world.entity.player.Player)" title="shouldPrintOpWarning(ItemStack, Player)">shouldPrintOpWarning</a>, <a href="Item.html#toString()" title="toString()">toString</a>, <a href="Item.html#use(net.minecraft.world.level.Level,net.minecraft.world.entity.player.Player,net.minecraft.world.InteractionHand)" title="use(Level, Player, InteractionHand)">use</a>, <a href="Item.html#useOnRelease(net.minecraft.world.item.ItemStack)" title="useOnRelease(ItemStack)">useOnRelease</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.flag.FeatureElement">Methods inherited from interface&nbsp;<a href="../flag/FeatureElement.html#method-summary" title="interface in net.minecraft.world.flag">FeatureElement</a></h3>
 <code><a href="../flag/FeatureElement.html#isEnabled(net.minecraft.world.flag.FeatureFlagSet)" title="isEnabled(FeatureFlagSet)">isEnabled</a></code></div>
@@ -239,22 +214,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#net.minecraft.world.item.BrushItem.ANIMATION_DURATION">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="USE_DURATION">
-<h3>USE_DURATION</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">USE_DURATION</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.world.item.BrushItem.USE_DURATION">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -334,26 +293,6 @@ loadScripts(document, 'script');</script>
 <dt>Overrides:</dt>
 <dd><code><a href="Item.html#onUseTick(net.minecraft.world.level.Level,net.minecraft.world.entity.LivingEntity,net.minecraft.world.item.ItemStack,int)">onUseTick</a></code>&nbsp;in class&nbsp;<code><a href="Item.html" title="class in net.minecraft.world.item">Item</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="calculateHitResult(net.minecraft.world.entity.player.Player)">
-<h3>calculateHitResult</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../phys/HitResult.html" title="class in net.minecraft.world.phys">HitResult</a></span>&nbsp;<span class="element-name">calculateHitResult</span><wbr><span class="parameters">(<a href="../entity/player/Player.html" title="class in net.minecraft.world.entity.player">Player</a>&nbsp;player)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spawnDustParticles(net.minecraft.world.level.Level,net.minecraft.world.phys.BlockHitResult,net.minecraft.world.level.block.state.BlockState,net.minecraft.world.phys.Vec3,net.minecraft.world.entity.HumanoidArm)">
-<h3>spawnDustParticles</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">spawnDustParticles</span><wbr><span class="parameters">(<a href="../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../phys/BlockHitResult.html" title="class in net.minecraft.world.phys">BlockHitResult</a>&nbsp;hitResult,
- <a href="../level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- <a href="../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;viewVector,
- <a href="../entity/HumanoidArm.html" title="enum class in net.minecraft.world.entity">HumanoidArm</a>&nbsp;brushingArm)</span></div>
 </div>
 </section>
 </li>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>CalculateDetachedCameraDistanceEvent (NeoForge 26.1)</title>
+<title>CalculateDetachedCameraDistanceEvent (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.client.event, class: CalculateDetachedCameraDistanceEvent">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/CalculateDetachedCameraDistanceEvent.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,20 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#camera" tabindex="0">camera</a></li>
-<li><a href="#cameraFlipped" tabindex="0">cameraFlipped</a></li>
-<li><a href="#entityScale" tabindex="0">entityScale</a></li>
-<li><a href="#entityDistance" tabindex="0">entityDistance</a></li>
-<li><a href="#vehicleEntityScale" tabindex="0">vehicleEntityScale</a></li>
-<li><a href="#vehicleEntityDistance" tabindex="0">vehicleEntityDistance</a></li>
-<li><a href="#distance" tabindex="0">distance</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.client.Camera,boolean,float,float,float,float)" tabindex="0">CalculateDetachedCameraDistanceEvent(Camera, boolean, float, float, float, float)</a></li>
@@ -93,7 +81,7 @@ loadScripts(document, 'script');</script>
 <h1 title="Class CalculateDetachedCameraDistanceEvent" class="title">Class CalculateDetachedCameraDistanceEvent</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.neoforged.bus.api.Event
+<div class="inheritance"><a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">net.neoforged.bus.api.Event</a>
 <div class="inheritance">net.neoforged.neoforge.client.event.CalculateDetachedCameraDistanceEvent</div>
 </div>
 </div>
@@ -101,51 +89,18 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CalculateDetachedCameraDistanceEvent</span>
-<span class="extends-implements">extends net.neoforged.bus.api.Event</span></div>
+<span class="extends-implements">extends <a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">Event</a></span></div>
 <div class="block">Fired for hooking the maximum distance from the player to the camera in third-person view.
 The ray-cast that reduces this distance based on the blocks around the player is invoked after this event is fired.
 
-<p>This event is not cancellable.</p>
+<p>This event is not <a href="../../../bus/api/ICancellableEvent.html" title="interface in net.neoforged.bus.api">cancellable</a>.</p>
 
 <p>This event is fired on the <a href="../../common/NeoForge.html#EVENT_BUS">main Forge event bus</a>,
-only on the logical client.</p></div>
+only on the <a href="../../../fml/LogicalSide.html#CLIENT">logical client</a>.</p></div>
 </div>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../minecraft/client/Camera.html" title="class in net.minecraft.client">Camera</a></code></div>
-<div class="col-second even-row-color"><code><a href="#camera" class="member-name-link">camera</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#cameraFlipped" class="member-name-link">cameraFlipped</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private float</code></div>
-<div class="col-second even-row-color"><code><a href="#distance" class="member-name-link">distance</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#entityDistance" class="member-name-link">entityDistance</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final float</code></div>
-<div class="col-second even-row-color"><code><a href="#entityScale" class="member-name-link">entityScale</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#vehicleEntityDistance" class="member-name-link">vehicleEntityDistance</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final float</code></div>
-<div class="col-second even-row-color"><code><a href="#vehicleEntityScale" class="member-name-link">vehicleEntityScale</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -203,7 +158,7 @@ only on the logical client.</p></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityScalingFactor()" class="member-name-link">getEntityScalingFactor</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the scaling factor that will be applied to the <a href="#entityDistance"><code>entityDistance</code></a> to compute the final distance,
+<div class="block">Returns the scaling factor that will be applied to the <code>entityDistance</code> to compute the final distance,
 based on the size of the 
 <details class="invalid-tag">
 <summary>invalid reference</summary>
@@ -224,7 +179,7 @@ based on the size of the
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVehicleEntityScalingFactor()" class="member-name-link">getVehicleEntityScalingFactor</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the scaling factor that will be applied to the <a href="#vehicleEntityDistance"><code>vehicleEntityDistance</code></a> to compute the final distance,
+<div class="block">Returns the scaling factor that will be applied to the <code>vehicleEntityDistance</code> to compute the final distance,
 based on the size of the vehicle ridden by the 
 <details class="invalid-tag">
 <summary>invalid reference</summary>
@@ -252,77 +207,13 @@ based on the size of the vehicle ridden by the
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="camera">
-<h3>camera</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/client/Camera.html" title="class in net.minecraft.client">Camera</a></span>&nbsp;<span class="element-name">camera</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cameraFlipped">
-<h3>cameraFlipped</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">cameraFlipped</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="entityScale">
-<h3>entityScale</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">entityScale</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="entityDistance">
-<h3>entityDistance</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">entityDistance</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="vehicleEntityScale">
-<h3>vehicleEntityScale</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">vehicleEntityScale</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="vehicleEntityDistance">
-<h3>vehicleEntityDistance</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">vehicleEntityDistance</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="distance">
-<h3>distance</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">distance</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -373,7 +264,7 @@ based on the size of the vehicle ridden by the
 <h3>getEntityScalingFactor</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getEntityScalingFactor</span>()</div>
-<div class="block">Returns the scaling factor that will be applied to the <a href="#entityDistance"><code>entityDistance</code></a> to compute the final distance,
+<div class="block">Returns the scaling factor that will be applied to the <code>entityDistance</code> to compute the final distance,
 based on the size of the 
 <details class="invalid-tag">
 <summary>invalid reference</summary>
@@ -402,7 +293,7 @@ based on the size of the
 <h3>getVehicleEntityScalingFactor</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getVehicleEntityScalingFactor</span>()</div>
-<div class="block">Returns the scaling factor that will be applied to the <a href="#vehicleEntityDistance"><code>vehicleEntityDistance</code></a> to compute the final distance,
+<div class="block">Returns the scaling factor that will be applied to the <code>vehicleEntityDistance</code> to compute the final distance,
 based on the size of the vehicle ridden by the 
 <details class="invalid-tag">
 <summary>invalid reference</summary>

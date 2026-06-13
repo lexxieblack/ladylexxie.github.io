@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>JfrStatsParser (NeoForge 26.1)</title>
+<title>JfrStatsParser (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.util.profiling.jfr.parse, class: JfrStatsParser">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/JfrStatsParser.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,45 +55,10 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#recordingStarted" tabindex="0">recordingStarted</a></li>
-<li><a href="#recordingEnded" tabindex="0">recordingEnded</a></li>
-<li><a href="#chunkGenStats" tabindex="0">chunkGenStats</a></li>
-<li><a href="#structureGenStats" tabindex="0">structureGenStats</a></li>
-<li><a href="#cpuLoadStat" tabindex="0">cpuLoadStat</a></li>
-<li><a href="#receivedPackets" tabindex="0">receivedPackets</a></li>
-<li><a href="#sentPackets" tabindex="0">sentPackets</a></li>
-<li><a href="#readChunks" tabindex="0">readChunks</a></li>
-<li><a href="#writtenChunks" tabindex="0">writtenChunks</a></li>
-<li><a href="#fileWrites" tabindex="0">fileWrites</a></li>
-<li><a href="#fileReads" tabindex="0">fileReads</a></li>
-<li><a href="#garbageCollections" tabindex="0">garbageCollections</a></li>
-<li><a href="#gcTotalDuration" tabindex="0">gcTotalDuration</a></li>
-<li><a href="#gcHeapStats" tabindex="0">gcHeapStats</a></li>
-<li><a href="#threadAllocationStats" tabindex="0">threadAllocationStats</a></li>
-<li><a href="#fps" tabindex="0">fps</a></li>
-<li><a href="#serverTickTimes" tabindex="0">serverTickTimes</a></li>
-<li><a href="#worldCreationDuration" tabindex="0">worldCreationDuration</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(java.util.stream.Stream)" tabindex="0">JfrStatsParser(Stream)</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#parse(java.nio.file.Path)" tabindex="0">parse(Path)</a></li>
-<li><a href="#results()" tabindex="0">results()</a></li>
-<li><a href="#capture(java.util.stream.Stream)" tabindex="0">capture(Stream)</a></li>
-<li><a href="#incrementPacket(jdk.jfr.consumer.RecordedEvent,int,java.util.Map)" tabindex="0">incrementPacket(RecordedEvent, int, Map)</a></li>
-<li><a href="#incrementChunk(jdk.jfr.consumer.RecordedEvent,int,java.util.Map)" tabindex="0">incrementChunk(RecordedEvent, int, Map)</a></li>
-<li><a href="#appendFileIO(jdk.jfr.consumer.RecordedEvent,java.util.List,java.lang.String)" tabindex="0">appendFileIO(RecordedEvent, List, String)</a></li>
-<li><a href="#collectIoStats(java.time.Duration,java.util.Map)" tabindex="0">collectIoStats(Duration, Map)</a></li>
 </ol>
 </li>
 </ol>
@@ -130,306 +95,32 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../stats/ChunkGenStat.html" title="class in net.minecraft.util.profiling.jfr.stats">ChunkGenStat</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#chunkGenStats" class="member-name-link">chunkGenStats</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../stats/CpuLoadStat.html" title="class in net.minecraft.util.profiling.jfr.stats">CpuLoadStat</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#cpuLoadStat" class="member-name-link">cpuLoadStat</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../stats/FileIOStat.html" title="class in net.minecraft.util.profiling.jfr.stats">FileIOStat</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#fileReads" class="member-name-link">fileReads</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../stats/FileIOStat.html" title="class in net.minecraft.util.profiling.jfr.stats">FileIOStat</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#fileWrites" class="member-name-link">fileWrites</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../stats/FpsStat.html" title="class in net.minecraft.util.profiling.jfr.stats">FpsStat</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#fps" class="member-name-link">fps</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#garbageCollections" class="member-name-link">garbageCollections</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../stats/GcHeapStat.html" title="class in net.minecraft.util.profiling.jfr.stats">GcHeapStat</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#gcHeapStats" class="member-name-link">gcHeapStats</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#gcTotalDuration" class="member-name-link">gcTotalDuration</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../stats/ChunkIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">ChunkIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#readChunks" class="member-name-link">readChunks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../stats/PacketIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">PacketIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#receivedPackets" class="member-name-link">receivedPackets</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Instant.html" title="class or interface in java.time" class="external-link">Instant</a></code></div>
-<div class="col-second even-row-color"><code><a href="#recordingEnded" class="member-name-link">recordingEnded</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Instant.html" title="class or interface in java.time" class="external-link">Instant</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#recordingStarted" class="member-name-link">recordingStarted</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../stats/PacketIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">PacketIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#sentPackets" class="member-name-link">sentPackets</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../stats/TickTimeStat.html" title="class in net.minecraft.util.profiling.jfr.stats">TickTimeStat</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#serverTickTimes" class="member-name-link">serverTickTimes</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../stats/StructureGenStat.html" title="class in net.minecraft.util.profiling.jfr.stats">StructureGenStat</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#structureGenStats" class="member-name-link">structureGenStats</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../stats/ThreadAllocationStat.html" title="class in net.minecraft.util.profiling.jfr.stats">ThreadAllocationStat</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#threadAllocationStats" class="member-name-link">threadAllocationStats</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></code></div>
-<div class="col-second even-row-color"><code><a href="#worldCreationDuration" class="member-name-link">worldCreationDuration</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../stats/ChunkIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">ChunkIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#writtenChunks" class="member-name-link">writtenChunks</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.stream.Stream)" class="member-name-link">JfrStatsParser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&gt;&nbsp;events)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#appendFileIO(jdk.jfr.consumer.RecordedEvent,java.util.List,java.lang.String)" class="member-name-link">appendFileIO</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&nbsp;event,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/FileIOStat.html" title="class in net.minecraft.util.profiling.jfr.stats">FileIOStat</a>&gt;&nbsp;stats,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sizeField)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#capture(java.util.stream.Stream)" class="member-name-link">capture</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&gt;&nbsp;events)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;T&gt;&nbsp;<a href="../stats/IoSummary.html" title="class in net.minecraft.util.profiling.jfr.stats">IoSummary</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#collectIoStats(java.time.Duration,java.util.Map)" class="member-name-link">collectIoStats</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;recordingDuration,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;T, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;&nbsp;packetStats)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JfrStatsResult.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.nio.file.Path)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#incrementChunk(jdk.jfr.consumer.RecordedEvent,int,java.util.Map)" class="member-name-link">incrementChunk</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&nbsp;event,
- int&nbsp;chunkSize,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../stats/ChunkIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">ChunkIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;&nbsp;packets)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#incrementPacket(jdk.jfr.consumer.RecordedEvent,int,java.util.Map)" class="member-name-link">incrementPacket</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&nbsp;event,
- int&nbsp;packetSize,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../stats/PacketIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">PacketIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;&nbsp;packets)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JfrStatsResult.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.nio.file.Path)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="JfrStatsResult.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#results()" class="member-name-link">results</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="recordingStarted">
-<h3>recordingStarted</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Instant.html" title="class or interface in java.time" class="external-link">Instant</a></span>&nbsp;<span class="element-name">recordingStarted</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="recordingEnded">
-<h3>recordingEnded</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Instant.html" title="class or interface in java.time" class="external-link">Instant</a></span>&nbsp;<span class="element-name">recordingEnded</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="chunkGenStats">
-<h3>chunkGenStats</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/ChunkGenStat.html" title="class in net.minecraft.util.profiling.jfr.stats">ChunkGenStat</a>&gt;</span>&nbsp;<span class="element-name">chunkGenStats</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="structureGenStats">
-<h3>structureGenStats</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/StructureGenStat.html" title="class in net.minecraft.util.profiling.jfr.stats">StructureGenStat</a>&gt;</span>&nbsp;<span class="element-name">structureGenStats</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cpuLoadStat">
-<h3>cpuLoadStat</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/CpuLoadStat.html" title="class in net.minecraft.util.profiling.jfr.stats">CpuLoadStat</a>&gt;</span>&nbsp;<span class="element-name">cpuLoadStat</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="receivedPackets">
-<h3>receivedPackets</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../stats/PacketIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">PacketIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;</span>&nbsp;<span class="element-name">receivedPackets</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="sentPackets">
-<h3>sentPackets</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../stats/PacketIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">PacketIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;</span>&nbsp;<span class="element-name">sentPackets</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="readChunks">
-<h3>readChunks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../stats/ChunkIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">ChunkIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;</span>&nbsp;<span class="element-name">readChunks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="writtenChunks">
-<h3>writtenChunks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../stats/ChunkIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">ChunkIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;</span>&nbsp;<span class="element-name">writtenChunks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fileWrites">
-<h3>fileWrites</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/FileIOStat.html" title="class in net.minecraft.util.profiling.jfr.stats">FileIOStat</a>&gt;</span>&nbsp;<span class="element-name">fileWrites</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fileReads">
-<h3>fileReads</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/FileIOStat.html" title="class in net.minecraft.util.profiling.jfr.stats">FileIOStat</a>&gt;</span>&nbsp;<span class="element-name">fileReads</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="garbageCollections">
-<h3>garbageCollections</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">garbageCollections</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="gcTotalDuration">
-<h3>gcTotalDuration</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></span>&nbsp;<span class="element-name">gcTotalDuration</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="gcHeapStats">
-<h3>gcHeapStats</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/GcHeapStat.html" title="class in net.minecraft.util.profiling.jfr.stats">GcHeapStat</a>&gt;</span>&nbsp;<span class="element-name">gcHeapStats</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="threadAllocationStats">
-<h3>threadAllocationStats</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/ThreadAllocationStat.html" title="class in net.minecraft.util.profiling.jfr.stats">ThreadAllocationStat</a>&gt;</span>&nbsp;<span class="element-name">threadAllocationStats</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fps">
-<h3>fps</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/FpsStat.html" title="class in net.minecraft.util.profiling.jfr.stats">FpsStat</a>&gt;</span>&nbsp;<span class="element-name">fps</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="serverTickTimes">
-<h3>serverTickTimes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/TickTimeStat.html" title="class in net.minecraft.util.profiling.jfr.stats">TickTimeStat</a>&gt;</span>&nbsp;<span class="element-name">serverTickTimes</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="worldCreationDuration">
-<h3>worldCreationDuration</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></span>&nbsp;<span class="element-name">worldCreationDuration</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(java.util.stream.Stream)">
-<h3>JfrStatsParser</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">JfrStatsParser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&gt;&nbsp;events)</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -440,61 +131,6 @@ loadScripts(document, 'script');</script>
 <h3>parse</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="JfrStatsResult.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsResult</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="results()">
-<h3>results</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="JfrStatsResult.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsResult</a></span>&nbsp;<span class="element-name">results</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="capture(java.util.stream.Stream)">
-<h3>capture</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">capture</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&gt;&nbsp;events)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="incrementPacket(jdk.jfr.consumer.RecordedEvent,int,java.util.Map)">
-<h3>incrementPacket</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">incrementPacket</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&nbsp;event,
- int&nbsp;packetSize,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../stats/PacketIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">PacketIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;&nbsp;packets)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="incrementChunk(jdk.jfr.consumer.RecordedEvent,int,java.util.Map)">
-<h3>incrementChunk</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">incrementChunk</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&nbsp;event,
- int&nbsp;chunkSize,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../stats/ChunkIdentification.html" title="class in net.minecraft.util.profiling.jfr.stats">ChunkIdentification</a>, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;&nbsp;packets)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="appendFileIO(jdk.jfr.consumer.RecordedEvent,java.util.List,java.lang.String)">
-<h3>appendFileIO</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">appendFileIO</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/consumer/RecordedEvent.html" title="class or interface in jdk.jfr.consumer" class="external-link">RecordedEvent</a>&nbsp;event,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../stats/FileIOStat.html" title="class in net.minecraft.util.profiling.jfr.stats">FileIOStat</a>&gt;&nbsp;stats,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sizeField)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="collectIoStats(java.time.Duration,java.util.Map)">
-<h3>collectIoStats</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="../stats/IoSummary.html" title="class in net.minecraft.util.profiling.jfr.stats">IoSummary</a>&lt;T&gt;</span>&nbsp;<span class="element-name">collectIoStats</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;recordingDuration,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;T, <a href="JfrStatsParser.MutableCountAndSize.html" title="class in net.minecraft.util.profiling.jfr.parse">JfrStatsParser.MutableCountAndSize</a>&gt;&nbsp;packetStats)</span></div>
 </div>
 </section>
 </li>

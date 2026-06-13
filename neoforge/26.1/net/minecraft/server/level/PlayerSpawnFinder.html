@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>PlayerSpawnFinder (NeoForge 26.1)</title>
+<title>PlayerSpawnFinder (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server.level, class: PlayerSpawnFinder">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/PlayerSpawnFinder.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,37 +54,10 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#PLAYER_DIMENSIONS" tabindex="0">PLAYER_DIMENSIONS</a></li>
-<li><a href="#ABSOLUTE_MAX_ATTEMPTS" tabindex="0">ABSOLUTE_MAX_ATTEMPTS</a></li>
-<li><a href="#level" tabindex="0">level</a></li>
-<li><a href="#spawnSuggestion" tabindex="0">spawnSuggestion</a></li>
-<li><a href="#radius" tabindex="0">radius</a></li>
-<li><a href="#candidateCount" tabindex="0">candidateCount</a></li>
-<li><a href="#coprime" tabindex="0">coprime</a></li>
-<li><a href="#offset" tabindex="0">offset</a></li>
-<li><a href="#nextCandidateIndex" tabindex="0">nextCandidateIndex</a></li>
-<li><a href="#finishedFuture" tabindex="0">finishedFuture</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos,int)" tabindex="0">PlayerSpawnFinder(ServerLevel, BlockPos, int)</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#findSpawn(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos)" tabindex="0">findSpawn(ServerLevel, BlockPos)</a></li>
-<li><a href="#scheduleNext()" tabindex="0">scheduleNext()</a></li>
-<li><a href="#fixupSpawnHeight(net.minecraft.world.level.CollisionGetter,net.minecraft.core.BlockPos)" tabindex="0">fixupSpawnHeight(CollisionGetter, BlockPos)</a></li>
-<li><a href="#noCollisionNoLiquid(net.minecraft.world.level.CollisionGetter,net.minecraft.core.BlockPos)" tabindex="0">noCollisionNoLiquid(CollisionGetter, BlockPos)</a></li>
-<li><a href="#getCoprime(int)" tabindex="0">getCoprime(int)</a></li>
-<li><a href="#scheduleCandidate(int,int,int,java.util.function.Supplier)" tabindex="0">scheduleCandidate(int, int, int, Supplier)</a></li>
-<li><a href="#getOverworldRespawnPos(net.minecraft.server.level.ServerLevel,int,int)" tabindex="0">getOverworldRespawnPos(ServerLevel, int, int)</a></li>
 <li><a href="#getSpawnPosInChunk(net.minecraft.server.level.ServerLevel,net.minecraft.world.level.ChunkPos)" tabindex="0">getSpawnPosInChunk(ServerLevel, ChunkPos)</a></li>
 </ol>
 </li>
@@ -107,71 +80,12 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#ABSOLUTE_MAX_ATTEMPTS" class="member-name-link">ABSOLUTE_MAX_ATTEMPTS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#candidateCount" class="member-name-link">candidateCount</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final int</code></div>
-<div class="col-second even-row-color"><code><a href="#coprime" class="member-name-link">coprime</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#finishedFuture" class="member-name-link">finishedFuture</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a></code></div>
-<div class="col-second even-row-color"><code><a href="#level" class="member-name-link">level</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#nextCandidateIndex" class="member-name-link">nextCandidateIndex</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final int</code></div>
-<div class="col-second even-row-color"><code><a href="#offset" class="member-name-link">offset</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../world/entity/EntityDimensions.html" title="class in net.minecraft.world.entity">EntityDimensions</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#PLAYER_DIMENSIONS" class="member-name-link">PLAYER_DIMENSIONS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final int</code></div>
-<div class="col-second even-row-color"><code><a href="#radius" class="member-name-link">radius</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#spawnSuggestion" class="member-name-link">spawnSuggestion</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos,int)" class="member-name-link">PlayerSpawnFinder</a><wbr>(<a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;spawnSuggestion,
- int&nbsp;radius)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -181,161 +95,22 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findSpawn(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos)" class="member-name-link">findSpawn</a><wbr>(<a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;spawnSuggestion)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fixupSpawnHeight(net.minecraft.world.level.CollisionGetter,net.minecraft.core.BlockPos)" class="member-name-link">fixupSpawnHeight</a><wbr>(<a href="../../world/level/CollisionGetter.html" title="interface in net.minecraft.world.level">CollisionGetter</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;spawnPos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getCoprime(int)" class="member-name-link">getCoprime</a><wbr>(int&nbsp;possibleOrigins)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static @Nullable <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getOverworldRespawnPos(net.minecraft.server.level.ServerLevel,int,int)" class="member-name-link">getOverworldRespawnPos</a><wbr>(<a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- int&nbsp;x,
- int&nbsp;z)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSpawnPosInChunk(net.minecraft.server.level.ServerLevel,net.minecraft.world.level.ChunkPos)" class="member-name-link">getSpawnPosInChunk</a><wbr>(<a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSpawnPosInChunk(net.minecraft.server.level.ServerLevel,net.minecraft.world.level.ChunkPos)" class="member-name-link">getSpawnPosInChunk</a><wbr>(<a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
  <a href="../../world/level/ChunkPos.html" title="class in net.minecraft.world.level">ChunkPos</a>&nbsp;chunkPos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#noCollisionNoLiquid(net.minecraft.world.level.CollisionGetter,net.minecraft.core.BlockPos)" class="member-name-link">noCollisionNoLiquid</a><wbr>(<a href="../../world/level/CollisionGetter.html" title="interface in net.minecraft.world.level">CollisionGetter</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scheduleCandidate(int,int,int,java.util.function.Supplier)" class="member-name-link">scheduleCandidate</a><wbr>(int&nbsp;candidateX,
- int&nbsp;candidateZ,
- int&nbsp;candidateIndex,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;&gt;&nbsp;candidateChecker)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scheduleNext()" class="member-name-link">scheduleNext</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="PLAYER_DIMENSIONS">
-<h3>PLAYER_DIMENSIONS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../world/entity/EntityDimensions.html" title="class in net.minecraft.world.entity">EntityDimensions</a></span>&nbsp;<span class="element-name">PLAYER_DIMENSIONS</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ABSOLUTE_MAX_ATTEMPTS">
-<h3>ABSOLUTE_MAX_ATTEMPTS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">ABSOLUTE_MAX_ATTEMPTS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.server.level.PlayerSpawnFinder.ABSOLUTE_MAX_ATTEMPTS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="level">
-<h3>level</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a></span>&nbsp;<span class="element-name">level</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="spawnSuggestion">
-<h3>spawnSuggestion</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></span>&nbsp;<span class="element-name">spawnSuggestion</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="radius">
-<h3>radius</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">radius</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="candidateCount">
-<h3>candidateCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">candidateCount</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="coprime">
-<h3>coprime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">coprime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="offset">
-<h3>offset</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">offset</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nextCandidateIndex">
-<h3>nextCandidateIndex</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nextCandidateIndex</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="finishedFuture">
-<h3>finishedFuture</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;</span>&nbsp;<span class="element-name">finishedFuture</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.server.level.ServerLevel,net.minecraft.core.BlockPos,int)">
-<h3>PlayerSpawnFinder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">PlayerSpawnFinder</span><wbr><span class="parameters">(<a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;spawnSuggestion,
- int&nbsp;radius)</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -347,61 +122,6 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;</span>&nbsp;<span class="element-name">findSpawn</span><wbr><span class="parameters">(<a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
  <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;spawnSuggestion)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="scheduleNext()">
-<h3>scheduleNext</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scheduleNext</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fixupSpawnHeight(net.minecraft.world.level.CollisionGetter,net.minecraft.core.BlockPos)">
-<h3>fixupSpawnHeight</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">fixupSpawnHeight</span><wbr><span class="parameters">(<a href="../../world/level/CollisionGetter.html" title="interface in net.minecraft.world.level">CollisionGetter</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;spawnPos)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="noCollisionNoLiquid(net.minecraft.world.level.CollisionGetter,net.minecraft.core.BlockPos)">
-<h3>noCollisionNoLiquid</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">noCollisionNoLiquid</span><wbr><span class="parameters">(<a href="../../world/level/CollisionGetter.html" title="interface in net.minecraft.world.level">CollisionGetter</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getCoprime(int)">
-<h3>getCoprime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCoprime</span><wbr><span class="parameters">(int&nbsp;possibleOrigins)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="scheduleCandidate(int,int,int,java.util.function.Supplier)">
-<h3>scheduleCandidate</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scheduleCandidate</span><wbr><span class="parameters">(int&nbsp;candidateX,
- int&nbsp;candidateZ,
- int&nbsp;candidateIndex,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&gt;&gt;&nbsp;candidateChecker)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getOverworldRespawnPos(net.minecraft.server.level.ServerLevel,int,int)">
-<h3>getOverworldRespawnPos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static</span>&nbsp;<span class="return-type">@Nullable <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></span>&nbsp;<span class="element-name">getOverworldRespawnPos</span><wbr><span class="parameters">(<a href="ServerLevel.html" title="class in net.minecraft.server.level">ServerLevel</a>&nbsp;level,
- int&nbsp;x,
- int&nbsp;z)</span></div>
 </div>
 </section>
 </li>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>IItemHandler (NeoForge 26.1)</title>
+<title>IItemHandler (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.items, interface: IItemHandler">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/IItemHandler.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -80,7 +80,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="wrapper/CombinedInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">CombinedInvWrapper</a>, <a href="ComponentItemHandler.html" title="class in net.neoforged.neoforge.items">ComponentItemHandler</a>, <a href="wrapper/EmptyItemHandler.html" title="class in net.neoforged.neoforge.items.wrapper">EmptyItemHandler</a>, <a href="wrapper/EntityArmorInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">EntityArmorInvWrapper</a>, <a href="wrapper/EntityEquipmentInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">EntityEquipmentInvWrapper</a>, <a href="wrapper/EntityHandsInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">EntityHandsInvWrapper</a>, <a href="wrapper/ForwardingItemHandler.html" title="class in net.neoforged.neoforge.items.wrapper">ForwardingItemHandler</a>, <a href="wrapper/InvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">InvWrapper</a>, <a href="ItemResourceHandlerAdapter.html" title="class in net.neoforged.neoforge.items">ItemResourceHandlerAdapter</a>, <a href="ItemStackHandler.html" title="class in net.neoforged.neoforge.items">ItemStackHandler</a>, <a href="wrapper/PlayerArmorInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">PlayerArmorInvWrapper</a>, <a href="wrapper/PlayerInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">PlayerInvWrapper</a>, <a href="wrapper/PlayerMainInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">PlayerMainInvWrapper</a>, <a href="wrapper/PlayerOffhandInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">PlayerOffhandInvWrapper</a>, <a href="wrapper/RangedWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">RangedWrapper</a>, <a href="wrapper/SidedInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">SidedInvWrapper</a></code></dd>
+<dd><code><a href="wrapper/CombinedInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">CombinedInvWrapper</a>, <a href="ComponentItemHandler.html" title="class in net.neoforged.neoforge.items">ComponentItemHandler</a>, <a href="wrapper/EmptyItemHandler.html" title="class in net.neoforged.neoforge.items.wrapper">EmptyItemHandler</a>, <a href="wrapper/EntityArmorInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">EntityArmorInvWrapper</a>, <a href="wrapper/EntityEquipmentInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">EntityEquipmentInvWrapper</a>, <a href="wrapper/EntityHandsInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">EntityHandsInvWrapper</a>, <a href="wrapper/ForwardingItemHandler.html" title="class in net.neoforged.neoforge.items.wrapper">ForwardingItemHandler</a>, <a href="wrapper/InvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">InvWrapper</a>, <a href="ItemStackHandler.html" title="class in net.neoforged.neoforge.items">ItemStackHandler</a>, <a href="wrapper/PlayerArmorInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">PlayerArmorInvWrapper</a>, <a href="wrapper/PlayerInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">PlayerInvWrapper</a>, <a href="wrapper/PlayerMainInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">PlayerMainInvWrapper</a>, <a href="wrapper/PlayerOffhandInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">PlayerOffhandInvWrapper</a>, <a href="wrapper/RangedWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">RangedWrapper</a>, <a href="wrapper/SidedInvWrapper.html" title="class in net.neoforged.neoforge.items.wrapper">SidedInvWrapper</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -184,6 +184,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Creates a wrapper around an item <a href="../transfer/ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer"><code>ResourceHandler</code></a>, to present it as a legacy <a href="IItemHandler.html" title="interface in net.neoforged.neoforge.items"><code>IItemHandler</code></a>.
 
 <p>This class is intended to make migration easier for code that expects an <a href="IItemHandler.html" title="interface in net.neoforged.neoforge.items"><code>IItemHandler</code></a>.</div>
+<dl class="notes">
+<dt><em>API Note:</em></dt>
+<dd>The <a href="#insertItem(int,net.minecraft.world.item.ItemStack,boolean)"><code>insertItem(int, ItemStack, boolean)</code></a> and <a href="#extractItem(int,int,boolean)"><code>extractItem(int, int, boolean)</code></a> implementations will open new root transactions,
+         so this wrapper cannot be used from a transactional context (such as <a href="../transfer/ResourceHandler.html#insert(int,T,int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>ResourceHandler.insert(int, T, int, TransactionContext)</code></a>).</dd>
+</dl>
 </div>
 </section>
 </li>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>Frustum (NeoForge 26.1)</title>
+<title>Frustum (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.renderer.culling, class: Frustum">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/Frustum.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,12 +60,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#OFFSET_STEP" tabindex="0">OFFSET_STEP</a></li>
-<li><a href="#intersection" tabindex="0">intersection</a></li>
-<li><a href="#matrix" tabindex="0">matrix</a></li>
-<li><a href="#viewVector" tabindex="0">viewVector</a></li>
-<li><a href="#camX" tabindex="0">camX</a></li>
-<li><a href="#camY" tabindex="0">camY</a></li>
-<li><a href="#camZ" tabindex="0">camZ</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -80,10 +74,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#offset(float)" tabindex="0">offset(float)</a></li>
 <li><a href="#offsetToFullyIncludeCameraCube(int)" tabindex="0">offsetToFullyIncludeCameraCube(int)</a></li>
 <li><a href="#prepare(double,double,double)" tabindex="0">prepare(double, double, double)</a></li>
-<li><a href="#calculateFrustum(org.joml.Matrix4fc,org.joml.Matrix4f)" tabindex="0">calculateFrustum(Matrix4fc, Matrix4f)</a></li>
 <li><a href="#isVisible(net.minecraft.world.phys.AABB)" tabindex="0">isVisible(AABB)</a></li>
 <li><a href="#cubeInFrustum(net.minecraft.world.level.levelgen.structure.BoundingBox)" tabindex="0">cubeInFrustum(BoundingBox)</a></li>
-<li><a href="#cubeInFrustum(double,double,double,double,double,double)" tabindex="0">cubeInFrustum(double, double, double, double, double, double)</a></li>
 <li><a href="#pointInFrustum(double,double,double)" tabindex="0">pointInFrustum(double, double, double)</a></li>
 <li><a href="#getFrustumPoints()" tabindex="0">getFrustumPoints()</a></li>
 <li><a href="#getCamX()" tabindex="0">getCamX()</a></li>
@@ -119,26 +111,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#camX" class="member-name-link">camX</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private double</code></div>
-<div class="col-second odd-row-color"><code><a href="#camY" class="member-name-link">camY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private double</code></div>
-<div class="col-second even-row-color"><code><a href="#camZ" class="member-name-link">camZ</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final org.joml.FrustumIntersection</code></div>
-<div class="col-second odd-row-color"><code><a href="#intersection" class="member-name-link">intersection</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final org.joml.Matrix4f</code></div>
-<div class="col-second even-row-color"><code><a href="#matrix" class="member-name-link">matrix</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#OFFSET_STEP" class="member-name-link">OFFSET_STEP</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private org.joml.Vector4f</code></div>
-<div class="col-second even-row-color"><code><a href="#viewVector" class="member-name-link">viewVector</a></code></div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#OFFSET_STEP" class="member-name-link">OFFSET_STEP</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -153,8 +127,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.client.renderer.culling.Frustum)" class="member-name-link">Frustum</a><wbr>(<a href="Frustum.html" title="class in net.minecraft.client.renderer.culling">Frustum</a>&nbsp;frustum)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(org.joml.Matrix4fc,org.joml.Matrix4f)" class="member-name-link">Frustum</a><wbr>(org.joml.Matrix4fc&nbsp;modelView,
- org.joml.Matrix4f&nbsp;projection)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(org.joml.Matrix4fc,org.joml.Matrix4f)" class="member-name-link">Frustum</a><wbr>(<a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Matrix4fc.html" title="class or interface in org.joml" class="external-link">Matrix4fc</a>&nbsp;modelView,
+ <a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Matrix4f.html" title="class or interface in org.joml" class="external-link">Matrix4f</a>&nbsp;projection)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -170,18 +144,6 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateFrustum(org.joml.Matrix4fc,org.joml.Matrix4f)" class="member-name-link">calculateFrustum</a><wbr>(org.joml.Matrix4fc&nbsp;modelView,
- org.joml.Matrix4f&nbsp;projection)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cubeInFrustum(double,double,double,double,double,double)" class="member-name-link">cubeInFrustum</a><wbr>(double&nbsp;minX,
- double&nbsp;minY,
- double&nbsp;minZ,
- double&nbsp;maxX,
- double&nbsp;maxY,
- double&nbsp;maxZ)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cubeInFrustum(net.minecraft.world.level.levelgen.structure.BoundingBox)" class="member-name-link">cubeInFrustum</a><wbr>(<a href="../../../world/level/levelgen/structure/BoundingBox.html" title="class in net.minecraft.world.level.levelgen.structure">BoundingBox</a>&nbsp;bb)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -194,7 +156,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCamZ()" class="member-name-link">getCamZ</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.joml.Vector4f[]</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Vector4f.html" title="class or interface in org.joml" class="external-link">Vector4f</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFrustumPoints()" class="member-name-link">getFrustumPoints</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
@@ -224,7 +186,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -252,54 +214,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="intersection">
-<h3>intersection</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">org.joml.FrustumIntersection</span>&nbsp;<span class="element-name">intersection</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="matrix">
-<h3>matrix</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">org.joml.Matrix4f</span>&nbsp;<span class="element-name">matrix</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="viewVector">
-<h3>viewVector</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">org.joml.Vector4f</span>&nbsp;<span class="element-name">viewVector</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="camX">
-<h3>camX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">camX</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="camY">
-<h3>camY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">camY</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="camZ">
-<h3>camZ</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">camZ</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -312,8 +226,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(org.joml.Matrix4fc,org.joml.Matrix4f)">
 <h3>Frustum</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Frustum</span><wbr><span class="parameters">(org.joml.Matrix4fc&nbsp;modelView,
- org.joml.Matrix4f&nbsp;projection)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Frustum</span><wbr><span class="parameters">(<a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Matrix4fc.html" title="class or interface in org.joml" class="external-link">Matrix4fc</a>&nbsp;modelView,
+ <a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Matrix4f.html" title="class or interface in org.joml" class="external-link">Matrix4f</a>&nbsp;projection)</span></div>
 </div>
 </section>
 </li>
@@ -368,15 +282,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="calculateFrustum(org.joml.Matrix4fc,org.joml.Matrix4f)">
-<h3>calculateFrustum</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">calculateFrustum</span><wbr><span class="parameters">(org.joml.Matrix4fc&nbsp;modelView,
- org.joml.Matrix4f&nbsp;projection)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="isVisible(net.minecraft.world.phys.AABB)">
 <h3>isVisible</h3>
 <div class="horizontal-scroll">
@@ -389,19 +294,6 @@ loadScripts(document, 'script');</script>
 <h3>cubeInFrustum</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">cubeInFrustum</span><wbr><span class="parameters">(<a href="../../../world/level/levelgen/structure/BoundingBox.html" title="class in net.minecraft.world.level.levelgen.structure">BoundingBox</a>&nbsp;bb)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cubeInFrustum(double,double,double,double,double,double)">
-<h3>cubeInFrustum</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">cubeInFrustum</span><wbr><span class="parameters">(double&nbsp;minX,
- double&nbsp;minY,
- double&nbsp;minZ,
- double&nbsp;maxX,
- double&nbsp;maxY,
- double&nbsp;maxZ)</span></div>
 </div>
 </section>
 </li>
@@ -419,7 +311,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getFrustumPoints()">
 <h3>getFrustumPoints</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.joml.Vector4f[]</span>&nbsp;<span class="element-name">getFrustumPoints</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Vector4f.html" title="class or interface in org.joml" class="external-link">Vector4f</a>[]</span>&nbsp;<span class="element-name">getFrustumPoints</span>()</div>
 </div>
 </section>
 </li>

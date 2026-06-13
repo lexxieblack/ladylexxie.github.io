@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>CommandNode (NeoForge 26.1)</title>
+<title>CommandNode (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: com.mojang.brigadier.tree, class: CommandNode">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/CommandNode.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,26 +54,7 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#children" tabindex="0">children</a></li>
-<li><a href="#literals" tabindex="0">literals</a></li>
-<li><a href="#arguments" tabindex="0">arguments</a></li>
-<li><a href="#requirement" tabindex="0">requirement</a></li>
-<li><a href="#redirect" tabindex="0">redirect</a></li>
-<li><a href="#modifier" tabindex="0">modifier</a></li>
-<li><a href="#forks" tabindex="0">forks</a></li>
-<li><a href="#command" tabindex="0">command</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(com.mojang.brigadier.Command,java.util.function.Predicate,com.mojang.brigadier.tree.CommandNode,com.mojang.brigadier.RedirectModifier,boolean)" tabindex="0">CommandNode(Command, Predicate, CommandNode, RedirectModifier, boolean)</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#getCommand()" tabindex="0">getCommand()</a></li>
@@ -84,7 +65,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#canUse(S)" tabindex="0">canUse(S)</a></li>
 <li><a href="#addChild(com.mojang.brigadier.tree.CommandNode)" tabindex="0">addChild(CommandNode)</a></li>
 <li><a href="#findAmbiguities(com.mojang.brigadier.AmbiguityConsumer)" tabindex="0">findAmbiguities(AmbiguityConsumer)</a></li>
-<li><a href="#isValidInput(java.lang.String)" tabindex="0">isValidInput(String)</a></li>
 <li><a href="#equals(java.lang.Object)" tabindex="0">equals(Object)</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
 <li><a href="#getRequirement()" tabindex="0">getRequirement()</a></li>
@@ -93,7 +73,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#parse(com.mojang.brigadier.StringReader,com.mojang.brigadier.context.CommandContextBuilder)" tabindex="0">parse(StringReader, CommandContextBuilder)</a></li>
 <li><a href="#listSuggestions(com.mojang.brigadier.context.CommandContext,com.mojang.brigadier.suggestion.SuggestionsBuilder)" tabindex="0">listSuggestions(CommandContext, SuggestionsBuilder)</a></li>
 <li><a href="#createBuilder()" tabindex="0">createBuilder()</a></li>
-<li><a href="#getSortedKey()" tabindex="0">getSortedKey()</a></li>
 <li><a href="#getRelevantNodes(com.mojang.brigadier.StringReader)" tabindex="0">getRelevantNodes(StringReader)</a></li>
 <li><a href="#compareTo(com.mojang.brigadier.tree.CommandNode)" tabindex="0">compareTo(CommandNode)</a></li>
 <li><a href="#isFork()" tabindex="0">isFork()</a></li>
@@ -128,61 +107,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="ArgumentCommandNode.html" title="class in com.mojang.brigadier.tree">ArgumentCommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>,<wbr>?&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#arguments" class="member-name-link">arguments</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#children" class="member-name-link">children</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="../Command.html" title="interface in com.mojang.brigadier">Command</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#command" class="member-name-link">command</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#forks" class="member-name-link">forks</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="LiteralCommandNode.html" title="class in com.mojang.brigadier.tree">LiteralCommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#literals" class="member-name-link">literals</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../RedirectModifier.html" title="interface in com.mojang.brigadier">RedirectModifier</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#modifier" class="member-name-link">modifier</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#redirect" class="member-name-link">redirect</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#requirement" class="member-name-link">requirement</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.mojang.brigadier.Command,java.util.function.Predicate,com.mojang.brigadier.tree.CommandNode,com.mojang.brigadier.RedirectModifier,boolean)" class="member-name-link">CommandNode</a><wbr>(<a href="../Command.html" title="interface in com.mojang.brigadier">Command</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;command,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;requirement,
- <a href="CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;redirect,
- <a href="../RedirectModifier.html" title="interface in com.mojang.brigadier">RedirectModifier</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;modifier,
- boolean&nbsp;forks)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -239,133 +163,35 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a><wbr>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRequirement()" class="member-name-link">getRequirement</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSortedKey()" class="member-name-link">getSortedKey</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getUsageText()" class="member-name-link">getUsageText</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getUsageText()" class="member-name-link">getUsageText</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFork()" class="member-name-link">isFork</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isValidInput(java.lang.String)" class="member-name-link">isValidInput</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;var1)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFork()" class="member-name-link">isFork</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="../suggestion/Suggestions.html" title="class in com.mojang.brigadier.suggestion">Suggestions</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#listSuggestions(com.mojang.brigadier.context.CommandContext,com.mojang.brigadier.suggestion.SuggestionsBuilder)" class="member-name-link">listSuggestions</a><wbr>(<a href="../context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;var1,
- <a href="../suggestion/SuggestionsBuilder.html" title="class in com.mojang.brigadier.suggestion">SuggestionsBuilder</a>&nbsp;var2)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#listSuggestions(com.mojang.brigadier.context.CommandContext,com.mojang.brigadier.suggestion.SuggestionsBuilder)" class="member-name-link">listSuggestions</a><wbr>(<a href="../context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;context,
+ <a href="../suggestion/SuggestionsBuilder.html" title="class in com.mojang.brigadier.suggestion">SuggestionsBuilder</a>&nbsp;builder)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parse(com.mojang.brigadier.StringReader,com.mojang.brigadier.context.CommandContextBuilder)" class="member-name-link">parse</a><wbr>(<a href="../StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;var1,
- <a href="../context/CommandContextBuilder.html" title="class in com.mojang.brigadier.context">CommandContextBuilder</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;var2)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parse(com.mojang.brigadier.StringReader,com.mojang.brigadier.context.CommandContextBuilder)" class="member-name-link">parse</a><wbr>(<a href="../StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;reader,
+ <a href="../context/CommandContextBuilder.html" title="class in com.mojang.brigadier.context">CommandContextBuilder</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;contextBuilder)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="children">
-<h3>children</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&gt;</span>&nbsp;<span class="element-name">children</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="literals">
-<h3>literals</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="LiteralCommandNode.html" title="class in com.mojang.brigadier.tree">LiteralCommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&gt;</span>&nbsp;<span class="element-name">literals</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="arguments">
-<h3>arguments</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="ArgumentCommandNode.html" title="class in com.mojang.brigadier.tree">ArgumentCommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>,<wbr>?&gt;&gt;</span>&nbsp;<span class="element-name">arguments</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="requirement">
-<h3>requirement</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;</span>&nbsp;<span class="element-name">requirement</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="redirect">
-<h3>redirect</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;</span>&nbsp;<span class="element-name">redirect</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="modifier">
-<h3>modifier</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../RedirectModifier.html" title="interface in com.mojang.brigadier">RedirectModifier</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;</span>&nbsp;<span class="element-name">modifier</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="forks">
-<h3>forks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">forks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="command">
-<h3>command</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../Command.html" title="interface in com.mojang.brigadier">Command</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;</span>&nbsp;<span class="element-name">command</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(com.mojang.brigadier.Command,java.util.function.Predicate,com.mojang.brigadier.tree.CommandNode,com.mojang.brigadier.RedirectModifier,boolean)">
-<h3>CommandNode</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">CommandNode</span><wbr><span class="parameters">(<a href="../Command.html" title="interface in com.mojang.brigadier">Command</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;command,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;requirement,
- <a href="CommandNode.html" title="class in com.mojang.brigadier.tree">CommandNode</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;redirect,
- <a href="../RedirectModifier.html" title="interface in com.mojang.brigadier">RedirectModifier</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;modifier,
- boolean&nbsp;forks)</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -436,14 +262,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 </section>
 </li>
 <li>
-<section class="detail" id="isValidInput(java.lang.String)">
-<h3>isValidInput</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isValidInput</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;var1)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
@@ -495,8 +313,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <section class="detail" id="parse(com.mojang.brigadier.StringReader,com.mojang.brigadier.context.CommandContextBuilder)">
 <h3>parse</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="../StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;var1,
- <a href="../context/CommandContextBuilder.html" title="class in com.mojang.brigadier.context">CommandContextBuilder</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;var2)</span>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="../StringReader.html" title="class in com.mojang.brigadier">StringReader</a>&nbsp;reader,
+ <a href="../context/CommandContextBuilder.html" title="class in com.mojang.brigadier.context">CommandContextBuilder</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;contextBuilder)</span>
                     throws <span class="exceptions"><a href="../exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
@@ -509,8 +327,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <section class="detail" id="listSuggestions(com.mojang.brigadier.context.CommandContext,com.mojang.brigadier.suggestion.SuggestionsBuilder)">
 <h3>listSuggestions</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../suggestion/Suggestions.html" title="class in com.mojang.brigadier.suggestion">Suggestions</a>&gt;</span>&nbsp;<span class="element-name">listSuggestions</span><wbr><span class="parameters">(<a href="../context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;var1,
- <a href="../suggestion/SuggestionsBuilder.html" title="class in com.mojang.brigadier.suggestion">SuggestionsBuilder</a>&nbsp;var2)</span>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../suggestion/Suggestions.html" title="class in com.mojang.brigadier.suggestion">Suggestions</a>&gt;</span>&nbsp;<span class="element-name">listSuggestions</span><wbr><span class="parameters">(<a href="../context/CommandContext.html" title="class in com.mojang.brigadier.context">CommandContext</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>&gt;&nbsp;context,
+ <a href="../suggestion/SuggestionsBuilder.html" title="class in com.mojang.brigadier.suggestion">SuggestionsBuilder</a>&nbsp;builder)</span>
                                                         throws <span class="exceptions"><a href="../exceptions/CommandSyntaxException.html" title="class in com.mojang.brigadier.exceptions">CommandSyntaxException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
@@ -524,14 +342,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <h3>createBuilder</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../builder/ArgumentBuilder.html" title="class in com.mojang.brigadier.builder">ArgumentBuilder</a>&lt;<a href="#type-param-S" title="type parameter in CommandNode">S</a>,<wbr>?&gt;</span>&nbsp;<span class="element-name">createBuilder</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getSortedKey()">
-<h3>getSortedKey</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getSortedKey</span>()</div>
 </div>
 </section>
 </li>

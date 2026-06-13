@@ -1,0 +1,489 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>IModFile (NeoForge 26.1.2.76)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="declaration: package: net.neoforged.neoforgespi.locating, interface: IModFile">
+<meta name="generator" content="javadoc/ClassWriter">
+<link rel="stylesheet" type="text/css" href="../../../../resource-files/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="../../../../resource-files/stylesheet.css">
+<script type="text/javascript" src="../../../../script-files/script.js"></script>
+<script type="text/javascript" src="../../../../script-files/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../../../../script-files/jquery-ui.min.js"></script>
+</head>
+<body class="class-declaration-page">
+<script type="text/javascript">const pathtoroot = "../../../../";
+loadScripts(document, 'script');</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<header role="banner">
+<nav role="navigation">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="top-nav" id="navbar-top">
+<div class="nav-content">
+<div class="nav-menu-button"><button id="navbar-toggle-button" aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation links"><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span></button></div>
+<div class="skip-nav"><a href="#skip-navbar-top" title="Skip navigation links">Skip navigation links</a></div>
+<ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
+<li><a href="../../../../index.html">Overview</a></li>
+<li class="nav-bar-cell1-rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../search.html">Search</a></li>
+<li><a href="../../../../help-doc.html#class">Help</a></li>
+</ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
+</div>
+</div>
+<div class="sub-nav">
+<div class="nav-content">
+<ol class="sub-nav-list">
+<li><a href="package-summary.html">net.neoforged.neoforgespi.locating</a></li>
+<li><a href="IModFile.html" class="current-selection">IModFile</a></li>
+</ol>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="Search documentation (type /)" aria-label="Search in documentation" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="Reset"></div>
+</div>
+</div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<span class="skip-nav" id="skip-navbar-top"></span></nav>
+</header>
+<div class="main-grid">
+<nav role="navigation" class="toc" aria-label="Table of contents">
+<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<ol class="toc-list" tabindex="-1">
+<li><a href="#" tabindex="0">Description</a></li>
+<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
+<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
+<li><a href="#method-detail" tabindex="0">Method Details</a>
+<ol class="toc-list">
+<li><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.neoforgespi.locating.ModFileInfoParser)" tabindex="0">create(JarContents, ModFileInfoParser)</a></li>
+<li><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.fml.jarmoduleinfo.JarModuleInfo,net.neoforged.neoforgespi.locating.ModFileInfoParser)" tabindex="0">create(JarContents, JarModuleInfo, ModFileInfoParser)</a></li>
+<li><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.neoforgespi.locating.ModFileInfoParser,net.neoforged.neoforgespi.locating.ModFileDiscoveryAttributes)" tabindex="0">create(JarContents, ModFileInfoParser, ModFileDiscoveryAttributes)</a></li>
+<li><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.fml.jarmoduleinfo.JarModuleInfo,net.neoforged.neoforgespi.locating.ModFileInfoParser,net.neoforged.neoforgespi.locating.IModFile.Type,net.neoforged.neoforgespi.locating.ModFileDiscoveryAttributes)" tabindex="0">create(JarContents, JarModuleInfo, ModFileInfoParser, IModFile.Type, ModFileDiscoveryAttributes)</a></li>
+<li><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.neoforgespi.locating.ModFileInfoParser,net.neoforged.neoforgespi.locating.IModFile.Type,net.neoforged.neoforgespi.locating.ModFileDiscoveryAttributes)" tabindex="0">create(JarContents, ModFileInfoParser, IModFile.Type, ModFileDiscoveryAttributes)</a></li>
+<li><a href="#getId()" tabindex="0">getId()</a></li>
+<li><a href="#getContents()" tabindex="0">getContents()</a></li>
+<li><a href="#getSubstitutionMap()" tabindex="0">getSubstitutionMap()</a></li>
+<li><a href="#getType()" tabindex="0">getType()</a></li>
+<li><a href="#getFilePath()" tabindex="0">getFilePath()</a></li>
+<li><a href="#getModInfos()" tabindex="0">getModInfos()</a></li>
+<li><a href="#getScanResult()" tabindex="0">getScanResult()</a></li>
+<li><a href="#getFileName()" tabindex="0">getFileName()</a></li>
+<li><a href="#getDiscoveryAttributes()" tabindex="0">getDiscoveryAttributes()</a></li>
+<li><a href="#getModFileInfo()" tabindex="0">getModFileInfo()</a></li>
+</ol>
+</li>
+</ol>
+<button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
+<main role="main">
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<h1 title="Interface IModFile" class="title">Interface IModFile</h1>
+</div>
+<section class="class-description" id="class-description">
+<dl class="notes">
+<dt>All Known Implementing Classes:</dt>
+<dd><code><a href="../../fml/loading/moddiscovery/ModFile.html" title="class in net.neoforged.fml.loading.moddiscovery">ModFile</a></code></dd>
+</dl>
+<hr>
+<div class="horizontal-scroll">
+<div class="type-signature"><span class="annotations">@NonExtendable
+</span><span class="modifiers">public interface </span><span class="element-name type-name-label">IModFile</span></div>
+<div class="block">Represents a single "mod" file in the runtime.
+<p>
+Although these are known as "Mod"-Files, they do not always represent mods.
+However, they should be more treated as an extension or modification of minecraft.
+And as such can contain any number of things, like language loaders, dependencies of other mods
+or code which does not interact with minecraft at all and is just a utility for any of the other mod
+files.</div>
+</div>
+</section>
+<section class="summary">
+<ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Interface</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="IModFile.Type.html" class="type-name-link" title="enum class in net.neoforged.neoforgespi.locating">IModFile.Type</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The type of file.</div>
+</div>
+</div>
+</section>
+</li>
+<!-- ========== METHOD SUMMARY =========== -->
+<li>
+<section class="method-summary" id="method-summary">
+<h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.fml.jarmoduleinfo.JarModuleInfo,net.neoforged.neoforgespi.locating.ModFileInfoParser)" class="member-name-link">create</a><wbr>(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="../../fml/jarmoduleinfo/JarModuleInfo.html" title="interface in net.neoforged.fml.jarmoduleinfo">JarModuleInfo</a>&nbsp;metadata,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.fml.jarmoduleinfo.JarModuleInfo,net.neoforged.neoforgespi.locating.ModFileInfoParser,net.neoforged.neoforgespi.locating.IModFile.Type,net.neoforged.neoforgespi.locating.ModFileDiscoveryAttributes)" class="member-name-link">create</a><wbr>(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="../../fml/jarmoduleinfo/JarModuleInfo.html" title="interface in net.neoforged.fml.jarmoduleinfo">JarModuleInfo</a>&nbsp;metadata,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser,
+ <a href="IModFile.Type.html" title="enum class in net.neoforged.neoforgespi.locating">IModFile.Type</a>&nbsp;type,
+ <a href="ModFileDiscoveryAttributes.html" title="class in net.neoforged.neoforgespi.locating">ModFileDiscoveryAttributes</a>&nbsp;attributes)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.neoforgespi.locating.ModFileInfoParser)" class="member-name-link">create</a><wbr>(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.neoforgespi.locating.ModFileInfoParser,net.neoforged.neoforgespi.locating.IModFile.Type,net.neoforged.neoforgespi.locating.ModFileDiscoveryAttributes)" class="member-name-link">create</a><wbr>(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser,
+ <a href="IModFile.Type.html" title="enum class in net.neoforged.neoforgespi.locating">IModFile.Type</a>&nbsp;type,
+ <a href="ModFileDiscoveryAttributes.html" title="class in net.neoforged.neoforgespi.locating">ModFileDiscoveryAttributes</a>&nbsp;attributes)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.neoforgespi.locating.ModFileInfoParser,net.neoforged.neoforgespi.locating.ModFileDiscoveryAttributes)" class="member-name-link">create</a><wbr>(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser,
+ <a href="ModFileDiscoveryAttributes.html" title="class in net.neoforged.neoforgespi.locating">ModFileDiscoveryAttributes</a>&nbsp;attributes)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getContents()" class="member-name-link">getContents</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the contents of the mod file, which allow direct access to files in the mods jar file.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ModFileDiscoveryAttributes.html" title="class in net.neoforged.neoforgespi.locating">ModFileDiscoveryAttributes</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDiscoveryAttributes()" class="member-name-link">getDiscoveryAttributes</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Get attributes about how this mod file was discovered.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFileName()" class="member-name-link">getFileName</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">The raw file name of this file.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFilePath()" class="member-name-link">getFilePath</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">The path to the underlying mod file.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getId()" class="member-name-link">getId</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">A unique ID identifying this mod file.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../language/IModFileInfo.html" title="interface in net.neoforged.neoforgespi.language">IModFileInfo</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getModFileInfo()" class="member-name-link">getModFileInfo</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">The metadata info related to this particular file.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../language/IModInfo.html" title="interface in net.neoforged.neoforgespi.language">IModInfo</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getModInfos()" class="member-name-link">getModInfos</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns a list of all mods located inside this jar.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../language/ModFileScanData.html" title="class in net.neoforged.neoforgespi.language">ModFileScanData</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getScanResult()" class="member-name-link">getScanResult</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">The metadata scan result of all the classes located inside this file.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSubstitutionMap()" class="member-name-link">getSubstitutionMap</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">The mod files specific string data substitution map.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="IModFile.Type.html" title="enum class in net.neoforged.neoforgespi.locating">IModFile.Type</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getType()" class="member-name-link">getType</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">The type of the mod jar.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.neoforgespi.locating.ModFileInfoParser)">
+<h3>create</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser)</span>
+                throws <span class="exceptions"><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></span></div>
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>contents</code> - The secure jar to load the mod file from.</dd>
+<dd><code>parser</code> - The parser which is responsible for parsing the metadata of the file itself.</dd>
+<dt>Returns:</dt>
+<dd>The mod file.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.fml.jarmoduleinfo.JarModuleInfo,net.neoforged.neoforgespi.locating.ModFileInfoParser)">
+<h3>create</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="../../fml/jarmoduleinfo/JarModuleInfo.html" title="interface in net.neoforged.fml.jarmoduleinfo">JarModuleInfo</a>&nbsp;metadata,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser)</span>
+                throws <span class="exceptions"><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></span></div>
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>contents</code> - The secure jar to load the mod file from.</dd>
+<dd><code>parser</code> - The parser which is responsible for parsing the metadata of the file itself.</dd>
+<dt>Returns:</dt>
+<dd>The mod file.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.neoforgespi.locating.ModFileInfoParser,net.neoforged.neoforgespi.locating.ModFileDiscoveryAttributes)">
+<h3>create</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser,
+ <a href="ModFileDiscoveryAttributes.html" title="class in net.neoforged.neoforgespi.locating">ModFileDiscoveryAttributes</a>&nbsp;attributes)</span>
+                throws <span class="exceptions"><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></span></div>
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>contents</code> - The secure jar to load the mod file from.</dd>
+<dd><code>parser</code> - The parser which is responsible for parsing the metadata of the file itself.</dd>
+<dd><code>attributes</code> - Additional attributes of the modfile.</dd>
+<dt>Returns:</dt>
+<dd>The mod file.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.fml.jarmoduleinfo.JarModuleInfo,net.neoforged.neoforgespi.locating.ModFileInfoParser,net.neoforged.neoforgespi.locating.IModFile.Type,net.neoforged.neoforgespi.locating.ModFileDiscoveryAttributes)">
+<h3>create</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="../../fml/jarmoduleinfo/JarModuleInfo.html" title="interface in net.neoforged.fml.jarmoduleinfo">JarModuleInfo</a>&nbsp;metadata,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser,
+ <a href="IModFile.Type.html" title="enum class in net.neoforged.neoforgespi.locating">IModFile.Type</a>&nbsp;type,
+ <a href="ModFileDiscoveryAttributes.html" title="class in net.neoforged.neoforgespi.locating">ModFileDiscoveryAttributes</a>&nbsp;attributes)</span>
+                throws <span class="exceptions"><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></span></div>
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>contents</code> - The secure jar to load the mod file from.</dd>
+<dd><code>metadata</code> - Information about the jar contents.</dd>
+<dd><code>parser</code> - The parser which is responsible for parsing the metadata of the file itself.</dd>
+<dd><code>type</code> - the type of the mod</dd>
+<dd><code>attributes</code> - Additional attributes of the modfile.</dd>
+<dt>Returns:</dt>
+<dd>The mod file.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="create(net.neoforged.fml.jarcontents.JarContents,net.neoforged.neoforgespi.locating.ModFileInfoParser,net.neoforged.neoforgespi.locating.IModFile.Type,net.neoforged.neoforgespi.locating.ModFileDiscoveryAttributes)">
+<h3>create</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="IModFile.html" title="interface in net.neoforged.neoforgespi.locating">IModFile</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a>&nbsp;contents,
+ <a href="ModFileInfoParser.html" title="interface in net.neoforged.neoforgespi.locating">ModFileInfoParser</a>&nbsp;parser,
+ <a href="IModFile.Type.html" title="enum class in net.neoforged.neoforgespi.locating">IModFile.Type</a>&nbsp;type,
+ <a href="ModFileDiscoveryAttributes.html" title="class in net.neoforged.neoforgespi.locating">ModFileDiscoveryAttributes</a>&nbsp;attributes)</span>
+                throws <span class="exceptions"><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></span></div>
+<div class="block">Builds a new mod file instance depending on the current runtime.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>contents</code> - The secure jar to load the mod file from.</dd>
+<dd><code>parser</code> - The parser which is responsible for parsing the metadata of the file itself.</dd>
+<dd><code>type</code> - the type of the mod</dd>
+<dd><code>attributes</code> - Additional attributes of the modfile.</dd>
+<dt>Returns:</dt>
+<dd>The mod file.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="InvalidModFileException.html" title="class in net.neoforged.neoforgespi.locating">InvalidModFileException</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getId()">
+<h3>getId</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getId</span>()</div>
+<div class="block">A unique ID identifying this mod file.
+
+<p>For mod files containing mods this will correspond with the mod id of the first mod contained in this file.
+<p>For non-mod jar files, an approach to generating a unique id is using the same algorithm used by Java
+to determine a Java module name for a given Jar file, but this is not guaranteed.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getContents()">
+<h3>getContents</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="../../fml/jarcontents/JarContents.html" title="interface in net.neoforged.fml.jarcontents">JarContents</a></span>&nbsp;<span class="element-name">getContents</span>()</div>
+<div class="block">Returns the contents of the mod file, which allow direct access to files in the mods jar file.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the contents of the mod file, which allow direct access to files in the mods jar file</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getSubstitutionMap()">
+<h3>getSubstitutionMap</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&gt;</span>&nbsp;<span class="element-name">getSubstitutionMap</span>()</div>
+<div class="block">The mod files specific string data substitution map.
+The map returned here is used to interpolate values in the metadata of the included mods.
+Examples of where this is used in FML: While parsing the mods.toml file, keys like:
+${file.xxxxx} are replaced with the values of this map, with keys xxxxx.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The string substitution map used during metadata load.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getType()">
+<h3>getType</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="IModFile.Type.html" title="enum class in net.neoforged.neoforgespi.locating">IModFile.Type</a></span>&nbsp;<span class="element-name">getType</span>()</div>
+<div class="block">The type of the mod jar.
+This primarily defines how and where this mod file is loaded into the module system.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The type of the mod file.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getFilePath()">
+<h3>getFilePath</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></span>&nbsp;<span class="element-name">getFilePath</span>()</div>
+<div class="block">The path to the underlying mod file.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The path to the mod file.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getModInfos()">
+<h3>getModInfos</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../language/IModInfo.html" title="interface in net.neoforged.neoforgespi.language">IModInfo</a>&gt;</span>&nbsp;<span class="element-name">getModInfos</span>()</div>
+<div class="block">Returns a list of all mods located inside this jar.
+<p>
+If this method returns any entries then <a href="#getType()"><code>getType()</code></a> has to return <a href="IModFile.Type.html#MOD"><code>IModFile.Type.MOD</code></a>,
+else this mod file will not be loaded in the proper module layer in 1.17 and above.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The mods in this mod file.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getScanResult()">
+<h3>getScanResult</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="../language/ModFileScanData.html" title="class in net.neoforged.neoforgespi.language">ModFileScanData</a></span>&nbsp;<span class="element-name">getScanResult</span>()</div>
+<div class="block">The metadata scan result of all the classes located inside this file.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The metadata scan result.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getFileName()">
+<h3>getFileName</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getFileName</span>()</div>
+<div class="block">The raw file name of this file.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The raw file name.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getDiscoveryAttributes()">
+<h3>getDiscoveryAttributes</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="ModFileDiscoveryAttributes.html" title="class in net.neoforged.neoforgespi.locating">ModFileDiscoveryAttributes</a></span>&nbsp;<span class="element-name">getDiscoveryAttributes</span>()</div>
+<div class="block">Get attributes about how this mod file was discovered.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getModFileInfo()">
+<h3>getModFileInfo</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="../language/IModFileInfo.html" title="interface in net.neoforged.neoforgespi.language">IModFileInfo</a></span>&nbsp;<span class="element-name">getModFileInfo</span>()</div>
+<div class="block">The metadata info related to this particular file.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The info for this file.</dd>
+</dl>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+<!-- ========= END OF CLASS DATA ========= -->
+</main>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>EntitySectionStorage (NeoForge 26.1)</title>
+<title>EntitySectionStorage (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.entity, class: EntitySectionStorage">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/EntitySectionStorage.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,10 +61,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#CHONKY_ENTITY_SEARCH_GRACE" tabindex="0">CHONKY_ENTITY_SEARCH_GRACE</a></li>
 <li><a href="#MAX_NON_CHONKY_ENTITY_SIZE" tabindex="0">MAX_NON_CHONKY_ENTITY_SIZE</a></li>
-<li><a href="#entityClass" tabindex="0">entityClass</a></li>
-<li><a href="#intialSectionVisibility" tabindex="0">intialSectionVisibility</a></li>
-<li><a href="#sections" tabindex="0">sections</a></li>
-<li><a href="#sectionIds" tabindex="0">sectionIds</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -76,12 +72,9 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#forEachAccessibleNonEmptySection(net.minecraft.world.phys.AABB,net.minecraft.util.AbortableIterationConsumer)" tabindex="0">forEachAccessibleNonEmptySection(AABB, AbortableIterationConsumer)</a></li>
 <li><a href="#getExistingSectionPositionsInChunk(long)" tabindex="0">getExistingSectionPositionsInChunk(long)</a></li>
-<li><a href="#getChunkSections(int,int)" tabindex="0">getChunkSections(int, int)</a></li>
 <li><a href="#getExistingSectionsInChunk(long)" tabindex="0">getExistingSectionsInChunk(long)</a></li>
-<li><a href="#getChunkKeyFromSectionKey(long)" tabindex="0">getChunkKeyFromSectionKey(long)</a></li>
 <li><a href="#getOrCreateSection(long)" tabindex="0">getOrCreateSection(long)</a></li>
 <li><a href="#getSection(long)" tabindex="0">getSection(long)</a></li>
-<li><a href="#createSection(long)" tabindex="0">createSection(long)</a></li>
 <li><a href="#getAllChunksWithExistingSections()" tabindex="0">getAllChunksWithExistingSections()</a></li>
 <li><a href="#getEntities(net.minecraft.world.phys.AABB,net.minecraft.util.AbortableIterationConsumer)" tabindex="0">getEntities(AABB, AbortableIterationConsumer)</a></li>
 <li><a href="#getEntities(net.minecraft.world.level.entity.EntityTypeTest,net.minecraft.world.phys.AABB,net.minecraft.util.AbortableIterationConsumer)" tabindex="0">getEntities(EntityTypeTest, AABB, AbortableIterationConsumer)</a></li>
@@ -120,20 +113,8 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#CHONKY_ENTITY_SEARCH_GRACE" class="member-name-link">CHONKY_ENTITY_SEARCH_GRACE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a><wbr>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#entityClass" class="member-name-link">entityClass</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final it.unimi.dsi.fastutil.longs.Long2ObjectFunction<wbr>&lt;<a href="Visibility.html" title="enum class in net.minecraft.world.level.entity">Visibility</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#intialSectionVisibility" class="member-name-link">intialSectionVisibility</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#MAX_NON_CHONKY_ENTITY_SIZE" class="member-name-link">MAX_NON_CHONKY_ENTITY_SIZE</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final it.unimi.dsi.fastutil.longs.LongSortedSet</code></div>
-<div class="col-second even-row-color"><code><a href="#sectionIds" class="member-name-link">sectionIds</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final it.unimi.dsi.fastutil.longs.Long2ObjectMap<wbr>&lt;<a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#sections" class="member-name-link">sections</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -147,7 +128,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Class,it.unimi.dsi.fastutil.longs.Long2ObjectFunction)" class="member-name-link">EntitySectionStorage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;&nbsp;entityClass,
- it.unimi.dsi.fastutil.longs.Long2ObjectFunction&lt;<a href="Visibility.html" title="enum class in net.minecraft.world.level.entity">Visibility</a>&gt;&nbsp;intialSectionVisibility)</code></div>
+ <a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/Long2ObjectFunction.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">Long2ObjectFunction</a>&lt;<a href="Visibility.html" title="enum class in net.minecraft.world.level.entity">Visibility</a>&gt;&nbsp;intialSectionVisibility)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -157,7 +138,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -166,53 +147,43 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#count()" class="member-name-link">count</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a><wbr>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSection(long)" class="member-name-link">createSection</a><wbr>(long&nbsp;sectionPos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#forEachAccessibleNonEmptySection(net.minecraft.world.phys.AABB,net.minecraft.util.AbortableIterationConsumer)" class="member-name-link">forEachAccessibleNonEmptySection</a><wbr>(<a href="../../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;bb,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#forEachAccessibleNonEmptySection(net.minecraft.world.phys.AABB,net.minecraft.util.AbortableIterationConsumer)" class="member-name-link">forEachAccessibleNonEmptySection</a><wbr>(<a href="../../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;bb,
  <a href="../../../util/AbortableIterationConsumer.html" title="interface in net.minecraft.util">AbortableIterationConsumer</a>&lt;<a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;&gt;&nbsp;output)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/LongSet.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">LongSet</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllChunksWithExistingSections()" class="member-name-link">getAllChunksWithExistingSections</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>it.unimi.dsi.fastutil.longs.LongSet</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAllChunksWithExistingSections()" class="member-name-link">getAllChunksWithExistingSections</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getChunkKeyFromSectionKey(long)" class="member-name-link">getChunkKeyFromSectionKey</a><wbr>(long&nbsp;sectionPos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private it.unimi.dsi.fastutil.longs.LongSortedSet</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChunkSections(int,int)" class="member-name-link">getChunkSections</a><wbr>(int&nbsp;x,
- int&nbsp;z)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;U extends <a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;<br>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntities(net.minecraft.world.level.entity.EntityTypeTest,net.minecraft.world.phys.AABB,net.minecraft.util.AbortableIterationConsumer)" class="member-name-link">getEntities</a><wbr>(<a href="EntityTypeTest.html" title="interface in net.minecraft.world.level.entity">EntityTypeTest</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>,<wbr>U&gt;&nbsp;type,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;U extends <a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;<br>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntities(net.minecraft.world.level.entity.EntityTypeTest,net.minecraft.world.phys.AABB,net.minecraft.util.AbortableIterationConsumer)" class="member-name-link">getEntities</a><wbr>(<a href="EntityTypeTest.html" title="interface in net.minecraft.world.level.entity">EntityTypeTest</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>,<wbr>U&gt;&nbsp;type,
  <a href="../../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;bb,
  <a href="../../../util/AbortableIterationConsumer.html" title="interface in net.minecraft.util">AbortableIterationConsumer</a>&lt;U&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntities(net.minecraft.world.phys.AABB,net.minecraft.util.AbortableIterationConsumer)" class="member-name-link">getEntities</a><wbr>(<a href="../../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;bb,
- <a href="../../../util/AbortableIterationConsumer.html" title="interface in net.minecraft.util">AbortableIterationConsumer</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;&nbsp;output)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/LongStream.html" title="class or interface in java.util.stream" class="external-link">LongStream</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExistingSectionPositionsInChunk(long)" class="member-name-link">getExistingSectionPositionsInChunk</a><wbr>(long&nbsp;chunkKey)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExistingSectionsInChunk(long)" class="member-name-link">getExistingSectionsInChunk</a><wbr>(long&nbsp;chunkKey)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a><wbr>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOrCreateSection(long)" class="member-name-link">getOrCreateSection</a><wbr>(long&nbsp;key)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a><wbr>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSection(long)" class="member-name-link">getSection</a><wbr>(long&nbsp;key)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(long)" class="member-name-link">remove</a><wbr>(long&nbsp;sectionKey)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntities(net.minecraft.world.phys.AABB,net.minecraft.util.AbortableIterationConsumer)" class="member-name-link">getEntities</a><wbr>(<a href="../../phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a>&nbsp;bb,
+ <a href="../../../util/AbortableIterationConsumer.html" title="interface in net.minecraft.util">AbortableIterationConsumer</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;&nbsp;output)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/LongStream.html" title="class or interface in java.util.stream" class="external-link">LongStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExistingSectionPositionsInChunk(long)" class="member-name-link">getExistingSectionPositionsInChunk</a><wbr>(long&nbsp;chunkKey)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExistingSectionsInChunk(long)" class="member-name-link">getExistingSectionsInChunk</a><wbr>(long&nbsp;chunkKey)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a><wbr>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOrCreateSection(long)" class="member-name-link">getOrCreateSection</a><wbr>(long&nbsp;key)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a><wbr>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSection(long)" class="member-name-link">getSection</a><wbr>(long&nbsp;key)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(long)" class="member-name-link">remove</a><wbr>(long&nbsp;sectionKey)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -256,38 +227,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="entityClass">
-<h3>entityClass</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a> extends <a href="EntityAccess.html" title="interface in net.minecraft.world.level.entity">EntityAccess</a>&gt;</span>&nbsp;<span class="element-name">entityClass</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="intialSectionVisibility">
-<h3>intialSectionVisibility</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.Long2ObjectFunction&lt;<a href="Visibility.html" title="enum class in net.minecraft.world.level.entity">Visibility</a>&gt;</span>&nbsp;<span class="element-name">intialSectionVisibility</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="sections">
-<h3>sections</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.Long2ObjectMap&lt;<a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a> extends <a href="EntityAccess.html" title="interface in net.minecraft.world.level.entity">EntityAccess</a>&gt;&gt;</span>&nbsp;<span class="element-name">sections</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="sectionIds">
-<h3>sectionIds</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.LongSortedSet</span>&nbsp;<span class="element-name">sectionIds</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -301,7 +240,7 @@ loadScripts(document, 'script');</script>
 <h3>EntitySectionStorage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">EntitySectionStorage</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;&nbsp;entityClass,
- it.unimi.dsi.fastutil.longs.Long2ObjectFunction&lt;<a href="Visibility.html" title="enum class in net.minecraft.world.level.entity">Visibility</a>&gt;&nbsp;intialSectionVisibility)</span></div>
+ <a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/Long2ObjectFunction.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">Long2ObjectFunction</a>&lt;<a href="Visibility.html" title="enum class in net.minecraft.world.level.entity">Visibility</a>&gt;&nbsp;intialSectionVisibility)</span></div>
 </div>
 </section>
 </li>
@@ -331,27 +270,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getChunkSections(int,int)">
-<h3>getChunkSections</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.LongSortedSet</span>&nbsp;<span class="element-name">getChunkSections</span><wbr><span class="parameters">(int&nbsp;x,
- int&nbsp;z)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getExistingSectionsInChunk(long)">
 <h3>getExistingSectionsInChunk</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;&gt;</span>&nbsp;<span class="element-name">getExistingSectionsInChunk</span><wbr><span class="parameters">(long&nbsp;chunkKey)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getChunkKeyFromSectionKey(long)">
-<h3>getChunkKeyFromSectionKey</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getChunkKeyFromSectionKey</span><wbr><span class="parameters">(long&nbsp;sectionPos)</span></div>
 </div>
 </section>
 </li>
@@ -372,18 +294,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="createSection(long)">
-<h3>createSection</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="EntitySection.html" title="class in net.minecraft.world.level.entity">EntitySection</a>&lt;<a href="#type-param-T" title="type parameter in EntitySectionStorage">T</a>&gt;</span>&nbsp;<span class="element-name">createSection</span><wbr><span class="parameters">(long&nbsp;sectionPos)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getAllChunksWithExistingSections()">
 <h3>getAllChunksWithExistingSections</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.LongSet</span>&nbsp;<span class="element-name">getAllChunksWithExistingSections</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://javadoc.io/doc/it.unimi.dsi/fastutil/8.5.18/it/unimi/dsi/fastutil/longs/LongSet.html" title="class or interface in it.unimi.dsi.fastutil.longs" class="external-link">LongSet</a></span>&nbsp;<span class="element-name">getAllChunksWithExistingSections</span>()</div>
 </div>
 </section>
 </li>

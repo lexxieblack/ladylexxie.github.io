@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>Main (NeoForge 26.1)</title>
+<title>Main (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server, class: Main">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/Main.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
 <li><a href="../../../search.html">Search</a></li>
 <li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,14 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">Main()</a></li>
@@ -70,10 +64,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#main(java.lang.String%5B%5D)" tabindex="0">main(String[])</a></li>
-<li><a href="#createNewWorldData(net.minecraft.server.dedicated.DedicatedServerSettings,net.minecraft.server.WorldLoader.DataLoadContext,net.minecraft.core.Registry,boolean,boolean)" tabindex="0">createNewWorldData(DedicatedServerSettings, WorldLoader.DataLoadContext, Registry, boolean, boolean)</a></li>
-<li><a href="#writePidFile(java.nio.file.Path)" tabindex="0">writePidFile(Path)</a></li>
-<li><a href="#loadOrCreateConfig(net.minecraft.server.dedicated.DedicatedServerProperties,com.mojang.serialization.Dynamic,boolean,net.minecraft.server.packs.repository.PackRepository)" tabindex="0">loadOrCreateConfig(DedicatedServerProperties, Dynamic, boolean, PackRepository)</a></li>
-<li><a href="#forceUpgrade(net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess,com.mojang.datafixers.DataFixer,boolean,java.util.function.BooleanSupplier,net.minecraft.core.RegistryAccess,boolean)" tabindex="0">forceUpgrade(LevelStorageSource.LevelStorageAccess, DataFixer, boolean, BooleanSupplier, RegistryAccess, boolean)</a></li>
 </ol>
 </li>
 </ol>
@@ -95,21 +85,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -134,61 +109,21 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="WorldLoader.DataLoadOutput.html" title="class in net.minecraft.server">WorldLoader.DataLoadOutput</a><wbr>&lt;<a href="../world/level/storage/LevelDataAndDimensions.WorldDataAndGenSettings.html" title="class in net.minecraft.world.level.storage">LevelDataAndDimensions.WorldDataAndGenSettings</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createNewWorldData(net.minecraft.server.dedicated.DedicatedServerSettings,net.minecraft.server.WorldLoader.DataLoadContext,net.minecraft.core.Registry,boolean,boolean)" class="member-name-link">createNewWorldData</a><wbr>(<a href="dedicated/DedicatedServerSettings.html" title="class in net.minecraft.server.dedicated">DedicatedServerSettings</a>&nbsp;settings,
- <a href="WorldLoader.DataLoadContext.html" title="class in net.minecraft.server">WorldLoader.DataLoadContext</a>&nbsp;context,
- <a href="../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="../world/level/dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;datapackDimensions,
- boolean&nbsp;demoMode,
- boolean&nbsp;bonusChest)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#forceUpgrade(net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess,com.mojang.datafixers.DataFixer,boolean,java.util.function.BooleanSupplier,net.minecraft.core.RegistryAccess,boolean)" class="member-name-link">forceUpgrade</a><wbr>(<a href="../world/level/storage/LevelStorageSource.LevelStorageAccess.html" title="class in net.minecraft.world.level.storage">LevelStorageSource.LevelStorageAccess</a>&nbsp;storageSource,
- <a href="../../../com/mojang/datafixers/DataFixer.html" title="interface in com.mojang.datafixers">DataFixer</a>&nbsp;fixerUpper,
- boolean&nbsp;eraseCache,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BooleanSupplier.html" title="class or interface in java.util.function" class="external-link">BooleanSupplier</a>&nbsp;isRunning,
- <a href="../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
- boolean&nbsp;recreateRegionFiles)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="WorldLoader.InitConfig.html" title="class in net.minecraft.server">WorldLoader.InitConfig</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadOrCreateConfig(net.minecraft.server.dedicated.DedicatedServerProperties,com.mojang.serialization.Dynamic,boolean,net.minecraft.server.packs.repository.PackRepository)" class="member-name-link">loadOrCreateConfig</a><wbr>(<a href="dedicated/DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&nbsp;properties,
- @Nullable <a href="../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a>&lt;?&gt;&nbsp;levelDataTag,
- boolean&nbsp;safeModeEnabled,
- <a href="packs/repository/PackRepository.html" title="class in net.minecraft.server.packs.repository">PackRepository</a>&nbsp;packRepository)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writePidFile(java.nio.file.Path)" class="member-name-link">writePidFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -215,50 +150,6 @@ loadScripts(document, 'script');</script>
 <h3>main</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">main</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createNewWorldData(net.minecraft.server.dedicated.DedicatedServerSettings,net.minecraft.server.WorldLoader.DataLoadContext,net.minecraft.core.Registry,boolean,boolean)">
-<h3>createNewWorldData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="WorldLoader.DataLoadOutput.html" title="class in net.minecraft.server">WorldLoader.DataLoadOutput</a>&lt;<a href="../world/level/storage/LevelDataAndDimensions.WorldDataAndGenSettings.html" title="class in net.minecraft.world.level.storage">LevelDataAndDimensions.WorldDataAndGenSettings</a>&gt;</span>&nbsp;<span class="element-name">createNewWorldData</span><wbr><span class="parameters">(<a href="dedicated/DedicatedServerSettings.html" title="class in net.minecraft.server.dedicated">DedicatedServerSettings</a>&nbsp;settings,
- <a href="WorldLoader.DataLoadContext.html" title="class in net.minecraft.server">WorldLoader.DataLoadContext</a>&nbsp;context,
- <a href="../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="../world/level/dimension/LevelStem.html" title="class in net.minecraft.world.level.dimension">LevelStem</a>&gt;&nbsp;datapackDimensions,
- boolean&nbsp;demoMode,
- boolean&nbsp;bonusChest)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="writePidFile(java.nio.file.Path)">
-<h3>writePidFile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writePidFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="loadOrCreateConfig(net.minecraft.server.dedicated.DedicatedServerProperties,com.mojang.serialization.Dynamic,boolean,net.minecraft.server.packs.repository.PackRepository)">
-<h3>loadOrCreateConfig</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="WorldLoader.InitConfig.html" title="class in net.minecraft.server">WorldLoader.InitConfig</a></span>&nbsp;<span class="element-name">loadOrCreateConfig</span><wbr><span class="parameters">(<a href="dedicated/DedicatedServerProperties.html" title="class in net.minecraft.server.dedicated">DedicatedServerProperties</a>&nbsp;properties,
- @Nullable <a href="../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a>&lt;?&gt;&nbsp;levelDataTag,
- boolean&nbsp;safeModeEnabled,
- <a href="packs/repository/PackRepository.html" title="class in net.minecraft.server.packs.repository">PackRepository</a>&nbsp;packRepository)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="forceUpgrade(net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess,com.mojang.datafixers.DataFixer,boolean,java.util.function.BooleanSupplier,net.minecraft.core.RegistryAccess,boolean)">
-<h3>forceUpgrade</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">forceUpgrade</span><wbr><span class="parameters">(<a href="../world/level/storage/LevelStorageSource.LevelStorageAccess.html" title="class in net.minecraft.world.level.storage">LevelStorageSource.LevelStorageAccess</a>&nbsp;storageSource,
- <a href="../../../com/mojang/datafixers/DataFixer.html" title="interface in com.mojang.datafixers">DataFixer</a>&nbsp;fixerUpper,
- boolean&nbsp;eraseCache,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BooleanSupplier.html" title="class or interface in java.util.function" class="external-link">BooleanSupplier</a>&nbsp;isRunning,
- <a href="../core/RegistryAccess.html" title="interface in net.minecraft.core">RegistryAccess</a>&nbsp;registryAccess,
- boolean&nbsp;recreateRegionFiles)</span></div>
 </div>
 </section>
 </li>

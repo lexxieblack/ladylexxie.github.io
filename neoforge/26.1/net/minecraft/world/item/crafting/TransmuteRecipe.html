@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>TransmuteRecipe (NeoForge 26.1)</title>
+<title>TransmuteRecipe (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.item.crafting, class: TransmuteRecipe">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/TransmuteRecipe.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,19 +60,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#MIN_MATERIAL_COUNT" tabindex="0">MIN_MATERIAL_COUNT</a></li>
-<li><a href="#MAX_MATERIAL_COUNT" tabindex="0">MAX_MATERIAL_COUNT</a></li>
 <li><a href="#DEFAULT_MATERIAL_COUNT" tabindex="0">DEFAULT_MATERIAL_COUNT</a></li>
 <li><a href="#FULL_RANGE_MATERIAL_COUNT" tabindex="0">FULL_RANGE_MATERIAL_COUNT</a></li>
 <li><a href="#MATERIAL_COUNT_BOUNDS" tabindex="0">MATERIAL_COUNT_BOUNDS</a></li>
 <li><a href="#MAP_CODEC" tabindex="0">MAP_CODEC</a></li>
 <li><a href="#STREAM_CODEC" tabindex="0">STREAM_CODEC</a></li>
 <li><a href="#SERIALIZER" tabindex="0">SERIALIZER</a></li>
-<li><a href="#input" tabindex="0">input</a></li>
-<li><a href="#material" tabindex="0">material</a></li>
-<li><a href="#materialCount" tabindex="0">materialCount</a></li>
-<li><a href="#result" tabindex="0">result</a></li>
-<li><a href="#addMaterialCountToResult" tabindex="0">addMaterialCountToResult</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -84,15 +77,10 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#createWithOriginalComponents(net.minecraft.world.item.ItemStackTemplate,net.minecraft.world.item.ItemStack)" tabindex="0">createWithOriginalComponents(ItemStackTemplate, ItemStack)</a></li>
 <li><a href="#createWithOriginalComponents(net.minecraft.world.item.ItemStackTemplate,net.minecraft.world.item.ItemStack,int)" tabindex="0">createWithOriginalComponents(ItemStackTemplate, ItemStack, int)</a></li>
-<li><a href="#computeResultSize(int)" tabindex="0">computeResultSize(int)</a></li>
-<li><a href="#computeResult(net.minecraft.world.item.ItemStack,int)" tabindex="0">computeResult(ItemStack, int)</a></li>
 <li><a href="#matches(net.minecraft.world.item.crafting.CraftingInput,net.minecraft.world.level.Level)" tabindex="0">matches(CraftingInput, Level)</a></li>
 <li><a href="#assemble(net.minecraft.world.item.crafting.CraftingInput)" tabindex="0">assemble(CraftingInput)</a></li>
 <li><a href="#display()" tabindex="0">display()</a></li>
-<li><a href="#minMaterialCount()" tabindex="0">minMaterialCount()</a></li>
-<li><a href="#maxMaterialCount()" tabindex="0">maxMaterialCount()</a></li>
 <li><a href="#getSerializer()" tabindex="0">getSerializer()</a></li>
-<li><a href="#createPlacementInfo()" tabindex="0">createPlacementInfo()</a></li>
 </ol>
 </li>
 </ol>
@@ -141,49 +129,25 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#addMaterialCountToResult" class="member-name-link">addMaterialCountToResult</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../../advancements/criterion/MinMaxBounds.Ints.html" title="class in net.minecraft.advancements.criterion">MinMaxBounds.Ints</a></code></div>
+<div class="col-second even-row-color"><code><a href="#DEFAULT_MATERIAL_COUNT" class="member-name-link">DEFAULT_MATERIAL_COUNT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="../../../advancements/criterion/MinMaxBounds.Ints.html" title="class in net.minecraft.advancements.criterion">MinMaxBounds.Ints</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#DEFAULT_MATERIAL_COUNT" class="member-name-link">DEFAULT_MATERIAL_COUNT</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../../../advancements/criterion/MinMaxBounds.Ints.html" title="class in net.minecraft.advancements.criterion">MinMaxBounds.Ints</a></code></div>
-<div class="col-second even-row-color"><code><a href="#FULL_RANGE_MATERIAL_COUNT" class="member-name-link">FULL_RANGE_MATERIAL_COUNT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#input" class="member-name-link">input</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#FULL_RANGE_MATERIAL_COUNT" class="member-name-link">FULL_RANGE_MATERIAL_COUNT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a><wbr>&lt;<a href="TransmuteRecipe.html" title="class in net.minecraft.world.item.crafting">TransmuteRecipe</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#MAP_CODEC" class="member-name-link">MAP_CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#material" class="member-name-link">material</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="../../../advancements/criterion/MinMaxBounds.Ints.html" title="class in net.minecraft.advancements.criterion">MinMaxBounds.Ints</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#MATERIAL_COUNT_BOUNDS" class="member-name-link">MATERIAL_COUNT_BOUNDS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="../../../advancements/criterion/MinMaxBounds.Ints.html" title="class in net.minecraft.advancements.criterion">MinMaxBounds.Ints</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#MATERIAL_COUNT_BOUNDS" class="member-name-link">MATERIAL_COUNT_BOUNDS</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="RecipeSerializer.html" title="class in net.minecraft.world.item.crafting">RecipeSerializer</a><wbr>&lt;<a href="TransmuteRecipe.html" title="class in net.minecraft.world.item.crafting">TransmuteRecipe</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#SERIALIZER" class="member-name-link">SERIALIZER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../advancements/criterion/MinMaxBounds.Ints.html" title="class in net.minecraft.advancements.criterion">MinMaxBounds.Ints</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#materialCount" class="member-name-link">materialCount</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="../../../network/RegistryFriendlyByteBuf.html" title="class in net.minecraft.network">RegistryFriendlyByteBuf</a>, <a href="TransmuteRecipe.html" title="class in net.minecraft.world.item.crafting">TransmuteRecipe</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#STREAM_CODEC" class="member-name-link">STREAM_CODEC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#MAX_MATERIAL_COUNT" class="member-name-link">MAX_MATERIAL_COUNT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#MIN_MATERIAL_COUNT" class="member-name-link">MIN_MATERIAL_COUNT</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../ItemStackTemplate.html" title="class in net.minecraft.world.item">ItemStackTemplate</a></code></div>
-<div class="col-second even-row-color"><code><a href="#result" class="member-name-link">result</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="RecipeSerializer.html" title="class in net.minecraft.world.item.crafting">RecipeSerializer</a><wbr>&lt;<a href="TransmuteRecipe.html" title="class in net.minecraft.world.item.crafting">TransmuteRecipe</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#SERIALIZER" class="member-name-link">SERIALIZER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="../../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;<a href="../../../network/RegistryFriendlyByteBuf.html" title="class in net.minecraft.network">RegistryFriendlyByteBuf</a>, <a href="TransmuteRecipe.html" title="class in net.minecraft.world.item.crafting">TransmuteRecipe</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#STREAM_CODEC" class="member-name-link">STREAM_CODEC</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.world.item.crafting.NormalCraftingRecipe">Fields inherited from class&nbsp;<a href="NormalCraftingRecipe.html#field-summary" title="class in net.minecraft.world.item.crafting">NormalCraftingRecipe</a></h3>
-<code><a href="NormalCraftingRecipe.html#bookInfo">bookInfo</a>, <a href="NormalCraftingRecipe.html#commonInfo">commonInfo</a></code></div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.world.item.crafting.Recipe">Fields inherited from interface&nbsp;<a href="Recipe.html#field-summary" title="interface in net.minecraft.world.item.crafting">Recipe</a></h3>
 <code><a href="Recipe.html#CODEC">CODEC</a>, <a href="Recipe.html#CONDITIONAL_CODEC">CONDITIONAL_CODEC</a>, <a href="Recipe.html#KEY_CODEC">KEY_CODEC</a></code></div>
@@ -222,41 +186,25 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#assemble(net.minecraft.world.item.crafting.CraftingInput)" class="member-name-link">assemble</a><wbr>(<a href="CraftingInput.html" title="class in net.minecraft.world.item.crafting">CraftingInput</a>&nbsp;input)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#computeResult(net.minecraft.world.item.ItemStack,int)" class="member-name-link">computeResult</a><wbr>(<a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;inputIngredient,
- int&nbsp;materialCount)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#computeResultSize(int)" class="member-name-link">computeResultSize</a><wbr>(int&nbsp;materialCount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="PlacementInfo.html" title="class in net.minecraft.world.item.crafting">PlacementInfo</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPlacementInfo()" class="member-name-link">createPlacementInfo</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createWithOriginalComponents(net.minecraft.world.item.ItemStackTemplate,net.minecraft.world.item.ItemStack)" class="member-name-link">createWithOriginalComponents</a><wbr>(<a href="../ItemStackTemplate.html" title="class in net.minecraft.world.item">ItemStackTemplate</a>&nbsp;target,
- <a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;input)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createWithOriginalComponents(net.minecraft.world.item.ItemStackTemplate,net.minecraft.world.item.ItemStack,int)" class="member-name-link">createWithOriginalComponents</a><wbr>(<a href="../ItemStackTemplate.html" title="class in net.minecraft.world.item">ItemStackTemplate</a>&nbsp;target,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createWithOriginalComponents(net.minecraft.world.item.ItemStackTemplate,net.minecraft.world.item.ItemStack)" class="member-name-link">createWithOriginalComponents</a><wbr>(<a href="../ItemStackTemplate.html" title="class in net.minecraft.world.item">ItemStackTemplate</a>&nbsp;target,
+ <a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;input)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createWithOriginalComponents(net.minecraft.world.item.ItemStackTemplate,net.minecraft.world.item.ItemStack,int)" class="member-name-link">createWithOriginalComponents</a><wbr>(<a href="../ItemStackTemplate.html" title="class in net.minecraft.world.item">ItemStackTemplate</a>&nbsp;target,
  <a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;input,
  int&nbsp;extraCount)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="display/RecipeDisplay.html" title="interface in net.minecraft.world.item.crafting.display">RecipeDisplay</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#display()" class="member-name-link">display</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RecipeSerializer.html" title="class in net.minecraft.world.item.crafting">RecipeSerializer</a><wbr>&lt;<a href="TransmuteRecipe.html" title="class in net.minecraft.world.item.crafting">TransmuteRecipe</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSerializer()" class="member-name-link">getSerializer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="display/RecipeDisplay.html" title="interface in net.minecraft.world.item.crafting.display">RecipeDisplay</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#display()" class="member-name-link">display</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#matches(net.minecraft.world.item.crafting.CraftingInput,net.minecraft.world.level.Level)" class="member-name-link">matches</a><wbr>(<a href="CraftingInput.html" title="class in net.minecraft.world.item.crafting">CraftingInput</a>&nbsp;input,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RecipeSerializer.html" title="class in net.minecraft.world.item.crafting">RecipeSerializer</a><wbr>&lt;<a href="TransmuteRecipe.html" title="class in net.minecraft.world.item.crafting">TransmuteRecipe</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSerializer()" class="member-name-link">getSerializer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#matches(net.minecraft.world.item.crafting.CraftingInput,net.minecraft.world.level.Level)" class="member-name-link">matches</a><wbr>(<a href="CraftingInput.html" title="class in net.minecraft.world.item.crafting">CraftingInput</a>&nbsp;input,
  <a href="../../level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#maxMaterialCount()" class="member-name-link">maxMaterialCount</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minMaterialCount()" class="member-name-link">minMaterialCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -265,7 +213,7 @@ loadScripts(document, 'script');</script>
 <code><a href="NormalCraftingRecipe.html#category()" title="category()">category</a>, <a href="NormalCraftingRecipe.html#group()" title="group()">group</a>, <a href="NormalCraftingRecipe.html#placementInfo()" title="placementInfo()">placementInfo</a>, <a href="NormalCraftingRecipe.html#showNotification()" title="showNotification()">showNotification</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.item.crafting.CraftingRecipe">Methods inherited from interface&nbsp;<a href="CraftingRecipe.html#method-summary" title="interface in net.minecraft.world.item.crafting">CraftingRecipe</a></h3>
 <code><a href="CraftingRecipe.html#getRemainingItems(net.minecraft.world.item.crafting.CraftingInput)" title="getRemainingItems(CraftingInput)">getRemainingItems</a>, <a href="CraftingRecipe.html#getType()" title="getType()">getType</a>, <a href="CraftingRecipe.html#recipeBookCategory()" title="recipeBookCategory()">recipeBookCategory</a></code></div>
@@ -283,38 +231,6 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="MIN_MATERIAL_COUNT">
-<h3>MIN_MATERIAL_COUNT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MIN_MATERIAL_COUNT</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.world.item.crafting.TransmuteRecipe.MIN_MATERIAL_COUNT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="MAX_MATERIAL_COUNT">
-<h3>MAX_MATERIAL_COUNT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAX_MATERIAL_COUNT</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.world.item.crafting.TransmuteRecipe.MAX_MATERIAL_COUNT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="DEFAULT_MATERIAL_COUNT">
 <h3>DEFAULT_MATERIAL_COUNT</h3>
@@ -360,46 +276,6 @@ loadScripts(document, 'script');</script>
 <h3>SERIALIZER</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="RecipeSerializer.html" title="class in net.minecraft.world.item.crafting">RecipeSerializer</a>&lt;<a href="TransmuteRecipe.html" title="class in net.minecraft.world.item.crafting">TransmuteRecipe</a>&gt;</span>&nbsp;<span class="element-name">SERIALIZER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="input">
-<h3>input</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a></span>&nbsp;<span class="element-name">input</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="material">
-<h3>material</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="Ingredient.html" title="class in net.minecraft.world.item.crafting">Ingredient</a></span>&nbsp;<span class="element-name">material</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="materialCount">
-<h3>materialCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../advancements/criterion/MinMaxBounds.Ints.html" title="class in net.minecraft.advancements.criterion">MinMaxBounds.Ints</a></span>&nbsp;<span class="element-name">materialCount</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="result">
-<h3>result</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../ItemStackTemplate.html" title="class in net.minecraft.world.item">ItemStackTemplate</a></span>&nbsp;<span class="element-name">result</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addMaterialCountToResult">
-<h3>addMaterialCountToResult</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">addMaterialCountToResult</span></div>
 </div>
 </section>
 </li>
@@ -453,23 +329,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="computeResultSize(int)">
-<h3>computeResultSize</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">computeResultSize</span><wbr><span class="parameters">(int&nbsp;materialCount)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="computeResult(net.minecraft.world.item.ItemStack,int)">
-<h3>computeResult</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a></span>&nbsp;<span class="element-name">computeResult</span><wbr><span class="parameters">(<a href="../ItemStack.html" title="class in net.minecraft.world.item">ItemStack</a>&nbsp;inputIngredient,
- int&nbsp;materialCount)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="matches(net.minecraft.world.item.crafting.CraftingInput,net.minecraft.world.level.Level)">
 <h3>matches</h3>
 <div class="horizontal-scroll">
@@ -495,22 +354,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="minMaterialCount()">
-<h3>minMaterialCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">minMaterialCount</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="maxMaterialCount()">
-<h3>maxMaterialCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxMaterialCount</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getSerializer()">
 <h3>getSerializer</h3>
 <div class="horizontal-scroll">
@@ -522,18 +365,6 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="Recipe.html#getSerializer()">getSerializer</a></code>&nbsp;in interface&nbsp;<code><a href="Recipe.html" title="interface in net.minecraft.world.item.crafting">Recipe</a>&lt;<a href="CraftingInput.html" title="class in net.minecraft.world.item.crafting">CraftingInput</a>&gt;</code></dd>
 <dt>Specified by:</dt>
 <dd><code><a href="NormalCraftingRecipe.html#getSerializer()">getSerializer</a></code>&nbsp;in class&nbsp;<code><a href="NormalCraftingRecipe.html" title="class in net.minecraft.world.item.crafting">NormalCraftingRecipe</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createPlacementInfo()">
-<h3>createPlacementInfo</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="PlacementInfo.html" title="class in net.minecraft.world.item.crafting">PlacementInfo</a></span>&nbsp;<span class="element-name">createPlacementInfo</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="NormalCraftingRecipe.html#createPlacementInfo()">createPlacementInfo</a></code>&nbsp;in class&nbsp;<code><a href="NormalCraftingRecipe.html" title="class in net.minecraft.world.item.crafting">NormalCraftingRecipe</a></code></dd>
 </dl>
 </div>
 </section>

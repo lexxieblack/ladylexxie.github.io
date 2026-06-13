@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>DownloadQueue (NeoForge 26.1)</title>
+<title>DownloadQueue (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server.packs, class: DownloadQueue">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/DownloadQueue.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,18 +55,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#MAX_KEPT_PACKS" tabindex="0">MAX_KEPT_PACKS</a></li>
-<li><a href="#cacheDir" tabindex="0">cacheDir</a></li>
-<li><a href="#eventLog" tabindex="0">eventLog</a></li>
-<li><a href="#tasks" tabindex="0">tasks</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.nio.file.Path)" tabindex="0">DownloadQueue(Path)</a></li>
@@ -74,8 +64,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#runDownload(net.minecraft.server.packs.DownloadQueue.BatchConfig,java.util.Map)" tabindex="0">runDownload(DownloadQueue.BatchConfig, Map)</a></li>
-<li><a href="#getFileInfo(java.nio.file.Path)" tabindex="0">getFileInfo(Path)</a></li>
 <li><a href="#downloadBatch(net.minecraft.server.packs.DownloadQueue.BatchConfig,java.util.Map)" tabindex="0">downloadBatch(DownloadQueue.BatchConfig, Map)</a></li>
 <li><a href="#close()" tabindex="0">close()</a></li>
 </ol>
@@ -122,39 +110,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-first even-row-color"><code>static final record&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="DownloadQueue.DownloadRequest.html" class="type-name-link" title="class in net.minecraft.server.packs">DownloadQueue.DownloadRequest</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="DownloadQueue.FileInfoEntry.html" class="type-name-link" title="class in net.minecraft.server.packs">DownloadQueue.FileInfoEntry</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="DownloadQueue.LogEntry.html" class="type-name-link" title="class in net.minecraft.server.packs">DownloadQueue.LogEntry</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></code></div>
-<div class="col-second even-row-color"><code><a href="#cacheDir" class="member-name-link">cacheDir</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../util/eventlog/JsonEventLog.html" title="class in net.minecraft.util.eventlog">JsonEventLog</a><wbr>&lt;<a href="DownloadQueue.LogEntry.html" title="class in net.minecraft.server.packs">DownloadQueue.LogEntry</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#eventLog" class="member-name-link">eventLog</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#MAX_KEPT_PACKS" class="member-name-link">MAX_KEPT_PACKS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../util/thread/ConsecutiveExecutor.html" title="class in net.minecraft.util.thread">ConsecutiveExecutor</a></code></div>
-<div class="col-second even-row-color"><code><a href="#tasks" class="member-name-link">tasks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -189,81 +144,18 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#downloadBatch(net.minecraft.server.packs.DownloadQueue.BatchConfig,java.util.Map)" class="member-name-link">downloadBatch</a><wbr>(<a href="DownloadQueue.BatchConfig.html" title="class in net.minecraft.server.packs">DownloadQueue.BatchConfig</a>&nbsp;config,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>, <a href="DownloadQueue.DownloadRequest.html" title="class in net.minecraft.server.packs">DownloadQueue.DownloadRequest</a>&gt;&nbsp;requests)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../../com/mojang/datafixers/util/Either.html" title="class in com.mojang.datafixers.util">Either</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="DownloadQueue.FileInfoEntry.html" title="class in net.minecraft.server.packs">DownloadQueue.FileInfoEntry</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFileInfo(java.nio.file.Path)" class="member-name-link">getFileInfo</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;downloadedFile)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="DownloadQueue.BatchResult.html" title="class in net.minecraft.server.packs">DownloadQueue.BatchResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runDownload(net.minecraft.server.packs.DownloadQueue.BatchConfig,java.util.Map)" class="member-name-link">runDownload</a><wbr>(<a href="DownloadQueue.BatchConfig.html" title="class in net.minecraft.server.packs">DownloadQueue.BatchConfig</a>&nbsp;config,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>, <a href="DownloadQueue.DownloadRequest.html" title="class in net.minecraft.server.packs">DownloadQueue.DownloadRequest</a>&gt;&nbsp;requests)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="MAX_KEPT_PACKS">
-<h3>MAX_KEPT_PACKS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAX_KEPT_PACKS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.server.packs.DownloadQueue.MAX_KEPT_PACKS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="cacheDir">
-<h3>cacheDir</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></span>&nbsp;<span class="element-name">cacheDir</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="eventLog">
-<h3>eventLog</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../util/eventlog/JsonEventLog.html" title="class in net.minecraft.util.eventlog">JsonEventLog</a>&lt;<a href="DownloadQueue.LogEntry.html" title="class in net.minecraft.server.packs">DownloadQueue.LogEntry</a>&gt;</span>&nbsp;<span class="element-name">eventLog</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="tasks">
-<h3>tasks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../util/thread/ConsecutiveExecutor.html" title="class in net.minecraft.util.thread">ConsecutiveExecutor</a></span>&nbsp;<span class="element-name">tasks</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -290,23 +182,6 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="runDownload(net.minecraft.server.packs.DownloadQueue.BatchConfig,java.util.Map)">
-<h3>runDownload</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="DownloadQueue.BatchResult.html" title="class in net.minecraft.server.packs">DownloadQueue.BatchResult</a></span>&nbsp;<span class="element-name">runDownload</span><wbr><span class="parameters">(<a href="DownloadQueue.BatchConfig.html" title="class in net.minecraft.server.packs">DownloadQueue.BatchConfig</a>&nbsp;config,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>, <a href="DownloadQueue.DownloadRequest.html" title="class in net.minecraft.server.packs">DownloadQueue.DownloadRequest</a>&gt;&nbsp;requests)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getFileInfo(java.nio.file.Path)">
-<h3>getFileInfo</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/datafixers/util/Either.html" title="class in com.mojang.datafixers.util">Either</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="DownloadQueue.FileInfoEntry.html" title="class in net.minecraft.server.packs">DownloadQueue.FileInfoEntry</a>&gt;</span>&nbsp;<span class="element-name">getFileInfo</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;downloadedFile)</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="downloadBatch(net.minecraft.server.packs.DownloadQueue.BatchConfig,java.util.Map)">
 <h3>downloadBatch</h3>

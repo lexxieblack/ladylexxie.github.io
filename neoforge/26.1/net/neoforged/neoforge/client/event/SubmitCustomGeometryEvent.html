@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>SubmitCustomGeometryEvent (NeoForge 26.1)</title>
+<title>SubmitCustomGeometryEvent (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.client.event, class: SubmitCustomGeometryEvent">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/SubmitCustomGeometryEvent.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,17 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#levelRenderState" tabindex="0">levelRenderState</a></li>
-<li><a href="#submitNodeCollector" tabindex="0">submitNodeCollector</a></li>
-<li><a href="#poseStack" tabindex="0">poseStack</a></li>
-<li><a href="#renderableSections" tabindex="0">renderableSections</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.client.renderer.state.level.LevelRenderState,net.minecraft.client.renderer.SubmitNodeCollector,com.mojang.blaze3d.vertex.PoseStack,java.lang.Iterable)" tabindex="0">SubmitCustomGeometryEvent(LevelRenderState, SubmitNodeCollector, PoseStack, Iterable)</a></li>
@@ -86,7 +77,7 @@ loadScripts(document, 'script');</script>
 <h1 title="Class SubmitCustomGeometryEvent" class="title">Class SubmitCustomGeometryEvent</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">net.neoforged.bus.api.Event
+<div class="inheritance"><a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">net.neoforged.bus.api.Event</a>
 <div class="inheritance">net.neoforged.neoforge.client.event.SubmitCustomGeometryEvent</div>
 </div>
 </div>
@@ -94,7 +85,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">SubmitCustomGeometryEvent</span>
-<span class="extends-implements">extends net.neoforged.bus.api.Event</span></div>
+<span class="extends-implements">extends <a href="../../../bus/api/Event.html" title="class in net.neoforged.bus.api">Event</a></span></div>
 <div class="block">This event can be used to submit custom geometry outside of <a href="../../../../minecraft/client/renderer/blockentity/BlockEntityRenderer.html" title="interface in net.minecraft.client.renderer.blockentity"><code>BlockEntityRenderer</code></a>s,
 <a href="../../../../minecraft/client/renderer/entity/EntityRenderer.html" title="class in net.minecraft.client.renderer.entity"><code>EntityRenderer</code></a>s and <a href="../../../../minecraft/client/particle/Particle.html" title="class in net.minecraft.client.particle"><code>Particle</code></a>s.
 Custom render state used by the submits must be extracted in <a href="ExtractLevelRenderStateEvent.html" title="class in net.neoforged.neoforge.client.event"><code>ExtractLevelRenderStateEvent</code></a> and
@@ -102,38 +93,14 @@ stored in the provided <a href="../../../../minecraft/client/renderer/state/leve
 
 <p>This event is fired between particle submission and rendering of opaque submits.
 
-<p>This event is not cancellable</p>
+<p>This event is not <a href="../../../bus/api/ICancellableEvent.html" title="interface in net.neoforged.bus.api">cancellable</a></p>
 
 <p>This event is fired on the <a href="../../common/NeoForge.html#EVENT_BUS">main NeoForge event bus</a>, only on the
-logical client.</p></div>
+<a href="../../../fml/LogicalSide.html#CLIENT">logical client</a>.</p></div>
 </div>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../minecraft/client/renderer/state/level/LevelRenderState.html" title="class in net.minecraft.client.renderer.state.level">LevelRenderState</a></code></div>
-<div class="col-second even-row-color"><code><a href="#levelRenderState" class="member-name-link">levelRenderState</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.html" title="class in com.mojang.blaze3d.vertex">PoseStack</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#poseStack" class="member-name-link">poseStack</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a><wbr>&lt;? extends <a href="../IRenderableSection.html" title="interface in net.neoforged.neoforge.client">IRenderableSection</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#renderableSections" class="member-name-link">renderableSections</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../../minecraft/client/renderer/SubmitNodeCollector.html" title="interface in net.minecraft.client.renderer">SubmitNodeCollector</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#submitNodeCollector" class="member-name-link">submitNodeCollector</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -186,53 +153,13 @@ logical client.</p></div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="levelRenderState">
-<h3>levelRenderState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/client/renderer/state/level/LevelRenderState.html" title="class in net.minecraft.client.renderer.state.level">LevelRenderState</a></span>&nbsp;<span class="element-name">levelRenderState</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="submitNodeCollector">
-<h3>submitNodeCollector</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/client/renderer/SubmitNodeCollector.html" title="interface in net.minecraft.client.renderer">SubmitNodeCollector</a></span>&nbsp;<span class="element-name">submitNodeCollector</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="poseStack">
-<h3>poseStack</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.html" title="class in com.mojang.blaze3d.vertex">PoseStack</a></span>&nbsp;<span class="element-name">poseStack</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="renderableSections">
-<h3>renderableSections</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;? extends <a href="../IRenderableSection.html" title="interface in net.neoforged.neoforge.client">IRenderableSection</a>&gt;</span>&nbsp;<span class="element-name">renderableSections</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">

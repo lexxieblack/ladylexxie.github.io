@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ComposterWrapper (NeoForge 26.1)</title>
+<title>ComposterWrapper (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.transfer.item, class: ComposterWrapper">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ComposterWrapper.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,33 +54,10 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#wrappers" tabindex="0">wrappers</a></li>
-<li><a href="#BONE_MEAL" tabindex="0">BONE_MEAL</a></li>
-<li><a href="#location" tabindex="0">location</a></li>
-<li><a href="#transactionalRandom" tabindex="0">transactionalRandom</a></li>
-<li><a href="#topHandler" tabindex="0">topHandler</a></li>
-<li><a href="#bottomHandler" tabindex="0">bottomHandler</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(net.neoforged.neoforge.transfer.item.ComposterWrapper.WrapperLocation)" tabindex="0">ComposterWrapper(ComposterWrapper.WrapperLocation)</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#get(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" tabindex="0">get(Level, BlockPos, Direction)</a></li>
-<li><a href="#createSnapshot()" tabindex="0">createSnapshot()</a></li>
-<li><a href="#revertToSnapshot(net.minecraft.world.level.block.state.BlockState)" tabindex="0">revertToSnapshot(BlockState)</a></li>
-<li><a href="#onRootCommit(net.minecraft.world.level.block.state.BlockState)" tabindex="0">onRootCommit(BlockState)</a></li>
-<li><a href="#getComposterValue(net.neoforged.neoforge.transfer.item.ItemResource)" tabindex="0">getComposterValue(ItemResource)</a></li>
-<li><a href="#setLevel(net.minecraft.world.level.block.state.BlockState,int)" tabindex="0">setLevel(BlockState, int)</a></li>
 </ol>
 </li>
 </ol>
@@ -106,208 +83,37 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ComposterWrapper.Bottom.html" class="type-name-link" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper.Bottom</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="ComposterWrapper.Top.html" class="type-name-link" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper.Top</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ComposterWrapper.WrapperLocation.html" class="type-name-link" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper.WrapperLocation</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">To make sure multiple accesses to the same composter return the same wrapper,
-we maintain a <code>(Level, BlockPos) -&gt; Wrapper</code> cache.</div>
-</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final <a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a></code></div>
-<div class="col-second even-row-color"><code><a href="#BONE_MEAL" class="member-name-link">BONE_MEAL</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a><wbr>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#bottomHandler" class="member-name-link">bottomHandler</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="ComposterWrapper.WrapperLocation.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper.WrapperLocation</a></code></div>
-<div class="col-second even-row-color"><code><a href="#location" class="member-name-link">location</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a><wbr>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#topHandler" class="member-name-link">topHandler</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="TransactionalRandom.html" title="class in net.neoforged.neoforge.transfer.item">TransactionalRandom</a></code></div>
-<div class="col-second even-row-color"><code><a href="#transactionalRandom" class="member-name-link">transactionalRandom</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="ComposterWrapper.WrapperLocation.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper.WrapperLocation</a>, <a href="ComposterWrapper.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#wrappers" class="member-name-link">wrappers</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Wrapper map, similar to <a href="VanillaContainerWrapper.html#wrappers"><code>VanillaContainerWrapper.wrappers</code></a>.</div>
-</div>
-</div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.neoforged.neoforge.transfer.item.ComposterWrapper.WrapperLocation)" class="member-name-link">ComposterWrapper</a><wbr>(<a href="ComposterWrapper.WrapperLocation.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper.WrapperLocation</a>&nbsp;location)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSnapshot()" class="member-name-link">createSnapshot</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Return a new <b>nonnull</b> object containing the current state of this journal.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a><wbr>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#get(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" class="member-name-link">get</a><wbr>(<a href="../../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a><wbr>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#get(net.minecraft.world.level.Level,net.minecraft.core.BlockPos,net.minecraft.core.Direction)" class="member-name-link">get</a><wbr>(<a href="../../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  @Nullable <a href="../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;direction)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getComposterValue(net.neoforged.neoforge.transfer.item.ItemResource)" class="member-name-link">getComposterValue</a><wbr>(<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;resource)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onRootCommit(net.minecraft.world.level.block.state.BlockState)" class="member-name-link">onRootCommit</a><wbr>(<a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;originalState)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Called after the root transaction was successfully committed,
-to perform irreversible actions such as <code>setChanged()</code> or neighbor updates.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#revertToSnapshot(net.minecraft.world.level.block.state.BlockState)" class="member-name-link">revertToSnapshot</a><wbr>(<a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;snapshot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Roll back to a state previously created by <a href="../transaction/SnapshotJournal.html#createSnapshot()"><code>SnapshotJournal.createSnapshot()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLevel(net.minecraft.world.level.block.state.BlockState,int)" class="member-name-link">setLevel</a><wbr>(<a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- int&nbsp;newLevel)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the composter's level, without sending notifications, which are deferred until <a href="#onRootCommit(net.minecraft.world.level.block.state.BlockState)"><code>onRootCommit(BlockState)</code></a>.</div>
-</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.neoforged.neoforge.transfer.transaction.SnapshotJournal">Methods inherited from class&nbsp;<a href="../transaction/SnapshotJournal.html#method-summary" title="class in net.neoforged.neoforge.transfer.transaction">SnapshotJournal</a></h3>
-<code><a href="../transaction/SnapshotJournal.html#releaseSnapshot(T)" title="releaseSnapshot(BlockState)">releaseSnapshot</a>, <a href="../transaction/SnapshotJournal.html#updateSnapshots(net.neoforged.neoforge.transfer.transaction.TransactionContext)" title="updateSnapshots(TransactionContext)">updateSnapshots</a></code></div>
+<code><a href="../transaction/SnapshotJournal.html#updateSnapshots(net.neoforged.neoforge.transfer.transaction.TransactionContext)" title="updateSnapshots(TransactionContext)">updateSnapshots</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="wrappers">
-<h3>wrappers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="ComposterWrapper.WrapperLocation.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper.WrapperLocation</a>, <a href="ComposterWrapper.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper</a>&gt;</span>&nbsp;<span class="element-name">wrappers</span></div>
-<div class="block">Wrapper map, similar to <a href="VanillaContainerWrapper.html#wrappers"><code>VanillaContainerWrapper.wrappers</code></a>.
-We need the composter wrapper to hold a strong reference to the wrapper location to avoid the weak key being cleared too early,
-and we need each sub-handler to hold a strong reference to the composter wrapper to avoid the weak value being cleared too early.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="BONE_MEAL">
-<h3>BONE_MEAL</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a></span>&nbsp;<span class="element-name">BONE_MEAL</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="location">
-<h3>location</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="ComposterWrapper.WrapperLocation.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper.WrapperLocation</a></span>&nbsp;<span class="element-name">location</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="transactionalRandom">
-<h3>transactionalRandom</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="TransactionalRandom.html" title="class in net.neoforged.neoforge.transfer.item">TransactionalRandom</a></span>&nbsp;<span class="element-name">transactionalRandom</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="topHandler">
-<h3>topHandler</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</span>&nbsp;<span class="element-name">topHandler</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="bottomHandler">
-<h3>bottomHandler</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</span>&nbsp;<span class="element-name">bottomHandler</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(net.neoforged.neoforge.transfer.item.ComposterWrapper.WrapperLocation)">
-<h3>ComposterWrapper</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">ComposterWrapper</span><wbr><span class="parameters">(<a href="ComposterWrapper.WrapperLocation.html" title="class in net.neoforged.neoforge.transfer.item">ComposterWrapper.WrapperLocation</a>&nbsp;location)</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -320,95 +126,6 @@ and we need each sub-handler to hold a strong reference to the composter wrapper
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">@Nullable <a href="../ResourceHandler.html" title="interface in net.neoforged.neoforge.transfer">ResourceHandler</a>&lt;<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&gt;</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="../../../../minecraft/world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  <a href="../../../../minecraft/core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
  @Nullable <a href="../../../../minecraft/core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;direction)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createSnapshot()">
-<h3>createSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a></span>&nbsp;<span class="element-name">createSnapshot</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../transaction/SnapshotJournal.html#createSnapshot()">SnapshotJournal</a></code></span></div>
-<div class="block">Return a new <b>nonnull</b> object containing the current state of this journal.
-<b><code>null</code> may not be returned, or an exception will be thrown!</b></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../transaction/SnapshotJournal.html#createSnapshot()">createSnapshot</a></code>&nbsp;in class&nbsp;<code><a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction">SnapshotJournal</a>&lt;<a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="revertToSnapshot(net.minecraft.world.level.block.state.BlockState)">
-<h3>revertToSnapshot</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">revertToSnapshot</span><wbr><span class="parameters">(<a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;snapshot)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../transaction/SnapshotJournal.html#revertToSnapshot(T)">SnapshotJournal</a></code></span></div>
-<div class="block">Roll back to a state previously created by <a href="../transaction/SnapshotJournal.html#createSnapshot()"><code>SnapshotJournal.createSnapshot()</code></a>.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../transaction/SnapshotJournal.html#revertToSnapshot(T)">revertToSnapshot</a></code>&nbsp;in class&nbsp;<code><a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction">SnapshotJournal</a>&lt;<a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onRootCommit(net.minecraft.world.level.block.state.BlockState)">
-<h3>onRootCommit</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onRootCommit</span><wbr><span class="parameters">(<a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;originalState)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../transaction/SnapshotJournal.html#onRootCommit(T)">SnapshotJournal</a></code></span></div>
-<div class="block">Called after the root transaction was successfully committed,
-to perform irreversible actions such as <code>setChanged()</code> or neighbor updates.
-
-<p>When a root transaction is being closed,
-all journals for which <code>onRootCommit</code> will be called are stored in a global thread-local queue.
-The processing of this queue starts <strong>immediately after</strong> the root transaction is closed.
-As such, new root transactions can safely be opened from this method.
-
-<p>When a root transaction is opened from <code>onRootCommit</code>,
-any journal might be modified, leading to more <code>onRootCommit</code> callbacks being enqueued:
-<ul>
-<li>A journal that is already enqueued for <code>onRootCommit</code> will not be enqueued a second time.
-It will thus be notified a single time for changes that spanned multiple transactions.
-The <code>originalState</code> will be the state at the beginning of the first of these transactions.</li>
-<li>A journal whose <code>onRootCommit</code> was already processed will be enqueued again.
-The journal will be notified a second time, with <code>originalState</code> the state at the beginning of the <strong>second</strong> transaction.</li>
-<li>In particular, a journal is removed from the queue immediately before <code>onRootCommit</code> is called.
-Should the journal be modified again from its own <code>onRootCommit</code>, it will be added to the queue,
-and <code>onRootCommit</code> will be called again later.</li>
-</ul>
-
-<p>Given the large amount of actions that can happen between the last modification and the call to <code>onRootCommit</code>,
-journals should not depend on <code>onRootCommit</code> being called immediately for correctness,
-and implementations of this method should be careful (e.g. in case the journal got removed from the level).
-For example, skipping block change notifications because the block was removed from the level
-is preferable than crashing or silently overwriting the block.</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../transaction/SnapshotJournal.html#onRootCommit(T)">onRootCommit</a></code>&nbsp;in class&nbsp;<code><a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction">SnapshotJournal</a>&lt;<a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&gt;</code></dd>
-<dt>Parameters:</dt>
-<dd><code>originalState</code> - state of this journal before the transactional operations.
-                     This corresponds to the first <a href="../transaction/SnapshotJournal.html#createSnapshot()"><code>snapshot</code></a> that was created in the transactional operations.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getComposterValue(net.neoforged.neoforge.transfer.item.ItemResource)">
-<h3>getComposterValue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getComposterValue</span><wbr><span class="parameters">(<a href="ItemResource.html" title="class in net.neoforged.neoforge.transfer.item">ItemResource</a>&nbsp;resource)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setLevel(net.minecraft.world.level.block.state.BlockState,int)">
-<h3>setLevel</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLevel</span><wbr><span class="parameters">(<a href="../../../../minecraft/world/level/block/state/BlockState.html" title="class in net.minecraft.world.level.block.state">BlockState</a>&nbsp;state,
- int&nbsp;newLevel)</span></div>
-<div class="block">Sets the composter's level, without sending notifications, which are deferred until <a href="#onRootCommit(net.minecraft.world.level.block.state.BlockState)"><code>onRootCommit(BlockState)</code></a>.</div>
 </div>
 </section>
 </li>

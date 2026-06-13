@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>PoiManager (NeoForge 26.1)</title>
+<title>PoiManager (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity.ai.village.poi, class: PoiManager">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/PoiManager.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -62,8 +62,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#MAX_VILLAGE_DISTANCE" tabindex="0">MAX_VILLAGE_DISTANCE</a></li>
 <li><a href="#VILLAGE_SECTION_SIZE" tabindex="0">VILLAGE_SECTION_SIZE</a></li>
-<li><a href="#distanceTracker" tabindex="0">distanceTracker</a></li>
-<li><a href="#loadedChunks" tabindex="0">loadedChunks</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -94,13 +92,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#getType(net.minecraft.core.BlockPos)" tabindex="0">getType(BlockPos)</a></li>
 <li><a href="#getDebugPoiInfo(net.minecraft.core.BlockPos)" tabindex="0">getDebugPoiInfo(BlockPos)</a></li>
 <li><a href="#sectionsToVillage(net.minecraft.core.SectionPos)" tabindex="0">sectionsToVillage(SectionPos)</a></li>
-<li><a href="#isVillageCenter(long)" tabindex="0">isVillageCenter(long)</a></li>
 <li><a href="#tick(java.util.function.BooleanSupplier)" tabindex="0">tick(BooleanSupplier)</a></li>
-<li><a href="#setDirty(long)" tabindex="0">setDirty(long)</a></li>
-<li><a href="#onSectionLoad(long)" tabindex="0">onSectionLoad(long)</a></li>
 <li><a href="#checkConsistencyWithBlocks(net.minecraft.core.SectionPos,net.minecraft.world.level.chunk.LevelChunkSection)" tabindex="0">checkConsistencyWithBlocks(SectionPos, LevelChunkSection)</a></li>
-<li><a href="#mayHavePoi(net.minecraft.world.level.chunk.LevelChunkSection)" tabindex="0">mayHavePoi(LevelChunkSection)</a></li>
-<li><a href="#updateFromSection(net.minecraft.world.level.chunk.LevelChunkSection,net.minecraft.core.SectionPos,java.util.function.BiConsumer)" tabindex="0">updateFromSection(LevelChunkSection, SectionPos, BiConsumer)</a></li>
 <li><a href="#ensureLoadedAndValid(net.minecraft.world.level.LevelReader,net.minecraft.core.BlockPos,int)" tabindex="0">ensureLoadedAndValid(LevelReader, BlockPos, int)</a></li>
 </ol>
 </li>
@@ -138,12 +131,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="PoiManager.DistanceTracker.html" class="type-name-link" title="class in net.minecraft.world.entity.ai.village.poi">PoiManager.DistanceTracker</a></code></div>
+<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="PoiManager.Occupancy.html" class="type-name-link" title="enum class in net.minecraft.world.entity.ai.village.poi">PoiManager.Occupancy</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="PoiManager.Occupancy.html" class="type-name-link" title="enum class in net.minecraft.world.entity.ai.village.poi">PoiManager.Occupancy</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -156,12 +146,6 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="PoiManager.DistanceTracker.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiManager.DistanceTracker</a></code></div>
-<div class="col-second even-row-color"><code><a href="#distanceTracker" class="member-name-link">distanceTracker</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final it.unimi.dsi.fastutil.longs.LongSet</code></div>
-<div class="col-second odd-row-color"><code><a href="#loadedChunks" class="member-name-link">loadedChunks</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#MAX_VILLAGE_DISTANCE" class="member-name-link">MAX_VILLAGE_DISTANCE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -169,9 +153,6 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#VILLAGE_SECTION_SIZE" class="member-name-link">VILLAGE_SECTION_SIZE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.world.level.chunk.storage.SectionStorage">Fields inherited from class&nbsp;<a href="../../../../level/chunk/storage/SectionStorage.html#field-summary" title="class in net.minecraft.world.level.chunk.storage">SectionStorage</a></h3>
-<code><a href="../../../../level/chunk/storage/SectionStorage.html#levelHeightAccessor">levelHeightAccessor</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -198,7 +179,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -309,26 +290,14 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="PoiType.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiType</a>&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getType(net.minecraft.core.BlockPos)" class="member-name-link">getType</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVillageCenter(long)" class="member-name-link">isVillageCenter</a><wbr>(long&nbsp;sectionPos)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#release(net.minecraft.core.BlockPos)" class="member-name-link">release</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#mayHavePoi(net.minecraft.world.level.chunk.LevelChunkSection)" class="member-name-link">mayHavePoi</a><wbr>(<a href="../../../../level/chunk/LevelChunkSection.html" title="class in net.minecraft.world.level.chunk">LevelChunkSection</a>&nbsp;blockSection)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onSectionLoad(long)" class="member-name-link">onSectionLoad</a><wbr>(long&nbsp;sectionPos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#release(net.minecraft.core.BlockPos)" class="member-name-link">release</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(net.minecraft.core.BlockPos)" class="member-name-link">remove</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(net.minecraft.core.BlockPos)" class="member-name-link">remove</a><wbr>(<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sectionsToVillage(net.minecraft.core.SectionPos)" class="member-name-link">sectionsToVillage</a><wbr>(<a href="../../../../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;sectionPos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDirty(long)" class="member-name-link">setDirty</a><wbr>(long&nbsp;sectionPos)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sectionsToVillage(net.minecraft.core.SectionPos)" class="member-name-link">sectionsToVillage</a><wbr>(<a href="../../../../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;sectionPos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#take(java.util.function.Predicate,java.util.function.BiPredicate,net.minecraft.core.BlockPos,int)" class="member-name-link">take</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="PoiType.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiType</a>&gt;&gt;&nbsp;predicate,
@@ -339,20 +308,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick(java.util.function.BooleanSupplier)" class="member-name-link">tick</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BooleanSupplier.html" title="class or interface in java.util.function" class="external-link">BooleanSupplier</a>&nbsp;haveTime)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateFromSection(net.minecraft.world.level.chunk.LevelChunkSection,net.minecraft.core.SectionPos,java.util.function.BiConsumer)" class="member-name-link">updateFromSection</a><wbr>(<a href="../../../../level/chunk/LevelChunkSection.html" title="class in net.minecraft.world.level.chunk">LevelChunkSection</a>&nbsp;blockSection,
- <a href="../../../../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;pos,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>, <a href="../../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="PoiType.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiType</a>&gt;&gt;&nbsp;output)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.level.chunk.storage.SectionStorage">Methods inherited from class&nbsp;<a href="../../../../level/chunk/storage/SectionStorage.html#method-summary" title="class in net.minecraft.world.level.chunk.storage">SectionStorage</a></h3>
-<code><a href="../../../../level/chunk/storage/SectionStorage.html#close()" title="close()">close</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#flush(net.minecraft.world.level.ChunkPos)" title="flush(ChunkPos)">flush</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#flushAll()" title="flushAll()">flushAll</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#get(long)" title="get(long)">get</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#getOrCreate(long)" title="getOrCreate(long)">getOrCreate</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#getOrLoad(long)" title="getOrLoad(long)">getOrLoad</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#hasWork()" title="hasWork()">hasWork</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#outsideStoredRange(long)" title="outsideStoredRange(long)">outsideStoredRange</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#prefetch(net.minecraft.world.level.ChunkPos)" title="prefetch(ChunkPos)">prefetch</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#remove(net.minecraft.world.level.ChunkPos)" title="remove(ChunkPos)">remove</a></code></div>
+<code><a href="../../../../level/chunk/storage/SectionStorage.html#close()" title="close()">close</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#flush(net.minecraft.world.level.ChunkPos)" title="flush(ChunkPos)">flush</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#flushAll()" title="flushAll()">flushAll</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#hasWork()" title="hasWork()">hasWork</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#prefetch(net.minecraft.world.level.ChunkPos)" title="prefetch(ChunkPos)">prefetch</a>, <a href="../../../../level/chunk/storage/SectionStorage.html#remove(net.minecraft.world.level.ChunkPos)" title="remove(ChunkPos)">remove</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -393,22 +357,6 @@ loadScripts(document, 'script');</script>
 </ul>
 </dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="distanceTracker">
-<h3>distanceTracker</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="PoiManager.DistanceTracker.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiManager.DistanceTracker</a></span>&nbsp;<span class="element-name">distanceTracker</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="loadedChunks">
-<h3>loadedChunks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">it.unimi.dsi.fastutil.longs.LongSet</span>&nbsp;<span class="element-name">loadedChunks</span></div>
 </div>
 </section>
 </li>
@@ -659,46 +607,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="isVillageCenter(long)">
-<h3>isVillageCenter</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isVillageCenter</span><wbr><span class="parameters">(long&nbsp;sectionPos)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="tick(java.util.function.BooleanSupplier)">
 <h3>tick</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">tick</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BooleanSupplier.html" title="class or interface in java.util.function" class="external-link">BooleanSupplier</a>&nbsp;haveTime)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../level/chunk/storage/SectionStorage.html#tick(java.util.function.BooleanSupplier)">tick</a></code>&nbsp;in class&nbsp;<code><a href="../../../../level/chunk/storage/SectionStorage.html" title="class in net.minecraft.world.level.chunk.storage">SectionStorage</a>&lt;<a href="PoiSection.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiSection</a>, <a href="PoiSection.Packed.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiSection.Packed</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setDirty(long)">
-<h3>setDirty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDirty</span><wbr><span class="parameters">(long&nbsp;sectionPos)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../level/chunk/storage/SectionStorage.html#setDirty(long)">setDirty</a></code>&nbsp;in class&nbsp;<code><a href="../../../../level/chunk/storage/SectionStorage.html" title="class in net.minecraft.world.level.chunk.storage">SectionStorage</a>&lt;<a href="PoiSection.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiSection</a>, <a href="PoiSection.Packed.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiSection.Packed</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onSectionLoad(long)">
-<h3>onSectionLoad</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onSectionLoad</span><wbr><span class="parameters">(long&nbsp;sectionPos)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../level/chunk/storage/SectionStorage.html#onSectionLoad(long)">onSectionLoad</a></code>&nbsp;in class&nbsp;<code><a href="../../../../level/chunk/storage/SectionStorage.html" title="class in net.minecraft.world.level.chunk.storage">SectionStorage</a>&lt;<a href="PoiSection.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiSection</a>, <a href="PoiSection.Packed.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiSection.Packed</a>&gt;</code></dd>
-</dl>
 </div>
 </section>
 </li>
@@ -708,24 +620,6 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">checkConsistencyWithBlocks</span><wbr><span class="parameters">(<a href="../../../../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;sectionPos,
  <a href="../../../../level/chunk/LevelChunkSection.html" title="class in net.minecraft.world.level.chunk">LevelChunkSection</a>&nbsp;blockSection)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="mayHavePoi(net.minecraft.world.level.chunk.LevelChunkSection)">
-<h3>mayHavePoi</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">mayHavePoi</span><wbr><span class="parameters">(<a href="../../../../level/chunk/LevelChunkSection.html" title="class in net.minecraft.world.level.chunk">LevelChunkSection</a>&nbsp;blockSection)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updateFromSection(net.minecraft.world.level.chunk.LevelChunkSection,net.minecraft.core.SectionPos,java.util.function.BiConsumer)">
-<h3>updateFromSection</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateFromSection</span><wbr><span class="parameters">(<a href="../../../../level/chunk/LevelChunkSection.html" title="class in net.minecraft.world.level.chunk">LevelChunkSection</a>&nbsp;blockSection,
- <a href="../../../../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;pos,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>, <a href="../../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="PoiType.html" title="class in net.minecraft.world.entity.ai.village.poi">PoiType</a>&gt;&gt;&nbsp;output)</span></div>
 </div>
 </section>
 </li>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>BeaconRenderer (NeoForge 26.1)</title>
+<title>BeaconRenderer (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.renderer.blockentity, class: BeaconRenderer">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/BeaconRenderer.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,7 +61,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#BEAM_LOCATION" tabindex="0">BEAM_LOCATION</a></li>
 <li><a href="#MAX_RENDER_Y" tabindex="0">MAX_RENDER_Y</a></li>
-<li><a href="#BEAM_SCALE_THRESHOLD" tabindex="0">BEAM_SCALE_THRESHOLD</a></li>
 <li><a href="#SOLID_BEAM_RADIUS" tabindex="0">SOLID_BEAM_RADIUS</a></li>
 <li><a href="#BEAM_GLOW_RADIUS" tabindex="0">BEAM_GLOW_RADIUS</a></li>
 </ol>
@@ -77,11 +76,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#extractRenderState(T,net.minecraft.client.renderer.blockentity.state.BeaconRenderState,float,net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.feature.ModelFeatureRenderer.CrumblingOverlay)" tabindex="0">extractRenderState(T, BeaconRenderState, float, Vec3, ModelFeatureRenderer.CrumblingOverlay)</a></li>
 <li><a href="#extract(T,net.minecraft.client.renderer.blockentity.state.BeaconRenderState,float,net.minecraft.world.phys.Vec3)" tabindex="0">extract(T, BeaconRenderState, float, Vec3)</a></li>
 <li><a href="#submit(net.minecraft.client.renderer.blockentity.state.BeaconRenderState,com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.client.renderer.state.level.CameraRenderState)" tabindex="0">submit(BeaconRenderState, PoseStack, SubmitNodeCollector, CameraRenderState)</a></li>
-<li><a href="#submitBeaconBeam(com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,float,float,int,int,int)" tabindex="0">submitBeaconBeam(PoseStack, SubmitNodeCollector, float, float, int, int, int)</a></li>
 <li><a href="#submitBeaconBeam(com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.resources.Identifier,float,float,int,int,int,float,float)" tabindex="0">submitBeaconBeam(PoseStack, SubmitNodeCollector, Identifier, float, float, int, int, int, float, float)</a></li>
-<li><a href="#renderPart(com.mojang.blaze3d.vertex.PoseStack.Pose,com.mojang.blaze3d.vertex.VertexConsumer,int,int,int,float,float,float,float,float,float,float,float,float,float,float,float)" tabindex="0">renderPart(PoseStack.Pose, VertexConsumer, int, int, int, float, float, float, float, float, float, float, float, float, float, float, float)</a></li>
-<li><a href="#renderQuad(com.mojang.blaze3d.vertex.PoseStack.Pose,com.mojang.blaze3d.vertex.VertexConsumer,int,int,int,float,float,float,float,float,float,float,float)" tabindex="0">renderQuad(PoseStack.Pose, VertexConsumer, int, int, int, float, float, float, float, float, float, float, float)</a></li>
-<li><a href="#addVertex(com.mojang.blaze3d.vertex.PoseStack.Pose,com.mojang.blaze3d.vertex.VertexConsumer,int,int,float,float,float,float)" tabindex="0">addVertex(PoseStack.Pose, VertexConsumer, int, int, float, float, float, float)</a></li>
 <li><a href="#shouldRenderOffScreen()" tabindex="0">shouldRenderOffScreen()</a></li>
 <li><a href="#getViewDistance()" tabindex="0">getViewDistance()</a></li>
 <li><a href="#shouldRender(T,net.minecraft.world.phys.Vec3)" tabindex="0">shouldRender(T, Vec3)</a></li>
@@ -127,15 +122,12 @@ implements <a href="BlockEntityRenderer.html" title="interface in net.minecraft.
 <div class="col-first odd-row-color"><code>static final <a href="../../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#BEAM_LOCATION" class="member-name-link">BEAM_LOCATION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#BEAM_SCALE_THRESHOLD" class="member-name-link">BEAM_SCALE_THRESHOLD</a></code></div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#MAX_RENDER_Y" class="member-name-link">MAX_RENDER_Y</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#MAX_RENDER_Y" class="member-name-link">MAX_RENDER_Y</a></code></div>
+<div class="col-first odd-row-color"><code>static final float</code></div>
+<div class="col-second odd-row-color"><code><a href="#SOLID_BEAM_RADIUS" class="member-name-link">SOLID_BEAM_RADIUS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final float</code></div>
-<div class="col-second even-row-color"><code><a href="#SOLID_BEAM_RADIUS" class="member-name-link">SOLID_BEAM_RADIUS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -163,96 +155,43 @@ implements <a href="BlockEntityRenderer.html" title="interface in net.minecraft.
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addVertex(com.mojang.blaze3d.vertex.PoseStack.Pose,com.mojang.blaze3d.vertex.VertexConsumer,int,int,float,float,float,float)" class="member-name-link">addVertex</a><wbr>(<a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.Pose.html" title="class in com.mojang.blaze3d.vertex">PoseStack.Pose</a>&nbsp;pose,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&nbsp;builder,
- int&nbsp;color,
- int&nbsp;y,
- float&nbsp;x,
- float&nbsp;z,
- float&nbsp;u,
- float&nbsp;v)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="state/BeaconRenderState.html" title="class in net.minecraft.client.renderer.blockentity.state">BeaconRenderState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createRenderState()" class="member-name-link">createRenderState</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="../../../world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a> &amp; <a href="../../../world/level/block/entity/BeaconBeamOwner.html" title="interface in net.minecraft.world.level.block.entity">BeaconBeamOwner</a>&gt;<br>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#extract(T,net.minecraft.client.renderer.blockentity.state.BeaconRenderState,float,net.minecraft.world.phys.Vec3)" class="member-name-link">extract</a><wbr>(T&nbsp;blockEntity,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="state/BeaconRenderState.html" title="class in net.minecraft.client.renderer.blockentity.state">BeaconRenderState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createRenderState()" class="member-name-link">createRenderState</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="../../../world/level/block/entity/BlockEntity.html" title="class in net.minecraft.world.level.block.entity">BlockEntity</a> &amp; <a href="../../../world/level/block/entity/BeaconBeamOwner.html" title="interface in net.minecraft.world.level.block.entity">BeaconBeamOwner</a>&gt;<br>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#extract(T,net.minecraft.client.renderer.blockentity.state.BeaconRenderState,float,net.minecraft.world.phys.Vec3)" class="member-name-link">extract</a><wbr>(T&nbsp;blockEntity,
  <a href="state/BeaconRenderState.html" title="class in net.minecraft.client.renderer.blockentity.state">BeaconRenderState</a>&nbsp;state,
  float&nbsp;partialTicks,
  <a href="../../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPosition)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extractRenderState(T,net.minecraft.client.renderer.blockentity.state.BeaconRenderState,float,net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.feature.ModelFeatureRenderer.CrumblingOverlay)" class="member-name-link">extractRenderState</a><wbr>(<a href="#type-param-T" title="type parameter in BeaconRenderer">T</a>&nbsp;blockEntity,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extractRenderState(T,net.minecraft.client.renderer.blockentity.state.BeaconRenderState,float,net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.feature.ModelFeatureRenderer.CrumblingOverlay)" class="member-name-link">extractRenderState</a><wbr>(<a href="#type-param-T" title="type parameter in BeaconRenderer">T</a>&nbsp;blockEntity,
  <a href="state/BeaconRenderState.html" title="class in net.minecraft.client.renderer.blockentity.state">BeaconRenderState</a>&nbsp;state,
  float&nbsp;partialTicks,
  <a href="../../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPosition,
  @Nullable <a href="../feature/ModelFeatureRenderer.CrumblingOverlay.html" title="class in net.minecraft.client.renderer.feature">ModelFeatureRenderer.CrumblingOverlay</a>&nbsp;breakProgress)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../world/phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRenderBoundingBox(T)" class="member-name-link">getRenderBoundingBox</a><wbr>(<a href="#type-param-T" title="type parameter in BeaconRenderer">T</a>&nbsp;blockEntity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../world/phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRenderBoundingBox(T)" class="member-name-link">getRenderBoundingBox</a><wbr>(<a href="#type-param-T" title="type parameter in BeaconRenderer">T</a>&nbsp;blockEntity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return an <a href="../../../world/phys/AABB.html" title="class in net.minecraft.world.phys"><code>AABB</code></a> that controls the visible scope of this <a href="BlockEntityRenderer.html" title="interface in net.minecraft.client.renderer.blockentity"><code>BlockEntityRenderer</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getViewDistance()" class="member-name-link">getViewDistance</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#renderPart(com.mojang.blaze3d.vertex.PoseStack.Pose,com.mojang.blaze3d.vertex.VertexConsumer,int,int,int,float,float,float,float,float,float,float,float,float,float,float,float)" class="member-name-link">renderPart</a><wbr>(<a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.Pose.html" title="class in com.mojang.blaze3d.vertex">PoseStack.Pose</a>&nbsp;pose,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&nbsp;builder,
- int&nbsp;color,
- int&nbsp;beamStart,
- int&nbsp;beamEnd,
- float&nbsp;wnx,
- float&nbsp;wnz,
- float&nbsp;enx,
- float&nbsp;enz,
- float&nbsp;wsx,
- float&nbsp;wsz,
- float&nbsp;esx,
- float&nbsp;esz,
- float&nbsp;uu1,
- float&nbsp;uu2,
- float&nbsp;vv1,
- float&nbsp;vv2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#renderQuad(com.mojang.blaze3d.vertex.PoseStack.Pose,com.mojang.blaze3d.vertex.VertexConsumer,int,int,int,float,float,float,float,float,float,float,float)" class="member-name-link">renderQuad</a><wbr>(<a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.Pose.html" title="class in com.mojang.blaze3d.vertex">PoseStack.Pose</a>&nbsp;pose,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&nbsp;builder,
- int&nbsp;color,
- int&nbsp;beamStart,
- int&nbsp;beamEnd,
- float&nbsp;wnx,
- float&nbsp;wnz,
- float&nbsp;enx,
- float&nbsp;enz,
- float&nbsp;uu1,
- float&nbsp;uu2,
- float&nbsp;vv1,
- float&nbsp;vv2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldRender(T,net.minecraft.world.phys.Vec3)" class="member-name-link">shouldRender</a><wbr>(<a href="#type-param-T" title="type parameter in BeaconRenderer">T</a>&nbsp;blockEntity,
- <a href="../../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPosition)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getViewDistance()" class="member-name-link">getViewDistance</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldRenderOffScreen()" class="member-name-link">shouldRenderOffScreen</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldRender(T,net.minecraft.world.phys.Vec3)" class="member-name-link">shouldRender</a><wbr>(<a href="#type-param-T" title="type parameter in BeaconRenderer">T</a>&nbsp;blockEntity,
+ <a href="../../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPosition)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#submit(net.minecraft.client.renderer.blockentity.state.BeaconRenderState,com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.client.renderer.state.level.CameraRenderState)" class="member-name-link">submit</a><wbr>(<a href="state/BeaconRenderState.html" title="class in net.minecraft.client.renderer.blockentity.state">BeaconRenderState</a>&nbsp;state,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldRenderOffScreen()" class="member-name-link">shouldRenderOffScreen</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#submit(net.minecraft.client.renderer.blockentity.state.BeaconRenderState,com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.client.renderer.state.level.CameraRenderState)" class="member-name-link">submit</a><wbr>(<a href="state/BeaconRenderState.html" title="class in net.minecraft.client.renderer.blockentity.state">BeaconRenderState</a>&nbsp;state,
  <a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.html" title="class in com.mojang.blaze3d.vertex">PoseStack</a>&nbsp;poseStack,
  <a href="../SubmitNodeCollector.html" title="interface in net.minecraft.client.renderer">SubmitNodeCollector</a>&nbsp;submitNodeCollector,
  <a href="../state/level/CameraRenderState.html" title="class in net.minecraft.client.renderer.state.level">CameraRenderState</a>&nbsp;camera)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#submitBeaconBeam(com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,float,float,int,int,int)" class="member-name-link">submitBeaconBeam</a><wbr>(<a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.html" title="class in com.mojang.blaze3d.vertex">PoseStack</a>&nbsp;poseStack,
- <a href="../SubmitNodeCollector.html" title="interface in net.minecraft.client.renderer">SubmitNodeCollector</a>&nbsp;submitNodeCollector,
- float&nbsp;beamRadiusScale,
- float&nbsp;animationTime,
- int&nbsp;beamStart,
- int&nbsp;height,
- int&nbsp;color)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#submitBeaconBeam(com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.resources.Identifier,float,float,int,int,int,float,float)" class="member-name-link">submitBeaconBeam</a><wbr>(<a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.html" title="class in com.mojang.blaze3d.vertex">PoseStack</a>&nbsp;poseStack,
  <a href="../SubmitNodeCollector.html" title="interface in net.minecraft.client.renderer">SubmitNodeCollector</a>&nbsp;submitNodeCollector,
@@ -270,7 +209,7 @@ implements <a href="BlockEntityRenderer.html" title="interface in net.minecraft.
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -300,22 +239,6 @@ implements <a href="BlockEntityRenderer.html" title="interface in net.minecraft.
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../constant-values.html#net.minecraft.client.renderer.blockentity.BeaconRenderer.MAX_RENDER_Y">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="BEAM_SCALE_THRESHOLD">
-<h3>BEAM_SCALE_THRESHOLD</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">BEAM_SCALE_THRESHOLD</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.client.renderer.blockentity.BeaconRenderer.BEAM_SCALE_THRESHOLD">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -434,20 +357,6 @@ implements <a href="BlockEntityRenderer.html" title="interface in net.minecraft.
 </section>
 </li>
 <li>
-<section class="detail" id="submitBeaconBeam(com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,float,float,int,int,int)">
-<h3>submitBeaconBeam</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">submitBeaconBeam</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.html" title="class in com.mojang.blaze3d.vertex">PoseStack</a>&nbsp;poseStack,
- <a href="../SubmitNodeCollector.html" title="interface in net.minecraft.client.renderer">SubmitNodeCollector</a>&nbsp;submitNodeCollector,
- float&nbsp;beamRadiusScale,
- float&nbsp;animationTime,
- int&nbsp;beamStart,
- int&nbsp;height,
- int&nbsp;color)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="submitBeaconBeam(com.mojang.blaze3d.vertex.PoseStack,net.minecraft.client.renderer.SubmitNodeCollector,net.minecraft.resources.Identifier,float,float,int,int,int,float,float)">
 <h3>submitBeaconBeam</h3>
 <div class="horizontal-scroll">
@@ -461,65 +370,6 @@ implements <a href="BlockEntityRenderer.html" title="interface in net.minecraft.
  int&nbsp;color,
  float&nbsp;solidBeamRadius,
  float&nbsp;beamGlowRadius)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="renderPart(com.mojang.blaze3d.vertex.PoseStack.Pose,com.mojang.blaze3d.vertex.VertexConsumer,int,int,int,float,float,float,float,float,float,float,float,float,float,float,float)">
-<h3>renderPart</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">renderPart</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.Pose.html" title="class in com.mojang.blaze3d.vertex">PoseStack.Pose</a>&nbsp;pose,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&nbsp;builder,
- int&nbsp;color,
- int&nbsp;beamStart,
- int&nbsp;beamEnd,
- float&nbsp;wnx,
- float&nbsp;wnz,
- float&nbsp;enx,
- float&nbsp;enz,
- float&nbsp;wsx,
- float&nbsp;wsz,
- float&nbsp;esx,
- float&nbsp;esz,
- float&nbsp;uu1,
- float&nbsp;uu2,
- float&nbsp;vv1,
- float&nbsp;vv2)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="renderQuad(com.mojang.blaze3d.vertex.PoseStack.Pose,com.mojang.blaze3d.vertex.VertexConsumer,int,int,int,float,float,float,float,float,float,float,float)">
-<h3>renderQuad</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">renderQuad</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.Pose.html" title="class in com.mojang.blaze3d.vertex">PoseStack.Pose</a>&nbsp;pose,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&nbsp;builder,
- int&nbsp;color,
- int&nbsp;beamStart,
- int&nbsp;beamEnd,
- float&nbsp;wnx,
- float&nbsp;wnz,
- float&nbsp;enx,
- float&nbsp;enz,
- float&nbsp;uu1,
- float&nbsp;uu2,
- float&nbsp;vv1,
- float&nbsp;vv2)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addVertex(com.mojang.blaze3d.vertex.PoseStack.Pose,com.mojang.blaze3d.vertex.VertexConsumer,int,int,float,float,float,float)">
-<h3>addVertex</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/blaze3d/vertex/PoseStack.Pose.html" title="class in com.mojang.blaze3d.vertex">PoseStack.Pose</a>&nbsp;pose,
- <a href="../../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&nbsp;builder,
- int&nbsp;color,
- int&nbsp;y,
- float&nbsp;x,
- float&nbsp;z,
- float&nbsp;u,
- float&nbsp;v)</span></div>
 </div>
 </section>
 </li>

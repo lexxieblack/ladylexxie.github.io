@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Helper to create link or dash
       const createCellContent = (loaderData) => {
         if (!loaderData || !loaderData.version) return '-'
-        return `<a href="${loaderData.url}" target="_blank">${loaderData.version}</a>`
+        return `<a href="${loaderData.url}">${loaderData.version}</a>`
       }
 
       row.innerHTML = `

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ClientConfigurationPacketListenerImpl (NeoForge 26.1)</title>
+<title>ClientConfigurationPacketListenerImpl (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.multiplayer, class: ClientConfigurationPacketListenerImpl">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ClientConfigurationPacketListenerImpl.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,25 +54,12 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
 <li><a href="#DISCONNECTED_MESSAGE" tabindex="0">DISCONNECTED_MESSAGE</a></li>
-<li><a href="#levelLoadTracker" tabindex="0">levelLoadTracker</a></li>
-<li><a href="#localGameProfile" tabindex="0">localGameProfile</a></li>
-<li><a href="#enabledFeatures" tabindex="0">enabledFeatures</a></li>
-<li><a href="#receivedRegistries" tabindex="0">receivedRegistries</a></li>
-<li><a href="#registryDataCollector" tabindex="0">registryDataCollector</a></li>
-<li><a href="#knownPacks" tabindex="0">knownPacks</a></li>
-<li><a href="#chatState" tabindex="0">chatState</a></li>
-<li><a href="#seenCodeOfConduct" tabindex="0">seenCodeOfConduct</a></li>
-<li><a href="#connectionType" tabindex="0">connectionType</a></li>
-<li><a href="#initializedConnection" tabindex="0">initializedConnection</a></li>
-<li><a href="#failureReasons" tabindex="0">failureReasons</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -83,23 +70,17 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#isAcceptingMessages()" tabindex="0">isAcceptingMessages()</a></li>
-<li><a href="#handleCustomPayload(net.minecraft.network.protocol.common.custom.CustomPacketPayload)" tabindex="0">handleCustomPayload(CustomPacketPayload)</a></li>
-<li><a href="#handleUnknownCustomPayload(net.minecraft.network.protocol.common.custom.CustomPacketPayload)" tabindex="0">handleUnknownCustomPayload(CustomPacketPayload)</a></li>
 <li><a href="#handleRegistryData(net.minecraft.network.protocol.configuration.ClientboundRegistryDataPacket)" tabindex="0">handleRegistryData(ClientboundRegistryDataPacket)</a></li>
 <li><a href="#handleUpdateTags(net.minecraft.network.protocol.common.ClientboundUpdateTagsPacket)" tabindex="0">handleUpdateTags(ClientboundUpdateTagsPacket)</a></li>
 <li><a href="#handleEnabledFeatures(net.minecraft.network.protocol.configuration.ClientboundUpdateEnabledFeaturesPacket)" tabindex="0">handleEnabledFeatures(ClientboundUpdateEnabledFeaturesPacket)</a></li>
 <li><a href="#handleSelectKnownPacks(net.minecraft.network.protocol.configuration.ClientboundSelectKnownPacks)" tabindex="0">handleSelectKnownPacks(ClientboundSelectKnownPacks)</a></li>
 <li><a href="#handleResetChat(net.minecraft.network.protocol.configuration.ClientboundResetChatPacket)" tabindex="0">handleResetChat(ClientboundResetChatPacket)</a></li>
-<li><a href="#runWithResources(java.util.function.Function)" tabindex="0">runWithResources(Function)</a></li>
 <li><a href="#handleCodeOfConduct(net.minecraft.network.protocol.configuration.ClientboundCodeOfConductPacket)" tabindex="0">handleCodeOfConduct(ClientboundCodeOfConductPacket)</a></li>
 <li><a href="#handleConfigurationFinished(net.minecraft.network.protocol.configuration.ClientboundFinishConfigurationPacket)" tabindex="0">handleConfigurationFinished(ClientboundFinishConfigurationPacket)</a></li>
-<li><a href="#filterRegistries(net.minecraft.core.RegistryAccess.Frozen,java.util.stream.Stream)" tabindex="0">filterRegistries(RegistryAccess.Frozen, Stream)</a></li>
 <li><a href="#tick()" tabindex="0">tick()</a></li>
 <li><a href="#onDisconnect(net.minecraft.network.DisconnectionDetails)" tabindex="0">onDisconnect(DisconnectionDetails)</a></li>
 <li><a href="#handleCustomPayload(net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket)" tabindex="0">handleCustomPayload(ClientboundCustomPayloadPacket)</a></li>
-<li><a href="#createDisconnectScreen(net.minecraft.network.DisconnectionDetails)" tabindex="0">createDisconnectScreen(DisconnectionDetails)</a></li>
 <li><a href="#getConnectionType()" tabindex="0">getConnectionType()</a></li>
-<li><a href="#createDialogAccess()" tabindex="0">createDialogAccess()</a></li>
 </ol>
 </li>
 </ol>
@@ -128,15 +109,6 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl">Nested classes/interfaces inherited from class&nbsp;<a href="ClientCommonPacketListenerImpl.html#nested-class-summary" title="class in net.minecraft.client.multiplayer">ClientCommonPacketListenerImpl</a></h3>
-<code><a href="ClientCommonPacketListenerImpl.CommonDialogAccess.html" title="class in net.minecraft.client.multiplayer">ClientCommonPacketListenerImpl.CommonDialogAccess</a></code></div>
-</section>
-</li>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
@@ -146,49 +118,10 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected @Nullable <a href="../gui/components/ChatComponent.State.html" title="class in net.minecraft.client.gui.components">ChatComponent.State</a></code></div>
-<div class="col-second even-row-color"><code><a href="#chatState" class="member-name-link">chatState</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="../../../neoforged/neoforge/network/connection/ConnectionType.html" title="enum class in net.neoforged.neoforge.network.connection">ConnectionType</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#connectionType" class="member-name-link">connectionType</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
 <div class="col-second even-row-color"><code><a href="#DISCONNECTED_MESSAGE" class="member-name-link">DISCONNECTED_MESSAGE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="../../world/flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#enabledFeatures" class="member-name-link">enabledFeatures</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#failureReasons" class="member-name-link">failureReasons</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#initializedConnection" class="member-name-link">initializedConnection</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="KnownPacksManager.html" title="class in net.minecraft.client.multiplayer">KnownPacksManager</a></code></div>
-<div class="col-second even-row-color"><code><a href="#knownPacks" class="member-name-link">knownPacks</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="LevelLoadTracker.html" title="class in net.minecraft.client.multiplayer">LevelLoadTracker</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#levelLoadTracker" class="member-name-link">levelLoadTracker</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a></code></div>
-<div class="col-second even-row-color"><code><a href="#localGameProfile" class="member-name-link">localGameProfile</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../core/RegistryAccess.Frozen.html" title="interface in net.minecraft.core">RegistryAccess.Frozen</a></code></div>
-<div class="col-second even-row-color"><code><a href="#receivedRegistries" class="member-name-link">receivedRegistries</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="RegistryDataCollector.html" title="class in net.minecraft.client.multiplayer">RegistryDataCollector</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#registryDataCollector" class="member-name-link">registryDataCollector</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#seenCodeOfConduct" class="member-name-link">seenCodeOfConduct</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl">Fields inherited from class&nbsp;<a href="ClientCommonPacketListenerImpl.html#field-summary" title="class in net.minecraft.client.multiplayer">ClientCommonPacketListenerImpl</a></h3>
-<code><a href="ClientCommonPacketListenerImpl.html#connection">connection</a>, <a href="ClientCommonPacketListenerImpl.html#customReportDetails">customReportDetails</a>, <a href="ClientCommonPacketListenerImpl.html#isTransferring">isTransferring</a>, <a href="ClientCommonPacketListenerImpl.html#minecraft">minecraft</a>, <a href="ClientCommonPacketListenerImpl.html#postDisconnectScreen">postDisconnectScreen</a>, <a href="ClientCommonPacketListenerImpl.html#seenInsecureChatWarning">seenInsecureChatWarning</a>, <a href="ClientCommonPacketListenerImpl.html#seenPlayers">seenPlayers</a>, <a href="ClientCommonPacketListenerImpl.html#serverBrand">serverBrand</a>, <a href="ClientCommonPacketListenerImpl.html#serverCookies">serverCookies</a>, <a href="ClientCommonPacketListenerImpl.html#serverData">serverData</a>, <a href="ClientCommonPacketListenerImpl.html#telemetryManager">telemetryManager</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -211,38 +144,25 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../gui/screens/dialog/DialogConnectionAccess.html" title="interface in net.minecraft.client.gui.screens.dialog">DialogConnectionAccess</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createDialogAccess()" class="member-name-link">createDialogAccess</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createDisconnectScreen(net.minecraft.network.DisconnectionDetails)" class="member-name-link">createDisconnectScreen</a><wbr>(<a href="../../network/DisconnectionDetails.html" title="class in net.minecraft.network">DisconnectionDetails</a>&nbsp;details)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../core/RegistryAccess.Frozen.html" title="interface in net.minecraft.core">RegistryAccess.Frozen</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#filterRegistries(net.minecraft.core.RegistryAccess.Frozen,java.util.stream.Stream)" class="member-name-link">filterRegistries</a><wbr>(<a href="../../core/RegistryAccess.Frozen.html" title="interface in net.minecraft.core">RegistryAccess.Frozen</a>&nbsp;original,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;&gt;&nbsp;keysToInclude)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../neoforged/neoforge/network/connection/ConnectionType.html" title="enum class in net.neoforged.neoforge.network.connection">ConnectionType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConnectionType()" class="member-name-link">getConnectionType</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../neoforged/neoforge/network/connection/ConnectionType.html" title="enum class in net.neoforged.neoforge.network.connection">ConnectionType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConnectionType()" class="member-name-link">getConnectionType</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the connection type of this packet listener.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleCodeOfConduct(net.minecraft.network.protocol.configuration.ClientboundCodeOfConductPacket)" class="member-name-link">handleCodeOfConduct</a><wbr>(<a href="../../network/protocol/configuration/ClientboundCodeOfConductPacket.html" title="class in net.minecraft.network.protocol.configuration">ClientboundCodeOfConductPacket</a>&nbsp;packet)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleConfigurationFinished(net.minecraft.network.protocol.configuration.ClientboundFinishConfigurationPacket)" class="member-name-link">handleConfigurationFinished</a><wbr>(<a href="../../network/protocol/configuration/ClientboundFinishConfigurationPacket.html" title="class in net.minecraft.network.protocol.configuration">ClientboundFinishConfigurationPacket</a>&nbsp;packet)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleCodeOfConduct(net.minecraft.network.protocol.configuration.ClientboundCodeOfConductPacket)" class="member-name-link">handleCodeOfConduct</a><wbr>(<a href="../../network/protocol/configuration/ClientboundCodeOfConductPacket.html" title="class in net.minecraft.network.protocol.configuration">ClientboundCodeOfConductPacket</a>&nbsp;packet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleCustomPayload(net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket)" class="member-name-link">handleCustomPayload</a><wbr>(<a href="../../network/protocol/common/ClientboundCustomPayloadPacket.html" title="class in net.minecraft.network.protocol.common">ClientboundCustomPayloadPacket</a>&nbsp;packet)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleConfigurationFinished(net.minecraft.network.protocol.configuration.ClientboundFinishConfigurationPacket)" class="member-name-link">handleConfigurationFinished</a><wbr>(<a href="../../network/protocol/configuration/ClientboundFinishConfigurationPacket.html" title="class in net.minecraft.network.protocol.configuration">ClientboundFinishConfigurationPacket</a>&nbsp;packet)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleCustomPayload(net.minecraft.network.protocol.common.custom.CustomPacketPayload)" class="member-name-link">handleCustomPayload</a><wbr>(<a href="../../network/protocol/common/custom/CustomPacketPayload.html" title="interface in net.minecraft.network.protocol.common.custom">CustomPacketPayload</a>&nbsp;payload)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleCustomPayload(net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket)" class="member-name-link">handleCustomPayload</a><wbr>(<a href="../../network/protocol/common/ClientboundCustomPayloadPacket.html" title="class in net.minecraft.network.protocol.common">ClientboundCustomPayloadPacket</a>&nbsp;packet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleEnabledFeatures(net.minecraft.network.protocol.configuration.ClientboundUpdateEnabledFeaturesPacket)" class="member-name-link">handleEnabledFeatures</a><wbr>(<a href="../../network/protocol/configuration/ClientboundUpdateEnabledFeaturesPacket.html" title="class in net.minecraft.network.protocol.configuration">ClientboundUpdateEnabledFeaturesPacket</a>&nbsp;packet)</code></div>
@@ -256,20 +176,14 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleSelectKnownPacks(net.minecraft.network.protocol.configuration.ClientboundSelectKnownPacks)" class="member-name-link">handleSelectKnownPacks</a><wbr>(<a href="../../network/protocol/configuration/ClientboundSelectKnownPacks.html" title="class in net.minecraft.network.protocol.configuration">ClientboundSelectKnownPacks</a>&nbsp;packet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleUnknownCustomPayload(net.minecraft.network.protocol.common.custom.CustomPacketPayload)" class="member-name-link">handleUnknownCustomPayload</a><wbr>(<a href="../../network/protocol/common/custom/CustomPacketPayload.html" title="interface in net.minecraft.network.protocol.common.custom">CustomPacketPayload</a>&nbsp;payload)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleUpdateTags(net.minecraft.network.protocol.common.ClientboundUpdateTagsPacket)" class="member-name-link">handleUpdateTags</a><wbr>(<a href="../../network/protocol/common/ClientboundUpdateTagsPacket.html" title="class in net.minecraft.network.protocol.common">ClientboundUpdateTagsPacket</a>&nbsp;packet)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleUpdateTags(net.minecraft.network.protocol.common.ClientboundUpdateTagsPacket)" class="member-name-link">handleUpdateTags</a><wbr>(<a href="../../network/protocol/common/ClientboundUpdateTagsPacket.html" title="class in net.minecraft.network.protocol.common">ClientboundUpdateTagsPacket</a>&nbsp;packet)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAcceptingMessages()" class="member-name-link">isAcceptingMessages</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAcceptingMessages()" class="member-name-link">isAcceptingMessages</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDisconnect(net.minecraft.network.DisconnectionDetails)" class="member-name-link">onDisconnect</a><wbr>(<a href="../../network/DisconnectionDetails.html" title="class in net.minecraft.network">DisconnectionDetails</a>&nbsp;reason)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runWithResources(java.util.function.Function)" class="member-name-link">runWithResources</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../server/packs/resources/ResourceProvider.html" title="interface in net.minecraft.server.packs.resources">ResourceProvider</a>, T&gt;&nbsp;operation)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onDisconnect(net.minecraft.network.DisconnectionDetails)" class="member-name-link">onDisconnect</a><wbr>(<a href="../../network/DisconnectionDetails.html" title="class in net.minecraft.network">DisconnectionDetails</a>&nbsp;reason)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
@@ -279,10 +193,10 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl">Methods inherited from class&nbsp;<a href="ClientCommonPacketListenerImpl.html#method-summary" title="class in net.minecraft.client.multiplayer">ClientCommonPacketListenerImpl</a></h3>
-<code><a href="ClientCommonPacketListenerImpl.html#clearDialog()" title="clearDialog()">clearDialog</a>, <a href="ClientCommonPacketListenerImpl.html#createDisconnectionInfo(net.minecraft.network.chat.Component,java.lang.Throwable)" title="createDisconnectionInfo(Component, Throwable)">createDisconnectionInfo</a>, <a href="ClientCommonPacketListenerImpl.html#fillListenerSpecificCrashDetails(net.minecraft.CrashReport,net.minecraft.CrashReportCategory)" title="fillListenerSpecificCrashDetails(CrashReport, CrashReportCategory)">fillListenerSpecificCrashDetails</a>, <a href="ClientCommonPacketListenerImpl.html#getConnection()" title="getConnection()">getConnection</a>, <a href="ClientCommonPacketListenerImpl.html#getPacketProcessor()" title="getPacketProcessor()">getPacketProcessor</a>, <a href="ClientCommonPacketListenerImpl.html#handleClearDialog(net.minecraft.network.protocol.common.ClientboundClearDialogPacket)" title="handleClearDialog(ClientboundClearDialogPacket)">handleClearDialog</a>, <a href="ClientCommonPacketListenerImpl.html#handleCustomReportDetails(net.minecraft.network.protocol.common.ClientboundCustomReportDetailsPacket)" title="handleCustomReportDetails(ClientboundCustomReportDetailsPacket)">handleCustomReportDetails</a>, <a href="ClientCommonPacketListenerImpl.html#handleDisconnect(net.minecraft.network.protocol.common.ClientboundDisconnectPacket)" title="handleDisconnect(ClientboundDisconnectPacket)">handleDisconnect</a>, <a href="ClientCommonPacketListenerImpl.html#handleKeepAlive(net.minecraft.network.protocol.common.ClientboundKeepAlivePacket)" title="handleKeepAlive(ClientboundKeepAlivePacket)">handleKeepAlive</a>, <a href="ClientCommonPacketListenerImpl.html#handlePing(net.minecraft.network.protocol.common.ClientboundPingPacket)" title="handlePing(ClientboundPingPacket)">handlePing</a>, <a href="ClientCommonPacketListenerImpl.html#handleRequestCookie(net.minecraft.network.protocol.cookie.ClientboundCookieRequestPacket)" title="handleRequestCookie(ClientboundCookieRequestPacket)">handleRequestCookie</a>, <a href="ClientCommonPacketListenerImpl.html#handleResourcePackPop(net.minecraft.network.protocol.common.ClientboundResourcePackPopPacket)" title="handleResourcePackPop(ClientboundResourcePackPopPacket)">handleResourcePackPop</a>, <a href="ClientCommonPacketListenerImpl.html#handleResourcePackPush(net.minecraft.network.protocol.common.ClientboundResourcePackPushPacket)" title="handleResourcePackPush(ClientboundResourcePackPushPacket)">handleResourcePackPush</a>, <a href="ClientCommonPacketListenerImpl.html#handleServerLinks(net.minecraft.network.protocol.common.ClientboundServerLinksPacket)" title="handleServerLinks(ClientboundServerLinksPacket)">handleServerLinks</a>, <a href="ClientCommonPacketListenerImpl.html#handleShowDialog(net.minecraft.network.protocol.common.ClientboundShowDialogPacket)" title="handleShowDialog(ClientboundShowDialogPacket)">handleShowDialog</a>, <a href="ClientCommonPacketListenerImpl.html#handleStoreCookie(net.minecraft.network.protocol.common.ClientboundStoreCookiePacket)" title="handleStoreCookie(ClientboundStoreCookiePacket)">handleStoreCookie</a>, <a href="ClientCommonPacketListenerImpl.html#handleTransfer(net.minecraft.network.protocol.common.ClientboundTransferPacket)" title="handleTransfer(ClientboundTransferPacket)">handleTransfer</a>, <a href="ClientCommonPacketListenerImpl.html#onPacketError(net.minecraft.network.protocol.Packet,java.lang.Exception)" title="onPacketError(Packet, Exception)">onPacketError</a>, <a href="ClientCommonPacketListenerImpl.html#send(net.minecraft.network.protocol.Packet)" title="send(Packet)">send</a>, <a href="ClientCommonPacketListenerImpl.html#sendDeferredPackets()" title="sendDeferredPackets()">sendDeferredPackets</a>, <a href="ClientCommonPacketListenerImpl.html#serverBrand()" title="serverBrand()">serverBrand</a>, <a href="ClientCommonPacketListenerImpl.html#serverLinks()" title="serverLinks()">serverLinks</a>, <a href="ClientCommonPacketListenerImpl.html#shouldHandleMessage(net.minecraft.network.protocol.Packet)" title="shouldHandleMessage(Packet)">shouldHandleMessage</a>, <a href="ClientCommonPacketListenerImpl.html#showDialog(net.minecraft.core.Holder,net.minecraft.client.gui.screens.Screen)" title="showDialog(Holder, Screen)">showDialog</a>, <a href="ClientCommonPacketListenerImpl.html#showDialog(net.minecraft.core.Holder,net.minecraft.client.gui.screens.dialog.DialogConnectionAccess,net.minecraft.client.gui.screens.Screen)" title="showDialog(Holder, DialogConnectionAccess, Screen)">showDialog</a></code></div>
+<code><a href="ClientCommonPacketListenerImpl.html#clearDialog()" title="clearDialog()">clearDialog</a>, <a href="ClientCommonPacketListenerImpl.html#createDisconnectionInfo(net.minecraft.network.chat.Component,java.lang.Throwable)" title="createDisconnectionInfo(Component, Throwable)">createDisconnectionInfo</a>, <a href="ClientCommonPacketListenerImpl.html#fillListenerSpecificCrashDetails(net.minecraft.CrashReport,net.minecraft.CrashReportCategory)" title="fillListenerSpecificCrashDetails(CrashReport, CrashReportCategory)">fillListenerSpecificCrashDetails</a>, <a href="ClientCommonPacketListenerImpl.html#getConnection()" title="getConnection()">getConnection</a>, <a href="ClientCommonPacketListenerImpl.html#getPacketProcessor()" title="getPacketProcessor()">getPacketProcessor</a>, <a href="ClientCommonPacketListenerImpl.html#handleClearDialog(net.minecraft.network.protocol.common.ClientboundClearDialogPacket)" title="handleClearDialog(ClientboundClearDialogPacket)">handleClearDialog</a>, <a href="ClientCommonPacketListenerImpl.html#handleCustomReportDetails(net.minecraft.network.protocol.common.ClientboundCustomReportDetailsPacket)" title="handleCustomReportDetails(ClientboundCustomReportDetailsPacket)">handleCustomReportDetails</a>, <a href="ClientCommonPacketListenerImpl.html#handleDisconnect(net.minecraft.network.protocol.common.ClientboundDisconnectPacket)" title="handleDisconnect(ClientboundDisconnectPacket)">handleDisconnect</a>, <a href="ClientCommonPacketListenerImpl.html#handleKeepAlive(net.minecraft.network.protocol.common.ClientboundKeepAlivePacket)" title="handleKeepAlive(ClientboundKeepAlivePacket)">handleKeepAlive</a>, <a href="ClientCommonPacketListenerImpl.html#handlePing(net.minecraft.network.protocol.common.ClientboundPingPacket)" title="handlePing(ClientboundPingPacket)">handlePing</a>, <a href="ClientCommonPacketListenerImpl.html#handleRequestCookie(net.minecraft.network.protocol.cookie.ClientboundCookieRequestPacket)" title="handleRequestCookie(ClientboundCookieRequestPacket)">handleRequestCookie</a>, <a href="ClientCommonPacketListenerImpl.html#handleResourcePackPop(net.minecraft.network.protocol.common.ClientboundResourcePackPopPacket)" title="handleResourcePackPop(ClientboundResourcePackPopPacket)">handleResourcePackPop</a>, <a href="ClientCommonPacketListenerImpl.html#handleResourcePackPush(net.minecraft.network.protocol.common.ClientboundResourcePackPushPacket)" title="handleResourcePackPush(ClientboundResourcePackPushPacket)">handleResourcePackPush</a>, <a href="ClientCommonPacketListenerImpl.html#handleServerLinks(net.minecraft.network.protocol.common.ClientboundServerLinksPacket)" title="handleServerLinks(ClientboundServerLinksPacket)">handleServerLinks</a>, <a href="ClientCommonPacketListenerImpl.html#handleShowDialog(net.minecraft.network.protocol.common.ClientboundShowDialogPacket)" title="handleShowDialog(ClientboundShowDialogPacket)">handleShowDialog</a>, <a href="ClientCommonPacketListenerImpl.html#handleStoreCookie(net.minecraft.network.protocol.common.ClientboundStoreCookiePacket)" title="handleStoreCookie(ClientboundStoreCookiePacket)">handleStoreCookie</a>, <a href="ClientCommonPacketListenerImpl.html#handleTransfer(net.minecraft.network.protocol.common.ClientboundTransferPacket)" title="handleTransfer(ClientboundTransferPacket)">handleTransfer</a>, <a href="ClientCommonPacketListenerImpl.html#onPacketError(net.minecraft.network.protocol.Packet,java.lang.Exception)" title="onPacketError(Packet, Exception)">onPacketError</a>, <a href="ClientCommonPacketListenerImpl.html#send(net.minecraft.network.protocol.Packet)" title="send(Packet)">send</a>, <a href="ClientCommonPacketListenerImpl.html#serverBrand()" title="serverBrand()">serverBrand</a>, <a href="ClientCommonPacketListenerImpl.html#serverLinks()" title="serverLinks()">serverLinks</a>, <a href="ClientCommonPacketListenerImpl.html#shouldHandleMessage(net.minecraft.network.protocol.Packet)" title="shouldHandleMessage(Packet)">shouldHandleMessage</a>, <a href="ClientCommonPacketListenerImpl.html#showDialog(net.minecraft.core.Holder,net.minecraft.client.gui.screens.Screen)" title="showDialog(Holder, Screen)">showDialog</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.network.ClientboundPacketListener">Methods inherited from interface&nbsp;<a href="../../network/ClientboundPacketListener.html#method-summary" title="interface in net.minecraft.network">ClientboundPacketListener</a></h3>
 <code><a href="../../network/ClientboundPacketListener.html#flow()" title="flow()">flow</a></code></div>
@@ -316,106 +230,10 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="DISCONNECTED_MESSAGE">
 <h3>DISCONNECTED_MESSAGE</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></span>&nbsp;<span class="element-name">DISCONNECTED_MESSAGE</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="levelLoadTracker">
-<h3>levelLoadTracker</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="LevelLoadTracker.html" title="class in net.minecraft.client.multiplayer">LevelLoadTracker</a></span>&nbsp;<span class="element-name">levelLoadTracker</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="localGameProfile">
-<h3>localGameProfile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/authlib/GameProfile.html" title="class in com.mojang.authlib">GameProfile</a></span>&nbsp;<span class="element-name">localGameProfile</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="enabledFeatures">
-<h3>enabledFeatures</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../world/flag/FeatureFlagSet.html" title="class in net.minecraft.world.flag">FeatureFlagSet</a></span>&nbsp;<span class="element-name">enabledFeatures</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="receivedRegistries">
-<h3>receivedRegistries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../core/RegistryAccess.Frozen.html" title="interface in net.minecraft.core">RegistryAccess.Frozen</a></span>&nbsp;<span class="element-name">receivedRegistries</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="registryDataCollector">
-<h3>registryDataCollector</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="RegistryDataCollector.html" title="class in net.minecraft.client.multiplayer">RegistryDataCollector</a></span>&nbsp;<span class="element-name">registryDataCollector</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="knownPacks">
-<h3>knownPacks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="KnownPacksManager.html" title="class in net.minecraft.client.multiplayer">KnownPacksManager</a></span>&nbsp;<span class="element-name">knownPacks</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="chatState">
-<h3>chatState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="../gui/components/ChatComponent.State.html" title="class in net.minecraft.client.gui.components">ChatComponent.State</a></span>&nbsp;<span class="element-name">chatState</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="seenCodeOfConduct">
-<h3>seenCodeOfConduct</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">seenCodeOfConduct</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="connectionType">
-<h3>connectionType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../neoforged/neoforge/network/connection/ConnectionType.html" title="enum class in net.neoforged.neoforge.network.connection">ConnectionType</a></span>&nbsp;<span class="element-name">connectionType</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="initializedConnection">
-<h3>initializedConnection</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">initializedConnection</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="failureReasons">
-<h3>failureReasons</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a>&gt;</span>&nbsp;<span class="element-name">failureReasons</span></div>
 </div>
 </section>
 </li>
@@ -454,26 +272,6 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 <dt>Specified by:</dt>
 <dd><code><a href="../../network/PacketListener.html#isAcceptingMessages()">isAcceptingMessages</a></code>&nbsp;in interface&nbsp;<code><a href="../../network/PacketListener.html" title="interface in net.minecraft.network">PacketListener</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="handleCustomPayload(net.minecraft.network.protocol.common.custom.CustomPacketPayload)">
-<h3>handleCustomPayload</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handleCustomPayload</span><wbr><span class="parameters">(<a href="../../network/protocol/common/custom/CustomPacketPayload.html" title="interface in net.minecraft.network.protocol.common.custom">CustomPacketPayload</a>&nbsp;payload)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ClientCommonPacketListenerImpl.html#handleCustomPayload(net.minecraft.network.protocol.common.custom.CustomPacketPayload)">handleCustomPayload</a></code>&nbsp;in class&nbsp;<code><a href="ClientCommonPacketListenerImpl.html" title="class in net.minecraft.client.multiplayer">ClientCommonPacketListenerImpl</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="handleUnknownCustomPayload(net.minecraft.network.protocol.common.custom.CustomPacketPayload)">
-<h3>handleUnknownCustomPayload</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handleUnknownCustomPayload</span><wbr><span class="parameters">(<a href="../../network/protocol/common/custom/CustomPacketPayload.html" title="interface in net.minecraft.network.protocol.common.custom">CustomPacketPayload</a>&nbsp;payload)</span></div>
 </div>
 </section>
 </li>
@@ -538,14 +336,6 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 </section>
 </li>
 <li>
-<section class="detail" id="runWithResources(java.util.function.Function)">
-<h3>runWithResources</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">runWithResources</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../server/packs/resources/ResourceProvider.html" title="interface in net.minecraft.server.packs.resources">ResourceProvider</a>, T&gt;&nbsp;operation)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="handleCodeOfConduct(net.minecraft.network.protocol.configuration.ClientboundCodeOfConductPacket)">
 <h3>handleCodeOfConduct</h3>
 <div class="horizontal-scroll">
@@ -566,15 +356,6 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 <dt>Specified by:</dt>
 <dd><code><a href="../../network/protocol/configuration/ClientConfigurationPacketListener.html#handleConfigurationFinished(net.minecraft.network.protocol.configuration.ClientboundFinishConfigurationPacket)">handleConfigurationFinished</a></code>&nbsp;in interface&nbsp;<code><a href="../../network/protocol/configuration/ClientConfigurationPacketListener.html" title="interface in net.minecraft.network.protocol.configuration">ClientConfigurationPacketListener</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="filterRegistries(net.minecraft.core.RegistryAccess.Frozen,java.util.stream.Stream)">
-<h3>filterRegistries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../core/RegistryAccess.Frozen.html" title="interface in net.minecraft.core">RegistryAccess.Frozen</a></span>&nbsp;<span class="element-name">filterRegistries</span><wbr><span class="parameters">(<a href="../../core/RegistryAccess.Frozen.html" title="interface in net.minecraft.core">RegistryAccess.Frozen</a>&nbsp;original,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;?&gt;&gt;&gt;&nbsp;keysToInclude)</span></div>
 </div>
 </section>
 </li>
@@ -619,18 +400,6 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 </section>
 </li>
 <li>
-<section class="detail" id="createDisconnectScreen(net.minecraft.network.DisconnectionDetails)">
-<h3>createDisconnectScreen</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../gui/screens/Screen.html" title="class in net.minecraft.client.gui.screens">Screen</a></span>&nbsp;<span class="element-name">createDisconnectScreen</span><wbr><span class="parameters">(<a href="../../network/DisconnectionDetails.html" title="class in net.minecraft.network">DisconnectionDetails</a>&nbsp;details)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="ClientCommonPacketListenerImpl.html#createDisconnectScreen(net.minecraft.network.DisconnectionDetails)">createDisconnectScreen</a></code>&nbsp;in class&nbsp;<code><a href="ClientCommonPacketListenerImpl.html" title="class in net.minecraft.client.multiplayer">ClientCommonPacketListenerImpl</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getConnectionType()">
 <h3>getConnectionType</h3>
 <div class="horizontal-scroll">
@@ -642,18 +411,6 @@ implements <a href="../../network/protocol/configuration/ClientConfigurationPack
 <dd><code><a href="../../../neoforged/neoforge/common/extensions/ICommonPacketListener.html#getConnectionType()">getConnectionType</a></code>&nbsp;in interface&nbsp;<code><a href="../../../neoforged/neoforge/common/extensions/ICommonPacketListener.html" title="interface in net.neoforged.neoforge.common.extensions">ICommonPacketListener</a></code></dd>
 <dt>Returns:</dt>
 <dd>the connection type of this packet listener</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createDialogAccess()">
-<h3>createDialogAccess</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../gui/screens/dialog/DialogConnectionAccess.html" title="interface in net.minecraft.client.gui.screens.dialog">DialogConnectionAccess</a></span>&nbsp;<span class="element-name">createDialogAccess</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ClientCommonPacketListenerImpl.html#createDialogAccess()">createDialogAccess</a></code>&nbsp;in class&nbsp;<code><a href="ClientCommonPacketListenerImpl.html" title="class in net.minecraft.client.multiplayer">ClientCommonPacketListenerImpl</a></code></dd>
 </dl>
 </div>
 </section>

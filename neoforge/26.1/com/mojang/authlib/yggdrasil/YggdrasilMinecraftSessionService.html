@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>YggdrasilMinecraftSessionService (NeoForge 26.1)</title>
+<title>YggdrasilMinecraftSessionService (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: com.mojang.authlib.yggdrasil, class: YggdrasilMinecraftSessionService">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/YggdrasilMinecraftSessionService.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,26 +54,7 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#client" tabindex="0">client</a></li>
-<li><a href="#servicesKeySet" tabindex="0">servicesKeySet</a></li>
-<li><a href="#baseUrl" tabindex="0">baseUrl</a></li>
-<li><a href="#joinUrl" tabindex="0">joinUrl</a></li>
-<li><a href="#checkUrl" tabindex="0">checkUrl</a></li>
-<li><a href="#gson" tabindex="0">gson</a></li>
-<li><a href="#insecureProfiles" tabindex="0">insecureProfiles</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(com.mojang.authlib.yggdrasil.ServicesKeySet,java.net.Proxy,com.mojang.authlib.Environment)" tabindex="0">YggdrasilMinecraftSessionService(ServicesKeySet, Proxy, Environment)</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#joinServer(java.util.UUID,java.lang.String,java.lang.String)" tabindex="0">joinServer(UUID, String, String)</a></li>
@@ -82,9 +63,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#unpackTextures(com.mojang.authlib.properties.Property)" tabindex="0">unpackTextures(Property)</a></li>
 <li><a href="#fetchProfile(java.util.UUID,boolean)" tabindex="0">fetchProfile(UUID, boolean)</a></li>
 <li><a href="#getSecurePropertyValue(com.mojang.authlib.properties.Property)" tabindex="0">getSecurePropertyValue(Property)</a></li>
-<li><a href="#getPropertySignatureState(com.mojang.authlib.properties.Property)" tabindex="0">getPropertySignatureState(Property)</a></li>
-<li><a href="#fetchProfileUncached(java.util.UUID,boolean)" tabindex="0">fetchProfileUncached(UUID, boolean)</a></li>
-<li><a href="#extractProfileActionTypes(java.util.Set)" tabindex="0">extractProfileActionTypes(Set)</a></li>
 </ol>
 </li>
 </ol>
@@ -111,109 +89,58 @@ implements <a href="../minecraft/MinecraftSessionService.html" title="interface 
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#baseUrl" class="member-name-link">baseUrl</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#checkUrl" class="member-name-link">checkUrl</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../minecraft/client/MinecraftClient.html" title="class in com.mojang.authlib.minecraft.client">MinecraftClient</a></code></div>
-<div class="col-second even-row-color"><code><a href="#client" class="member-name-link">client</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final com.google.gson.Gson</code></div>
-<div class="col-second odd-row-color"><code><a href="#gson" class="member-name-link">gson</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final com.google.common.cache.LoadingCache<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="ProfileResult.html" title="class in com.mojang.authlib.yggdrasil">ProfileResult</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#insecureProfiles" class="member-name-link">insecureProfiles</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#joinUrl" class="member-name-link">joinUrl</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="ServicesKeySet.html" title="interface in com.mojang.authlib.yggdrasil">ServicesKeySet</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#servicesKeySet" class="member-name-link">servicesKeySet</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.mojang.authlib.yggdrasil.ServicesKeySet,java.net.Proxy,com.mojang.authlib.Environment)" class="member-name-link">YggdrasilMinecraftSessionService</a><wbr>(<a href="ServicesKeySet.html" title="interface in com.mojang.authlib.yggdrasil">ServicesKeySet</a>&nbsp;servicesKeySet,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/Proxy.html" title="class or interface in java.net" class="external-link">Proxy</a>&nbsp;proxy,
- <a href="../Environment.html" title="class in com.mojang.authlib">Environment</a>&nbsp;env)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="ProfileActionType.html" title="enum class in com.mojang.authlib.yggdrasil">ProfileActionType</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#extractProfileActionTypes(java.util.Set)" class="member-name-link">extractProfileActionTypes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="response/ProfileAction.html" title="class in com.mojang.authlib.yggdrasil.response">ProfileAction</a>&gt;&nbsp;response)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ProfileResult.html" title="class in com.mojang.authlib.yggdrasil">ProfileResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fetchProfile(java.util.UUID,boolean)" class="member-name-link">fetchProfile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;profileId,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ProfileResult.html" title="class in com.mojang.authlib.yggdrasil">ProfileResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fetchProfile(java.util.UUID,boolean)" class="member-name-link">fetchProfile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;profileId,
  boolean&nbsp;requireSecure)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="ProfileResult.html" title="class in com.mojang.authlib.yggdrasil">ProfileResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fetchProfileUncached(java.util.UUID,boolean)" class="member-name-link">fetchProfileUncached</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;profileId,
- boolean&nbsp;requireSecure)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Fetches the profile information associated with the given ID from the session service.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPackedTextures(com.mojang.authlib.GameProfile)" class="member-name-link">getPackedTextures</a><wbr>(<a href="../GameProfile.html" title="class in com.mojang.authlib">GameProfile</a>&nbsp;profile)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../SignatureState.html" title="enum class in com.mojang.authlib">SignatureState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPropertySignatureState(com.mojang.authlib.properties.Property)" class="member-name-link">getPropertySignatureState</a><wbr>(<a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a>&nbsp;property)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSecurePropertyValue(com.mojang.authlib.properties.Property)" class="member-name-link">getSecurePropertyValue</a><wbr>(<a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a>&nbsp;property)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ProfileResult.html" title="class in com.mojang.authlib.yggdrasil">ProfileResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasJoinedServer(java.lang.String,java.lang.String,java.net.InetAddress)" class="member-name-link">hasJoinedServer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;profileName,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets the packed property representation of any textures contained in the given profile.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSecurePropertyValue(com.mojang.authlib.properties.Property)" class="member-name-link">getSecurePropertyValue</a><wbr>(<a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a>&nbsp;property)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Verifies the signature and returns the value of a <a href="../properties/Property.html" title="class in com.mojang.authlib.properties"><code>Property</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ProfileResult.html" title="class in com.mojang.authlib.yggdrasil">ProfileResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasJoinedServer(java.lang.String,java.lang.String,java.net.InetAddress)" class="member-name-link">hasJoinedServer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;profileName,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;serverId,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/InetAddress.html" title="class or interface in java.net" class="external-link">InetAddress</a>&nbsp;address)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#joinServer(java.util.UUID,java.lang.String,java.lang.String)" class="member-name-link">joinServer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;profileId,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the specified user has joined a Minecraft server.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#joinServer(java.util.UUID,java.lang.String,java.lang.String)" class="member-name-link">joinServer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;profileId,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;authenticationToken,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;serverId)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../minecraft/MinecraftProfileTextures.html" title="class in com.mojang.authlib.minecraft">MinecraftProfileTextures</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unpackTextures(com.mojang.authlib.properties.Property)" class="member-name-link">unpackTextures</a><wbr>(<a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a>&nbsp;packedTextures)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Attempts to join the specified Minecraft server.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../minecraft/MinecraftProfileTextures.html" title="class in com.mojang.authlib.minecraft">MinecraftProfileTextures</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unpackTextures(com.mojang.authlib.properties.Property)" class="member-name-link">unpackTextures</a><wbr>(<a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a>&nbsp;packedTextures)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Unpacks the texture data contained in the given packed profile property.</div>
+</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.mojang.authlib.minecraft.MinecraftSessionService">Methods inherited from interface&nbsp;<a href="../minecraft/MinecraftSessionService.html#method-summary" title="interface in com.mojang.authlib.minecraft">MinecraftSessionService</a></h3>
 <code><a href="../minecraft/MinecraftSessionService.html#getTextures(com.mojang.authlib.GameProfile)" title="getTextures(GameProfile)">getTextures</a></code></div>
@@ -223,96 +150,6 @@ implements <a href="../minecraft/MinecraftSessionService.html" title="interface 
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="client">
-<h3>client</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../minecraft/client/MinecraftClient.html" title="class in com.mojang.authlib.minecraft.client">MinecraftClient</a></span>&nbsp;<span class="element-name">client</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="servicesKeySet">
-<h3>servicesKeySet</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="ServicesKeySet.html" title="interface in com.mojang.authlib.yggdrasil">ServicesKeySet</a></span>&nbsp;<span class="element-name">servicesKeySet</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="baseUrl">
-<h3>baseUrl</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">baseUrl</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="joinUrl">
-<h3>joinUrl</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></span>&nbsp;<span class="element-name">joinUrl</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="checkUrl">
-<h3>checkUrl</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a></span>&nbsp;<span class="element-name">checkUrl</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="gson">
-<h3>gson</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">com.google.gson.Gson</span>&nbsp;<span class="element-name">gson</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="insecureProfiles">
-<h3>insecureProfiles</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">com.google.common.cache.LoadingCache&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="ProfileResult.html" title="class in com.mojang.authlib.yggdrasil">ProfileResult</a>&gt;&gt;</span>&nbsp;<span class="element-name">insecureProfiles</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(com.mojang.authlib.yggdrasil.ServicesKeySet,java.net.Proxy,com.mojang.authlib.Environment)">
-<h3>YggdrasilMinecraftSessionService</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">YggdrasilMinecraftSessionService</span><wbr><span class="parameters">(<a href="ServicesKeySet.html" title="interface in com.mojang.authlib.yggdrasil">ServicesKeySet</a>&nbsp;servicesKeySet,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/Proxy.html" title="class or interface in java.net" class="external-link">Proxy</a>&nbsp;proxy,
- <a href="../Environment.html" title="class in com.mojang.authlib">Environment</a>&nbsp;env)</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -326,11 +163,20 @@ implements <a href="../minecraft/MinecraftSessionService.html" title="interface 
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;authenticationToken,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;serverId)</span>
                 throws <span class="exceptions"><a href="../exceptions/AuthenticationException.html" title="class in com.mojang.authlib.exceptions">AuthenticationException</a></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../minecraft/MinecraftSessionService.html#joinServer(java.util.UUID,java.lang.String,java.lang.String)">MinecraftSessionService</a></code></span></div>
+<div class="block">Attempts to join the specified Minecraft server.
+<p/>
+If this method returns without throwing an exception, the join was successful and a subsequent call to
+<a href="../minecraft/MinecraftSessionService.html#hasJoinedServer(java.lang.String,java.lang.String,java.net.InetAddress)"><code>MinecraftSessionService.hasJoinedServer(String, String, InetAddress)</code></a> will return true.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../minecraft/MinecraftSessionService.html#joinServer(java.util.UUID,java.lang.String,java.lang.String)">joinServer</a></code>&nbsp;in interface&nbsp;<code><a href="../minecraft/MinecraftSessionService.html" title="interface in com.mojang.authlib.minecraft">MinecraftSessionService</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>profileId</code> - The player profile ID to join as</dd>
+<dd><code>authenticationToken</code> - The authenticated token of the user</dd>
+<dd><code>serverId</code> - The random ID of the server to join</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../exceptions/AuthenticationException.html" title="class in com.mojang.authlib.exceptions">AuthenticationException</a></code></dd>
+<dd><code><a href="../exceptions/AuthenticationException.html" title="class in com.mojang.authlib.exceptions">AuthenticationException</a></code> - Generic exception indicating that we could not authenticate the user</dd>
 </dl>
 </div>
 </section>
@@ -345,11 +191,20 @@ implements <a href="../minecraft/MinecraftSessionService.html" title="interface 
  @Nullable
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/InetAddress.html" title="class or interface in java.net" class="external-link">InetAddress</a>&nbsp;address)</span>
                               throws <span class="exceptions"><a href="../exceptions/AuthenticationUnavailableException.html" title="class in com.mojang.authlib.exceptions">AuthenticationUnavailableException</a></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../minecraft/MinecraftSessionService.html#hasJoinedServer(java.lang.String,java.lang.String,java.net.InetAddress)">MinecraftSessionService</a></code></span></div>
+<div class="block">Checks if the specified user has joined a Minecraft server.
+<p/></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../minecraft/MinecraftSessionService.html#hasJoinedServer(java.lang.String,java.lang.String,java.net.InetAddress)">hasJoinedServer</a></code>&nbsp;in interface&nbsp;<code><a href="../minecraft/MinecraftSessionService.html" title="interface in com.mojang.authlib.minecraft">MinecraftSessionService</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>profileName</code> - The player name to check for</dd>
+<dd><code>serverId</code> - The random ID of the server to check for</dd>
+<dd><code>address</code> - The address connected from</dd>
+<dt>Returns:</dt>
+<dd>Full game profile if the user had joined, otherwise null</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../exceptions/AuthenticationUnavailableException.html" title="class in com.mojang.authlib.exceptions">AuthenticationUnavailableException</a></code></dd>
+<dd><code><a href="../exceptions/AuthenticationUnavailableException.html" title="class in com.mojang.authlib.exceptions">AuthenticationUnavailableException</a></code> - Thrown when the servers return a malformed response, or are otherwise unavailable</dd>
 </dl>
 </div>
 </section>
@@ -360,9 +215,22 @@ implements <a href="../minecraft/MinecraftSessionService.html" title="interface 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a></span>&nbsp;<span class="element-name">getPackedTextures</span><wbr><span class="parameters">(<a href="../GameProfile.html" title="class in com.mojang.authlib">GameProfile</a>&nbsp;profile)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../minecraft/MinecraftSessionService.html#getPackedTextures(com.mojang.authlib.GameProfile)">MinecraftSessionService</a></code></span></div>
+<div class="block">Gets the packed property representation of any textures contained in the given profile.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../minecraft/MinecraftSessionService.html#getPackedTextures(com.mojang.authlib.GameProfile)">getPackedTextures</a></code>&nbsp;in interface&nbsp;<code><a href="../minecraft/MinecraftSessionService.html" title="interface in com.mojang.authlib.minecraft">MinecraftSessionService</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>profile</code> - the profile to get textures from</dd>
+<dt>Returns:</dt>
+<dd>the packed property containing texture data, or <code>null</code> if this profile does not have any</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="../minecraft/MinecraftSessionService.html#unpackTextures(com.mojang.authlib.properties.Property)"><code>MinecraftSessionService.unpackTextures(Property)</code></a></li>
+<li><a href="../minecraft/MinecraftSessionService.html#getTextures(com.mojang.authlib.GameProfile)"><code>MinecraftSessionService.getTextures(GameProfile)</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -372,9 +240,22 @@ implements <a href="../minecraft/MinecraftSessionService.html" title="interface 
 <h3>unpackTextures</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../minecraft/MinecraftProfileTextures.html" title="class in com.mojang.authlib.minecraft">MinecraftProfileTextures</a></span>&nbsp;<span class="element-name">unpackTextures</span><wbr><span class="parameters">(<a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a>&nbsp;packedTextures)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../minecraft/MinecraftSessionService.html#unpackTextures(com.mojang.authlib.properties.Property)">MinecraftSessionService</a></code></span></div>
+<div class="block">Unpacks the texture data contained in the given packed profile property.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../minecraft/MinecraftSessionService.html#unpackTextures(com.mojang.authlib.properties.Property)">unpackTextures</a></code>&nbsp;in interface&nbsp;<code><a href="../minecraft/MinecraftSessionService.html" title="interface in com.mojang.authlib.minecraft">MinecraftSessionService</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>packedTextures</code> - the raw texture data to unpack</dd>
+<dt>Returns:</dt>
+<dd>the unpacked set of textures, or <a href="../minecraft/MinecraftProfileTextures.html#EMPTY"><code>MinecraftProfileTextures.EMPTY</code></a> if the data was malformed</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="../minecraft/MinecraftSessionService.html#getPackedTextures(com.mojang.authlib.GameProfile)"><code>MinecraftSessionService.getPackedTextures(GameProfile)</code></a></li>
+<li><a href="../minecraft/MinecraftSessionService.html#getTextures(com.mojang.authlib.GameProfile)"><code>MinecraftSessionService.getTextures(GameProfile)</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -386,9 +267,19 @@ implements <a href="../minecraft/MinecraftSessionService.html" title="interface 
 <div class="member-signature"><span class="annotations">@Nullable
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ProfileResult.html" title="class in com.mojang.authlib.yggdrasil">ProfileResult</a></span>&nbsp;<span class="element-name">fetchProfile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;profileId,
  boolean&nbsp;requireSecure)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../minecraft/MinecraftSessionService.html#fetchProfile(java.util.UUID,boolean)">MinecraftSessionService</a></code></span></div>
+<div class="block">Fetches the profile information associated with the given ID from the session service.
+This will include all properties associated with the profile.
+<p/>
+The profile must have an ID. If no information is found, nothing will be done.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../minecraft/MinecraftSessionService.html#fetchProfile(java.util.UUID,boolean)">fetchProfile</a></code>&nbsp;in interface&nbsp;<code><a href="../minecraft/MinecraftSessionService.html" title="interface in com.mojang.authlib.minecraft">MinecraftSessionService</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>profileId</code> - The ID of the game profile to request.</dd>
+<dd><code>requireSecure</code> - If the profile property map should include verifiable signature information.</dd>
+<dt>Returns:</dt>
+<dd>Fetched profile for the requested user, or <code>null</code> if unsuccessful or the user did not exist.</dd>
 </dl>
 </div>
 </section>
@@ -399,38 +290,18 @@ implements <a href="../minecraft/MinecraftSessionService.html" title="interface 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getSecurePropertyValue</span><wbr><span class="parameters">(<a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a>&nbsp;property)</span>
                               throws <span class="exceptions"><a href="../minecraft/InsecurePublicKeyException.html" title="class in com.mojang.authlib.minecraft">InsecurePublicKeyException</a></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../minecraft/MinecraftSessionService.html#getSecurePropertyValue(com.mojang.authlib.properties.Property)">MinecraftSessionService</a></code></span></div>
+<div class="block">Verifies the signature and returns the value of a <a href="../properties/Property.html" title="class in com.mojang.authlib.properties"><code>Property</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../minecraft/MinecraftSessionService.html#getSecurePropertyValue(com.mojang.authlib.properties.Property)">getSecurePropertyValue</a></code>&nbsp;in interface&nbsp;<code><a href="../minecraft/MinecraftSessionService.html" title="interface in com.mojang.authlib.minecraft">MinecraftSessionService</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>property</code> - Property to return the value of.</dd>
+<dt>Returns:</dt>
+<dd>String value</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../minecraft/InsecurePublicKeyException.html" title="class in com.mojang.authlib.minecraft">InsecurePublicKeyException</a></code></dd>
+<dd><code><a href="../minecraft/InsecurePublicKeyException.html" title="class in com.mojang.authlib.minecraft">InsecurePublicKeyException</a></code> - If data is insecure or missing</dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getPropertySignatureState(com.mojang.authlib.properties.Property)">
-<h3>getPropertySignatureState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../SignatureState.html" title="enum class in com.mojang.authlib">SignatureState</a></span>&nbsp;<span class="element-name">getPropertySignatureState</span><wbr><span class="parameters">(<a href="../properties/Property.html" title="class in com.mojang.authlib.properties">Property</a>&nbsp;property)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fetchProfileUncached(java.util.UUID,boolean)">
-<h3>fetchProfileUncached</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations">@Nullable
-</span><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="ProfileResult.html" title="class in com.mojang.authlib.yggdrasil">ProfileResult</a></span>&nbsp;<span class="element-name">fetchProfileUncached</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;profileId,
- boolean&nbsp;requireSecure)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="extractProfileActionTypes(java.util.Set)">
-<h3>extractProfileActionTypes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="ProfileActionType.html" title="enum class in com.mojang.authlib.yggdrasil">ProfileActionType</a>&gt;</span>&nbsp;<span class="element-name">extractProfileActionTypes</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="response/ProfileAction.html" title="class in com.mojang.authlib.yggdrasil.response">ProfileAction</a>&gt;&nbsp;response)</span></div>
 </div>
 </section>
 </li>

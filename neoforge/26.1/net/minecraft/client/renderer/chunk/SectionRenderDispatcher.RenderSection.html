@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>SectionRenderDispatcher.RenderSection (NeoForge 26.1)</title>
+<title>SectionRenderDispatcher.RenderSection (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.renderer.chunk, class: SectionRenderDispatcher, class: RenderSection">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/SectionRenderDispatcher.RenderSection.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -64,16 +64,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#SIZE" tabindex="0">SIZE</a></li>
 <li><a href="#index" tabindex="0">index</a></li>
 <li><a href="#sectionMesh" tabindex="0">sectionMesh</a></li>
-<li><a href="#lastRebuildTask" tabindex="0">lastRebuildTask</a></li>
-<li><a href="#lastResortTransparencyTask" tabindex="0">lastResortTransparencyTask</a></li>
-<li><a href="#bb" tabindex="0">bb</a></li>
-<li><a href="#dirty" tabindex="0">dirty</a></li>
-<li><a href="#sectionNode" tabindex="0">sectionNode</a></li>
-<li><a href="#renderOrigin" tabindex="0">renderOrigin</a></li>
-<li><a href="#playerChanged" tabindex="0">playerChanged</a></li>
-<li><a href="#uploadedTime" tabindex="0">uploadedTime</a></li>
-<li><a href="#fadeDuration" tabindex="0">fadeDuration</a></li>
-<li><a href="#wasPreviouslyEmpty" tabindex="0">wasPreviouslyEmpty</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -87,7 +77,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#setFadeDuration(long)" tabindex="0">setFadeDuration(long)</a></li>
 <li><a href="#setWasPreviouslyEmpty(boolean)" tabindex="0">setWasPreviouslyEmpty(boolean)</a></li>
 <li><a href="#wasPreviouslyEmpty()" tabindex="0">wasPreviouslyEmpty()</a></li>
-<li><a href="#doesChunkExistAt(long)" tabindex="0">doesChunkExistAt(long)</a></li>
 <li><a href="#hasAllNeighbors()" tabindex="0">hasAllNeighbors()</a></li>
 <li><a href="#getBoundingBox()" tabindex="0">getBoundingBox()</a></li>
 <li><a href="#setSectionNode(long)" tabindex="0">setSectionNode(long)</a></li>
@@ -103,17 +92,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#resortTransparency(net.minecraft.client.renderer.chunk.SectionRenderDispatcher)" tabindex="0">resortTransparency(SectionRenderDispatcher)</a></li>
 <li><a href="#hasTranslucentGeometry()" tabindex="0">hasTranslucentGeometry()</a></li>
 <li><a href="#transparencyResortingScheduled()" tabindex="0">transparencyResortingScheduled()</a></li>
-<li><a href="#cancelTasks()" tabindex="0">cancelTasks()</a></li>
 <li><a href="#createCompileTask(net.minecraft.client.renderer.chunk.RenderRegionCache)" tabindex="0">createCompileTask(RenderRegionCache)</a></li>
 <li><a href="#rebuildSectionAsync(net.minecraft.client.renderer.chunk.RenderRegionCache)" tabindex="0">rebuildSectionAsync(RenderRegionCache)</a></li>
 <li><a href="#compileSync(net.minecraft.client.renderer.chunk.RenderRegionCache)" tabindex="0">compileSync(RenderRegionCache)</a></li>
-<li><a href="#setSectionMesh(net.minecraft.client.renderer.chunk.SectionMesh)" tabindex="0">setSectionMesh(SectionMesh)</a></li>
-<li><a href="#releaseSectionMesh(net.minecraft.client.renderer.chunk.SectionMesh)" tabindex="0">releaseSectionMesh(SectionMesh)</a></li>
-<li><a href="#createVertexSorting(net.minecraft.core.SectionPos,net.minecraft.world.phys.Vec3)" tabindex="0">createVertexSorting(SectionPos, Vec3)</a></li>
-<li><a href="#checkSectionMesh(net.minecraft.client.renderer.chunk.CompiledSectionMesh)" tabindex="0">checkSectionMesh(CompiledSectionMesh)</a></li>
-<li><a href="#vertexBufferUploadCallback(net.minecraft.client.renderer.chunk.SectionMesh,net.minecraft.client.renderer.chunk.ChunkSectionLayer)" tabindex="0">vertexBufferUploadCallback(SectionMesh, ChunkSectionLayer)</a></li>
-<li><a href="#indexBufferUploadCallback(net.minecraft.client.renderer.chunk.SectionMesh,net.minecraft.client.renderer.chunk.ChunkSectionLayer,boolean)" tabindex="0">indexBufferUploadCallback(SectionMesh, ChunkSectionLayer, boolean)</a></li>
-<li><a href="#addSectionBuffersToUberBuffer(net.minecraft.client.renderer.chunk.ChunkSectionLayer,net.minecraft.client.renderer.chunk.CompiledSectionMesh,java.nio.ByteBuffer,java.nio.ByteBuffer)" tabindex="0">addSectionBuffersToUberBuffer(ChunkSectionLayer, CompiledSectionMesh, ByteBuffer, ByteBuffer)</a></li>
 <li><a href="#isEmpty()" tabindex="0">isEmpty()</a></li>
 </ol>
 </li>
@@ -157,12 +138,6 @@ implements <a href="../../../../neoforged/neoforge/client/IRenderableSection.htm
 <div class="col-first even-row-color"><code>class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="SectionRenderDispatcher.RenderSection.CompileTask.html" class="type-name-link" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher.RenderSection.CompileTask</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="SectionRenderDispatcher.RenderSection.RebuildTask.html" class="type-name-link" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher.RenderSection.RebuildTask</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="SectionRenderDispatcher.RenderSection.ResortTransparencyTask.html" class="type-name-link" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher.RenderSection.ResortTransparencyTask</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -175,44 +150,14 @@ implements <a href="../../../../neoforged/neoforge/client/IRenderableSection.htm
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private <a href="../../../world/phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a></code></div>
-<div class="col-second even-row-color"><code><a href="#bb" class="member-name-link">bb</a></code></div>
+<div class="col-first even-row-color"><code>final int</code></div>
+<div class="col-second even-row-color"><code><a href="#index" class="member-name-link">index</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#dirty" class="member-name-link">dirty</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private long</code></div>
-<div class="col-second even-row-color"><code><a href="#fadeDuration" class="member-name-link">fadeDuration</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#index" class="member-name-link">index</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="SectionRenderDispatcher.RenderSection.RebuildTask.html" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher.RenderSection.RebuildTask</a></code></div>
-<div class="col-second even-row-color"><code><a href="#lastRebuildTask" class="member-name-link">lastRebuildTask</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private @Nullable <a href="SectionRenderDispatcher.RenderSection.ResortTransparencyTask.html" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher.RenderSection.ResortTransparencyTask</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#lastResortTransparencyTask" class="member-name-link">lastResortTransparencyTask</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#playerChanged" class="member-name-link">playerChanged</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="../../../core/BlockPos.MutableBlockPos.html" title="class in net.minecraft.core">BlockPos.MutableBlockPos</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#renderOrigin" class="member-name-link">renderOrigin</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/AtomicReference.html" title="class or interface in java.util.concurrent.atomic" class="external-link">AtomicReference</a><wbr>&lt;<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#sectionMesh" class="member-name-link">sectionMesh</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private long</code></div>
-<div class="col-second odd-row-color"><code><a href="#sectionNode" class="member-name-link">sectionNode</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/AtomicReference.html" title="class or interface in java.util.concurrent.atomic" class="external-link">AtomicReference</a><wbr>&lt;<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#sectionMesh" class="member-name-link">sectionMesh</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#SIZE" class="member-name-link">SIZE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private long</code></div>
-<div class="col-second odd-row-color"><code><a href="#uploadedTime" class="member-name-link">uploadedTime</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#wasPreviouslyEmpty" class="member-name-link">wasPreviouslyEmpty</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -242,63 +187,39 @@ implements <a href="../../../../neoforged/neoforge/client/IRenderableSection.htm
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addSectionBuffersToUberBuffer(net.minecraft.client.renderer.chunk.ChunkSectionLayer,net.minecraft.client.renderer.chunk.CompiledSectionMesh,java.nio.ByteBuffer,java.nio.ByteBuffer)" class="member-name-link">addSectionBuffersToUberBuffer</a><wbr>(<a href="ChunkSectionLayer.html" title="enum class in net.minecraft.client.renderer.chunk">ChunkSectionLayer</a>&nbsp;layer,
- <a href="CompiledSectionMesh.html" title="class in net.minecraft.client.renderer.chunk">CompiledSectionMesh</a>&nbsp;key,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;vertexBuffer,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;indexBuffer)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compileSync(net.minecraft.client.renderer.chunk.RenderRegionCache)" class="member-name-link">compileSync</a><wbr>(<a href="RenderRegionCache.html" title="class in net.minecraft.client.renderer.chunk">RenderRegionCache</a>&nbsp;cache)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cancelTasks()" class="member-name-link">cancelTasks</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SectionRenderDispatcher.RenderSection.CompileTask.html" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher.RenderSection.CompileTask</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createCompileTask(net.minecraft.client.renderer.chunk.RenderRegionCache)" class="member-name-link">createCompileTask</a><wbr>(<a href="RenderRegionCache.html" title="class in net.minecraft.client.renderer.chunk">RenderRegionCache</a>&nbsp;cache)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkSectionMesh(net.minecraft.client.renderer.chunk.CompiledSectionMesh)" class="member-name-link">checkSectionMesh</a><wbr>(<a href="CompiledSectionMesh.html" title="class in net.minecraft.client.renderer.chunk">CompiledSectionMesh</a>&nbsp;compiledSectionMesh)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compileSync(net.minecraft.client.renderer.chunk.RenderRegionCache)" class="member-name-link">compileSync</a><wbr>(<a href="RenderRegionCache.html" title="class in net.minecraft.client.renderer.chunk">RenderRegionCache</a>&nbsp;cache)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SectionRenderDispatcher.RenderSection.CompileTask.html" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher.RenderSection.CompileTask</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createCompileTask(net.minecraft.client.renderer.chunk.RenderRegionCache)" class="member-name-link">createCompileTask</a><wbr>(<a href="RenderRegionCache.html" title="class in net.minecraft.client.renderer.chunk">RenderRegionCache</a>&nbsp;cache)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../../../../com/mojang/blaze3d/vertex/VertexSorting.html" title="interface in com.mojang.blaze3d.vertex">VertexSorting</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createVertexSorting(net.minecraft.core.SectionPos,net.minecraft.world.phys.Vec3)" class="member-name-link">createVertexSorting</a><wbr>(<a href="../../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;sectionPos,
- <a href="../../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doesChunkExistAt(long)" class="member-name-link">doesChunkExistAt</a><wbr>(long&nbsp;sectionNode)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../world/phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundingBox()" class="member-name-link">getBoundingBox</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../world/phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBoundingBox()" class="member-name-link">getBoundingBox</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the bounding box of the section.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNeighborSectionNode(net.minecraft.core.Direction)" class="member-name-link">getNeighborSectionNode</a><wbr>(<a href="../../../core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;direction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRenderOrigin()" class="member-name-link">getRenderOrigin</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNeighborSectionNode(net.minecraft.core.Direction)" class="member-name-link">getNeighborSectionNode</a><wbr>(<a href="../../../core/Direction.html" title="enum class in net.minecraft.core">Direction</a>&nbsp;direction)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRenderOrigin()" class="member-name-link">getRenderOrigin</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the block position at the origin of the section.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSectionMesh()" class="member-name-link">getSectionMesh</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSectionNode()" class="member-name-link">getSectionNode</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSectionMesh()" class="member-name-link">getSectionMesh</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVisibility(long)" class="member-name-link">getVisibility</a><wbr>(long&nbsp;now)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSectionNode()" class="member-name-link">getSectionNode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasAllNeighbors()" class="member-name-link">hasAllNeighbors</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVisibility(long)" class="member-name-link">getVisibility</a><wbr>(long&nbsp;now)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasTranslucentGeometry()" class="member-name-link">hasTranslucentGeometry</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasAllNeighbors()" class="member-name-link">hasAllNeighbors</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>(package private) void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#indexBufferUploadCallback(net.minecraft.client.renderer.chunk.SectionMesh,net.minecraft.client.renderer.chunk.ChunkSectionLayer,boolean)" class="member-name-link">indexBufferUploadCallback</a><wbr>(<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&nbsp;sectionMesh,
- <a href="ChunkSectionLayer.html" title="enum class in net.minecraft.client.renderer.chunk">ChunkSectionLayer</a>&nbsp;layer,
- boolean&nbsp;sortedIndexBuffer)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasTranslucentGeometry()" class="member-name-link">hasTranslucentGeometry</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDirty()" class="member-name-link">isDirty</a>()</code></div>
@@ -314,26 +235,20 @@ implements <a href="../../../../neoforged/neoforge/client/IRenderableSection.htm
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rebuildSectionAsync(net.minecraft.client.renderer.chunk.RenderRegionCache)" class="member-name-link">rebuildSectionAsync</a><wbr>(<a href="RenderRegionCache.html" title="class in net.minecraft.client.renderer.chunk">RenderRegionCache</a>&nbsp;cache)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#releaseSectionMesh(net.minecraft.client.renderer.chunk.SectionMesh)" class="member-name-link">releaseSectionMesh</a><wbr>(<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&nbsp;oldMesh)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resortTransparency(net.minecraft.client.renderer.chunk.SectionRenderDispatcher)" class="member-name-link">resortTransparency</a><wbr>(<a href="SectionRenderDispatcher.html" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher</a>&nbsp;dispatcher)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resortTransparency(net.minecraft.client.renderer.chunk.SectionRenderDispatcher)" class="member-name-link">resortTransparency</a><wbr>(<a href="SectionRenderDispatcher.html" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher</a>&nbsp;dispatcher)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDirty(boolean)" class="member-name-link">setDirty</a><wbr>(boolean&nbsp;fromPlayer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDirty(boolean)" class="member-name-link">setDirty</a><wbr>(boolean&nbsp;fromPlayer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFadeDuration(long)" class="member-name-link">setFadeDuration</a><wbr>(long&nbsp;fadeDuration)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFadeDuration(long)" class="member-name-link">setFadeDuration</a><wbr>(long&nbsp;fadeDuration)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNotDirty()" class="member-name-link">setNotDirty</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSectionMesh(net.minecraft.client.renderer.chunk.SectionMesh)" class="member-name-link">setSectionMesh</a><wbr>(<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&nbsp;sectionMesh)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNotDirty()" class="member-name-link">setNotDirty</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSectionNode(long)" class="member-name-link">setSectionNode</a><wbr>(long&nbsp;sectionNode)</code></div>
@@ -344,19 +259,15 @@ implements <a href="../../../../neoforged/neoforge/client/IRenderableSection.htm
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transparencyResortingScheduled()" class="member-name-link">transparencyResortingScheduled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>(package private) void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#vertexBufferUploadCallback(net.minecraft.client.renderer.chunk.SectionMesh,net.minecraft.client.renderer.chunk.ChunkSectionLayer)" class="member-name-link">vertexBufferUploadCallback</a><wbr>(<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&nbsp;sectionMesh,
- <a href="ChunkSectionLayer.html" title="enum class in net.minecraft.client.renderer.chunk">ChunkSectionLayer</a>&nbsp;layer)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasPreviouslyEmpty()" class="member-name-link">wasPreviouslyEmpty</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasPreviouslyEmpty()" class="member-name-link">wasPreviouslyEmpty</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -397,86 +308,6 @@ implements <a href="../../../../neoforged/neoforge/client/IRenderableSection.htm
 <h3>sectionMesh</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/AtomicReference.html" title="class or interface in java.util.concurrent.atomic" class="external-link">AtomicReference</a>&lt;<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&gt;</span>&nbsp;<span class="element-name">sectionMesh</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastRebuildTask">
-<h3>lastRebuildTask</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="SectionRenderDispatcher.RenderSection.RebuildTask.html" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher.RenderSection.RebuildTask</a></span>&nbsp;<span class="element-name">lastRebuildTask</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lastResortTransparencyTask">
-<h3>lastResortTransparencyTask</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="SectionRenderDispatcher.RenderSection.ResortTransparencyTask.html" title="class in net.minecraft.client.renderer.chunk">SectionRenderDispatcher.RenderSection.ResortTransparencyTask</a></span>&nbsp;<span class="element-name">lastResortTransparencyTask</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="bb">
-<h3>bb</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../world/phys/AABB.html" title="class in net.minecraft.world.phys">AABB</a></span>&nbsp;<span class="element-name">bb</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dirty">
-<h3>dirty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">dirty</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="sectionNode">
-<h3>sectionNode</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">sectionNode</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="renderOrigin">
-<h3>renderOrigin</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../core/BlockPos.MutableBlockPos.html" title="class in net.minecraft.core">BlockPos.MutableBlockPos</a></span>&nbsp;<span class="element-name">renderOrigin</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="playerChanged">
-<h3>playerChanged</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">playerChanged</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="uploadedTime">
-<h3>uploadedTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">uploadedTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="fadeDuration">
-<h3>fadeDuration</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">fadeDuration</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="wasPreviouslyEmpty">
-<h3>wasPreviouslyEmpty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">wasPreviouslyEmpty</span></div>
 </div>
 </section>
 </li>
@@ -534,14 +365,6 @@ implements <a href="../../../../neoforged/neoforge/client/IRenderableSection.htm
 <h3>wasPreviouslyEmpty</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">wasPreviouslyEmpty</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="doesChunkExistAt(long)">
-<h3>doesChunkExistAt</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">doesChunkExistAt</span><wbr><span class="parameters">(long&nbsp;sectionNode)</span></div>
 </div>
 </section>
 </li>
@@ -682,14 +505,6 @@ implements <a href="../../../../neoforged/neoforge/client/IRenderableSection.htm
 </section>
 </li>
 <li>
-<section class="detail" id="cancelTasks()">
-<h3>cancelTasks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">cancelTasks</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="createCompileTask(net.minecraft.client.renderer.chunk.RenderRegionCache)">
 <h3>createCompileTask</h3>
 <div class="horizontal-scroll">
@@ -710,69 +525,6 @@ implements <a href="../../../../neoforged/neoforge/client/IRenderableSection.htm
 <h3>compileSync</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">compileSync</span><wbr><span class="parameters">(<a href="RenderRegionCache.html" title="class in net.minecraft.client.renderer.chunk">RenderRegionCache</a>&nbsp;cache)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setSectionMesh(net.minecraft.client.renderer.chunk.SectionMesh)">
-<h3>setSectionMesh</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a></span>&nbsp;<span class="element-name">setSectionMesh</span><wbr><span class="parameters">(<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&nbsp;sectionMesh)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="releaseSectionMesh(net.minecraft.client.renderer.chunk.SectionMesh)">
-<h3>releaseSectionMesh</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">releaseSectionMesh</span><wbr><span class="parameters">(<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&nbsp;oldMesh)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createVertexSorting(net.minecraft.core.SectionPos,net.minecraft.world.phys.Vec3)">
-<h3>createVertexSorting</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/blaze3d/vertex/VertexSorting.html" title="interface in com.mojang.blaze3d.vertex">VertexSorting</a></span>&nbsp;<span class="element-name">createVertexSorting</span><wbr><span class="parameters">(<a href="../../../core/SectionPos.html" title="class in net.minecraft.core">SectionPos</a>&nbsp;sectionPos,
- <a href="../../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="checkSectionMesh(net.minecraft.client.renderer.chunk.CompiledSectionMesh)">
-<h3>checkSectionMesh</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">checkSectionMesh</span><wbr><span class="parameters">(<a href="CompiledSectionMesh.html" title="class in net.minecraft.client.renderer.chunk">CompiledSectionMesh</a>&nbsp;compiledSectionMesh)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="vertexBufferUploadCallback(net.minecraft.client.renderer.chunk.SectionMesh,net.minecraft.client.renderer.chunk.ChunkSectionLayer)">
-<h3>vertexBufferUploadCallback</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">vertexBufferUploadCallback</span><wbr><span class="parameters">(<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&nbsp;sectionMesh,
- <a href="ChunkSectionLayer.html" title="enum class in net.minecraft.client.renderer.chunk">ChunkSectionLayer</a>&nbsp;layer)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="indexBufferUploadCallback(net.minecraft.client.renderer.chunk.SectionMesh,net.minecraft.client.renderer.chunk.ChunkSectionLayer,boolean)">
-<h3>indexBufferUploadCallback</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">indexBufferUploadCallback</span><wbr><span class="parameters">(<a href="SectionMesh.html" title="interface in net.minecraft.client.renderer.chunk">SectionMesh</a>&nbsp;sectionMesh,
- <a href="ChunkSectionLayer.html" title="enum class in net.minecraft.client.renderer.chunk">ChunkSectionLayer</a>&nbsp;layer,
- boolean&nbsp;sortedIndexBuffer)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addSectionBuffersToUberBuffer(net.minecraft.client.renderer.chunk.ChunkSectionLayer,net.minecraft.client.renderer.chunk.CompiledSectionMesh,java.nio.ByteBuffer,java.nio.ByteBuffer)">
-<h3>addSectionBuffersToUberBuffer</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">addSectionBuffersToUberBuffer</span><wbr><span class="parameters">(<a href="ChunkSectionLayer.html" title="enum class in net.minecraft.client.renderer.chunk">ChunkSectionLayer</a>&nbsp;layer,
- <a href="CompiledSectionMesh.html" title="class in net.minecraft.client.renderer.chunk">CompiledSectionMesh</a>&nbsp;key,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;vertexBuffer,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;indexBuffer)</span></div>
 </div>
 </section>
 </li>

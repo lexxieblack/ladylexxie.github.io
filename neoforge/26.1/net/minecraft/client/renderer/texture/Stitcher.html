@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>Stitcher (NeoForge 26.1)</title>
+<title>Stitcher (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.renderer.texture, class: Stitcher">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/Stitcher.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,23 +55,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#HOLDER_COMPARATOR" tabindex="0">HOLDER_COMPARATOR</a></li>
-<li><a href="#mipLevel" tabindex="0">mipLevel</a></li>
-<li><a href="#texturesToBeStitched" tabindex="0">texturesToBeStitched</a></li>
-<li><a href="#storage" tabindex="0">storage</a></li>
-<li><a href="#storageX" tabindex="0">storageX</a></li>
-<li><a href="#storageY" tabindex="0">storageY</a></li>
-<li><a href="#maxWidth" tabindex="0">maxWidth</a></li>
-<li><a href="#maxHeight" tabindex="0">maxHeight</a></li>
-<li><a href="#padding" tabindex="0">padding</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(int,int,int,int)" tabindex="0">Stitcher(int, int, int, int)</a></li>
@@ -84,9 +69,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#registerSprite(T)" tabindex="0">registerSprite(T)</a></li>
 <li><a href="#stitch()" tabindex="0">stitch()</a></li>
 <li><a href="#gatherSprites(net.minecraft.client.renderer.texture.Stitcher.SpriteLoader)" tabindex="0">gatherSprites(Stitcher.SpriteLoader)</a></li>
-<li><a href="#smallestFittingMinTexel(int,int)" tabindex="0">smallestFittingMinTexel(int, int)</a></li>
-<li><a href="#addToStorage(net.minecraft.client.renderer.texture.Stitcher.Holder)" tabindex="0">addToStorage(Stitcher.Holder)</a></li>
-<li><a href="#expand(net.minecraft.client.renderer.texture.Stitcher.Holder)" tabindex="0">expand(Stitcher.Holder)</a></li>
 </ol>
 </li>
 </ol>
@@ -120,57 +102,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="Stitcher.Entry.html" class="type-name-link" title="interface in net.minecraft.client.renderer.texture">Stitcher.Entry</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final record&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="Stitcher.Holder.html" class="type-name-link" title="class in net.minecraft.client.renderer.texture">Stitcher.Holder</a>&lt;<a href="Stitcher.Holder.html#type-param-T" title="type parameter in Stitcher.Holder">T</a> extends <a href="Stitcher.Entry.html" title="interface in net.minecraft.client.renderer.texture">Stitcher.Entry</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="Stitcher.Region.html" class="type-name-link" title="class in net.minecraft.client.renderer.texture">Stitcher.Region</a>&lt;<a href="Stitcher.Region.html#type-param-T" title="type parameter in Stitcher.Region">T</a> extends <a href="Stitcher.Entry.html" title="interface in net.minecraft.client.renderer.texture">Stitcher.Entry</a>&gt;</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="Stitcher.Region.html" class="type-name-link" title="class in net.minecraft.client.renderer.texture">Stitcher.Region</a>&lt;<a href="Stitcher.Region.html#type-param-T" title="type parameter in Stitcher.Region">T</a> extends <a href="Stitcher.Entry.html" title="interface in net.minecraft.client.renderer.texture">Stitcher.Entry</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="Stitcher.SpriteLoader.html" class="type-name-link" title="interface in net.minecraft.client.renderer.texture">Stitcher.SpriteLoader</a>&lt;<a href="Stitcher.SpriteLoader.html#type-param-T" title="type parameter in Stitcher.SpriteLoader">T</a> extends <a href="Stitcher.Entry.html" title="interface in net.minecraft.client.renderer.texture">Stitcher.Entry</a>&gt;</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="Stitcher.SpriteLoader.html" class="type-name-link" title="interface in net.minecraft.client.renderer.texture">Stitcher.SpriteLoader</a>&lt;<a href="Stitcher.SpriteLoader.html#type-param-T" title="type parameter in Stitcher.SpriteLoader">T</a> extends <a href="Stitcher.Entry.html" title="interface in net.minecraft.client.renderer.texture">Stitcher.Entry</a>&gt;</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a><wbr>&lt;<a href="Stitcher.Holder.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Holder</a>&lt;?&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#HOLDER_COMPARATOR" class="member-name-link">HOLDER_COMPARATOR</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final int</code></div>
-<div class="col-second even-row-color"><code><a href="#maxHeight" class="member-name-link">maxHeight</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#maxWidth" class="member-name-link">maxWidth</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final int</code></div>
-<div class="col-second even-row-color"><code><a href="#mipLevel" class="member-name-link">mipLevel</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#padding" class="member-name-link">padding</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Stitcher.Region.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Region</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#storage" class="member-name-link">storage</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#storageX" class="member-name-link">storageX</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#storageY" class="member-name-link">storageY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Stitcher.Holder.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Holder</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#texturesToBeStitched" class="member-name-link">texturesToBeStitched</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -195,18 +132,12 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addToStorage(net.minecraft.client.renderer.texture.Stitcher.Holder)" class="member-name-link">addToStorage</a><wbr>(<a href="Stitcher.Holder.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Holder</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a>&gt;&nbsp;holder)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#expand(net.minecraft.client.renderer.texture.Stitcher.Holder)" class="member-name-link">expand</a><wbr>(<a href="Stitcher.Holder.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Holder</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a>&gt;&nbsp;holder)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gatherSprites(net.minecraft.client.renderer.texture.Stitcher.SpriteLoader)" class="member-name-link">gatherSprites</a><wbr>(<a href="Stitcher.SpriteLoader.html" title="interface in net.minecraft.client.renderer.texture">Stitcher.SpriteLoader</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a>&gt;&nbsp;loader)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -219,113 +150,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerSprite(T)" class="member-name-link">registerSprite</a><wbr>(<a href="#type-param-T" title="type parameter in Stitcher">T</a>&nbsp;entry)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#smallestFittingMinTexel(int,int)" class="member-name-link">smallestFittingMinTexel</a><wbr>(int&nbsp;input,
- int&nbsp;maxMipLevel)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stitch()" class="member-name-link">stitch</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stitch()" class="member-name-link">stitch</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="HOLDER_COMPARATOR">
-<h3>HOLDER_COMPARATOR</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a>&lt;<a href="Stitcher.Holder.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Holder</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">HOLDER_COMPARATOR</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="mipLevel">
-<h3>mipLevel</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">mipLevel</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="texturesToBeStitched">
-<h3>texturesToBeStitched</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Stitcher.Holder.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Holder</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a> extends <a href="Stitcher.Entry.html" title="interface in net.minecraft.client.renderer.texture">Stitcher.Entry</a>&gt;&gt;</span>&nbsp;<span class="element-name">texturesToBeStitched</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="storage">
-<h3>storage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Stitcher.Region.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Region</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a> extends <a href="Stitcher.Entry.html" title="interface in net.minecraft.client.renderer.texture">Stitcher.Entry</a>&gt;&gt;</span>&nbsp;<span class="element-name">storage</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="storageX">
-<h3>storageX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">storageX</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="storageY">
-<h3>storageY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">storageY</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="maxWidth">
-<h3>maxWidth</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxWidth</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="maxHeight">
-<h3>maxHeight</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxHeight</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="padding">
-<h3>padding</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">padding</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -387,31 +226,6 @@ loadScripts(document, 'script');</script>
 <h3>gatherSprites</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">gatherSprites</span><wbr><span class="parameters">(<a href="Stitcher.SpriteLoader.html" title="interface in net.minecraft.client.renderer.texture">Stitcher.SpriteLoader</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a>&gt;&nbsp;loader)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="smallestFittingMinTexel(int,int)">
-<h3>smallestFittingMinTexel</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">smallestFittingMinTexel</span><wbr><span class="parameters">(int&nbsp;input,
- int&nbsp;maxMipLevel)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addToStorage(net.minecraft.client.renderer.texture.Stitcher.Holder)">
-<h3>addToStorage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">addToStorage</span><wbr><span class="parameters">(<a href="Stitcher.Holder.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Holder</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a>&gt;&nbsp;holder)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="expand(net.minecraft.client.renderer.texture.Stitcher.Holder)">
-<h3>expand</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">expand</span><wbr><span class="parameters">(<a href="Stitcher.Holder.html" title="class in net.minecraft.client.renderer.texture">Stitcher.Holder</a>&lt;<a href="#type-param-T" title="type parameter in Stitcher">T</a>&gt;&nbsp;holder)</span></div>
 </div>
 </section>
 </li>

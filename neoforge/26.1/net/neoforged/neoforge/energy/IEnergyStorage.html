@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>IEnergyStorage (NeoForge 26.1)</title>
+<title>IEnergyStorage (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.energy, interface: IEnergyStorage">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/IEnergyStorage.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -76,7 +76,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="ComponentEnergyStorage.html" title="class in net.neoforged.neoforge.energy">ComponentEnergyStorage</a>, <a href="EmptyEnergyStorage.html" title="class in net.neoforged.neoforge.energy">EmptyEnergyStorage</a>, <a href="EnergyHandlerAdapter.html" title="class in net.neoforged.neoforge.energy">EnergyHandlerAdapter</a>, <a href="EnergyStorage.html" title="class in net.neoforged.neoforge.energy">EnergyStorage</a></code></dd>
+<dd><code><a href="ComponentEnergyStorage.html" title="class in net.neoforged.neoforge.energy">ComponentEnergyStorage</a>, <a href="EmptyEnergyStorage.html" title="class in net.neoforged.neoforge.energy">EmptyEnergyStorage</a>, <a href="EnergyStorage.html" title="class in net.neoforged.neoforge.energy">EnergyStorage</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -181,6 +181,11 @@ Created with consent and permission of King Lemming and Team CoFH. Released with
 <div class="block">Creates a wrapper around a <a href="../transfer/energy/EnergyHandler.html" title="interface in net.neoforged.neoforge.transfer.energy"><code>EnergyHandler</code></a>, to present it as a legacy <a href="IEnergyStorage.html" title="interface in net.neoforged.neoforge.energy"><code>IEnergyStorage</code></a>.
 
 <p>This class is intended to make migration easier for code that expects an <a href="IEnergyStorage.html" title="interface in net.neoforged.neoforge.energy"><code>IEnergyStorage</code></a>.</div>
+<dl class="notes">
+<dt><em>API Note:</em></dt>
+<dd>The <a href="#receiveEnergy(int,boolean)"><code>receiveEnergy(int, boolean)</code></a> and <a href="#extractEnergy(int,boolean)"><code>extractEnergy(int, boolean)</code></a> implementations will open new root transactions,
+         so this wrapper cannot be used from a transactional context (such as <a href="../transfer/energy/EnergyHandler.html#insert(int,net.neoforged.neoforge.transfer.transaction.TransactionContext)"><code>EnergyHandler.insert(int, TransactionContext)</code></a>).</dd>
+</dl>
 </div>
 </section>
 </li>

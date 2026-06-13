@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>WeatherEffectRenderer (NeoForge 26.1)</title>
+<title>WeatherEffectRenderer (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.renderer, class: WeatherEffectRenderer">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/WeatherEffectRenderer.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,23 +55,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#RAIN_PARTICLES_PER_BLOCK" tabindex="0">RAIN_PARTICLES_PER_BLOCK</a></li>
-<li><a href="#RAIN_RADIUS" tabindex="0">RAIN_RADIUS</a></li>
-<li><a href="#RAIN_LOCATION" tabindex="0">RAIN_LOCATION</a></li>
-<li><a href="#SNOW_LOCATION" tabindex="0">SNOW_LOCATION</a></li>
-<li><a href="#RAIN_TABLE_SIZE" tabindex="0">RAIN_TABLE_SIZE</a></li>
-<li><a href="#HALF_RAIN_TABLE_SIZE" tabindex="0">HALF_RAIN_TABLE_SIZE</a></li>
-<li><a href="#INDICES_PER_COLUMN" tabindex="0">INDICES_PER_COLUMN</a></li>
-<li><a href="#rainSoundTime" tabindex="0">rainSoundTime</a></li>
-<li><a href="#columnSizeX" tabindex="0">columnSizeX</a></li>
-<li><a href="#columnSizeZ" tabindex="0">columnSizeZ</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">WeatherEffectRenderer()</a></li>
@@ -80,14 +65,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#extractRenderState(net.minecraft.world.level.Level,int,float,net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState)" tabindex="0">extractRenderState(Level, int, float, Vec3, WeatherRenderState)</a></li>
-<li><a href="#renderWeather(com.mojang.blaze3d.systems.RenderPass,net.minecraft.client.renderer.texture.AbstractTexture,int,int)" tabindex="0">renderWeather(RenderPass, AbstractTexture, int, int)</a></li>
 <li><a href="#render(net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState)" tabindex="0">render(Vec3, WeatherRenderState)</a></li>
 <li><a href="#render(net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState,net.minecraft.client.renderer.state.level.LevelRenderState)" tabindex="0">render(Vec3, WeatherRenderState, LevelRenderState)</a></li>
-<li><a href="#createRainColumnInstance(net.minecraft.util.RandomSource,int,int,int,int,int,int,float)" tabindex="0">createRainColumnInstance(RandomSource, int, int, int, int, int, int, float)</a></li>
-<li><a href="#createSnowColumnInstance(net.minecraft.util.RandomSource,int,int,int,int,int,int,float)" tabindex="0">createSnowColumnInstance(RandomSource, int, int, int, int, int, int, float)</a></li>
-<li><a href="#renderInstances(com.mojang.blaze3d.vertex.VertexConsumer,java.util.List,net.minecraft.world.phys.Vec3,float,int,float)" tabindex="0">renderInstances(VertexConsumer, List, Vec3, float, int, float)</a></li>
 <li><a href="#tickRainParticles(net.minecraft.client.multiplayer.ClientLevel,net.minecraft.client.Camera,int,net.minecraft.server.level.ParticleStatus,int)" tabindex="0">tickRainParticles(ClientLevel, Camera, int, ParticleStatus, int)</a></li>
-<li><a href="#getPrecipitationAt(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" tabindex="0">getPrecipitationAt(Level, BlockPos)</a></li>
 </ol>
 </li>
 </ol>
@@ -124,48 +104,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final float[]</code></div>
-<div class="col-second even-row-color"><code><a href="#columnSizeX" class="member-name-link">columnSizeX</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final float[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#columnSizeZ" class="member-name-link">columnSizeZ</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#HALF_RAIN_TABLE_SIZE" class="member-name-link">HALF_RAIN_TABLE_SIZE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#INDICES_PER_COLUMN" class="member-name-link">INDICES_PER_COLUMN</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final <a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second even-row-color"><code><a href="#RAIN_LOCATION" class="member-name-link">RAIN_LOCATION</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#RAIN_PARTICLES_PER_BLOCK" class="member-name-link">RAIN_PARTICLES_PER_BLOCK</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#RAIN_RADIUS" class="member-name-link">RAIN_RADIUS</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#RAIN_TABLE_SIZE" class="member-name-link">RAIN_TABLE_SIZE</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#rainSoundTime" class="member-name-link">rainSoundTime</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SNOW_LOCATION" class="member-name-link">SNOW_LOCATION</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -190,26 +128,6 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="WeatherEffectRenderer.ColumnInstance.html" title="class in net.minecraft.client.renderer">WeatherEffectRenderer.ColumnInstance</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createRainColumnInstance(net.minecraft.util.RandomSource,int,int,int,int,int,int,float)" class="member-name-link">createRainColumnInstance</a><wbr>(<a href="../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
- int&nbsp;ticks,
- int&nbsp;x,
- int&nbsp;bottomY,
- int&nbsp;topY,
- int&nbsp;z,
- int&nbsp;lightCoords,
- float&nbsp;partialTicks)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="WeatherEffectRenderer.ColumnInstance.html" title="class in net.minecraft.client.renderer">WeatherEffectRenderer.ColumnInstance</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSnowColumnInstance(net.minecraft.util.RandomSource,int,int,int,int,int,int,float)" class="member-name-link">createSnowColumnInstance</a><wbr>(<a href="../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
- int&nbsp;ticks,
- int&nbsp;x,
- int&nbsp;bottomY,
- int&nbsp;topY,
- int&nbsp;z,
- int&nbsp;lightCoords,
- float&nbsp;partialTicks)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extractRenderState(net.minecraft.world.level.Level,int,float,net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState)" class="member-name-link">extractRenderState</a><wbr>(<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
  int&nbsp;ticks,
@@ -217,184 +135,38 @@ loadScripts(document, 'script');</script>
  <a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos,
  <a href="state/level/WeatherRenderState.html" title="class in net.minecraft.client.renderer.state.level">WeatherRenderState</a>&nbsp;renderState)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="../../world/level/biome/Biome.Precipitation.html" title="enum class in net.minecraft.world.level.biome">Biome.Precipitation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPrecipitationAt(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)" class="member-name-link">getPrecipitationAt</a><wbr>(<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#render(net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState)" class="member-name-link">render</a><wbr>(<a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#render(net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState)" class="member-name-link">render</a><wbr>(<a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos,
  <a href="state/level/WeatherRenderState.html" title="class in net.minecraft.client.renderer.state.level">WeatherRenderState</a>&nbsp;renderState)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">Neo: use <a href="#render(net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState,net.minecraft.client.renderer.state.level.LevelRenderState)"><code>render(Vec3, WeatherRenderState, net.minecraft.client.renderer.state.level.LevelRenderState)</code></a> instead</div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState,net.minecraft.client.renderer.state.level.LevelRenderState)" class="member-name-link">render</a><wbr>(<a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState,net.minecraft.client.renderer.state.level.LevelRenderState)" class="member-name-link">render</a><wbr>(<a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos,
  <a href="state/level/WeatherRenderState.html" title="class in net.minecraft.client.renderer.state.level">WeatherRenderState</a>&nbsp;renderState,
  @Nullable <a href="state/level/LevelRenderState.html" title="class in net.minecraft.client.renderer.state.level">LevelRenderState</a>&nbsp;levelRenderState)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderInstances(com.mojang.blaze3d.vertex.VertexConsumer,java.util.List,net.minecraft.world.phys.Vec3,float,int,float)" class="member-name-link">renderInstances</a><wbr>(<a href="../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&nbsp;builder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="WeatherEffectRenderer.ColumnInstance.html" title="class in net.minecraft.client.renderer">WeatherEffectRenderer.ColumnInstance</a>&gt;&nbsp;columns,
- <a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos,
- float&nbsp;maxAlpha,
- int&nbsp;radius,
- float&nbsp;intensity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderWeather(com.mojang.blaze3d.systems.RenderPass,net.minecraft.client.renderer.texture.AbstractTexture,int,int)" class="member-name-link">renderWeather</a><wbr>(<a href="../../../../com/mojang/blaze3d/systems/RenderPass.html" title="class in com.mojang.blaze3d.systems">RenderPass</a>&nbsp;renderPass,
- <a href="texture/AbstractTexture.html" title="class in net.minecraft.client.renderer.texture">AbstractTexture</a>&nbsp;texture,
- int&nbsp;startColumn,
- int&nbsp;columnCount)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRainParticles(net.minecraft.client.multiplayer.ClientLevel,net.minecraft.client.Camera,int,net.minecraft.server.level.ParticleStatus,int)" class="member-name-link">tickRainParticles</a><wbr>(<a href="../multiplayer/ClientLevel.html" title="class in net.minecraft.client.multiplayer">ClientLevel</a>&nbsp;level,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRainParticles(net.minecraft.client.multiplayer.ClientLevel,net.minecraft.client.Camera,int,net.minecraft.server.level.ParticleStatus,int)" class="member-name-link">tickRainParticles</a><wbr>(<a href="../multiplayer/ClientLevel.html" title="class in net.minecraft.client.multiplayer">ClientLevel</a>&nbsp;level,
  <a href="../Camera.html" title="class in net.minecraft.client">Camera</a>&nbsp;camera,
  int&nbsp;ticks,
  <a href="../../server/level/ParticleStatus.html" title="enum class in net.minecraft.server.level">ParticleStatus</a>&nbsp;particleStatus,
  int&nbsp;weatherRadius)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="RAIN_PARTICLES_PER_BLOCK">
-<h3>RAIN_PARTICLES_PER_BLOCK</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">RAIN_PARTICLES_PER_BLOCK</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.client.renderer.WeatherEffectRenderer.RAIN_PARTICLES_PER_BLOCK">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="RAIN_RADIUS">
-<h3>RAIN_RADIUS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">RAIN_RADIUS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.client.renderer.WeatherEffectRenderer.RAIN_RADIUS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="RAIN_LOCATION">
-<h3>RAIN_LOCATION</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></span>&nbsp;<span class="element-name">RAIN_LOCATION</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SNOW_LOCATION">
-<h3>SNOW_LOCATION</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a></span>&nbsp;<span class="element-name">SNOW_LOCATION</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="RAIN_TABLE_SIZE">
-<h3>RAIN_TABLE_SIZE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">RAIN_TABLE_SIZE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.client.renderer.WeatherEffectRenderer.RAIN_TABLE_SIZE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="HALF_RAIN_TABLE_SIZE">
-<h3>HALF_RAIN_TABLE_SIZE</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">HALF_RAIN_TABLE_SIZE</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.client.renderer.WeatherEffectRenderer.HALF_RAIN_TABLE_SIZE">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="INDICES_PER_COLUMN">
-<h3>INDICES_PER_COLUMN</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">INDICES_PER_COLUMN</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.client.renderer.WeatherEffectRenderer.INDICES_PER_COLUMN">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="rainSoundTime">
-<h3>rainSoundTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">rainSoundTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="columnSizeX">
-<h3>columnSizeX</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float[]</span>&nbsp;<span class="element-name">columnSizeX</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="columnSizeZ">
-<h3>columnSizeZ</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float[]</span>&nbsp;<span class="element-name">columnSizeZ</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -429,17 +201,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="renderWeather(com.mojang.blaze3d.systems.RenderPass,net.minecraft.client.renderer.texture.AbstractTexture,int,int)">
-<h3>renderWeather</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">renderWeather</span><wbr><span class="parameters">(<a href="../../../../com/mojang/blaze3d/systems/RenderPass.html" title="class in com.mojang.blaze3d.systems">RenderPass</a>&nbsp;renderPass,
- <a href="texture/AbstractTexture.html" title="class in net.minecraft.client.renderer.texture">AbstractTexture</a>&nbsp;texture,
- int&nbsp;startColumn,
- int&nbsp;columnCount)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="render(net.minecraft.world.phys.Vec3,net.minecraft.client.renderer.state.level.WeatherRenderState)">
 <h3>render</h3>
 <div class="horizontal-scroll">
@@ -463,49 +224,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="createRainColumnInstance(net.minecraft.util.RandomSource,int,int,int,int,int,int,float)">
-<h3>createRainColumnInstance</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="WeatherEffectRenderer.ColumnInstance.html" title="class in net.minecraft.client.renderer">WeatherEffectRenderer.ColumnInstance</a></span>&nbsp;<span class="element-name">createRainColumnInstance</span><wbr><span class="parameters">(<a href="../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
- int&nbsp;ticks,
- int&nbsp;x,
- int&nbsp;bottomY,
- int&nbsp;topY,
- int&nbsp;z,
- int&nbsp;lightCoords,
- float&nbsp;partialTicks)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createSnowColumnInstance(net.minecraft.util.RandomSource,int,int,int,int,int,int,float)">
-<h3>createSnowColumnInstance</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="WeatherEffectRenderer.ColumnInstance.html" title="class in net.minecraft.client.renderer">WeatherEffectRenderer.ColumnInstance</a></span>&nbsp;<span class="element-name">createSnowColumnInstance</span><wbr><span class="parameters">(<a href="../../util/RandomSource.html" title="interface in net.minecraft.util">RandomSource</a>&nbsp;random,
- int&nbsp;ticks,
- int&nbsp;x,
- int&nbsp;bottomY,
- int&nbsp;topY,
- int&nbsp;z,
- int&nbsp;lightCoords,
- float&nbsp;partialTicks)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="renderInstances(com.mojang.blaze3d.vertex.VertexConsumer,java.util.List,net.minecraft.world.phys.Vec3,float,int,float)">
-<h3>renderInstances</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">renderInstances</span><wbr><span class="parameters">(<a href="../../../../com/mojang/blaze3d/vertex/VertexConsumer.html" title="interface in com.mojang.blaze3d.vertex">VertexConsumer</a>&nbsp;builder,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="WeatherEffectRenderer.ColumnInstance.html" title="class in net.minecraft.client.renderer">WeatherEffectRenderer.ColumnInstance</a>&gt;&nbsp;columns,
- <a href="../../world/phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a>&nbsp;cameraPos,
- float&nbsp;maxAlpha,
- int&nbsp;radius,
- float&nbsp;intensity)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="tickRainParticles(net.minecraft.client.multiplayer.ClientLevel,net.minecraft.client.Camera,int,net.minecraft.server.level.ParticleStatus,int)">
 <h3>tickRainParticles</h3>
 <div class="horizontal-scroll">
@@ -514,15 +232,6 @@ loadScripts(document, 'script');</script>
  int&nbsp;ticks,
  <a href="../../server/level/ParticleStatus.html" title="enum class in net.minecraft.server.level">ParticleStatus</a>&nbsp;particleStatus,
  int&nbsp;weatherRadius)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getPrecipitationAt(net.minecraft.world.level.Level,net.minecraft.core.BlockPos)">
-<h3>getPrecipitationAt</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../world/level/biome/Biome.Precipitation.html" title="enum class in net.minecraft.world.level.biome">Biome.Precipitation</a></span>&nbsp;<span class="element-name">getPrecipitationAt</span><wbr><span class="parameters">(<a href="../../world/level/Level.html" title="class in net.minecraft.world.level">Level</a>&nbsp;level,
- <a href="../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos)</span></div>
 </div>
 </section>
 </li>

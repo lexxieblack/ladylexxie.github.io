@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>WeightedList (NeoForge 26.1)</title>
+<title>WeightedList (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.util.random, class: WeightedList">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/WeightedList.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,22 +55,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#FLAT_THRESHOLD" tabindex="0">FLAT_THRESHOLD</a></li>
-<li><a href="#totalWeight" tabindex="0">totalWeight</a></li>
-<li><a href="#items" tabindex="0">items</a></li>
-<li><a href="#selector" tabindex="0">selector</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(java.util.List)" tabindex="0">WeightedList(List)</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#of()" tabindex="0">of()</a></li>
@@ -83,10 +68,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#getRandom(net.minecraft.util.RandomSource)" tabindex="0">getRandom(RandomSource)</a></li>
 <li><a href="#getRandomOrThrow(net.minecraft.util.RandomSource)" tabindex="0">getRandomOrThrow(RandomSource)</a></li>
 <li><a href="#unwrap()" tabindex="0">unwrap()</a></li>
-<li><a href="#entryToListCodec(com.mojang.serialization.Codec)" tabindex="0">entryToListCodec(Codec)</a></li>
 <li><a href="#codec(com.mojang.serialization.Codec)" tabindex="0">codec(Codec)</a></li>
 <li><a href="#codec(com.mojang.serialization.MapCodec)" tabindex="0">codec(MapCodec)</a></li>
-<li><a href="#entryToNonEmptyListCodec(com.mojang.serialization.Codec)" tabindex="0">entryToNonEmptyListCodec(Codec)</a></li>
 <li><a href="#nonEmptyCodec(com.mojang.serialization.Codec)" tabindex="0">nonEmptyCodec(Codec)</a></li>
 <li><a href="#nonEmptyCodec(com.mojang.serialization.MapCodec)" tabindex="0">nonEmptyCodec(MapCodec)</a></li>
 <li><a href="#streamCodec(net.minecraft.network.codec.StreamCodec)" tabindex="0">streamCodec(StreamCodec)</a></li>
@@ -126,54 +109,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="WeightedList.Builder.html" class="type-name-link" title="class in net.minecraft.util.random">WeightedList.Builder</a>&lt;<a href="WeightedList.Builder.html#type-param-E" title="type parameter in WeightedList.Builder">E</a>&gt;</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="WeightedList.Compact.html" class="type-name-link" title="class in net.minecraft.util.random">WeightedList.Compact</a>&lt;<a href="WeightedList.Compact.html#type-param-E" title="type parameter in WeightedList.Compact">E</a>&gt;</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="WeightedList.Flat.html" class="type-name-link" title="class in net.minecraft.util.random">WeightedList.Flat</a>&lt;<a href="WeightedList.Flat.html#type-param-E" title="type parameter in WeightedList.Flat">E</a>&gt;</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static interface&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="WeightedList.Selector.html" class="type-name-link" title="interface in net.minecraft.util.random">WeightedList.Selector</a>&lt;<a href="WeightedList.Selector.html#type-param-E" title="type parameter in WeightedList.Selector">E</a>&gt;</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#FLAT_THRESHOLD" class="member-name-link">FLAT_THRESHOLD</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;<a href="#type-param-E" title="type parameter in WeightedList">E</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#items" class="member-name-link">items</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final @Nullable <a href="WeightedList.Selector.html" title="interface in net.minecraft.util.random">WeightedList.Selector</a><wbr>&lt;<a href="#type-param-E" title="type parameter in WeightedList">E</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#selector" class="member-name-link">selector</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#totalWeight" class="member-name-link">totalWeight</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.List)" class="member-name-link">WeightedList</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;<a href="#type-param-E" title="type parameter in WeightedList">E</a>&gt;&gt;&nbsp;items)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -200,12 +135,6 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#contains(E)" class="member-name-link">contains</a><wbr>(<a href="#type-param-E" title="type parameter in WeightedList">E</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;E&gt;&nbsp;<a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a>&lt;E&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#entryToListCodec(com.mojang.serialization.Codec)" class="member-name-link">entryToListCodec</a><wbr>(<a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;E&gt;&gt;&nbsp;weightedElementCodec)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;E&gt;&nbsp;<a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a><wbr>&lt;<a href="WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a>&lt;E&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#entryToNonEmptyListCodec(com.mojang.serialization.Codec)" class="member-name-link">entryToNonEmptyListCodec</a><wbr>(<a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;E&gt;&gt;&nbsp;weightedElementCodec)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -242,7 +171,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;E&gt;&nbsp;<a href="WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a><wbr>&lt;E&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(net.minecraft.util.random.Weighted...)" class="member-name-link">of</a><wbr>(<a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;E&gt;...&nbsp;items)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;E, B extends io.netty.buffer.ByteBuf&gt;<br><a href="../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;B, <a href="WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a>&lt;E&gt;&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;E, B extends <a href="https://javadoc.io/doc/io.netty/netty-buffer/4.2.7.Final/io/netty/buffer/ByteBuf.html" title="class or interface in io.netty.buffer" class="external-link">ByteBuf</a>&gt;<br><a href="../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a><wbr>&lt;B, <a href="WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a>&lt;E&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#streamCodec(net.minecraft.network.codec.StreamCodec)" class="member-name-link">streamCodec</a><wbr>(<a href="../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a>&lt;B,<wbr>E&gt;&nbsp;elementCodec)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;<a href="#type-param-E" title="type parameter in WeightedList">E</a>&gt;&gt;</code></div>
@@ -253,77 +182,13 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="FLAT_THRESHOLD">
-<h3>FLAT_THRESHOLD</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">FLAT_THRESHOLD</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.util.random.WeightedList.FLAT_THRESHOLD">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="totalWeight">
-<h3>totalWeight</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">totalWeight</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="items">
-<h3>items</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;<a href="#type-param-E" title="type parameter in WeightedList">E</a>&gt;&gt;</span>&nbsp;<span class="element-name">items</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="selector">
-<h3>selector</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">@Nullable <a href="WeightedList.Selector.html" title="interface in net.minecraft.util.random">WeightedList.Selector</a>&lt;<a href="#type-param-E" title="type parameter in WeightedList">E</a>&gt;</span>&nbsp;<span class="element-name">selector</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(java.util.List)">
-<h3>WeightedList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">WeightedList</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;<a href="#type-param-E" title="type parameter in WeightedList">E</a>&gt;&gt;&nbsp;items)</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -411,14 +276,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="entryToListCodec(com.mojang.serialization.Codec)">
-<h3>entryToListCodec</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;E&gt;</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a>&lt;E&gt;&gt;</span>&nbsp;<span class="element-name">entryToListCodec</span><wbr><span class="parameters">(<a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;E&gt;&gt;&nbsp;weightedElementCodec)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="codec(com.mojang.serialization.Codec)">
 <h3>codec</h3>
 <div class="horizontal-scroll">
@@ -431,14 +288,6 @@ loadScripts(document, 'script');</script>
 <h3>codec</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;E&gt;</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a>&lt;E&gt;&gt;</span>&nbsp;<span class="element-name">codec</span><wbr><span class="parameters">(<a href="../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a>&lt;E&gt;&nbsp;elementCodec)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="entryToNonEmptyListCodec(com.mojang.serialization.Codec)">
-<h3>entryToNonEmptyListCodec</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;E&gt;</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a>&lt;E&gt;&gt;</span>&nbsp;<span class="element-name">entryToNonEmptyListCodec</span><wbr><span class="parameters">(<a href="../../../../com/mojang/serialization/Codec.html" title="interface in com.mojang.serialization">Codec</a>&lt;<a href="Weighted.html" title="class in net.minecraft.util.random">Weighted</a>&lt;E&gt;&gt;&nbsp;weightedElementCodec)</span></div>
 </div>
 </section>
 </li>
@@ -462,7 +311,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="streamCodec(net.minecraft.network.codec.StreamCodec)">
 <h3>streamCodec</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;E, B extends io.netty.buffer.ByteBuf&gt;</span>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;E, B extends <a href="https://javadoc.io/doc/io.netty/netty-buffer/4.2.7.Final/io/netty/buffer/ByteBuf.html" title="class or interface in io.netty.buffer" class="external-link">ByteBuf</a>&gt;</span>
 <span class="return-type"><a href="../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a>&lt;B, <a href="WeightedList.html" title="class in net.minecraft.util.random">WeightedList</a>&lt;E&gt;&gt;</span>&nbsp;<span class="element-name">streamCodec</span><wbr><span class="parameters">(<a href="../../network/codec/StreamCodec.html" title="interface in net.minecraft.network.codec">StreamCodec</a>&lt;B,<wbr>E&gt;&nbsp;elementCodec)</span></div>
 </div>
 </section>

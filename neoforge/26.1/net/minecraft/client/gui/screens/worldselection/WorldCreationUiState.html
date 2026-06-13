@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>WorldCreationUiState (NeoForge 26.1)</title>
+<title>WorldCreationUiState (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.gui.screens.worldselection, class: WorldCreationUiState">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/WorldCreationUiState.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -55,29 +55,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#DEFAULT_WORLD_NAME" tabindex="0">DEFAULT_WORLD_NAME</a></li>
-<li><a href="#listeners" tabindex="0">listeners</a></li>
-<li><a href="#name" tabindex="0">name</a></li>
-<li><a href="#gameMode" tabindex="0">gameMode</a></li>
-<li><a href="#difficulty" tabindex="0">difficulty</a></li>
-<li><a href="#allowCommands" tabindex="0">allowCommands</a></li>
-<li><a href="#seed" tabindex="0">seed</a></li>
-<li><a href="#generateStructures" tabindex="0">generateStructures</a></li>
-<li><a href="#bonusChest" tabindex="0">bonusChest</a></li>
-<li><a href="#savesFolder" tabindex="0">savesFolder</a></li>
-<li><a href="#targetFolder" tabindex="0">targetFolder</a></li>
-<li><a href="#settings" tabindex="0">settings</a></li>
-<li><a href="#worldType" tabindex="0">worldType</a></li>
-<li><a href="#normalPresetList" tabindex="0">normalPresetList</a></li>
-<li><a href="#altPresetList" tabindex="0">altPresetList</a></li>
-<li><a href="#gameRules" tabindex="0">gameRules</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.nio.file.Path,net.minecraft.client.gui.screens.worldselection.WorldCreationContext,java.util.Optional,java.util.OptionalLong)" tabindex="0">WorldCreationUiState(Path, WorldCreationContext, Optional, OptionalLong)</a></li>
@@ -88,7 +67,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#addListener(java.util.function.Consumer)" tabindex="0">addListener(Consumer)</a></li>
 <li><a href="#onChanged()" tabindex="0">onChanged()</a></li>
 <li><a href="#setName(java.lang.String)" tabindex="0">setName(String)</a></li>
-<li><a href="#findResultFolder(java.lang.String)" tabindex="0">findResultFolder(String)</a></li>
 <li><a href="#getName()" tabindex="0">getName()</a></li>
 <li><a href="#getTargetFolder()" tabindex="0">getTargetFolder()</a></li>
 <li><a href="#setGameMode(net.minecraft.client.gui.screens.worldselection.WorldCreationUiState.SelectedGameMode)" tabindex="0">setGameMode(WorldCreationUiState.SelectedGameMode)</a></li>
@@ -107,16 +85,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#setSettings(net.minecraft.client.gui.screens.worldselection.WorldCreationContext)" tabindex="0">setSettings(WorldCreationContext)</a></li>
 <li><a href="#getSettings()" tabindex="0">getSettings()</a></li>
 <li><a href="#updateDimensions(net.minecraft.client.gui.screens.worldselection.WorldCreationContext.DimensionsUpdater)" tabindex="0">updateDimensions(WorldCreationContext.DimensionsUpdater)</a></li>
-<li><a href="#tryUpdateDataConfiguration(net.minecraft.world.level.WorldDataConfiguration)" tabindex="0">tryUpdateDataConfiguration(WorldDataConfiguration)</a></li>
 <li><a href="#isDebug()" tabindex="0">isDebug()</a></li>
 <li><a href="#setWorldType(net.minecraft.client.gui.screens.worldselection.WorldCreationUiState.WorldTypeEntry)" tabindex="0">setWorldType(WorldCreationUiState.WorldTypeEntry)</a></li>
 <li><a href="#getWorldType()" tabindex="0">getWorldType()</a></li>
 <li><a href="#getPresetEditor()" tabindex="0">getPresetEditor()</a></li>
 <li><a href="#getNormalPresetList()" tabindex="0">getNormalPresetList()</a></li>
 <li><a href="#getAltPresetList()" tabindex="0">getAltPresetList()</a></li>
-<li><a href="#updatePresetLists()" tabindex="0">updatePresetLists()</a></li>
-<li><a href="#findPreset(net.minecraft.client.gui.screens.worldselection.WorldCreationContext,java.util.Optional)" tabindex="0">findPreset(WorldCreationContext, Optional)</a></li>
-<li><a href="#getNonEmptyList(net.minecraft.core.Registry,net.minecraft.tags.TagKey)" tabindex="0">getNonEmptyList(Registry, TagKey)</a></li>
 <li><a href="#setGameRules(net.minecraft.world.level.gamerules.GameRules)" tabindex="0">setGameRules(GameRules)</a></li>
 <li><a href="#getGameRules()" tabindex="0">getGameRules()</a></li>
 </ol>
@@ -158,66 +132,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></code></div>
-<div class="col-second even-row-color"><code><a href="#allowCommands" class="member-name-link">allowCommands</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#altPresetList" class="member-name-link">altPresetList</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#bonusChest" class="member-name-link">bonusChest</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final <a href="../../../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#DEFAULT_WORLD_NAME" class="member-name-link">DEFAULT_WORLD_NAME</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="../../../../world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a></code></div>
-<div class="col-second even-row-color"><code><a href="#difficulty" class="member-name-link">difficulty</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="WorldCreationUiState.SelectedGameMode.html" title="enum class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.SelectedGameMode</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#gameMode" class="member-name-link">gameMode</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="../../../../world/level/gamerules/GameRules.html" title="class in net.minecraft.world.level.gamerules">GameRules</a></code></div>
-<div class="col-second even-row-color"><code><a href="#gameRules" class="member-name-link">gameRules</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#generateStructures" class="member-name-link">generateStructures</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="WorldCreationUiState.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#listeners" class="member-name-link">listeners</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#name" class="member-name-link">name</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#normalPresetList" class="member-name-link">normalPresetList</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#savesFolder" class="member-name-link">savesFolder</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#seed" class="member-name-link">seed</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="WorldCreationContext.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationContext</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#settings" class="member-name-link">settings</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#targetFolder" class="member-name-link">targetFolder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#worldType" class="member-name-link">worldType</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -239,7 +153,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -247,13 +161,6 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addListener(java.util.function.Consumer)" class="member-name-link">addListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="WorldCreationUiState.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState</a>&gt;&nbsp;action)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../../world/level/levelgen/presets/WorldPreset.html" title="class in net.minecraft.world.level.levelgen.presets">WorldPreset</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findPreset(net.minecraft.client.gui.screens.worldselection.WorldCreationContext,java.util.Optional)" class="member-name-link">findPreset</a><wbr>(<a href="WorldCreationContext.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationContext</a>&nbsp;settings,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../../world/level/levelgen/presets/WorldPreset.html" title="class in net.minecraft.world.level.levelgen.presets">WorldPreset</a>&gt;&gt;&nbsp;preset)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findResultFolder(java.lang.String)" class="member-name-link">findResultFolder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAltPresetList()" class="member-name-link">getAltPresetList</a>()</code></div>
@@ -270,233 +177,87 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getNonEmptyList(net.minecraft.core.Registry,net.minecraft.tags.TagKey)" class="member-name-link">getNonEmptyList</a><wbr>(<a href="../../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="../../../../world/level/levelgen/presets/WorldPreset.html" title="class in net.minecraft.world.level.levelgen.presets">WorldPreset</a>&gt;&nbsp;presetRegistry,
- <a href="../../../../tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;<a href="../../../../world/level/levelgen/presets/WorldPreset.html" title="class in net.minecraft.world.level.levelgen.presets">WorldPreset</a>&gt;&nbsp;id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNormalPresetList()" class="member-name-link">getNormalPresetList</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="PresetEditor.html" title="interface in net.minecraft.client.gui.screens.worldselection">PresetEditor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPresetEditor()" class="member-name-link">getPresetEditor</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNormalPresetList()" class="member-name-link">getNormalPresetList</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSeed()" class="member-name-link">getSeed</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="PresetEditor.html" title="interface in net.minecraft.client.gui.screens.worldselection">PresetEditor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPresetEditor()" class="member-name-link">getPresetEditor</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="WorldCreationContext.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationContext</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSettings()" class="member-name-link">getSettings</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSeed()" class="member-name-link">getSeed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetFolder()" class="member-name-link">getTargetFolder</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="WorldCreationContext.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationContext</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSettings()" class="member-name-link">getSettings</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorldType()" class="member-name-link">getWorldType</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTargetFolder()" class="member-name-link">getTargetFolder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAllowCommands()" class="member-name-link">isAllowCommands</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWorldType()" class="member-name-link">getWorldType</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBonusChest()" class="member-name-link">isBonusChest</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAllowCommands()" class="member-name-link">isAllowCommands</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDebug()" class="member-name-link">isDebug</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBonusChest()" class="member-name-link">isBonusChest</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGenerateStructures()" class="member-name-link">isGenerateStructures</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDebug()" class="member-name-link">isDebug</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHardcore()" class="member-name-link">isHardcore</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isGenerateStructures()" class="member-name-link">isGenerateStructures</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onChanged()" class="member-name-link">onChanged</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHardcore()" class="member-name-link">isHardcore</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAllowCommands(boolean)" class="member-name-link">setAllowCommands</a><wbr>(boolean&nbsp;allowCommands)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onChanged()" class="member-name-link">onChanged</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBonusChest(boolean)" class="member-name-link">setBonusChest</a><wbr>(boolean&nbsp;bonusChest)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAllowCommands(boolean)" class="member-name-link">setAllowCommands</a><wbr>(boolean&nbsp;allowCommands)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDifficulty(net.minecraft.world.Difficulty)" class="member-name-link">setDifficulty</a><wbr>(<a href="../../../../world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a>&nbsp;difficulty)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBonusChest(boolean)" class="member-name-link">setBonusChest</a><wbr>(boolean&nbsp;bonusChest)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGameMode(net.minecraft.client.gui.screens.worldselection.WorldCreationUiState.SelectedGameMode)" class="member-name-link">setGameMode</a><wbr>(<a href="WorldCreationUiState.SelectedGameMode.html" title="enum class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.SelectedGameMode</a>&nbsp;gameMode)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDifficulty(net.minecraft.world.Difficulty)" class="member-name-link">setDifficulty</a><wbr>(<a href="../../../../world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a>&nbsp;difficulty)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGameRules(net.minecraft.world.level.gamerules.GameRules)" class="member-name-link">setGameRules</a><wbr>(<a href="../../../../world/level/gamerules/GameRules.html" title="class in net.minecraft.world.level.gamerules">GameRules</a>&nbsp;gameRules)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGameMode(net.minecraft.client.gui.screens.worldselection.WorldCreationUiState.SelectedGameMode)" class="member-name-link">setGameMode</a><wbr>(<a href="WorldCreationUiState.SelectedGameMode.html" title="enum class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.SelectedGameMode</a>&nbsp;gameMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGenerateStructures(boolean)" class="member-name-link">setGenerateStructures</a><wbr>(boolean&nbsp;generateStructures)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGameRules(net.minecraft.world.level.gamerules.GameRules)" class="member-name-link">setGameRules</a><wbr>(<a href="../../../../world/level/gamerules/GameRules.html" title="class in net.minecraft.world.level.gamerules">GameRules</a>&nbsp;gameRules)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setName(java.lang.String)" class="member-name-link">setName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGenerateStructures(boolean)" class="member-name-link">setGenerateStructures</a><wbr>(boolean&nbsp;generateStructures)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSeed(java.lang.String)" class="member-name-link">setSeed</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;seed)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setName(java.lang.String)" class="member-name-link">setName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSettings(net.minecraft.client.gui.screens.worldselection.WorldCreationContext)" class="member-name-link">setSettings</a><wbr>(<a href="WorldCreationContext.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationContext</a>&nbsp;settings)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSeed(java.lang.String)" class="member-name-link">setSeed</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;seed)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWorldType(net.minecraft.client.gui.screens.worldselection.WorldCreationUiState.WorldTypeEntry)" class="member-name-link">setWorldType</a><wbr>(<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&nbsp;worldType)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSettings(net.minecraft.client.gui.screens.worldselection.WorldCreationContext)" class="member-name-link">setSettings</a><wbr>(<a href="WorldCreationContext.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationContext</a>&nbsp;settings)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryUpdateDataConfiguration(net.minecraft.world.level.WorldDataConfiguration)" class="member-name-link">tryUpdateDataConfiguration</a><wbr>(<a href="../../../../world/level/WorldDataConfiguration.html" title="class in net.minecraft.world.level">WorldDataConfiguration</a>&nbsp;newConfig)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWorldType(net.minecraft.client.gui.screens.worldselection.WorldCreationUiState.WorldTypeEntry)" class="member-name-link">setWorldType</a><wbr>(<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&nbsp;worldType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateDimensions(net.minecraft.client.gui.screens.worldselection.WorldCreationContext.DimensionsUpdater)" class="member-name-link">updateDimensions</a><wbr>(<a href="WorldCreationContext.DimensionsUpdater.html" title="interface in net.minecraft.client.gui.screens.worldselection">WorldCreationContext.DimensionsUpdater</a>&nbsp;modifier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePresetLists()" class="member-name-link">updatePresetLists</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="DEFAULT_WORLD_NAME">
-<h3>DEFAULT_WORLD_NAME</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="../../../../network/chat/Component.html" title="interface in net.minecraft.network.chat">Component</a></span>&nbsp;<span class="element-name">DEFAULT_WORLD_NAME</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="listeners">
-<h3>listeners</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="WorldCreationUiState.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState</a>&gt;&gt;</span>&nbsp;<span class="element-name">listeners</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="name">
-<h3>name</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="gameMode">
-<h3>gameMode</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="WorldCreationUiState.SelectedGameMode.html" title="enum class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.SelectedGameMode</a></span>&nbsp;<span class="element-name">gameMode</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="difficulty">
-<h3>difficulty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../world/Difficulty.html" title="enum class in net.minecraft.world">Difficulty</a></span>&nbsp;<span class="element-name">difficulty</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="allowCommands">
-<h3>allowCommands</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></span>&nbsp;<span class="element-name">allowCommands</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="seed">
-<h3>seed</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">seed</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="generateStructures">
-<h3>generateStructures</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">generateStructures</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="bonusChest">
-<h3>bonusChest</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">bonusChest</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="savesFolder">
-<h3>savesFolder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></span>&nbsp;<span class="element-name">savesFolder</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="targetFolder">
-<h3>targetFolder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">targetFolder</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="settings">
-<h3>settings</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="WorldCreationContext.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationContext</a></span>&nbsp;<span class="element-name">settings</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="worldType">
-<h3>worldType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a></span>&nbsp;<span class="element-name">worldType</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="normalPresetList">
-<h3>normalPresetList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;</span>&nbsp;<span class="element-name">normalPresetList</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="altPresetList">
-<h3>altPresetList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;</span>&nbsp;<span class="element-name">altPresetList</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="gameRules">
-<h3>gameRules</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../../../../world/level/gamerules/GameRules.html" title="class in net.minecraft.world.level.gamerules">GameRules</a></span>&nbsp;<span class="element-name">gameRules</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -542,14 +303,6 @@ loadScripts(document, 'script');</script>
 <h3>setName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setName</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="findResultFolder(java.lang.String)">
-<h3>findResultFolder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">findResultFolder</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 </div>
 </section>
 </li>
@@ -698,14 +451,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="tryUpdateDataConfiguration(net.minecraft.world.level.WorldDataConfiguration)">
-<h3>tryUpdateDataConfiguration</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">tryUpdateDataConfiguration</span><wbr><span class="parameters">(<a href="../../../../world/level/WorldDataConfiguration.html" title="class in net.minecraft.world.level">WorldDataConfiguration</a>&nbsp;newConfig)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="isDebug()">
 <h3>isDebug</h3>
 <div class="horizontal-scroll">
@@ -750,32 +495,6 @@ loadScripts(document, 'script');</script>
 <h3>getAltPresetList</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;</span>&nbsp;<span class="element-name">getAltPresetList</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updatePresetLists()">
-<h3>updatePresetLists</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updatePresetLists</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="findPreset(net.minecraft.client.gui.screens.worldselection.WorldCreationContext,java.util.Optional)">
-<h3>findPreset</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../../core/Holder.html" title="interface in net.minecraft.core">Holder</a>&lt;<a href="../../../../world/level/levelgen/presets/WorldPreset.html" title="class in net.minecraft.world.level.levelgen.presets">WorldPreset</a>&gt;&gt;</span>&nbsp;<span class="element-name">findPreset</span><wbr><span class="parameters">(<a href="WorldCreationContext.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationContext</a>&nbsp;settings,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;<a href="../../../../world/level/levelgen/presets/WorldPreset.html" title="class in net.minecraft.world.level.levelgen.presets">WorldPreset</a>&gt;&gt;&nbsp;preset)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getNonEmptyList(net.minecraft.core.Registry,net.minecraft.tags.TagKey)">
-<h3>getNonEmptyList</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="WorldCreationUiState.WorldTypeEntry.html" title="class in net.minecraft.client.gui.screens.worldselection">WorldCreationUiState.WorldTypeEntry</a>&gt;&gt;</span>&nbsp;<span class="element-name">getNonEmptyList</span><wbr><span class="parameters">(<a href="../../../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="../../../../world/level/levelgen/presets/WorldPreset.html" title="class in net.minecraft.world.level.levelgen.presets">WorldPreset</a>&gt;&nbsp;presetRegistry,
- <a href="../../../../tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;<a href="../../../../world/level/levelgen/presets/WorldPreset.html" title="class in net.minecraft.world.level.levelgen.presets">WorldPreset</a>&gt;&nbsp;id)</span></div>
 </div>
 </section>
 </li>

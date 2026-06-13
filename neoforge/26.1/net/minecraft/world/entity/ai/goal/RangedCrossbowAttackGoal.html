@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>RangedCrossbowAttackGoal (NeoForge 26.1)</title>
+<title>RangedCrossbowAttackGoal (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity.ai.goal, class: RangedCrossbowAttackGoal">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/RangedCrossbowAttackGoal.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,13 +61,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#PATHFINDING_DELAY_RANGE" tabindex="0">PATHFINDING_DELAY_RANGE</a></li>
-<li><a href="#mob" tabindex="0">mob</a></li>
-<li><a href="#crossbowState" tabindex="0">crossbowState</a></li>
-<li><a href="#speedModifier" tabindex="0">speedModifier</a></li>
-<li><a href="#attackRadiusSqr" tabindex="0">attackRadiusSqr</a></li>
-<li><a href="#seeTime" tabindex="0">seeTime</a></li>
-<li><a href="#attackDelay" tabindex="0">attackDelay</a></li>
-<li><a href="#updatePathDelay" tabindex="0">updatePathDelay</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -79,13 +72,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#canUse()" tabindex="0">canUse()</a></li>
-<li><a href="#isHoldingCrossbow()" tabindex="0">isHoldingCrossbow()</a></li>
 <li><a href="#canContinueToUse()" tabindex="0">canContinueToUse()</a></li>
-<li><a href="#isValidTarget()" tabindex="0">isValidTarget()</a></li>
 <li><a href="#stop()" tabindex="0">stop()</a></li>
 <li><a href="#requiresUpdateEveryTick()" tabindex="0">requiresUpdateEveryTick()</a></li>
 <li><a href="#tick()" tabindex="0">tick()</a></li>
-<li><a href="#canRun()" tabindex="0">canRun()</a></li>
 </ol>
 </li>
 </ol>
@@ -113,15 +103,6 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static enum&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="RangedCrossbowAttackGoal.CrossbowState.html" class="type-name-link" title="enum class in net.minecraft.world.entity.ai.goal">RangedCrossbowAttackGoal.CrossbowState</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-net.minecraft.world.entity.ai.goal.Goal">Nested classes/interfaces inherited from class&nbsp;<a href="Goal.html#nested-class-summary" title="class in net.minecraft.world.entity.ai.goal">Goal</a></h3>
 <code><a href="Goal.Flag.html" title="enum class in net.minecraft.world.entity.ai.goal">Goal.Flag</a></code></div>
@@ -136,30 +117,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private int</code></div>
-<div class="col-second even-row-color"><code><a href="#attackDelay" class="member-name-link">attackDelay</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final float</code></div>
-<div class="col-second odd-row-color"><code><a href="#attackRadiusSqr" class="member-name-link">attackRadiusSqr</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="RangedCrossbowAttackGoal.CrossbowState.html" title="enum class in net.minecraft.world.entity.ai.goal">RangedCrossbowAttackGoal.CrossbowState</a></code></div>
-<div class="col-second even-row-color"><code><a href="#crossbowState" class="member-name-link">crossbowState</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="#type-param-T" title="type parameter in RangedCrossbowAttackGoal">T</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#mob" class="member-name-link">mob</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></code></div>
 <div class="col-second even-row-color"><code><a href="#PATHFINDING_DELAY_RANGE" class="member-name-link">PATHFINDING_DELAY_RANGE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#seeTime" class="member-name-link">seeTime</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final double</code></div>
-<div class="col-second even-row-color"><code><a href="#speedModifier" class="member-name-link">speedModifier</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private int</code></div>
-<div class="col-second odd-row-color"><code><a href="#updatePathDelay" class="member-name-link">updatePathDelay</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -199,36 +159,27 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canContinueToUse()" class="member-name-link">canContinueToUse</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canRun()" class="member-name-link">canRun</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canUse()" class="member-name-link">canUse</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canUse()" class="member-name-link">canUse</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHoldingCrossbow()" class="member-name-link">isHoldingCrossbow</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValidTarget()" class="member-name-link">isValidTarget</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiresUpdateEveryTick()" class="member-name-link">requiresUpdateEveryTick</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiresUpdateEveryTick()" class="member-name-link">requiresUpdateEveryTick</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tick()" class="member-name-link">tick</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.entity.ai.goal.Goal">Methods inherited from class&nbsp;<a href="Goal.html#method-summary" title="class in net.minecraft.world.entity.ai.goal">Goal</a></h3>
-<code><a href="Goal.html#adjustedTickDelay(int)" title="adjustedTickDelay(int)">adjustedTickDelay</a>, <a href="Goal.html#getFlags()" title="getFlags()">getFlags</a>, <a href="Goal.html#getServerLevel(net.minecraft.world.entity.Entity)" title="getServerLevel(Entity)">getServerLevel</a>, <a href="Goal.html#getServerLevel(net.minecraft.world.level.Level)" title="getServerLevel(Level)">getServerLevel</a>, <a href="Goal.html#isInterruptable()" title="isInterruptable()">isInterruptable</a>, <a href="Goal.html#reducedTickDelay(int)" title="reducedTickDelay(int)">reducedTickDelay</a>, <a href="Goal.html#setFlags(java.util.EnumSet)" title="setFlags(EnumSet)">setFlags</a>, <a href="Goal.html#start()" title="start()">start</a>, <a href="Goal.html#toString()" title="toString()">toString</a></code></div>
+<code><a href="Goal.html#getFlags()" title="getFlags()">getFlags</a>, <a href="Goal.html#isInterruptable()" title="isInterruptable()">isInterruptable</a>, <a href="Goal.html#setFlags(java.util.EnumSet)" title="setFlags(EnumSet)">setFlags</a>, <a href="Goal.html#start()" title="start()">start</a>, <a href="Goal.html#toString()" title="toString()">toString</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -245,62 +196,6 @@ loadScripts(document, 'script');</script>
 <h3>PATHFINDING_DELAY_RANGE</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../util/valueproviders/UniformInt.html" title="class in net.minecraft.util.valueproviders">UniformInt</a></span>&nbsp;<span class="element-name">PATHFINDING_DELAY_RANGE</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="mob">
-<h3>mob</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="#type-param-T" title="type parameter in RangedCrossbowAttackGoal">T</a> extends <a href="../../Mob.html" title="class in net.minecraft.world.entity">Mob</a> &amp; <a href="../../monster/CrossbowAttackMob.html" title="interface in net.minecraft.world.entity.monster">CrossbowAttackMob</a></span>&nbsp;<span class="element-name">mob</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="crossbowState">
-<h3>crossbowState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="RangedCrossbowAttackGoal.CrossbowState.html" title="enum class in net.minecraft.world.entity.ai.goal">RangedCrossbowAttackGoal.CrossbowState</a></span>&nbsp;<span class="element-name">crossbowState</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="speedModifier">
-<h3>speedModifier</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">speedModifier</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="attackRadiusSqr">
-<h3>attackRadiusSqr</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">attackRadiusSqr</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="seeTime">
-<h3>seeTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">seeTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="attackDelay">
-<h3>attackDelay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">attackDelay</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updatePathDelay">
-<h3>updatePathDelay</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">updatePathDelay</span></div>
 </div>
 </section>
 </li>
@@ -353,14 +248,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="isHoldingCrossbow()">
-<h3>isHoldingCrossbow</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHoldingCrossbow</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="canContinueToUse()">
 <h3>canContinueToUse</h3>
 <div class="horizontal-scroll">
@@ -369,14 +256,6 @@ loadScripts(document, 'script');</script>
 <dt>Overrides:</dt>
 <dd><code><a href="Goal.html#canContinueToUse()">canContinueToUse</a></code>&nbsp;in class&nbsp;<code><a href="Goal.html" title="class in net.minecraft.world.entity.ai.goal">Goal</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isValidTarget()">
-<h3>isValidTarget</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isValidTarget</span>()</div>
 </div>
 </section>
 </li>
@@ -413,14 +292,6 @@ loadScripts(document, 'script');</script>
 <dt>Overrides:</dt>
 <dd><code><a href="Goal.html#tick()">tick</a></code>&nbsp;in class&nbsp;<code><a href="Goal.html" title="class in net.minecraft.world.entity.ai.goal">Goal</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="canRun()">
-<h3>canRun</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canRun</span>()</div>
 </div>
 </section>
 </li>

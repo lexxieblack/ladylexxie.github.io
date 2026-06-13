@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ConditionalItemModel.Unbaked (NeoForge 26.1)</title>
+<title>ConditionalItemModel.Unbaked (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.renderer.item, class: ConditionalItemModel, record: Unbaked">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ConditionalItemModel.Unbaked.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -61,10 +61,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#transformation" tabindex="0">transformation</a></li>
-<li><a href="#property" tabindex="0">property</a></li>
-<li><a href="#onTrue" tabindex="0">onTrue</a></li>
-<li><a href="#onFalse" tabindex="0">onFalse</a></li>
 <li><a href="#MAP_CODEC" tabindex="0">MAP_CODEC</a></li>
 </ol>
 </li>
@@ -77,8 +73,6 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#type()" tabindex="0">type()</a></li>
 <li><a href="#bake(net.minecraft.client.renderer.item.ItemModel.BakingContext,org.joml.Matrix4fc)" tabindex="0">bake(ItemModel.BakingContext, Matrix4fc)</a></li>
-<li><a href="#adaptProperty(net.minecraft.client.renderer.item.properties.conditional.ConditionalItemModelProperty,net.minecraft.util.RegistryContextSwapper)" tabindex="0">adaptProperty(ConditionalItemModelProperty, RegistryContextSwapper)</a></li>
-<li><a href="#swapContext(T,net.minecraft.util.RegistryContextSwapper,net.minecraft.client.multiplayer.ClientLevel)" tabindex="0">swapContext(T, RegistryContextSwapper, ClientLevel)</a></li>
 <li><a href="#resolveDependencies(net.minecraft.client.resources.model.ResolvableModel.Resolver)" tabindex="0">resolveDependencies(ResolvableModel.Resolver)</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
@@ -140,26 +134,6 @@ implements <a href="ItemModel.Unbaked.html" title="interface in net.minecraft.cl
 <div class="col-first even-row-color"><code>static final <a href="../../../../../com/mojang/serialization/MapCodec.html" title="class in com.mojang.serialization">MapCodec</a><wbr>&lt;<a href="ConditionalItemModel.Unbaked.html" title="class in net.minecraft.client.renderer.item">ConditionalItemModel.Unbaked</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#MAP_CODEC" class="member-name-link">MAP_CODEC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="ItemModel.Unbaked.html" title="interface in net.minecraft.client.renderer.item">ItemModel.Unbaked</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#onFalse" class="member-name-link">onFalse</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">The field for the <code>onFalse</code> record component.</div>
-</div>
-<div class="col-first even-row-color"><code>private final <a href="ItemModel.Unbaked.html" title="interface in net.minecraft.client.renderer.item">ItemModel.Unbaked</a></code></div>
-<div class="col-second even-row-color"><code><a href="#onTrue" class="member-name-link">onTrue</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">The field for the <code>onTrue</code> record component.</div>
-</div>
-<div class="col-first odd-row-color"><code>private final <a href="properties/conditional/ConditionalItemModelProperty.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ConditionalItemModelProperty</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#property" class="member-name-link">property</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">The field for the <code>property</code> record component.</div>
-</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#transformation" class="member-name-link">transformation</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">The field for the <code>transformation</code> record component.</div>
-</div>
 </div>
 </section>
 </li>
@@ -186,53 +160,44 @@ implements <a href="ItemModel.Unbaked.html" title="interface in net.minecraft.cl
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="properties/conditional/ItemModelPropertyTest.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ItemModelPropertyTest</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#adaptProperty(net.minecraft.client.renderer.item.properties.conditional.ConditionalItemModelProperty,net.minecraft.util.RegistryContextSwapper)" class="member-name-link">adaptProperty</a><wbr>(<a href="properties/conditional/ConditionalItemModelProperty.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ConditionalItemModelProperty</a>&nbsp;originalProperty,
- @Nullable <a href="../../../util/RegistryContextSwapper.html" title="interface in net.minecraft.util">RegistryContextSwapper</a>&nbsp;contextSwapper)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemModel.html" title="interface in net.minecraft.client.renderer.item">ItemModel</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bake(net.minecraft.client.renderer.item.ItemModel.BakingContext,org.joml.Matrix4fc)" class="member-name-link">bake</a><wbr>(<a href="ItemModel.BakingContext.html" title="class in net.minecraft.client.renderer.item">ItemModel.BakingContext</a>&nbsp;context,
+ <a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Matrix4fc.html" title="class or interface in org.joml" class="external-link">Matrix4fc</a>&nbsp;transformation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemModel.html" title="interface in net.minecraft.client.renderer.item">ItemModel</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bake(net.minecraft.client.renderer.item.ItemModel.BakingContext,org.joml.Matrix4fc)" class="member-name-link">bake</a><wbr>(<a href="ItemModel.BakingContext.html" title="class in net.minecraft.client.renderer.item">ItemModel.BakingContext</a>&nbsp;context,
- org.joml.Matrix4fc&nbsp;transformation)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemModel.Unbaked.html" title="interface in net.minecraft.client.renderer.item">ItemModel.Unbaked</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onFalse()" class="member-name-link">onFalse</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemModel.Unbaked.html" title="interface in net.minecraft.client.renderer.item">ItemModel.Unbaked</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onFalse()" class="member-name-link">onFalse</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>onFalse</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemModel.Unbaked.html" title="interface in net.minecraft.client.renderer.item">ItemModel.Unbaked</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onTrue()" class="member-name-link">onTrue</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ItemModel.Unbaked.html" title="interface in net.minecraft.client.renderer.item">ItemModel.Unbaked</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onTrue()" class="member-name-link">onTrue</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>onTrue</code> record component.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="properties/conditional/ConditionalItemModelProperty.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ConditionalItemModelProperty</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#property()" class="member-name-link">property</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="properties/conditional/ConditionalItemModelProperty.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ConditionalItemModelProperty</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#property()" class="member-name-link">property</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>property</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveDependencies(net.minecraft.client.resources.model.ResolvableModel.Resolver)" class="member-name-link">resolveDependencies</a><wbr>(<a href="../../resources/model/ResolvableModel.Resolver.html" title="interface in net.minecraft.client.resources.model">ResolvableModel.Resolver</a>&nbsp;resolver)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static &lt;T extends <a href="properties/conditional/ConditionalItemModelProperty.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ConditionalItemModelProperty</a>&gt;<br>T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#swapContext(T,net.minecraft.util.RegistryContextSwapper,net.minecraft.client.multiplayer.ClientLevel)" class="member-name-link">swapContext</a><wbr>(T&nbsp;originalProperty,
- <a href="../../../util/RegistryContextSwapper.html" title="interface in net.minecraft.util">RegistryContextSwapper</a>&nbsp;contextSwapper,
- <a href="../../multiplayer/ClientLevel.html" title="class in net.minecraft.client.multiplayer">ClientLevel</a>&nbsp;context)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveDependencies(net.minecraft.client.resources.model.ResolvableModel.Resolver)" class="member-name-link">resolveDependencies</a><wbr>(<a href="../../resources/model/ResolvableModel.Resolver.html" title="interface in net.minecraft.client.resources.model">ResolvableModel.Resolver</a>&nbsp;resolver)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -251,7 +216,7 @@ implements <a href="ItemModel.Unbaked.html" title="interface in net.minecraft.cl
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -263,42 +228,6 @@ implements <a href="ItemModel.Unbaked.html" title="interface in net.minecraft.cl
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="transformation">
-<h3>transformation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../../../com/mojang/math/Transformation.html" title="class in com.mojang.math">Transformation</a>&gt;</span>&nbsp;<span class="element-name">transformation</span></div>
-<div class="block">The field for the <code>transformation</code> record component.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="property">
-<h3>property</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="properties/conditional/ConditionalItemModelProperty.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ConditionalItemModelProperty</a></span>&nbsp;<span class="element-name">property</span></div>
-<div class="block">The field for the <code>property</code> record component.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onTrue">
-<h3>onTrue</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="ItemModel.Unbaked.html" title="interface in net.minecraft.client.renderer.item">ItemModel.Unbaked</a></span>&nbsp;<span class="element-name">onTrue</span></div>
-<div class="block">The field for the <code>onTrue</code> record component.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="onFalse">
-<h3>onFalse</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="ItemModel.Unbaked.html" title="interface in net.minecraft.client.renderer.item">ItemModel.Unbaked</a></span>&nbsp;<span class="element-name">onFalse</span></div>
-<div class="block">The field for the <code>onFalse</code> record component.</div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="MAP_CODEC">
 <h3>MAP_CODEC</h3>
@@ -359,31 +288,11 @@ implements <a href="ItemModel.Unbaked.html" title="interface in net.minecraft.cl
 <h3>bake</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ItemModel.html" title="interface in net.minecraft.client.renderer.item">ItemModel</a></span>&nbsp;<span class="element-name">bake</span><wbr><span class="parameters">(<a href="ItemModel.BakingContext.html" title="class in net.minecraft.client.renderer.item">ItemModel.BakingContext</a>&nbsp;context,
- org.joml.Matrix4fc&nbsp;transformation)</span></div>
+ <a href="https://javadoc.io/doc/org.joml/joml/1.10.8/org/joml/Matrix4fc.html" title="class or interface in org.joml" class="external-link">Matrix4fc</a>&nbsp;transformation)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ItemModel.Unbaked.html#bake(net.minecraft.client.renderer.item.ItemModel.BakingContext,org.joml.Matrix4fc)">bake</a></code>&nbsp;in interface&nbsp;<code><a href="ItemModel.Unbaked.html" title="interface in net.minecraft.client.renderer.item">ItemModel.Unbaked</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="adaptProperty(net.minecraft.client.renderer.item.properties.conditional.ConditionalItemModelProperty,net.minecraft.util.RegistryContextSwapper)">
-<h3>adaptProperty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="properties/conditional/ItemModelPropertyTest.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ItemModelPropertyTest</a></span>&nbsp;<span class="element-name">adaptProperty</span><wbr><span class="parameters">(<a href="properties/conditional/ConditionalItemModelProperty.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ConditionalItemModelProperty</a>&nbsp;originalProperty,
- @Nullable <a href="../../../util/RegistryContextSwapper.html" title="interface in net.minecraft.util">RegistryContextSwapper</a>&nbsp;contextSwapper)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="swapContext(T,net.minecraft.util.RegistryContextSwapper,net.minecraft.client.multiplayer.ClientLevel)">
-<h3 id="swapContext(net.minecraft.client.renderer.item.properties.conditional.ConditionalItemModelProperty,net.minecraft.util.RegistryContextSwapper,net.minecraft.client.multiplayer.ClientLevel)">swapContext</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="properties/conditional/ConditionalItemModelProperty.html" title="interface in net.minecraft.client.renderer.item.properties.conditional">ConditionalItemModelProperty</a>&gt;</span>
-<span class="return-type">T</span>&nbsp;<span class="element-name">swapContext</span><wbr><span class="parameters">(T&nbsp;originalProperty,
- <a href="../../../util/RegistryContextSwapper.html" title="interface in net.minecraft.util">RegistryContextSwapper</a>&nbsp;contextSwapper,
- <a href="../../multiplayer/ClientLevel.html" title="class in net.minecraft.client.multiplayer">ClientLevel</a>&nbsp;context)</span></div>
 </div>
 </section>
 </li>

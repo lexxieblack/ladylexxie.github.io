@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>SoundEngineExecutor (NeoForge 26.1)</title>
+<title>SoundEngineExecutor (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.client.sounds, class: SoundEngineExecutor">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/SoundEngineExecutor.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -57,12 +57,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#thread" tabindex="0">thread</a></li>
-<li><a href="#shutdown" tabindex="0">shutdown</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">SoundEngineExecutor()</a></li>
@@ -70,13 +64,8 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#createThread()" tabindex="0">createThread()</a></li>
 <li><a href="#wrapRunnable(java.lang.Runnable)" tabindex="0">wrapRunnable(Runnable)</a></li>
 <li><a href="#schedule(java.lang.Runnable)" tabindex="0">schedule(Runnable)</a></li>
-<li><a href="#shouldRun(java.lang.Runnable)" tabindex="0">shouldRun(Runnable)</a></li>
-<li><a href="#getRunningThread()" tabindex="0">getRunningThread()</a></li>
-<li><a href="#run()" tabindex="0">run()</a></li>
-<li><a href="#waitForTasks()" tabindex="0">waitForTasks()</a></li>
 <li><a href="#shutDown()" tabindex="0">shutDown()</a></li>
 <li><a href="#startUp()" tabindex="0">startUp()</a></li>
 </ol>
@@ -110,18 +99,6 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#shutdown" class="member-name-link">shutdown</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#thread" class="member-name-link">thread</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.util.thread.BlockableEventLoop">Fields inherited from class&nbsp;<a href="../../util/thread/BlockableEventLoop.html#field-summary" title="class in net.minecraft.util.thread">BlockableEventLoop</a></h3>
 <code><a href="../../util/thread/BlockableEventLoop.html#BLOCK_TIME_NANOS">BLOCK_TIME_NANOS</a></code></div>
@@ -151,20 +128,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createThread()" class="member-name-link">createThread</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRunningThread()" class="member-name-link">getRunningThread</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run()" class="member-name-link">run</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.lang.Runnable)" class="member-name-link">schedule</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;runnable)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldRun(java.lang.Runnable)" class="member-name-link">shouldRun</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;task)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.lang.Runnable)" class="member-name-link">schedule</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;runnable)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shutDown()" class="member-name-link">shutDown</a>()</code></div>
@@ -172,21 +137,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startUp()" class="member-name-link">startUp</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#waitForTasks()" class="member-name-link">waitForTasks</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapRunnable(java.lang.Runnable)" class="member-name-link">wrapRunnable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;runnable)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapRunnable(java.lang.Runnable)" class="member-name-link">wrapRunnable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;runnable)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.util.thread.BlockableEventLoop">Methods inherited from class&nbsp;<a href="../../util/thread/BlockableEventLoop.html#method-summary" title="class in net.minecraft.util.thread">BlockableEventLoop</a></h3>
-<code><a href="../../util/thread/BlockableEventLoop.html#delayCrash(net.minecraft.CrashReport)" title="delayCrash(CrashReport)">delayCrash</a>, <a href="../../util/thread/BlockableEventLoop.html#doRunTask(R)" title="doRunTask(Runnable)">doRunTask</a>, <a href="../../util/thread/BlockableEventLoop.html#dropAllTasks()" title="dropAllTasks()">dropAllTasks</a>, <a href="../../util/thread/BlockableEventLoop.html#execute(java.lang.Runnable)" title="execute(Runnable)">execute</a>, <a href="../../util/thread/BlockableEventLoop.html#executeBlocking(java.lang.Runnable)" title="executeBlocking(Runnable)">executeBlocking</a>, <a href="../../util/thread/BlockableEventLoop.html#executeIfPossible(java.lang.Runnable)" title="executeIfPossible(Runnable)">executeIfPossible</a>, <a href="../../util/thread/BlockableEventLoop.html#getPendingTasksCount()" title="getPendingTasksCount()">getPendingTasksCount</a>, <a href="../../util/thread/BlockableEventLoop.html#hasDelayedCrash()" title="hasDelayedCrash()">hasDelayedCrash</a>, <a href="../../util/thread/BlockableEventLoop.html#isNonRecoverable(java.lang.Throwable)" title="isNonRecoverable(Throwable)">isNonRecoverable</a>, <a href="../../util/thread/BlockableEventLoop.html#isSameThread()" title="isSameThread()">isSameThread</a>, <a href="../../util/thread/BlockableEventLoop.html#managedBlock(java.util.function.BooleanSupplier)" title="managedBlock(BooleanSupplier)">managedBlock</a>, <a href="../../util/thread/BlockableEventLoop.html#name()" title="name()">name</a>, <a href="../../util/thread/BlockableEventLoop.html#pollTask()" title="pollTask()">pollTask</a>, <a href="../../util/thread/BlockableEventLoop.html#profiledMetrics()" title="profiledMetrics()">profiledMetrics</a>, <a href="../../util/thread/BlockableEventLoop.html#relayDelayCrash(net.minecraft.CrashReport)" title="relayDelayCrash(CrashReport)">relayDelayCrash</a>, <a href="../../util/thread/BlockableEventLoop.html#runAllTasks()" title="runAllTasks()">runAllTasks</a>, <a href="../../util/thread/BlockableEventLoop.html#scheduleExecutables()" title="scheduleExecutables()">scheduleExecutables</a>, <a href="../../util/thread/BlockableEventLoop.html#shouldRunAllTasks()" title="shouldRunAllTasks()">shouldRunAllTasks</a>, <a href="../../util/thread/BlockableEventLoop.html#submit(java.lang.Runnable)" title="submit(Runnable)">submit</a>, <a href="../../util/thread/BlockableEventLoop.html#submit(java.util.function.Supplier)" title="submit(Supplier)">submit</a>, <a href="../../util/thread/BlockableEventLoop.html#submitAsync(java.lang.Runnable)" title="submitAsync(Runnable)">submitAsync</a></code></div>
+<code><a href="../../util/thread/BlockableEventLoop.html#delayCrash(net.minecraft.CrashReport)" title="delayCrash(CrashReport)">delayCrash</a>, <a href="../../util/thread/BlockableEventLoop.html#execute(java.lang.Runnable)" title="execute(Runnable)">execute</a>, <a href="../../util/thread/BlockableEventLoop.html#executeBlocking(java.lang.Runnable)" title="executeBlocking(Runnable)">executeBlocking</a>, <a href="../../util/thread/BlockableEventLoop.html#executeIfPossible(java.lang.Runnable)" title="executeIfPossible(Runnable)">executeIfPossible</a>, <a href="../../util/thread/BlockableEventLoop.html#getPendingTasksCount()" title="getPendingTasksCount()">getPendingTasksCount</a>, <a href="../../util/thread/BlockableEventLoop.html#isNonRecoverable(java.lang.Throwable)" title="isNonRecoverable(Throwable)">isNonRecoverable</a>, <a href="../../util/thread/BlockableEventLoop.html#isSameThread()" title="isSameThread()">isSameThread</a>, <a href="../../util/thread/BlockableEventLoop.html#managedBlock(java.util.function.BooleanSupplier)" title="managedBlock(BooleanSupplier)">managedBlock</a>, <a href="../../util/thread/BlockableEventLoop.html#name()" title="name()">name</a>, <a href="../../util/thread/BlockableEventLoop.html#profiledMetrics()" title="profiledMetrics()">profiledMetrics</a>, <a href="../../util/thread/BlockableEventLoop.html#relayDelayCrash(net.minecraft.CrashReport)" title="relayDelayCrash(CrashReport)">relayDelayCrash</a>, <a href="../../util/thread/BlockableEventLoop.html#submit(java.lang.Runnable)" title="submit(Runnable)">submit</a>, <a href="../../util/thread/BlockableEventLoop.html#submit(java.util.function.Supplier)" title="submit(Supplier)">submit</a>, <a href="../../util/thread/BlockableEventLoop.html#submitAsync(java.lang.Runnable)" title="submitAsync(Runnable)">submitAsync</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.util.thread.TaskScheduler">Methods inherited from interface&nbsp;<a href="../../util/thread/TaskScheduler.html#method-summary" title="interface in net.minecraft.util.thread">TaskScheduler</a></h3>
 <code><a href="../../util/thread/TaskScheduler.html#close()" title="close()">close</a>, <a href="../../util/thread/TaskScheduler.html#scheduleWithResult(java.util.function.Consumer)" title="scheduleWithResult(Consumer)">scheduleWithResult</a></code></div>
@@ -196,30 +158,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="thread">
-<h3>thread</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></span>&nbsp;<span class="element-name">thread</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="shutdown">
-<h3>shutdown</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private volatile</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shutdown</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -242,14 +180,6 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="createThread()">
-<h3>createThread</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></span>&nbsp;<span class="element-name">createThread</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="wrapRunnable(java.lang.Runnable)">
 <h3>wrapRunnable</h3>
 <div class="horizontal-scroll">
@@ -267,50 +197,6 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="../../util/thread/TaskScheduler.html#schedule(R)">schedule</a></code>&nbsp;in interface&nbsp;<code><a href="../../util/thread/TaskScheduler.html" title="interface in net.minecraft.util.thread">TaskScheduler</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="../../util/thread/BlockableEventLoop.html#schedule(R)">schedule</a></code>&nbsp;in class&nbsp;<code><a href="../../util/thread/BlockableEventLoop.html" title="class in net.minecraft.util.thread">BlockableEventLoop</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="shouldRun(java.lang.Runnable)">
-<h3>shouldRun</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shouldRun</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;task)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../util/thread/BlockableEventLoop.html#shouldRun(R)">shouldRun</a></code>&nbsp;in class&nbsp;<code><a href="../../util/thread/BlockableEventLoop.html" title="class in net.minecraft.util.thread">BlockableEventLoop</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getRunningThread()">
-<h3>getRunningThread</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link">Thread</a></span>&nbsp;<span class="element-name">getRunningThread</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../util/thread/BlockableEventLoop.html#getRunningThread()">getRunningThread</a></code>&nbsp;in class&nbsp;<code><a href="../../util/thread/BlockableEventLoop.html" title="class in net.minecraft.util.thread">BlockableEventLoop</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&gt;</code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="run()">
-<h3>run</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">run</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="waitForTasks()">
-<h3>waitForTasks</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">waitForTasks</span>()</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../util/thread/BlockableEventLoop.html#waitForTasks()">waitForTasks</a></code>&nbsp;in class&nbsp;<code><a href="../../util/thread/BlockableEventLoop.html" title="class in net.minecraft.util.thread">BlockableEventLoop</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&gt;</code></dd>
 </dl>
 </div>
 </section>

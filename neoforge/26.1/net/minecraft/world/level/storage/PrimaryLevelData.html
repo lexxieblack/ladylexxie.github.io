@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>PrimaryLevelData (NeoForge 26.1)</title>
+<title>PrimaryLevelData (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.level.storage, class: PrimaryLevelData">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/PrimaryLevelData.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -60,30 +60,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
 <li><a href="#LEVEL_NAME" tabindex="0">LEVEL_NAME</a></li>
-<li><a href="#OLD_PLAYER" tabindex="0">OLD_PLAYER</a></li>
-<li><a href="#SINGLEPLAYER_UUID" tabindex="0">SINGLEPLAYER_UUID</a></li>
-<li><a href="#OLD_WORLD_GEN_SETTINGS" tabindex="0">OLD_WORLD_GEN_SETTINGS</a></li>
-<li><a href="#settings" tabindex="0">settings</a></li>
-<li><a href="#specialWorldProperty" tabindex="0">specialWorldProperty</a></li>
-<li><a href="#worldGenSettingsLifecycle" tabindex="0">worldGenSettingsLifecycle</a></li>
-<li><a href="#respawnData" tabindex="0">respawnData</a></li>
-<li><a href="#gameTime" tabindex="0">gameTime</a></li>
-<li><a href="#singlePlayerUUID" tabindex="0">singlePlayerUUID</a></li>
-<li><a href="#version" tabindex="0">version</a></li>
-<li><a href="#initialized" tabindex="0">initialized</a></li>
-<li><a href="#knownServerBrands" tabindex="0">knownServerBrands</a></li>
-<li><a href="#wasModded" tabindex="0">wasModded</a></li>
-<li><a href="#removedFeatureFlags" tabindex="0">removedFeatureFlags</a></li>
-<li><a href="#confirmedExperimentalWarning" tabindex="0">confirmedExperimentalWarning</a></li>
-<li><a href="#dayTimeFraction" tabindex="0">dayTimeFraction</a></li>
-<li><a href="#dayTimePerTick" tabindex="0">dayTimePerTick</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(java.util.UUID,boolean,net.minecraft.world.level.storage.LevelData.RespawnData,long,int,boolean,java.util.Set,java.util.Set,net.minecraft.world.level.LevelSettings,net.minecraft.world.level.storage.PrimaryLevelData.SpecialWorldProperty,com.mojang.serialization.Lifecycle)" tabindex="0">PrimaryLevelData(UUID, boolean, LevelData.RespawnData, long, int, boolean, Set, Set, LevelSettings, PrimaryLevelData.SpecialWorldProperty, Lifecycle)</a></li>
 <li><a href="#%3Cinit%3E(net.minecraft.world.level.LevelSettings,net.minecraft.world.level.storage.PrimaryLevelData.SpecialWorldProperty,com.mojang.serialization.Lifecycle)" tabindex="0">PrimaryLevelData(LevelSettings, PrimaryLevelData.SpecialWorldProperty, Lifecycle)</a></li>
 </ol>
 </li>
@@ -91,12 +72,10 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#parse(com.mojang.serialization.Dynamic,net.minecraft.world.level.LevelSettings,net.minecraft.world.level.storage.PrimaryLevelData.SpecialWorldProperty,com.mojang.serialization.Lifecycle)" tabindex="0">parse(Dynamic, LevelSettings, PrimaryLevelData.SpecialWorldProperty, Lifecycle)</a></li>
 <li><a href="#createTag(java.util.UUID)" tabindex="0">createTag(UUID)</a></li>
-<li><a href="#setTagData(net.minecraft.nbt.CompoundTag,java.util.UUID)" tabindex="0">setTagData(CompoundTag, UUID)</a></li>
 <li><a href="#writeLastPlayed(net.minecraft.nbt.CompoundTag)" tabindex="0">writeLastPlayed(CompoundTag)</a></li>
 <li><a href="#writeLastPlayed(com.mojang.serialization.Dynamic)" tabindex="0">writeLastPlayed(Dynamic)</a></li>
 <li><a href="#writeVersionTag(net.minecraft.nbt.CompoundTag)" tabindex="0">writeVersionTag(CompoundTag)</a></li>
 <li><a href="#writeVersionTag(com.mojang.serialization.Dynamic)" tabindex="0">writeVersionTag(Dynamic)</a></li>
-<li><a href="#stringCollectionToTag(java.util.Set)" tabindex="0">stringCollectionToTag(Set)</a></li>
 <li><a href="#getRespawnData()" tabindex="0">getRespawnData()</a></li>
 <li><a href="#getGameTime()" tabindex="0">getGameTime()</a></li>
 <li><a href="#getSinglePlayerUUID()" tabindex="0">getSinglePlayerUUID()</a></li>
@@ -132,7 +111,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#getDayTimePerTick()" tabindex="0">getDayTimePerTick()</a></li>
 <li><a href="#setDayTimeFraction(float)" tabindex="0">setDayTimeFraction(float)</a></li>
 <li><a href="#setDayTimePerTick(float)" tabindex="0">setDayTimePerTick(float)</a></li>
-<li><a href="#updateRemovedFeatureFlags(java.util.stream.Stream,java.util.stream.Stream)" tabindex="0">updateRemovedFeatureFlags(Stream, Stream)</a></li>
 </ol>
 </li>
 </ol>
@@ -188,62 +166,8 @@ implements <a href="ServerLevelData.html" title="interface in net.minecraft.worl
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#confirmedExperimentalWarning" class="member-name-link">confirmedExperimentalWarning</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private float</code></div>
-<div class="col-second odd-row-color"><code><a href="#dayTimeFraction" class="member-name-link">dayTimeFraction</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private float</code></div>
-<div class="col-second even-row-color"><code><a href="#dayTimePerTick" class="member-name-link">dayTimePerTick</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private long</code></div>
-<div class="col-second odd-row-color"><code><a href="#gameTime" class="member-name-link">gameTime</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#initialized" class="member-name-link">initialized</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#knownServerBrands" class="member-name-link">knownServerBrands</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#LEVEL_NAME" class="member-name-link">LEVEL_NAME</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#OLD_PLAYER" class="member-name-link">OLD_PLAYER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#OLD_WORLD_GEN_SETTINGS" class="member-name-link">OLD_WORLD_GEN_SETTINGS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#removedFeatureFlags" class="member-name-link">removedFeatureFlags</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private <a href="LevelData.RespawnData.html" title="class in net.minecraft.world.level.storage">LevelData.RespawnData</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#respawnData" class="member-name-link">respawnData</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private <a href="../LevelSettings.html" title="class in net.minecraft.world.level">LevelSettings</a></code></div>
-<div class="col-second even-row-color"><code><a href="#settings" class="member-name-link">settings</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SINGLEPLAYER_UUID" class="member-name-link">SINGLEPLAYER_UUID</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
-<div class="col-second even-row-color"><code><a href="#singlePlayerUUID" class="member-name-link">singlePlayerUUID</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="PrimaryLevelData.SpecialWorldProperty.html" title="enum class in net.minecraft.world.level.storage">PrimaryLevelData.SpecialWorldProperty</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#specialWorldProperty" class="member-name-link">specialWorldProperty</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final int</code></div>
-<div class="col-second even-row-color"><code><a href="#version" class="member-name-link">version</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#wasModded" class="member-name-link">wasModded</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a></code></div>
-<div class="col-second even-row-color"><code><a href="#worldGenSettingsLifecycle" class="member-name-link">worldGenSettingsLifecycle</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
@@ -256,28 +180,13 @@ implements <a href="ServerLevelData.html" title="interface in net.minecraft.worl
 <section class="constructor-summary" id="constructor-summary">
 <h2>Constructor Summary</h2>
 <div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.UUID,boolean,net.minecraft.world.level.storage.LevelData.RespawnData,long,int,boolean,java.util.Set,java.util.Set,net.minecraft.world.level.LevelSettings,net.minecraft.world.level.storage.PrimaryLevelData.SpecialWorldProperty,com.mojang.serialization.Lifecycle)" class="member-name-link">PrimaryLevelData</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;singlePlayerUUID,
- boolean&nbsp;wasModded,
- <a href="LevelData.RespawnData.html" title="class in net.minecraft.world.level.storage">LevelData.RespawnData</a>&nbsp;respawnData,
- long&nbsp;gameTime,
- int&nbsp;version,
- boolean&nbsp;initialized,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;knownServerBrands,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;removedFeatureFlags,
- <a href="../LevelSettings.html" title="class in net.minecraft.world.level">LevelSettings</a>&nbsp;settings,
- <a href="PrimaryLevelData.SpecialWorldProperty.html" title="enum class in net.minecraft.world.level.storage">PrimaryLevelData.SpecialWorldProperty</a>&nbsp;specialWorldProperty,
- <a href="../../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a>&nbsp;worldGenSettingsLifecycle)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.minecraft.world.level.LevelSettings,net.minecraft.world.level.storage.PrimaryLevelData.SpecialWorldProperty,com.mojang.serialization.Lifecycle)" class="member-name-link">PrimaryLevelData</a><wbr>(<a href="../LevelSettings.html" title="class in net.minecraft.world.level">LevelSettings</a>&nbsp;levelSettings,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.world.level.LevelSettings,net.minecraft.world.level.storage.PrimaryLevelData.SpecialWorldProperty,com.mojang.serialization.Lifecycle)" class="member-name-link">PrimaryLevelData</a><wbr>(<a href="../LevelSettings.html" title="class in net.minecraft.world.level">LevelSettings</a>&nbsp;levelSettings,
  <a href="PrimaryLevelData.SpecialWorldProperty.html" title="enum class in net.minecraft.world.level.storage">PrimaryLevelData.SpecialWorldProperty</a>&nbsp;specialWorldProperty,
  <a href="../../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a>&nbsp;lifecycle)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -399,44 +308,33 @@ implements <a href="ServerLevelData.html" title="interface in net.minecraft.worl
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSpawn(net.minecraft.world.level.storage.LevelData.RespawnData)" class="member-name-link">setSpawn</a><wbr>(<a href="LevelData.RespawnData.html" title="class in net.minecraft.world.level.storage">LevelData.RespawnData</a>&nbsp;respawnData)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTagData(net.minecraft.nbt.CompoundTag,java.util.UUID)" class="member-name-link">setTagData</a><wbr>(<a href="../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;singlePlayerUUID)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasModded()" class="member-name-link">wasModded</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stringCollectionToTag(java.util.Set)" class="member-name-link">stringCollectionToTag</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;values)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#updateRemovedFeatureFlags(java.util.stream.Stream,java.util.stream.Stream)" class="member-name-link">updateRemovedFeatureFlags</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;removedFeatures,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;enabledFeatures)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wasModded()" class="member-name-link">wasModded</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PrimaryLevelData.html" title="class in net.minecraft.world.level.storage">PrimaryLevelData</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withConfirmedWarning(boolean)" class="member-name-link">withConfirmedWarning</a><wbr>(boolean&nbsp;confirmedWarning)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PrimaryLevelData.html" title="class in net.minecraft.world.level.storage">PrimaryLevelData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withConfirmedWarning(boolean)" class="member-name-link">withConfirmedWarning</a><wbr>(boolean&nbsp;confirmedWarning)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#worldGenSettingsLifecycle()" class="member-name-link">worldGenSettingsLifecycle</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#worldGenSettingsLifecycle()" class="member-name-link">worldGenSettingsLifecycle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeLastPlayed(com.mojang.serialization.Dynamic)" class="member-name-link">writeLastPlayed</a><wbr>(<a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a>&lt;?&gt;&nbsp;tag)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeLastPlayed(net.minecraft.nbt.CompoundTag)" class="member-name-link">writeLastPlayed</a><wbr>(<a href="../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeLastPlayed(com.mojang.serialization.Dynamic)" class="member-name-link">writeLastPlayed</a><wbr>(<a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a>&lt;?&gt;&nbsp;tag)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeVersionTag(com.mojang.serialization.Dynamic)" class="member-name-link">writeVersionTag</a><wbr>(<a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a>&lt;?&gt;&nbsp;tag)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeLastPlayed(net.minecraft.nbt.CompoundTag)" class="member-name-link">writeLastPlayed</a><wbr>(<a href="../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeVersionTag(net.minecraft.nbt.CompoundTag)" class="member-name-link">writeVersionTag</a><wbr>(<a href="../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeVersionTag(com.mojang.serialization.Dynamic)" class="member-name-link">writeVersionTag</a><wbr>(<a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a>&lt;?&gt;&nbsp;tag)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeVersionTag(net.minecraft.nbt.CompoundTag)" class="member-name-link">writeVersionTag</a><wbr>(<a href="../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.level.storage.WorldData">Methods inherited from interface&nbsp;<a href="WorldData.html#method-summary" title="interface in net.minecraft.world.level.storage">WorldData</a></h3>
 <code><a href="WorldData.html#enabledFeatures()" title="enabledFeatures()">enabledFeatures</a>, <a href="WorldData.html#fillCrashReportCategory(net.minecraft.CrashReportCategory)" title="fillCrashReportCategory(CrashReportCategory)">fillCrashReportCategory</a>, <a href="WorldData.html#getStorageVersionName(int)" title="getStorageVersionName(int)">getStorageVersionName</a></code></div>
@@ -451,14 +349,6 @@ implements <a href="ServerLevelData.html" title="interface in net.minecraft.worl
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="LEVEL_NAME">
 <h3>LEVEL_NAME</h3>
@@ -475,166 +365,6 @@ implements <a href="ServerLevelData.html" title="interface in net.minecraft.worl
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="OLD_PLAYER">
-<h3>OLD_PLAYER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">OLD_PLAYER</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.world.level.storage.PrimaryLevelData.OLD_PLAYER">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="SINGLEPLAYER_UUID">
-<h3>SINGLEPLAYER_UUID</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SINGLEPLAYER_UUID</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.world.level.storage.PrimaryLevelData.SINGLEPLAYER_UUID">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="OLD_WORLD_GEN_SETTINGS">
-<h3>OLD_WORLD_GEN_SETTINGS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">OLD_WORLD_GEN_SETTINGS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../constant-values.html#net.minecraft.world.level.storage.PrimaryLevelData.OLD_WORLD_GEN_SETTINGS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="settings">
-<h3>settings</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="../LevelSettings.html" title="class in net.minecraft.world.level">LevelSettings</a></span>&nbsp;<span class="element-name">settings</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="specialWorldProperty">
-<h3>specialWorldProperty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="PrimaryLevelData.SpecialWorldProperty.html" title="enum class in net.minecraft.world.level.storage">PrimaryLevelData.SpecialWorldProperty</a></span>&nbsp;<span class="element-name">specialWorldProperty</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="worldGenSettingsLifecycle">
-<h3>worldGenSettingsLifecycle</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a></span>&nbsp;<span class="element-name">worldGenSettingsLifecycle</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="respawnData">
-<h3>respawnData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="LevelData.RespawnData.html" title="class in net.minecraft.world.level.storage">LevelData.RespawnData</a></span>&nbsp;<span class="element-name">respawnData</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="gameTime">
-<h3>gameTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">gameTime</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="singlePlayerUUID">
-<h3>singlePlayerUUID</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></span>&nbsp;<span class="element-name">singlePlayerUUID</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="version">
-<h3>version</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">version</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="initialized">
-<h3>initialized</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">initialized</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="knownServerBrands">
-<h3>knownServerBrands</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">knownServerBrands</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="wasModded">
-<h3>wasModded</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">wasModded</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="removedFeatureFlags">
-<h3>removedFeatureFlags</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">removedFeatureFlags</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="confirmedExperimentalWarning">
-<h3>confirmedExperimentalWarning</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">confirmedExperimentalWarning</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dayTimeFraction">
-<h3>dayTimeFraction</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">dayTimeFraction</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="dayTimePerTick">
-<h3>dayTimePerTick</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">dayTimePerTick</span></div>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -643,24 +373,6 @@ implements <a href="ServerLevelData.html" title="interface in net.minecraft.worl
 <section class="constructor-details" id="constructor-detail">
 <h2>Constructor Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(java.util.UUID,boolean,net.minecraft.world.level.storage.LevelData.RespawnData,long,int,boolean,java.util.Set,java.util.Set,net.minecraft.world.level.LevelSettings,net.minecraft.world.level.storage.PrimaryLevelData.SpecialWorldProperty,com.mojang.serialization.Lifecycle)">
-<h3>PrimaryLevelData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name">PrimaryLevelData</span><wbr><span class="parameters">(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;singlePlayerUUID,
- boolean&nbsp;wasModded,
- <a href="LevelData.RespawnData.html" title="class in net.minecraft.world.level.storage">LevelData.RespawnData</a>&nbsp;respawnData,
- long&nbsp;gameTime,
- int&nbsp;version,
- boolean&nbsp;initialized,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;knownServerBrands,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;removedFeatureFlags,
- <a href="../LevelSettings.html" title="class in net.minecraft.world.level">LevelSettings</a>&nbsp;settings,
- <a href="PrimaryLevelData.SpecialWorldProperty.html" title="enum class in net.minecraft.world.level.storage">PrimaryLevelData.SpecialWorldProperty</a>&nbsp;specialWorldProperty,
- <a href="../../../../../com/mojang/serialization/Lifecycle.html" title="class in com.mojang.serialization">Lifecycle</a>&nbsp;worldGenSettingsLifecycle)</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="&lt;init&gt;(net.minecraft.world.level.LevelSettings,net.minecraft.world.level.storage.PrimaryLevelData.SpecialWorldProperty,com.mojang.serialization.Lifecycle)">
 <h3>PrimaryLevelData</h3>
@@ -703,15 +415,6 @@ implements <a href="ServerLevelData.html" title="interface in net.minecraft.worl
 </section>
 </li>
 <li>
-<section class="detail" id="setTagData(net.minecraft.nbt.CompoundTag,java.util.UUID)">
-<h3>setTagData</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTagData</span><wbr><span class="parameters">(<a href="../../../nbt/CompoundTag.html" title="class in net.minecraft.nbt">CompoundTag</a>&nbsp;tag,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;singlePlayerUUID)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="writeLastPlayed(net.minecraft.nbt.CompoundTag)">
 <h3>writeLastPlayed</h3>
 <div class="horizontal-scroll">
@@ -740,14 +443,6 @@ implements <a href="ServerLevelData.html" title="interface in net.minecraft.worl
 <h3>writeVersionTag</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a>&lt;?&gt;</span>&nbsp;<span class="element-name">writeVersionTag</span><wbr><span class="parameters">(<a href="../../../../../com/mojang/serialization/Dynamic.html" title="class in com.mojang.serialization">Dynamic</a>&lt;?&gt;&nbsp;tag)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stringCollectionToTag(java.util.Set)">
-<h3>stringCollectionToTag</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="../../../nbt/ListTag.html" title="class in net.minecraft.nbt">ListTag</a></span>&nbsp;<span class="element-name">stringCollectionToTag</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;values)</span></div>
 </div>
 </section>
 </li>
@@ -1178,15 +873,6 @@ implements <a href="ServerLevelData.html" title="interface in net.minecraft.worl
 <dt>Specified by:</dt>
 <dd><code><a href="ServerLevelData.html#setDayTimePerTick(float)">setDayTimePerTick</a></code>&nbsp;in interface&nbsp;<code><a href="ServerLevelData.html" title="interface in net.minecraft.world.level.storage">ServerLevelData</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="updateRemovedFeatureFlags(java.util.stream.Stream,java.util.stream.Stream)">
-<h3>updateRemovedFeatureFlags</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">updateRemovedFeatureFlags</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;removedFeatures,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;enabledFeatures)</span></div>
 </div>
 </section>
 </li>

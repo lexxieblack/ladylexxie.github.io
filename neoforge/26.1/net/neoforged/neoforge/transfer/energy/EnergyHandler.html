@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>EnergyHandler (NeoForge 26.1)</title>
+<title>EnergyHandler (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.transfer.energy, interface: EnergyHandler">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/EnergyHandler.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -201,6 +201,8 @@ or if the caller prefers to deal in <code>int</code>s only.
 <li><a href="#getAmountAsLong()">the long-returning overload</a></li>
 </ul>
 </dd>
+<dt><em>Implementation Note:</em></dt>
+<dd>This method should not be implemented. The default method will call <a href="#getAmountAsLong()"><code>getAmountAsLong()</code></a> and convert the result appropriately.</dd>
 </dl>
 </div>
 </section>
@@ -259,6 +261,8 @@ The only way to know if a handler will accept a resource, is to try to <a href="
 <li><a href="#getCapacityAsLong()"><code>getCapacityAsLong()</code></a></li>
 </ul>
 </dd>
+<dt><em>Implementation Note:</em></dt>
+<dd>This method should not be implemented. The default method will call <a href="#getCapacityAsLong()"><code>getCapacityAsLong()</code></a> and convert the result appropriately.</dd>
 </dl>
 </div>
 </section>
@@ -280,6 +284,9 @@ The only way to know if a handler will accept a resource, is to try to <a href="
 <dd>The amount that was inserted. Between <code>0</code> (inclusive, nothing was inserted) and <code>amount</code> (inclusive, everything was inserted).</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - If the amount is negative. See also <a href="../TransferPreconditions.html#checkNonNegative(int)"><code>TransferPreconditions.checkNonNegative(int)</code></a> to help perform this check.</dd>
+<dt><em>Implementation Requirements:</em></dt>
+<dd>Implementations must properly support <a href="../transaction/Transaction.html" title="class in net.neoforged.neoforge.transfer.transaction">transactions</a>.
+          Note that <a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction"><code>SnapshotJournal</code></a> can serve as the base class for a transaction-aware energy handler.</dd>
 </dl>
 </div>
 </section>
@@ -301,6 +308,9 @@ The only way to know if a handler will accept a resource, is to try to <a href="
 <dd>The amount that was extracted. Between <code>0</code> (inclusive, nothing was extracted) and <code>amount</code> (inclusive, everything was extracted).</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - If the amount is negative. See also <a href="../TransferPreconditions.html#checkNonNegative(int)"><code>TransferPreconditions.checkNonNegative(int)</code></a> to help perform this check.</dd>
+<dt><em>Implementation Requirements:</em></dt>
+<dd>Implementations must properly support <a href="../transaction/Transaction.html" title="class in net.neoforged.neoforge.transfer.transaction">transactions</a>.
+          Note that <a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction"><code>SnapshotJournal</code></a> can serve as the base class for a transaction-aware energy handler.</dd>
 </dl>
 </div>
 </section>

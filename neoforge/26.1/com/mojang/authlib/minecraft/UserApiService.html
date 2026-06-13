@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>UserApiService (NeoForge 26.1)</title>
+<title>UserApiService (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: com.mojang.authlib.minecraft, interface: UserApiService">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/UserApiService.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -154,16 +154,20 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getKeyPair()" class="member-name-link">getKeyPair</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isBlockedPlayer(java.util.UUID)" class="member-name-link">isBlockedPlayer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;var1)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isBlockedPlayer(java.util.UUID)" class="member-name-link">isBlockedPlayer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;playerID)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Check if a player is on the block list.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="TelemetrySession.html" title="interface in com.mojang.authlib.minecraft">TelemetrySession</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newTelemetrySession(java.util.concurrent.Executor)" class="member-name-link">newTelemetrySession</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;var1)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newTelemetrySession(java.util.concurrent.Executor)" class="member-name-link">newTelemetrySession</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;executor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Create fresh telemetry session.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#refreshBlockList()" class="member-name-link">refreshBlockList</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportAbuse(com.mojang.authlib.yggdrasil.request.AbuseReportRequest)" class="member-name-link">reportAbuse</a><wbr>(<a href="../yggdrasil/request/AbuseReportRequest.html" title="class in com.mojang.authlib.yggdrasil.request">AbuseReportRequest</a>&nbsp;var1)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportAbuse(com.mojang.authlib.yggdrasil.request.AbuseReportRequest)" class="member-name-link">reportAbuse</a><wbr>(<a href="../yggdrasil/request/AbuseReportRequest.html" title="class in com.mojang.authlib.yggdrasil.request">AbuseReportRequest</a>&nbsp;request)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
@@ -220,7 +224,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="isBlockedPlayer(java.util.UUID)">
 <h3>isBlockedPlayer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isBlockedPlayer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;var1)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isBlockedPlayer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;playerID)</span></div>
+<div class="block">Check if a player is on the block list.
+Note: might block</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>playerID</code> - A valid player UUID</dd>
+<dt>Returns:</dt>
+<dd>True if communications from the player should be blocked</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -236,7 +248,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="newTelemetrySession(java.util.concurrent.Executor)">
 <h3>newTelemetrySession</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="TelemetrySession.html" title="interface in com.mojang.authlib.minecraft">TelemetrySession</a></span>&nbsp;<span class="element-name">newTelemetrySession</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;var1)</span></div>
+<div class="member-signature"><span class="return-type"><a href="TelemetrySession.html" title="interface in com.mojang.authlib.minecraft">TelemetrySession</a></span>&nbsp;<span class="element-name">newTelemetrySession</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executor.html" title="class or interface in java.util.concurrent" class="external-link">Executor</a>&nbsp;executor)</span></div>
+<div class="block">Create fresh telemetry session.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>executor</code> - - executor used for sending operations</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -253,7 +270,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="reportAbuse(com.mojang.authlib.yggdrasil.request.AbuseReportRequest)">
 <h3>reportAbuse</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">reportAbuse</span><wbr><span class="parameters">(<a href="../yggdrasil/request/AbuseReportRequest.html" title="class in com.mojang.authlib.yggdrasil.request">AbuseReportRequest</a>&nbsp;var1)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">reportAbuse</span><wbr><span class="parameters">(<a href="../yggdrasil/request/AbuseReportRequest.html" title="class in com.mojang.authlib.yggdrasil.request">AbuseReportRequest</a>&nbsp;request)</span></div>
 </div>
 </section>
 </li>

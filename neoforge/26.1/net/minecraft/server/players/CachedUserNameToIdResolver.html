@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>CachedUserNameToIdResolver (NeoForge 26.1)</title>
+<title>CachedUserNameToIdResolver (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.server.players, class: CachedUserNameToIdResolver">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/CachedUserNameToIdResolver.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,24 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#LOGGER" tabindex="0">LOGGER</a></li>
-<li><a href="#GAMEPROFILES_MRU_LIMIT" tabindex="0">GAMEPROFILES_MRU_LIMIT</a></li>
-<li><a href="#GAMEPROFILES_EXPIRATION_MONTHS" tabindex="0">GAMEPROFILES_EXPIRATION_MONTHS</a></li>
-<li><a href="#resolveOfflineUsers" tabindex="0">resolveOfflineUsers</a></li>
-<li><a href="#profilesByName" tabindex="0">profilesByName</a></li>
-<li><a href="#profilesByUUID" tabindex="0">profilesByUUID</a></li>
-<li><a href="#profileRepository" tabindex="0">profileRepository</a></li>
-<li><a href="#gson" tabindex="0">gson</a></li>
-<li><a href="#file" tabindex="0">file</a></li>
-<li><a href="#operationCount" tabindex="0">operationCount</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(com.mojang.authlib.GameProfileRepository,java.io.File)" tabindex="0">CachedUserNameToIdResolver(GameProfileRepository, File)</a></li>
@@ -79,21 +63,11 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#safeAdd(net.minecraft.server.players.CachedUserNameToIdResolver.GameProfileInfo)" tabindex="0">safeAdd(CachedUserNameToIdResolver.GameProfileInfo)</a></li>
-<li><a href="#lookupGameProfile(com.mojang.authlib.GameProfileRepository,java.lang.String)" tabindex="0">lookupGameProfile(GameProfileRepository, String)</a></li>
-<li><a href="#createUnknownProfile(java.lang.String)" tabindex="0">createUnknownProfile(String)</a></li>
 <li><a href="#resolveOfflineUsers(boolean)" tabindex="0">resolveOfflineUsers(boolean)</a></li>
 <li><a href="#add(net.minecraft.server.players.NameAndId)" tabindex="0">add(NameAndId)</a></li>
-<li><a href="#addInternal(net.minecraft.server.players.NameAndId)" tabindex="0">addInternal(NameAndId)</a></li>
-<li><a href="#getNextOperation()" tabindex="0">getNextOperation()</a></li>
 <li><a href="#get(java.lang.String)" tabindex="0">get(String)</a></li>
 <li><a href="#get(java.util.UUID)" tabindex="0">get(UUID)</a></li>
-<li><a href="#createDateFormat()" tabindex="0">createDateFormat()</a></li>
-<li><a href="#load()" tabindex="0">load()</a></li>
 <li><a href="#save()" tabindex="0">save()</a></li>
-<li><a href="#getTopMRUProfiles(int)" tabindex="0">getTopMRUProfiles(int)</a></li>
-<li><a href="#writeGameProfile(net.minecraft.server.players.CachedUserNameToIdResolver.GameProfileInfo,java.text.DateFormat)" tabindex="0">writeGameProfile(CachedUserNameToIdResolver.GameProfileInfo, DateFormat)</a></li>
-<li><a href="#readGameProfile(com.google.gson.JsonElement,java.text.DateFormat)" tabindex="0">readGameProfile(JsonElement, DateFormat)</a></li>
 </ol>
 </li>
 </ol>
@@ -120,63 +94,6 @@ implements <a href="UserNameToIdResolver.html" title="interface in net.minecraft
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="CachedUserNameToIdResolver.GameProfileInfo.html" class="type-name-link" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></code></div>
-<div class="col-second even-row-color"><code><a href="#file" class="member-name-link">file</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#GAMEPROFILES_EXPIRATION_MONTHS" class="member-name-link">GAMEPROFILES_EXPIRATION_MONTHS</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#GAMEPROFILES_MRU_LIMIT" class="member-name-link">GAMEPROFILES_MRU_LIMIT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final com.google.gson.Gson</code></div>
-<div class="col-second odd-row-color"><code><a href="#gson" class="member-name-link">gson</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private static final org.slf4j.Logger</code></div>
-<div class="col-second even-row-color"><code><a href="#LOGGER" class="member-name-link">LOGGER</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/AtomicLong.html" title="class or interface in java.util.concurrent.atomic" class="external-link">AtomicLong</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#operationCount" class="member-name-link">operationCount</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="../../../../com/mojang/authlib/GameProfileRepository.html" title="interface in com.mojang.authlib">GameProfileRepository</a></code></div>
-<div class="col-second even-row-color"><code><a href="#profileRepository" class="member-name-link">profileRepository</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#profilesByName" class="member-name-link">profilesByName</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>, <a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#profilesByUUID" class="member-name-link">profilesByUUID</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#resolveOfflineUsers" class="member-name-link">resolveOfflineUsers</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -196,7 +113,7 @@ implements <a href="UserNameToIdResolver.html" title="interface in net.minecraft
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -205,167 +122,30 @@ implements <a href="UserNameToIdResolver.html" title="interface in net.minecraft
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#add(net.minecraft.server.players.NameAndId)" class="member-name-link">add</a><wbr>(<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&nbsp;nameAndId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addInternal(net.minecraft.server.players.NameAndId)" class="member-name-link">addInternal</a><wbr>(<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&nbsp;profile)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/DateFormat.html" title="class or interface in java.text" class="external-link">DateFormat</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createDateFormat()" class="member-name-link">createDateFormat</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createUnknownProfile(java.lang.String)" class="member-name-link">createUnknownProfile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.lang.String)" class="member-name-link">get</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.lang.String)" class="member-name-link">get</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.util.UUID)" class="member-name-link">get</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.util.UUID)" class="member-name-link">get</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;id)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNextOperation()" class="member-name-link">getNextOperation</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTopMRUProfiles(int)" class="member-name-link">getTopMRUProfiles</a><wbr>(int&nbsp;limit)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load()" class="member-name-link">load</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lookupGameProfile(com.mojang.authlib.GameProfileRepository,java.lang.String)" class="member-name-link">lookupGameProfile</a><wbr>(<a href="../../../../com/mojang/authlib/GameProfileRepository.html" title="interface in com.mojang.authlib">GameProfileRepository</a>&nbsp;profileRepository,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readGameProfile(com.google.gson.JsonElement,java.text.DateFormat)" class="member-name-link">readGameProfile</a><wbr>(com.google.gson.JsonElement&nbsp;json,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/DateFormat.html" title="class or interface in java.text" class="external-link">DateFormat</a>&nbsp;dateFormat)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveOfflineUsers(boolean)" class="member-name-link">resolveOfflineUsers</a><wbr>(boolean&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#safeAdd(net.minecraft.server.players.CachedUserNameToIdResolver.GameProfileInfo)" class="member-name-link">safeAdd</a><wbr>(<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&nbsp;profileInfo)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save()" class="member-name-link">save</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save()" class="member-name-link">save</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>private static com.google.gson.JsonElement</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#writeGameProfile(net.minecraft.server.players.CachedUserNameToIdResolver.GameProfileInfo,java.text.DateFormat)" class="member-name-link">writeGameProfile</a><wbr>(<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&nbsp;src,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/DateFormat.html" title="class or interface in java.text" class="external-link">DateFormat</a>&nbsp;dateFormat)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOGGER">
-<h3>LOGGER</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">org.slf4j.Logger</span>&nbsp;<span class="element-name">LOGGER</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="GAMEPROFILES_MRU_LIMIT">
-<h3>GAMEPROFILES_MRU_LIMIT</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">GAMEPROFILES_MRU_LIMIT</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.server.players.CachedUserNameToIdResolver.GAMEPROFILES_MRU_LIMIT">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="GAMEPROFILES_EXPIRATION_MONTHS">
-<h3>GAMEPROFILES_EXPIRATION_MONTHS</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">GAMEPROFILES_EXPIRATION_MONTHS</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../constant-values.html#net.minecraft.server.players.CachedUserNameToIdResolver.GAMEPROFILES_EXPIRATION_MONTHS">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="resolveOfflineUsers">
-<h3>resolveOfflineUsers</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">resolveOfflineUsers</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="profilesByName">
-<h3>profilesByName</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</span>&nbsp;<span class="element-name">profilesByName</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="profilesByUUID">
-<h3>profilesByUUID</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>, <a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</span>&nbsp;<span class="element-name">profilesByUUID</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="profileRepository">
-<h3>profileRepository</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../../../../com/mojang/authlib/GameProfileRepository.html" title="interface in com.mojang.authlib">GameProfileRepository</a></span>&nbsp;<span class="element-name">profileRepository</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="gson">
-<h3>gson</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type">com.google.gson.Gson</span>&nbsp;<span class="element-name">gson</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="file">
-<h3>file</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></span>&nbsp;<span class="element-name">file</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="operationCount">
-<h3>operationCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/AtomicLong.html" title="class or interface in java.util.concurrent.atomic" class="external-link">AtomicLong</a></span>&nbsp;<span class="element-name">operationCount</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -389,31 +169,6 @@ implements <a href="UserNameToIdResolver.html" title="interface in net.minecraft
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="safeAdd(net.minecraft.server.players.CachedUserNameToIdResolver.GameProfileInfo)">
-<h3>safeAdd</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">safeAdd</span><wbr><span class="parameters">(<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&nbsp;profileInfo)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lookupGameProfile(com.mojang.authlib.GameProfileRepository,java.lang.String)">
-<h3>lookupGameProfile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&gt;</span>&nbsp;<span class="element-name">lookupGameProfile</span><wbr><span class="parameters">(<a href="../../../../com/mojang/authlib/GameProfileRepository.html" title="interface in com.mojang.authlib">GameProfileRepository</a>&nbsp;profileRepository,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createUnknownProfile(java.lang.String)">
-<h3>createUnknownProfile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&gt;</span>&nbsp;<span class="element-name">createUnknownProfile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="resolveOfflineUsers(boolean)">
 <h3>resolveOfflineUsers</h3>
 <div class="horizontal-scroll">
@@ -434,22 +189,6 @@ implements <a href="UserNameToIdResolver.html" title="interface in net.minecraft
 <dt>Specified by:</dt>
 <dd><code><a href="UserNameToIdResolver.html#add(net.minecraft.server.players.NameAndId)">add</a></code>&nbsp;in interface&nbsp;<code><a href="UserNameToIdResolver.html" title="interface in net.minecraft.server.players">UserNameToIdResolver</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addInternal(net.minecraft.server.players.NameAndId)">
-<h3>addInternal</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a></span>&nbsp;<span class="element-name">addInternal</span><wbr><span class="parameters">(<a href="NameAndId.html" title="class in net.minecraft.server.players">NameAndId</a>&nbsp;profile)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getNextOperation()">
-<h3>getNextOperation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getNextOperation</span>()</div>
 </div>
 </section>
 </li>
@@ -478,22 +217,6 @@ implements <a href="UserNameToIdResolver.html" title="interface in net.minecraft
 </section>
 </li>
 <li>
-<section class="detail" id="createDateFormat()">
-<h3>createDateFormat</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/DateFormat.html" title="class or interface in java.text" class="external-link">DateFormat</a></span>&nbsp;<span class="element-name">createDateFormat</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="load()">
-<h3>load</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</span>&nbsp;<span class="element-name">load</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="save()">
 <h3>save</h3>
 <div class="horizontal-scroll">
@@ -502,32 +225,6 @@ implements <a href="UserNameToIdResolver.html" title="interface in net.minecraft
 <dt>Specified by:</dt>
 <dd><code><a href="UserNameToIdResolver.html#save()">save</a></code>&nbsp;in interface&nbsp;<code><a href="UserNameToIdResolver.html" title="interface in net.minecraft.server.players">UserNameToIdResolver</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getTopMRUProfiles(int)">
-<h3>getTopMRUProfiles</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</span>&nbsp;<span class="element-name">getTopMRUProfiles</span><wbr><span class="parameters">(int&nbsp;limit)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="writeGameProfile(net.minecraft.server.players.CachedUserNameToIdResolver.GameProfileInfo,java.text.DateFormat)">
-<h3>writeGameProfile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type">com.google.gson.JsonElement</span>&nbsp;<span class="element-name">writeGameProfile</span><wbr><span class="parameters">(<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&nbsp;src,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/DateFormat.html" title="class or interface in java.text" class="external-link">DateFormat</a>&nbsp;dateFormat)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="readGameProfile(com.google.gson.JsonElement,java.text.DateFormat)">
-<h3>readGameProfile</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="CachedUserNameToIdResolver.GameProfileInfo.html" title="class in net.minecraft.server.players">CachedUserNameToIdResolver.GameProfileInfo</a>&gt;</span>&nbsp;<span class="element-name">readGameProfile</span><wbr><span class="parameters">(com.google.gson.JsonElement&nbsp;json,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/DateFormat.html" title="class or interface in java.text" class="external-link">DateFormat</a>&nbsp;dateFormat)</span></div>
 </div>
 </section>
 </li>

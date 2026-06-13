@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>ItemAccess (NeoForge 26.1)</title>
+<title>ItemAccess (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.neoforged.neoforge.transfer.access, interface: ItemAccess">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/ItemAccess.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../search.html">Search</a></li>
 <li><a href="../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="HandlerItemAccess.html" title="class in net.neoforged.neoforge.transfer.access">HandlerItemAccess</a>, <a href="InfiniteMaterialsItemAccess.html" title="class in net.neoforged.neoforge.transfer.access">InfiniteMaterialsItemAccess</a>, <a href="OneByOneItemAccess.html" title="class in net.neoforged.neoforge.transfer.access">OneByOneItemAccess</a>, <a href="PlayerItemAccess.html" title="class in net.neoforged.neoforge.transfer.access">PlayerItemAccess</a>, <a href="StackItemAccess.html" title="class in net.neoforged.neoforge.transfer.access">StackItemAccess</a></code></dd>
+<dd><code><a href="HandlerItemAccess.html" title="class in net.neoforged.neoforge.transfer.access">HandlerItemAccess</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -328,6 +328,10 @@ possibly changing the components and the count, but never the underlying Item as
 <div class="member-signature"><span class="annotations">@NonExtendable
 </span><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">@Nullable T</span>&nbsp;<span class="element-name">getCapability</span><wbr><span class="parameters">(<a href="../../capabilities/ItemCapability.html" title="class in net.neoforged.neoforge.capabilities">ItemCapability</a>&lt;T, <a href="ItemAccess.html" title="interface in net.neoforged.neoforge.transfer.access">ItemAccess</a>&gt;&nbsp;capability)</span></div>
 <div class="block">Retrieves a capability from this item location.</div>
+<dl class="notes">
+<dt><em>Implementation Note:</em></dt>
+<dd>This method is a convenient shorthand for <code>location.getResource().toStack().getCapability(capability, location)</code>.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -349,6 +353,10 @@ possibly changing the components and the count, but never the underlying Item as
 
 <p>The returned amount must be <strong>non-negative</strong>.
 If the <a href="#getResource()">stored resource</a> is empty, the amount must be 0.</div>
+<dl class="notes">
+<dt><em>API Note:</em></dt>
+<dd>The returned amount may be larger than the <a href="../item/ItemResource.html#getMaxStackSize()">max stack size</a> of the current resource.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -374,6 +382,9 @@ by <a href="#extract(net.neoforged.neoforge.transfer.item.ItemResource,int,net.n
 <dd>The amount that was inserted. Between <code>0</code> (inclusive, nothing was inserted) and <code>amount</code> (inclusive, everything was inserted).</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - If the resource is empty or the amount is negative. See also <a href="../TransferPreconditions.html#checkNonEmptyNonNegative(net.neoforged.neoforge.transfer.resource.Resource,int)"><code>TransferPreconditions.checkNonEmptyNonNegative(Resource, int)</code></a> to help perform this check.</dd>
+<dt><em>Implementation Requirements:</em></dt>
+<dd>Implementations must properly support <a href="../transaction/Transaction.html" title="class in net.neoforged.neoforge.transfer.transaction">transactions</a>.
+          Note that <a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction"><code>SnapshotJournal</code></a> can serve as the base class for a transaction-aware item access.</dd>
 </dl>
 </div>
 </section>
@@ -397,6 +408,9 @@ by <a href="#extract(net.neoforged.neoforge.transfer.item.ItemResource,int,net.n
 <dd>The amount that was extracted. Between <code>0</code> (inclusive, nothing was extracted) and <code>amount</code> (inclusive, everything was extracted).</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - If the resource is empty or the amount is negative. See also <a href="../TransferPreconditions.html#checkNonEmptyNonNegative(net.neoforged.neoforge.transfer.resource.Resource,int)"><code>TransferPreconditions.checkNonEmptyNonNegative(Resource, int)</code></a> to help perform this check.</dd>
+<dt><em>Implementation Requirements:</em></dt>
+<dd>Implementations must properly support <a href="../transaction/Transaction.html" title="class in net.neoforged.neoforge.transfer.transaction">transactions</a>.
+          Note that <a href="../transaction/SnapshotJournal.html" title="class in net.neoforged.neoforge.transfer.transaction"><code>SnapshotJournal</code></a> can serve as the base class for a transaction-aware item access.</dd>
 </dl>
 </div>
 </section>

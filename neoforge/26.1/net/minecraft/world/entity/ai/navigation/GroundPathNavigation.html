@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>GroundPathNavigation (NeoForge 26.1)</title>
+<title>GroundPathNavigation (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.world.entity.ai.navigation, class: GroundPathNavigation">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/GroundPathNavigation.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
 <li><a href="../../../../../../search.html">Search</a></li>
 <li><a href="../../../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -54,15 +54,8 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#avoidSun" tabindex="0">avoidSun</a></li>
-<li><a href="#canPathToTargetsBelowSurface" tabindex="0">canPathToTargetsBelowSurface</a></li>
-</ol>
-</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(net.minecraft.world.entity.Mob,net.minecraft.world.level.Level)" tabindex="0">GroundPathNavigation(Mob, Level)</a></li>
@@ -70,16 +63,9 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#createPathFinder(int)" tabindex="0">createPathFinder(int)</a></li>
-<li><a href="#canUpdatePath()" tabindex="0">canUpdatePath()</a></li>
-<li><a href="#getTempMobPos()" tabindex="0">getTempMobPos()</a></li>
 <li><a href="#createPath(net.minecraft.core.BlockPos,int)" tabindex="0">createPath(BlockPos, int)</a></li>
-<li><a href="#findSurfacePosition(net.minecraft.world.level.chunk.LevelChunk,net.minecraft.core.BlockPos,int)" tabindex="0">findSurfacePosition(LevelChunk, BlockPos, int)</a></li>
 <li><a href="#createPath(net.minecraft.world.entity.Entity,int)" tabindex="0">createPath(Entity, int)</a></li>
-<li><a href="#getSurfaceY()" tabindex="0">getSurfaceY()</a></li>
-<li><a href="#trimPath()" tabindex="0">trimPath()</a></li>
 <li><a href="#canNavigateGround()" tabindex="0">canNavigateGround()</a></li>
-<li><a href="#hasValidPathType(net.minecraft.world.level.pathfinder.PathType)" tabindex="0">hasValidPathType(PathType)</a></li>
 <li><a href="#setAvoidSun(boolean)" tabindex="0">setAvoidSun(boolean)</a></li>
 <li><a href="#setCanWalkOverFences(boolean)" tabindex="0">setCanWalkOverFences(boolean)</a></li>
 <li><a href="#setCanPathToTargetsBelowSurface(boolean)" tabindex="0">setCanPathToTargetsBelowSurface(boolean)</a></li>
@@ -100,7 +86,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="../../monster/creaking/Creaking.CreakingPathNavigation.html" title="class in net.minecraft.world.entity.monster.creaking">Creaking.CreakingPathNavigation</a>, <a href="../../monster/Strider.StriderPathNavigation.html" title="class in net.minecraft.world.entity.monster">Strider.StriderPathNavigation</a>, <a href="WallClimberNavigation.html" title="class in net.minecraft.world.entity.ai.navigation">WallClimberNavigation</a></code></dd>
+<dd><code><a href="WallClimberNavigation.html" title="class in net.minecraft.world.entity.ai.navigation">WallClimberNavigation</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -110,27 +96,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#avoidSun" class="member-name-link">avoidSun</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#canPathToTargetsBelowSurface" class="member-name-link">canPathToTargetsBelowSurface</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-<div class="inherited-list">
-<h3 id="fields-inherited-from-class-net.minecraft.world.entity.ai.navigation.PathNavigation">Fields inherited from class&nbsp;<a href="PathNavigation.html#field-summary" title="class in net.minecraft.world.entity.ai.navigation">PathNavigation</a></h3>
-<code><a href="PathNavigation.html#hasDelayedRecomputation">hasDelayedRecomputation</a>, <a href="PathNavigation.html#lastStuckCheck">lastStuckCheck</a>, <a href="PathNavigation.html#lastStuckCheckPos">lastStuckCheckPos</a>, <a href="PathNavigation.html#lastTimeoutCheck">lastTimeoutCheck</a>, <a href="PathNavigation.html#level">level</a>, <a href="PathNavigation.html#maxDistanceToWaypoint">maxDistanceToWaypoint</a>, <a href="PathNavigation.html#mob">mob</a>, <a href="PathNavigation.html#nodeEvaluator">nodeEvaluator</a>, <a href="PathNavigation.html#path">path</a>, <a href="PathNavigation.html#speedModifier">speedModifier</a>, <a href="PathNavigation.html#tick">tick</a>, <a href="PathNavigation.html#timeLastRecompute">timeLastRecompute</a>, <a href="PathNavigation.html#timeoutCachedNode">timeoutCachedNode</a>, <a href="PathNavigation.html#timeoutLimit">timeoutLimit</a>, <a href="PathNavigation.html#timeoutTimer">timeoutTimer</a></code></div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -159,33 +124,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canNavigateGround()" class="member-name-link">canNavigateGround</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canUpdatePath()" class="member-name-link">canUpdatePath</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(net.minecraft.core.BlockPos,int)" class="member-name-link">createPath</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+ int&nbsp;reachRange)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(net.minecraft.core.BlockPos,int)" class="member-name-link">createPath</a><wbr>(<a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(net.minecraft.world.entity.Entity,int)" class="member-name-link">createPath</a><wbr>(<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target,
  int&nbsp;reachRange)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../level/pathfinder/Path.html" title="class in net.minecraft.world.level.pathfinder">Path</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPath(net.minecraft.world.entity.Entity,int)" class="member-name-link">createPath</a><wbr>(<a href="../../Entity.html" title="class in net.minecraft.world.entity">Entity</a>&nbsp;target,
- int&nbsp;reachRange)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../../level/pathfinder/PathFinder.html" title="class in net.minecraft.world.level.pathfinder">PathFinder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createPathFinder(int)" class="member-name-link">createPathFinder</a><wbr>(int&nbsp;maxVisitedNodes)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>(package private) final <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findSurfacePosition(net.minecraft.world.level.chunk.LevelChunk,net.minecraft.core.BlockPos,int)" class="member-name-link">findSurfacePosition</a><wbr>(<a href="../../../level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;chunk,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- int&nbsp;reachRange)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSurfaceY()" class="member-name-link">getSurfaceY</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTempMobPos()" class="member-name-link">getTempMobPos</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasValidPathType(net.minecraft.world.level.pathfinder.PathType)" class="member-name-link">hasValidPathType</a><wbr>(<a href="../../../level/pathfinder/PathType.html" title="enum class in net.minecraft.world.level.pathfinder">PathType</a>&nbsp;pathType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAvoidSun(boolean)" class="member-name-link">setAvoidSun</a><wbr>(boolean&nbsp;avoidSun)</code></div>
@@ -196,48 +141,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCanWalkOverFences(boolean)" class="member-name-link">setCanWalkOverFences</a><wbr>(boolean&nbsp;canWalkOverFences)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#trimPath()" class="member-name-link">trimPath</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-net.minecraft.world.entity.ai.navigation.PathNavigation">Methods inherited from class&nbsp;<a href="PathNavigation.html#method-summary" title="class in net.minecraft.world.entity.ai.navigation">PathNavigation</a></h3>
-<code><a href="PathNavigation.html#canCutCorner(net.minecraft.world.level.pathfinder.PathType)" title="canCutCorner(PathType)">canCutCorner</a>, <a href="PathNavigation.html#canFloat()" title="canFloat()">canFloat</a>, <a href="PathNavigation.html#canMoveDirectly(net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3)" title="canMoveDirectly(Vec3, Vec3)">canMoveDirectly</a>, <a href="PathNavigation.html#createPath(double,double,double,int)" title="createPath(double, double, double, int)">createPath</a>, <a href="PathNavigation.html#createPath(java.util.Set,int)" title="createPath(Set, int)">createPath</a>, <a href="PathNavigation.html#createPath(java.util.Set,int,boolean,int)" title="createPath(Set, int, boolean, int)">createPath</a>, <a href="PathNavigation.html#createPath(java.util.Set,int,boolean,int,float)" title="createPath(Set, int, boolean, int, float)">createPath</a>, <a href="PathNavigation.html#createPath(java.util.stream.Stream,int)" title="createPath(Stream, int)">createPath</a>, <a href="PathNavigation.html#createPath(net.minecraft.core.BlockPos,int,int)" title="createPath(BlockPos, int, int)">createPath</a>, <a href="PathNavigation.html#doStuckDetection(net.minecraft.world.phys.Vec3)" title="doStuckDetection(Vec3)">doStuckDetection</a>, <a href="PathNavigation.html#followThePath()" title="followThePath()">followThePath</a>, <a href="PathNavigation.html#getGroundY(net.minecraft.world.phys.Vec3)" title="getGroundY(Vec3)">getGroundY</a>, <a href="PathNavigation.html#getMaxDistanceToWaypoint()" title="getMaxDistanceToWaypoint()">getMaxDistanceToWaypoint</a>, <a href="PathNavigation.html#getNodeEvaluator()" title="getNodeEvaluator()">getNodeEvaluator</a>, <a href="PathNavigation.html#getPath()" title="getPath()">getPath</a>, <a href="PathNavigation.html#getTargetPos()" title="getTargetPos()">getTargetPos</a>, <a href="PathNavigation.html#isClearForMovementBetween(net.minecraft.world.entity.Mob,net.minecraft.world.phys.Vec3,net.minecraft.world.phys.Vec3,boolean)" title="isClearForMovementBetween(Mob, Vec3, Vec3, boolean)">isClearForMovementBetween</a>, <a href="PathNavigation.html#isDone()" title="isDone()">isDone</a>, <a href="PathNavigation.html#isInProgress()" title="isInProgress()">isInProgress</a>, <a href="PathNavigation.html#isStableDestination(net.minecraft.core.BlockPos)" title="isStableDestination(BlockPos)">isStableDestination</a>, <a href="PathNavigation.html#isStuck()" title="isStuck()">isStuck</a>, <a href="PathNavigation.html#moveTo(double,double,double,double)" title="moveTo(double, double, double, double)">moveTo</a>, <a href="PathNavigation.html#moveTo(double,double,double,int,double)" title="moveTo(double, double, double, int, double)">moveTo</a>, <a href="PathNavigation.html#moveTo(net.minecraft.world.entity.Entity,double)" title="moveTo(Entity, double)">moveTo</a>, <a href="PathNavigation.html#moveTo(net.minecraft.world.level.pathfinder.Path,double)" title="moveTo(Path, double)">moveTo</a>, <a href="PathNavigation.html#recomputePath()" title="recomputePath()">recomputePath</a>, <a href="PathNavigation.html#resetMaxVisitedNodesMultiplier()" title="resetMaxVisitedNodesMultiplier()">resetMaxVisitedNodesMultiplier</a>, <a href="PathNavigation.html#setCanFloat(boolean)" title="setCanFloat(boolean)">setCanFloat</a>, <a href="PathNavigation.html#setCanOpenDoors(boolean)" title="setCanOpenDoors(boolean)">setCanOpenDoors</a>, <a href="PathNavigation.html#setMaxVisitedNodesMultiplier(float)" title="setMaxVisitedNodesMultiplier(float)">setMaxVisitedNodesMultiplier</a>, <a href="PathNavigation.html#setRequiredPathLength(float)" title="setRequiredPathLength(float)">setRequiredPathLength</a>, <a href="PathNavigation.html#setSpeedModifier(double)" title="setSpeedModifier(double)">setSpeedModifier</a>, <a href="PathNavigation.html#shouldRecomputePath(net.minecraft.core.BlockPos)" title="shouldRecomputePath(BlockPos)">shouldRecomputePath</a>, <a href="PathNavigation.html#stop()" title="stop()">stop</a>, <a href="PathNavigation.html#tick()" title="tick()">tick</a>, <a href="PathNavigation.html#updatePathfinderMaxVisitedNodes()" title="updatePathfinderMaxVisitedNodes()">updatePathfinderMaxVisitedNodes</a></code></div>
+<code><a href="PathNavigation.html#canCutCorner(net.minecraft.world.level.pathfinder.PathType)" title="canCutCorner(PathType)">canCutCorner</a>, <a href="PathNavigation.html#canFloat()" title="canFloat()">canFloat</a>, <a href="PathNavigation.html#createPath(double,double,double,int)" title="createPath(double, double, double, int)">createPath</a>, <a href="PathNavigation.html#createPath(java.util.Set,int)" title="createPath(Set, int)">createPath</a>, <a href="PathNavigation.html#createPath(java.util.stream.Stream,int)" title="createPath(Stream, int)">createPath</a>, <a href="PathNavigation.html#createPath(net.minecraft.core.BlockPos,int,int)" title="createPath(BlockPos, int, int)">createPath</a>, <a href="PathNavigation.html#getMaxDistanceToWaypoint()" title="getMaxDistanceToWaypoint()">getMaxDistanceToWaypoint</a>, <a href="PathNavigation.html#getNodeEvaluator()" title="getNodeEvaluator()">getNodeEvaluator</a>, <a href="PathNavigation.html#getPath()" title="getPath()">getPath</a>, <a href="PathNavigation.html#getTargetPos()" title="getTargetPos()">getTargetPos</a>, <a href="PathNavigation.html#isDone()" title="isDone()">isDone</a>, <a href="PathNavigation.html#isInProgress()" title="isInProgress()">isInProgress</a>, <a href="PathNavigation.html#isStableDestination(net.minecraft.core.BlockPos)" title="isStableDestination(BlockPos)">isStableDestination</a>, <a href="PathNavigation.html#isStuck()" title="isStuck()">isStuck</a>, <a href="PathNavigation.html#moveTo(double,double,double,double)" title="moveTo(double, double, double, double)">moveTo</a>, <a href="PathNavigation.html#moveTo(double,double,double,int,double)" title="moveTo(double, double, double, int, double)">moveTo</a>, <a href="PathNavigation.html#moveTo(net.minecraft.world.entity.Entity,double)" title="moveTo(Entity, double)">moveTo</a>, <a href="PathNavigation.html#moveTo(net.minecraft.world.level.pathfinder.Path,double)" title="moveTo(Path, double)">moveTo</a>, <a href="PathNavigation.html#recomputePath()" title="recomputePath()">recomputePath</a>, <a href="PathNavigation.html#resetMaxVisitedNodesMultiplier()" title="resetMaxVisitedNodesMultiplier()">resetMaxVisitedNodesMultiplier</a>, <a href="PathNavigation.html#setCanFloat(boolean)" title="setCanFloat(boolean)">setCanFloat</a>, <a href="PathNavigation.html#setCanOpenDoors(boolean)" title="setCanOpenDoors(boolean)">setCanOpenDoors</a>, <a href="PathNavigation.html#setMaxVisitedNodesMultiplier(float)" title="setMaxVisitedNodesMultiplier(float)">setMaxVisitedNodesMultiplier</a>, <a href="PathNavigation.html#setRequiredPathLength(float)" title="setRequiredPathLength(float)">setRequiredPathLength</a>, <a href="PathNavigation.html#setSpeedModifier(double)" title="setSpeedModifier(double)">setSpeedModifier</a>, <a href="PathNavigation.html#shouldRecomputePath(net.minecraft.core.BlockPos)" title="shouldRecomputePath(BlockPos)">shouldRecomputePath</a>, <a href="PathNavigation.html#stop()" title="stop()">stop</a>, <a href="PathNavigation.html#tick()" title="tick()">tick</a>, <a href="PathNavigation.html#updatePathfinderMaxVisitedNodes()" title="updatePathfinderMaxVisitedNodes()">updatePathfinderMaxVisitedNodes</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="avoidSun">
-<h3>avoidSun</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">avoidSun</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="canPathToTargetsBelowSurface">
-<h3>canPathToTargetsBelowSurface</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canPathToTargetsBelowSurface</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -261,42 +179,6 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="createPathFinder(int)">
-<h3>createPathFinder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../level/pathfinder/PathFinder.html" title="class in net.minecraft.world.level.pathfinder">PathFinder</a></span>&nbsp;<span class="element-name">createPathFinder</span><wbr><span class="parameters">(int&nbsp;maxVisitedNodes)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="PathNavigation.html#createPathFinder(int)">createPathFinder</a></code>&nbsp;in class&nbsp;<code><a href="PathNavigation.html" title="class in net.minecraft.world.entity.ai.navigation">PathNavigation</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="canUpdatePath()">
-<h3>canUpdatePath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canUpdatePath</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="PathNavigation.html#canUpdatePath()">canUpdatePath</a></code>&nbsp;in class&nbsp;<code><a href="PathNavigation.html" title="class in net.minecraft.world.entity.ai.navigation">PathNavigation</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getTempMobPos()">
-<h3>getTempMobPos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../phys/Vec3.html" title="class in net.minecraft.world.phys">Vec3</a></span>&nbsp;<span class="element-name">getTempMobPos</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="PathNavigation.html#getTempMobPos()">getTempMobPos</a></code>&nbsp;in class&nbsp;<code><a href="PathNavigation.html" title="class in net.minecraft.world.entity.ai.navigation">PathNavigation</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="createPath(net.minecraft.core.BlockPos,int)">
 <h3>createPath</h3>
 <div class="horizontal-scroll">
@@ -306,16 +188,6 @@ loadScripts(document, 'script');</script>
 <dt>Overrides:</dt>
 <dd><code><a href="PathNavigation.html#createPath(net.minecraft.core.BlockPos,int)">createPath</a></code>&nbsp;in class&nbsp;<code><a href="PathNavigation.html" title="class in net.minecraft.world.entity.ai.navigation">PathNavigation</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="findSurfacePosition(net.minecraft.world.level.chunk.LevelChunk,net.minecraft.core.BlockPos,int)">
-<h3>findSurfacePosition</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">final</span>&nbsp;<span class="return-type"><a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a></span>&nbsp;<span class="element-name">findSurfacePosition</span><wbr><span class="parameters">(<a href="../../../level/chunk/LevelChunk.html" title="class in net.minecraft.world.level.chunk">LevelChunk</a>&nbsp;chunk,
- <a href="../../../../core/BlockPos.html" title="class in net.minecraft.core">BlockPos</a>&nbsp;pos,
- int&nbsp;reachRange)</span></div>
 </div>
 </section>
 </li>
@@ -333,26 +205,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getSurfaceY()">
-<h3>getSurfaceY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getSurfaceY</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="trimPath()">
-<h3>trimPath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">trimPath</span>()</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="PathNavigation.html#trimPath()">trimPath</a></code>&nbsp;in class&nbsp;<code><a href="PathNavigation.html" title="class in net.minecraft.world.entity.ai.navigation">PathNavigation</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="canNavigateGround()">
 <h3>canNavigateGround</h3>
 <div class="horizontal-scroll">
@@ -361,14 +213,6 @@ loadScripts(document, 'script');</script>
 <dt>Specified by:</dt>
 <dd><code><a href="PathNavigation.html#canNavigateGround()">canNavigateGround</a></code>&nbsp;in class&nbsp;<code><a href="PathNavigation.html" title="class in net.minecraft.world.entity.ai.navigation">PathNavigation</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hasValidPathType(net.minecraft.world.level.pathfinder.PathType)">
-<h3>hasValidPathType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasValidPathType</span><wbr><span class="parameters">(<a href="../../../level/pathfinder/PathType.html" title="enum class in net.minecraft.world.level.pathfinder">PathType</a>&nbsp;pathType)</span></div>
 </div>
 </section>
 </li>

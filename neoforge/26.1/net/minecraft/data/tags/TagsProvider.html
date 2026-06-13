@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>TagsProvider (NeoForge 26.1)</title>
+<title>TagsProvider (NeoForge 26.1.2.76)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="declaration: package: net.minecraft.data.tags, class: TagsProvider">
@@ -28,13 +28,13 @@ loadScripts(document, 'script');</script>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
 <li><a href="../../../../index.html">Overview</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
-<li><a href="class-use/TagsProvider.html">Use</a></li>
 <li><a href="package-tree.html">Tree</a></li>
 <li><a href="../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../index-files/index-1.html">Index</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 <li><a href="../../../../search.html">Search</a></li>
 <li><a href="../../../../help-doc.html#class">Help</a></li>
 </ul>
+<div class="about-language">NeoForge 26.1.2.76</div>
 </div>
 </div>
 <div class="sub-nav">
@@ -56,36 +56,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#pathProvider" tabindex="0">pathProvider</a></li>
-<li><a href="#lookupProvider" tabindex="0">lookupProvider</a></li>
-<li><a href="#contentsDone" tabindex="0">contentsDone</a></li>
-<li><a href="#parentProvider" tabindex="0">parentProvider</a></li>
-<li><a href="#registryKey" tabindex="0">registryKey</a></li>
-<li><a href="#builders" tabindex="0">builders</a></li>
-<li><a href="#modId" tabindex="0">modId</a></li>
-</ol>
-</li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture)" tabindex="0">TagsProvider(PackOutput, ResourceKey, CompletableFuture)</a></li>
-<li><a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.lang.String)" tabindex="0">TagsProvider(PackOutput, ResourceKey, CompletableFuture, String)</a></li>
-<li><a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.util.concurrent.CompletableFuture)" tabindex="0">TagsProvider(PackOutput, ResourceKey, CompletableFuture, CompletableFuture)</a></li>
-<li><a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.util.concurrent.CompletableFuture,java.lang.String)" tabindex="0">TagsProvider(PackOutput, ResourceKey, CompletableFuture, CompletableFuture, String)</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#getPath(net.minecraft.resources.Identifier)" tabindex="0">getPath(Identifier)</a></li>
 <li><a href="#getName()" tabindex="0">getName()</a></li>
-<li><a href="#addTags(net.minecraft.core.HolderLookup.Provider)" tabindex="0">addTags(HolderLookup.Provider)</a></li>
 <li><a href="#run(net.minecraft.data.CachedOutput)" tabindex="0">run(CachedOutput)</a></li>
-<li><a href="#getOrCreateRawBuilder(net.minecraft.tags.TagKey)" tabindex="0">getOrCreateRawBuilder(TagKey)</a></li>
 <li><a href="#contentsGetter()" tabindex="0">contentsGetter()</a></li>
-<li><a href="#createContentsProvider()" tabindex="0">createContentsProvider()</a></li>
 </ol>
 </li>
 </ol>
@@ -138,80 +114,9 @@ implements <a href="../DataProvider.html" title="interface in net.minecraft.data
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../../tags/TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#builders" class="member-name-link">builders</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#contentsDone" class="member-name-link">contentsDone</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#lookupProvider" class="member-name-link">lookupProvider</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#modId" class="member-name-link">modId</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="TagsProvider.TagLookup.html" title="interface in net.minecraft.data.tags">TagsProvider.TagLookup</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#parentProvider" class="member-name-link">parentProvider</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="../PackOutput.PathProvider.html" title="class in net.minecraft.data">PackOutput.PathProvider</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#pathProvider" class="member-name-link">pathProvider</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected final <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a><wbr>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#registryKey" class="member-name-link">registryKey</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-net.minecraft.data.DataProvider">Fields inherited from interface&nbsp;<a href="../DataProvider.html#field-summary" title="interface in net.minecraft.data">DataProvider</a></h3>
 <code><a href="../DataProvider.html#FIXED_ORDER_FIELDS">FIXED_ORDER_FIELDS</a>, <a href="../DataProvider.html#INDENT_WIDTH">INDENT_WIDTH</a>, <a href="../DataProvider.html#KEY_COMPARATOR">KEY_COMPARATOR</a>, <a href="../DataProvider.html#LOGGER">LOGGER</a></code></div>
-</section>
-</li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture)" class="member-name-link">TagsProvider</a><wbr>(<a href="../PackOutput.html" title="class in net.minecraft.data">PackOutput</a>&nbsp;output,
- <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;registryKey,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;&nbsp;lookupProvider)</code></div>
-<div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Forge: Use the <a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.lang.String)">mod id variant</a></div>
-</div>
-</div>
-<div class="col-first odd-row-color"><code>protected </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.lang.String)" class="member-name-link">TagsProvider</a><wbr>(<a href="../PackOutput.html" title="class in net.minecraft.data">PackOutput</a>&nbsp;output,
- <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;registryKey,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;&nbsp;lookupProvider,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modId)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.util.concurrent.CompletableFuture)" class="member-name-link">TagsProvider</a><wbr>(<a href="../PackOutput.html" title="class in net.minecraft.data">PackOutput</a>&nbsp;output,
- <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;registryKey,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;&nbsp;lookupProvider,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="TagsProvider.TagLookup.html" title="interface in net.minecraft.data.tags">TagsProvider.TagLookup</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;parentProvider)</code></div>
-<div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Forge: Use the <a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.util.concurrent.CompletableFuture,java.lang.String)">mod id variant</a></div>
-</div>
-</div>
-<div class="col-first odd-row-color"><code>protected </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.util.concurrent.CompletableFuture,java.lang.String)" class="member-name-link">TagsProvider</a><wbr>(<a href="../PackOutput.html" title="class in net.minecraft.data">PackOutput</a>&nbsp;output,
- <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;registryKey,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;&nbsp;lookupProvider,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="TagsProvider.TagLookup.html" title="interface in net.minecraft.data.tags">TagsProvider.TagLookup</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;parentProvider,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modId)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
 </section>
 </li>
 <!-- ========== METHOD SUMMARY =========== -->
@@ -219,29 +124,17 @@ implements <a href="../DataProvider.html" title="interface in net.minecraft.data
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addTags(net.minecraft.core.HolderLookup.Provider)" class="member-name-link">addTags</a><wbr>(<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;registries)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="TagsProvider.TagLookup.html" title="interface in net.minecraft.data.tags">TagsProvider.TagLookup</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#contentsGetter()" class="member-name-link">contentsGetter</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createContentsProvider()" class="member-name-link">createContentsProvider</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;<a href="TagsProvider.TagLookup.html" title="interface in net.minecraft.data.tags">TagsProvider.TagLookup</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#contentsGetter()" class="member-name-link">contentsGetter</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../tags/TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOrCreateRawBuilder(net.minecraft.tags.TagKey)" class="member-name-link">getOrCreateRawBuilder</a><wbr>(<a href="../../tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&nbsp;tag)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPath(net.minecraft.resources.Identifier)" class="member-name-link">getPath</a><wbr>(<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(net.minecraft.data.CachedOutput)" class="member-name-link">run</a><wbr>(<a href="../CachedOutput.html" title="interface in net.minecraft.data">CachedOutput</a>&nbsp;cache)</code></div>
@@ -251,150 +144,18 @@ implements <a href="../DataProvider.html" title="interface in net.minecraft.data
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="pathProvider">
-<h3>pathProvider</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../PackOutput.PathProvider.html" title="class in net.minecraft.data">PackOutput.PathProvider</a></span>&nbsp;<span class="element-name">pathProvider</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="lookupProvider">
-<h3>lookupProvider</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;</span>&nbsp;<span class="element-name">lookupProvider</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="contentsDone">
-<h3>contentsDone</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Void.html" title="class or interface in java.lang" class="external-link">Void</a>&gt;</span>&nbsp;<span class="element-name">contentsDone</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="parentProvider">
-<h3>parentProvider</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="TagsProvider.TagLookup.html" title="interface in net.minecraft.data.tags">TagsProvider.TagLookup</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;</span>&nbsp;<span class="element-name">parentProvider</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="registryKey">
-<h3>registryKey</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;</span>&nbsp;<span class="element-name">registryKey</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="builders">
-<h3>builders</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>, <a href="../../tags/TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a>&gt;</span>&nbsp;<span class="element-name">builders</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="modId">
-<h3>modId</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">modId</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture)">
-<h3>TagsProvider</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
-</span><span class="modifiers">protected</span>&nbsp;<span class="element-name">TagsProvider</span><wbr><span class="parameters">(<a href="../PackOutput.html" title="class in net.minecraft.data">PackOutput</a>&nbsp;output,
- <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;registryKey,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;&nbsp;lookupProvider)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Forge: Use the <a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.lang.String)">mod id variant</a></div>
-</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.lang.String)">
-<h3>TagsProvider</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">TagsProvider</span><wbr><span class="parameters">(<a href="../PackOutput.html" title="class in net.minecraft.data">PackOutput</a>&nbsp;output,
- <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;registryKey,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;&nbsp;lookupProvider,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modId)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.util.concurrent.CompletableFuture)">
-<h3>TagsProvider</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
-</span><span class="modifiers">protected</span>&nbsp;<span class="element-name">TagsProvider</span><wbr><span class="parameters">(<a href="../PackOutput.html" title="class in net.minecraft.data">PackOutput</a>&nbsp;output,
- <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;registryKey,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;&nbsp;lookupProvider,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="TagsProvider.TagLookup.html" title="interface in net.minecraft.data.tags">TagsProvider.TagLookup</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;parentProvider)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Forge: Use the <a href="#%3Cinit%3E(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.util.concurrent.CompletableFuture,java.lang.String)">mod id variant</a></div>
-</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(net.minecraft.data.PackOutput,net.minecraft.resources.ResourceKey,java.util.concurrent.CompletableFuture,java.util.concurrent.CompletableFuture,java.lang.String)">
-<h3>TagsProvider</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">TagsProvider</span><wbr><span class="parameters">(<a href="../PackOutput.html" title="class in net.minecraft.data">PackOutput</a>&nbsp;output,
- <a href="../../resources/ResourceKey.html" title="class in net.minecraft.resources">ResourceKey</a>&lt;? extends <a href="../../core/Registry.html" title="interface in net.minecraft.core">Registry</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;registryKey,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;&nbsp;lookupProvider,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="TagsProvider.TagLookup.html" title="interface in net.minecraft.data.tags">TagsProvider.TagLookup</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;&nbsp;parentProvider,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;modId)</span></div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="getPath(net.minecraft.resources.Identifier)">
-<h3>getPath</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></span>&nbsp;<span class="element-name">getPath</span><wbr><span class="parameters">(<a href="../../resources/Identifier.html" title="class in net.minecraft.resources">Identifier</a>&nbsp;id)</span></div>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="getName()">
 <h3>getName</h3>
@@ -404,14 +165,6 @@ implements <a href="../DataProvider.html" title="interface in net.minecraft.data
 <dt>Specified by:</dt>
 <dd><code><a href="../DataProvider.html#getName()">getName</a></code>&nbsp;in interface&nbsp;<code><a href="../DataProvider.html" title="interface in net.minecraft.data">DataProvider</a></code></dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addTags(net.minecraft.core.HolderLookup.Provider)">
-<h3>addTags</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addTags</span><wbr><span class="parameters">(<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&nbsp;registries)</span></div>
 </div>
 </section>
 </li>
@@ -428,26 +181,10 @@ implements <a href="../DataProvider.html" title="interface in net.minecraft.data
 </section>
 </li>
 <li>
-<section class="detail" id="getOrCreateRawBuilder(net.minecraft.tags.TagKey)">
-<h3>getOrCreateRawBuilder</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../tags/TagBuilder.html" title="class in net.minecraft.tags">TagBuilder</a></span>&nbsp;<span class="element-name">getOrCreateRawBuilder</span><wbr><span class="parameters">(<a href="../../tags/TagKey.html" title="class in net.minecraft.tags">TagKey</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&nbsp;tag)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="contentsGetter()">
 <h3>contentsGetter</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="TagsProvider.TagLookup.html" title="interface in net.minecraft.data.tags">TagsProvider.TagLookup</a>&lt;<a href="#type-param-T" title="type parameter in TagsProvider">T</a>&gt;&gt;</span>&nbsp;<span class="element-name">contentsGetter</span>()</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="createContentsProvider()">
-<h3>createContentsProvider</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html" title="class or interface in java.util.concurrent" class="external-link">CompletableFuture</a>&lt;<a href="../../core/HolderLookup.Provider.html" title="interface in net.minecraft.core">HolderLookup.Provider</a>&gt;</span>&nbsp;<span class="element-name">createContentsProvider</span>()</div>
 </div>
 </section>
 </li>
